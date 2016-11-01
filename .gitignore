@@ -65,3 +65,5 @@ target/
 
 # Auto-generated files we don't want
 git_push.sh
+index.yaml
+swagger-codegen-cli.jar
