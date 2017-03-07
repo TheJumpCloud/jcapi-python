@@ -3,7 +3,7 @@ LANG ?= 'python'
 .PHONY: build
 build:
 	swagger-codegen generate \
-		-i $(SWAG_FILE)
+		-i $(SWAG_FILE) \
 		-l $(LANG) \
 		-c config.json \
 		-o .
