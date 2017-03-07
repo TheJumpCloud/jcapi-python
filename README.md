@@ -3,8 +3,13 @@
 #### Java 1.8 ####
 As of swagger-codegen 2.2.2, you must use JDK 1.8 or higher. On Debian/Ubuntu:
 ```
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update; sudo apt-get install oracle-java8-installer
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt update; sudo apt-get install oracle-java8-installer
+```
+On OSX, you should just have to add the appropriate `JAVA_HOME` to your path:
+```
+$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+$ export PATH=${JAVA_HOME}/bin:$PATH
 ```
 Then, check your version:
 ```
@@ -15,7 +20,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 ```
 #### Swagger-codegen ####
 ```
-wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar -O swagger-codegen-cli.jar
+$ wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar -O swagger-codegen-cli.jar
 ```
 The above command will download a jar file to the current directory. This is a pre-built version of swagger-codegen. 
 For more information or alternate installation methods, see the github repo: https://github.com/swagger-api/swagger-codegen
@@ -28,6 +33,6 @@ Available languages: [android, aspnet5, aspnetcore, async-scala, bash, cwiki, cs
 
 ### Generating API Client ###
 ```
-make build
-python setup.py install
+$ make build
+$ python setup.py install
 ```
