@@ -31,3 +31,11 @@ Available languages: [android, aspnet5, aspnetcore, async-scala, bash, cwiki, cs
 make build
 python setup.py install
 ```
+
+### Examples ###
+```
+import jcapi
+...
+api_instance = jcapi.DefaultApi()
+api_instance.systemusers_get(x_api_key=<API Key>, limit=5)
+```
