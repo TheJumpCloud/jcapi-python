@@ -1,5 +1,6 @@
 ## JCAPI-Python
 To generate an API client, run the following commands:
-```make build
+```
+make build
 python setup.py install
 ```
