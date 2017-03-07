@@ -1,9 +1,9 @@
 SWAG_FILE ?= 'https://console.jumpcloud.com/api/api-docs'
-LANG ?= 'python'
+TARGET_LANG ?= 'python'
 .PHONY: build
 build:
 	swagger-codegen generate \
 		-i $(SWAG_FILE) \
-		-l $(LANG) \
+		-l $(TARGET_LANG) \
 		-c config.json \
 		-o .
