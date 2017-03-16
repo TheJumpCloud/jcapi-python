@@ -22,10 +22,10 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 ```
 $ wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar -O swagger-codegen-cli.jar
 ```
-The above command will download a jar file to the current directory. This is a pre-built version of swagger-codegen. 
-For more information or alternate installation methods, see the github repo: https://github.com/swagger-api/swagger-codegen
+A pre-built version of swagger-codegen is included in this repo. 
+For more information, updates, or alternate installation methods, please see the github repo: https://github.com/swagger-api/swagger-codegen
 
-To see if it was successfully downloaded:
+Check swagger-codegen:
 ```
 $ java -jar swagger-codegen-cli.jar
 Available languages: [android, aspnet5, aspnetcore, async-scala, bash, cwiki, csharp, cpprest, dart, elixir, flash, python-flask, go, groovy, java, jaxrs, jaxrs-cxf-client, jaxrs-cxf, jaxrs-resteasy, jaxrs-resteasy-eap, jaxrs-spec, jaxrs-cxf-cdi, inflector, javascript, javascript-closure-angular, jmeter, nancyfx, nodejs-server, objc, perl, php, python, qt5cpp, ruby, scala, scalatra, finch, silex-PHP, sinatra, rails5, slim, spring, dynamic-html, html, html2, swagger, swagger-yaml, swift, swift3, tizen, typescript-angular2, typescript-angular, typescript-node, typescript-fetch, akka-scala, CsharpDotNet2, clojure, haskell, lumen, go-server, erlang-server, undertow, msf4j, ze-ph]
