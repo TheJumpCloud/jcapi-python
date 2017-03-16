@@ -19,9 +19,6 @@ Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 ```
 #### Swagger-codegen ####
-```
-$ wget https://oss.sonatype.org/content/repositories/releases/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar -O swagger-codegen-cli.jar
-```
 A pre-built version of swagger-codegen is included in this repo. 
 For more information, updates, or alternate installation methods, please see the github repo: https://github.com/swagger-api/swagger-codegen
 
