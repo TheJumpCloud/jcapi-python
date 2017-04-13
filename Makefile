@@ -24,7 +24,7 @@ v1:
 		-l python \
 		-c config_v1.json \
 		-o jcapi_v1
-	
+
 .PHONY: v2
 v2: SWAGGER_FILE := $(SWAGGER_FILE_PATH)/v2/index.yaml
 v2:
