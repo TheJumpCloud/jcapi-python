@@ -1,5 +1,5 @@
 # We need the yaml spec file to be passed to us on the cmdline.
-SWAGGER_FILE_PATH = ${HOME}/workspace/SI/routes/webui/api
+SWAGGER_FILE_PATH ?= ${HOME}/workspace/SI/routes/webui/api
 UNAME := $(shell uname)
 
 # If you are on Windows ... really?
