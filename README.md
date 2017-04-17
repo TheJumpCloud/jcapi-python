@@ -32,32 +32,36 @@ Check swagger-codegen:
 ```
 $ java -jar swagger-codegen-cli.jar
 
-```
 OR
-```
+
 $ swagger-codegen
 ```
-Will get your the following output:
+This should get you something like the following output.
 ```
-Available languages: [android, aspnet5, aspnetcore, async-scala, .... ]
+$ Available languages: [android, aspnet5, aspnetcore, async-scala, .... ]
 ```
 
-### Generating API Client ###
+### Generating, Installing and Using the API Client ###
 
-You can generate either the v1 or v2 APIs by specifying the
-appropriate yaml file on the cmdline - assuming that you have SI
-cloned somewhere.
+If you are going to use the APIs locally, as part of running the API tests for example, then you will want to generate and install the APIs locally.  We also recommend using `virtualenv` or `conda` so as not to pollute your root Python installation.
+
+#### Generating the API Client
+
+To generate the APIs, run the command below.  It assumes that you have followed the standard practice of laying out the dev env under `$HOME/workspace` and have cloned SI into the "workspace" root.  Alternately you can specify the SI path on the cmdline.
 
 ```
-$ make v2 SWAGGER_FILE=$HOME/workspace/SI/routes/webui/api/v2/index.yaml
-$ make v1 SWAGGER_FILE=$HOME/workspace/SI/routes/webui/api/index.yaml
+$ make all
+
+OR
+
+$ make all SWAGGER_FILE_PATH=/Users/bobmarley/mySIdirectory/routes/webui/api
 ```
 
 If you are developing the APIs, you can clean up by running `make clean`
 
-### Installing the Python Client
+#### Installing the Python Client
 
-Change to the appropriate version directory (jcapi_v1 or jcapi_v2) and
+Change to both version directories in order (jcapi_v1 or jcapi_v2) and
 then run the following command.  This will install the Python Client
 API locally after building.
 
@@ -65,7 +69,7 @@ API locally after building.
 $ python setup.py install
 ```
 
-### Examples ###
+#### Usage Examples
 
 ```
 import jcapi
