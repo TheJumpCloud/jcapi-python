@@ -1,79 +1,105 @@
 ## JCAPI-Python
-### Prerequisites ###
-#### Java 1.8 ####
-As of swagger-codegen 2.2.2, you must use JDK 1.8 or higher. On Debian/Ubuntu:
-```
-$ sudo add-apt-repository ppa:webupd8team/java
-$ sudo apt update; sudo apt-get install oracle-java8-installer
-```
-The easiest way to get java/swagger-codegen on MacOSX is below.  It
-will also setup your `JAVA_HOME` and `PATH` for you.
-```
-brew cask install java
-brew install swagger-codegen
-```
-If you had to install Java the hard way on your Mac, you should just have to add the appropriate `JAVA_HOME` to your path:
-```
-$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-$ export PATH=${JAVA_HOME}/bin:$PATH
-```
-Check your version:
-```
-$ java -version
-java version "1.8.0_121"
-Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
-```
-#### Swagger-codegen ####
-A pre-built version of swagger-codegen is included in this repo.
-For more information, updates, or alternate installation methods, please see the github repo: https://github.com/swagger-api/swagger-codegen
 
-Check swagger-codegen:
-```
-$ java -jar swagger-codegen-cli.jar
+### Description ###
 
-OR
+This repository contains the Python client code for the JumpCloud API v1 and v2.
+It also provides the tools to generate the client code from the API yaml files, using swagger-codegen.
+It relies on the following docker file in order to run swagger-codegen inside a docker container:
+https://hub.docker.com/r/jimschubert/swagger-codegen-cli/
 
-$ swagger-codegen
-```
-This should get you something like the following output.
-```
-$ Available languages: [android, aspnet5, aspnetcore, async-scala, .... ]
-```
+We're currently using the version 2.2.2 of swagger-codegen.
 
-### Generating, Installing and Using the API Client ###
+Note that there is now an official swagger Docker file for the swagger-codegen-cli but it seems to only be supporting the latest version of swagger-codegen (2.3.0, which generates a completely different API interface from 2.2.2).
+This docker file can be found here: https://hub.docker.com/r/swaggerapi/swagger-codegen-cli/
+We might want to consider using this Docker file once it supports different versions of swagger-codegen.
 
-If you are going to use the APIs locally, as part of running the API tests for example, then you will want to generate and install the APIs locally.  We also recommend using `virtualenv` or `conda` so as not to pollute your root Python installation.
+### Generating the API Client
 
-#### Generating the API Client
+Copy the API yaml files to the local `/input` directory.
 
-To generate the APIs, run the command below.  It assumes that you have followed the standard practice of laying out the dev env under `$HOME/workspace` and have cloned SI into the "workspace" root.  Alternately you can specify the SI path on the cmdline.
+The API v1 yaml file can be found here: `https://github.com/TheJumpCloud/SI/blob/master/routes/webui/api/index.yaml`
+
+The API v2 yaml file can be found here: `https://github.com/TheJumpCloud/SI/blob/master/routes/webui/api/v2/index.yaml`
+
+To generate the API v1 client, run the command below (assuming your API v1 yaml file is `input/index1.yaml`):  
 
 ```
-$ make all
-
-OR
-
-$ make all SWAGGER_FILE_PATH=/Users/bobmarley/mySIdirectory/routes/webui/api
+$ docker-compose run --rm swagger-codegen generate -i /swagger-api/yaml/index1.yaml -l python -c /config/config_v1.json -o /swagger-api/out/jcapiv1
 ```
+This will generate the API v1 client files under `output/jcapiv1`
 
-If you are developing the APIs, you can clean up by running `make clean`
+To generate the API v2 client, run the command below (assuming your API v2 yaml file is `input/index2.yaml`):  
+
+```
+$ docker-compose run --rm swagger-codegen generate -i /swagger-api/yaml/index2.yaml -l python -c /config/config_v2.json -o /swagger-api/out/jcapiv2
+```
+This will generate the API v1 client files under `output/jcapiv1`
+
+Once you are satisfied with the generated API client, you can replace the existing files under the `jcapiv1` and `jcapiv2` folders with your generated files.
+
 
 #### Installing the Python Client
 
-Change to both version directories in order (jcapi_v1 or jcapi_v2) and
-then run the following command.  This will install the Python Client
-API locally after building.
+Change to the appropriate directory (jcapiv1 or jcapiv2) and then run the following command to install the Python Client API locally:
 
 ```
-$ python setup.py install
+$ python setup.py install --user
 ```
+
+(or `sudo python setup.py install` to install the package for all users)
 
 #### Usage Examples
 
+API v1 example:
 ```
-import jcapi
+import jcapiv1
+
 ...
-api_instance = jcapi.DefaultApi()
-api_instance.systemusers_get(x_api_key=<API Key>, limit=5)
+content_type = 'application/json'
+accept = 'application/json'
+
+// set up the configuration object with your API key:
+jcapiv1.configuration.api_key['x-api-key'] = '<YOUR_API_KEY>'
+
+// instantiate the API object for the group of endpoints you need to use
+// for instance for Systemusers API:
+systemusersAPI = jcapiv1.SystemusersApi()
+
+try:
+    // make an API call to retrieve all systemusers:
+    users = systemusersAPI.systemusers_list(content_type, accept)
+except ApiException as e:
+    print("Exception when calling SystemusersApi->systemusers_list: %s\n" % e)
+
+try:
+    // make an API call to modify a specific user's last name:
+    put_request = jcapiv1.Systemuserputpost()
+    put_request.lastname = 'Updated Last Name'
+    systemusersAPI.systemusers_put('<YOUR_SYSTEMUSER_ID>', content_type, accept, body=put_request)
+except ApiException as e:
+    print("Exception when calling SystemusersApi->systemusers_put: %s\n" % e)
+```
+
+API v2 example:
+```
+import jcapiv2
+
+...
+content_type = 'application/json'
+accept = 'application/json'
+group_id = '<YOUR_GROUP_ID>'
+
+// set up the configuration object with your API key:
+jcapiv2.configuration.api_key['x-api-key'] = '<YOUR_API_KEY>'
+
+// instantiate the API object for the group of endpoints you need to use
+// for instance for User Groups API:
+userGroupsAPI = jcapiv2.UserGroupsApi()
+
+try:
+    // make an API call to retrieve a specific user group:
+    userGroup = userGroupsAPI.groups_user_get(group_id, content_type, accept)
+except ApiException as e:
+    print("Exception when calling UserGroupsApi->groups_user_get: %s\n" % e)
+
 ```
