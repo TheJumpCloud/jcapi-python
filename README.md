@@ -26,6 +26,7 @@ For more detailed instructions, refer to each API's respective README file ([REA
 API v1 example:
 ```python
 import jcapiv1
+from jcapiv1.rest import ApiException
 
 ...
 content_type = 'application/json'
@@ -56,6 +57,7 @@ except ApiException as e:
 API v2 example:
 ```python
 import jcapiv2
+from jcapiv2.rest import ApiException
 
 ...
 content_type = 'application/json'
