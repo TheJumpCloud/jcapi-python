@@ -16,7 +16,7 @@ $ python setup.py install --user
 ```
 To install the package for all users:
 ```
-sudo python setup.py install
+$ sudo python setup.py install
 ```
 
 #### Usage Examples
@@ -24,7 +24,7 @@ sudo python setup.py install
 For more detailed instructions, refer to each API's respective README file ([README for API v1](jcapiv1/README.md) and [README for API v2](jcapiv2/README.md)) and the generated docs under each folder.
 
 API v1 example:
-```
+```python
 import jcapiv1
 
 ...
@@ -54,7 +54,7 @@ except ApiException as e:
 ```
 
 API v2 example:
-```
+```python
 import jcapiv2
 
 ...
