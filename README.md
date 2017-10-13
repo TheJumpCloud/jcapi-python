@@ -1,79 +1,80 @@
 ## JCAPI-Python
-### Prerequisites ###
-#### Java 1.8 ####
-As of swagger-codegen 2.2.2, you must use JDK 1.8 or higher. On Debian/Ubuntu:
-```
-$ sudo add-apt-repository ppa:webupd8team/java
-$ sudo apt update; sudo apt-get install oracle-java8-installer
-```
-The easiest way to get java/swagger-codegen on MacOSX is below.  It
-will also setup your `JAVA_HOME` and `PATH` for you.
-```
-brew cask install java
-brew install swagger-codegen
-```
-If you had to install Java the hard way on your Mac, you should just have to add the appropriate `JAVA_HOME` to your path:
-```
-$ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-$ export PATH=${JAVA_HOME}/bin:$PATH
-```
-Check your version:
-```
-$ java -version
-java version "1.8.0_121"
-Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
-```
-#### Swagger-codegen ####
-A pre-built version of swagger-codegen is included in this repo.
-For more information, updates, or alternate installation methods, please see the github repo: https://github.com/swagger-api/swagger-codegen
 
-Check swagger-codegen:
-```
-$ java -jar swagger-codegen-cli.jar
+### Description ###
 
-OR
-
-$ swagger-codegen
-```
-This should get you something like the following output.
-```
-$ Available languages: [android, aspnet5, aspnetcore, async-scala, .... ]
-```
-
-### Generating, Installing and Using the API Client ###
-
-If you are going to use the APIs locally, as part of running the API tests for example, then you will want to generate and install the APIs locally.  We also recommend using `virtualenv` or `conda` so as not to pollute your root Python installation.
-
-#### Generating the API Client
-
-To generate the APIs, run the command below.  It assumes that you have followed the standard practice of laying out the dev env under `$HOME/workspace` and have cloned SI into the "workspace" root.  Alternately you can specify the SI path on the cmdline.
-
-```
-$ make all
-
-OR
-
-$ make all SWAGGER_FILE_PATH=/Users/bobmarley/mySIdirectory/routes/webui/api
-```
-
-If you are developing the APIs, you can clean up by running `make clean`
+This repository contains the Python client code for the JumpCloud API v1 and v2.
+It also provides the tools to generate the client code from the API yaml files, using swagger-codegen.
+For detailed instructions on how to generate the code, see the [Contributing](CONTRIBUTING.md) section.
 
 #### Installing the Python Client
 
-Change to both version directories in order (jcapi_v1 or jcapi_v2) and
-then run the following command.  This will install the Python Client
-API locally after building.
+Change to the appropriate directory (jcapiv1 or jcapiv2) and then run the following command to install the Python Client API package:
 
+To install the package for the local user:
 ```
-$ python setup.py install
+$ python setup.py install --user
+```
+To install the package for all users:
+```
+$ sudo python setup.py install
 ```
 
 #### Usage Examples
 
-```
-import jcapi
+For more detailed instructions, refer to each API's respective README file ([README for API v1](jcapiv1/README.md) and [README for API v2](jcapiv2/README.md)) and the generated docs under each folder.
+
+API v1 example:
+```python
+import jcapiv1
+from jcapiv1.rest import ApiException
+
 ...
-api_instance = jcapi.DefaultApi()
-api_instance.systemusers_get(x_api_key=<API Key>, limit=5)
+content_type = 'application/json'
+accept = 'application/json'
+
+# set up the configuration object with your API key:
+jcapiv1.configuration.api_key['x-api-key'] = '<YOUR_API_KEY>'
+
+# instantiate the API object for the group of endpoints you need to use
+# for instance for Systemusers API:
+systemusersAPI = jcapiv1.SystemusersApi()
+
+try:
+    # make an API call to retrieve all systemusers:
+    users = systemusersAPI.systemusers_list(content_type, accept)
+except ApiException as e:
+    print("Exception when calling SystemusersApi->systemusers_list: %s\n" % e)
+
+try:
+    # make an API call to modify a specific user's last name:
+    put_request = jcapiv1.Systemuserputpost()
+    put_request.lastname = 'Updated Last Name'
+    systemusersAPI.systemusers_put('<YOUR_SYSTEMUSER_ID>', content_type, accept, body=put_request)
+except ApiException as e:
+    print("Exception when calling SystemusersApi->systemusers_put: %s\n" % e)
+```
+
+API v2 example:
+```python
+import jcapiv2
+from jcapiv2.rest import ApiException
+
+...
+content_type = 'application/json'
+accept = 'application/json'
+group_id = '<YOUR_GROUP_ID>'
+
+# set up the configuration object with your API key:
+jcapiv2.configuration.api_key['x-api-key'] = '<YOUR_API_KEY>'
+
+# instantiate the API object for the group of endpoints you need to use
+# for instance for User Groups API:
+userGroupsAPI = jcapiv2.UserGroupsApi()
+
+try:
+    # make an API call to retrieve a specific user group:
+    userGroup = userGroupsAPI.groups_user_get(group_id, content_type, accept)
+except ApiException as e:
+    print("Exception when calling UserGroupsApi->groups_user_get: %s\n" % e)
+
 ```
