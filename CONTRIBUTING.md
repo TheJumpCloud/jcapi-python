@@ -11,11 +11,13 @@ We might want to consider using this Docker file once it supports different vers
 
 ### Generating the API Client
 
-Copy the API yaml files to the local `/input` directory.
+Copy the API swagger json/yaml spec files to the local `/input` directory.
 
-The API v1 yaml file can be found in the SI repo (`https://github.com/TheJumpCloud/SI/blob/master/routes/webui/api/index.yaml`) or exported directly from Stoplight.
+The API v1 json/yaml spec can be found using the StopLight export link on our documentation page: `https://docs.jumpcloud.com/1.0`.
 
-The API v2 yaml file can be found in the SI repo (`https://github.com/TheJumpCloud/SI/blob/master/routes/webui/api/v2/index.yaml`) or exported directly from Stoplight.
+The API v2 json/yaml spec can be found using the StopLight export link on our documentation page: `https://docs.jumpcloud.com/2.0`.
+
+Update the version number for each package in `config_v1.json` and `config_v2.json`.
 
 To generate the API v1 client, run the command below (assuming your API v1 yaml file is `input/index1.yaml`):  
 
