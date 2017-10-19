@@ -1,12 +1,12 @@
 ## JCAPI-Python
 
-### Description ###
+### Description
 
 This repository contains the Python client code for the JumpCloud API v1 and v2.
 It also provides the tools to generate the client code from the API yaml files, using swagger-codegen.
 For detailed instructions on how to generate the code, see the [Contributing](CONTRIBUTING.md) section.
 
-#### Installing the Python Client
+### Installing the Python Client
 
 You can run the following pip commands in order to install the packages directly from Github:
 ```
@@ -26,18 +26,17 @@ To install the package for all users:
 $ sudo python setup.py install
 ```
 
-#### Authentication and Authorization
+### Authentication and Authorization
 
 All endpoints support authentication via API key: see the [Authentication and Authorization](https://docs.jumpcloud.com/2.0/authentication-and-authorization/authentication-and-authorization-overview) section in our API docs.
 
-Some Systems endpoints (in both API v1 and v2) also support the System Context authorization which allows an individual system to manage its information and resource associations.
-More more information on System Context Authorization, please refer to the [System Context](https://docs.jumpcloud.com/2.0/authentication-and-authorization/system-context) section in our API docs.
+Some Systems endpoints (in both API v1 and v2) also support the [System Context authorization](https://docs.jumpcloud.com/2.0/authentication-and-authorization/system-context) which allows an individual system to manage its information and resource associations.
 
-#### Usage Examples
+### Usage Examples
 
 For more detailed instructions, refer to each API's respective README file ([README for API v1](jcapiv1/README.md) and [README for API v2](jcapiv2/README.md)) and the generated docs under each folder.
 
-API v1 example:
+#### API v1 example:
 ```python
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -68,7 +67,7 @@ except ApiException as e:
     print("Exception when calling SystemusersApi->systemusers_put: %s\n" % e)
 ```
 
-API v2 example:
+#### API v2 example:
 ```python
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -93,7 +92,7 @@ except ApiException as e:
 
 ```
 
-System Context Authorization example:
+#### System Context Authorization example:
 ```python
 import jcapiv2
 from jcapiv2.rest import ApiException
