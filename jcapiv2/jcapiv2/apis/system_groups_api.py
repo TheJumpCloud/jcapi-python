@@ -578,6 +578,8 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupMembersReq body:
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -607,12 +609,14 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupMembersReq body:
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -652,6 +656,10 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}

@@ -16,6 +16,7 @@ from __future__ import absolute_import
 # import models into sdk package
 from .models.active_directory_input import ActiveDirectoryInput
 from .models.active_directory_output import ActiveDirectoryOutput
+from .models.body import Body
 from .models.directory import Directory
 from .models.error import Error
 from .models.graph_connection import GraphConnection
@@ -25,8 +26,10 @@ from .models.graph_object_with_paths import GraphObjectWithPaths
 from .models.graph_type import GraphType
 from .models.group import Group
 from .models.group_type import GroupType
+from .models.inline_response_200 import InlineResponse200
 from .models.ldap_server_input import LdapServerInput
 from .models.ldap_server_output import LdapServerOutput
+from .models.oauth_code_input import OauthCodeInput
 from .models.policy import Policy
 from .models.policy_request import PolicyRequest
 from .models.policy_request_template import PolicyRequestTemplate
@@ -48,6 +51,12 @@ from .models.user_group_data_attributes import UserGroupDataAttributes
 from .models.user_group_data_attributes_posix_groups import UserGroupDataAttributesPosixGroups
 from .models.user_group_graph_management_req import UserGroupGraphManagementReq
 from .models.user_group_members_req import UserGroupMembersReq
+from .models.workday_input import WorkdayInput
+from .models.workday_output import WorkdayOutput
+from .models.workday_report_result import WorkdayReportResult
+from .models.workday_report_row import WorkdayReportRow
+from .models.workday_request import WorkdayRequest
+from .models.workdays_oauth import WorkdaysOauth
 
 # import apis into sdk package
 from .apis.active_directory_api import ActiveDirectoryApi
@@ -67,6 +76,7 @@ from .apis.system_groups_api import SystemGroupsApi
 from .apis.systems_api import SystemsApi
 from .apis.user_groups_api import UserGroupsApi
 from .apis.users_api import UsersApi
+from .apis.workday_api import WorkdayApi
 
 # import ApiClient
 from .api_client import ApiClient

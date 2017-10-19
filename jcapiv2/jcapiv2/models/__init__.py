@@ -16,6 +16,7 @@ from __future__ import absolute_import
 # import models into model package
 from .active_directory_input import ActiveDirectoryInput
 from .active_directory_output import ActiveDirectoryOutput
+from .body import Body
 from .directory import Directory
 from .error import Error
 from .graph_connection import GraphConnection
@@ -25,8 +26,10 @@ from .graph_object_with_paths import GraphObjectWithPaths
 from .graph_type import GraphType
 from .group import Group
 from .group_type import GroupType
+from .inline_response_200 import InlineResponse200
 from .ldap_server_input import LdapServerInput
 from .ldap_server_output import LdapServerOutput
+from .oauth_code_input import OauthCodeInput
 from .policy import Policy
 from .policy_request import PolicyRequest
 from .policy_request_template import PolicyRequestTemplate
@@ -48,3 +51,9 @@ from .user_group_data_attributes import UserGroupDataAttributes
 from .user_group_data_attributes_posix_groups import UserGroupDataAttributesPosixGroups
 from .user_group_graph_management_req import UserGroupGraphManagementReq
 from .user_group_members_req import UserGroupMembersReq
+from .workday_input import WorkdayInput
+from .workday_output import WorkdayOutput
+from .workday_report_result import WorkdayReportResult
+from .workday_report_row import WorkdayReportRow
+from .workday_request import WorkdayRequest
+from .workdays_oauth import WorkdaysOauth
