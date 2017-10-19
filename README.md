@@ -28,10 +28,10 @@ $ sudo python setup.py install
 
 #### Authentication and Authorization
 
-All endpoints support authentication via API key: `https://docs.jumpcloud.com/2.0/authentication-and-authorization/authentication-and-authorization-overview`
+All endpoints support authentication via API key: see the [Authentication and Authorization](https://docs.jumpcloud.com/2.0/authentication-and-authorization/authentication-and-authorization-overview) section in our API docs.
 
 Some Systems endpoints (in both API v1 and v2) also support the System Context authorization which allows an individual system to manage its information and resource associations.
-More more information on System Context Authorization, please refer to: `https://docs.jumpcloud.com/2.0/authentication-and-authorization/system-context`
+More more information on System Context Authorization, please refer to the [System Context](https://docs.jumpcloud.com/2.0/authentication-and-authorization/system-context) section in our API docs.
 
 #### Usage Examples
 
