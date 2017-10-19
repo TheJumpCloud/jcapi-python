@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 Create a Tag
 
-Create a tag.
+Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
 
 ### Example 
 ```python
