@@ -14,8 +14,8 @@ Method | HTTP request | Description
 [**policies_post**](PoliciesApi.md#policies_post) | **POST** /policies | Create a new Policy
 [**policies_put**](PoliciesApi.md#policies_put) | **PUT** /policies/{id} | Update an existing Policy
 [**policyresults_get**](PoliciesApi.md#policyresults_get) | **GET** /policyresults/{id} | Get a specific Policy Result.
-[**policyresults_list**](PoliciesApi.md#policyresults_list) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a given policy.
-[**policyresults_list_0**](PoliciesApi.md#policyresults_list_0) | **GET** /policyresults | Lists all the policy results for an organization.
+[**policyresults_list**](PoliciesApi.md#policyresults_list) | **GET** /policyresults | Lists all the policy results for an organization.
+[**policyresults_list_0**](PoliciesApi.md#policyresults_list_0) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a given policy.
 [**policytemplates_get**](PoliciesApi.md#policytemplates_get) | **GET** /policytemplates/{id} | Get a specific Policy Template
 [**policytemplates_list**](PoliciesApi.md#policytemplates_list) | **GET** /policytemplates | Lists all of the Policy Templates
 
@@ -609,7 +609,72 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policyresults_list**
-> list[PolicyResult] policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
+> list[PolicyResult] policyresults_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
+
+Lists all the policy results for an organization.
+
+### Example 
+```python
+from __future__ import print_statement
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.PoliciesApi()
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+fields = '' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional) (default to )
+filter = '' # str | Supported operators are: eq, ne, gt, ge, lt, le, between, search (optional) (default to )
+limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
+aggregate = '' # str |  (optional) (default to )
+
+try: 
+    # Lists all the policy results for an organization.
+    api_response = api_instance.policyresults_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PoliciesApi->policyresults_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **filter** | **str**| Supported operators are: eq, ne, gt, ge, lt, le, between, search | [optional] [default to ]
+ **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **aggregate** | **str**|  | [optional] [default to ]
+
+### Return type
+
+[**list[PolicyResult]**](PolicyResult.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policyresults_list_0**
+> list[PolicyResult] policyresults_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
 
 Lists all the policy results of a given policy.
 
@@ -640,73 +705,7 @@ aggregate = '' # str |  (optional) (default to )
 
 try: 
     # Lists all the policy results of a given policy.
-    api_response = api_instance.policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling PoliciesApi->policyresults_list: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **policy_id** | **str**|  | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
- **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]
- **filter** | **str**| Supported operators are: eq, ne, gt, ge, lt, le, between, search | [optional] [default to ]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
- **aggregate** | **str**|  | [optional] [default to ]
-
-### Return type
-
-[**list[PolicyResult]**](PolicyResult.md)
-
-### Authorization
-
-[x-api-key](../README.md#x-api-key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **policyresults_list_0**
-> list[PolicyResult] policyresults_list_0(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
-
-Lists all the policy results for an organization.
-
-### Example 
-```python
-from __future__ import print_statement
-import time
-import jcapiv2
-from jcapiv2.rest import ApiException
-from pprint import pprint
-
-# Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = jcapiv2.PoliciesApi()
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
-fields = '' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional) (default to )
-filter = '' # str | Supported operators are: eq, ne, gt, ge, lt, le, between, search (optional) (default to )
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
-aggregate = '' # str |  (optional) (default to )
-
-try: 
-    # Lists all the policy results for an organization.
-    api_response = api_instance.policyresults_list_0(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
+    api_response = api_instance.policyresults_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policyresults_list_0: %s\n" % e)
@@ -716,6 +715,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **policy_id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]

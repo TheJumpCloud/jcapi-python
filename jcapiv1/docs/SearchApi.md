@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 List System Users
 
-Return System Users in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system.
+Return System Users in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system.  ### Example  ##### Find a System User by username  ``` curl \\   -d '{\"filter\": [{\"username\" : \"bob\"}]}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/search/systemusers\" ```
 
 ### Example 
 ```python

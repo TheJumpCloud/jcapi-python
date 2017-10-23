@@ -57,6 +57,8 @@ class SystemsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: System
                  If the method is called asynchronously,
                  returns the request thread.
@@ -85,12 +87,14 @@ class SystemsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: System
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -130,6 +134,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}
@@ -182,6 +190,8 @@ class SystemsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: System
                  If the method is called asynchronously,
                  returns the request thread.
@@ -214,12 +224,14 @@ class SystemsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: System
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort']
+        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -267,6 +279,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}
@@ -446,6 +462,8 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemput body:
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -475,12 +493,14 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemput body:
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept', 'body', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -520,6 +540,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}
@@ -556,7 +580,7 @@ class SystemsApi(object):
     def systems_systemusers_binding_list(self, id, content_type, accept, **kwargs):
         """
         List system user bindings
-        List system user bindings for a specific system in a system and user binding format.
+        List system user bindings for a specific system in a system and user binding format.  ### Example  #### List system user bindings for specific system  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -574,7 +598,7 @@ class SystemsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :return: object
+        :return: Systemuserbinding
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -588,7 +612,7 @@ class SystemsApi(object):
     def systems_systemusers_binding_list_with_http_info(self, id, content_type, accept, **kwargs):
         """
         List system user bindings
-        List system user bindings for a specific system in a system and user binding format.
+        List system user bindings for a specific system in a system and user binding format.  ### Example  #### List system user bindings for specific system  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -606,7 +630,7 @@ class SystemsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :return: object
+        :return: Systemuserbinding
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -682,7 +706,7 @@ class SystemsApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='object',
+                                        response_type='Systemuserbinding',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -693,7 +717,7 @@ class SystemsApi(object):
     def systems_systemusers_binding_put(self, id, content_type, accept, **kwargs):
         """
         Update a system's or user's binding
-        Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).
+        Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) a system user to (from) a system  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_USER_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_USER_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -722,7 +746,7 @@ class SystemsApi(object):
     def systems_systemusers_binding_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update a system's or user's binding
-        Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).
+        Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) a system user to (from) a system  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_USER_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_USER_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

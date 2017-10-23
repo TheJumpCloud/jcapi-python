@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_members_post**
-> graph_system_group_members_post(group_id, content_type, accept, body=body)
+> graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization)
 
 Manage the members of a System Group
 
@@ -290,10 +290,12 @@ group_id = 'group_id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupMembersReq() # SystemGroupMembersReq |  (optional)
+date = 'date_example' # str | Current date header for the System Context API (optional)
+authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 
 try: 
     # Manage the members of a System Group
-    api_instance.graph_system_group_members_post(group_id, content_type, accept, body=body)
+    api_instance.graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization)
 except ApiException as e:
     print("Exception when calling SystemGroupsApi->graph_system_group_members_post: %s\n" % e)
 ```
@@ -306,6 +308,8 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**SystemGroupMembersReq**](SystemGroupMembersReq.md)|  | [optional] 
+ **date** | **str**| Current date header for the System Context API | [optional] 
+ **authorization** | **str**| Authorization header for the System Context API | [optional] 
 
 ### Return type
 

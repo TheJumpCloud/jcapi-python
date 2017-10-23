@@ -115,7 +115,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list
 
-        Lists all the policy results of a given policy.
+        Lists all the policy results for an organization.
         """
         pass
 
@@ -123,7 +123,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list_0
 
-        Lists all the policy results for an organization.
+        Lists all the policy results of a given policy.
         """
         pass
 

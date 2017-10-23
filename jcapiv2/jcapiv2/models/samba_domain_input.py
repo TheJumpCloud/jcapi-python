@@ -63,6 +63,8 @@ class SambaDomainInput(object):
         :param name: The name of this SambaDomainInput.
         :type: str
         """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
 
         self._name = name
 
@@ -86,6 +88,8 @@ class SambaDomainInput(object):
         :param sid: The sid of this SambaDomainInput.
         :type: str
         """
+        if sid is None:
+            raise ValueError("Invalid value for `sid`, must not be `None`")
 
         self._sid = sid
 

@@ -60,6 +60,8 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -91,12 +93,14 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -146,6 +150,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}
@@ -195,6 +203,8 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -224,12 +234,14 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'body']
+        all_params = ['system_id', 'content_type', 'accept', 'body', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -269,6 +281,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}
@@ -321,6 +337,8 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -351,12 +369,14 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -400,6 +420,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}
@@ -579,6 +603,8 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -609,12 +635,14 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param str date: Current date header for the System Context API
+        :param str authorization: Authorization header for the System Context API
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -658,6 +686,10 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'date' in params:
+            header_params['Date'] = params['date']
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
 
         form_params = []
         local_var_files = {}

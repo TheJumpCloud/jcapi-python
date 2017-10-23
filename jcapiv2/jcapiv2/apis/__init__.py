@@ -18,3 +18,4 @@ from .system_groups_api import SystemGroupsApi
 from .systems_api import SystemsApi
 from .user_groups_api import UserGroupsApi
 from .users_api import UsersApi
+from .workday_api import WorkdayApi

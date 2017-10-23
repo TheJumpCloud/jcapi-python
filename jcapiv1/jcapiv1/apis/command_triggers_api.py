@@ -42,7 +42,8 @@ class CommandTriggersApi(object):
 
     def command_trigger_webhook_post(self, triggername, content_type, accept, **kwargs):
         """
-        Run a Command assigned to a webhook
+        Launch a command via a Trigger
+        ### Examples  ##### Launch a Command via a Trigger  ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\      \"https://console.jumpcloud.com/api/command/trigger/[TRIGGER_NAME_HERE]\" ``` ##### Launch a Command via a Trigger passing a JSON object to the command ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\      -H 'Accept: application/json' \\      -d '{ \"srcip\":\"192.168.2.32\", \"attack\":\"Cross Site Scripting Attempt\" }' \\      \"https://console.jumpcloud.com/api/command/trigger/[TRIGGER_NAME_HERE]\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -69,7 +70,8 @@ class CommandTriggersApi(object):
 
     def command_trigger_webhook_post_with_http_info(self, triggername, content_type, accept, **kwargs):
         """
-        Run a Command assigned to a webhook
+        Launch a command via a Trigger
+        ### Examples  ##### Launch a Command via a Trigger  ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\      \"https://console.jumpcloud.com/api/command/trigger/[TRIGGER_NAME_HERE]\" ``` ##### Launch a Command via a Trigger passing a JSON object to the command ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\      -H 'Accept: application/json' \\      -d '{ \"srcip\":\"192.168.2.32\", \"attack\":\"Cross Site Scripting Attempt\" }' \\      \"https://console.jumpcloud.com/api/command/trigger/[TRIGGER_NAME_HERE]\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

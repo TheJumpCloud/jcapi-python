@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **systems_delete**
-> System systems_delete(id, content_type, accept)
+> System systems_delete(id, content_type, accept, date=date, authorization=authorization)
 
 Delete a System
 
@@ -37,10 +37,12 @@ api_instance = jcapiv1.SystemsApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+date = 'date_example' # str | Current date header for the System Context API (optional)
+authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 
 try: 
     # Delete a System
-    api_response = api_instance.systems_delete(id, content_type, accept)
+    api_response = api_instance.systems_delete(id, content_type, accept, date=date, authorization=authorization)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_delete: %s\n" % e)
@@ -53,6 +55,8 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **date** | **str**| Current date header for the System Context API | [optional] 
+ **authorization** | **str**| Authorization header for the System Context API | [optional] 
 
 ### Return type
 
@@ -70,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_get**
-> System systems_get(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> System systems_get(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, date=date, authorization=authorization)
 
 List an individual system
 
@@ -98,10 +102,12 @@ fields = '' # str | The comma separated fields included in the returned records.
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
+date = 'date_example' # str | Current date header for the System Context API (optional)
+authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 
 try: 
     # List an individual system
-    api_response = api_instance.systems_get(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.systems_get(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, date=date, authorization=authorization)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_get: %s\n" % e)
@@ -118,6 +124,8 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **date** | **str**| Current date header for the System Context API | [optional] 
+ **authorization** | **str**| Authorization header for the System Context API | [optional] 
 
 ### Return type
 
@@ -198,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_put**
-> systems_put(id, content_type, accept, body=body)
+> systems_put(id, content_type, accept, body=body, date=date, authorization=authorization)
 
 Update a system
 
@@ -223,10 +231,12 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Systemput() # Systemput |  (optional)
+date = 'date_example' # str | Current date header for the System Context API (optional)
+authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 
 try: 
     # Update a system
-    api_instance.systems_put(id, content_type, accept, body=body)
+    api_instance.systems_put(id, content_type, accept, body=body, date=date, authorization=authorization)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_put: %s\n" % e)
 ```
@@ -239,6 +249,8 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Systemput**](Systemput.md)|  | [optional] 
+ **date** | **str**| Current date header for the System Context API | [optional] 
+ **authorization** | **str**| Authorization header for the System Context API | [optional] 
 
 ### Return type
 
@@ -256,11 +268,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_systemusers_binding_list**
-> object systems_systemusers_binding_list(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Systemuserbinding systems_systemusers_binding_list(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
 
 List system user bindings
 
-List system user bindings for a specific system in a system and user binding format.
+List system user bindings for a specific system in a system and user binding format.  ### Example  #### List system user bindings for specific system  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers\" ```
 
 ### Example 
 ```python
@@ -307,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**Systemuserbinding**](Systemuserbinding.md)
 
 ### Authorization
 
@@ -325,7 +337,7 @@ Name | Type | Description  | Notes
 
 Update a system's or user's binding
 
-Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).
+Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) a system user to (from) a system  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_USER_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_USER_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers
 
 ### Example 
 ```python

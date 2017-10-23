@@ -1284,20 +1284,19 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def policyresults_list(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list(self, content_type, accept, **kwargs):
         """
-        Lists all the policy results of a given policy.
+        Lists all the policy results for an organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list(content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -1312,25 +1311,24 @@ class PoliciesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.policyresults_list_with_http_info(policy_id, content_type, accept, **kwargs)
+            return self.policyresults_list_with_http_info(content_type, accept, **kwargs)
         else:
-            (data) = self.policyresults_list_with_http_info(policy_id, content_type, accept, **kwargs)
+            (data) = self.policyresults_list_with_http_info(content_type, accept, **kwargs)
             return data
 
-    def policyresults_list_with_http_info(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list_with_http_info(self, content_type, accept, **kwargs):
         """
-        Lists all the policy results of a given policy.
+        Lists all the policy results for an organization.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_with_http_info(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_with_http_info(content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -1344,7 +1342,7 @@ class PoliciesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1359,9 +1357,6 @@ class PoliciesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'policy_id' is set
-        if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `policyresults_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list`")
@@ -1372,10 +1367,8 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/policyresults'.replace('{format}', 'json')
+        resource_path = '/policyresults'.replace('{format}', 'json')
         path_params = {}
-        if 'policy_id' in params:
-            path_params['policy_id'] = params['policy_id']
 
         query_params = {}
         if 'fields' in params:
@@ -1427,19 +1420,20 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def policyresults_list_0(self, content_type, accept, **kwargs):
+    def policyresults_list_0(self, policy_id, content_type, accept, **kwargs):
         """
-        Lists all the policy results for an organization.
+        Lists all the policy results of a given policy.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_0(content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_0(policy_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -1454,24 +1448,25 @@ class PoliciesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)
+            return self.policyresults_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
         else:
-            (data) = self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)
+            (data) = self.policyresults_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
             return data
 
-    def policyresults_list_0_with_http_info(self, content_type, accept, **kwargs):
+    def policyresults_list_0_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
-        Lists all the policy results for an organization.
+        Lists all the policy results of a given policy.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_0_with_http_info(content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_0_with_http_info(policy_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -1485,7 +1480,7 @@ class PoliciesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
+        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1500,6 +1495,9 @@ class PoliciesApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `policyresults_list_0`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list_0`")
@@ -1510,8 +1508,10 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policyresults'.replace('{format}', 'json')
+        resource_path = '/policies/{policy_id}/policyresults'.replace('{format}', 'json')
         path_params = {}
+        if 'policy_id' in params:
+            path_params['policy_id'] = params['policy_id']
 
         query_params = {}
         if 'fields' in params:

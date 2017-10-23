@@ -35,7 +35,7 @@ class TestCommandTriggersApi(unittest.TestCase):
         """
         Test case for command_trigger_webhook_post
 
-        Run a Command assigned to a webhook
+        Launch a command via a Trigger
         """
         pass
 

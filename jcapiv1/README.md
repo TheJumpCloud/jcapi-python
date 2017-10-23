@@ -83,7 +83,7 @@ Class | Method | HTTP request | Description
 *CommandResultsApi* | [**command_results_delete**](docs/CommandResultsApi.md#command_results_delete) | **DELETE** /commandresults/{id} | Delete a Command result
 *CommandResultsApi* | [**command_results_get**](docs/CommandResultsApi.md#command_results_get) | **GET** /commandresults/{id} | List an individual Command result
 *CommandResultsApi* | [**command_results_list**](docs/CommandResultsApi.md#command_results_list) | **GET** /commandresults | List all Command Results
-*CommandTriggersApi* | [**command_trigger_webhook_post**](docs/CommandTriggersApi.md#command_trigger_webhook_post) | **POST** /command/trigger/{triggername} | Run a Command assigned to a webhook
+*CommandTriggersApi* | [**command_trigger_webhook_post**](docs/CommandTriggersApi.md#command_trigger_webhook_post) | **POST** /command/trigger/{triggername} | Launch a command via a Trigger
 *CommandsApi* | [**commands_delete**](docs/CommandsApi.md#commands_delete) | **DELETE** /commands/{id} | Delete a Command
 *CommandsApi* | [**commands_get**](docs/CommandsApi.md#commands_get) | **GET** /commands/{id} | List an individual Command
 *CommandsApi* | [**commands_list**](docs/CommandsApi.md#commands_list) | **GET** /commands/ | List All Commands
