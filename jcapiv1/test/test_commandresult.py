@@ -35,7 +35,9 @@ class TestCommandresult(unittest.TestCase):
         """
         Test Commandresult
         """
-        model = jcapiv1.models.commandresult.Commandresult()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.commandresult.Commandresult()
+        pass
 
 
 if __name__ == '__main__':

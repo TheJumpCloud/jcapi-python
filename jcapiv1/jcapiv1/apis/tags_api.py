@@ -118,12 +118,11 @@ class TagsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/tags/{name}'.replace('{format}', 'json')
         path_params = {}
         if 'name' in params:
             path_params['name'] = params['name']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -146,7 +145,7 @@ class TagsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/tags/{name}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -247,20 +246,19 @@ class TagsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/Tags/{name}'.replace('{format}', 'json')
         path_params = {}
         if 'name' in params:
             path_params['name'] = params['name']
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -283,7 +281,7 @@ class TagsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/Tags/{name}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -379,18 +377,17 @@ class TagsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/tags'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -413,7 +410,7 @@ class TagsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/tags', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -503,10 +500,9 @@ class TagsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/tags'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -531,7 +527,7 @@ class TagsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/tags', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -626,12 +622,11 @@ class TagsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/Tag/{name}'.replace('{format}', 'json')
         path_params = {}
         if 'name' in params:
             path_params['name'] = params['name']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -656,7 +651,7 @@ class TagsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/Tag/{name}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,

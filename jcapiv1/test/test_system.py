@@ -35,7 +35,9 @@ class TestSystem(unittest.TestCase):
         """
         Test System
         """
-        model = jcapiv1.models.system.System()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.system.System()
+        pass
 
 
 if __name__ == '__main__':

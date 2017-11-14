@@ -35,7 +35,9 @@ class TestApplicationslist(unittest.TestCase):
         """
         Test Applicationslist
         """
-        model = jcapiv1.models.applicationslist.Applicationslist()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.applicationslist.Applicationslist()
+        pass
 
 
 if __name__ == '__main__':

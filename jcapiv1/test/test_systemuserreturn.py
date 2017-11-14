@@ -35,7 +35,9 @@ class TestSystemuserreturn(unittest.TestCase):
         """
         Test Systemuserreturn
         """
-        model = jcapiv1.models.systemuserreturn.Systemuserreturn()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.systemuserreturn.Systemuserreturn()
+        pass
 
 
 if __name__ == '__main__':

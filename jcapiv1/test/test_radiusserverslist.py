@@ -35,7 +35,9 @@ class TestRadiusserverslist(unittest.TestCase):
         """
         Test Radiusserverslist
         """
-        model = jcapiv1.models.radiusserverslist.Radiusserverslist()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.radiusserverslist.Radiusserverslist()
+        pass
 
 
 if __name__ == '__main__':

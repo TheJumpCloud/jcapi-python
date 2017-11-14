@@ -35,7 +35,9 @@ class TestTagpost(unittest.TestCase):
         """
         Test Tagpost
         """
-        model = jcapiv1.models.tagpost.Tagpost()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.tagpost.Tagpost()
+        pass
 
 
 if __name__ == '__main__':

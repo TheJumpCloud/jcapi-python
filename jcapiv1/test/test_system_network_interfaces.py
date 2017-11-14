@@ -35,7 +35,9 @@ class TestSystemNetworkInterfaces(unittest.TestCase):
         """
         Test SystemNetworkInterfaces
         """
-        model = jcapiv1.models.system_network_interfaces.SystemNetworkInterfaces()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.system_network_interfaces.SystemNetworkInterfaces()
+        pass
 
 
 if __name__ == '__main__':

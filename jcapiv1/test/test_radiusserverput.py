@@ -35,7 +35,9 @@ class TestRadiusserverput(unittest.TestCase):
         """
         Test Radiusserverput
         """
-        model = jcapiv1.models.radiusserverput.Radiusserverput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.radiusserverput.Radiusserverput()
+        pass
 
 
 if __name__ == '__main__':

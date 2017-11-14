@@ -35,7 +35,9 @@ class TestSystemuser(unittest.TestCase):
         """
         Test Systemuser
         """
-        model = jcapiv1.models.systemuser.Systemuser()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.systemuser.Systemuser()
+        pass
 
 
 if __name__ == '__main__':

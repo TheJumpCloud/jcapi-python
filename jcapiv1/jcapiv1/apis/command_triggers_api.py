@@ -118,12 +118,11 @@ class CommandTriggersApi(object):
 
         collection_formats = {}
 
-        resource_path = '/command/trigger/{triggername}'.replace('{format}', 'json')
         path_params = {}
         if 'triggername' in params:
             path_params['triggername'] = params['triggername']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -146,7 +145,7 @@ class CommandTriggersApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/command/trigger/{triggername}', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,

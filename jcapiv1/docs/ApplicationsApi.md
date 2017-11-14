@@ -16,7 +16,7 @@ The endpoint is used to return all your SSO Applications.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException

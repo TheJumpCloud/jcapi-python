@@ -35,7 +35,9 @@ class TestSystemuserbinding(unittest.TestCase):
         """
         Test Systemuserbinding
         """
-        model = jcapiv1.models.systemuserbinding.Systemuserbinding()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.systemuserbinding.Systemuserbinding()
+        pass
 
 
 if __name__ == '__main__':

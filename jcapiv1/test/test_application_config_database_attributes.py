@@ -35,7 +35,9 @@ class TestApplicationConfigDatabaseAttributes(unittest.TestCase):
         """
         Test ApplicationConfigDatabaseAttributes
         """
-        model = jcapiv1.models.application_config_database_attributes.ApplicationConfigDatabaseAttributes()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.application_config_database_attributes.ApplicationConfigDatabaseAttributes()
+        pass
 
 
 if __name__ == '__main__':

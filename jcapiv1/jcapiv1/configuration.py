@@ -86,6 +86,11 @@ class Configuration(object):
         # client key file
         self.key_file = None
 
+        # Proxy URL
+        self.proxy = None
+        # Safe chars for path_param
+        self.safe_chars_for_path_param = ''
+
     @property
     def logger_file(self):
         """
@@ -222,5 +227,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 1.0.1".\
                format(env=sys.platform, pyversion=sys.version)

@@ -35,7 +35,9 @@ class TestApplicationConfig(unittest.TestCase):
         """
         Test ApplicationConfig
         """
-        model = jcapiv1.models.application_config.ApplicationConfig()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.application_config.ApplicationConfig()
+        pass
 
 
 if __name__ == '__main__':

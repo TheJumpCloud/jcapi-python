@@ -122,12 +122,11 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -154,7 +153,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/systems/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -259,20 +258,19 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -299,7 +297,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -395,18 +393,17 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -429,7 +426,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -528,12 +525,11 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -562,7 +558,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/systems/{id}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -663,20 +659,19 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{id}/systemusers'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -699,7 +694,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{id}/systemusers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -794,12 +789,11 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{id}/systemusers'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -824,7 +818,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/systems/{id}/systemusers', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,
