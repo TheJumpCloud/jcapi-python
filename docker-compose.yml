@@ -1,7 +1,7 @@
 version: '2'
 services:
   swagger-codegen:
-    image: jimschubert/swagger-codegen-cli:2.2.2
+    image: jimschubert/swagger-codegen-cli:2.2.3
     volumes:
       - ./input:/swagger-api/yaml # volume for input yaml files
       - ./output:/swagger-api/out # volume for generated files
