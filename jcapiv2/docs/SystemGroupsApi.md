@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **graph_system_group_associations_list**
-> list[GraphConnection] graph_system_group_associations_list(group_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_system_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
 
 List the associations of a System Group
 
@@ -30,7 +30,7 @@ This endpoint returns the _direct_ associations of a System Group.  A direct ass
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -44,15 +44,15 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.SystemGroupsApi()
 group_id = 'group_id_example' # str | ObjectID of the System Group.
-targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
     # List the associations of a System Group
-    api_response = api_instance.graph_system_group_associations_list(group_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemGroupsApi->graph_system_group_associations_list: %s\n" % e)
@@ -63,9 +63,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the System Group. | 
- **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
@@ -93,7 +93,7 @@ This endpoint allows you to manage the _direct_ associations of a System Group. 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -151,7 +151,7 @@ This endpoint returns all System Groups a System Group is a member of.  This end
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -212,7 +212,7 @@ This endpoint returns the system members of a System Group.  #### Sample Request
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -273,7 +273,7 @@ This endpoint allows you to manage the system members of a System Group.  #### S
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -335,7 +335,7 @@ This endpoint returns all Systems that are a member of this System Group.  #### 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -396,7 +396,7 @@ This endpoint will return Policies associated with a System Group. Each element 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -457,7 +457,7 @@ This endpoint will return Users associated with a System Group. Each element wil
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -518,7 +518,7 @@ This endpoint will return User Groups associated with a System Group. Each eleme
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -579,7 +579,7 @@ This endpoint allows you to delete a System Group.  #### Sample Request ``` http
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -635,7 +635,7 @@ This endpoint returns the details of a System Group.  #### Sample Request ``` ht
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -692,7 +692,7 @@ This endpoint returns all System Groups.  Available filter fields:   - `name`   
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -757,7 +757,7 @@ We have hidden PATCH on the systemgroups and usergroups for now; we don't have t
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -816,7 +816,7 @@ This endpoint allows you to create a new System Group.  #### Sample Request  ```
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -873,7 +873,7 @@ This enpoint allows you to do a full update of the System Group.  #### Sample Re
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

@@ -4,6 +4,8 @@ All URIs are relative to *https://console.jumpcloud.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**workdays_authorize**](WorkdayApi.md#workdays_authorize) | **POST** /workdays/{id}/authorize | Authorize Workday
+[**workdays_deauthorize**](WorkdayApi.md#workdays_deauthorize) | **POST** /workdays/{id}/deauthorize | Deauthorize Workday
 [**workdays_delete**](WorkdayApi.md#workdays_delete) | **DELETE** /workdays/{id} | Delete Workday
 [**workdays_get**](WorkdayApi.md#workdays_get) | **GET** /workdays/{id} | Get Workday
 [**workdays_list**](WorkdayApi.md#workdays_list) | **GET** /workdays | List Workdays
@@ -13,16 +15,16 @@ Method | HTTP request | Description
 [**workdays_settings**](WorkdayApi.md#workdays_settings) | **GET** /workdays/settings | Get Workday Settings
 
 
-# **workdays_delete**
-> workdays_delete(id, content_type, accept, body=body)
+# **workdays_authorize**
+> workdays_authorize(id, content_type, accept, body=body)
 
-Delete Workday
+Authorize Workday
 
-This endpoint allows you to delete a workday
+Adds an authorization method to a workday instance
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -38,11 +40,120 @@ api_instance = jcapiv2.WorkdayApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.WorkdayRequest() # WorkdayRequest |  (optional)
+body = jcapiv2.AuthInput() # AuthInput |  (optional)
+
+try: 
+    # Authorize Workday
+    api_instance.workdays_authorize(id, content_type, accept, body=body)
+except ApiException as e:
+    print("Exception when calling WorkdayApi->workdays_authorize: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **body** | [**AuthInput**](AuthInput.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **workdays_deauthorize**
+> workdays_deauthorize(id, content_type, accept)
+
+Deauthorize Workday
+
+Removes any and all authorization methods from the workday instance
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = jcapiv2.WorkdayApi()
+id = 'id_example' # str | 
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+
+try: 
+    # Deauthorize Workday
+    api_instance.workdays_deauthorize(id, content_type, accept)
+except ApiException as e:
+    print("Exception when calling WorkdayApi->workdays_deauthorize: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **workdays_delete**
+> object workdays_delete(id, content_type, accept)
+
+Delete Workday
+
+This endpoint allows you to delete an instance of Workday.
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.WorkdayApi()
+id = 'id_example' # str | 
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
 
 try: 
     # Delete Workday
-    api_instance.workdays_delete(id, content_type, accept, body=body)
+    api_response = api_instance.workdays_delete(id, content_type, accept)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkdayApi->workdays_delete: %s\n" % e)
 ```
@@ -54,11 +165,10 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**WorkdayRequest**](WorkdayRequest.md)|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -76,9 +186,11 @@ void (empty response body)
 
 Get Workday
 
+This endpoint will return  all the available information about an instance of Workday.
+
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -131,9 +243,11 @@ Name | Type | Description  | Notes
 
 List Workdays
 
+This endpoint will return  all the available information about all your instances of Workday.
+
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -194,11 +308,11 @@ Name | Type | Description  | Notes
 
 Create new Workday
 
-This endpoint allows you to create a new workday object
+This endpoint allows you to create a new workday instance.  You must supply a username and password for Basic Authentication that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -213,7 +327,7 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.WorkdayApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.Body() # Body |  (optional)
+body = jcapiv2.Body1() # Body1 |  (optional)
 
 try: 
     # Create new Workday
@@ -229,7 +343,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**Body**](Body.md)|  | [optional] 
+ **body** | [**Body1**](Body1.md)|  | [optional] 
 
 ### Return type
 
@@ -251,11 +365,11 @@ Name | Type | Description  | Notes
 
 Update Workday
 
-This endpoint allows you to update the name and report_url for a Workday Authentication Edit
+This endpoint allows you to update the name and Custom Report URL for a Workday Instance.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -271,7 +385,7 @@ api_instance = jcapiv2.WorkdayApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.WorkdayInput() # WorkdayInput |  (optional)
+body = jcapiv2.Body() # Body |  (optional)
 
 try: 
     # Update Workday
@@ -288,7 +402,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**WorkdayInput**](WorkdayInput.md)|  | [optional] 
+ **body** | [**Body**](Body.md)|  | [optional] 
 
 ### Return type
 
@@ -310,9 +424,11 @@ Name | Type | Description  | Notes
 
 Get Workday Report Results
 
+This endpoint will return all of the data available in your WorkDay Custom Report that has been associated with your WorkDay Instance.
+
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -373,11 +489,11 @@ Name | Type | Description  | Notes
 
 Get Workday Settings
 
-This endpoint allows you to obtain all settings needed for creating a workday instance, namely the URL to initiate an OAuth negotiation
+This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

@@ -35,7 +35,9 @@ class TestWorkdayReportRow(unittest.TestCase):
         """
         Test WorkdayReportRow
         """
-        model = jcapiv2.models.workday_report_row.WorkdayReportRow()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.workday_report_row.WorkdayReportRow()
+        pass
 
 
 if __name__ == '__main__':

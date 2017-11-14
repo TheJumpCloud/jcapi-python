@@ -35,7 +35,9 @@ class TestSystemGroupGraphManagementReq(unittest.TestCase):
         """
         Test SystemGroupGraphManagementReq
         """
-        model = jcapiv2.models.system_group_graph_management_req.SystemGroupGraphManagementReq()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.system_group_graph_management_req.SystemGroupGraphManagementReq()
+        pass
 
 
 if __name__ == '__main__':

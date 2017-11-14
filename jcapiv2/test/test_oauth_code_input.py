@@ -35,7 +35,9 @@ class TestOauthCodeInput(unittest.TestCase):
         """
         Test OauthCodeInput
         """
-        model = jcapiv2.models.oauth_code_input.OauthCodeInput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.oauth_code_input.OauthCodeInput()
+        pass
 
 
 if __name__ == '__main__':

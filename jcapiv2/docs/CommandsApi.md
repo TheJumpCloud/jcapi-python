@@ -19,7 +19,7 @@ This endpoint will return the _direct_ associations of this Command.  A direct a
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -82,7 +82,7 @@ This endpoint will allow you to manage the _direct_ associations of this Command
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -140,7 +140,7 @@ This endpoint will return Systems associated with a Command. Each element will c
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -201,7 +201,7 @@ This endpoint will return System Groups associated with a Command. Each element 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

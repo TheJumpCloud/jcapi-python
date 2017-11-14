@@ -15,8 +15,12 @@ from __future__ import absolute_import
 
 # import models into sdk package
 from .models.active_directory_input import ActiveDirectoryInput
-from .models.active_directory_output import ActiveDirectoryOutput
+from .models.auth_info import AuthInfo
+from .models.auth_input import AuthInput
+from .models.authinput_basic import AuthinputBasic
+from .models.authinput_oauth import AuthinputOauth
 from .models.body import Body
+from .models.body_1 import Body1
 from .models.directory import Directory
 from .models.error import Error
 from .models.graph_connection import GraphConnection
@@ -28,7 +32,6 @@ from .models.group import Group
 from .models.group_type import GroupType
 from .models.inline_response_200 import InlineResponse200
 from .models.ldap_server_input import LdapServerInput
-from .models.ldap_server_output import LdapServerOutput
 from .models.oauth_code_input import OauthCodeInput
 from .models.policy import Policy
 from .models.policy_request import PolicyRequest
@@ -40,11 +43,12 @@ from .models.policy_template_with_details import PolicyTemplateWithDetails
 from .models.policy_value import PolicyValue
 from .models.policy_with_details import PolicyWithDetails
 from .models.samba_domain_input import SambaDomainInput
-from .models.samba_domain_output import SambaDomainOutput
+from .models.system_graph_management_req import SystemGraphManagementReq
 from .models.system_group import SystemGroup
 from .models.system_group_data import SystemGroupData
 from .models.system_group_graph_management_req import SystemGroupGraphManagementReq
 from .models.system_group_members_req import SystemGroupMembersReq
+from .models.user_graph_management_req import UserGraphManagementReq
 from .models.user_group import UserGroup
 from .models.user_group_data import UserGroupData
 from .models.user_group_data_attributes import UserGroupDataAttributes
@@ -56,7 +60,10 @@ from .models.workday_output import WorkdayOutput
 from .models.workday_report_result import WorkdayReportResult
 from .models.workday_report_row import WorkdayReportRow
 from .models.workday_request import WorkdayRequest
-from .models.workdays_oauth import WorkdaysOauth
+from .models.workdayoutput_auth import WorkdayoutputAuth
+from .models.active_directory_output import ActiveDirectoryOutput
+from .models.ldap_server_output import LdapServerOutput
+from .models.samba_domain_output import SambaDomainOutput
 
 # import apis into sdk package
 from .apis.active_directory_api import ActiveDirectoryApi
@@ -72,8 +79,12 @@ from .apis.policies_api import PoliciesApi
 from .apis.policytemplates_api import PolicytemplatesApi
 from .apis.radius_servers_api import RADIUSServersApi
 from .apis.samba_domains_api import SambaDomainsApi
+from .apis.system_group_associations_api import SystemGroupAssociationsApi
+from .apis.system_group_members_membership_api import SystemGroupMembersMembershipApi
 from .apis.system_groups_api import SystemGroupsApi
 from .apis.systems_api import SystemsApi
+from .apis.user_group_associations_api import UserGroupAssociationsApi
+from .apis.user_group_members_membership_api import UserGroupMembersMembershipApi
 from .apis.user_groups_api import UserGroupsApi
 from .apis.users_api import UsersApi
 from .apis.workday_api import WorkdayApi

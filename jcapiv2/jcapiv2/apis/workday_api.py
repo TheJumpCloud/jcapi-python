@@ -40,10 +40,254 @@ class WorkdayApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def workdays_authorize(self, id, content_type, accept, **kwargs):
+        """
+        Authorize Workday
+        Adds an authorization method to a workday instance
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.workdays_authorize(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param AuthInput body:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.workdays_authorize_with_http_info(id, content_type, accept, **kwargs)
+        else:
+            (data) = self.workdays_authorize_with_http_info(id, content_type, accept, **kwargs)
+            return data
+
+    def workdays_authorize_with_http_info(self, id, content_type, accept, **kwargs):
+        """
+        Authorize Workday
+        Adds an authorization method to a workday instance
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.workdays_authorize_with_http_info(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param AuthInput body:
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method workdays_authorize" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `workdays_authorize`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `workdays_authorize`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `workdays_authorize`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/workdays/{id}/authorize', 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def workdays_deauthorize(self, id, content_type, accept, **kwargs):
+        """
+        Deauthorize Workday
+        Removes any and all authorization methods from the workday instance
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.workdays_deauthorize(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.workdays_deauthorize_with_http_info(id, content_type, accept, **kwargs)
+        else:
+            (data) = self.workdays_deauthorize_with_http_info(id, content_type, accept, **kwargs)
+            return data
+
+    def workdays_deauthorize_with_http_info(self, id, content_type, accept, **kwargs):
+        """
+        Deauthorize Workday
+        Removes any and all authorization methods from the workday instance
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.workdays_deauthorize_with_http_info(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'content_type', 'accept']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method workdays_deauthorize" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `workdays_deauthorize`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `workdays_deauthorize`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `workdays_deauthorize`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/workdays/{id}/deauthorize', 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def workdays_delete(self, id, content_type, accept, **kwargs):
         """
         Delete Workday
-        This endpoint allows you to delete a workday
+        This endpoint allows you to delete an instance of Workday.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -57,8 +301,7 @@ class WorkdayApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param WorkdayRequest body:
-        :return: None
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -72,7 +315,7 @@ class WorkdayApi(object):
     def workdays_delete_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Delete Workday
-        This endpoint allows you to delete a workday
+        This endpoint allows you to delete an instance of Workday.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -86,13 +329,12 @@ class WorkdayApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param WorkdayRequest body:
-        :return: None
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -120,12 +362,11 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -137,8 +378,6 @@ class WorkdayApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
             select_header_accept(['application/json'])
@@ -150,14 +389,14 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/workdays/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type=None,
+                                        response_type='object',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -168,6 +407,7 @@ class WorkdayApi(object):
     def workdays_get(self, id, content_type, accept, **kwargs):
         """
         Get Workday
+        This endpoint will return  all the available information about an instance of Workday.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -195,6 +435,7 @@ class WorkdayApi(object):
     def workdays_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Get Workday
+        This endpoint will return  all the available information about an instance of Workday.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -241,12 +482,11 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -269,7 +509,7 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/workdays/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -287,6 +527,7 @@ class WorkdayApi(object):
     def workdays_list(self, content_type, accept, **kwargs):
         """
         List Workdays
+        This endpoint will return  all the available information about all your instances of Workday.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -318,6 +559,7 @@ class WorkdayApi(object):
     def workdays_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List Workdays
+        This endpoint will return  all the available information about all your instances of Workday.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -365,20 +607,19 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -401,7 +642,7 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/workdays', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -419,7 +660,7 @@ class WorkdayApi(object):
     def workdays_post(self, content_type, accept, **kwargs):
         """
         Create new Workday
-        This endpoint allows you to create a new workday object
+        This endpoint allows you to create a new workday instance.  You must supply a username and password for Basic Authentication that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -432,7 +673,7 @@ class WorkdayApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Body body:
+        :param Body1 body:
         :return: WorkdayOutput
                  If the method is called asynchronously,
                  returns the request thread.
@@ -447,7 +688,7 @@ class WorkdayApi(object):
     def workdays_post_with_http_info(self, content_type, accept, **kwargs):
         """
         Create new Workday
-        This endpoint allows you to create a new workday object
+        This endpoint allows you to create a new workday instance.  You must supply a username and password for Basic Authentication that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -460,7 +701,7 @@ class WorkdayApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Body body:
+        :param Body1 body:
         :return: WorkdayOutput
                  If the method is called asynchronously,
                  returns the request thread.
@@ -491,10 +732,9 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -519,7 +759,7 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/workdays', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -537,7 +777,7 @@ class WorkdayApi(object):
     def workdays_put(self, id, content_type, accept, **kwargs):
         """
         Update Workday
-        This endpoint allows you to update the name and report_url for a Workday Authentication Edit
+        This endpoint allows you to update the name and Custom Report URL for a Workday Instance.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -551,7 +791,7 @@ class WorkdayApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param WorkdayInput body:
+        :param Body body:
         :return: WorkdayOutput
                  If the method is called asynchronously,
                  returns the request thread.
@@ -566,7 +806,7 @@ class WorkdayApi(object):
     def workdays_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update Workday
-        This endpoint allows you to update the name and report_url for a Workday Authentication Edit
+        This endpoint allows you to update the name and Custom Report URL for a Workday Instance.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -580,7 +820,7 @@ class WorkdayApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param WorkdayInput body:
+        :param Body body:
         :return: WorkdayOutput
                  If the method is called asynchronously,
                  returns the request thread.
@@ -614,12 +854,11 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -644,7 +883,7 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/workdays/{id}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -662,6 +901,7 @@ class WorkdayApi(object):
     def workdays_report(self, id, content_type, accept, **kwargs):
         """
         Get Workday Report Results
+        This endpoint will return all of the data available in your WorkDay Custom Report that has been associated with your WorkDay Instance.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -693,6 +933,7 @@ class WorkdayApi(object):
     def workdays_report_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Get Workday Report Results
+        This endpoint will return all of the data available in your WorkDay Custom Report that has been associated with your WorkDay Instance.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -743,20 +984,19 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays/{id}/report'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -779,7 +1019,7 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/workdays/{id}/report', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -797,7 +1037,7 @@ class WorkdayApi(object):
     def workdays_settings(self, content_type, accept, **kwargs):
         """
         Get Workday Settings
-        This endpoint allows you to obtain all settings needed for creating a workday instance, namely the URL to initiate an OAuth negotiation
+        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -825,7 +1065,7 @@ class WorkdayApi(object):
     def workdays_settings_with_http_info(self, content_type, accept, **kwargs):
         """
         Get Workday Settings
-        This endpoint allows you to obtain all settings needed for creating a workday instance, namely the URL to initiate an OAuth negotiation
+        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -869,12 +1109,11 @@ class WorkdayApi(object):
 
         collection_formats = {}
 
-        resource_path = '/workdays/settings'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'state' in params:
-            query_params['state'] = params['state']
+            query_params.append(('state', params['state']))
 
         header_params = {}
         if 'content_type' in params:
@@ -897,7 +1136,7 @@ class WorkdayApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/workdays/settings', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

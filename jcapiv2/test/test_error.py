@@ -35,7 +35,9 @@ class TestError(unittest.TestCase):
         """
         Test Error
         """
-        model = jcapiv2.models.error.Error()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.error.Error()
+        pass
 
 
 if __name__ == '__main__':

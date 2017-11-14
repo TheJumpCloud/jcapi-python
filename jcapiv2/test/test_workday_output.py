@@ -35,7 +35,9 @@ class TestWorkdayOutput(unittest.TestCase):
         """
         Test WorkdayOutput
         """
-        model = jcapiv2.models.workday_output.WorkdayOutput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.workday_output.WorkdayOutput()
+        pass
 
 
 if __name__ == '__main__':

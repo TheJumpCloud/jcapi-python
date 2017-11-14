@@ -35,7 +35,9 @@ class TestActiveDirectoryInput(unittest.TestCase):
         """
         Test ActiveDirectoryInput
         """
-        model = jcapiv2.models.active_directory_input.ActiveDirectoryInput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.active_directory_input.ActiveDirectoryInput()
+        pass
 
 
 if __name__ == '__main__':

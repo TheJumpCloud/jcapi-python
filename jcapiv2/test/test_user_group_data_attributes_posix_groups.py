@@ -35,7 +35,9 @@ class TestUserGroupDataAttributesPosixGroups(unittest.TestCase):
         """
         Test UserGroupDataAttributesPosixGroups
         """
-        model = jcapiv2.models.user_group_data_attributes_posix_groups.UserGroupDataAttributesPosixGroups()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.user_group_data_attributes_posix_groups.UserGroupDataAttributesPosixGroups()
+        pass
 
 
 if __name__ == '__main__':

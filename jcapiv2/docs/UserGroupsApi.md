@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 
 # **graph_user_group_associations_list**
-> list[GraphConnection] graph_user_group_associations_list(group_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
 
 List the associations of a User Group.
 
@@ -36,7 +36,7 @@ This endpoint returns the _direct_ associations of this User Group.  A direct as
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -50,15 +50,15 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupsApi()
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
     # List the associations of a User Group.
-    api_response = api_instance.graph_user_group_associations_list(group_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupsApi->graph_user_group_associations_list: %s\n" % e)
@@ -69,9 +69,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
@@ -99,7 +99,7 @@ This endpoint manages the _direct_ associations of this User Group.  A direct as
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -157,7 +157,7 @@ This endpoint returns all User Groups a User Group is a member of.  #### Sample 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -218,7 +218,7 @@ This endpoint returns the user members of a User Group.  #### Sample Request ```
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -279,7 +279,7 @@ This endpoint allows you to manage the user members of a User Group.  #### Sampl
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -337,7 +337,7 @@ This endpoint returns all users members that are a member of this User Group.  #
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -398,7 +398,7 @@ This endpoint will return the Active Directories associated with a User Group. E
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -459,7 +459,7 @@ This endpoint will return Applications associated with a User Group. Each elemen
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -520,7 +520,7 @@ This endpoint will return Directories associated with a User Group. Each element
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -581,7 +581,7 @@ This endpoint will return the G Suite instances associated with a User Group. Ea
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -642,7 +642,7 @@ This endpoint will return the LDAP Servers associated with a User Group. Each el
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -703,7 +703,7 @@ This endpoint will return the Office 365 instances associated with a User Group.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -764,7 +764,7 @@ This endpoint will return a RADIUS Servers associated with a User Group. Each el
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -825,7 +825,7 @@ This endpoint will return Systems associated with a User Group. Each element wil
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -886,7 +886,7 @@ This endpoint will return System Groups associated with a User Group. Each eleme
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -947,7 +947,7 @@ This endpoint allows you to delete a User Group.  #### Sample Request ``` https:
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -1003,7 +1003,7 @@ This endpoint allows you to view the details of a User Group.  #### Sample Reque
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -1060,7 +1060,7 @@ This endpoint returns all User Groups.  Available filter fields:   - `name`   - 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -1125,7 +1125,7 @@ We have hidden PATCH on the systemgroups and usergroups for now; we don't have t
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -1184,7 +1184,7 @@ This endpoint allows you to create a new User Group.  #### Sample Request ``` ht
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -1241,7 +1241,7 @@ This enpoint allows you to do a full update of the User Group.  #### Sample Requ
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **graph_system_associations_list**
-> list[GraphConnection] graph_system_associations_list(system_id, targets, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphConnection] graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization)
 
 List the associations of a System
 
@@ -20,7 +20,7 @@ This endpoint returns the _direct_ associations of a System.  A direct associati
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -34,9 +34,9 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.SystemsApi()
 system_id = 'system_id_example' # str | ObjectID of the System.
-targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
@@ -44,7 +44,7 @@ authorization = 'authorization_example' # str | Authorization header for the Sys
 
 try: 
     # List the associations of a System
-    api_response = api_instance.graph_system_associations_list(system_id, targets, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_associations_list: %s\n" % e)
@@ -55,9 +55,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **system_id** | **str**| ObjectID of the System. | 
- **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
@@ -87,7 +87,7 @@ This endpoint allows you to manage the _direct_ associations of a System.  A dir
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -103,7 +103,7 @@ api_instance = jcapiv2.SystemsApi()
 system_id = 'system_id_example' # str | ObjectID of the System.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+body = jcapiv2.SystemGraphManagementReq() # SystemGraphManagementReq |  (optional)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
  **system_id** | **str**| ObjectID of the System. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **body** | [**SystemGraphManagementReq**](SystemGraphManagementReq.md)|  | [optional] 
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
 
@@ -149,7 +149,7 @@ This endpoint returns all the System Groups a System is a member of.  #### Sampl
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -214,7 +214,7 @@ This endpoint will return Policies associated with a System. Each element will c
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -275,7 +275,7 @@ This endpoint will return Users associated with a System. Each element will cont
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

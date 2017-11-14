@@ -127,19 +127,18 @@ class RADIUSServersApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -162,7 +161,7 @@ class RADIUSServersApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -257,12 +256,11 @@ class RADIUSServersApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -287,7 +285,7 @@ class RADIUSServersApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -384,16 +382,15 @@ class RADIUSServersApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -416,7 +413,7 @@ class RADIUSServersApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -513,16 +510,15 @@ class RADIUSServersApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -545,7 +541,7 @@ class RADIUSServersApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

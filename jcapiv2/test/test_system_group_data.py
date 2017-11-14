@@ -35,7 +35,9 @@ class TestSystemGroupData(unittest.TestCase):
         """
         Test SystemGroupData
         """
-        model = jcapiv2.models.system_group_data.SystemGroupData()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.system_group_data.SystemGroupData()
+        pass
 
 
 if __name__ == '__main__':

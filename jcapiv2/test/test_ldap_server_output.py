@@ -35,7 +35,9 @@ class TestLdapServerOutput(unittest.TestCase):
         """
         Test LdapServerOutput
         """
-        model = jcapiv2.models.ldap_server_output.LdapServerOutput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.ldap_server_output.LdapServerOutput()
+        pass
 
 
 if __name__ == '__main__':

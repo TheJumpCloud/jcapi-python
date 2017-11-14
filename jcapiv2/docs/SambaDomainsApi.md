@@ -20,7 +20,7 @@ This endpoint allows you to delete a samba domain from an LDAP server.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -33,7 +33,7 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv2.SambaDomainsApi()
-ldapserver_id = 'ldapserver_id_example' # str | Unique identifier o f the LDAP server.
+ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
@@ -50,7 +50,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ldapserver_id** | **str**| Unique identifier o f the LDAP server. | 
+ **ldapserver_id** | **str**| Unique identifier of the LDAP server. | 
  **id** | **str**| Unique identifier of the samba domain. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
@@ -79,7 +79,7 @@ This endpoint returns a specific samba domain for an LDAP server.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -92,7 +92,7 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv2.SambaDomainsApi()
-ldapserver_id = 'ldapserver_id_example' # str | Unique identifier o f the LDAP server.
+ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
@@ -109,7 +109,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ldapserver_id** | **str**| Unique identifier o f the LDAP server. | 
+ **ldapserver_id** | **str**| Unique identifier of the LDAP server. | 
  **id** | **str**| Unique identifier of the samba domain. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
@@ -138,7 +138,7 @@ This endpoint returns all samba domains for an LDAP server.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -205,7 +205,7 @@ This endpoint allows you to create a samba domain for an LDAP server.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -264,7 +264,7 @@ This endpoint allows you to update the samba domain information for an LDAP serv
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -277,7 +277,7 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv2.SambaDomainsApi()
-ldapserver_id = 'ldapserver_id_example' # str | Unique identifier o f the LDAP server.
+ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 id = 'id_example' # str | Unique identifier of the samba domain.
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
 content_type = 'application/json' # str |  (optional) (default to application/json)
@@ -295,7 +295,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ldapserver_id** | **str**| Unique identifier o f the LDAP server. | 
+ **ldapserver_id** | **str**| Unique identifier of the LDAP server. | 
  **id** | **str**| Unique identifier of the samba domain. | 
  **body** | [**SambaDomainInput**](SambaDomainInput.md)|  | [optional] 
  **content_type** | **str**|  | [optional] [default to application/json]

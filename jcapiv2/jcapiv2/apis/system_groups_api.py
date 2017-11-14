@@ -40,7 +40,7 @@ class SystemGroupsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def graph_system_group_associations_list(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_system_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
         This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations?targets=user ```
@@ -50,14 +50,14 @@ class SystemGroupsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_group_associations_list(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_group_associations_list(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the System Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -66,12 +66,12 @@ class SystemGroupsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_system_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            return self.graph_system_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_system_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_system_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_system_group_associations_list_with_http_info(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_system_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
         This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations?targets=user ```
@@ -81,14 +81,14 @@ class SystemGroupsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_group_associations_list_with_http_info(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_group_associations_list_with_http_info(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the System Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -96,7 +96,7 @@ class SystemGroupsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -114,32 +114,31 @@ class SystemGroupsApi(object):
         # verify the required parameter 'group_id' is set
         if ('group_id' not in params) or (params['group_id'] is None):
             raise ValueError("Missing the required parameter `group_id` when calling `graph_system_group_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_system_group_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_system_group_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_system_group_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -162,7 +161,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -257,12 +256,11 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -287,7 +285,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systemgroups/{group_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -384,16 +382,15 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -416,7 +413,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -513,16 +510,15 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -545,7 +541,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/members', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -644,12 +640,11 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -678,7 +673,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systemgroups/{group_id}/members', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -775,16 +770,15 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/membership'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -807,7 +801,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/membership', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -904,16 +898,15 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/policies'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -936,7 +929,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/policies', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1033,16 +1026,15 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1065,7 +1057,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1162,16 +1154,15 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1194,7 +1185,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1287,12 +1278,11 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1315,7 +1305,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/systemgroups/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1408,12 +1398,11 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1436,7 +1425,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1534,20 +1523,19 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1570,7 +1558,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1665,12 +1653,11 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1695,7 +1682,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PATCH',
+        return self.api_client.call_api('/systemgroups/{id}', 'PATCH',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1785,10 +1772,9 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1813,7 +1799,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systemgroups', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1908,12 +1894,11 @@ class SystemGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1938,7 +1923,7 @@ class SystemGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/systemgroups/{id}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,

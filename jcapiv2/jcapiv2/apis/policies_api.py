@@ -54,7 +54,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -85,7 +85,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -127,19 +127,18 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -162,7 +161,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -191,7 +190,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
@@ -220,7 +219,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
@@ -257,12 +256,11 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -287,7 +285,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/policies/{policy_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -384,16 +382,15 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/systems'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -416,7 +413,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -513,16 +510,15 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/systemgroups'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -545,7 +541,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/systemgroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -638,12 +634,11 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -666,7 +661,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/policies/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -759,12 +754,11 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -787,7 +781,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -885,20 +879,19 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -921,7 +914,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1011,10 +1004,9 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1039,7 +1031,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/policies', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1124,12 +1116,11 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
 
@@ -1150,7 +1141,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/policies/{id}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1241,12 +1232,11 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policyresults/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1269,7 +1259,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policyresults/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1367,22 +1357,21 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policyresults'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
         if 'aggregate' in params:
-            query_params['aggregate'] = params['aggregate']
+            query_params.append(('aggregate', params['aggregate']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1405,7 +1394,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policyresults', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1508,24 +1497,23 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/policyresults'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
         if 'aggregate' in params:
-            query_params['aggregate'] = params['aggregate']
+            query_params.append(('aggregate', params['aggregate']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1548,7 +1536,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/policyresults', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1641,12 +1629,11 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policytemplates/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1669,7 +1656,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policytemplates/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1767,20 +1754,19 @@ class PoliciesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policytemplates'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1803,7 +1789,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policytemplates', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

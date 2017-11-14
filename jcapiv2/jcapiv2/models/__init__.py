@@ -15,8 +15,12 @@ from __future__ import absolute_import
 
 # import models into model package
 from .active_directory_input import ActiveDirectoryInput
-from .active_directory_output import ActiveDirectoryOutput
+from .auth_info import AuthInfo
+from .auth_input import AuthInput
+from .authinput_basic import AuthinputBasic
+from .authinput_oauth import AuthinputOauth
 from .body import Body
+from .body_1 import Body1
 from .directory import Directory
 from .error import Error
 from .graph_connection import GraphConnection
@@ -28,7 +32,6 @@ from .group import Group
 from .group_type import GroupType
 from .inline_response_200 import InlineResponse200
 from .ldap_server_input import LdapServerInput
-from .ldap_server_output import LdapServerOutput
 from .oauth_code_input import OauthCodeInput
 from .policy import Policy
 from .policy_request import PolicyRequest
@@ -40,11 +43,12 @@ from .policy_template_with_details import PolicyTemplateWithDetails
 from .policy_value import PolicyValue
 from .policy_with_details import PolicyWithDetails
 from .samba_domain_input import SambaDomainInput
-from .samba_domain_output import SambaDomainOutput
+from .system_graph_management_req import SystemGraphManagementReq
 from .system_group import SystemGroup
 from .system_group_data import SystemGroupData
 from .system_group_graph_management_req import SystemGroupGraphManagementReq
 from .system_group_members_req import SystemGroupMembersReq
+from .user_graph_management_req import UserGraphManagementReq
 from .user_group import UserGroup
 from .user_group_data import UserGroupData
 from .user_group_data_attributes import UserGroupDataAttributes
@@ -56,4 +60,7 @@ from .workday_output import WorkdayOutput
 from .workday_report_result import WorkdayReportResult
 from .workday_report_row import WorkdayReportRow
 from .workday_request import WorkdayRequest
-from .workdays_oauth import WorkdaysOauth
+from .workdayoutput_auth import WorkdayoutputAuth
+from .active_directory_output import ActiveDirectoryOutput
+from .ldap_server_output import LdapServerOutput
+from .samba_domain_output import SambaDomainOutput

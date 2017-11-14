@@ -35,7 +35,9 @@ class TestGraphType(unittest.TestCase):
         """
         Test GraphType
         """
-        model = jcapiv2.models.graph_type.GraphType()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.graph_type.GraphType()
+        pass
 
 
 if __name__ == '__main__':

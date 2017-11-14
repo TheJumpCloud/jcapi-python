@@ -31,6 +31,22 @@ class TestWorkdayApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_workdays_authorize(self):
+        """
+        Test case for workdays_authorize
+
+        Authorize Workday
+        """
+        pass
+
+    def test_workdays_deauthorize(self):
+        """
+        Test case for workdays_deauthorize
+
+        Deauthorize Workday
+        """
+        pass
+
     def test_workdays_delete(self):
         """
         Test case for workdays_delete

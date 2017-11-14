@@ -35,7 +35,9 @@ class TestBody(unittest.TestCase):
         """
         Test Body
         """
-        model = jcapiv2.models.body.Body()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.body.Body()
+        pass
 
 
 if __name__ == '__main__':
