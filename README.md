@@ -55,7 +55,7 @@ systemusersAPI = jcapiv1.SystemusersApi()
 try:
     # make an API call to retrieve all systemusers:
     users = systemusersAPI.systemusers_list(content_type, accept)
-    print users
+    print(users)
 except ApiException as e:
     print("Exception when calling SystemusersApi->systemusers_list: %s\n" % e)
 
@@ -87,7 +87,7 @@ userGroupsAPI = jcapiv2.UserGroupsApi()
 try:
     # make an API call to retrieve all user groups:
     userGroups = userGroupsAPI.groups_user_list(content_type, accept)
-    print userGroups
+    print(userGroups)
 except ApiException as e:
     print("Exception when calling UserGroupsApi->groups_user_list: %s\n" % e)
 
