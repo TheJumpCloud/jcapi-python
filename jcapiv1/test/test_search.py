@@ -35,7 +35,9 @@ class TestSearch(unittest.TestCase):
         """
         Test Search
         """
-        model = jcapiv1.models.search.Search()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.search.Search()
+        pass
 
 
 if __name__ == '__main__':

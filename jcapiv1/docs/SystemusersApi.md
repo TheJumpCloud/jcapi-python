@@ -22,7 +22,7 @@ Delete a particular system user.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -79,7 +79,7 @@ Get a particular System User.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -144,7 +144,7 @@ Returns all systemusers.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -209,7 +209,7 @@ Create a new system user.  ### Example  #### Create a system user  This example 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -266,7 +266,7 @@ Update a system user record and return the modified record.  ### Example  #### A
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -325,7 +325,7 @@ List system bindings for a specific system user in a system and user binding for
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -390,7 +390,7 @@ Adds or removes a system binding for a user.   This endpoint is only used for us
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException

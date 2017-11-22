@@ -35,7 +35,9 @@ class TestSambaDomainInput(unittest.TestCase):
         """
         Test SambaDomainInput
         """
-        model = jcapiv2.models.samba_domain_input.SambaDomainInput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.samba_domain_input.SambaDomainInput()
+        pass
 
 
 if __name__ == '__main__':

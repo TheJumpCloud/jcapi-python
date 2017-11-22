@@ -35,7 +35,9 @@ class TestWorkdayRequest(unittest.TestCase):
         """
         Test WorkdayRequest
         """
-        model = jcapiv2.models.workday_request.WorkdayRequest()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.workday_request.WorkdayRequest()
+        pass
 
 
 if __name__ == '__main__':

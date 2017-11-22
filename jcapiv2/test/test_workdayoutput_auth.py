@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv2
 from jcapiv2.rest import ApiException
-from jcapiv2.models.workdays_oauth import WorkdaysOauth
+from jcapiv2.models.workdayoutput_auth import WorkdayoutputAuth
 
 
-class TestWorkdaysOauth(unittest.TestCase):
-    """ WorkdaysOauth unit test stubs """
+class TestWorkdayoutputAuth(unittest.TestCase):
+    """ WorkdayoutputAuth unit test stubs """
 
     def setUp(self):
         pass
@@ -31,11 +31,13 @@ class TestWorkdaysOauth(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testWorkdaysOauth(self):
+    def testWorkdayoutputAuth(self):
         """
-        Test WorkdaysOauth
+        Test WorkdayoutputAuth
         """
-        model = jcapiv2.models.workdays_oauth.WorkdaysOauth()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.workdayoutput_auth.WorkdayoutputAuth()
+        pass
 
 
 if __name__ == '__main__':

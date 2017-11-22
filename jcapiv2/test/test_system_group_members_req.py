@@ -35,7 +35,9 @@ class TestSystemGroupMembersReq(unittest.TestCase):
         """
         Test SystemGroupMembersReq
         """
-        model = jcapiv2.models.system_group_members_req.SystemGroupMembersReq()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.system_group_members_req.SystemGroupMembersReq()
+        pass
 
 
 if __name__ == '__main__':

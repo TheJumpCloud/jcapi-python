@@ -118,12 +118,11 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -146,7 +145,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/activedirectories/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -239,12 +238,11 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -267,7 +265,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/activedirectories/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -363,20 +361,19 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -399,7 +396,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/activedirectories', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -489,10 +486,9 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -517,7 +513,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/activedirectories', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -619,19 +615,18 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{activedirectory_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'activedirectory_id' in params:
             path_params['activedirectory_id'] = params['activedirectory_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -654,7 +649,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/activedirectories/{activedirectory_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -749,12 +744,11 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{activedirectory_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'activedirectory_id' in params:
             path_params['activedirectory_id'] = params['activedirectory_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -779,7 +773,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/activedirectories/{activedirectory_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -876,16 +870,15 @@ class ActiveDirectoryApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{activedirectory_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'activedirectory_id' in params:
             path_params['activedirectory_id'] = params['activedirectory_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -908,7 +901,7 @@ class ActiveDirectoryApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/activedirectories/{activedirectory_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

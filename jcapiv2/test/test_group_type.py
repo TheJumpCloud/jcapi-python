@@ -35,7 +35,9 @@ class TestGroupType(unittest.TestCase):
         """
         Test GroupType
         """
-        model = jcapiv2.models.group_type.GroupType()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.group_type.GroupType()
+        pass
 
 
 if __name__ == '__main__':

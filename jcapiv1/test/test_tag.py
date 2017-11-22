@@ -35,7 +35,9 @@ class TestTag(unittest.TestCase):
         """
         Test Tag
         """
-        model = jcapiv1.models.tag.Tag()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.tag.Tag()
+        pass
 
 
 if __name__ == '__main__':

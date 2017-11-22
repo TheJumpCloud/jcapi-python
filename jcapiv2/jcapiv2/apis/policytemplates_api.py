@@ -118,12 +118,11 @@ class PolicytemplatesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policytemplates/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -146,7 +145,7 @@ class PolicytemplatesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policytemplates/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -244,20 +243,19 @@ class PolicytemplatesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policytemplates'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -280,7 +278,7 @@ class PolicytemplatesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policytemplates', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

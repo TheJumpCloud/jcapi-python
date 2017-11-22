@@ -35,7 +35,9 @@ class TestDirectory(unittest.TestCase):
         """
         Test Directory
         """
-        model = jcapiv2.models.directory.Directory()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.directory.Directory()
+        pass
 
 
 if __name__ == '__main__':

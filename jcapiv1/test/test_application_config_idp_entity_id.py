@@ -35,7 +35,9 @@ class TestApplicationConfigIdpEntityId(unittest.TestCase):
         """
         Test ApplicationConfigIdpEntityId
         """
-        model = jcapiv1.models.application_config_idp_entity_id.ApplicationConfigIdpEntityId()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.application_config_idp_entity_id.ApplicationConfigIdpEntityId()
+        pass
 
 
 if __name__ == '__main__':

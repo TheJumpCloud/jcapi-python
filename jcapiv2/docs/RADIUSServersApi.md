@@ -19,7 +19,7 @@ This endpoint returns the _direct_ associations of a Radius Server.  A direct as
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -82,7 +82,7 @@ This endpoint allows you to manage the _direct_ associations of a Radius Server.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -140,7 +140,7 @@ This endpoint will return Users associated with a RADIUS server instance. Each e
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -201,7 +201,7 @@ This endpoint will return User Groups associated with a RADIUS server instance. 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

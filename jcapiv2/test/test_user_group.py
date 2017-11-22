@@ -35,7 +35,9 @@ class TestUserGroup(unittest.TestCase):
         """
         Test UserGroup
         """
-        model = jcapiv2.models.user_group.UserGroup()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.user_group.UserGroup()
+        pass
 
 
 if __name__ == '__main__':

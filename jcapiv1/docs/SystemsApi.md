@@ -21,7 +21,7 @@ Delete a system record by its id. This command will cause the system to uninstal
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -82,7 +82,7 @@ Returns an individual system.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -151,7 +151,7 @@ Returns all Systems.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -214,7 +214,7 @@ Update a system record by its id and return the modified system record in single
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -276,7 +276,7 @@ List system user bindings for a specific system in a system and user binding for
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -341,7 +341,7 @@ Adds or removes a user binding for a system.  This endpoint is only used for use
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException

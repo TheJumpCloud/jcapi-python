@@ -40,7 +40,7 @@ class UserGroupsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def graph_user_group_associations_list(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_user_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User Group.
         This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/associations?targets=user ```
@@ -50,14 +50,14 @@ class UserGroupsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_user_group_associations_list(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_user_group_associations_list(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the User Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -66,12 +66,12 @@ class UserGroupsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_user_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            return self.graph_user_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_user_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_user_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_user_group_associations_list_with_http_info(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_user_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User Group.
         This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/associations?targets=user ```
@@ -81,14 +81,14 @@ class UserGroupsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_user_group_associations_list_with_http_info(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_user_group_associations_list_with_http_info(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the User Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -96,7 +96,7 @@ class UserGroupsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -114,32 +114,31 @@ class UserGroupsApi(object):
         # verify the required parameter 'group_id' is set
         if ('group_id' not in params) or (params['group_id'] is None):
             raise ValueError("Missing the required parameter `group_id` when calling `graph_user_group_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_user_group_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_user_group_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_user_group_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_user_group_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -162,7 +161,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -257,12 +256,11 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -287,7 +285,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/usergroups/{group_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -384,16 +382,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -416,7 +413,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -513,16 +510,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -545,7 +541,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/members', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -640,12 +636,11 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -670,7 +665,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/usergroups/{group_id}/members', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -767,16 +762,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/membership'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -799,7 +793,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/membership', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -896,16 +890,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/activedirectories'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -928,7 +921,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/activedirectories', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1025,16 +1018,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/applications'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1057,7 +1049,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/applications', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1154,16 +1146,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/directories'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1186,7 +1177,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/directories', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1283,16 +1274,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/gsuites'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1315,7 +1305,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/gsuites', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1412,16 +1402,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/ldapservers'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1444,7 +1433,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/ldapservers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1541,16 +1530,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/office365s'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1573,7 +1561,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/office365s', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1670,16 +1658,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/radiusservers'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1702,7 +1689,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/radiusservers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1799,16 +1786,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/systems'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1831,7 +1817,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1928,16 +1914,15 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/systemgroups'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1960,7 +1945,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/systemgroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2053,12 +2038,11 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2081,7 +2065,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/usergroups/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2174,12 +2158,11 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2202,7 +2185,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2300,20 +2283,19 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -2336,7 +2318,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2431,12 +2413,11 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2461,7 +2442,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PATCH',
+        return self.api_client.call_api('/usergroups/{id}', 'PATCH',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2551,10 +2532,9 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2579,7 +2559,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/usergroups', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2674,12 +2654,11 @@ class UserGroupsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2704,7 +2683,7 @@ class UserGroupsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/usergroups/{id}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,

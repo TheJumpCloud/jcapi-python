@@ -35,7 +35,9 @@ class TestSystemput(unittest.TestCase):
         """
         Test Systemput
         """
-        model = jcapiv1.models.systemput.Systemput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.systemput.Systemput()
+        pass
 
 
 if __name__ == '__main__':

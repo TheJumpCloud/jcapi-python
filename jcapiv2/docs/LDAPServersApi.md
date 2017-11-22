@@ -21,7 +21,7 @@ This endpoint returns the _direct_ associations of this LDAP Server.  A direct a
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -84,7 +84,7 @@ This endpoint allows you to manage the _direct_ associations of a LDAP Server.  
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -142,7 +142,7 @@ This endpoint will return Users associated with an LDAP server instance. Each el
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -203,7 +203,7 @@ This endpoint will return User Groups associated with a LDAP server instance. Ea
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -264,7 +264,7 @@ This endpoint returns a specific LDAP server.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -319,7 +319,7 @@ List LDAP Servers
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

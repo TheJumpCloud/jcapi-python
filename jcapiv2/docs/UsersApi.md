@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **graph_user_associations_list**
-> list[GraphConnection] graph_user_associations_list(user_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_user_associations_list(user_id, content_type, accept, targets, limit=limit, skip=skip)
 
 List the associations of a User
 
@@ -25,7 +25,7 @@ This endpoint returns the _direct_ associations of a User.  A direct association
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -39,15 +39,15 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UsersApi()
 user_id = 'user_id_example' # str | ObjectID of the User.
-targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
     # List the associations of a User
-    api_response = api_instance.graph_user_associations_list(user_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_associations_list(user_id, content_type, accept, targets, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->graph_user_associations_list: %s\n" % e)
@@ -58,9 +58,9 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**| ObjectID of the User. | 
- **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
@@ -88,7 +88,7 @@ This endpoint allows you to manage the _direct_ associations of a User.  A direc
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -104,7 +104,7 @@ api_instance = jcapiv2.UsersApi()
 user_id = 'user_id_example' # str | ObjectID of the User.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+body = jcapiv2.UserGraphManagementReq() # UserGraphManagementReq |  (optional)
 
 try: 
     # Manage the associations of a User
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
  **user_id** | **str**| ObjectID of the User. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **body** | [**UserGraphManagementReq**](UserGraphManagementReq.md)|  | [optional] 
 
 ### Return type
 
@@ -146,7 +146,7 @@ This endpoint returns all the User Groups a User is a member of.  #### Sample Re
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -207,7 +207,7 @@ This endpoint will return Applications associated with a User. Each element will
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -268,7 +268,7 @@ This endpoint will return Directories associated with a User. Each element will 
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -329,7 +329,7 @@ This endpoint will return G Suite instances associated with a User. Each element
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -390,7 +390,7 @@ This endpoint will return LDAP Servers associated with a User. Each element will
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -451,7 +451,7 @@ This endpoint will return Office 365 instances associated with a User. Each elem
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -512,7 +512,7 @@ This endpoint will return RADIUS Servers associated with a User. Each element wi
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -573,7 +573,7 @@ This endpoint will return Systems associated with a User. Each element will cont
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

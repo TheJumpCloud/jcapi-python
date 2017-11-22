@@ -54,7 +54,7 @@ class SambaDomainsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str ldapserver_id: Unique identifier o f the LDAP server. (required)
+        :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
         :param str accept:
@@ -83,7 +83,7 @@ class SambaDomainsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str ldapserver_id: Unique identifier o f the LDAP server. (required)
+        :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
         :param str accept:
@@ -117,14 +117,13 @@ class SambaDomainsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/sambadomains/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -147,7 +146,7 @@ class SambaDomainsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'DELETE',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/sambadomains/{id}', 'DELETE',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -176,7 +175,7 @@ class SambaDomainsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str ldapserver_id: Unique identifier o f the LDAP server. (required)
+        :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
         :param str accept:
@@ -205,7 +204,7 @@ class SambaDomainsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str ldapserver_id: Unique identifier o f the LDAP server. (required)
+        :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
         :param str accept:
@@ -239,14 +238,13 @@ class SambaDomainsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/sambadomains/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -269,7 +267,7 @@ class SambaDomainsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/sambadomains/{id}', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -366,22 +364,21 @@ class SambaDomainsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/sambadomains'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
 
-        query_params = {}
+        query_params = []
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
         if 'filter' in params:
-            query_params['filter'] = params['filter']
+            query_params.append(('filter', params['filter']))
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'sort' in params:
-            query_params['sort'] = params['sort']
+            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -404,7 +401,7 @@ class SambaDomainsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/sambadomains', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -493,12 +490,11 @@ class SambaDomainsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/sambadomains'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -523,7 +519,7 @@ class SambaDomainsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/sambadomains', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -552,7 +548,7 @@ class SambaDomainsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str ldapserver_id: Unique identifier o f the LDAP server. (required)
+        :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param SambaDomainInput body:
         :param str content_type:
@@ -582,7 +578,7 @@ class SambaDomainsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str ldapserver_id: Unique identifier o f the LDAP server. (required)
+        :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param SambaDomainInput body:
         :param str content_type:
@@ -617,14 +613,13 @@ class SambaDomainsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/sambadomains/{id}'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
         if 'id' in params:
             path_params['id'] = params['id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -649,7 +644,7 @@ class SambaDomainsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/sambadomains/{id}', 'PUT',
                                         path_params,
                                         query_params,
                                         header_params,

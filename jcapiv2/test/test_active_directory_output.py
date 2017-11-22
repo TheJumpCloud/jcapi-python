@@ -35,7 +35,9 @@ class TestActiveDirectoryOutput(unittest.TestCase):
         """
         Test ActiveDirectoryOutput
         """
-        model = jcapiv2.models.active_directory_output.ActiveDirectoryOutput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.active_directory_output.ActiveDirectoryOutput()
+        pass
 
 
 if __name__ == '__main__':

@@ -16,7 +16,7 @@ This endpoint returns all Groups that exist in your organization.  #### Availabl
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

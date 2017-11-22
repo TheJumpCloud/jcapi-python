@@ -35,7 +35,9 @@ class TestPolicyTemplate(unittest.TestCase):
         """
         Test PolicyTemplate
         """
-        model = jcapiv2.models.policy_template.PolicyTemplate()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.policy_template.PolicyTemplate()
+        pass
 
 
 if __name__ == '__main__':

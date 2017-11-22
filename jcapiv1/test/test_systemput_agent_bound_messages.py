@@ -35,7 +35,9 @@ class TestSystemputAgentBoundMessages(unittest.TestCase):
         """
         Test SystemputAgentBoundMessages
         """
-        model = jcapiv1.models.systemput_agent_bound_messages.SystemputAgentBoundMessages()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.systemput_agent_bound_messages.SystemputAgentBoundMessages()
+        pass
 
 
 if __name__ == '__main__':

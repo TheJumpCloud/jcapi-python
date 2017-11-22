@@ -127,19 +127,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{activedirectory_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'activedirectory_id' in params:
             path_params['activedirectory_id'] = params['activedirectory_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -162,7 +161,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/activedirectories/{activedirectory_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -257,12 +256,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{activedirectory_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'activedirectory_id' in params:
             path_params['activedirectory_id'] = params['activedirectory_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -287,7 +285,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/activedirectories/{activedirectory_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -384,16 +382,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/activedirectories/{activedirectory_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'activedirectory_id' in params:
             path_params['activedirectory_id'] = params['activedirectory_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -416,7 +413,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/activedirectories/{activedirectory_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -518,19 +515,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/applications/{application_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'application_id' in params:
             path_params['application_id'] = params['application_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -553,7 +549,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/applications/{application_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -648,12 +644,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/applications/{application_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'application_id' in params:
             path_params['application_id'] = params['application_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -678,7 +673,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/applications/{application_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -775,16 +770,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/applications/{application_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'application_id' in params:
             path_params['application_id'] = params['application_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -807,7 +801,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/applications/{application_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -904,16 +898,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/applications/{application_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'application_id' in params:
             path_params['application_id'] = params['application_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -936,7 +929,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/applications/{application_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1038,19 +1031,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/commands/{command_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'command_id' in params:
             path_params['command_id'] = params['command_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1073,7 +1065,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/commands/{command_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1168,12 +1160,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/commands/{command_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'command_id' in params:
             path_params['command_id'] = params['command_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -1198,7 +1189,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/commands/{command_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1295,16 +1286,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/commands/{command_id}/systems'.replace('{format}', 'json')
         path_params = {}
         if 'command_id' in params:
             path_params['command_id'] = params['command_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1327,7 +1317,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/commands/{command_id}/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1424,16 +1414,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/commands/{command_id}/systemgroups'.replace('{format}', 'json')
         path_params = {}
         if 'command_id' in params:
             path_params['command_id'] = params['command_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1456,7 +1445,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/commands/{command_id}/systemgroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1558,19 +1547,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/gsuites/{gsuite_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'gsuite_id' in params:
             path_params['gsuite_id'] = params['gsuite_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1593,7 +1581,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/gsuites/{gsuite_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1678,12 +1666,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/gsuites/{gsuite_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'gsuite_id' in params:
             path_params['gsuite_id'] = params['gsuite_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
 
@@ -1704,7 +1691,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/gsuites/{gsuite_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1801,16 +1788,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/gsuites/{gsuite_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'gsuite_id' in params:
             path_params['gsuite_id'] = params['gsuite_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1833,7 +1819,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/gsuites/{gsuite_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1930,16 +1916,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/gsuites/{gsuite_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'gsuite_id' in params:
             path_params['gsuite_id'] = params['gsuite_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -1962,7 +1947,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/gsuites/{gsuite_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2064,19 +2049,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -2099,7 +2083,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2194,12 +2178,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2224,7 +2207,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2321,16 +2304,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -2353,7 +2335,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2450,16 +2432,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/ldapservers/{ldapserver_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'ldapserver_id' in params:
             path_params['ldapserver_id'] = params['ldapserver_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -2482,7 +2463,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/ldapservers/{ldapserver_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2584,19 +2565,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/office365s/{office365_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'office365_id' in params:
             path_params['office365_id'] = params['office365_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -2619,7 +2599,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/office365s/{office365_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2714,12 +2694,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/office365s/{office365_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'office365_id' in params:
             path_params['office365_id'] = params['office365_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -2744,7 +2723,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/office365s/{office365_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2841,16 +2820,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/office365s/{office365_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'office365_id' in params:
             path_params['office365_id'] = params['office365_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -2873,7 +2851,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/office365s/{office365_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -2970,16 +2948,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/office365s/{office365_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'office365_id' in params:
             path_params['office365_id'] = params['office365_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -3002,7 +2979,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/office365s/{office365_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3031,7 +3008,7 @@ class GraphApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -3062,7 +3039,7 @@ class GraphApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -3104,19 +3081,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -3139,7 +3115,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3168,7 +3144,7 @@ class GraphApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
@@ -3197,7 +3173,7 @@ class GraphApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: ObjectID of the Policy. (required)
+        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
@@ -3234,12 +3210,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -3264,7 +3239,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/policies/{policy_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3361,16 +3336,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/systems'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -3393,7 +3367,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3490,16 +3464,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/policies/{policy_id}/systemgroups'.replace('{format}', 'json')
         path_params = {}
         if 'policy_id' in params:
             path_params['policy_id'] = params['policy_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -3522,7 +3495,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/policies/{policy_id}/systemgroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3624,19 +3597,18 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
         if 'targets' in params:
-            query_params['targets'] = params['targets']
+            query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -3659,7 +3631,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3754,12 +3726,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -3784,7 +3755,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -3881,16 +3852,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -3913,7 +3883,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4010,16 +3980,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/radiusservers/{radiusserver_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'radiusserver_id' in params:
             path_params['radiusserver_id'] = params['radiusserver_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -4042,7 +4011,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/radiusservers/{radiusserver_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4057,7 +4026,7 @@ class GraphApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def graph_system_associations_list(self, system_id, targets, content_type, accept, **kwargs):
+    def graph_system_associations_list(self, system_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System
         This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systems/{system_id}/associations?targets=user ```
@@ -4067,14 +4036,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_associations_list(system_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_associations_list(system_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str system_id: ObjectID of the System. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
@@ -4085,12 +4054,12 @@ class GraphApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_system_associations_list_with_http_info(system_id, targets, content_type, accept, **kwargs)
+            return self.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_system_associations_list_with_http_info(system_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_system_associations_list_with_http_info(self, system_id, targets, content_type, accept, **kwargs):
+    def graph_system_associations_list_with_http_info(self, system_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System
         This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systems/{system_id}/associations?targets=user ```
@@ -4100,14 +4069,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_associations_list_with_http_info(system_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str system_id: ObjectID of the System. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
@@ -4117,7 +4086,7 @@ class GraphApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4135,32 +4104,31 @@ class GraphApi(object):
         # verify the required parameter 'system_id' is set
         if ('system_id' not in params) or (params['system_id'] is None):
             raise ValueError("Missing the required parameter `system_id` when calling `graph_system_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_system_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_system_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_system_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -4187,7 +4155,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4219,7 +4187,7 @@ class GraphApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param GraphManagementReq body:
+        :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :return: None
@@ -4250,7 +4218,7 @@ class GraphApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param GraphManagementReq body:
+        :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :return: None
@@ -4286,12 +4254,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -4320,7 +4287,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systems/{system_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4335,7 +4302,7 @@ class GraphApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def graph_system_group_associations_list(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_system_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
         This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations?targets=user ```
@@ -4345,14 +4312,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_group_associations_list(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_group_associations_list(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the System Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -4361,12 +4328,12 @@ class GraphApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_system_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            return self.graph_system_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_system_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_system_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_system_group_associations_list_with_http_info(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_system_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
         This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations?targets=user ```
@@ -4376,14 +4343,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_group_associations_list_with_http_info(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_group_associations_list_with_http_info(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the System Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -4391,7 +4358,7 @@ class GraphApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4409,32 +4376,31 @@ class GraphApi(object):
         # verify the required parameter 'group_id' is set
         if ('group_id' not in params) or (params['group_id'] is None):
             raise ValueError("Missing the required parameter `group_id` when calling `graph_system_group_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_system_group_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_system_group_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_system_group_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -4457,7 +4423,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4552,12 +4518,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -4582,7 +4547,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systemgroups/{group_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4679,16 +4644,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -4711,7 +4675,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4808,16 +4772,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -4840,7 +4803,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/members', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -4939,12 +4902,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -4973,7 +4935,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systemgroups/{group_id}/members', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5070,16 +5032,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/membership'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5102,7 +5063,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/membership', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5199,16 +5160,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/policies'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5231,7 +5191,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/policies', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5328,16 +5288,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5360,7 +5319,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5457,16 +5416,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systemgroups/{group_id}/usergroups'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5489,7 +5447,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systemgroups/{group_id}/usergroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5590,16 +5548,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5626,7 +5583,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5723,16 +5680,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/policies'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5755,7 +5711,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/policies', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5856,16 +5812,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -5892,7 +5847,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -5907,7 +5862,7 @@ class GraphApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def graph_user_associations_list(self, user_id, targets, content_type, accept, **kwargs):
+    def graph_user_associations_list(self, user_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User
         This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/associations?targets=user_group ```
@@ -5917,14 +5872,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_user_associations_list(user_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_user_associations_list(user_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: ObjectID of the User. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -5933,12 +5888,12 @@ class GraphApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_user_associations_list_with_http_info(user_id, targets, content_type, accept, **kwargs)
+            return self.graph_user_associations_list_with_http_info(user_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_user_associations_list_with_http_info(user_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_user_associations_list_with_http_info(user_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_user_associations_list_with_http_info(self, user_id, targets, content_type, accept, **kwargs):
+    def graph_user_associations_list_with_http_info(self, user_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User
         This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/associations?targets=user_group ```
@@ -5948,14 +5903,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_user_associations_list_with_http_info(user_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_user_associations_list_with_http_info(user_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: ObjectID of the User. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -5963,7 +5918,7 @@ class GraphApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5981,32 +5936,31 @@ class GraphApi(object):
         # verify the required parameter 'user_id' is set
         if ('user_id' not in params) or (params['user_id'] is None):
             raise ValueError("Missing the required parameter `user_id` when calling `graph_user_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_user_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_user_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_user_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_user_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -6029,7 +5983,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6061,7 +6015,7 @@ class GraphApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param GraphManagementReq body:
+        :param UserGraphManagementReq body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6090,7 +6044,7 @@ class GraphApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param GraphManagementReq body:
+        :param UserGraphManagementReq body:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6124,12 +6078,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -6154,7 +6107,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/users/{user_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6169,7 +6122,7 @@ class GraphApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def graph_user_group_associations_list(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_user_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User Group.
         This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/associations?targets=user ```
@@ -6179,14 +6132,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_user_group_associations_list(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_user_group_associations_list(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the User Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -6195,12 +6148,12 @@ class GraphApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_user_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            return self.graph_user_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_user_group_associations_list_with_http_info(group_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_user_group_associations_list_with_http_info(group_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_user_group_associations_list_with_http_info(self, group_id, targets, content_type, accept, **kwargs):
+    def graph_user_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User Group.
         This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/associations?targets=user ```
@@ -6210,14 +6163,14 @@ class GraphApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_user_group_associations_list_with_http_info(group_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_user_group_associations_list_with_http_info(group_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str group_id: ObjectID of the User Group. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
@@ -6225,7 +6178,7 @@ class GraphApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6243,32 +6196,31 @@ class GraphApi(object):
         # verify the required parameter 'group_id' is set
         if ('group_id' not in params) or (params['group_id'] is None):
             raise ValueError("Missing the required parameter `group_id` when calling `graph_user_group_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_user_group_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_user_group_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_user_group_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_user_group_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -6291,7 +6243,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6386,12 +6338,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -6416,7 +6367,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/usergroups/{group_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6513,16 +6464,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -6545,7 +6495,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6642,16 +6592,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -6674,7 +6623,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/members', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6769,12 +6718,11 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/members'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -6799,7 +6747,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/usergroups/{group_id}/members', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -6896,16 +6844,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/membership'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -6928,7 +6875,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/membership', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7025,16 +6972,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/activedirectories'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7057,7 +7003,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/activedirectories', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7154,16 +7100,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/applications'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7186,7 +7131,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/applications', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7283,16 +7228,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/directories'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7315,7 +7259,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/directories', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7412,16 +7356,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/gsuites'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7444,7 +7387,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/gsuites', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7541,16 +7484,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/ldapservers'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7573,7 +7515,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/ldapservers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7670,16 +7612,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/office365s'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7702,7 +7643,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/office365s', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7799,16 +7740,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/radiusservers'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7831,7 +7771,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/radiusservers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -7928,16 +7868,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/systems'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -7960,7 +7899,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8057,16 +7996,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/usergroups/{group_id}/systemgroups'.replace('{format}', 'json')
         path_params = {}
         if 'group_id' in params:
             path_params['group_id'] = params['group_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8089,7 +8027,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/usergroups/{group_id}/systemgroups', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8186,16 +8124,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8218,7 +8155,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8315,16 +8252,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/applications'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8347,7 +8283,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/applications', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8444,16 +8380,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/directories'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8476,7 +8411,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/directories', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8573,16 +8508,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/gsuites'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8605,7 +8539,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/gsuites', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8702,16 +8636,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/ldapservers'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8734,7 +8667,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/ldapservers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8831,16 +8764,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/office365s'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8863,7 +8795,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/office365s', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -8960,16 +8892,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/radiusservers'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -8992,7 +8923,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/radiusservers', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -9089,16 +9020,15 @@ class GraphApi(object):
 
         collection_formats = {}
 
-        resource_path = '/users/{user_id}/systems'.replace('{format}', 'json')
         path_params = {}
         if 'user_id' in params:
             path_params['user_id'] = params['user_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -9121,7 +9051,7 @@ class GraphApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/users/{user_id}/systems', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

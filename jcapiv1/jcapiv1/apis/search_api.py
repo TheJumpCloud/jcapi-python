@@ -121,16 +121,15 @@ class SearchApi(object):
 
         collection_formats = {}
 
-        resource_path = '/search/systemusers'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
         if 'fields' in params:
-            query_params['fields'] = params['fields']
+            query_params.append(('fields', params['fields']))
 
         header_params = {}
         if 'content_type' in params:
@@ -155,7 +154,7 @@ class SearchApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/search/systemusers', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,

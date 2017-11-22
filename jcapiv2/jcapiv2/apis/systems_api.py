@@ -40,7 +40,7 @@ class SystemsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def graph_system_associations_list(self, system_id, targets, content_type, accept, **kwargs):
+    def graph_system_associations_list(self, system_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System
         This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systems/{system_id}/associations?targets=user ```
@@ -50,14 +50,14 @@ class SystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_associations_list(system_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_associations_list(system_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str system_id: ObjectID of the System. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
@@ -68,12 +68,12 @@ class SystemsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.graph_system_associations_list_with_http_info(system_id, targets, content_type, accept, **kwargs)
+            return self.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, **kwargs)
         else:
-            (data) = self.graph_system_associations_list_with_http_info(system_id, targets, content_type, accept, **kwargs)
+            (data) = self.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, **kwargs)
             return data
 
-    def graph_system_associations_list_with_http_info(self, system_id, targets, content_type, accept, **kwargs):
+    def graph_system_associations_list_with_http_info(self, system_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System
         This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systems/{system_id}/associations?targets=user ```
@@ -83,14 +83,14 @@ class SystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.graph_system_associations_list_with_http_info(system_id, targets, content_type, accept, callback=callback_function)
+        >>> thread = api.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str system_id: ObjectID of the System. (required)
-        :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] targets:  (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
@@ -100,7 +100,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -118,32 +118,31 @@ class SystemsApi(object):
         # verify the required parameter 'system_id' is set
         if ('system_id' not in params) or (params['system_id'] is None):
             raise ValueError("Missing the required parameter `system_id` when calling `graph_system_associations_list`")
-        # verify the required parameter 'targets' is set
-        if ('targets' not in params) or (params['targets'] is None):
-            raise ValueError("Missing the required parameter `targets` when calling `graph_system_associations_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `graph_system_associations_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_associations_list`")
+        # verify the required parameter 'targets' is set
+        if ('targets' not in params) or (params['targets'] is None):
+            raise ValueError("Missing the required parameter `targets` when calling `graph_system_associations_list`")
 
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
-        if 'targets' in params:
-            query_params['targets'] = params['targets']
-            collection_formats['targets'] = 'csv'
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
+        if 'targets' in params:
+            query_params.append(('targets', params['targets']))
+            collection_formats['targets'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -170,7 +169,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/associations', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -202,7 +201,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param GraphManagementReq body:
+        :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :return: None
@@ -233,7 +232,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param GraphManagementReq body:
+        :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :return: None
@@ -269,12 +268,11 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/associations'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
 
         header_params = {}
         if 'content_type' in params:
@@ -303,7 +301,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'POST',
+        return self.api_client.call_api('/systems/{system_id}/associations', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -404,16 +402,15 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/memberof'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -440,7 +437,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/memberof', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -537,16 +534,15 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/policies'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -569,7 +565,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/policies', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -670,16 +666,15 @@ class SystemsApi(object):
 
         collection_formats = {}
 
-        resource_path = '/systems/{system_id}/users'.replace('{format}', 'json')
         path_params = {}
         if 'system_id' in params:
             path_params['system_id'] = params['system_id']
 
-        query_params = {}
+        query_params = []
         if 'limit' in params:
-            query_params['limit'] = params['limit']
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
-            query_params['skip'] = params['skip']
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:
@@ -706,7 +701,7 @@ class SystemsApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/systems/{system_id}/users', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

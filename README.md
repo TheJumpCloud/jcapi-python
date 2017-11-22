@@ -55,6 +55,7 @@ systemusersAPI = jcapiv1.SystemusersApi()
 try:
     # make an API call to retrieve all systemusers:
     users = systemusersAPI.systemusers_list(content_type, accept)
+    print(users)
 except ApiException as e:
     print("Exception when calling SystemusersApi->systemusers_list: %s\n" % e)
 
@@ -75,7 +76,6 @@ from jcapiv2.rest import ApiException
 ...
 content_type = 'application/json'
 accept = 'application/json'
-group_id = '<YOUR_GROUP_ID>'
 
 # set up the configuration object with your API key:
 jcapiv2.configuration.api_key['x-api-key'] = '<YOUR_API_KEY>'
@@ -85,10 +85,11 @@ jcapiv2.configuration.api_key['x-api-key'] = '<YOUR_API_KEY>'
 userGroupsAPI = jcapiv2.UserGroupsApi()
 
 try:
-    # make an API call to retrieve a specific user group:
-    userGroup = userGroupsAPI.groups_user_get(group_id, content_type, accept)
+    # make an API call to retrieve all user groups:
+    userGroups = userGroupsAPI.groups_user_list(content_type, accept)
+    print(userGroups)
 except ApiException as e:
-    print("Exception when calling UserGroupsApi->groups_user_get: %s\n" % e)
+    print("Exception when calling UserGroupsApi->groups_user_list: %s\n" % e)
 
 ```
 

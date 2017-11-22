@@ -35,7 +35,9 @@ class TestGraphConnection(unittest.TestCase):
         """
         Test GraphConnection
         """
-        model = jcapiv2.models.graph_connection.GraphConnection()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.graph_connection.GraphConnection()
+        pass
 
 
 if __name__ == '__main__':

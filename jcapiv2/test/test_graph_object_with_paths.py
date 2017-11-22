@@ -35,7 +35,9 @@ class TestGraphObjectWithPaths(unittest.TestCase):
         """
         Test GraphObjectWithPaths
         """
-        model = jcapiv2.models.graph_object_with_paths.GraphObjectWithPaths()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.graph_object_with_paths.GraphObjectWithPaths()
+        pass
 
 
 if __name__ == '__main__':

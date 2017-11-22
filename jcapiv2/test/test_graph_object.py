@@ -35,7 +35,9 @@ class TestGraphObject(unittest.TestCase):
         """
         Test GraphObject
         """
-        model = jcapiv2.models.graph_object.GraphObject()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.graph_object.GraphObject()
+        pass
 
 
 if __name__ == '__main__':

@@ -35,7 +35,9 @@ class TestApplicationConfigIdpEntityIdTooltip(unittest.TestCase):
         """
         Test ApplicationConfigIdpEntityIdTooltip
         """
-        model = jcapiv1.models.application_config_idp_entity_id_tooltip.ApplicationConfigIdpEntityIdTooltip()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.application_config_idp_entity_id_tooltip.ApplicationConfigIdpEntityIdTooltip()
+        pass
 
 
 if __name__ == '__main__':

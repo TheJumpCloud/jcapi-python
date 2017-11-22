@@ -19,7 +19,7 @@ This endpoint returns the _direct_ associations of this G Suite instance.  A dir
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -82,7 +82,7 @@ This endpoint returns the _direct_ associations of this G Suite instance.  A dir
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -136,7 +136,7 @@ This endpoint will return Users associated with a G Suite instance. Each element
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException
@@ -197,7 +197,7 @@ This endpoint will return User Groups associated with a G Suite instance. Each e
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv2
 from jcapiv2.rest import ApiException

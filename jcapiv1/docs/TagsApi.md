@@ -20,7 +20,7 @@ Delete a Tag.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -77,7 +77,7 @@ Returns a specific tag.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -142,7 +142,7 @@ Returns all Tags.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -205,7 +205,7 @@ Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" :
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException
@@ -262,7 +262,7 @@ Update a specific tag.
 
 ### Example 
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import jcapiv1
 from jcapiv1.rest import ApiException

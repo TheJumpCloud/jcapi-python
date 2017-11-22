@@ -35,7 +35,9 @@ class TestTagput(unittest.TestCase):
         """
         Test Tagput
         """
-        model = jcapiv1.models.tagput.Tagput()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.tagput.Tagput()
+        pass
 
 
 if __name__ == '__main__':

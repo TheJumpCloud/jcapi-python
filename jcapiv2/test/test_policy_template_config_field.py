@@ -35,7 +35,9 @@ class TestPolicyTemplateConfigField(unittest.TestCase):
         """
         Test PolicyTemplateConfigField
         """
-        model = jcapiv2.models.policy_template_config_field.PolicyTemplateConfigField()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv2.models.policy_template_config_field.PolicyTemplateConfigField()
+        pass
 
 
 if __name__ == '__main__':

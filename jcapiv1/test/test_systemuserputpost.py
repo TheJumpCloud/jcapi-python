@@ -35,7 +35,9 @@ class TestSystemuserputpost(unittest.TestCase):
         """
         Test Systemuserputpost
         """
-        model = jcapiv1.models.systemuserputpost.Systemuserputpost()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.systemuserputpost.Systemuserputpost()
+        pass
 
 
 if __name__ == '__main__':
