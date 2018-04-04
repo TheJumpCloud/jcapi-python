@@ -27,6 +27,6 @@ To generate the API v2 client, run the command below (assuming your API v2 yaml 
 ```
 $ docker-compose run --rm swagger-codegen generate -i /swagger-api/yaml/index2.yaml -l python -c /config/config_v2.json -o /swagger-api/out/jcapiv2
 ```
-This will generate the API v1 client files under `output/jcapiv1`
+This will generate the API v2 client files under `output/jcapiv2`
 
 Once you are satisfied with the generated API client, you can replace the existing files under the `jcapiv1` and `jcapiv2` folders with your generated files.
