@@ -55,11 +55,19 @@ class TestSystemsApi(unittest.TestCase):
         """
         pass
 
+    def test_graph_system_traverse_command(self):
+        """
+        Test case for graph_system_traverse_command
+
+        List the Commands bound to a System
+        """
+        pass
+
     def test_graph_system_traverse_policy(self):
         """
         Test case for graph_system_traverse_policy
 
-        List the Policies associated with a System
+        List the Policies bound to a System
         """
         pass
 
@@ -67,7 +75,15 @@ class TestSystemsApi(unittest.TestCase):
         """
         Test case for graph_system_traverse_user
 
-        List the Users associated with a System
+        List the Users bound to a System
+        """
+        pass
+
+    def test_graph_system_traverse_user_group(self):
+        """
+        Test case for graph_system_traverse_user_group
+
+        List the User Groups bound to a System
         """
         pass
 

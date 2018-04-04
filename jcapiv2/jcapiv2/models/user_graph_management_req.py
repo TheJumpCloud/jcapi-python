@@ -31,29 +31,55 @@ class UserGraphManagementReq(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'attributes': 'SystemGraphManagementReqAttributes',
         'op': 'str',
         'type': 'str',
         'id': 'str'
     }
 
     attribute_map = {
+        'attributes': 'attributes',
         'op': 'op',
         'type': 'type',
         'id': 'id'
     }
 
-    def __init__(self, op=None, type=None, id=None):
+    def __init__(self, attributes=None, op=None, type=None, id=None):
         """
         UserGraphManagementReq - a model defined in Swagger
         """
 
+        self._attributes = None
         self._op = None
         self._type = None
         self._id = None
 
+        if attributes is not None:
+          self.attributes = attributes
         self.op = op
         self.type = type
         self.id = id
+
+    @property
+    def attributes(self):
+        """
+        Gets the attributes of this UserGraphManagementReq.
+
+        :return: The attributes of this UserGraphManagementReq.
+        :rtype: SystemGraphManagementReqAttributes
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """
+        Sets the attributes of this UserGraphManagementReq.
+
+        :param attributes: The attributes of this UserGraphManagementReq.
+        :type: SystemGraphManagementReqAttributes
+        """
+
+        self._attributes = attributes
 
     @property
     def op(self):

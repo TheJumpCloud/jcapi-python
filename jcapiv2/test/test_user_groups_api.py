@@ -83,7 +83,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_active_directory
 
-        List the Active Directories associated with a User Group
+        List the Active Directories bound to a User Group
         """
         pass
 
@@ -91,7 +91,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_application
 
-        List the Applications associated with a User Group
+        List the Applications bound to a User Group
         """
         pass
 
@@ -99,7 +99,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_directory
 
-        List the Directories associated with a User Group
+        List the Directories bound to a User Group
         """
         pass
 
@@ -107,7 +107,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_g_suite
 
-        List the G Suite instances associated with a User Group
+        List the G Suite instances bound to a User Group
         """
         pass
 
@@ -115,7 +115,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_ldap_server
 
-        List the LDAP Servers associated with a User Group
+        List the LDAP Servers bound to a User Group
         """
         pass
 
@@ -123,7 +123,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_office365
 
-        List the Office 365 instances associated with a User Group
+        List the Office 365 instances bound to a User Group
         """
         pass
 
@@ -131,7 +131,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_radius_server
 
-        List the RADIUS Servers associated with a User Group
+        List the RADIUS Servers bound to a User Group
         """
         pass
 
@@ -139,7 +139,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_system
 
-        List the Systems associated with a User Group
+        List the Systems bound to a User Group
         """
         pass
 
@@ -147,7 +147,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for graph_user_group_traverse_system_group
 
-        List the System Groups associated with User Groups
+        List the System Groups bound to User Groups
         """
         pass
 
