@@ -23,6 +23,9 @@ from .models.application_config_idp_entity_id import ApplicationConfigIdpEntityI
 from .models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
 from .models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
 from .models.applicationslist import Applicationslist
+from .models.auth_info import AuthInfo
+from .models.authinfo_auth import AuthinfoAuth
+from .models.authinfo_auth_credentials import AuthinfoAuthCredentials
 from .models.body import Body
 from .models.command import Command
 from .models.commandresult import Commandresult
