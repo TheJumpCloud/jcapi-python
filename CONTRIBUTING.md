@@ -3,7 +3,7 @@
 This repository relies on the following docker file in order to run swagger-codegen inside a docker container:
 https://hub.docker.com/r/jimschubert/swagger-codegen-cli/
 
-We're currently using the version 2.2.3 of swagger-codegen.
+We're currently using the version 2.3.1 of swagger-codegen.
 
 ### Generating the API Client
 
