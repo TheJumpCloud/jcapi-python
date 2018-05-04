@@ -77,7 +77,7 @@ class Directory(object):
         """
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")
-        allowed_values = ["g_suite", "ldap_server", "office_365", "workday"]
+        allowed_values = ["g_suite", "ldap_server", "office_365"]
         if type not in allowed_values:
             raise ValueError(
                 "Invalid value for `type` ({0}), must be one of {1}"

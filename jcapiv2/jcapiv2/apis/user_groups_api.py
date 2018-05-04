@@ -317,10 +317,8 @@ class UserGroupsApi(object):
         :param str group_id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -349,16 +347,14 @@ class UserGroupsApi(object):
         :param str group_id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -391,16 +387,10 @@ class UserGroupsApi(object):
             path_params['group_id'] = params['group_id']
 
         query_params = []
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
-            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
-            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -707,10 +697,8 @@ class UserGroupsApi(object):
         :param str group_id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -739,16 +727,14 @@ class UserGroupsApi(object):
         :param str group_id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -781,16 +767,10 @@ class UserGroupsApi(object):
             path_params['group_id'] = params['group_id']
 
         query_params = []
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
-            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
-            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -830,8 +810,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_active_directory(self, group_id, content_type, accept, **kwargs):
         """
-        List the Active Directories bound to a User Group
-        This endpoint will return all Active Directory Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Active Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Active Directory from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/activedirectories ```
+        List the Active Directories associated with a User Group
+        This endpoint will return the Active Directories associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Active Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Active Directory from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/activedirectories ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -860,8 +840,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_active_directory_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Active Directories bound to a User Group
-        This endpoint will return all Active Directory Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Active Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Active Directory from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/activedirectories ```
+        List the Active Directories associated with a User Group
+        This endpoint will return the Active Directories associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Active Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Active Directory from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/activedirectories ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -958,8 +938,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_application(self, group_id, content_type, accept, **kwargs):
         """
-        List the Applications bound to a User Group
-        This endpoint will return all Applications bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/applications ```
+        List the Applications associated with a User Group
+        This endpoint will return Applications associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/applications ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -988,8 +968,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_application_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Applications bound to a User Group
-        This endpoint will return all Applications bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/applications ```
+        List the Applications associated with a User Group
+        This endpoint will return Applications associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/applications ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1086,8 +1066,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_directory(self, group_id, content_type, accept, **kwargs):
         """
-        List the Directories bound to a User Group
-        This endpoint will return all Directories bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directories from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/directories ```
+        List the Directories associated with a User Group
+        This endpoint will return Directories associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directories from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/directories ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1116,8 +1096,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_directory_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Directories bound to a User Group
-        This endpoint will return all Directories bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directories from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/directories ```
+        List the Directories associated with a User Group
+        This endpoint will return Directories associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directories from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/directories ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1214,8 +1194,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_g_suite(self, group_id, content_type, accept, **kwargs):
         """
-        List the G Suite instances bound to a User Group
-        This endpoint will return all Gsuite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/gsuites ```
+        List the G Suite instances associated with a User Group
+        This endpoint will return the G Suite instances associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/gsuites ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1244,8 +1224,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_g_suite_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the G Suite instances bound to a User Group
-        This endpoint will return all Gsuite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/gsuites ```
+        List the G Suite instances associated with a User Group
+        This endpoint will return the G Suite instances associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/gsuites ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1342,8 +1322,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_ldap_server(self, group_id, content_type, accept, **kwargs):
         """
-        List the LDAP Servers bound to a User Group
-        This endpoint will return all LDAP Servers bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/ldapservers ```
+        List the LDAP Servers associated with a User Group
+        This endpoint will return the LDAP Servers associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/ldapservers ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1372,8 +1352,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_ldap_server_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the LDAP Servers bound to a User Group
-        This endpoint will return all LDAP Servers bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/ldapservers ```
+        List the LDAP Servers associated with a User Group
+        This endpoint will return the LDAP Servers associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/ldapservers ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1470,8 +1450,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_office365(self, group_id, content_type, accept, **kwargs):
         """
-        List the Office 365 instances bound to a User Group
-        This endpoint will return all Office 365 instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/office365s ```
+        List the Office 365 instances associated with a User Group
+        This endpoint will return the Office 365 instances associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/office365s ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1500,8 +1480,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_office365_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Office 365 instances bound to a User Group
-        This endpoint will return all Office 365 instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/office365s ```
+        List the Office 365 instances associated with a User Group
+        This endpoint will return the Office 365 instances associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/office365s ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1598,8 +1578,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_radius_server(self, group_id, content_type, accept, **kwargs):
         """
-        List the RADIUS Servers bound to a User Group
-        This endpoint will return all RADIUS servers bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/radiusservers ```
+        List the RADIUS Servers associated with a User Group
+        This endpoint will return a RADIUS Servers associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/radiusservers ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1628,8 +1608,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_radius_server_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the RADIUS Servers bound to a User Group
-        This endpoint will return all RADIUS servers bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/radiusservers ```
+        List the RADIUS Servers associated with a User Group
+        This endpoint will return a RADIUS Servers associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/radiusservers ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1726,8 +1706,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_system(self, group_id, content_type, accept, **kwargs):
         """
-        List the Systems bound to a User Group
-        This endpoint will return all Systems bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systems ```
+        List the Systems associated with a User Group
+        This endpoint will return Systems associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systems ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1756,8 +1736,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_system_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Systems bound to a User Group
-        This endpoint will return all Systems bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systems ```
+        List the Systems associated with a User Group
+        This endpoint will return Systems associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systems ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1854,8 +1834,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_system_group(self, group_id, content_type, accept, **kwargs):
         """
-        List the System Groups bound to User Groups
-        This endpoint will return all System Groups bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systemsgroups ```
+        List the System Groups associated with User Groups
+        This endpoint will return System Groups associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systemsgroups ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1884,8 +1864,8 @@ class UserGroupsApi(object):
 
     def graph_user_group_traverse_system_group_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the System Groups bound to User Groups
-        This endpoint will return all System Groups bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systemsgroups ```
+        List the System Groups associated with User Groups
+        This endpoint will return System Groups associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systemsgroups ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2236,11 +2216,11 @@ class UserGroupsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[UserGroup]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2268,11 +2248,11 @@ class UserGroupsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[UserGroup]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2308,17 +2288,14 @@ class UserGroupsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
-            collection_formats['fields'] = 'csv'
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
-            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
-            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -2373,7 +2350,7 @@ class UserGroupsApi(object):
         :param str id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param UserGroupPost body:
+        :param UserGroupData body:
         :return: UserGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2402,7 +2379,7 @@ class UserGroupsApi(object):
         :param str id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param UserGroupPost body:
+        :param UserGroupData body:
         :return: UserGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2496,7 +2473,7 @@ class UserGroupsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param UserGroupPost body:
+        :param UserGroupData body:
         :return: UserGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2524,7 +2501,7 @@ class UserGroupsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param UserGroupPost body:
+        :param UserGroupData body:
         :return: UserGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2614,7 +2591,7 @@ class UserGroupsApi(object):
         :param str id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param UserGroupPut body:
+        :param UserGroupData body:
         :return: UserGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2643,7 +2620,7 @@ class UserGroupsApi(object):
         :param str id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param UserGroupPut body:
+        :param UserGroupData body:
         :return: UserGroup
                  If the method is called asynchronously,
                  returns the request thread.

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Delete Samba Domain
 
-This endpoint allows you to delete a samba domain from an LDAP server.  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint allows you to delete a samba domain from an LDAP server.
 
 ### Example 
 ```python
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 Get Samba Domain
 
-This endpoint returns a specific samba domain for an LDAP server.  ##### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/ldapservers/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint returns a specific samba domain for an LDAP server.
 
 ### Example 
 ```python
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 List Samba Domains
 
-This endpoint returns all samba domains for an LDAP server.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint returns all samba domains for an LDAP server.
 
 ### Example 
 ```python
@@ -154,11 +154,11 @@ api_instance = jcapiv2.SambaDomainsApi()
 ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
-fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
-filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
+fields = '' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional) (default to )
+filter = '' # str | Supported operators are: eq, ne, gt, ge, lt, le, between, search (optional) (default to )
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
 
 try: 
     # List Samba Domains
@@ -175,11 +175,11 @@ Name | Type | Description  | Notes
  **ldapserver_id** | **str**| Unique identifier of the LDAP server. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
- **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
+ **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **filter** | **str**| Supported operators are: eq, ne, gt, ge, lt, le, between, search | [optional] [default to ]
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
 
 ### Return type
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 Create Samba Domain
 
-This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\"  }' ```
+This endpoint allows you to create a samba domain for an LDAP server.
 
 ### Example 
 ```python
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 Update Samba Domain
 
-This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\" }'  ```
+This endpoint allows you to update the samba domain information for an LDAP server.
 
 ### Example 
 ```python

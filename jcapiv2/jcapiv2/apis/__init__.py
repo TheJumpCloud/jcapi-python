@@ -3,7 +3,6 @@ from __future__ import absolute_import
 # import apis into api package
 from .active_directory_api import ActiveDirectoryApi
 from .applications_api import ApplicationsApi
-from .bulk_job_requests_api import BulkJobRequestsApi
 from .commands_api import CommandsApi
 from .directories_api import DirectoriesApi
 from .g_suite_api import GSuiteApi
@@ -23,4 +22,4 @@ from .user_group_associations_api import UserGroupAssociationsApi
 from .user_group_members_membership_api import UserGroupMembersMembershipApi
 from .user_groups_api import UserGroupsApi
 from .users_api import UsersApi
-from .workday_import_api import WorkdayImportApi
+from .workday_api import WorkdayApi

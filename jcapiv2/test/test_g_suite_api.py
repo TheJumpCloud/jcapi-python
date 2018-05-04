@@ -51,7 +51,7 @@ class TestGSuiteApi(unittest.TestCase):
         """
         Test case for graph_g_suite_traverse_user
 
-        List the Users bound to a G Suite instance
+        List the Users associated with a G Suite instance
         """
         pass
 
@@ -59,7 +59,7 @@ class TestGSuiteApi(unittest.TestCase):
         """
         Test case for graph_g_suite_traverse_user_group
 
-        List the User Groups bound to a G Suite instance
+        List the User Groups associated with a G Suite instance
         """
         pass
 

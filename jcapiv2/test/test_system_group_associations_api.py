@@ -47,19 +47,11 @@ class TestSystemGroupAssociationsApi(unittest.TestCase):
         """
         pass
 
-    def test_graph_system_group_traverse_command(self):
-        """
-        Test case for graph_system_group_traverse_command
-
-        List the Commands bound to a System Group
-        """
-        pass
-
     def test_graph_system_group_traverse_policy(self):
         """
         Test case for graph_system_group_traverse_policy
 
-        List the Policies bound to a System Group
+        List the Policies associated with a System Group
         """
         pass
 
@@ -67,7 +59,7 @@ class TestSystemGroupAssociationsApi(unittest.TestCase):
         """
         Test case for graph_system_group_traverse_user
 
-        List the Users bound to a System Group
+        List the Users associated with a System Group
         """
         pass
 
@@ -75,7 +67,7 @@ class TestSystemGroupAssociationsApi(unittest.TestCase):
         """
         Test case for graph_system_group_traverse_user_group
 
-        List the User Groups bound to a System Group
+        List the User Groups associated with a System Group
         """
         pass
 
