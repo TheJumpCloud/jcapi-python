@@ -59,7 +59,7 @@ class SambaDomainOutput(object):
     def name(self):
         """
         Gets the name of this SambaDomainOutput.
-        Name of this domain
+        Name of this domain's WorkGroup
 
         :return: The name of this SambaDomainOutput.
         :rtype: str
@@ -70,7 +70,7 @@ class SambaDomainOutput(object):
     def name(self, name):
         """
         Sets the name of this SambaDomainOutput.
-        Name of this domain
+        Name of this domain's WorkGroup
 
         :param name: The name of this SambaDomainOutput.
         :type: str

@@ -43,7 +43,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_delete(self, ldapserver_id, id, **kwargs):
         """
         Delete Samba Domain
-        This endpoint allows you to delete a samba domain from an LDAP server.
+        This endpoint allows you to delete a samba domain from an LDAP server.  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -72,7 +72,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_delete_with_http_info(self, ldapserver_id, id, **kwargs):
         """
         Delete Samba Domain
-        This endpoint allows you to delete a samba domain from an LDAP server.
+        This endpoint allows you to delete a samba domain from an LDAP server.  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -164,7 +164,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_get(self, ldapserver_id, id, **kwargs):
         """
         Get Samba Domain
-        This endpoint returns a specific samba domain for an LDAP server.
+        This endpoint returns a specific samba domain for an LDAP server.  ##### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/ldapservers/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -193,7 +193,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_get_with_http_info(self, ldapserver_id, id, **kwargs):
         """
         Get Samba Domain
-        This endpoint returns a specific samba domain for an LDAP server.
+        This endpoint returns a specific samba domain for an LDAP server.  ##### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/ldapservers/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -285,7 +285,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_list(self, ldapserver_id, **kwargs):
         """
         List Samba Domains
-        This endpoint returns all samba domains for an LDAP server.
+        This endpoint returns all samba domains for an LDAP server.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -299,11 +299,11 @@ class SambaDomainsApi(object):
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str content_type:
         :param str accept:
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[SambaDomainOutput]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -318,7 +318,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_list_with_http_info(self, ldapserver_id, **kwargs):
         """
         List Samba Domains
-        This endpoint returns all samba domains for an LDAP server.
+        This endpoint returns all samba domains for an LDAP server.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -332,11 +332,11 @@ class SambaDomainsApi(object):
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str content_type:
         :param str accept:
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[SambaDomainOutput]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -371,14 +371,17 @@ class SambaDomainsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -419,7 +422,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_post(self, ldapserver_id, **kwargs):
         """
         Create Samba Domain
-        This endpoint allows you to create a samba domain for an LDAP server.
+        This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\"  }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -448,7 +451,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_post_with_http_info(self, ldapserver_id, **kwargs):
         """
         Create Samba Domain
-        This endpoint allows you to create a samba domain for an LDAP server.
+        This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\"  }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -537,7 +540,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_put(self, ldapserver_id, id, **kwargs):
         """
         Update Samba Domain
-        This endpoint allows you to update the samba domain information for an LDAP server.
+        This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -567,7 +570,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_put_with_http_info(self, ldapserver_id, id, **kwargs):
         """
         Update Samba Domain
-        This endpoint allows you to update the samba domain information for an LDAP server.
+        This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

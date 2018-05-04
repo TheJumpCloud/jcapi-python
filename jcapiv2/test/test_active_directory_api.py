@@ -83,7 +83,7 @@ class TestActiveDirectoryApi(unittest.TestCase):
         """
         Test case for graph_active_directory_traverse_user_group
 
-        List the User Groups associated with an Active Directory instance
+        List the User Groups bound to an Active Directory instance
         """
         pass
 

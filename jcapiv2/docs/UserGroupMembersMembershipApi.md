@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **graph_user_group_member_of**
-> list[GraphObjectWithPaths] graph_user_group_member_of(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
 
 List the User Group's parents
 
@@ -35,12 +35,14 @@ api_instance = jcapiv2.UserGroupMembersMembershipApi()
 group_id = 'group_id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 
 try: 
     # List the User Group's parents
-    api_response = api_instance.graph_user_group_member_of(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupMembersMembershipApi->graph_user_group_member_of: %s\n" % e)
@@ -53,8 +55,10 @@ Name | Type | Description  | Notes
  **group_id** | **str**| ObjectID of the User Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 
 ### Return type
 
@@ -191,7 +195,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_membership**
-> list[GraphObjectWithPaths] graph_user_group_membership(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
 
 List the User Group's membership
 
@@ -215,12 +219,14 @@ api_instance = jcapiv2.UserGroupMembersMembershipApi()
 group_id = 'group_id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 
 try: 
     # List the User Group's membership
-    api_response = api_instance.graph_user_group_membership(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupMembersMembershipApi->graph_user_group_membership: %s\n" % e)
@@ -233,8 +239,10 @@ Name | Type | Description  | Notes
  **group_id** | **str**| ObjectID of the User Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 
 ### Return type
 
