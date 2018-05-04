@@ -39,6 +39,14 @@ class TestRadiusServersApi(unittest.TestCase):
         """
         pass
 
+    def test_radius_servers_post(self):
+        """
+        Test case for radius_servers_post
+
+        Create a Radius Server
+        """
+        pass
+
     def test_radius_servers_put(self):
         """
         Test case for radius_servers_put

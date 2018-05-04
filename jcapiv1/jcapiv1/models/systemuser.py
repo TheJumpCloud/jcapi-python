@@ -58,6 +58,7 @@ class Systemuser(object):
         'attributes': 'list[object]',
         'created': 'str',
         'samba_service_user': 'bool',
+        'password_never_expires': 'bool',
         'id': 'str'
     }
 
@@ -89,10 +90,11 @@ class Systemuser(object):
         'attributes': 'attributes',
         'created': 'created',
         'samba_service_user': 'samba_service_user',
+        'password_never_expires': 'password_never_expires',
         'id': '_id'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, associated_tag_count=None, totp_enabled=None, password_expiration_date=None, attributes=None, created=None, samba_service_user=None, id=None):
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, associated_tag_count=None, totp_enabled=None, password_expiration_date=None, attributes=None, created=None, samba_service_user=None, password_never_expires=None, id=None):
         """
         Systemuser - a model defined in Swagger
         """
@@ -124,6 +126,7 @@ class Systemuser(object):
         self._attributes = None
         self._created = None
         self._samba_service_user = None
+        self._password_never_expires = None
         self._id = None
 
         if email is not None:
@@ -180,6 +183,8 @@ class Systemuser(object):
           self.created = created
         if samba_service_user is not None:
           self.samba_service_user = samba_service_user
+        if password_never_expires is not None:
+          self.password_never_expires = password_never_expires
         if id is not None:
           self.id = id
 
@@ -348,6 +353,8 @@ class Systemuser(object):
         :param unix_uid: The unix_uid of this Systemuser.
         :type: int
         """
+        if unix_uid is not None and unix_uid < 0:
+            raise ValueError("Invalid value for `unix_uid`, must be a value greater than or equal to `0`")
 
         self._unix_uid = unix_uid
 
@@ -369,6 +376,8 @@ class Systemuser(object):
         :param unix_guid: The unix_guid of this Systemuser.
         :type: int
         """
+        if unix_guid is not None and unix_guid < 0:
+            raise ValueError("Invalid value for `unix_guid`, must be a value greater than or equal to `0`")
 
         self._unix_guid = unix_guid
 
@@ -642,6 +651,8 @@ class Systemuser(object):
         :param associated_tag_count: The associated_tag_count of this Systemuser.
         :type: int
         """
+        if associated_tag_count is not None and associated_tag_count < 0:
+            raise ValueError("Invalid value for `associated_tag_count`, must be a value greater than or equal to `0`")
 
         self._associated_tag_count = associated_tag_count
 
@@ -749,6 +760,27 @@ class Systemuser(object):
         """
 
         self._samba_service_user = samba_service_user
+
+    @property
+    def password_never_expires(self):
+        """
+        Gets the password_never_expires of this Systemuser.
+
+        :return: The password_never_expires of this Systemuser.
+        :rtype: bool
+        """
+        return self._password_never_expires
+
+    @password_never_expires.setter
+    def password_never_expires(self, password_never_expires):
+        """
+        Sets the password_never_expires of this Systemuser.
+
+        :param password_never_expires: The password_never_expires of this Systemuser.
+        :type: bool
+        """
+
+        self._password_never_expires = password_never_expires
 
     @property
     def id(self):

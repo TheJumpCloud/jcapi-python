@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Delete a Tag
 
-Delete a Tag.
+Hidden as Tags is deprecated  Delete a Tag.
 
 ### Example 
 ```python
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 List a Tag
 
-Returns a specific tag.
+Hidden as Tags is deprecated  Returns a specific tag.
 
 ### Example 
 ```python
@@ -93,10 +93,10 @@ api_instance = jcapiv1.TagsApi()
 name = 'name_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-fields = '' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional) (default to )
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
+sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
 
 try: 
     # List a Tag
@@ -113,10 +113,10 @@ Name | Type | Description  | Notes
  **name** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
 
 ### Return type
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 List All Tags
 
-Returns all Tags.
+Hidden as Tags is deprecated  Returns all Tags.
 
 ### Example 
 ```python
@@ -157,10 +157,10 @@ jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv1.TagsApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-fields = '' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional) (default to )
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
+sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
 
 try: 
     # List All Tags
@@ -176,10 +176,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
 
 ### Return type
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 Create a Tag
 
-Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
+Hidden as Tags is deprecated  Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
 
 ### Example 
 ```python
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 Update a Tag
 
-Update a specific tag.
+Hidden as Tags is deprecated  Update a specific tag.
 
 ### Example 
 ```python

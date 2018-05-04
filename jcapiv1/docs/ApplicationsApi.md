@@ -8,11 +8,11 @@ Method | HTTP request | Description
 
 
 # **applications_list**
-> Applicationslist applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> InlineResponse200 applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
 
 Applications
 
-The endpoint is used to return all your SSO Applications.
+The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example 
 ```python
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Applicationslist**](Applicationslist.md)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

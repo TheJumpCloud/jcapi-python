@@ -1,4 +1,4 @@
-# ApplicationConfigConstantAttributes
+# InlineResponse200ConfigConstantAttributes
 
 ## Properties
 Name | Type | Description | Notes
@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **read_only** | **bool** |  | [optional] 
 **tooltip** | [**InlineResponse200ConfigIdpEntityIdTooltip**](InlineResponse200ConfigIdpEntityIdTooltip.md) |  | [optional] 
 **type** | **str** |  | [optional] 
-**value** | [**list[ApplicationConfigConstantAttributesValue]**](ApplicationConfigConstantAttributesValue.md) |  | [optional] 
+**value** | [**list[InlineResponse200ConfigConstantAttributesValue]**](InlineResponse200ConfigConstantAttributesValue.md) |  | [optional] 
 **visible** | **bool** |  | [optional] 
 **mutable** | **bool** |  | [optional] 
 **required** | **bool** |  | [optional] 

@@ -32,7 +32,7 @@ class Systemuserslist(object):
     """
     swagger_types = {
         'total_count': 'int',
-        'results': 'list[Systemuser]'
+        'results': 'list[Systemuserreturn]'
     }
 
     attribute_map = {
@@ -83,7 +83,7 @@ class Systemuserslist(object):
         The list of system users.
 
         :return: The results of this Systemuserslist.
-        :rtype: list[Systemuser]
+        :rtype: list[Systemuserreturn]
         """
         return self._results
 
@@ -94,7 +94,7 @@ class Systemuserslist(object):
         The list of system users.
 
         :param results: The results of this Systemuserslist.
-        :type: list[Systemuser]
+        :type: list[Systemuserreturn]
         """
 
         self._results = results

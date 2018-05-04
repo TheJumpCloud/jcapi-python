@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **str** |  | [optional] 
-**username** | **str** |  | [optional] 
+**email** | **str** |  | 
+**username** | **str** |  | 
 **allow_public_key** | **bool** |  | [optional] 
 **public_key** | **str** |  | [optional] 
 **ssh_keys** | **list[str]** |  | [optional] 
@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **phone_numbers** | **list[str]** |  | [optional] 
 **relationships** | **list[object]** |  | [optional] 
 **password** | **str** |  | [optional] 
+**password_never_expires** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

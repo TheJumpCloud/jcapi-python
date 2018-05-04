@@ -43,7 +43,7 @@ class ApplicationsApi(object):
     def applications_list(self, content_type, accept, **kwargs):
         """
         Applications
-        The endpoint is used to return all your SSO Applications.
+        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -60,7 +60,7 @@ class ApplicationsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort:
-        :return: Applicationslist
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -74,7 +74,7 @@ class ApplicationsApi(object):
     def applications_list_with_http_info(self, content_type, accept, **kwargs):
         """
         Applications
-        The endpoint is used to return all your SSO Applications.
+        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -91,7 +91,7 @@ class ApplicationsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort:
-        :return: Applicationslist
+        :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -161,7 +161,7 @@ class ApplicationsApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='Applicationslist',
+                                        response_type='InlineResponse200',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

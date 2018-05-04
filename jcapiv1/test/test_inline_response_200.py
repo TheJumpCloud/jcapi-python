@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.authinfo_auth import AuthinfoAuth
+from jcapiv1.models.inline_response_200 import InlineResponse200
 
 
-class TestAuthinfoAuth(unittest.TestCase):
-    """ AuthinfoAuth unit test stubs """
+class TestInlineResponse200(unittest.TestCase):
+    """ InlineResponse200 unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestAuthinfoAuth(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAuthinfoAuth(self):
+    def testInlineResponse200(self):
         """
-        Test AuthinfoAuth
+        Test InlineResponse200
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.authinfo_auth.AuthinfoAuth()
+        #model = jcapiv1.models.inline_response_200.InlineResponse200()
         pass
 
 

@@ -43,7 +43,7 @@ class CommandResultsApi(object):
     def command_results_delete(self, id, content_type, accept, **kwargs):
         """
         Delete a Command result
-        Deletes a specific command result.
+        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ````
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -71,7 +71,7 @@ class CommandResultsApi(object):
     def command_results_delete_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Delete a Command result
-        Deletes a specific command result.
+        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ````
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -163,7 +163,7 @@ class CommandResultsApi(object):
     def command_results_get(self, id, content_type, accept, **kwargs):
         """
         List an individual Command result
-        Returns a specific command result.
+        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -177,10 +177,10 @@ class CommandResultsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Commandresult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -195,7 +195,7 @@ class CommandResultsApi(object):
     def command_results_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         List an individual Command result
-        Returns a specific command result.
+        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -209,10 +209,10 @@ class CommandResultsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Commandresult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -299,7 +299,7 @@ class CommandResultsApi(object):
     def command_results_list(self, content_type, accept, **kwargs):
         """
         List all Command Results
-        Returns all command results.
+        This endpoint returns all command results.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key:{API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -312,10 +312,10 @@ class CommandResultsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Commandresultslist
                  If the method is called asynchronously,
                  returns the request thread.
@@ -330,7 +330,7 @@ class CommandResultsApi(object):
     def command_results_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List all Command Results
-        Returns all command results.
+        This endpoint returns all command results.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key:{API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -343,10 +343,10 @@ class CommandResultsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Commandresultslist
                  If the method is called asynchronously,
                  returns the request thread.

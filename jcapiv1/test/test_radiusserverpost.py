@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.authinfo_auth_credentials import AuthinfoAuthCredentials
+from jcapiv1.models.radiusserverpost import Radiusserverpost
 
 
-class TestAuthinfoAuthCredentials(unittest.TestCase):
-    """ AuthinfoAuthCredentials unit test stubs """
+class TestRadiusserverpost(unittest.TestCase):
+    """ Radiusserverpost unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestAuthinfoAuthCredentials(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAuthinfoAuthCredentials(self):
+    def testRadiusserverpost(self):
         """
-        Test AuthinfoAuthCredentials
+        Test Radiusserverpost
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.authinfo_auth_credentials.AuthinfoAuthCredentials()
+        #model = jcapiv1.models.radiusserverpost.Radiusserverpost()
         pass
 
 

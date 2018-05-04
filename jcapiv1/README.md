@@ -84,14 +84,17 @@ Class | Method | HTTP request | Description
 *CommandResultsApi* | [**command_results_get**](docs/CommandResultsApi.md#command_results_get) | **GET** /commandresults/{id} | List an individual Command result
 *CommandResultsApi* | [**command_results_list**](docs/CommandResultsApi.md#command_results_list) | **GET** /commandresults | List all Command Results
 *CommandTriggersApi* | [**command_trigger_webhook_post**](docs/CommandTriggersApi.md#command_trigger_webhook_post) | **POST** /command/trigger/{triggername} | Launch a command via a Trigger
+*CommandsApi* | [**command_file_get**](docs/CommandsApi.md#command_file_get) | **GET** /files/command/{id} | Get a Command File
 *CommandsApi* | [**commands_delete**](docs/CommandsApi.md#commands_delete) | **DELETE** /commands/{id} | Delete a Command
 *CommandsApi* | [**commands_get**](docs/CommandsApi.md#commands_get) | **GET** /commands/{id} | List an individual Command
 *CommandsApi* | [**commands_list**](docs/CommandsApi.md#commands_list) | **GET** /commands/ | List All Commands
 *CommandsApi* | [**commands_post**](docs/CommandsApi.md#commands_post) | **POST** /commands/ | Create A Command
 *CommandsApi* | [**commands_put**](docs/CommandsApi.md#commands_put) | **PUT** /commands/{id} | Update a Command
 *RadiusServersApi* | [**radius_servers_list**](docs/RadiusServersApi.md#radius_servers_list) | **GET** /radiusservers | List Radius Servers
+*RadiusServersApi* | [**radius_servers_post**](docs/RadiusServersApi.md#radius_servers_post) | **POST** /radiusservers | Create a Radius Server
 *RadiusServersApi* | [**radius_servers_put**](docs/RadiusServersApi.md#radius_servers_put) | **PUT** /radiusservers:id | Update Radius Servers
-*SearchApi* | [**search_systemusers_post**](docs/SearchApi.md#search_systemusers_post) | **POST** /search/systemusers | List System Users
+*SearchApi* | [**search_systems_post**](docs/SearchApi.md#search_systems_post) | **POST** /search/systems | Search Systems
+*SearchApi* | [**search_systemusers_post**](docs/SearchApi.md#search_systemusers_post) | **POST** /search/systemusers | Search System Users
 *SystemsApi* | [**systems_delete**](docs/SystemsApi.md#systems_delete) | **DELETE** /systems/{id} | Delete a System
 *SystemsApi* | [**systems_get**](docs/SystemsApi.md#systems_get) | **GET** /systems/{id} | List an individual system
 *SystemsApi* | [**systems_list**](docs/SystemsApi.md#systems_list) | **GET** /systems | List All Systems
@@ -118,22 +121,26 @@ Class | Method | HTTP request | Description
  - [ApplicationConfig](docs/ApplicationConfig.md)
  - [ApplicationConfigConstantAttributes](docs/ApplicationConfigConstantAttributes.md)
  - [ApplicationConfigConstantAttributesValue](docs/ApplicationConfigConstantAttributesValue.md)
- - [ApplicationConfigDatabaseAttributes](docs/ApplicationConfigDatabaseAttributes.md)
- - [ApplicationConfigIdpEntityId](docs/ApplicationConfigIdpEntityId.md)
- - [ApplicationConfigIdpEntityIdTooltip](docs/ApplicationConfigIdpEntityIdTooltip.md)
- - [ApplicationConfigIdpEntityIdTooltipVariables](docs/ApplicationConfigIdpEntityIdTooltipVariables.md)
  - [Applicationslist](docs/Applicationslist.md)
- - [AuthInfo](docs/AuthInfo.md)
- - [AuthinfoAuth](docs/AuthinfoAuth.md)
- - [AuthinfoAuthCredentials](docs/AuthinfoAuthCredentials.md)
  - [Body](docs/Body.md)
  - [Command](docs/Command.md)
+ - [Commandfilereturn](docs/Commandfilereturn.md)
  - [Commandresult](docs/Commandresult.md)
  - [CommandresultResponse](docs/CommandresultResponse.md)
  - [CommandresultResponseData](docs/CommandresultResponseData.md)
  - [Commandresultslist](docs/Commandresultslist.md)
  - [Commandslist](docs/Commandslist.md)
+ - [InlineResponse200](docs/InlineResponse200.md)
+ - [InlineResponse200Config](docs/InlineResponse200Config.md)
+ - [InlineResponse200ConfigConstantAttributes](docs/InlineResponse200ConfigConstantAttributes.md)
+ - [InlineResponse200ConfigConstantAttributesValue](docs/InlineResponse200ConfigConstantAttributesValue.md)
+ - [InlineResponse200ConfigDatabaseAttributes](docs/InlineResponse200ConfigDatabaseAttributes.md)
+ - [InlineResponse200ConfigIdpEntityId](docs/InlineResponse200ConfigIdpEntityId.md)
+ - [InlineResponse200ConfigIdpEntityIdTooltip](docs/InlineResponse200ConfigIdpEntityIdTooltip.md)
+ - [InlineResponse200ConfigIdpEntityIdTooltipVariables](docs/InlineResponse200ConfigIdpEntityIdTooltipVariables.md)
+ - [InlineResponse200Results](docs/InlineResponse200Results.md)
  - [Radiusserver](docs/Radiusserver.md)
+ - [Radiusserverpost](docs/Radiusserverpost.md)
  - [Radiusserverput](docs/Radiusserverput.md)
  - [Radiusserverslist](docs/Radiusserverslist.md)
  - [Search](docs/Search.md)
@@ -145,6 +152,7 @@ Class | Method | HTTP request | Description
  - [Systemuser](docs/Systemuser.md)
  - [Systemuserbinding](docs/Systemuserbinding.md)
  - [Systemuserbindingsput](docs/Systemuserbindingsput.md)
+ - [Systemuserput](docs/Systemuserput.md)
  - [Systemuserputpost](docs/Systemuserputpost.md)
  - [Systemuserreturn](docs/Systemuserreturn.md)
  - [Systemuserslist](docs/Systemuserslist.md)

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Launch a command via a Trigger
 
-### Examples  ##### Launch a Command via a Trigger  ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\      \"https://console.jumpcloud.com/api/command/trigger/[TRIGGER_NAME_HERE]\" ``` ##### Launch a Command via a Trigger passing a JSON object to the command ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\      -H 'Accept: application/json' \\      -d '{ \"srcip\":\"192.168.2.32\", \"attack\":\"Cross Site Scripting Attempt\" }' \\      \"https://console.jumpcloud.com/api/command/trigger/[TRIGGER_NAME_HERE]\" ```
+This endpoint allows you to launch a command based on a defined trigger.  #### Sample Requests  **Launch a Command via a Trigger**  ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: {API_KEY}\" \\      \"https://console.jumpcloud.com/api/command/trigger/{TriggerName}\" ``` **Launch a Command via a Trigger passing a JSON object to the command** ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: {API_KEY}\" \\      -H 'Accept: application/json' \\      -H 'Content-Type: application/json' \\      -d '{ \"srcip\":\"192.168.2.32\", \"attack\":\"Cross Site Scripting Attempt\" }' \\      \"https://console.jumpcloud.com/api/command/trigger/{TriggerName}\" ```
 
 ### Example 
 ```python
