@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.auth_info import AuthInfo
+from jcapiv1.models.systemuserput import Systemuserput
 
 
-class TestAuthInfo(unittest.TestCase):
-    """ AuthInfo unit test stubs """
+class TestSystemuserput(unittest.TestCase):
+    """ Systemuserput unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestAuthInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testAuthInfo(self):
+    def testSystemuserput(self):
         """
-        Test AuthInfo
+        Test Systemuserput
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.auth_info.AuthInfo()
+        #model = jcapiv1.models.systemuserput.Systemuserput()
         pass
 
 
