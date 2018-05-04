@@ -35,7 +35,7 @@ class TestRADIUSServersApi(unittest.TestCase):
         """
         Test case for graph_radius_server_associations_list
 
-        List the associations of a Radius Server
+        List the associations of a RADIUS  Server
         """
         pass
 
@@ -43,7 +43,7 @@ class TestRADIUSServersApi(unittest.TestCase):
         """
         Test case for graph_radius_server_associations_post
 
-        Manage the associations of a Radius Server
+        Manage the associations of a RADIUS Server
         """
         pass
 
@@ -51,7 +51,7 @@ class TestRADIUSServersApi(unittest.TestCase):
         """
         Test case for graph_radius_server_traverse_user
 
-        List the Users associated with a Radius Server
+        List the Users bound to a RADIUS  Server
         """
         pass
 
@@ -59,7 +59,7 @@ class TestRADIUSServersApi(unittest.TestCase):
         """
         Test case for graph_radius_server_traverse_user_group
 
-        List the User Groups associated with a Radius Server
+        List the User Groups bound to a RADIUS  Server
         """
         pass
 

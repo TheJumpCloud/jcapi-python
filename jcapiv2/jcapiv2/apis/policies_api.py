@@ -43,7 +43,7 @@ class PoliciesApi(object):
     def graph_policy_associations_list(self, policy_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Policy
-        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/associations?targets=system ```
+        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -74,7 +74,7 @@ class PoliciesApi(object):
     def graph_policy_associations_list_with_http_info(self, policy_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Policy
-        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/associations?targets=system ```
+        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -179,7 +179,7 @@ class PoliciesApi(object):
     def graph_policy_associations_post(self, policy_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Policy
-        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/associations ```
+        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -208,7 +208,7 @@ class PoliciesApi(object):
     def graph_policy_associations_post_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Policy
-        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/associations ```
+        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -302,8 +302,8 @@ class PoliciesApi(object):
 
     def graph_policy_traverse_system(self, policy_id, content_type, accept, **kwargs):
         """
-        List the Systems associated with a Policy
-        This endpoint will return Systems associated with a Policy. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this Policy to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/systems ```
+        List the Systems bound to a Policy
+        This endpoint will return all Systems bound to a Policy, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Policy to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -332,8 +332,8 @@ class PoliciesApi(object):
 
     def graph_policy_traverse_system_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
-        List the Systems associated with a Policy
-        This endpoint will return Systems associated with a Policy. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this Policy to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/systems ```
+        List the Systems bound to a Policy
+        This endpoint will return all Systems bound to a Policy, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Policy to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -430,8 +430,8 @@ class PoliciesApi(object):
 
     def graph_policy_traverse_system_group(self, policy_id, content_type, accept, **kwargs):
         """
-        List the System Groups associated with a Policy
-        This endpoint will return System Groups associated with a Policy. Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this Policy to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/systemsgroups ```
+        List the System Groups bound to a Policy
+        This endpoint will return all Systems Groups bound to a Policy, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Policy to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET  https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/systemgroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -460,8 +460,8 @@ class PoliciesApi(object):
 
     def graph_policy_traverse_system_group_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
-        List the System Groups associated with a Policy
-        This endpoint will return System Groups associated with a Policy. Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this Policy to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/policies/{policy_id}/systemsgroups ```
+        List the System Groups bound to a Policy
+        This endpoint will return all Systems Groups bound to a Policy, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Policy to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this Policy.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET  https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/systemgroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -559,7 +559,7 @@ class PoliciesApi(object):
     def policies_delete(self, id, content_type, accept, **kwargs):
         """
         Deletes a Policy
-        This endpoint allows you to delete a policy.
+        This endpoint allows you to delete a policy.  #### Sample Request  ``` curl -X DELETE https://console.jumpcloud.com/api/v2/policies/5a837ecd232e110d4291e6b9 \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -587,7 +587,7 @@ class PoliciesApi(object):
     def policies_delete_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Deletes a Policy
-        This endpoint allows you to delete a policy.
+        This endpoint allows you to delete a policy.  #### Sample Request  ``` curl -X DELETE https://console.jumpcloud.com/api/v2/policies/5a837ecd232e110d4291e6b9 \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -679,7 +679,7 @@ class PoliciesApi(object):
     def policies_get(self, id, content_type, accept, **kwargs):
         """
         Gets a specific Policy.
-        This endpoint returns a specific policy.
+        This endpoint returns a specific policy.  ###### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/policies/{PolicyID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -707,7 +707,7 @@ class PoliciesApi(object):
     def policies_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Gets a specific Policy.
-        This endpoint returns a specific policy.
+        This endpoint returns a specific policy.  ###### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/policies/{PolicyID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -799,7 +799,7 @@ class PoliciesApi(object):
     def policies_list(self, content_type, accept, **kwargs):
         """
         Lists all the Policies
-        This endpoint returns all policies.
+        This endpoint returns all policies.  ##### Sample Request  ```  curl -X GET  https://console.jumpcloud.com/api/v2/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -812,11 +812,11 @@ class PoliciesApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[Policy]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -831,7 +831,7 @@ class PoliciesApi(object):
     def policies_list_with_http_info(self, content_type, accept, **kwargs):
         """
         Lists all the Policies
-        This endpoint returns all policies.
+        This endpoint returns all policies.  ##### Sample Request  ```  curl -X GET  https://console.jumpcloud.com/api/v2/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -844,11 +844,11 @@ class PoliciesApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[Policy]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -884,14 +884,17 @@ class PoliciesApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -932,7 +935,7 @@ class PoliciesApi(object):
     def policies_post(self, content_type, accept, **kwargs):
         """
         Create a new Policy
-        This endpoint allows you to create a policy.
+        This endpoint allows you to create a policy. Given the amount of configurable parameters required to create a Policy, we suggest you use the JumpCloud Admin Console to create new policies.  ##### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    {Policy_Parameters} }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -960,7 +963,7 @@ class PoliciesApi(object):
     def policies_post_with_http_info(self, content_type, accept, **kwargs):
         """
         Create a new Policy
-        This endpoint allows you to create a policy.
+        This endpoint allows you to create a policy. Given the amount of configurable parameters required to create a Policy, we suggest you use the JumpCloud Admin Console to create new policies.  ##### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    {Policy_Parameters} }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1049,7 +1052,7 @@ class PoliciesApi(object):
     def policies_put(self, id, **kwargs):
         """
         Update an existing Policy
-        This endpoint allows you to update a policy.
+        This endpoint allows you to update a policy. Given the amount of configurable parameters required to update a Policy, we suggest you use the JumpCloud Admin Console to create new policies.   ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/policies/59fced45c9118022172547ff \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     {Policy_Parameters} }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1076,7 +1079,7 @@ class PoliciesApi(object):
     def policies_put_with_http_info(self, id, **kwargs):
         """
         Update an existing Policy
-        This endpoint allows you to update a policy.
+        This endpoint allows you to update a policy. Given the amount of configurable parameters required to update a Policy, we suggest you use the JumpCloud Admin Console to create new policies.   ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/policies/59fced45c9118022172547ff \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     {Policy_Parameters} }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1159,6 +1162,7 @@ class PoliciesApi(object):
     def policyresults_get(self, id, content_type, accept, **kwargs):
         """
         Get a specific Policy Result.
+        This endpoint will return the policy results for a specific policy.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policyresults/{Policy_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1186,6 +1190,7 @@ class PoliciesApi(object):
     def policyresults_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Get a specific Policy Result.
+        This endpoint will return the policy results for a specific policy.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policyresults/{Policy_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1274,196 +1279,63 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def policyresults_list(self, content_type, accept, **kwargs):
-        """
-        Lists all the policy results for an organization.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.policyresults_list(content_type, accept, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str content_type: (required)
-        :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
-        :param int limit: The number of records to return at once.
-        :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str aggregate:
-        :return: list[PolicyResult]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.policyresults_list_with_http_info(content_type, accept, **kwargs)
-        else:
-            (data) = self.policyresults_list_with_http_info(content_type, accept, **kwargs)
-            return data
-
-    def policyresults_list_with_http_info(self, content_type, accept, **kwargs):
-        """
-        Lists all the policy results for an organization.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.policyresults_list_with_http_info(content_type, accept, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str content_type: (required)
-        :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
-        :param int limit: The number of records to return at once.
-        :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str aggregate:
-        :return: list[PolicyResult]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method policyresults_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'content_type' is set
-        if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list`")
-        # verify the required parameter 'accept' is set
-        if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list`")
-
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
-        if 'aggregate' in params:
-            query_params.append(('aggregate', params['aggregate']))
-
-        header_params = {}
-        if 'content_type' in params:
-            header_params['Content-Type'] = params['content_type']
-        if 'accept' in params:
-            header_params['Accept'] = params['accept']
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['x-api-key']
-
-        return self.api_client.call_api('/policyresults', 'GET',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='list[PolicyResult]',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def policyresults_list_0(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list(self, policy_id, content_type, accept, **kwargs):
         """
         Lists all the policy results of a given policy.
+        This endpoint returns all policies results for a specific policy.   ##### Sample Results  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_0(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list(policy_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str aggregate:
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] aggregate:
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.policyresults_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
+            return self.policyresults_list_with_http_info(policy_id, content_type, accept, **kwargs)
         else:
-            (data) = self.policyresults_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
+            (data) = self.policyresults_list_with_http_info(policy_id, content_type, accept, **kwargs)
             return data
 
-    def policyresults_list_0_with_http_info(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
         Lists all the policy results of a given policy.
+        This endpoint returns all policies results for a specific policy.   ##### Sample Results  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_0_with_http_info(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_with_http_info(policy_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str aggregate:
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] aggregate:
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1480,19 +1352,19 @@ class PoliciesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method policyresults_list_0" % key
+                    " to method policyresults_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'policy_id' is set
         if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `policyresults_list_0`")
+            raise ValueError("Missing the required parameter `policy_id` when calling `policyresults_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list_0`")
+            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list_0`")
+            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list`")
 
 
         collection_formats = {}
@@ -1504,16 +1376,20 @@ class PoliciesApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
         if 'aggregate' in params:
             query_params.append(('aggregate', params['aggregate']))
+            collection_formats['aggregate'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -1551,10 +1427,151 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def policyresults_list_0(self, content_type, accept, **kwargs):
+        """
+        Lists all the policy results for an organization.
+        This endpoint returns all policies results for an Organization.   ##### Sample Results  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.policyresults_list_0(content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once.
+        :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] aggregate:
+        :return: list[PolicyResult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)
+        else:
+            (data) = self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)
+            return data
+
+    def policyresults_list_0_with_http_info(self, content_type, accept, **kwargs):
+        """
+        Lists all the policy results for an organization.
+        This endpoint returns all policies results for an Organization.   ##### Sample Results  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.policyresults_list_0_with_http_info(content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once.
+        :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] aggregate:
+        :return: list[PolicyResult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method policyresults_list_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list_0`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list_0`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
+        if 'aggregate' in params:
+            query_params.append(('aggregate', params['aggregate']))
+            collection_formats['aggregate'] = 'csv'
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/policyresults', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='list[PolicyResult]',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def policytemplates_get(self, id, content_type, accept, **kwargs):
         """
         Get a specific Policy Template
-        This endpoint returns a specific policy template.
+        This endpoint returns a specific policy template.  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1582,7 +1599,7 @@ class PoliciesApi(object):
     def policytemplates_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Get a specific Policy Template
-        This endpoint returns a specific policy template.
+        This endpoint returns a specific policy template.  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1674,7 +1691,7 @@ class PoliciesApi(object):
     def policytemplates_list(self, content_type, accept, **kwargs):
         """
         Lists all of the Policy Templates
-        This endpoint returns all policy templates.
+        This endpoint returns all policy templates.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policytemplates \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1687,11 +1704,11 @@ class PoliciesApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[PolicyTemplate]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1706,7 +1723,7 @@ class PoliciesApi(object):
     def policytemplates_list_with_http_info(self, content_type, accept, **kwargs):
         """
         Lists all of the Policy Templates
-        This endpoint returns all policy templates.
+        This endpoint returns all policy templates.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policytemplates \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1719,11 +1736,11 @@ class PoliciesApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[PolicyTemplate]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1759,14 +1776,17 @@ class PoliciesApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:

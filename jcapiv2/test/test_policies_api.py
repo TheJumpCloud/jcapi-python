@@ -51,7 +51,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for graph_policy_traverse_system
 
-        List the Systems associated with a Policy
+        List the Systems bound to a Policy
         """
         pass
 
@@ -59,7 +59,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for graph_policy_traverse_system_group
 
-        List the System Groups associated with a Policy
+        List the System Groups bound to a Policy
         """
         pass
 
@@ -115,7 +115,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list
 
-        Lists all the policy results for an organization.
+        Lists all the policy results of a given policy.
         """
         pass
 
@@ -123,7 +123,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list_0
 
-        Lists all the policy results of a given policy.
+        Lists all the policy results for an organization.
         """
         pass
 

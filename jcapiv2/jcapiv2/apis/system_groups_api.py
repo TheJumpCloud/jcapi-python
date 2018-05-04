@@ -43,7 +43,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
-        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations?targets=user ```
+        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -74,7 +74,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
-        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations?targets=user ```
+        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -179,7 +179,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a System Group
-        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations ```
+        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -208,7 +208,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a System Group
-        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/associations ```
+        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -317,8 +317,10 @@ class SystemGroupsApi(object):
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -347,14 +349,16 @@ class SystemGroupsApi(object):
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -387,10 +391,16 @@ class SystemGroupsApi(object):
             path_params['group_id'] = params['group_id']
 
         query_params = []
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -431,7 +441,7 @@ class SystemGroupsApi(object):
     def graph_system_group_members_list(self, group_id, content_type, accept, **kwargs):
         """
         List the members of a System Group
-        This endpoint returns the system members of a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/members ```
+        This endpoint returns the system members of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -461,7 +471,7 @@ class SystemGroupsApi(object):
     def graph_system_group_members_list_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         List the members of a System Group
-        This endpoint returns the system members of a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/members ```
+        This endpoint returns the system members of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -559,7 +569,7 @@ class SystemGroupsApi(object):
     def graph_system_group_members_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a System Group
-        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/members ```
+        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -590,7 +600,7 @@ class SystemGroupsApi(object):
     def graph_system_group_members_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a System Group
-        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/members ```
+        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -691,7 +701,7 @@ class SystemGroupsApi(object):
     def graph_system_group_membership(self, group_id, content_type, accept, **kwargs):
         """
         List the System Group's membership
-        This endpoint returns all Systems that are a member of this System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/membership ```
+        This endpoint returns all Systems that are a member of this System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID/membership \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -707,6 +717,8 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -721,7 +733,7 @@ class SystemGroupsApi(object):
     def graph_system_group_membership_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         List the System Group's membership
-        This endpoint returns all Systems that are a member of this System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/membership ```
+        This endpoint returns all Systems that are a member of this System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID/membership \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -737,12 +749,14 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'sort', 'filter']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -779,6 +793,12 @@ class SystemGroupsApi(object):
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -818,8 +838,8 @@ class SystemGroupsApi(object):
 
     def graph_system_group_traverse_policy(self, group_id, content_type, accept, **kwargs):
         """
-        List the Policies associated with a System Group
-        This endpoint will return Policies associated with a System Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this System Group to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not public yet as we haven't finished the code.
+        List the Policies bound to a System Group
+        This endpoint will return all Policies bound to a System Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System Group to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not public yet as we haven't finished the code.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -848,8 +868,8 @@ class SystemGroupsApi(object):
 
     def graph_system_group_traverse_policy_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Policies associated with a System Group
-        This endpoint will return Policies associated with a System Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this System Group to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not public yet as we haven't finished the code.
+        List the Policies bound to a System Group
+        This endpoint will return all Policies bound to a System Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System Group to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not public yet as we haven't finished the code.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -946,8 +966,8 @@ class SystemGroupsApi(object):
 
     def graph_system_group_traverse_user(self, group_id, content_type, accept, **kwargs):
         """
-        List the Users associated with a System Group
-        This endpoint will return Users associated with a System Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this System Group to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/users ```
+        List the Users bound to a System Group
+        This endpoint will return all Users bound to a System Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System Group to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -976,8 +996,8 @@ class SystemGroupsApi(object):
 
     def graph_system_group_traverse_user_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the Users associated with a System Group
-        This endpoint will return Users associated with a System Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this System Group to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/users ```
+        List the Users bound to a System Group
+        This endpoint will return all Users bound to a System Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System Group to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1074,8 +1094,8 @@ class SystemGroupsApi(object):
 
     def graph_system_group_traverse_user_group(self, group_id, content_type, accept, **kwargs):
         """
-        List the User Groups associated with a System Group
-        This endpoint will return User Groups associated with a System Group. Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this System Group to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/usergroups ```
+        List the User Groups bound to a System Group
+        This endpoint will return all User Groups bound to a System Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System Group to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1104,8 +1124,8 @@ class SystemGroupsApi(object):
 
     def graph_system_group_traverse_user_group_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
-        List the User Groups associated with a System Group
-        This endpoint will return User Groups associated with a System Group. Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this System Group to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{group_id}/usergroups ```
+        List the User Groups bound to a System Group
+        This endpoint will return all User Groups bound to a System Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System Group to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1203,7 +1223,7 @@ class SystemGroupsApi(object):
     def groups_system_delete(self, id, content_type, accept, **kwargs):
         """
         Delete a System Group
-        This endpoint allows you to delete a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{id} ```
+        This endpoint allows you to delete a System Group.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1231,7 +1251,7 @@ class SystemGroupsApi(object):
     def groups_system_delete_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Delete a System Group
-        This endpoint allows you to delete a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{id} ```
+        This endpoint allows you to delete a System Group.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1323,7 +1343,7 @@ class SystemGroupsApi(object):
     def groups_system_get(self, id, content_type, accept, **kwargs):
         """
         View an individual System Group details
-        This endpoint returns the details of a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{id} ```
+        This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1351,7 +1371,7 @@ class SystemGroupsApi(object):
     def groups_system_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         View an individual System Group details
-        This endpoint returns the details of a System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{id} ```
+        This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1443,7 +1463,7 @@ class SystemGroupsApi(object):
     def groups_system_list(self, content_type, accept, **kwargs):
         """
         List all System Groups
-        This endpoint returns all System Groups.  Available filter fields:   - `name`   - `disabled`   - `type`  #### Sample Request  ``` https://console.jumpcloud.com/api/v2/systemgroups ```
+        This endpoint returns all System Groups.  Available filter fields:   - `name`   - `disabled`   - `type`  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1456,11 +1476,11 @@ class SystemGroupsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[SystemGroup]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1475,7 +1495,7 @@ class SystemGroupsApi(object):
     def groups_system_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List all System Groups
-        This endpoint returns all System Groups.  Available filter fields:   - `name`   - `disabled`   - `type`  #### Sample Request  ``` https://console.jumpcloud.com/api/v2/systemgroups ```
+        This endpoint returns all System Groups.  Available filter fields:   - `name`   - `disabled`   - `type`  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1488,11 +1508,11 @@ class SystemGroupsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param str filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[SystemGroup]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1528,14 +1548,17 @@ class SystemGroupsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -1700,7 +1723,7 @@ class SystemGroupsApi(object):
     def groups_system_post(self, content_type, accept, **kwargs):
         """
         Create a new System Group
-        This endpoint allows you to create a new System Group.  #### Sample Request  ``` https://console.jumpcloud.com/api/v2/systemgroups ```
+        This endpoint allows you to create a new System Group.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"{Group_Name}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1728,7 +1751,7 @@ class SystemGroupsApi(object):
     def groups_system_post_with_http_info(self, content_type, accept, **kwargs):
         """
         Create a new System Group
-        This endpoint allows you to create a new System Group.  #### Sample Request  ``` https://console.jumpcloud.com/api/v2/systemgroups ```
+        This endpoint allows you to create a new System Group.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"{Group_Name}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1817,7 +1840,7 @@ class SystemGroupsApi(object):
     def groups_system_put(self, id, content_type, accept, **kwargs):
         """
         Update a System Group
-        This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{id} ```
+        This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1846,7 +1869,7 @@ class SystemGroupsApi(object):
     def groups_system_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update a System Group
-        This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/systemgroups/{id} ```
+        This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

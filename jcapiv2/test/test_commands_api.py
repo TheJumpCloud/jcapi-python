@@ -51,7 +51,7 @@ class TestCommandsApi(unittest.TestCase):
         """
         Test case for graph_command_traverse_system
 
-        List the Systems associated with a Command
+        List the Systems bound to a Command
         """
         pass
 
@@ -59,7 +59,7 @@ class TestCommandsApi(unittest.TestCase):
         """
         Test case for graph_command_traverse_system_group
 
-        List the System Groups associated with a Command
+        List the System Groups bound to a Command
         """
         pass
 
