@@ -51,7 +51,7 @@ class TestLDAPServersApi(unittest.TestCase):
         """
         Test case for graph_ldap_server_traverse_user
 
-        List the Users bound to a LDAP Server
+        List the Users associated with a LDAP Server
         """
         pass
 
@@ -59,7 +59,7 @@ class TestLDAPServersApi(unittest.TestCase):
         """
         Test case for graph_ldap_server_traverse_user_group
 
-        List the User Groups bound to a LDAP Server
+        List the User Groups associated with a LDAP Server
         """
         pass
 

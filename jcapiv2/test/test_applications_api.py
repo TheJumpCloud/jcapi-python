@@ -51,7 +51,7 @@ class TestApplicationsApi(unittest.TestCase):
         """
         Test case for graph_application_traverse_user
 
-        List the Users bound to an Application
+        List the Users associated with an Application
         """
         pass
 
@@ -59,7 +59,7 @@ class TestApplicationsApi(unittest.TestCase):
         """
         Test case for graph_application_traverse_user_group
 
-        List the User Groups bound to an Application
+        List the User Groups associated with an Application
         """
         pass
 

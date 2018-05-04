@@ -59,7 +59,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_application
 
-        List the Applications bound to a User
+        List the Applications associated with a User
         """
         pass
 
@@ -67,7 +67,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_directory
 
-        List the Directories bound to a User
+        List the Directories associated with a User
         """
         pass
 
@@ -75,7 +75,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_g_suite
 
-        List the G Suite instances bound to a User
+        List the G Suite instances associated with a User
         """
         pass
 
@@ -83,7 +83,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_ldap_server
 
-        List the LDAP servers bound to a User
+        List the LDAP servers associated with a User
         """
         pass
 
@@ -91,7 +91,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_office365
 
-        List the Office 365 instances bound to a User
+        List the Office 365 instances associated with User
         """
         pass
 
@@ -99,7 +99,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_radius_server
 
-        List the RADIUS Servers bound to a User
+        List the RADIUS Servers associated with a User
         """
         pass
 
@@ -107,15 +107,7 @@ class TestUsersApi(unittest.TestCase):
         """
         Test case for graph_user_traverse_system
 
-        List the Systems bound to a User
-        """
-        pass
-
-    def test_graph_user_traverse_system_group(self):
-        """
-        Test case for graph_user_traverse_system_group
-
-        List the System Groups bound to a User
+        List the Systems associated with a User
         """
         pass
 

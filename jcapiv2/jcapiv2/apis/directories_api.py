@@ -43,7 +43,7 @@ class DirectoriesApi(object):
     def directories_list(self, content_type, accept, **kwargs):
         """
         List All Directories
-        This endpoint returns all active directories (LDAP, O365 Suite, G-Suite).  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/directories \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns all active directories (LDAP, O365 Suite, G-Suite).  #### Sample Request ``` https://console.jumpcloud.com/api/v2/directories ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -56,10 +56,10 @@ class DirectoriesApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[Directory]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -74,7 +74,7 @@ class DirectoriesApi(object):
     def directories_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List All Directories
-        This endpoint returns all active directories (LDAP, O365 Suite, G-Suite).  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/directories \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns all active directories (LDAP, O365 Suite, G-Suite).  #### Sample Request ``` https://console.jumpcloud.com/api/v2/directories ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -87,10 +87,10 @@ class DirectoriesApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[Directory]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -126,14 +126,12 @@ class DirectoriesApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
-            collection_formats['fields'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
-            collection_formats['sort'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:

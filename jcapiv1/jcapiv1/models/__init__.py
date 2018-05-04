@@ -23,6 +23,9 @@ from .application_config_idp_entity_id import ApplicationConfigIdpEntityId
 from .application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
 from .application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
 from .applicationslist import Applicationslist
+from .auth_info import AuthInfo
+from .authinfo_auth import AuthinfoAuth
+from .authinfo_auth_credentials import AuthinfoAuthCredentials
 from .body import Body
 from .command import Command
 from .commandresult import Commandresult

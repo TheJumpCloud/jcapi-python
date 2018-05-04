@@ -10,15 +10,15 @@ Method | HTTP request | Description
 [**graph_user_group_members_list**](UserGroupsApi.md#graph_user_group_members_list) | **GET** /usergroups/{group_id}/members | List the members of a User Group
 [**graph_user_group_members_post**](UserGroupsApi.md#graph_user_group_members_post) | **POST** /usergroups/{group_id}/members | Manage the members of a User Group
 [**graph_user_group_membership**](UserGroupsApi.md#graph_user_group_membership) | **GET** /usergroups/{group_id}/membership | List the User Group&#39;s membership
-[**graph_user_group_traverse_active_directory**](UserGroupsApi.md#graph_user_group_traverse_active_directory) | **GET** /usergroups/{group_id}/activedirectories | List the Active Directories bound to a User Group
-[**graph_user_group_traverse_application**](UserGroupsApi.md#graph_user_group_traverse_application) | **GET** /usergroups/{group_id}/applications | List the Applications bound to a User Group
-[**graph_user_group_traverse_directory**](UserGroupsApi.md#graph_user_group_traverse_directory) | **GET** /usergroups/{group_id}/directories | List the Directories bound to a User Group
-[**graph_user_group_traverse_g_suite**](UserGroupsApi.md#graph_user_group_traverse_g_suite) | **GET** /usergroups/{group_id}/gsuites | List the G Suite instances bound to a User Group
-[**graph_user_group_traverse_ldap_server**](UserGroupsApi.md#graph_user_group_traverse_ldap_server) | **GET** /usergroups/{group_id}/ldapservers | List the LDAP Servers bound to a User Group
-[**graph_user_group_traverse_office365**](UserGroupsApi.md#graph_user_group_traverse_office365) | **GET** /usergroups/{group_id}/office365s | List the Office 365 instances bound to a User Group
-[**graph_user_group_traverse_radius_server**](UserGroupsApi.md#graph_user_group_traverse_radius_server) | **GET** /usergroups/{group_id}/radiusservers | List the RADIUS Servers bound to a User Group
-[**graph_user_group_traverse_system**](UserGroupsApi.md#graph_user_group_traverse_system) | **GET** /usergroups/{group_id}/systems | List the Systems bound to a User Group
-[**graph_user_group_traverse_system_group**](UserGroupsApi.md#graph_user_group_traverse_system_group) | **GET** /usergroups/{group_id}/systemgroups | List the System Groups bound to User Groups
+[**graph_user_group_traverse_active_directory**](UserGroupsApi.md#graph_user_group_traverse_active_directory) | **GET** /usergroups/{group_id}/activedirectories | List the Active Directories associated with a User Group
+[**graph_user_group_traverse_application**](UserGroupsApi.md#graph_user_group_traverse_application) | **GET** /usergroups/{group_id}/applications | List the Applications associated with a User Group
+[**graph_user_group_traverse_directory**](UserGroupsApi.md#graph_user_group_traverse_directory) | **GET** /usergroups/{group_id}/directories | List the Directories associated with a User Group
+[**graph_user_group_traverse_g_suite**](UserGroupsApi.md#graph_user_group_traverse_g_suite) | **GET** /usergroups/{group_id}/gsuites | List the G Suite instances associated with a User Group
+[**graph_user_group_traverse_ldap_server**](UserGroupsApi.md#graph_user_group_traverse_ldap_server) | **GET** /usergroups/{group_id}/ldapservers | List the LDAP Servers associated with a User Group
+[**graph_user_group_traverse_office365**](UserGroupsApi.md#graph_user_group_traverse_office365) | **GET** /usergroups/{group_id}/office365s | List the Office 365 instances associated with a User Group
+[**graph_user_group_traverse_radius_server**](UserGroupsApi.md#graph_user_group_traverse_radius_server) | **GET** /usergroups/{group_id}/radiusservers | List the RADIUS Servers associated with a User Group
+[**graph_user_group_traverse_system**](UserGroupsApi.md#graph_user_group_traverse_system) | **GET** /usergroups/{group_id}/systems | List the Systems associated with a User Group
+[**graph_user_group_traverse_system_group**](UserGroupsApi.md#graph_user_group_traverse_system_group) | **GET** /usergroups/{group_id}/systemgroups | List the System Groups associated with User Groups
 [**groups_user_delete**](UserGroupsApi.md#groups_user_delete) | **DELETE** /usergroups/{id} | Delete a User Group
 [**groups_user_get**](UserGroupsApi.md#groups_user_get) | **GET** /usergroups/{id} | View an indvidual User Group details
 [**groups_user_list**](UserGroupsApi.md#groups_user_list) | **GET** /usergroups | List all User Groups
@@ -149,7 +149,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_member_of**
-> list[GraphObjectWithPaths] graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_user_group_member_of(group_id, content_type, accept, limit=limit, skip=skip)
 
 List the User Group's parents
 
@@ -173,14 +173,12 @@ api_instance = jcapiv2.UserGroupsApi()
 group_id = 'group_id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 
 try: 
     # List the User Group's parents
-    api_response = api_instance.graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_user_group_member_of(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupsApi->graph_user_group_member_of: %s\n" % e)
@@ -193,10 +191,8 @@ Name | Type | Description  | Notes
  **group_id** | **str**| ObjectID of the User Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 
 ### Return type
 
@@ -333,7 +329,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_membership**
-> list[GraphObjectWithPaths] graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_user_group_membership(group_id, content_type, accept, limit=limit, skip=skip)
 
 List the User Group's membership
 
@@ -357,14 +353,12 @@ api_instance = jcapiv2.UserGroupsApi()
 group_id = 'group_id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 
 try: 
     # List the User Group's membership
-    api_response = api_instance.graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_user_group_membership(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupsApi->graph_user_group_membership: %s\n" % e)
@@ -377,10 +371,8 @@ Name | Type | Description  | Notes
  **group_id** | **str**| ObjectID of the User Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 
 ### Return type
 
@@ -400,9 +392,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_active_directory**
 > list[GraphObjectWithPaths] graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the Active Directories bound to a User Group
+List the Active Directories associated with a User Group
 
-This endpoint will return all Active Directory Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Active Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Active Directory from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/activedirectories ```
+This endpoint will return the Active Directories associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Active Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Active Directory from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/activedirectories ```
 
 ### Example 
 ```python
@@ -426,7 +418,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the Active Directories bound to a User Group
+    # List the Active Directories associated with a User Group
     api_response = api_instance.graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -461,9 +453,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_application**
 > list[GraphObjectWithPaths] graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the Applications bound to a User Group
+List the Applications associated with a User Group
 
-This endpoint will return all Applications bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/applications ```
+This endpoint will return Applications associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/applications ```
 
 ### Example 
 ```python
@@ -487,7 +479,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the Applications bound to a User Group
+    # List the Applications associated with a User Group
     api_response = api_instance.graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -522,9 +514,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_directory**
 > list[GraphObjectWithPaths] graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the Directories bound to a User Group
+List the Directories associated with a User Group
 
-This endpoint will return all Directories bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directories from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/directories ```
+This endpoint will return Directories associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directories from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/directories ```
 
 ### Example 
 ```python
@@ -548,7 +540,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the Directories bound to a User Group
+    # List the Directories associated with a User Group
     api_response = api_instance.graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -583,9 +575,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_g_suite**
 > list[GraphObjectWithPaths] graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the G Suite instances bound to a User Group
+List the G Suite instances associated with a User Group
 
-This endpoint will return all Gsuite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/gsuites ```
+This endpoint will return the G Suite instances associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/gsuites ```
 
 ### Example 
 ```python
@@ -609,7 +601,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the G Suite instances bound to a User Group
+    # List the G Suite instances associated with a User Group
     api_response = api_instance.graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -644,9 +636,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_ldap_server**
 > list[GraphObjectWithPaths] graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the LDAP Servers bound to a User Group
+List the LDAP Servers associated with a User Group
 
-This endpoint will return all LDAP Servers bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/ldapservers ```
+This endpoint will return the LDAP Servers associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/ldapservers ```
 
 ### Example 
 ```python
@@ -670,7 +662,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the LDAP Servers bound to a User Group
+    # List the LDAP Servers associated with a User Group
     api_response = api_instance.graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -705,9 +697,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_office365**
 > list[GraphObjectWithPaths] graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the Office 365 instances bound to a User Group
+List the Office 365 instances associated with a User Group
 
-This endpoint will return all Office 365 instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/office365s ```
+This endpoint will return the Office 365 instances associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/office365s ```
 
 ### Example 
 ```python
@@ -731,7 +723,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the Office 365 instances bound to a User Group
+    # List the Office 365 instances associated with a User Group
     api_response = api_instance.graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -766,9 +758,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_radius_server**
 > list[GraphObjectWithPaths] graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the RADIUS Servers bound to a User Group
+List the RADIUS Servers associated with a User Group
 
-This endpoint will return all RADIUS servers bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/radiusservers ```
+This endpoint will return a RADIUS Servers associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/radiusservers ```
 
 ### Example 
 ```python
@@ -792,7 +784,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the RADIUS Servers bound to a User Group
+    # List the RADIUS Servers associated with a User Group
     api_response = api_instance.graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -827,9 +819,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_system**
 > list[GraphObjectWithPaths] graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the Systems bound to a User Group
+List the Systems associated with a User Group
 
-This endpoint will return all Systems bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systems ```
+This endpoint will return Systems associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systems ```
 
 ### Example 
 ```python
@@ -853,7 +845,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the Systems bound to a User Group
+    # List the Systems associated with a User Group
     api_response = api_instance.graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -888,9 +880,9 @@ Name | Type | Description  | Notes
 # **graph_user_group_traverse_system_group**
 > list[GraphObjectWithPaths] graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, skip=skip)
 
-List the System Groups bound to User Groups
+List the System Groups associated with User Groups
 
-This endpoint will return all System Groups bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systemsgroups ```
+This endpoint will return System Groups associated with a User Group. Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of attributes specifically set for this group.  The `paths` array enumerates each path from this User Group to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/group_id}/systemsgroups ```
 
 ### Example 
 ```python
@@ -914,7 +906,7 @@ limit = 10 # int | The number of records to return at once. (optional) (default 
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
-    # List the System Groups bound to User Groups
+    # List the System Groups associated with User Groups
     api_response = api_instance.graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
@@ -1083,11 +1075,11 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.UserGroupsApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
-filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
+fields = '' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional) (default to )
+filter = '' # str | Supported operators are: eq, ne, gt, ge, lt, le, between, search (optional) (default to )
 limit = 10 # int | The number of records to return at once. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+sort = '' # str | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to )
 
 try: 
     # List all User Groups
@@ -1103,11 +1095,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
+ **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **filter** | **str**| Supported operators are: eq, ne, gt, ge, lt, le, between, search | [optional] [default to ]
  **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **sort** | **str**| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
 
 ### Return type
 
@@ -1149,7 +1141,7 @@ api_instance = jcapiv2.UserGroupsApi()
 id = 'id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.UserGroupPost() # UserGroupPost |  (optional)
+body = jcapiv2.UserGroupData() # UserGroupData |  (optional)
 
 try: 
     # Partial update a User Group
@@ -1166,7 +1158,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the User Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**UserGroupPost**](UserGroupPost.md)|  | [optional] 
+ **body** | [**UserGroupData**](UserGroupData.md)|  | [optional] 
 
 ### Return type
 
@@ -1207,7 +1199,7 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.UserGroupsApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.UserGroupPost() # UserGroupPost |  (optional)
+body = jcapiv2.UserGroupData() # UserGroupData |  (optional)
 
 try: 
     # Create a new User Group
@@ -1223,7 +1215,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**UserGroupPost**](UserGroupPost.md)|  | [optional] 
+ **body** | [**UserGroupData**](UserGroupData.md)|  | [optional] 
 
 ### Return type
 
@@ -1265,7 +1257,7 @@ api_instance = jcapiv2.UserGroupsApi()
 id = 'id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.UserGroupPut() # UserGroupPut |  (optional)
+body = jcapiv2.UserGroupData() # UserGroupData |  (optional)
 
 try: 
     # Update a User Group
@@ -1282,7 +1274,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the User Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**UserGroupPut**](UserGroupPut.md)|  | [optional] 
+ **body** | [**UserGroupData**](UserGroupData.md)|  | [optional] 
 
 ### Return type
 

@@ -55,7 +55,7 @@ class SambaDomainInput(object):
     def name(self):
         """
         Gets the name of this SambaDomainInput.
-        Name of this domain's WorkGroup
+        Name of this domain
 
         :return: The name of this SambaDomainInput.
         :rtype: str
@@ -66,7 +66,7 @@ class SambaDomainInput(object):
     def name(self, name):
         """
         Sets the name of this SambaDomainInput.
-        Name of this domain's WorkGroup
+        Name of this domain
 
         :param name: The name of this SambaDomainInput.
         :type: str

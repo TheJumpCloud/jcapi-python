@@ -51,7 +51,7 @@ class TestOffice365Api(unittest.TestCase):
         """
         Test case for graph_office365_traverse_user
 
-        List the Users bound to an Office 365 instance
+        List the Users associated with an Office 365 instance
         """
         pass
 
@@ -59,7 +59,7 @@ class TestOffice365Api(unittest.TestCase):
         """
         Test case for graph_office365_traverse_user_group
 
-        List the User Groups bound to an Office 365 instance
+        List the User Groups associated with an Office 365 instance
         """
         pass
 
