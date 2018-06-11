@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.application_config_database_attributes import ApplicationConfigDatabaseAttributes
+from jcapiv1.models.inline_response_200 import InlineResponse200
 
 
-class TestApplicationConfigDatabaseAttributes(unittest.TestCase):
-    """ ApplicationConfigDatabaseAttributes unit test stubs """
+class TestInlineResponse200(unittest.TestCase):
+    """ InlineResponse200 unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestApplicationConfigDatabaseAttributes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApplicationConfigDatabaseAttributes(self):
+    def testInlineResponse200(self):
         """
-        Test ApplicationConfigDatabaseAttributes
+        Test InlineResponse200
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.application_config_database_attributes.ApplicationConfigDatabaseAttributes()
+        #model = jcapiv1.models.inline_response_200.InlineResponse200()
         pass
 
 

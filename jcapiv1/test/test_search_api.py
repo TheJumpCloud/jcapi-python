@@ -31,11 +31,19 @@ class TestSearchApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_search_systems_post(self):
+        """
+        Test case for search_systems_post
+
+        Search Systems
+        """
+        pass
+
     def test_search_systemusers_post(self):
         """
         Test case for search_systemusers_post
 
-        List System Users
+        Search System Users
         """
         pass
 

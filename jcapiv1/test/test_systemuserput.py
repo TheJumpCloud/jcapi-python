@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
+from jcapiv1.models.systemuserput import Systemuserput
 
 
-class TestApplicationConfigIdpEntityIdTooltip(unittest.TestCase):
-    """ ApplicationConfigIdpEntityIdTooltip unit test stubs """
+class TestSystemuserput(unittest.TestCase):
+    """ Systemuserput unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestApplicationConfigIdpEntityIdTooltip(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApplicationConfigIdpEntityIdTooltip(self):
+    def testSystemuserput(self):
         """
-        Test ApplicationConfigIdpEntityIdTooltip
+        Test Systemuserput
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.application_config_idp_entity_id_tooltip.ApplicationConfigIdpEntityIdTooltip()
+        #model = jcapiv1.models.systemuserput.Systemuserput()
         pass
 
 

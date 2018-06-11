@@ -33,7 +33,7 @@ class ApplicationConfigConstantAttributes(object):
     swagger_types = {
         'label': 'str',
         'read_only': 'bool',
-        'tooltip': 'ApplicationConfigIdpEntityIdTooltip',
+        'tooltip': 'InlineResponse200ConfigIdpEntityIdTooltip',
         'type': 'str',
         'value': 'list[ApplicationConfigConstantAttributesValue]',
         'visible': 'bool',
@@ -136,7 +136,7 @@ class ApplicationConfigConstantAttributes(object):
         Gets the tooltip of this ApplicationConfigConstantAttributes.
 
         :return: The tooltip of this ApplicationConfigConstantAttributes.
-        :rtype: ApplicationConfigIdpEntityIdTooltip
+        :rtype: InlineResponse200ConfigIdpEntityIdTooltip
         """
         return self._tooltip
 
@@ -146,7 +146,7 @@ class ApplicationConfigConstantAttributes(object):
         Sets the tooltip of this ApplicationConfigConstantAttributes.
 
         :param tooltip: The tooltip of this ApplicationConfigConstantAttributes.
-        :type: ApplicationConfigIdpEntityIdTooltip
+        :type: InlineResponse200ConfigIdpEntityIdTooltip
         """
 
         self._tooltip = tooltip

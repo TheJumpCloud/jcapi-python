@@ -1,11 +1,11 @@
-# ApplicationConfigIdpEntityId
+# InlineResponse200ConfigIdpEntityId
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **str** |  | [optional] 
 **read_only** | **bool** |  | [optional] 
-**tooltip** | [**ApplicationConfigIdpEntityIdTooltip**](ApplicationConfigIdpEntityIdTooltip.md) |  | [optional] 
+**tooltip** | [**InlineResponse200ConfigIdpEntityIdTooltip**](InlineResponse200ConfigIdpEntityIdTooltip.md) |  | [optional] 
 **type** | **str** |  | [optional] 
 **value** | **str** |  | [optional] 
 **visible** | **bool** |  | [optional] 

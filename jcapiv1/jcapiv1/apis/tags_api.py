@@ -43,7 +43,7 @@ class TagsApi(object):
     def tags_delete(self, name, content_type, accept, **kwargs):
         """
         Delete a Tag
-        Delete a Tag.
+        Hidden as Tags is deprecated  Delete a Tag.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -71,7 +71,7 @@ class TagsApi(object):
     def tags_delete_with_http_info(self, name, content_type, accept, **kwargs):
         """
         Delete a Tag
-        Delete a Tag.
+        Hidden as Tags is deprecated  Delete a Tag.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -163,7 +163,7 @@ class TagsApi(object):
     def tags_get(self, name, content_type, accept, **kwargs):
         """
         List a Tag
-        Returns a specific tag.
+        Hidden as Tags is deprecated  Returns a specific tag.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -177,10 +177,10 @@ class TagsApi(object):
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Tag
                  If the method is called asynchronously,
                  returns the request thread.
@@ -195,7 +195,7 @@ class TagsApi(object):
     def tags_get_with_http_info(self, name, content_type, accept, **kwargs):
         """
         List a Tag
-        Returns a specific tag.
+        Hidden as Tags is deprecated  Returns a specific tag.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -209,10 +209,10 @@ class TagsApi(object):
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Tag
                  If the method is called asynchronously,
                  returns the request thread.
@@ -299,7 +299,7 @@ class TagsApi(object):
     def tags_list(self, content_type, accept, **kwargs):
         """
         List All Tags
-        Returns all Tags.
+        Hidden as Tags is deprecated  Returns all Tags.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -312,10 +312,10 @@ class TagsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Tagslist
                  If the method is called asynchronously,
                  returns the request thread.
@@ -330,7 +330,7 @@ class TagsApi(object):
     def tags_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List All Tags
-        Returns all Tags.
+        Hidden as Tags is deprecated  Returns all Tags.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -343,10 +343,10 @@ class TagsApi(object):
             for asynchronous request. (optional)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Tagslist
                  If the method is called asynchronously,
                  returns the request thread.
@@ -428,7 +428,7 @@ class TagsApi(object):
     def tags_post(self, content_type, accept, **kwargs):
         """
         Create a Tag
-        Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
+        Hidden as Tags is deprecated  Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -456,7 +456,7 @@ class TagsApi(object):
     def tags_post_with_http_info(self, content_type, accept, **kwargs):
         """
         Create a Tag
-        Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
+        Hidden as Tags is deprecated  Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -545,7 +545,7 @@ class TagsApi(object):
     def tags_put(self, name, content_type, accept, **kwargs):
         """
         Update a Tag
-        Update a specific tag.
+        Hidden as Tags is deprecated  Update a specific tag.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -574,7 +574,7 @@ class TagsApi(object):
     def tags_put_with_http_info(self, name, content_type, accept, **kwargs):
         """
         Update a Tag
-        Update a specific tag.
+        Hidden as Tags is deprecated  Update a specific tag.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **attributes** | **list[object]** |  | [optional] 
 **created** | **str** |  | [optional] 
 **samba_service_user** | **bool** |  | [optional] 
+**password_never_expires** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
