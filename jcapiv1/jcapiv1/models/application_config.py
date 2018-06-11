@@ -31,12 +31,12 @@ class ApplicationConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'idp_entity_id': 'InlineResponse200ConfigIdpEntityId',
-        'idp_certificate': 'InlineResponse200ConfigIdpEntityId',
-        'sp_entity_id': 'InlineResponse200ConfigIdpEntityId',
-        'acs_url': 'InlineResponse200ConfigIdpEntityId',
+        'idp_entity_id': 'ApplicationConfigIdpEntityId',
+        'idp_certificate': 'ApplicationConfigIdpEntityId',
+        'sp_entity_id': 'ApplicationConfigIdpEntityId',
+        'acs_url': 'ApplicationConfigIdpEntityId',
         'constant_attributes': 'ApplicationConfigConstantAttributes',
-        'database_attributes': 'InlineResponse200ConfigDatabaseAttributes'
+        'database_attributes': 'ApplicationConfigDatabaseAttributes'
     }
 
     attribute_map = {
@@ -79,7 +79,7 @@ class ApplicationConfig(object):
         Gets the idp_entity_id of this ApplicationConfig.
 
         :return: The idp_entity_id of this ApplicationConfig.
-        :rtype: InlineResponse200ConfigIdpEntityId
+        :rtype: ApplicationConfigIdpEntityId
         """
         return self._idp_entity_id
 
@@ -89,7 +89,7 @@ class ApplicationConfig(object):
         Sets the idp_entity_id of this ApplicationConfig.
 
         :param idp_entity_id: The idp_entity_id of this ApplicationConfig.
-        :type: InlineResponse200ConfigIdpEntityId
+        :type: ApplicationConfigIdpEntityId
         """
 
         self._idp_entity_id = idp_entity_id
@@ -100,7 +100,7 @@ class ApplicationConfig(object):
         Gets the idp_certificate of this ApplicationConfig.
 
         :return: The idp_certificate of this ApplicationConfig.
-        :rtype: InlineResponse200ConfigIdpEntityId
+        :rtype: ApplicationConfigIdpEntityId
         """
         return self._idp_certificate
 
@@ -110,7 +110,7 @@ class ApplicationConfig(object):
         Sets the idp_certificate of this ApplicationConfig.
 
         :param idp_certificate: The idp_certificate of this ApplicationConfig.
-        :type: InlineResponse200ConfigIdpEntityId
+        :type: ApplicationConfigIdpEntityId
         """
 
         self._idp_certificate = idp_certificate
@@ -121,7 +121,7 @@ class ApplicationConfig(object):
         Gets the sp_entity_id of this ApplicationConfig.
 
         :return: The sp_entity_id of this ApplicationConfig.
-        :rtype: InlineResponse200ConfigIdpEntityId
+        :rtype: ApplicationConfigIdpEntityId
         """
         return self._sp_entity_id
 
@@ -131,7 +131,7 @@ class ApplicationConfig(object):
         Sets the sp_entity_id of this ApplicationConfig.
 
         :param sp_entity_id: The sp_entity_id of this ApplicationConfig.
-        :type: InlineResponse200ConfigIdpEntityId
+        :type: ApplicationConfigIdpEntityId
         """
 
         self._sp_entity_id = sp_entity_id
@@ -142,7 +142,7 @@ class ApplicationConfig(object):
         Gets the acs_url of this ApplicationConfig.
 
         :return: The acs_url of this ApplicationConfig.
-        :rtype: InlineResponse200ConfigIdpEntityId
+        :rtype: ApplicationConfigIdpEntityId
         """
         return self._acs_url
 
@@ -152,7 +152,7 @@ class ApplicationConfig(object):
         Sets the acs_url of this ApplicationConfig.
 
         :param acs_url: The acs_url of this ApplicationConfig.
-        :type: InlineResponse200ConfigIdpEntityId
+        :type: ApplicationConfigIdpEntityId
         """
 
         self._acs_url = acs_url
@@ -184,7 +184,7 @@ class ApplicationConfig(object):
         Gets the database_attributes of this ApplicationConfig.
 
         :return: The database_attributes of this ApplicationConfig.
-        :rtype: InlineResponse200ConfigDatabaseAttributes
+        :rtype: ApplicationConfigDatabaseAttributes
         """
         return self._database_attributes
 
@@ -194,7 +194,7 @@ class ApplicationConfig(object):
         Sets the database_attributes of this ApplicationConfig.
 
         :param database_attributes: The database_attributes of this ApplicationConfig.
-        :type: InlineResponse200ConfigDatabaseAttributes
+        :type: ApplicationConfigDatabaseAttributes
         """
 
         self._database_attributes = database_attributes

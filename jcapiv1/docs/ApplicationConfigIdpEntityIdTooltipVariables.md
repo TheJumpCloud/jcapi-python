@@ -1,12 +1,10 @@
-# InlineResponse200Results
+# ApplicationConfigIdpEntityIdTooltipVariables
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**display_name** | **str** |  | [optional] 
-**config** | [**InlineResponse200Config**](InlineResponse200Config.md) |  | [optional] 
-**name** | **str** |  | [optional] 
-**active** | **bool** |  | [optional] 
+**icon** | **str** |  | [optional] 
+**message** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

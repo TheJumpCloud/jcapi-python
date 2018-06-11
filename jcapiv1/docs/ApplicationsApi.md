@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **applications_list**
-> InlineResponse200 applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Applicationslist applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
 
 Applications
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**Applicationslist**](Applicationslist.md)
 
 ### Authorization
 

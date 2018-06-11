@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**systemusers_list**](SystemusersApi.md#systemusers_list) | **GET** /systemusers | List all system users
 [**systemusers_post**](SystemusersApi.md#systemusers_post) | **POST** /systemusers | Create a system user
 [**systemusers_put**](SystemusersApi.md#systemusers_put) | **PUT** /systemusers/{id} | Update a system user
+[**systemusers_resetmfa**](SystemusersApi.md#systemusers_resetmfa) | **POST** /systemusers/{id}/resetmfa | Reset a system user&#39;s MFA token
 [**systemusers_systems_binding_list**](SystemusersApi.md#systemusers_systems_binding_list) | **GET** /systemusers/{id}/systems | List system user binding
 [**systemusers_systems_binding_put**](SystemusersApi.md#systemusers_systems_binding_put) | **PUT** /systemusers/{id}/systems | Update a system user binding
 
@@ -304,6 +305,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Systemuserreturn**](Systemuserreturn.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json; charset=utf-8
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systemusers_resetmfa**
+> str systemusers_resetmfa(id, x_api_key)
+
+Reset a system user's MFA token
+
+This endpoint allows you to reset the MFA TOTP token for a specified system user. This will result in a user being required to complete the setup of their MFA TOTP token via an email notification sent from Jumpcloud. Please be aware, that until MFA setup is complete, a user may be locked out of systems or applications.   Please refer to our [Knowledge Base Article](https://support.jumpcloud.com/customer/en/portal/articles/2443975-how-to-enable-multifactor-authentication-for-the-jumpcloud-user-portal) on setting up MFA for more information.   #### Sample Request  ``` curl -X POST \\   https://console.jumpcloud.com/api/systemusers/{UserID}/resetmfa \\   -H 'x-api-key: {API_KEY}'  ```
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import jcapiv1
+from jcapiv1.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv1.SystemusersApi()
+id = 'id_example' # str | 
+x_api_key = 'x_api_key_example' # str | 
+
+try: 
+    # Reset a system user's MFA token
+    api_response = api_instance.systemusers_resetmfa(id, x_api_key)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemusersApi->systemusers_resetmfa: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
+ **x_api_key** | **str**|  | 
+
+### Return type
+
+**str**
 
 ### Authorization
 

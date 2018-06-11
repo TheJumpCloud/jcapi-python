@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.inline_response_200_config_constant_attributes import InlineResponse200ConfigConstantAttributes
+from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
 
 
-class TestInlineResponse200ConfigConstantAttributes(unittest.TestCase):
-    """ InlineResponse200ConfigConstantAttributes unit test stubs """
+class TestApplicationConfigIdpEntityIdTooltip(unittest.TestCase):
+    """ ApplicationConfigIdpEntityIdTooltip unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestInlineResponse200ConfigConstantAttributes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse200ConfigConstantAttributes(self):
+    def testApplicationConfigIdpEntityIdTooltip(self):
         """
-        Test InlineResponse200ConfigConstantAttributes
+        Test ApplicationConfigIdpEntityIdTooltip
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.inline_response_200_config_constant_attributes.InlineResponse200ConfigConstantAttributes()
+        #model = jcapiv1.models.application_config_idp_entity_id_tooltip.ApplicationConfigIdpEntityIdTooltip()
         pass
 
 
