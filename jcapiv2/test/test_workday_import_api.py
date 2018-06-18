@@ -71,6 +71,14 @@ class TestWorkdayImportApi(unittest.TestCase):
         """
         pass
 
+    def test_workdays_importresults(self):
+        """
+        Test case for workdays_importresults
+
+        List Import Results
+        """
+        pass
+
     def test_workdays_list(self):
         """
         Test case for workdays_list
@@ -99,7 +107,7 @@ class TestWorkdayImportApi(unittest.TestCase):
         """
         Test case for workdays_settings
 
-        Get Workday Settings
+        Get Workday Settings (incomplete)
         """
         pass
 

@@ -31,37 +31,146 @@ class JobDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'admin_id': 'str',
+        'work_units_count': 'int',
+        'name': 'str',
         'status': 'str',
-        'total_work_count': 'int',
-        'work_completed_count': 'int',
-        'meta': 'object'
+        'meta': 'object',
+        'created_at': 'str',
+        'updated_at': 'str',
+        'persisted_fields': 'list[str]'
     }
 
     attribute_map = {
+        'id': 'id',
+        'admin_id': 'adminId',
+        'work_units_count': 'workUnitsCount',
+        'name': 'name',
         'status': 'status',
-        'total_work_count': 'totalWorkCount',
-        'work_completed_count': 'workCompletedCount',
-        'meta': 'meta'
+        'meta': 'meta',
+        'created_at': 'createdAt',
+        'updated_at': 'updatedAt',
+        'persisted_fields': 'persistedFields'
     }
 
-    def __init__(self, status=None, total_work_count=None, work_completed_count=None, meta=None):
+    def __init__(self, id=None, admin_id=None, work_units_count=None, name=None, status=None, meta=None, created_at=None, updated_at=None, persisted_fields=None):
         """
         JobDetails - a model defined in Swagger
         """
 
+        self._id = None
+        self._admin_id = None
+        self._work_units_count = None
+        self._name = None
         self._status = None
-        self._total_work_count = None
-        self._work_completed_count = None
         self._meta = None
+        self._created_at = None
+        self._updated_at = None
+        self._persisted_fields = None
 
+        if id is not None:
+          self.id = id
+        if admin_id is not None:
+          self.admin_id = admin_id
+        if work_units_count is not None:
+          self.work_units_count = work_units_count
+        if name is not None:
+          self.name = name
         if status is not None:
           self.status = status
-        if total_work_count is not None:
-          self.total_work_count = total_work_count
-        if work_completed_count is not None:
-          self.work_completed_count = work_completed_count
         if meta is not None:
           self.meta = meta
+        if created_at is not None:
+          self.created_at = created_at
+        if updated_at is not None:
+          self.updated_at = updated_at
+        if persisted_fields is not None:
+          self.persisted_fields = persisted_fields
+
+    @property
+    def id(self):
+        """
+        Gets the id of this JobDetails.
+
+        :return: The id of this JobDetails.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this JobDetails.
+
+        :param id: The id of this JobDetails.
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def admin_id(self):
+        """
+        Gets the admin_id of this JobDetails.
+
+        :return: The admin_id of this JobDetails.
+        :rtype: str
+        """
+        return self._admin_id
+
+    @admin_id.setter
+    def admin_id(self, admin_id):
+        """
+        Sets the admin_id of this JobDetails.
+
+        :param admin_id: The admin_id of this JobDetails.
+        :type: str
+        """
+
+        self._admin_id = admin_id
+
+    @property
+    def work_units_count(self):
+        """
+        Gets the work_units_count of this JobDetails.
+
+        :return: The work_units_count of this JobDetails.
+        :rtype: int
+        """
+        return self._work_units_count
+
+    @work_units_count.setter
+    def work_units_count(self, work_units_count):
+        """
+        Sets the work_units_count of this JobDetails.
+
+        :param work_units_count: The work_units_count of this JobDetails.
+        :type: int
+        """
+
+        self._work_units_count = work_units_count
+
+    @property
+    def name(self):
+        """
+        Gets the name of this JobDetails.
+
+        :return: The name of this JobDetails.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this JobDetails.
+
+        :param name: The name of this JobDetails.
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def status(self):
@@ -85,48 +194,6 @@ class JobDetails(object):
         self._status = status
 
     @property
-    def total_work_count(self):
-        """
-        Gets the total_work_count of this JobDetails.
-
-        :return: The total_work_count of this JobDetails.
-        :rtype: int
-        """
-        return self._total_work_count
-
-    @total_work_count.setter
-    def total_work_count(self, total_work_count):
-        """
-        Sets the total_work_count of this JobDetails.
-
-        :param total_work_count: The total_work_count of this JobDetails.
-        :type: int
-        """
-
-        self._total_work_count = total_work_count
-
-    @property
-    def work_completed_count(self):
-        """
-        Gets the work_completed_count of this JobDetails.
-
-        :return: The work_completed_count of this JobDetails.
-        :rtype: int
-        """
-        return self._work_completed_count
-
-    @work_completed_count.setter
-    def work_completed_count(self, work_completed_count):
-        """
-        Sets the work_completed_count of this JobDetails.
-
-        :param work_completed_count: The work_completed_count of this JobDetails.
-        :type: int
-        """
-
-        self._work_completed_count = work_completed_count
-
-    @property
     def meta(self):
         """
         Gets the meta of this JobDetails.
@@ -146,6 +213,69 @@ class JobDetails(object):
         """
 
         self._meta = meta
+
+    @property
+    def created_at(self):
+        """
+        Gets the created_at of this JobDetails.
+
+        :return: The created_at of this JobDetails.
+        :rtype: str
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """
+        Sets the created_at of this JobDetails.
+
+        :param created_at: The created_at of this JobDetails.
+        :type: str
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """
+        Gets the updated_at of this JobDetails.
+
+        :return: The updated_at of this JobDetails.
+        :rtype: str
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """
+        Sets the updated_at of this JobDetails.
+
+        :param updated_at: The updated_at of this JobDetails.
+        :type: str
+        """
+
+        self._updated_at = updated_at
+
+    @property
+    def persisted_fields(self):
+        """
+        Gets the persisted_fields of this JobDetails.
+
+        :return: The persisted_fields of this JobDetails.
+        :rtype: list[str]
+        """
+        return self._persisted_fields
+
+    @persisted_fields.setter
+    def persisted_fields(self, persisted_fields):
+        """
+        Sets the persisted_fields of this JobDetails.
+
+        :param persisted_fields: The persisted_fields of this JobDetails.
+        :type: list[str]
+        """
+
+        self._persisted_fields = persisted_fields
 
     def to_dict(self):
         """

@@ -82,7 +82,7 @@ class PolicyTemplate(object):
     def id(self):
         """
         Gets the id of this PolicyTemplate.
-        ObjectId uniquely indetifying a Policy Template.
+        ObjectId uniquely identifying a Policy Template.
 
         :return: The id of this PolicyTemplate.
         :rtype: str
@@ -93,7 +93,7 @@ class PolicyTemplate(object):
     def id(self, id):
         """
         Sets the id of this PolicyTemplate.
-        ObjectId uniquely indetifying a Policy Template.
+        ObjectId uniquely identifying a Policy Template.
 
         :param id: The id of this PolicyTemplate.
         :type: str

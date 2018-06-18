@@ -36,7 +36,7 @@ radiusserver_id = 'radiusserver_id_example' # str | ObjectID of the Radius Serve
 targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -156,7 +156,7 @@ api_instance = jcapiv2.RADIUSServersApi()
 radiusserver_id = 'radiusserver_id_example' # str | ObjectID of the Radius Server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
  **radiusserver_id** | **str**| ObjectID of the Radius Server. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -217,7 +217,7 @@ api_instance = jcapiv2.RADIUSServersApi()
 radiusserver_id = 'radiusserver_id_example' # str | ObjectID of the Radius Server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
  **radiusserver_id** | **str**| ObjectID of the Radius Server. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type

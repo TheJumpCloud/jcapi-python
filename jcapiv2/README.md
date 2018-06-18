@@ -86,8 +86,8 @@ Class | Method | HTTP request | Description
 *ApplicationsApi* | [**graph_application_associations_post**](docs/ApplicationsApi.md#graph_application_associations_post) | **POST** /applications/{application_id}/associations | Manage the associations of an Application
 *ApplicationsApi* | [**graph_application_traverse_user**](docs/ApplicationsApi.md#graph_application_traverse_user) | **GET** /applications/{application_id}/users | List the Users bound to an Application
 *ApplicationsApi* | [**graph_application_traverse_user_group**](docs/ApplicationsApi.md#graph_application_traverse_user_group) | **GET** /applications/{application_id}/usergroups | List the User Groups bound to an Application
-*BulkJobRequestsApi* | [**job_get**](docs/BulkJobRequestsApi.md#job_get) | **GET** /jobs/{id} | Get Job
-*BulkJobRequestsApi* | [**job_results**](docs/BulkJobRequestsApi.md#job_results) | **GET** /jobs/{id}/results | List Job Results
+*BulkJobRequestsApi* | [**jobs_get**](docs/BulkJobRequestsApi.md#jobs_get) | **GET** /jobs/{id} | Get Job (incomplete)
+*BulkJobRequestsApi* | [**jobs_results**](docs/BulkJobRequestsApi.md#jobs_results) | **GET** /jobs/{id}/results | List Job Results
 *CommandsApi* | [**graph_command_associations_list**](docs/CommandsApi.md#graph_command_associations_list) | **GET** /commands/{command_id}/associations | List the associations of a Command
 *CommandsApi* | [**graph_command_associations_post**](docs/CommandsApi.md#graph_command_associations_post) | **POST** /commands/{command_id}/associations | Manage the associations of a Command
 *CommandsApi* | [**graph_command_traverse_system**](docs/CommandsApi.md#graph_command_traverse_system) | **GET** /commands/{command_id}/systems | List the Systems bound to a Command
@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
 *GraphApi* | [**graph_user_traverse_radius_server**](docs/GraphApi.md#graph_user_traverse_radius_server) | **GET** /users/{user_id}/radiusservers | List the RADIUS Servers bound to a User
 *GraphApi* | [**graph_user_traverse_system**](docs/GraphApi.md#graph_user_traverse_system) | **GET** /users/{user_id}/systems | List the Systems bound to a User
 *GraphApi* | [**graph_user_traverse_system_group**](docs/GraphApi.md#graph_user_traverse_system_group) | **GET** /users/{user_id}/systemgroups | List the System Groups bound to a User
+*GraphApi* | [**policystatuses_list**](docs/GraphApi.md#policystatuses_list) | **GET** /systems/{system_id}/policystatuses | List the policy statuses for a system
 *GroupsApi* | [**groups_list**](docs/GroupsApi.md#groups_list) | **GET** /groups | List All Groups
 *LDAPServersApi* | [**graph_ldap_server_associations_list**](docs/LDAPServersApi.md#graph_ldap_server_associations_list) | **GET** /ldapservers/{ldapserver_id}/associations | List the associations of a LDAP Server
 *LDAPServersApi* | [**graph_ldap_server_associations_post**](docs/LDAPServersApi.md#graph_ldap_server_associations_post) | **POST** /ldapservers/{ldapserver_id}/associations | Manage the associations of a LDAP Server
@@ -192,8 +193,10 @@ Class | Method | HTTP request | Description
 *PoliciesApi* | [**policies_post**](docs/PoliciesApi.md#policies_post) | **POST** /policies | Create a new Policy
 *PoliciesApi* | [**policies_put**](docs/PoliciesApi.md#policies_put) | **PUT** /policies/{id} | Update an existing Policy
 *PoliciesApi* | [**policyresults_get**](docs/PoliciesApi.md#policyresults_get) | **GET** /policyresults/{id} | Get a specific Policy Result.
-*PoliciesApi* | [**policyresults_list**](docs/PoliciesApi.md#policyresults_list) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a given policy.
+*PoliciesApi* | [**policyresults_list**](docs/PoliciesApi.md#policyresults_list) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a policy.
 *PoliciesApi* | [**policyresults_list_0**](docs/PoliciesApi.md#policyresults_list_0) | **GET** /policyresults | Lists all the policy results for an organization.
+*PoliciesApi* | [**policystatuses_list**](docs/PoliciesApi.md#policystatuses_list) | **GET** /systems/{system_id}/policystatuses | List the policy statuses for a system
+*PoliciesApi* | [**policystatuses_list_0**](docs/PoliciesApi.md#policystatuses_list_0) | **GET** /policies/{policy_id}/policystatuses | Lists the latest policy results of a policy.
 *PoliciesApi* | [**policytemplates_get**](docs/PoliciesApi.md#policytemplates_get) | **GET** /policytemplates/{id} | Get a specific Policy Template
 *PoliciesApi* | [**policytemplates_list**](docs/PoliciesApi.md#policytemplates_list) | **GET** /policytemplates | Lists all of the Policy Templates
 *PolicytemplatesApi* | [**policytemplates_get**](docs/PolicytemplatesApi.md#policytemplates_get) | **GET** /policytemplates/{id} | Get a specific Policy Template
@@ -290,11 +293,12 @@ Class | Method | HTTP request | Description
 *WorkdayImportApi* | [**workdays_deauthorize**](docs/WorkdayImportApi.md#workdays_deauthorize) | **DELETE** /workdays/{workday_id}/auth | Deauthorize Workday
 *WorkdayImportApi* | [**workdays_delete**](docs/WorkdayImportApi.md#workdays_delete) | **DELETE** /workdays/{id} | Delete Workday
 *WorkdayImportApi* | [**workdays_get**](docs/WorkdayImportApi.md#workdays_get) | **GET** /workdays/{id} | Get Workday
-*WorkdayImportApi* | [**workdays_import**](docs/WorkdayImportApi.md#workdays_import) | **POST** /workdays/{workday_id}/import/ | Workday Import
+*WorkdayImportApi* | [**workdays_import**](docs/WorkdayImportApi.md#workdays_import) | **POST** /workdays/{workday_id}/import | Workday Import
+*WorkdayImportApi* | [**workdays_importresults**](docs/WorkdayImportApi.md#workdays_importresults) | **GET** /workdays/{id}/import/{job_id}/results | List Import Results
 *WorkdayImportApi* | [**workdays_list**](docs/WorkdayImportApi.md#workdays_list) | **GET** /workdays | List Workdays
 *WorkdayImportApi* | [**workdays_post**](docs/WorkdayImportApi.md#workdays_post) | **POST** /workdays | Create new Workday
 *WorkdayImportApi* | [**workdays_put**](docs/WorkdayImportApi.md#workdays_put) | **PUT** /workdays/{id} | Update Workday
-*WorkdayImportApi* | [**workdays_settings**](docs/WorkdayImportApi.md#workdays_settings) | **GET** /workdays/settings | Get Workday Settings
+*WorkdayImportApi* | [**workdays_settings**](docs/WorkdayImportApi.md#workdays_settings) | **GET** /workdays/settings | Get Workday Settings (incomplete)
 *WorkdayImportApi* | [**workdays_workers**](docs/WorkdayImportApi.md#workdays_workers) | **GET** /workdays/{workday_id}/workers | List Workday Workers
 
 
@@ -315,6 +319,7 @@ Class | Method | HTTP request | Description
  - [GraphType](docs/GraphType.md)
  - [Group](docs/Group.md)
  - [GroupType](docs/GroupType.md)
+ - [InlineResponse204](docs/InlineResponse204.md)
  - [JobDetails](docs/JobDetails.md)
  - [JobId](docs/JobId.md)
  - [JobWorkresult](docs/JobWorkresult.md)
@@ -349,11 +354,9 @@ Class | Method | HTTP request | Description
  - [WorkdayFields](docs/WorkdayFields.md)
  - [WorkdayInput](docs/WorkdayInput.md)
  - [WorkdayOutput](docs/WorkdayOutput.md)
- - [WorkdayReportRow](docs/WorkdayReportRow.md)
  - [WorkdayRequest](docs/WorkdayRequest.md)
  - [WorkdayWorker](docs/WorkdayWorker.md)
- - [Workdayimportresult](docs/Workdayimportresult.md)
- - [WorkdayimportresultResult](docs/WorkdayimportresultResult.md)
+ - [WorkdayWorkerImport](docs/WorkdayWorkerImport.md)
  - [WorkdayoutputAuth](docs/WorkdayoutputAuth.md)
  - [ActiveDirectoryOutput](docs/ActiveDirectoryOutput.md)
  - [LdapServerOutput](docs/LdapServerOutput.md)

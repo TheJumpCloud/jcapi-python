@@ -31,32 +31,73 @@ class JobWorkresult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'status': 'str',
-        'status_message': 'str',
-        'meta': 'object'
+        'status_msg': 'str',
+        'meta': 'object',
+        'created_at': 'str',
+        'updated_at': 'str',
+        'persisted_fields': 'object'
     }
 
     attribute_map = {
+        'id': 'id',
         'status': 'status',
-        'status_message': 'statusMessage',
-        'meta': 'meta'
+        'status_msg': 'statusMsg',
+        'meta': 'meta',
+        'created_at': 'createdAt',
+        'updated_at': 'updatedAt',
+        'persisted_fields': 'persistedFields'
     }
 
-    def __init__(self, status=None, status_message=None, meta=None):
+    def __init__(self, id=None, status=None, status_msg=None, meta=None, created_at=None, updated_at=None, persisted_fields=None):
         """
         JobWorkresult - a model defined in Swagger
         """
 
+        self._id = None
         self._status = None
-        self._status_message = None
+        self._status_msg = None
         self._meta = None
+        self._created_at = None
+        self._updated_at = None
+        self._persisted_fields = None
 
+        if id is not None:
+          self.id = id
         if status is not None:
           self.status = status
-        if status_message is not None:
-          self.status_message = status_message
+        if status_msg is not None:
+          self.status_msg = status_msg
         if meta is not None:
           self.meta = meta
+        if created_at is not None:
+          self.created_at = created_at
+        if updated_at is not None:
+          self.updated_at = updated_at
+        if persisted_fields is not None:
+          self.persisted_fields = persisted_fields
+
+    @property
+    def id(self):
+        """
+        Gets the id of this JobWorkresult.
+
+        :return: The id of this JobWorkresult.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this JobWorkresult.
+
+        :param id: The id of this JobWorkresult.
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def status(self):
@@ -80,25 +121,25 @@ class JobWorkresult(object):
         self._status = status
 
     @property
-    def status_message(self):
+    def status_msg(self):
         """
-        Gets the status_message of this JobWorkresult.
+        Gets the status_msg of this JobWorkresult.
 
-        :return: The status_message of this JobWorkresult.
+        :return: The status_msg of this JobWorkresult.
         :rtype: str
         """
-        return self._status_message
+        return self._status_msg
 
-    @status_message.setter
-    def status_message(self, status_message):
+    @status_msg.setter
+    def status_msg(self, status_msg):
         """
-        Sets the status_message of this JobWorkresult.
+        Sets the status_msg of this JobWorkresult.
 
-        :param status_message: The status_message of this JobWorkresult.
+        :param status_msg: The status_msg of this JobWorkresult.
         :type: str
         """
 
-        self._status_message = status_message
+        self._status_msg = status_msg
 
     @property
     def meta(self):
@@ -120,6 +161,69 @@ class JobWorkresult(object):
         """
 
         self._meta = meta
+
+    @property
+    def created_at(self):
+        """
+        Gets the created_at of this JobWorkresult.
+
+        :return: The created_at of this JobWorkresult.
+        :rtype: str
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """
+        Sets the created_at of this JobWorkresult.
+
+        :param created_at: The created_at of this JobWorkresult.
+        :type: str
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """
+        Gets the updated_at of this JobWorkresult.
+
+        :return: The updated_at of this JobWorkresult.
+        :rtype: str
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """
+        Sets the updated_at of this JobWorkresult.
+
+        :param updated_at: The updated_at of this JobWorkresult.
+        :type: str
+        """
+
+        self._updated_at = updated_at
+
+    @property
+    def persisted_fields(self):
+        """
+        Gets the persisted_fields of this JobWorkresult.
+
+        :return: The persisted_fields of this JobWorkresult.
+        :rtype: object
+        """
+        return self._persisted_fields
+
+    @persisted_fields.setter
+    def persisted_fields(self, persisted_fields):
+        """
+        Sets the persisted_fields of this JobWorkresult.
+
+        :param persisted_fields: The persisted_fields of this JobWorkresult.
+        :type: object
+        """
+
+        self._persisted_fields = persisted_fields
 
     def to_dict(self):
         """

@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv2
 from jcapiv2.rest import ApiException
-from jcapiv2.models.workdayimportresult import Workdayimportresult
+from jcapiv2.models.workday_worker_import import WorkdayWorkerImport
 
 
-class TestWorkdayimportresult(unittest.TestCase):
-    """ Workdayimportresult unit test stubs """
+class TestWorkdayWorkerImport(unittest.TestCase):
+    """ WorkdayWorkerImport unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestWorkdayimportresult(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testWorkdayimportresult(self):
+    def testWorkdayWorkerImport(self):
         """
-        Test Workdayimportresult
+        Test WorkdayWorkerImport
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.workdayimportresult.Workdayimportresult()
+        #model = jcapiv2.models.workday_worker_import.WorkdayWorkerImport()
         pass
 
 

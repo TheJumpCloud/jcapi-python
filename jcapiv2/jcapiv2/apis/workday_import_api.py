@@ -43,7 +43,7 @@ class WorkdayImportApi(object):
     def workdays_authorize(self, workday_id, content_type, accept, **kwargs):
         """
         Authorize Workday
-        Adds an authorization method to a workday instance
+        This endpoint adds an authorization method to a workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/auth \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"auth\":{    \"basic\": {   \"username\": \"someDeveloper\",      \"password\": \"notTheRealPassword\"     }  } }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -72,7 +72,7 @@ class WorkdayImportApi(object):
     def workdays_authorize_with_http_info(self, workday_id, content_type, accept, **kwargs):
         """
         Authorize Workday
-        Adds an authorization method to a workday instance
+        This endpoint adds an authorization method to a workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/auth \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"auth\":{    \"basic\": {   \"username\": \"someDeveloper\",      \"password\": \"notTheRealPassword\"     }  } }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -167,7 +167,7 @@ class WorkdayImportApi(object):
     def workdays_deauthorize(self, workday_id, content_type, accept, **kwargs):
         """
         Deauthorize Workday
-        Removes any and all authorization methods from the workday instance
+        Removes any and all authorization methods from the workday instance  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/auth \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -195,7 +195,7 @@ class WorkdayImportApi(object):
     def workdays_deauthorize_with_http_info(self, workday_id, content_type, accept, **kwargs):
         """
         Deauthorize Workday
-        Removes any and all authorization methods from the workday instance
+        Removes any and all authorization methods from the workday instance  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/auth \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -287,7 +287,7 @@ class WorkdayImportApi(object):
     def workdays_delete(self, id, content_type, accept, **kwargs):
         """
         Delete Workday
-        This endpoint allows you to delete an instance of Workday.
+        This endpoint allows you to delete an instance of Workday.   **This functionality is currently not enable for users.**
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -315,7 +315,7 @@ class WorkdayImportApi(object):
     def workdays_delete_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Delete Workday
-        This endpoint allows you to delete an instance of Workday.
+        This endpoint allows you to delete an instance of Workday.   **This functionality is currently not enable for users.**
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -407,7 +407,7 @@ class WorkdayImportApi(object):
     def workdays_get(self, id, content_type, accept, **kwargs):
         """
         Get Workday
-        This endpoint will return  all the available information about an instance of Workday.
+        This endpoint will return  all the available information about an instance of Workday.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -435,7 +435,7 @@ class WorkdayImportApi(object):
     def workdays_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Get Workday
-        This endpoint will return  all the available information about an instance of Workday.
+        This endpoint will return  all the available information about an instance of Workday.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -527,7 +527,7 @@ class WorkdayImportApi(object):
     def workdays_import(self, workday_id, content_type, accept, **kwargs):
         """
         Workday Import
-        Still in development.
+        The endpoint allows you to create a Workday Import request.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays}/{WorkdayID/import \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"WorkdayID\",\"value\":\"name.name\"}    ]     } ] ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -541,7 +541,7 @@ class WorkdayImportApi(object):
         :param str workday_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[WorkdayWorker] body:
+        :param list[WorkdayWorkerImport] body:
         :return: JobId
                  If the method is called asynchronously,
                  returns the request thread.
@@ -556,7 +556,7 @@ class WorkdayImportApi(object):
     def workdays_import_with_http_info(self, workday_id, content_type, accept, **kwargs):
         """
         Workday Import
-        Still in development.
+        The endpoint allows you to create a Workday Import request.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays}/{WorkdayID/import \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"WorkdayID\",\"value\":\"name.name\"}    ]     } ] ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -570,7 +570,7 @@ class WorkdayImportApi(object):
         :param str workday_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[WorkdayWorker] body:
+        :param list[WorkdayWorkerImport] body:
         :return: JobId
                  If the method is called asynchronously,
                  returns the request thread.
@@ -633,7 +633,7 @@ class WorkdayImportApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api('/workdays/{workday_id}/import/', 'POST',
+        return self.api_client.call_api('/workdays/{workday_id}/import', 'POST',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -648,10 +648,145 @@ class WorkdayImportApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def workdays_importresults(self, id, job_id, content_type, accept, **kwargs):
+        """
+        List Import Results
+        This endpoint provides a list of job results from the workday import and will contain all imported data from Workday.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkdayID}/import/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.workdays_importresults(id, job_id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str job_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :return: list[JobWorkresult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.workdays_importresults_with_http_info(id, job_id, content_type, accept, **kwargs)
+        else:
+            (data) = self.workdays_importresults_with_http_info(id, job_id, content_type, accept, **kwargs)
+            return data
+
+    def workdays_importresults_with_http_info(self, id, job_id, content_type, accept, **kwargs):
+        """
+        List Import Results
+        This endpoint provides a list of job results from the workday import and will contain all imported data from Workday.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkdayID}/import/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.workdays_importresults_with_http_info(id, job_id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str job_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :return: list[JobWorkresult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'job_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method workdays_importresults" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `workdays_importresults`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `workdays_importresults`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `workdays_importresults`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `workdays_importresults`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+        if 'job_id' in params:
+            path_params['job_id'] = params['job_id']
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/workdays/{id}/import/{job_id}/results', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='list[JobWorkresult]',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def workdays_list(self, content_type, accept, **kwargs):
         """
         List Workdays
-        This endpoint will return  all the available information about all your instances of Workday.
+        This endpoint will return  all the available information about all your instances of Workday.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -665,10 +800,10 @@ class WorkdayImportApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[WorkdayOutput]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -683,7 +818,7 @@ class WorkdayImportApi(object):
     def workdays_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List Workdays
-        This endpoint will return  all the available information about all your instances of Workday.
+        This endpoint will return  all the available information about all your instances of Workday.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -697,16 +832,16 @@ class WorkdayImportApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[WorkdayOutput]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -737,9 +872,6 @@ class WorkdayImportApi(object):
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
             collection_formats['fields'] = 'csv'
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
-            collection_formats['filter'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
@@ -747,6 +879,9 @@ class WorkdayImportApi(object):
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
 
         header_params = {}
         if 'content_type' in params:
@@ -787,7 +922,7 @@ class WorkdayImportApi(object):
     def workdays_post(self, content_type, accept, **kwargs):
         """
         Create new Workday
-        This endpoint allows you to create a new workday instance.  You must supply a username and password for Basic Authentication that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.
+        This endpoint allows you to create a new workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  Currently, only one instance is allowed and it must be `Workday Import`.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"name\": \"Workday2\",    \"reportUrl\":\"https://workday.com/ccx/service/customreport2/gms/user/reportname?format=json\",    \"auth\": {     \"basic\": {       \"username\": \"someDeveloper\",        \"password\": \"notTheRealPassword\"     }   } }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -801,7 +936,7 @@ class WorkdayImportApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param WorkdayInput body:
-        :return: WorkdayOutput
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -815,7 +950,7 @@ class WorkdayImportApi(object):
     def workdays_post_with_http_info(self, content_type, accept, **kwargs):
         """
         Create new Workday
-        This endpoint allows you to create a new workday instance.  You must supply a username and password for Basic Authentication that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.
+        This endpoint allows you to create a new workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  Currently, only one instance is allowed and it must be `Workday Import`.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"name\": \"Workday2\",    \"reportUrl\":\"https://workday.com/ccx/service/customreport2/gms/user/reportname?format=json\",    \"auth\": {     \"basic\": {       \"username\": \"someDeveloper\",        \"password\": \"notTheRealPassword\"     }   } }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -829,7 +964,7 @@ class WorkdayImportApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param WorkdayInput body:
-        :return: WorkdayOutput
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -893,7 +1028,7 @@ class WorkdayImportApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='WorkdayOutput',
+                                        response_type=None,
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -904,7 +1039,7 @@ class WorkdayImportApi(object):
     def workdays_put(self, id, content_type, accept, **kwargs):
         """
         Update Workday
-        This endpoint allows you to update the name and Custom Report URL for a Workday Instance.
+        This endpoint allows you to update the name and Custom Report URL for a Workday Instance.  Currently, the name can not be changed from the default of `Workday Import`.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/workdays/{WorkdayID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"reportUrl\":\"{Report_URL}\",  \"name\":\"{Name}\" } ' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -933,7 +1068,7 @@ class WorkdayImportApi(object):
     def workdays_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update Workday
-        This endpoint allows you to update the name and Custom Report URL for a Workday Instance.
+        This endpoint allows you to update the name and Custom Report URL for a Workday Instance.  Currently, the name can not be changed from the default of `Workday Import`.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/workdays/{WorkdayID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"reportUrl\":\"{Report_URL}\",  \"name\":\"{Name}\" } ' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1027,8 +1162,8 @@ class WorkdayImportApi(object):
 
     def workdays_settings(self, content_type, accept, **kwargs):
         """
-        Get Workday Settings
-        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.
+        Get Workday Settings (incomplete)
+        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.   **This functionality is currently not enable for users.**
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1055,8 +1190,8 @@ class WorkdayImportApi(object):
 
     def workdays_settings_with_http_info(self, content_type, accept, **kwargs):
         """
-        Get Workday Settings
-        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.
+        Get Workday Settings (incomplete)
+        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.   **This functionality is currently not enable for users.**
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1145,7 +1280,7 @@ class WorkdayImportApi(object):
     def workdays_workers(self, workday_id, content_type, accept, **kwargs):
         """
         List Workday Workers
-        This endpoint will return all of the data available in your WorkDay Custom Report that has been associated with your WorkDay Instance.
+        This endpoint will return all of the data in your WorkDay Custom Report that has been associated with your WorkDay Instance in JumpCloud.  ##### Sample Request   ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/workers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1159,10 +1294,9 @@ class WorkdayImportApi(object):
         :param str workday_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param int limit: The number of records to return at once.
         :return: list[WorkdayWorker]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1177,7 +1311,7 @@ class WorkdayImportApi(object):
     def workdays_workers_with_http_info(self, workday_id, content_type, accept, **kwargs):
         """
         List Workday Workers
-        This endpoint will return all of the data available in your WorkDay Custom Report that has been associated with your WorkDay Instance.
+        This endpoint will return all of the data in your WorkDay Custom Report that has been associated with your WorkDay Instance in JumpCloud.  ##### Sample Request   ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/workers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1191,16 +1325,15 @@ class WorkdayImportApi(object):
         :param str workday_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param int limit: The number of records to return at once.
         :return: list[WorkdayWorker]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['workday_id', 'content_type', 'accept', 'filter', 'skip', 'sort', 'limit']
+        all_params = ['workday_id', 'content_type', 'accept', 'limit', 'skip', 'sort']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1233,16 +1366,13 @@ class WorkdayImportApi(object):
             path_params['workday_id'] = params['workday_id']
 
         query_params = []
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
-            collection_formats['filter'] = 'csv'
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))
 
         header_params = {}
         if 'content_type' in params:

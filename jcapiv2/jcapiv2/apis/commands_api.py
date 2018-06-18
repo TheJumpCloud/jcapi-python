@@ -58,7 +58,7 @@ class CommandsApi(object):
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -89,7 +89,7 @@ class CommandsApi(object):
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -194,7 +194,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
-        :return: None
+        :return: InlineResponse204
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -223,7 +223,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
-        :return: None
+        :return: InlineResponse204
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -292,7 +292,7 @@ class CommandsApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type=None,
+                                        response_type='InlineResponse204',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -317,7 +317,7 @@ class CommandsApi(object):
         :param str command_id: ObjectID of the Command. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -347,7 +347,7 @@ class CommandsApi(object):
         :param str command_id: ObjectID of the Command. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -445,7 +445,7 @@ class CommandsApi(object):
         :param str command_id: ObjectID of the Command. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -475,7 +475,7 @@ class CommandsApi(object):
         :param str command_id: ObjectID of the Command. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
