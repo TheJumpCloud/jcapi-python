@@ -31,6 +31,14 @@ class TestCommandsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_command_file_get(self):
+        """
+        Test case for command_file_get
+
+        Get a Command File
+        """
+        pass
+
     def test_commands_delete(self):
         """
         Test case for commands_delete

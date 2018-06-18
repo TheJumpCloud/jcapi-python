@@ -19,32 +19,24 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.search_api import SearchApi
+from jcapiv1.models.inline_response_400 import InlineResponse400
 
 
-class TestSearchApi(unittest.TestCase):
-    """ SearchApi unit test stubs """
+class TestInlineResponse400(unittest.TestCase):
+    """ InlineResponse400 unit test stubs """
 
     def setUp(self):
-        self.api = jcapiv1.apis.search_api.SearchApi()
+        pass
 
     def tearDown(self):
         pass
 
-    def test_search_systems_post(self):
+    def testInlineResponse400(self):
         """
-        Test case for search_systems_post
-
-        Search Systems
+        Test InlineResponse400
         """
-        pass
-
-    def test_search_systemusers_post(self):
-        """
-        Test case for search_systemusers_post
-
-        Search System Users
-        """
+        # FIXME: construct object with mandatory attributes with example values
+        #model = jcapiv1.models.inline_response_400.InlineResponse400()
         pass
 
 

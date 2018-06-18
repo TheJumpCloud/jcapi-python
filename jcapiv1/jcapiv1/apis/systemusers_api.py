@@ -43,7 +43,7 @@ class SystemusersApi(object):
     def systemusers_delete(self, id, content_type, accept, **kwargs):
         """
         Delete a system user
-        Delete a particular system user.
+        This endpoint allows you to delete a particular system user.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/systemusers/{UserID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -71,7 +71,7 @@ class SystemusersApi(object):
     def systemusers_delete_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Delete a system user
-        Delete a particular system user.
+        This endpoint allows you to delete a particular system user.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/systemusers/{UserID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -163,7 +163,7 @@ class SystemusersApi(object):
     def systemusers_get(self, id, content_type, accept, **kwargs):
         """
         List a system user
-        Get a particular System User.
+        This endpoint returns a particular System User.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers/{UserID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -177,11 +177,11 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :return: Systemuser
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -195,7 +195,7 @@ class SystemusersApi(object):
     def systemusers_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         List a system user
-        Get a particular System User.
+        This endpoint returns a particular System User.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers/{UserID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -209,11 +209,11 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :return: Systemuser
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -288,7 +288,7 @@ class SystemusersApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='Systemuser',
+                                        response_type='Systemuserreturn',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -299,7 +299,7 @@ class SystemusersApi(object):
     def systemusers_list(self, content_type, accept, **kwargs):
         """
         List all system users
-        Returns all systemusers.
+        This endpoint returns all systemusers.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -331,7 +331,7 @@ class SystemusersApi(object):
     def systemusers_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List all system users
-        Returns all systemusers.
+        This endpoint returns all systemusers.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -432,7 +432,7 @@ class SystemusersApi(object):
     def systemusers_post(self, content_type, accept, **kwargs):
         """
         Create a system user
-        Create a new system user.  ### Example  #### Create a system user  This example assumes there is already a Tag named \"admins\" in your JumpCloud account.  ``` curl \\   -d '{\"email\" : \"bob@myco.com\", \"username\" : \"bob\", \"tags\" : [\"admins\"]}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers\"
+        This endpoint allows you to create a new system user.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"username\":\"{username}\",  \"email\":\"{email_address}\",  \"firstname\":\"{Name}\",  \"lastname\":\"{Name}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -460,7 +460,7 @@ class SystemusersApi(object):
     def systemusers_post_with_http_info(self, content_type, accept, **kwargs):
         """
         Create a system user
-        Create a new system user.  ### Example  #### Create a system user  This example assumes there is already a Tag named \"admins\" in your JumpCloud account.  ``` curl \\   -d '{\"email\" : \"bob@myco.com\", \"username\" : \"bob\", \"tags\" : [\"admins\"]}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers\"
+        This endpoint allows you to create a new system user.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"username\":\"{username}\",  \"email\":\"{email_address}\",  \"firstname\":\"{Name}\",  \"lastname\":\"{Name}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -549,7 +549,7 @@ class SystemusersApi(object):
     def systemusers_put(self, id, content_type, accept, **kwargs):
         """
         Update a system user
-        Update a system user record and return the modified record.  ### Example  #### Add attributes to a System User  ``` curl \\  -X 'PUT' \\  -H 'Content-Type: application/json' \\  -H 'Accept: application/json' \\  -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\  -d '{ \"attributes\" : [ { \"name\" : \"myhappyattribute\", \"value\" : \"myhappyattributevalue\" }] }' \\  \"https://console.jumpcloud.com/api/systemusers/:id\" ```
+        This endpoint allows you to update a system user.  #### Sample Request  ``` curl -X PUT https://console.jumpcloud.com/api/systemusers/{UserID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"email\":\"{email_address}\",  \"firstname\":\"{Name}\",  \"lastname\":\"{Name}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -563,7 +563,7 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Systemuserputpost body:
+        :param Systemuserput body:
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -578,7 +578,7 @@ class SystemusersApi(object):
     def systemusers_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update a system user
-        Update a system user record and return the modified record.  ### Example  #### Add attributes to a System User  ``` curl \\  -X 'PUT' \\  -H 'Content-Type: application/json' \\  -H 'Accept: application/json' \\  -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\  -d '{ \"attributes\" : [ { \"name\" : \"myhappyattribute\", \"value\" : \"myhappyattributevalue\" }] }' \\  \"https://console.jumpcloud.com/api/systemusers/:id\" ```
+        This endpoint allows you to update a system user.  #### Sample Request  ``` curl -X PUT https://console.jumpcloud.com/api/systemusers/{UserID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"email\":\"{email_address}\",  \"firstname\":\"{Name}\",  \"lastname\":\"{Name}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -592,7 +592,7 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Systemuserputpost body:
+        :param Systemuserput body:
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -670,10 +670,123 @@ class SystemusersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def systemusers_resetmfa(self, id, x_api_key, **kwargs):
+        """
+        Reset a system user's MFA token
+        This endpoint allows you to reset the MFA TOTP token for a specified system user. This will result in a user being required to complete the setup of their MFA TOTP token via an email notification sent from Jumpcloud. Please be aware, that until MFA setup is complete, a user may be locked out of systems or applications.   Please refer to our [Knowledge Base Article](https://support.jumpcloud.com/customer/en/portal/articles/2443975-how-to-enable-multifactor-authentication-for-the-jumpcloud-user-portal) on setting up MFA for more information.   #### Sample Request  ``` curl -X POST \\   https://console.jumpcloud.com/api/systemusers/{UserID}/resetmfa \\   -H 'x-api-key: {API_KEY}'  ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.systemusers_resetmfa(id, x_api_key, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str x_api_key: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.systemusers_resetmfa_with_http_info(id, x_api_key, **kwargs)
+        else:
+            (data) = self.systemusers_resetmfa_with_http_info(id, x_api_key, **kwargs)
+            return data
+
+    def systemusers_resetmfa_with_http_info(self, id, x_api_key, **kwargs):
+        """
+        Reset a system user's MFA token
+        This endpoint allows you to reset the MFA TOTP token for a specified system user. This will result in a user being required to complete the setup of their MFA TOTP token via an email notification sent from Jumpcloud. Please be aware, that until MFA setup is complete, a user may be locked out of systems or applications.   Please refer to our [Knowledge Base Article](https://support.jumpcloud.com/customer/en/portal/articles/2443975-how-to-enable-multifactor-authentication-for-the-jumpcloud-user-portal) on setting up MFA for more information.   #### Sample Request  ``` curl -X POST \\   https://console.jumpcloud.com/api/systemusers/{UserID}/resetmfa \\   -H 'x-api-key: {API_KEY}'  ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.systemusers_resetmfa_with_http_info(id, x_api_key, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str x_api_key: (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'x_api_key']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systemusers_resetmfa" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `systemusers_resetmfa`")
+        # verify the required parameter 'x_api_key' is set
+        if ('x_api_key' not in params) or (params['x_api_key'] is None):
+            raise ValueError("Missing the required parameter `x_api_key` when calling `systemusers_resetmfa`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+
+        query_params = []
+
+        header_params = {}
+        if 'x_api_key' in params:
+            header_params['x-api-key'] = params['x_api_key']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json; charset=utf-8'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/systemusers/{id}/resetmfa', 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='str',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def systemusers_systems_binding_list(self, id, content_type, accept, **kwargs):
         """
         List system user binding
-        List system bindings for a specific system user in a system and user binding format.  ### Examples  #### List system bindings for specific system user  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
+        Hidden as Tags is deprecated  Adds or removes a system binding for a user.   This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).   List system bindings for a specific system user in a system and user binding format.  ### Examples  #### List system bindings for specific system user  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -687,10 +800,10 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -705,7 +818,7 @@ class SystemusersApi(object):
     def systemusers_systems_binding_list_with_http_info(self, id, content_type, accept, **kwargs):
         """
         List system user binding
-        List system bindings for a specific system user in a system and user binding format.  ### Examples  #### List system bindings for specific system user  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
+        Hidden as Tags is deprecated  Adds or removes a system binding for a user.   This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).   List system bindings for a specific system user in a system and user binding format.  ### Examples  #### List system bindings for specific system user  ``` curl \\   -H 'Content-Type: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -719,10 +832,10 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -809,7 +922,7 @@ class SystemusersApi(object):
     def systemusers_systems_binding_put(self, id, content_type, accept, **kwargs):
         """
         Update a system user binding
-        Adds or removes a system binding for a user.   This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) system to system user  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
+        Hidden as Tags is deprecated  Adds or removes a system binding for a user.   This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) system to system user  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -838,7 +951,7 @@ class SystemusersApi(object):
     def systemusers_systems_binding_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update a system user binding
-        Adds or removes a system binding for a user.   This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) system to system user  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
+        Hidden as Tags is deprecated  Adds or removes a system binding for a user.   This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  ### Example  #### Add (or remove) system to system user  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systemusers/[SYSTEM_USER_ID_HERE]/systems\" ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

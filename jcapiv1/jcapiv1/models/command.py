@@ -131,7 +131,7 @@ class Command(object):
     def user(self):
         """
         Gets the user of this Command.
-        The ID of the JC managed user to run the command as.
+        The ID of the system user to run the command as.
 
         :return: The user of this Command.
         :rtype: str
@@ -142,7 +142,7 @@ class Command(object):
     def user(self, user):
         """
         Sets the user of this Command.
-        The ID of the JC managed user to run the command as.
+        The ID of the system user to run the command as.
 
         :param user: The user of this Command.
         :type: str
@@ -156,7 +156,7 @@ class Command(object):
     def systems(self):
         """
         Gets the systems of this Command.
-        An array of system IDs to run the command on.
+        An array of system IDs to run the command on. Not available if you are using Groups.
 
         :return: The systems of this Command.
         :rtype: list[str]
@@ -167,7 +167,7 @@ class Command(object):
     def systems(self, systems):
         """
         Sets the systems of this Command.
-        An array of system IDs to run the command on.
+        An array of system IDs to run the command on. Not available if you are using Groups.
 
         :param systems: The systems of this Command.
         :type: list[str]
@@ -225,7 +225,7 @@ class Command(object):
     def tags(self):
         """
         Gets the tags of this Command.
-        An array of tag IDs to run the command on.
+        An array of tag IDs to run the command on. Not available if you are using Groups.
 
         :return: The tags of this Command.
         :rtype: list[str]
@@ -236,7 +236,7 @@ class Command(object):
     def tags(self, tags):
         """
         Sets the tags of this Command.
-        An array of tag IDs to run the command on.
+        An array of tag IDs to run the command on. Not available if you are using Groups.
 
         :param tags: The tags of this Command.
         :type: list[str]

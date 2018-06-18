@@ -40,10 +40,139 @@ class SearchApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def search_systems_post(self, content_type, accept, **kwargs):
+        """
+        Search Systems
+        Return Systems in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system.  To support advanced filtering you can use the `filter` parameter that can only be passed in the body of POST /api/search/* routes. The `filter` parameter must be passed as Content-Type application/json supports advanced filtering using the mongodb JSON query syntax.   The `filter` parameter is an object with a single property, either and or or with the value of the property being an array of query expressions.   This allows you to filter records using the logic of matching ALL or ANY records in the array of query expressions. If the and or or are not included the default behavior is to match ALL query expressions.   #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/search/systemsusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"filter\" :     {         \"or\" :             [                 {\"hostname\" : { \"$regex\" : \"^www\" }},                 {\"hostname\" : {\"$regex\" : \"^db\"}}             ]     }, \"fields\" : \"os hostname displayName\" }' ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.search_systems_post(content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param Search body:
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :return: Systemuserslist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.search_systems_post_with_http_info(content_type, accept, **kwargs)
+        else:
+            (data) = self.search_systems_post_with_http_info(content_type, accept, **kwargs)
+            return data
+
+    def search_systems_post_with_http_info(self, content_type, accept, **kwargs):
+        """
+        Search Systems
+        Return Systems in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system.  To support advanced filtering you can use the `filter` parameter that can only be passed in the body of POST /api/search/* routes. The `filter` parameter must be passed as Content-Type application/json supports advanced filtering using the mongodb JSON query syntax.   The `filter` parameter is an object with a single property, either and or or with the value of the property being an array of query expressions.   This allows you to filter records using the logic of matching ALL or ANY records in the array of query expressions. If the and or or are not included the default behavior is to match ALL query expressions.   #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/search/systemsusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"filter\" :     {         \"or\" :             [                 {\"hostname\" : { \"$regex\" : \"^www\" }},                 {\"hostname\" : {\"$regex\" : \"^db\"}}             ]     }, \"fields\" : \"os hostname displayName\" }' ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.search_systems_post_with_http_info(content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param Search body:
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :return: Systemuserslist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'body', 'fields', 'limit', 'skip']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method search_systems_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `search_systems_post`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `search_systems_post`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json; charset=utf-8'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/search/systems', 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='Systemuserslist',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def search_systemusers_post(self, content_type, accept, **kwargs):
         """
-        List System Users
-        Return System Users in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system.  ### Example  ##### Find a System User by username  ``` curl \\   -d '{\"filter\": [{\"username\" : \"bob\"}]}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/search/systemusers\" ```
+        Search System Users
+        Return System Users in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system user.  To support advanced filtering you can use the `filter` parameter that can only be passed in the body of POST /api/search/* routes. The `filter` parameter must be passed as Content-Type application/json supports advanced filtering using the mongodb JSON query syntax.   The `filter` parameter is an object with a single property, either and or or with the value of the property being an array of query expressions.   This allows you to filter records using the logic of matching ALL or ANY records in the array of query expressions. If the and or or are not included the default behavior is to match ALL query expressions.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/search/systemsusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"filter\" : [{\"email\" : { \"$regex\" : \"gmail.com$\"}}], \"fields\" : \"email username sudo\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -57,9 +186,9 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :return: Systemuserslist
                  If the method is called asynchronously,
                  returns the request thread.
@@ -73,8 +202,8 @@ class SearchApi(object):
 
     def search_systemusers_post_with_http_info(self, content_type, accept, **kwargs):
         """
-        List System Users
-        Return System Users in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system.  ### Example  ##### Find a System User by username  ``` curl \\   -d '{\"filter\": [{\"username\" : \"bob\"}]}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/search/systemusers\" ```
+        Search System Users
+        Return System Users in multi-record format allowing for the passing of the 'filter' parameter. This WILL NOT allow you to add a new system user.  To support advanced filtering you can use the `filter` parameter that can only be passed in the body of POST /api/search/* routes. The `filter` parameter must be passed as Content-Type application/json supports advanced filtering using the mongodb JSON query syntax.   The `filter` parameter is an object with a single property, either and or or with the value of the property being an array of query expressions.   This allows you to filter records using the logic of matching ALL or ANY records in the array of query expressions. If the and or or are not included the default behavior is to match ALL query expressions.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/search/systemsusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"filter\" : [{\"email\" : { \"$regex\" : \"gmail.com$\"}}], \"fields\" : \"email username sudo\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -88,15 +217,15 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param int limit: The number of records to return at once.
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :return: Systemuserslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body', 'limit', 'skip', 'fields']
+        all_params = ['content_type', 'accept', 'body', 'fields', 'limit', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -124,12 +253,12 @@ class SearchApi(object):
         path_params = {}
 
         query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'skip' in params:
             query_params.append(('skip', params['skip']))
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))
 
         header_params = {}
         if 'content_type' in params:

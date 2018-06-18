@@ -71,6 +71,14 @@ class TestSystemusersApi(unittest.TestCase):
         """
         pass
 
+    def test_systemusers_resetmfa(self):
+        """
+        Test case for systemusers_resetmfa
+
+        Reset a system user's MFA token
+        """
+        pass
+
     def test_systemusers_systems_binding_list(self):
         """
         Test case for systemusers_systems_binding_list

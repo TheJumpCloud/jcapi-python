@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **phone_numbers** | **list[str]** |  | [optional] 
 **relationships** | **list[object]** |  | [optional] 
 **bad_login_attempts** | **int** |  | [optional] 
+**password_never_expires** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

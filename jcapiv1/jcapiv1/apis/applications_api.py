@@ -43,7 +43,7 @@ class ApplicationsApi(object):
     def applications_list(self, content_type, accept, **kwargs):
         """
         Applications
-        The endpoint is used to return all your SSO Applications.
+        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -74,7 +74,7 @@ class ApplicationsApi(object):
     def applications_list_with_http_info(self, content_type, accept, **kwargs):
         """
         Applications
-        The endpoint is used to return all your SSO Applications.
+        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
