@@ -58,7 +58,7 @@ class ApplicationsApi(object):
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -89,7 +89,7 @@ class ApplicationsApi(object):
         :param list[str] targets:  (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -317,7 +317,7 @@ class ApplicationsApi(object):
         :param str application_id: ObjectID of the Application. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -347,7 +347,7 @@ class ApplicationsApi(object):
         :param str application_id: ObjectID of the Application. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -445,7 +445,7 @@ class ApplicationsApi(object):
         :param str application_id: ObjectID of the Application. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -475,7 +475,7 @@ class ApplicationsApi(object):
         :param str application_id: ObjectID of the Application. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,

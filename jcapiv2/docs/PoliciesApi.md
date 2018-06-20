@@ -14,8 +14,10 @@ Method | HTTP request | Description
 [**policies_post**](PoliciesApi.md#policies_post) | **POST** /policies | Create a new Policy
 [**policies_put**](PoliciesApi.md#policies_put) | **PUT** /policies/{id} | Update an existing Policy
 [**policyresults_get**](PoliciesApi.md#policyresults_get) | **GET** /policyresults/{id} | Get a specific Policy Result.
-[**policyresults_list**](PoliciesApi.md#policyresults_list) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a given policy.
+[**policyresults_list**](PoliciesApi.md#policyresults_list) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a policy.
 [**policyresults_list_0**](PoliciesApi.md#policyresults_list_0) | **GET** /policyresults | Lists all the policy results for an organization.
+[**policystatuses_list**](PoliciesApi.md#policystatuses_list) | **GET** /systems/{system_id}/policystatuses | List the policy statuses for a system
+[**policystatuses_list_0**](PoliciesApi.md#policystatuses_list_0) | **GET** /policies/{policy_id}/policystatuses | Lists the latest policy results of a policy.
 [**policytemplates_get**](PoliciesApi.md#policytemplates_get) | **GET** /policytemplates/{id} | Get a specific Policy Template
 [**policytemplates_list**](PoliciesApi.md#policytemplates_list) | **GET** /policytemplates | Lists all of the Policy Templates
 
@@ -42,11 +44,11 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv2.PoliciesApi()
-policy_id = 'policy_id_example' # str | 
+policy_id = 'policy_id_example' # str | ObjectID of the Policy.
 targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -61,11 +63,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_id** | **str**|  | 
+ **policy_id** | **str**| ObjectID of the Policy. | 
  **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -105,7 +107,7 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv2.PoliciesApi()
-policy_id = 'policy_id_example' # str | 
+policy_id = 'policy_id_example' # str | ObjectID of the Policy.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
@@ -121,7 +123,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_id** | **str**|  | 
+ **policy_id** | **str**| ObjectID of the Policy. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
@@ -166,7 +168,7 @@ api_instance = jcapiv2.PoliciesApi()
 policy_id = 'policy_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -184,7 +186,7 @@ Name | Type | Description  | Notes
  **policy_id** | **str**| ObjectID of the Command. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -227,7 +229,7 @@ api_instance = jcapiv2.PoliciesApi()
 policy_id = 'policy_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -245,7 +247,7 @@ Name | Type | Description  | Notes
  **policy_id** | **str**| ObjectID of the Command. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -402,7 +404,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 
@@ -422,7 +424,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 
@@ -613,9 +615,9 @@ Name | Type | Description  | Notes
 # **policyresults_list**
 > list[PolicyResult] policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
 
-Lists all the policy results of a given policy.
+Lists all the policy results of a policy.
 
-This endpoint returns all policies results for a specific policy.   ##### Sample Results  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint returns all policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example 
 ```python
@@ -637,13 +639,13 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 aggregate = ['aggregate_example'] # list[str] |  (optional)
 
 try: 
-    # Lists all the policy results of a given policy.
+    # Lists all the policy results of a policy.
     api_response = api_instance.policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
     pprint(api_response)
 except ApiException as e:
@@ -659,7 +661,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **aggregate** | [**list[str]**](str.md)|  | [optional] 
@@ -684,7 +686,7 @@ Name | Type | Description  | Notes
 
 Lists all the policy results for an organization.
 
-This endpoint returns all policies results for an Organization.   ##### Sample Results  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint returns all policies results for an Organization.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example 
 ```python
@@ -705,7 +707,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 aggregate = ['aggregate_example'] # list[str] |  (optional)
@@ -726,10 +728,144 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **aggregate** | [**list[str]**](str.md)|  | [optional] 
+
+### Return type
+
+[**list[PolicyResult]**](PolicyResult.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policystatuses_list**
+> list[PolicyResult] policystatuses_list(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+
+List the policy statuses for a system
+
+This endpoint returns the policy results for a particular system.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.PoliciesApi()
+system_id = 'system_id_example' # str | ObjectID of the System.
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
+filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+
+try: 
+    # List the policy statuses for a system
+    api_response = api_instance.policystatuses_list(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PoliciesApi->policystatuses_list: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **system_id** | **str**| ObjectID of the System. | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+
+### Return type
+
+[**list[PolicyResult]**](PolicyResult.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **policystatuses_list_0**
+> list[PolicyResult] policystatuses_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+
+Lists the latest policy results of a policy.
+
+This endpoint returns the latest policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.PoliciesApi()
+policy_id = 'policy_id_example' # str | 
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
+filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+
+try: 
+    # Lists the latest policy results of a policy.
+    api_response = api_instance.policystatuses_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PoliciesApi->policystatuses_list_0: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_id** | **str**|  | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 
 ### Return type
 
@@ -829,7 +965,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 
@@ -849,7 +985,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
 

@@ -623,6 +623,14 @@ class TestGraphApi(unittest.TestCase):
         """
         pass
 
+    def test_policystatuses_list(self):
+        """
+        Test case for policystatuses_list
+
+        List the policy statuses for a system
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

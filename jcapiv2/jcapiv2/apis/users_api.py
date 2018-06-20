@@ -43,7 +43,7 @@ class UsersApi(object):
     def graph_user_associations_list(self, user_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User
-        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/associations?targets=user_group ```
+        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -58,7 +58,7 @@ class UsersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] targets:  (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -74,7 +74,7 @@ class UsersApi(object):
     def graph_user_associations_list_with_http_info(self, user_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User
-        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/associations?targets=user_group ```
+        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -89,7 +89,7 @@ class UsersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] targets:  (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -179,7 +179,7 @@ class UsersApi(object):
     def graph_user_associations_post(self, user_id, content_type, accept, **kwargs):
         """
         Manage the associations of a User
-        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/associations ```
+        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -208,7 +208,7 @@ class UsersApi(object):
     def graph_user_associations_post_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         Manage the associations of a User
-        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/associations ```
+        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -303,7 +303,7 @@ class UsersApi(object):
     def graph_user_member_of(self, user_id, content_type, accept, **kwargs):
         """
         List the parent Groups of a User
-        This endpoint returns all the User Groups a User is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/memberof ```
+        This endpoint returns all the User Groups a User is a member of.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/memberof \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -318,7 +318,7 @@ class UsersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
@@ -335,7 +335,7 @@ class UsersApi(object):
     def graph_user_member_of_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the parent Groups of a User
-        This endpoint returns all the User Groups a User is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/memberof ```
+        This endpoint returns all the User Groups a User is a member of.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/memberof \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -350,7 +350,7 @@ class UsersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
@@ -441,7 +441,7 @@ class UsersApi(object):
     def graph_user_traverse_application(self, user_id, content_type, accept, **kwargs):
         """
         List the Applications bound to a User
-        This endpoint will return all Applications bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/applications ```
+        This endpoint will return all Applications bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -455,7 +455,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -471,7 +471,7 @@ class UsersApi(object):
     def graph_user_traverse_application_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the Applications bound to a User
-        This endpoint will return all Applications bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/applications ```
+        This endpoint will return all Applications bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Application; this array represents all grouping and/or associations that would have to be removed to deprovision the Application from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -485,7 +485,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -569,7 +569,7 @@ class UsersApi(object):
     def graph_user_traverse_directory(self, user_id, content_type, accept, **kwargs):
         """
         List the Directories bound to a User
-        This endpoint will return all Directories bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directory from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/directories ```
+        This endpoint will return all Directories bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directory from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/directories \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -583,7 +583,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -599,7 +599,7 @@ class UsersApi(object):
     def graph_user_traverse_directory_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the Directories bound to a User
-        This endpoint will return all Directories bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directory from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/directories ```
+        This endpoint will return all Directories bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Directory; this array represents all grouping and/or associations that would have to be removed to deprovision the Directory from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/directories \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -613,7 +613,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -697,7 +697,7 @@ class UsersApi(object):
     def graph_user_traverse_g_suite(self, user_id, content_type, accept, **kwargs):
         """
         List the G Suite instances bound to a User
-        This endpoint will return all G-Suite Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/gsuites ```
+        This endpoint will return all G-Suite Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -711,7 +711,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -727,7 +727,7 @@ class UsersApi(object):
     def graph_user_traverse_g_suite_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the G Suite instances bound to a User
-        This endpoint will return all G-Suite Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/gsuites ```
+        This endpoint will return all G-Suite Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -741,7 +741,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -825,7 +825,7 @@ class UsersApi(object):
     def graph_user_traverse_ldap_server(self, user_id, content_type, accept, **kwargs):
         """
         List the LDAP servers bound to a User
-        This endpoint will return all LDAP Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/ldapservers ```
+        This endpoint will return all LDAP Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/ldapservers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -839,7 +839,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -855,7 +855,7 @@ class UsersApi(object):
     def graph_user_traverse_ldap_server_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the LDAP servers bound to a User
-        This endpoint will return all LDAP Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/ldapservers ```
+        This endpoint will return all LDAP Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding LDAP Server; this array represents all grouping and/or associations that would have to be removed to deprovision the LDAP Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/ldapservers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -869,7 +869,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -953,7 +953,7 @@ class UsersApi(object):
     def graph_user_traverse_office365(self, user_id, content_type, accept, **kwargs):
         """
         List the Office 365 instances bound to a User
-        This endpoint will return all Office 365 Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/office365s ```
+        This endpoint will return all Office 365 Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/office365s \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -967,7 +967,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -983,7 +983,7 @@ class UsersApi(object):
     def graph_user_traverse_office365_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the Office 365 instances bound to a User
-        This endpoint will return all Office 365 Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/office365s ```
+        This endpoint will return all Office 365 Instances bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding Office 365 instance; this array represents all grouping and/or associations that would have to be removed to deprovision the Office 365 instance from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/office365s \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -997,7 +997,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -1081,7 +1081,7 @@ class UsersApi(object):
     def graph_user_traverse_radius_server(self, user_id, content_type, accept, **kwargs):
         """
         List the RADIUS Servers bound to a User
-        This endpoint will return all RADIUS Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/radiusservers ```
+        This endpoint will return all RADIUS Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/radiusservers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1095,7 +1095,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -1111,7 +1111,7 @@ class UsersApi(object):
     def graph_user_traverse_radius_server_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the RADIUS Servers bound to a User
-        This endpoint will return all RADIUS Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/radiusservers ```
+        This endpoint will return all RADIUS Servers bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.    Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding RADIUS Server; this array represents all grouping and/or associations that would have to be removed to deprovision the RADIUS Server from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/radiusservers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1125,7 +1125,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -1209,7 +1209,7 @@ class UsersApi(object):
     def graph_user_traverse_system(self, user_id, content_type, accept, **kwargs):
         """
         List the Systems bound to a User
-        This endpoint will return all Systems bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/systems ```
+        This endpoint will return all Systems bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/systems\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1223,7 +1223,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -1239,7 +1239,7 @@ class UsersApi(object):
     def graph_user_traverse_system_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the Systems bound to a User
-        This endpoint will return all Systems bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/systems ```
+        This endpoint will return all Systems bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System; this array represents all grouping and/or associations that would have to be removed to deprovision the System from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/systems\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1253,7 +1253,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -1337,7 +1337,7 @@ class UsersApi(object):
     def graph_user_traverse_system_group(self, user_id, content_type, accept, **kwargs):
         """
         List the System Groups bound to a User
-        This endpoint will return all System Groups bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/systemgroups ```
+        This endpoint will return all System Groups bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/systemgroups\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1351,7 +1351,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -1367,7 +1367,7 @@ class UsersApi(object):
     def graph_user_traverse_system_group_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         List the System Groups bound to a User
-        This endpoint will return all System Groups bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/users/{user_id}/systemgroups ```
+        This endpoint will return all System Groups bound to a User, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User to the corresponding System Group; this array represents all grouping and/or associations that would have to be removed to deprovision the System Group from this User.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/systemgroups\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1381,7 +1381,7 @@ class UsersApi(object):
         :param str user_id: ObjectID of the User. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,

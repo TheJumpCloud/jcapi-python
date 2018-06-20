@@ -115,7 +115,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list
 
-        Lists all the policy results of a given policy.
+        Lists all the policy results of a policy.
         """
         pass
 
@@ -124,6 +124,22 @@ class TestPoliciesApi(unittest.TestCase):
         Test case for policyresults_list_0
 
         Lists all the policy results for an organization.
+        """
+        pass
+
+    def test_policystatuses_list(self):
+        """
+        Test case for policystatuses_list
+
+        List the policy statuses for a system
+        """
+        pass
+
+    def test_policystatuses_list_0(self):
+        """
+        Test case for policystatuses_list_0
+
+        Lists the latest policy results of a policy.
         """
         pass
 

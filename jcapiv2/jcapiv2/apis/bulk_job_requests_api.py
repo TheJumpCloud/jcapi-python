@@ -40,17 +40,17 @@ class BulkJobRequestsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def job_get(self, id, content_type, accept, **kwargs):
+    def jobs_get(self, id, content_type, accept, **kwargs):
         """
-        Get Job
-        Under development
+        Get Job (incomplete)
+        **This endpoint is not complete and should remain hidden as it's not functional yet.**
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.job_get(id, content_type, accept, callback=callback_function)
+        >>> thread = api.jobs_get(id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -63,22 +63,22 @@ class BulkJobRequestsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.job_get_with_http_info(id, content_type, accept, **kwargs)
+            return self.jobs_get_with_http_info(id, content_type, accept, **kwargs)
         else:
-            (data) = self.job_get_with_http_info(id, content_type, accept, **kwargs)
+            (data) = self.jobs_get_with_http_info(id, content_type, accept, **kwargs)
             return data
 
-    def job_get_with_http_info(self, id, content_type, accept, **kwargs):
+    def jobs_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
-        Get Job
-        Under development
+        Get Job (incomplete)
+        **This endpoint is not complete and should remain hidden as it's not functional yet.**
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.job_get_with_http_info(id, content_type, accept, callback=callback_function)
+        >>> thread = api.jobs_get_with_http_info(id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -101,19 +101,19 @@ class BulkJobRequestsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method job_get" % key
+                    " to method jobs_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params) or (params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `job_get`")
+            raise ValueError("Missing the required parameter `id` when calling `jobs_get`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `job_get`")
+            raise ValueError("Missing the required parameter `content_type` when calling `jobs_get`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `job_get`")
+            raise ValueError("Missing the required parameter `accept` when calling `jobs_get`")
 
 
         collection_formats = {}
@@ -160,24 +160,24 @@ class BulkJobRequestsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def job_results(self, id, content_type, accept, **kwargs):
+    def jobs_results(self, id, content_type, accept, **kwargs):
         """
         List Job Results
-        Under development
+        This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.job_results(id, content_type, accept, callback=callback_function)
+        >>> thread = api.jobs_results(id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[JobWorkresult]
                  If the method is called asynchronously,
@@ -185,29 +185,29 @@ class BulkJobRequestsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.job_results_with_http_info(id, content_type, accept, **kwargs)
+            return self.jobs_results_with_http_info(id, content_type, accept, **kwargs)
         else:
-            (data) = self.job_results_with_http_info(id, content_type, accept, **kwargs)
+            (data) = self.jobs_results_with_http_info(id, content_type, accept, **kwargs)
             return data
 
-    def job_results_with_http_info(self, id, content_type, accept, **kwargs):
+    def jobs_results_with_http_info(self, id, content_type, accept, **kwargs):
         """
         List Job Results
-        Under development
+        This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.job_results_with_http_info(id, content_type, accept, callback=callback_function)
+        >>> thread = api.jobs_results_with_http_info(id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[JobWorkresult]
                  If the method is called asynchronously,
@@ -225,19 +225,19 @@ class BulkJobRequestsApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method job_results" % key
+                    " to method jobs_results" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'id' is set
         if ('id' not in params) or (params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `job_results`")
+            raise ValueError("Missing the required parameter `id` when calling `jobs_results`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `job_results`")
+            raise ValueError("Missing the required parameter `content_type` when calling `jobs_results`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `job_results`")
+            raise ValueError("Missing the required parameter `accept` when calling `jobs_results`")
 
 
         collection_formats = {}

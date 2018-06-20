@@ -58,7 +58,7 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] targets:  (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -91,7 +91,7 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] targets:  (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -187,7 +187,7 @@ class SystemsApi(object):
     def graph_system_associations_post(self, system_id, content_type, accept, **kwargs):
         """
         Manage associations of a System
-        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -218,7 +218,7 @@ class SystemsApi(object):
     def graph_system_associations_post_with_http_info(self, system_id, content_type, accept, **kwargs):
         """
         Manage associations of a System
-        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -334,7 +334,7 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -368,7 +368,7 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -479,7 +479,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -509,7 +509,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -607,7 +607,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -637,7 +637,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
@@ -735,7 +735,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -767,7 +767,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -871,7 +871,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -903,7 +903,7 @@ class SystemsApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API

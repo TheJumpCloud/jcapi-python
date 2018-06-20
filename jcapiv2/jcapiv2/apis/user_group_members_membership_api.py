@@ -58,7 +58,7 @@ class UserGroupMembersMembershipApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
@@ -90,7 +90,7 @@ class UserGroupMembersMembershipApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
@@ -181,7 +181,7 @@ class UserGroupMembersMembershipApi(object):
     def graph_user_group_members_list(self, group_id, content_type, accept, **kwargs):
         """
         List the members of a User Group
-        This endpoint returns the user members of a User Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/members ```
+        This endpoint returns the user members of a User Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -195,7 +195,7 @@ class UserGroupMembersMembershipApi(object):
         :param str group_id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -211,7 +211,7 @@ class UserGroupMembersMembershipApi(object):
     def graph_user_group_members_list_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         List the members of a User Group
-        This endpoint returns the user members of a User Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/members ```
+        This endpoint returns the user members of a User Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -225,7 +225,7 @@ class UserGroupMembersMembershipApi(object):
         :param str group_id: ObjectID of the User Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :return: list[GraphConnection]
                  If the method is called asynchronously,
@@ -309,7 +309,7 @@ class UserGroupMembersMembershipApi(object):
     def graph_user_group_members_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a User Group
-        This endpoint allows you to manage the user members of a User Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/members ```
+        This endpoint allows you to manage the user members of a User Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -338,7 +338,7 @@ class UserGroupMembersMembershipApi(object):
     def graph_user_group_members_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a User Group
-        This endpoint allows you to manage the user members of a User Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/members ```
+        This endpoint allows you to manage the user members of a User Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -433,7 +433,7 @@ class UserGroupMembersMembershipApi(object):
     def graph_user_group_membership(self, group_id, content_type, accept, **kwargs):
         """
         List the User Group's membership
-        This endpoint returns all users members that are a member of this User Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/membership ```
+        This endpoint returns all users members that are a member of this User Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/membership \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -448,7 +448,7 @@ class UserGroupMembersMembershipApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]
@@ -465,7 +465,7 @@ class UserGroupMembersMembershipApi(object):
     def graph_user_group_membership_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         List the User Group's membership
-        This endpoint returns all users members that are a member of this User Group.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/membership ```
+        This endpoint returns all users members that are a member of this User Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/membership \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -480,7 +480,7 @@ class UserGroupMembersMembershipApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once.
+        :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :return: list[GraphObjectWithPaths]

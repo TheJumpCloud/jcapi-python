@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv2
 from jcapiv2.rest import ApiException
-from jcapiv2.models.workday_report_row import WorkdayReportRow
+from jcapiv2.models.inline_response_204 import InlineResponse204
 
 
-class TestWorkdayReportRow(unittest.TestCase):
-    """ WorkdayReportRow unit test stubs """
+class TestInlineResponse204(unittest.TestCase):
+    """ InlineResponse204 unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestWorkdayReportRow(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testWorkdayReportRow(self):
+    def testInlineResponse204(self):
         """
-        Test WorkdayReportRow
+        Test InlineResponse204
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.workday_report_row.WorkdayReportRow()
+        #model = jcapiv2.models.inline_response_204.InlineResponse204()
         pass
 
 

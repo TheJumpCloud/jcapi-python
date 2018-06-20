@@ -31,17 +31,17 @@ class TestBulkJobRequestsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_job_get(self):
+    def test_jobs_get(self):
         """
-        Test case for job_get
+        Test case for jobs_get
 
-        Get Job
+        Get Job (incomplete)
         """
         pass
 
-    def test_job_results(self):
+    def test_jobs_results(self):
         """
-        Test case for job_results
+        Test case for jobs_results
 
         List Job Results
         """

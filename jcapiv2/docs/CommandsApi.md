@@ -36,7 +36,7 @@ command_id = 'command_id_example' # str | ObjectID of the Command.
 targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_associations_post**
-> graph_command_associations_post(command_id, content_type, accept, body=body)
+> InlineResponse204 graph_command_associations_post(command_id, content_type, accept, body=body)
 
 Manage the associations of a Command
 
@@ -102,7 +102,8 @@ body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
 
 try: 
     # Manage the associations of a Command
-    api_instance.graph_command_associations_post(command_id, content_type, accept, body=body)
+    api_response = api_instance.graph_command_associations_post(command_id, content_type, accept, body=body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_associations_post: %s\n" % e)
 ```
@@ -118,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**InlineResponse204**](InlineResponse204.md)
 
 ### Authorization
 
@@ -156,7 +157,7 @@ api_instance = jcapiv2.CommandsApi()
 command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -174,7 +175,7 @@ Name | Type | Description  | Notes
  **command_id** | **str**| ObjectID of the Command. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
@@ -217,7 +218,7 @@ api_instance = jcapiv2.CommandsApi()
 command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-limit = 10 # int | The number of records to return at once. (optional) (default to 10)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
@@ -235,7 +236,7 @@ Name | Type | Description  | Notes
  **command_id** | **str**| ObjectID of the Command. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **limit** | **int**| The number of records to return at once. | [optional] [default to 10]
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type

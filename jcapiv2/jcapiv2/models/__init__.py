@@ -29,6 +29,7 @@ from .graph_object_with_paths import GraphObjectWithPaths
 from .graph_type import GraphType
 from .group import Group
 from .group_type import GroupType
+from .inline_response_204 import InlineResponse204
 from .job_details import JobDetails
 from .job_id import JobId
 from .job_workresult import JobWorkresult
@@ -63,11 +64,9 @@ from .user_group_put_attributes import UserGroupPutAttributes
 from .workday_fields import WorkdayFields
 from .workday_input import WorkdayInput
 from .workday_output import WorkdayOutput
-from .workday_report_row import WorkdayReportRow
 from .workday_request import WorkdayRequest
 from .workday_worker import WorkdayWorker
-from .workdayimportresult import Workdayimportresult
-from .workdayimportresult_result import WorkdayimportresultResult
+from .workday_worker_import import WorkdayWorkerImport
 from .workdayoutput_auth import WorkdayoutputAuth
 from .active_directory_output import ActiveDirectoryOutput
 from .ldap_server_output import LdapServerOutput
