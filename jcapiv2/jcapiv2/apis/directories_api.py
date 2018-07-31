@@ -58,8 +58,8 @@ class DirectoriesApi(object):
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param int skip: The offset into the records to return.
         :return: list[Directory]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -89,14 +89,14 @@ class DirectoriesApi(object):
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param int skip: The offset into the records to return.
         :return: list[Directory]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'sort', 'skip']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -129,11 +129,11 @@ class DirectoriesApi(object):
             collection_formats['fields'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))
 
         header_params = {}
         if 'content_type' in params:

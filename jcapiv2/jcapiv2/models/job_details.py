@@ -37,7 +37,6 @@ class JobDetails(object):
         'name': 'str',
         'status': 'str',
         'meta': 'object',
-        'created_at': 'str',
         'updated_at': 'str',
         'persisted_fields': 'list[str]'
     }
@@ -49,12 +48,11 @@ class JobDetails(object):
         'name': 'name',
         'status': 'status',
         'meta': 'meta',
-        'created_at': 'createdAt',
         'updated_at': 'updatedAt',
         'persisted_fields': 'persistedFields'
     }
 
-    def __init__(self, id=None, admin_id=None, work_units_count=None, name=None, status=None, meta=None, created_at=None, updated_at=None, persisted_fields=None):
+    def __init__(self, id=None, admin_id=None, work_units_count=None, name=None, status=None, meta=None, updated_at=None, persisted_fields=None):
         """
         JobDetails - a model defined in Swagger
         """
@@ -65,7 +63,6 @@ class JobDetails(object):
         self._name = None
         self._status = None
         self._meta = None
-        self._created_at = None
         self._updated_at = None
         self._persisted_fields = None
 
@@ -81,8 +78,6 @@ class JobDetails(object):
           self.status = status
         if meta is not None:
           self.meta = meta
-        if created_at is not None:
-          self.created_at = created_at
         if updated_at is not None:
           self.updated_at = updated_at
         if persisted_fields is not None:
@@ -213,27 +208,6 @@ class JobDetails(object):
         """
 
         self._meta = meta
-
-    @property
-    def created_at(self):
-        """
-        Gets the created_at of this JobDetails.
-
-        :return: The created_at of this JobDetails.
-        :rtype: str
-        """
-        return self._created_at
-
-    @created_at.setter
-    def created_at(self, created_at):
-        """
-        Sets the created_at of this JobDetails.
-
-        :param created_at: The created_at of this JobDetails.
-        :type: str
-        """
-
-        self._created_at = created_at
 
     @property
     def updated_at(self):

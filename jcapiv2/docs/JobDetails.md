@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **name** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
 **meta** | **object** |  | [optional] 
-**created_at** | **str** |  | [optional] 
 **updated_at** | **str** |  | [optional] 
 **persisted_fields** | **list[str]** |  | [optional] 
 

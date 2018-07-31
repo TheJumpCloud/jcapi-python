@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **directories_list**
-> list[Directory] directories_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> list[Directory] directories_list(content_type, accept, fields=fields, limit=limit, sort=sort, skip=skip)
 
 List All Directories
 
@@ -33,12 +33,12 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try: 
     # List All Directories
-    api_response = api_instance.directories_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.directories_list(content_type, accept, fields=fields, limit=limit, sort=sort, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DirectoriesApi->directories_list: %s\n" % e)
@@ -52,8 +52,8 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  | [optional] 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type
 

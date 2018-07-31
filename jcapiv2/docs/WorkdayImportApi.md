@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 Workday Import
 
-The endpoint allows you to create a Workday Import request.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays}/{WorkdayID/import \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"WorkdayID\",\"value\":\"name.name\"}    ]     } ] ```
+The endpoint allows you to create a Workday Import request.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/{WorkdayID}/import \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"WorkdayID\",\"value\":\"name.name\"}    ]     } ] ```
 
 ### Example 
 ```python
@@ -270,7 +270,7 @@ api_instance = jcapiv2.WorkdayImportApi()
 workday_id = 'workday_id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = [jcapiv2.WorkdayWorkerImport()] # list[WorkdayWorkerImport] |  (optional)
+body = [jcapiv2.BulkUserCreate()] # list[BulkUserCreate] |  (optional)
 
 try: 
     # Workday Import
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
  **workday_id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**list[WorkdayWorkerImport]**](WorkdayWorkerImport.md)|  | [optional] 
+ **body** | [**list[BulkUserCreate]**](BulkUserCreate.md)|  | [optional] 
 
 ### Return type
 

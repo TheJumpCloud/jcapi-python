@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv2
 from jcapiv2.rest import ApiException
-from jcapiv2.models.workday_worker_import import WorkdayWorkerImport
+from jcapiv2.models.policy_template_config_field_tooltip import PolicyTemplateConfigFieldTooltip
 
 
-class TestWorkdayWorkerImport(unittest.TestCase):
-    """ WorkdayWorkerImport unit test stubs """
+class TestPolicyTemplateConfigFieldTooltip(unittest.TestCase):
+    """ PolicyTemplateConfigFieldTooltip unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestWorkdayWorkerImport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testWorkdayWorkerImport(self):
+    def testPolicyTemplateConfigFieldTooltip(self):
         """
-        Test WorkdayWorkerImport
+        Test PolicyTemplateConfigFieldTooltip
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.workday_worker_import.WorkdayWorkerImport()
+        #model = jcapiv2.models.policy_template_config_field_tooltip.PolicyTemplateConfigFieldTooltip()
         pass
 
 

@@ -20,6 +20,7 @@ from .models.auth_input import AuthInput
 from .models.auth_input_object import AuthInputObject
 from .models.authinput_basic import AuthinputBasic
 from .models.authinput_oauth import AuthinputOauth
+from .models.bulk_user_create import BulkUserCreate
 from .models.directory import Directory
 from .models.error import Error
 from .models.graph_connection import GraphConnection
@@ -41,6 +42,8 @@ from .models.policy_request_template import PolicyRequestTemplate
 from .models.policy_result import PolicyResult
 from .models.policy_template import PolicyTemplate
 from .models.policy_template_config_field import PolicyTemplateConfigField
+from .models.policy_template_config_field_tooltip import PolicyTemplateConfigFieldTooltip
+from .models.policy_template_config_field_tooltip_variables import PolicyTemplateConfigFieldTooltipVariables
 from .models.policy_template_with_details import PolicyTemplateWithDetails
 from .models.policy_value import PolicyValue
 from .models.policy_with_details import PolicyWithDetails
@@ -66,7 +69,6 @@ from .models.workday_input import WorkdayInput
 from .models.workday_output import WorkdayOutput
 from .models.workday_request import WorkdayRequest
 from .models.workday_worker import WorkdayWorker
-from .models.workday_worker_import import WorkdayWorkerImport
 from .models.workdayoutput_auth import WorkdayoutputAuth
 from .models.active_directory_output import ActiveDirectoryOutput
 from .models.ldap_server_output import LdapServerOutput

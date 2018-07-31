@@ -20,6 +20,7 @@ from .auth_input import AuthInput
 from .auth_input_object import AuthInputObject
 from .authinput_basic import AuthinputBasic
 from .authinput_oauth import AuthinputOauth
+from .bulk_user_create import BulkUserCreate
 from .directory import Directory
 from .error import Error
 from .graph_connection import GraphConnection
@@ -41,6 +42,8 @@ from .policy_request_template import PolicyRequestTemplate
 from .policy_result import PolicyResult
 from .policy_template import PolicyTemplate
 from .policy_template_config_field import PolicyTemplateConfigField
+from .policy_template_config_field_tooltip import PolicyTemplateConfigFieldTooltip
+from .policy_template_config_field_tooltip_variables import PolicyTemplateConfigFieldTooltipVariables
 from .policy_template_with_details import PolicyTemplateWithDetails
 from .policy_value import PolicyValue
 from .policy_with_details import PolicyWithDetails
@@ -66,7 +69,6 @@ from .workday_input import WorkdayInput
 from .workday_output import WorkdayOutput
 from .workday_request import WorkdayRequest
 from .workday_worker import WorkdayWorker
-from .workday_worker_import import WorkdayWorkerImport
 from .workdayoutput_auth import WorkdayoutputAuth
 from .active_directory_output import ActiveDirectoryOutput
 from .ldap_server_output import LdapServerOutput
