@@ -31,101 +31,71 @@ class Commandfilereturn(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'destination': 'str',
-        'id': 'str'
+        'total_count': 'int',
+        'results': 'CommandfilereturnResults'
     }
 
     attribute_map = {
-        'name': 'name',
-        'destination': 'destination',
-        'id': '_id'
+        'total_count': 'totalCount',
+        'results': 'results'
     }
 
-    def __init__(self, name=None, destination=None, id=None):
+    def __init__(self, total_count=None, results=None):
         """
         Commandfilereturn - a model defined in Swagger
         """
 
-        self._name = None
-        self._destination = None
-        self._id = None
+        self._total_count = None
+        self._results = None
 
-        if name is not None:
-          self.name = name
-        if destination is not None:
-          self.destination = destination
-        if id is not None:
-          self.id = id
+        if total_count is not None:
+          self.total_count = total_count
+        if results is not None:
+          self.results = results
 
     @property
-    def name(self):
+    def total_count(self):
         """
-        Gets the name of this Commandfilereturn.
-        name of file.
+        Gets the total_count of this Commandfilereturn.
+        The total number of commands files
 
-        :return: The name of this Commandfilereturn.
-        :rtype: str
+        :return: The total_count of this Commandfilereturn.
+        :rtype: int
         """
-        return self._name
+        return self._total_count
 
-    @name.setter
-    def name(self, name):
+    @total_count.setter
+    def total_count(self, total_count):
         """
-        Sets the name of this Commandfilereturn.
-        name of file.
+        Sets the total_count of this Commandfilereturn.
+        The total number of commands files
 
-        :param name: The name of this Commandfilereturn.
-        :type: str
+        :param total_count: The total_count of this Commandfilereturn.
+        :type: int
         """
 
-        self._name = name
+        self._total_count = total_count
 
     @property
-    def destination(self):
+    def results(self):
         """
-        Gets the destination of this Commandfilereturn.
-        the destination on the local machine where the file will be stored.
+        Gets the results of this Commandfilereturn.
 
-        :return: The destination of this Commandfilereturn.
-        :rtype: str
+        :return: The results of this Commandfilereturn.
+        :rtype: CommandfilereturnResults
         """
-        return self._destination
+        return self._results
 
-    @destination.setter
-    def destination(self, destination):
+    @results.setter
+    def results(self, results):
         """
-        Sets the destination of this Commandfilereturn.
-        the destination on the local machine where the file will be stored.
+        Sets the results of this Commandfilereturn.
 
-        :param destination: The destination of this Commandfilereturn.
-        :type: str
+        :param results: The results of this Commandfilereturn.
+        :type: CommandfilereturnResults
         """
 
-        self._destination = destination
-
-    @property
-    def id(self):
-        """
-        Gets the id of this Commandfilereturn.
-        the ID of the file.
-
-        :return: The id of this Commandfilereturn.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this Commandfilereturn.
-        the ID of the file.
-
-        :param id: The id of this Commandfilereturn.
-        :type: str
-        """
-
-        self._id = id
+        self._results = results
 
     def to_dict(self):
         """

@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **username** | **str** |  | 
 **allow_public_key** | **bool** |  | [optional] 
 **public_key** | **str** |  | [optional] 
-**ssh_keys** | **list[str]** |  | [optional] 
 **sudo** | **bool** |  | [optional] 
 **enable_managed_uid** | **bool** |  | [optional] 
 **unix_uid** | **int** |  | [optional] 

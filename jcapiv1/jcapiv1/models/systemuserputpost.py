@@ -35,7 +35,6 @@ class Systemuserputpost(object):
         'username': 'str',
         'allow_public_key': 'bool',
         'public_key': 'str',
-        'ssh_keys': 'list[str]',
         'sudo': 'bool',
         'enable_managed_uid': 'bool',
         'unix_uid': 'int',
@@ -67,7 +66,6 @@ class Systemuserputpost(object):
         'username': 'username',
         'allow_public_key': 'allow_public_key',
         'public_key': 'public_key',
-        'ssh_keys': 'ssh_keys',
         'sudo': 'sudo',
         'enable_managed_uid': 'enable_managed_uid',
         'unix_uid': 'unix_uid',
@@ -94,7 +92,7 @@ class Systemuserputpost(object):
         'password_never_expires': 'password_never_expires'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, attributes=None, samba_service_user=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, password=None, password_never_expires=None):
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, attributes=None, samba_service_user=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, password=None, password_never_expires=None):
         """
         Systemuserputpost - a model defined in Swagger
         """
@@ -103,7 +101,6 @@ class Systemuserputpost(object):
         self._username = None
         self._allow_public_key = None
         self._public_key = None
-        self._ssh_keys = None
         self._sudo = None
         self._enable_managed_uid = None
         self._unix_uid = None
@@ -135,8 +132,6 @@ class Systemuserputpost(object):
           self.allow_public_key = allow_public_key
         if public_key is not None:
           self.public_key = public_key
-        if ssh_keys is not None:
-          self.ssh_keys = ssh_keys
         if sudo is not None:
           self.sudo = sudo
         if enable_managed_uid is not None:
@@ -273,27 +268,6 @@ class Systemuserputpost(object):
         """
 
         self._public_key = public_key
-
-    @property
-    def ssh_keys(self):
-        """
-        Gets the ssh_keys of this Systemuserputpost.
-
-        :return: The ssh_keys of this Systemuserputpost.
-        :rtype: list[str]
-        """
-        return self._ssh_keys
-
-    @ssh_keys.setter
-    def ssh_keys(self, ssh_keys):
-        """
-        Sets the ssh_keys of this Systemuserputpost.
-
-        :param ssh_keys: The ssh_keys of this Systemuserputpost.
-        :type: list[str]
-        """
-
-        self._ssh_keys = ssh_keys
 
     @property
     def sudo(self):

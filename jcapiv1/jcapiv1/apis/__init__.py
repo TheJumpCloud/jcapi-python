@@ -5,6 +5,7 @@ from .applications_api import ApplicationsApi
 from .command_results_api import CommandResultsApi
 from .command_triggers_api import CommandTriggersApi
 from .commands_api import CommandsApi
+from .organizations_api import OrganizationsApi
 from .radius_servers_api import RadiusServersApi
 from .search_api import SearchApi
 from .systems_api import SystemsApi

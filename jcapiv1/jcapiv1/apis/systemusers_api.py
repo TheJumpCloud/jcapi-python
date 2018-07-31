@@ -178,9 +178,6 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
-        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -210,15 +207,12 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
-        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort']
+        all_params = ['id', 'content_type', 'accept', 'fields']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -253,12 +247,6 @@ class SystemusersApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
@@ -296,7 +284,7 @@ class SystemusersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def systemusers_list(self, content_type, accept, **kwargs):
+    def systemusers_list(self, **kwargs):
         """
         List all system users
         This endpoint returns all systemusers.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
@@ -306,12 +294,10 @@ class SystemusersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.systemusers_list(content_type, accept, callback=callback_function)
+        >>> thread = api.systemusers_list(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str content_type: (required)
-        :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
@@ -323,12 +309,12 @@ class SystemusersApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.systemusers_list_with_http_info(content_type, accept, **kwargs)
+            return self.systemusers_list_with_http_info(**kwargs)
         else:
-            (data) = self.systemusers_list_with_http_info(content_type, accept, **kwargs)
+            (data) = self.systemusers_list_with_http_info(**kwargs)
             return data
 
-    def systemusers_list_with_http_info(self, content_type, accept, **kwargs):
+    def systemusers_list_with_http_info(self, **kwargs):
         """
         List all system users
         This endpoint returns all systemusers.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
@@ -338,12 +324,10 @@ class SystemusersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.systemusers_list_with_http_info(content_type, accept, callback=callback_function)
+        >>> thread = api.systemusers_list_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str content_type: (required)
-        :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
@@ -354,7 +338,7 @@ class SystemusersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'limit', 'skip', 'sort', 'fields', 'filter']
+        all_params = ['limit', 'skip', 'sort', 'fields', 'filter']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -369,12 +353,6 @@ class SystemusersApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'content_type' is set
-        if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `systemusers_list`")
-        # verify the required parameter 'accept' is set
-        if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `systemusers_list`")
 
 
         collection_formats = {}
@@ -394,10 +372,6 @@ class SystemusersApi(object):
             query_params.append(('filter', params['filter']))
 
         header_params = {}
-        if 'content_type' in params:
-            header_params['Content-Type'] = params['content_type']
-        if 'accept' in params:
-            header_params['Accept'] = params['accept']
 
         form_params = []
         local_var_files = {}

@@ -34,6 +34,7 @@ class Commandresult(object):
         'command': 'str',
         'name': 'str',
         'system': 'str',
+        'system_id': 'str',
         'organization': 'str',
         'workflow_id': 'str',
         'workflow_instance_id': 'str',
@@ -50,6 +51,7 @@ class Commandresult(object):
         'command': 'command',
         'name': 'name',
         'system': 'system',
+        'system_id': 'systemId',
         'organization': 'organization',
         'workflow_id': 'workflowId',
         'workflow_instance_id': 'workflowInstanceId',
@@ -62,7 +64,7 @@ class Commandresult(object):
         'id': '_id'
     }
 
-    def __init__(self, command=None, name=None, system=None, organization=None, workflow_id=None, workflow_instance_id=None, user=None, sudo=None, files=None, request_time=None, response_time=None, response=None, id=None):
+    def __init__(self, command=None, name=None, system=None, system_id=None, organization=None, workflow_id=None, workflow_instance_id=None, user=None, sudo=None, files=None, request_time=None, response_time=None, response=None, id=None):
         """
         Commandresult - a model defined in Swagger
         """
@@ -70,6 +72,7 @@ class Commandresult(object):
         self._command = None
         self._name = None
         self._system = None
+        self._system_id = None
         self._organization = None
         self._workflow_id = None
         self._workflow_instance_id = None
@@ -87,6 +90,8 @@ class Commandresult(object):
           self.name = name
         if system is not None:
           self.system = system
+        if system_id is not None:
+          self.system_id = system_id
         if organization is not None:
           self.organization = organization
         if workflow_id is not None:
@@ -158,7 +163,7 @@ class Commandresult(object):
     def system(self):
         """
         Gets the system of this Commandresult.
-        The id of the system the command was executed on.
+        The name of the system the command was executed on.
 
         :return: The system of this Commandresult.
         :rtype: str
@@ -169,7 +174,7 @@ class Commandresult(object):
     def system(self, system):
         """
         Sets the system of this Commandresult.
-        The id of the system the command was executed on.
+        The name of the system the command was executed on.
 
         :param system: The system of this Commandresult.
         :type: str
@@ -178,10 +183,33 @@ class Commandresult(object):
         self._system = system
 
     @property
+    def system_id(self):
+        """
+        Gets the system_id of this Commandresult.
+        The id of the system the command was executed on.
+
+        :return: The system_id of this Commandresult.
+        :rtype: str
+        """
+        return self._system_id
+
+    @system_id.setter
+    def system_id(self, system_id):
+        """
+        Sets the system_id of this Commandresult.
+        The id of the system the command was executed on.
+
+        :param system_id: The system_id of this Commandresult.
+        :type: str
+        """
+
+        self._system_id = system_id
+
+    @property
     def organization(self):
         """
         Gets the organization of this Commandresult.
-        The id of the organization.
+        The ID of the organization.
 
         :return: The organization of this Commandresult.
         :rtype: str
@@ -192,7 +220,7 @@ class Commandresult(object):
     def organization(self, organization):
         """
         Sets the organization of this Commandresult.
-        The id of the organization.
+        The ID of the organization.
 
         :param organization: The organization of this Commandresult.
         :type: str
@@ -382,6 +410,7 @@ class Commandresult(object):
     def id(self):
         """
         Gets the id of this Commandresult.
+        The ID of the command.
 
         :return: The id of this Commandresult.
         :rtype: str
@@ -392,6 +421,7 @@ class Commandresult(object):
     def id(self, id):
         """
         Sets the id of this Commandresult.
+        The ID of the command.
 
         :param id: The id of this Commandresult.
         :type: str

@@ -26,12 +26,16 @@ from .models.applicationslist import Applicationslist
 from .models.body import Body
 from .models.command import Command
 from .models.commandfilereturn import Commandfilereturn
+from .models.commandfilereturn_results import CommandfilereturnResults
 from .models.commandresult import Commandresult
 from .models.commandresult_response import CommandresultResponse
 from .models.commandresult_response_data import CommandresultResponseData
 from .models.commandresultslist import Commandresultslist
 from .models.commandslist import Commandslist
+from .models.commandslist_results import CommandslistResults
 from .models.inline_response_400 import InlineResponse400
+from .models.organizationslist import Organizationslist
+from .models.organizationslist_results import OrganizationslistResults
 from .models.radiusserver import Radiusserver
 from .models.radiusserverpost import Radiusserverpost
 from .models.radiusserverput import Radiusserverput
@@ -61,6 +65,7 @@ from .apis.applications_api import ApplicationsApi
 from .apis.command_results_api import CommandResultsApi
 from .apis.command_triggers_api import CommandTriggersApi
 from .apis.commands_api import CommandsApi
+from .apis.organizations_api import OrganizationsApi
 from .apis.radius_servers_api import RadiusServersApi
 from .apis.search_api import SearchApi
 from .apis.systems_api import SystemsApi
