@@ -26,12 +26,16 @@ from .applicationslist import Applicationslist
 from .body import Body
 from .command import Command
 from .commandfilereturn import Commandfilereturn
+from .commandfilereturn_results import CommandfilereturnResults
 from .commandresult import Commandresult
 from .commandresult_response import CommandresultResponse
 from .commandresult_response_data import CommandresultResponseData
 from .commandresultslist import Commandresultslist
 from .commandslist import Commandslist
+from .commandslist_results import CommandslistResults
 from .inline_response_400 import InlineResponse400
+from .organizationslist import Organizationslist
+from .organizationslist_results import OrganizationslistResults
 from .radiusserver import Radiusserver
 from .radiusserverpost import Radiusserverpost
 from .radiusserverput import Radiusserverput

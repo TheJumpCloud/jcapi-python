@@ -178,9 +178,6 @@ class CommandResultsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
-        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Commandresult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -210,15 +207,12 @@ class CommandResultsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
-        :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
-        :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :return: Commandresult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort']
+        all_params = ['id', 'content_type', 'accept', 'fields']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -253,12 +247,6 @@ class CommandResultsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
 
         header_params = {}
         if 'content_type' in params:
