@@ -37,7 +37,8 @@ class PolicyTemplateConfigField(object):
         'name': 'str',
         'position': 'float',
         'read_only': 'bool',
-        'required': 'bool'
+        'required': 'bool',
+        'tooltip': 'PolicyTemplateConfigFieldTooltip'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class PolicyTemplateConfigField(object):
         'name': 'name',
         'position': 'position',
         'read_only': 'readOnly',
-        'required': 'required'
+        'required': 'required',
+        'tooltip': 'tooltip'
     }
 
-    def __init__(self, id=None, display_type=None, label=None, name=None, position=None, read_only=None, required=None):
+    def __init__(self, id=None, display_type=None, label=None, name=None, position=None, read_only=None, required=None, tooltip=None):
         """
         PolicyTemplateConfigField - a model defined in Swagger
         """
@@ -62,6 +64,7 @@ class PolicyTemplateConfigField(object):
         self._position = None
         self._read_only = None
         self._required = None
+        self._tooltip = None
 
         self.id = id
         if display_type is not None:
@@ -75,6 +78,8 @@ class PolicyTemplateConfigField(object):
           self.read_only = read_only
         if required is not None:
           self.required = required
+        if tooltip is not None:
+          self.tooltip = tooltip
 
     @property
     def id(self):
@@ -246,6 +251,27 @@ class PolicyTemplateConfigField(object):
         """
 
         self._required = required
+
+    @property
+    def tooltip(self):
+        """
+        Gets the tooltip of this PolicyTemplateConfigField.
+
+        :return: The tooltip of this PolicyTemplateConfigField.
+        :rtype: PolicyTemplateConfigFieldTooltip
+        """
+        return self._tooltip
+
+    @tooltip.setter
+    def tooltip(self, tooltip):
+        """
+        Sets the tooltip of this PolicyTemplateConfigField.
+
+        :param tooltip: The tooltip of this PolicyTemplateConfigField.
+        :type: PolicyTemplateConfigFieldTooltip
+        """
+
+        self._tooltip = tooltip
 
     def to_dict(self):
         """

@@ -33,6 +33,7 @@ class PolicyWithDetails(object):
     swagger_types = {
         'id': 'str',
         'template': 'PolicyTemplate',
+        'config_fields': 'list[PolicyTemplateConfigField]',
         'name': 'str',
         'values': 'list[PolicyValue]'
     }
@@ -40,17 +41,19 @@ class PolicyWithDetails(object):
     attribute_map = {
         'id': 'id',
         'template': 'template',
+        'config_fields': 'configFields',
         'name': 'name',
         'values': 'values'
     }
 
-    def __init__(self, id=None, template=None, name=None, values=None):
+    def __init__(self, id=None, template=None, config_fields=None, name=None, values=None):
         """
         PolicyWithDetails - a model defined in Swagger
         """
 
         self._id = None
         self._template = None
+        self._config_fields = None
         self._name = None
         self._values = None
 
@@ -58,6 +61,8 @@ class PolicyWithDetails(object):
           self.id = id
         if template is not None:
           self.template = template
+        if config_fields is not None:
+          self.config_fields = config_fields
         if name is not None:
           self.name = name
         if values is not None:
@@ -106,6 +111,27 @@ class PolicyWithDetails(object):
         """
 
         self._template = template
+
+    @property
+    def config_fields(self):
+        """
+        Gets the config_fields of this PolicyWithDetails.
+
+        :return: The config_fields of this PolicyWithDetails.
+        :rtype: list[PolicyTemplateConfigField]
+        """
+        return self._config_fields
+
+    @config_fields.setter
+    def config_fields(self, config_fields):
+        """
+        Sets the config_fields of this PolicyWithDetails.
+
+        :param config_fields: The config_fields of this PolicyWithDetails.
+        :type: list[PolicyTemplateConfigField]
+        """
+
+        self._config_fields = config_fields
 
     @property
     def name(self):

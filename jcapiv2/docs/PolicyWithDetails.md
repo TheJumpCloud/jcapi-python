@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** | ObjectId uniquely indetifying a Policy. | [optional] 
 **template** | [**PolicyTemplate**](PolicyTemplate.md) |  | [optional] 
+**config_fields** | [**list[PolicyTemplateConfigField]**](PolicyTemplateConfigField.md) |  | [optional] 
 **name** | **str** | The description for this specific Policy. | [optional] 
 **values** | [**list[PolicyValue]**](PolicyValue.md) |  | [optional] 
 

@@ -31,6 +31,22 @@ class TestBulkJobRequestsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_bulk_users_create(self):
+        """
+        Test case for bulk_users_create
+
+        Bulk Users Create
+        """
+        pass
+
+    def test_bulk_users_create_results(self):
+        """
+        Test case for bulk_users_create_results
+
+        List Bulk Users Create Results
+        """
+        pass
+
     def test_jobs_get(self):
         """
         Test case for jobs_get
