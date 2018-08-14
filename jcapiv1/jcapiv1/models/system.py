@@ -86,7 +86,7 @@ class System(object):
         'id': '_id'
     }
 
-    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, id=None, tags=None, id=None):
+    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, id=None, tags=None):
         """
         System - a model defined in Swagger
         """
