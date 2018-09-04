@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -40,6 +40,382 @@ class SystemusersApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
+    def sshkey_delete(self, id, content_type, accept, **kwargs):
+        """
+        Delete a system user's Public SSH Keys
+        This endpoint will delete a specific System User's SSH Key.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.sshkey_delete(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param str x_org_id: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.sshkey_delete_with_http_info(id, content_type, accept, **kwargs)
+        else:
+            (data) = self.sshkey_delete_with_http_info(id, content_type, accept, **kwargs)
+            return data
+
+    def sshkey_delete_with_http_info(self, id, content_type, accept, **kwargs):
+        """
+        Delete a system user's Public SSH Keys
+        This endpoint will delete a specific System User's SSH Key.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.sshkey_delete_with_http_info(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param str x_org_id: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method sshkey_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `sshkey_delete`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `sshkey_delete`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `sshkey_delete`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json; charset=utf-8'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/systemusers/{id}/sshkeys/{id}', 'DELETE',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type=None,
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def sshkey_list(self, id, content_type, accept, **kwargs):
+        """
+        List a system user's public SSH keys
+        This endpoint will return a specific System User's public SSH key.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.sshkey_list(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param str x_org_id: 
+        :return: Sshkeylist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.sshkey_list_with_http_info(id, content_type, accept, **kwargs)
+        else:
+            (data) = self.sshkey_list_with_http_info(id, content_type, accept, **kwargs)
+            return data
+
+    def sshkey_list_with_http_info(self, id, content_type, accept, **kwargs):
+        """
+        List a system user's public SSH keys
+        This endpoint will return a specific System User's public SSH key.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.sshkey_list_with_http_info(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param str x_org_id: 
+        :return: Sshkeylist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method sshkey_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `sshkey_list`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `sshkey_list`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `sshkey_list`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json; charset=utf-8'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/systemusers/{id}/sshkeys', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='Sshkeylist',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def sshkey_post(self, id, content_type, accept, **kwargs):
+        """
+        Create a system user's Public SSH Key
+        This endpoint will create a specific System User's Public SSH Key.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.sshkey_post(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param Sshkeypost body:
+        :param str x_org_id: 
+        :return: Sshkeylist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.sshkey_post_with_http_info(id, content_type, accept, **kwargs)
+        else:
+            (data) = self.sshkey_post_with_http_info(id, content_type, accept, **kwargs)
+            return data
+
+    def sshkey_post_with_http_info(self, id, content_type, accept, **kwargs):
+        """
+        Create a system user's Public SSH Key
+        This endpoint will create a specific System User's Public SSH Key.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.sshkey_post_with_http_info(id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param Sshkeypost body:
+        :param str x_org_id: 
+        :return: Sshkeylist
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method sshkey_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `sshkey_post`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `sshkey_post`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `sshkey_post`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json; charset=utf-8'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api('/systemusers/{id}/sshkeys', 'POST',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='Sshkeylist',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def systemusers_delete(self, id, content_type, accept, **kwargs):
         """
         Delete a system user
@@ -57,6 +433,7 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -85,12 +462,13 @@ class SystemusersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -129,6 +507,8 @@ class SystemusersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -178,6 +558,7 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -207,12 +588,13 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields']
+        all_params = ['id', 'content_type', 'accept', 'fields', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -253,6 +635,8 @@ class SystemusersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -284,7 +668,7 @@ class SystemusersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def systemusers_list(self, **kwargs):
+    def systemusers_list(self, content_type, accept, **kwargs):
         """
         List all system users
         This endpoint returns all systemusers.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
@@ -294,27 +678,30 @@ class SystemusersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.systemusers_list(callback=callback_function)
+        >>> thread = api.systemusers_list(content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param str filter: 
+        :param str x_org_id: 
         :return: Systemuserslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.systemusers_list_with_http_info(**kwargs)
+            return self.systemusers_list_with_http_info(content_type, accept, **kwargs)
         else:
-            (data) = self.systemusers_list_with_http_info(**kwargs)
+            (data) = self.systemusers_list_with_http_info(content_type, accept, **kwargs)
             return data
 
-    def systemusers_list_with_http_info(self, **kwargs):
+    def systemusers_list_with_http_info(self, content_type, accept, **kwargs):
         """
         List all system users
         This endpoint returns all systemusers.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/systemusers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
@@ -324,21 +711,24 @@ class SystemusersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.systemusers_list_with_http_info(callback=callback_function)
+        >>> thread = api.systemusers_list_with_http_info(content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param str filter: 
+        :param str x_org_id: 
         :return: Systemuserslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'sort', 'fields', 'filter']
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'sort', 'fields', 'filter', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -353,6 +743,12 @@ class SystemusersApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systemusers_list`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systemusers_list`")
 
 
         collection_formats = {}
@@ -372,6 +768,12 @@ class SystemusersApi(object):
             query_params.append(('filter', params['filter']))
 
         header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -420,6 +822,7 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemuserputpost body:
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -448,12 +851,13 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemuserputpost body:
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body']
+        all_params = ['content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -487,6 +891,8 @@ class SystemusersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -538,6 +944,7 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemuserput body:
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -567,12 +974,13 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemuserput body:
+        :param str x_org_id: 
         :return: Systemuserreturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -611,6 +1019,8 @@ class SystemusersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -660,6 +1070,7 @@ class SystemusersApi(object):
             for asynchronous request. (optional)
         :param str id: (required)
         :param str x_api_key: (required)
+        :param str x_org_id: 
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
@@ -687,12 +1098,13 @@ class SystemusersApi(object):
             for asynchronous request. (optional)
         :param str id: (required)
         :param str x_api_key: (required)
+        :param str x_org_id: 
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'x_api_key']
+        all_params = ['id', 'x_api_key', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -726,6 +1138,8 @@ class SystemusersApi(object):
         header_params = {}
         if 'x_api_key' in params:
             header_params['x-api-key'] = params['x_api_key']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -778,6 +1192,7 @@ class SystemusersApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
@@ -810,12 +1225,13 @@ class SystemusersApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort']
+        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -862,6 +1278,8 @@ class SystemusersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -911,6 +1329,7 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Usersystembindingsput body:
+        :param str x_org_id: 
         :return: Usersystembinding
                  If the method is called asynchronously,
                  returns the request thread.
@@ -940,12 +1359,13 @@ class SystemusersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Usersystembindingsput body:
+        :param str x_org_id: 
         :return: Usersystembinding
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -984,6 +1404,8 @@ class SystemusersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

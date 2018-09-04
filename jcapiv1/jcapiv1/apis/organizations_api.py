@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -43,6 +43,7 @@ class OrganizationsApi(object):
     def organization_list(self, content_type, accept, **kwargs):
         """
         Get Organization Details
+        This endpoint returns Organization Details.  #### Sample Request   ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -59,6 +60,7 @@ class OrganizationsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str search: 
         :return: Organizationslist
                  If the method is called asynchronously,
                  returns the request thread.
@@ -73,6 +75,7 @@ class OrganizationsApi(object):
     def organization_list_with_http_info(self, content_type, accept, **kwargs):
         """
         Get Organization Details
+        This endpoint returns Organization Details.  #### Sample Request   ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -89,12 +92,13 @@ class OrganizationsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str search: 
         :return: Organizationslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'search']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -130,6 +134,8 @@ class OrganizationsApi(object):
             query_params.append(('skip', params['skip']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
+        if 'search' in params:
+            query_params.append(('search', params['search']))
 
         header_params = {}
         if 'content_type' in params:

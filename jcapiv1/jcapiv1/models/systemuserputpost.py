@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -58,7 +58,15 @@ class Systemuserputpost(object):
         'phone_numbers': 'list[str]',
         'relationships': 'list[object]',
         'password': 'str',
-        'password_never_expires': 'bool'
+        'password_never_expires': 'bool',
+        'middlename': 'str',
+        'displayname': 'str',
+        'description': 'str',
+        'location': 'str',
+        'cost_center': 'str',
+        'employee_type': 'str',
+        'company': 'str',
+        'employee_identifier': 'str'
     }
 
     attribute_map = {
@@ -89,10 +97,18 @@ class Systemuserputpost(object):
         'phone_numbers': 'phoneNumbers',
         'relationships': 'relationships',
         'password': 'password',
-        'password_never_expires': 'password_never_expires'
+        'password_never_expires': 'password_never_expires',
+        'middlename': 'middlename',
+        'displayname': 'displayname',
+        'description': 'description',
+        'location': 'location',
+        'cost_center': 'costCenter',
+        'employee_type': 'employeeType',
+        'company': 'company',
+        'employee_identifier': 'employeeIdentifier'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, attributes=None, samba_service_user=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, password=None, password_never_expires=None):
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, attributes=None, samba_service_user=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, password=None, password_never_expires=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None):
         """
         Systemuserputpost - a model defined in Swagger
         """
@@ -125,6 +141,14 @@ class Systemuserputpost(object):
         self._relationships = None
         self._password = None
         self._password_never_expires = None
+        self._middlename = None
+        self._displayname = None
+        self._description = None
+        self._location = None
+        self._cost_center = None
+        self._employee_type = None
+        self._company = None
+        self._employee_identifier = None
 
         self.email = email
         self.username = username
@@ -180,6 +204,22 @@ class Systemuserputpost(object):
           self.password = password
         if password_never_expires is not None:
           self.password_never_expires = password_never_expires
+        if middlename is not None:
+          self.middlename = middlename
+        if displayname is not None:
+          self.displayname = displayname
+        if description is not None:
+          self.description = description
+        if location is not None:
+          self.location = location
+        if cost_center is not None:
+          self.cost_center = cost_center
+        if employee_type is not None:
+          self.employee_type = employee_type
+        if company is not None:
+          self.company = company
+        if employee_identifier is not None:
+          self.employee_identifier = employee_identifier
 
     @property
     def email(self):
@@ -776,6 +816,180 @@ class Systemuserputpost(object):
         """
 
         self._password_never_expires = password_never_expires
+
+    @property
+    def middlename(self):
+        """
+        Gets the middlename of this Systemuserputpost.
+
+        :return: The middlename of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._middlename
+
+    @middlename.setter
+    def middlename(self, middlename):
+        """
+        Sets the middlename of this Systemuserputpost.
+
+        :param middlename: The middlename of this Systemuserputpost.
+        :type: str
+        """
+
+        self._middlename = middlename
+
+    @property
+    def displayname(self):
+        """
+        Gets the displayname of this Systemuserputpost.
+
+        :return: The displayname of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._displayname
+
+    @displayname.setter
+    def displayname(self, displayname):
+        """
+        Sets the displayname of this Systemuserputpost.
+
+        :param displayname: The displayname of this Systemuserputpost.
+        :type: str
+        """
+
+        self._displayname = displayname
+
+    @property
+    def description(self):
+        """
+        Gets the description of this Systemuserputpost.
+
+        :return: The description of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this Systemuserputpost.
+
+        :param description: The description of this Systemuserputpost.
+        :type: str
+        """
+        if description is not None and len(description) > 1024:
+            raise ValueError("Invalid value for `description`, length must be less than or equal to `1024`")
+
+        self._description = description
+
+    @property
+    def location(self):
+        """
+        Gets the location of this Systemuserputpost.
+
+        :return: The location of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this Systemuserputpost.
+
+        :param location: The location of this Systemuserputpost.
+        :type: str
+        """
+
+        self._location = location
+
+    @property
+    def cost_center(self):
+        """
+        Gets the cost_center of this Systemuserputpost.
+
+        :return: The cost_center of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._cost_center
+
+    @cost_center.setter
+    def cost_center(self, cost_center):
+        """
+        Sets the cost_center of this Systemuserputpost.
+
+        :param cost_center: The cost_center of this Systemuserputpost.
+        :type: str
+        """
+
+        self._cost_center = cost_center
+
+    @property
+    def employee_type(self):
+        """
+        Gets the employee_type of this Systemuserputpost.
+
+        :return: The employee_type of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._employee_type
+
+    @employee_type.setter
+    def employee_type(self, employee_type):
+        """
+        Sets the employee_type of this Systemuserputpost.
+
+        :param employee_type: The employee_type of this Systemuserputpost.
+        :type: str
+        """
+
+        self._employee_type = employee_type
+
+    @property
+    def company(self):
+        """
+        Gets the company of this Systemuserputpost.
+
+        :return: The company of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._company
+
+    @company.setter
+    def company(self, company):
+        """
+        Sets the company of this Systemuserputpost.
+
+        :param company: The company of this Systemuserputpost.
+        :type: str
+        """
+
+        self._company = company
+
+    @property
+    def employee_identifier(self):
+        """
+        Gets the employee_identifier of this Systemuserputpost.
+        Must be unique per user. 
+
+        :return: The employee_identifier of this Systemuserputpost.
+        :rtype: str
+        """
+        return self._employee_identifier
+
+    @employee_identifier.setter
+    def employee_identifier(self, employee_identifier):
+        """
+        Sets the employee_identifier of this Systemuserputpost.
+        Must be unique per user. 
+
+        :param employee_identifier: The employee_identifier of this Systemuserputpost.
+        :type: str
+        """
+        if employee_identifier is not None and len(employee_identifier) > 256:
+            raise ValueError("Invalid value for `employee_identifier`, length must be less than or equal to `256`")
+
+        self._employee_identifier = employee_identifier
 
     def to_dict(self):
         """

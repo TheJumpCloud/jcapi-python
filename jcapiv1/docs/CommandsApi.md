@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **command_file_get**
-> Commandfilereturn command_file_get(id, content_type, accept, fields=fields, limit=limit, skip=skip)
+> Commandfilereturn command_file_get(id, content_type, accept, fields=fields, limit=limit, skip=skip, x_org_id=x_org_id)
 
 Get a Command File
 
@@ -40,10 +40,11 @@ accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Get a Command File
-    api_response = api_instance.command_file_get(id, content_type, accept, fields=fields, limit=limit, skip=skip)
+    api_response = api_instance.command_file_get(id, content_type, accept, fields=fields, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->command_file_get: %s\n" % e)
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **commands_delete**
-> commands_delete(id, content_type, accept)
+> commands_delete(id, content_type, accept, x_org_id=x_org_id)
 
 Delete a Command
 
@@ -100,10 +102,11 @@ api_instance = jcapiv1.CommandsApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Delete a Command
-    api_instance.commands_delete(id, content_type, accept)
+    api_instance.commands_delete(id, content_type, accept, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling CommandsApi->commands_delete: %s\n" % e)
 ```
@@ -115,6 +118,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -132,7 +136,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **commands_get**
-> Command commands_get(id, content_type, accept, fields=fields)
+> Command commands_get(id, content_type, accept, fields=fields, x_org_id=x_org_id)
 
 List an individual Command
 
@@ -157,10 +161,11 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List an individual Command
-    api_response = api_instance.commands_get(id, content_type, accept, fields=fields)
+    api_response = api_instance.commands_get(id, content_type, accept, fields=fields, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->commands_get: %s\n" % e)
@@ -174,6 +179,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -191,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **commands_list**
-> Commandslist commands_list(content_type, accept, skip=skip, fields=fields, limit=limit, sort=sort)
+> Commandslist commands_list(content_type, accept, skip=skip, fields=fields, limit=limit, sort=sort, x_org_id=x_org_id)
 
 List All Commands
 
@@ -218,10 +224,11 @@ skip = 0 # int | The offset into the records to return. (optional) (default to 0
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List All Commands
-    api_response = api_instance.commands_list(content_type, accept, skip=skip, fields=fields, limit=limit, sort=sort)
+    api_response = api_instance.commands_list(content_type, accept, skip=skip, fields=fields, limit=limit, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->commands_list: %s\n" % e)
@@ -237,6 +244,7 @@ Name | Type | Description  | Notes
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -254,7 +262,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **commands_post**
-> Command commands_post(content_type, accept, body=body)
+> Command commands_post(content_type, accept, body=body, x_org_id=x_org_id)
 
 Create A Command
 
@@ -278,10 +286,11 @@ api_instance = jcapiv1.CommandsApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Command() # Command |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Create A Command
-    api_response = api_instance.commands_post(content_type, accept, body=body)
+    api_response = api_instance.commands_post(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->commands_post: %s\n" % e)
@@ -294,6 +303,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Command**](Command.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -311,7 +321,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **commands_put**
-> Command commands_put(id, content_type, accept, body=body)
+> Command commands_put(id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Update a Command
 
@@ -336,10 +346,11 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Command() # Command |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Update a Command
-    api_response = api_instance.commands_put(id, content_type, accept, body=body)
+    api_response = api_instance.commands_put(id, content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->commands_put: %s\n" % e)
@@ -353,6 +364,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Command**](Command.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

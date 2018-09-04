@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **applications_list**
-> Applicationslist applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Applicationslist applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 Applications
 
@@ -35,10 +35,11 @@ fields = 'fields_example' # str | The comma separated fileds included in the ret
 limit = 56 # int | The number of records to return at once. (optional)
 skip = 56 # int | The offset into the records to return. (optional)
 sort = 'The comma separated fields used to sort the collection. Default sort is ascending, prefix with - to sort descending.' # str |  (optional) (default to The comma separated fields used to sort the collection. Default sort is ascending, prefix with - to sort descending.)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Applications
-    api_response = api_instance.applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->applications_list: %s\n" % e)
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] 
  **sort** | **str**|  | [optional] [default to The comma separated fields used to sort the collection. Default sort is ascending, prefix with - to sort descending.]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

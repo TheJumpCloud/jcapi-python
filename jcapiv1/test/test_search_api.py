@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -29,6 +29,14 @@ class TestSearchApi(unittest.TestCase):
         self.api = jcapiv1.apis.search_api.SearchApi()
 
     def tearDown(self):
+        pass
+
+    def test_search_organizations_post(self):
+        """
+        Test case for search_organizations_post
+
+        Search Organizations
+        """
         pass
 
     def test_search_systems_post(self):

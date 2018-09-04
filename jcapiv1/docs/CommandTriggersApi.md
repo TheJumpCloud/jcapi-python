@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **command_trigger_webhook_post**
-> command_trigger_webhook_post(triggername, content_type, accept)
+> command_trigger_webhook_post(triggername, content_type, accept, x_org_id=x_org_id)
 
 Launch a command via a Trigger
 
@@ -32,10 +32,11 @@ api_instance = jcapiv1.CommandTriggersApi()
 triggername = 'triggername_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Launch a command via a Trigger
-    api_instance.command_trigger_webhook_post(triggername, content_type, accept)
+    api_instance.command_trigger_webhook_post(triggername, content_type, accept, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling CommandTriggersApi->command_trigger_webhook_post: %s\n" % e)
 ```
@@ -47,6 +48,7 @@ Name | Type | Description  | Notes
  **triggername** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -59,7 +59,17 @@ class Systemuser(object):
         'created': 'str',
         'samba_service_user': 'bool',
         'password_never_expires': 'bool',
-        'id': 'str'
+        'id': 'str',
+        'middlename': 'str',
+        'displayname': 'str',
+        'description': 'str',
+        'location': 'str',
+        'cost_center': 'str',
+        'employee_type': 'str',
+        'company': 'str',
+        'employee_identifier': 'str',
+        'job_title': 'str',
+        'department': 'str'
     }
 
     attribute_map = {
@@ -91,10 +101,20 @@ class Systemuser(object):
         'created': 'created',
         'samba_service_user': 'samba_service_user',
         'password_never_expires': 'password_never_expires',
-        'id': '_id'
+        'id': '_id',
+        'middlename': 'middlename',
+        'displayname': 'displayname',
+        'description': 'description',
+        'location': 'location',
+        'cost_center': 'costCenter',
+        'employee_type': 'employeeType',
+        'company': 'company',
+        'employee_identifier': 'employeeIdentifier',
+        'job_title': 'jobTitle',
+        'department': 'department'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, associated_tag_count=None, totp_enabled=None, password_expiration_date=None, attributes=None, created=None, samba_service_user=None, password_never_expires=None, id=None):
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, associated_tag_count=None, totp_enabled=None, password_expiration_date=None, attributes=None, created=None, samba_service_user=None, password_never_expires=None, id=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None, job_title=None, department=None):
         """
         Systemuser - a model defined in Swagger
         """
@@ -128,6 +148,16 @@ class Systemuser(object):
         self._samba_service_user = None
         self._password_never_expires = None
         self._id = None
+        self._middlename = None
+        self._displayname = None
+        self._description = None
+        self._location = None
+        self._cost_center = None
+        self._employee_type = None
+        self._company = None
+        self._employee_identifier = None
+        self._job_title = None
+        self._department = None
 
         if email is not None:
           self.email = email
@@ -187,6 +217,26 @@ class Systemuser(object):
           self.password_never_expires = password_never_expires
         if id is not None:
           self.id = id
+        if middlename is not None:
+          self.middlename = middlename
+        if displayname is not None:
+          self.displayname = displayname
+        if description is not None:
+          self.description = description
+        if location is not None:
+          self.location = location
+        if cost_center is not None:
+          self.cost_center = cost_center
+        if employee_type is not None:
+          self.employee_type = employee_type
+        if company is not None:
+          self.company = company
+        if employee_identifier is not None:
+          self.employee_identifier = employee_identifier
+        if job_title is not None:
+          self.job_title = job_title
+        if department is not None:
+          self.department = department
 
     @property
     def email(self):
@@ -802,6 +852,222 @@ class Systemuser(object):
         """
 
         self._id = id
+
+    @property
+    def middlename(self):
+        """
+        Gets the middlename of this Systemuser.
+
+        :return: The middlename of this Systemuser.
+        :rtype: str
+        """
+        return self._middlename
+
+    @middlename.setter
+    def middlename(self, middlename):
+        """
+        Sets the middlename of this Systemuser.
+
+        :param middlename: The middlename of this Systemuser.
+        :type: str
+        """
+
+        self._middlename = middlename
+
+    @property
+    def displayname(self):
+        """
+        Gets the displayname of this Systemuser.
+
+        :return: The displayname of this Systemuser.
+        :rtype: str
+        """
+        return self._displayname
+
+    @displayname.setter
+    def displayname(self, displayname):
+        """
+        Sets the displayname of this Systemuser.
+
+        :param displayname: The displayname of this Systemuser.
+        :type: str
+        """
+
+        self._displayname = displayname
+
+    @property
+    def description(self):
+        """
+        Gets the description of this Systemuser.
+
+        :return: The description of this Systemuser.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this Systemuser.
+
+        :param description: The description of this Systemuser.
+        :type: str
+        """
+        if description is not None and len(description) > 1024:
+            raise ValueError("Invalid value for `description`, length must be less than or equal to `1024`")
+
+        self._description = description
+
+    @property
+    def location(self):
+        """
+        Gets the location of this Systemuser.
+
+        :return: The location of this Systemuser.
+        :rtype: str
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this Systemuser.
+
+        :param location: The location of this Systemuser.
+        :type: str
+        """
+
+        self._location = location
+
+    @property
+    def cost_center(self):
+        """
+        Gets the cost_center of this Systemuser.
+
+        :return: The cost_center of this Systemuser.
+        :rtype: str
+        """
+        return self._cost_center
+
+    @cost_center.setter
+    def cost_center(self, cost_center):
+        """
+        Sets the cost_center of this Systemuser.
+
+        :param cost_center: The cost_center of this Systemuser.
+        :type: str
+        """
+
+        self._cost_center = cost_center
+
+    @property
+    def employee_type(self):
+        """
+        Gets the employee_type of this Systemuser.
+
+        :return: The employee_type of this Systemuser.
+        :rtype: str
+        """
+        return self._employee_type
+
+    @employee_type.setter
+    def employee_type(self, employee_type):
+        """
+        Sets the employee_type of this Systemuser.
+
+        :param employee_type: The employee_type of this Systemuser.
+        :type: str
+        """
+
+        self._employee_type = employee_type
+
+    @property
+    def company(self):
+        """
+        Gets the company of this Systemuser.
+
+        :return: The company of this Systemuser.
+        :rtype: str
+        """
+        return self._company
+
+    @company.setter
+    def company(self, company):
+        """
+        Sets the company of this Systemuser.
+
+        :param company: The company of this Systemuser.
+        :type: str
+        """
+
+        self._company = company
+
+    @property
+    def employee_identifier(self):
+        """
+        Gets the employee_identifier of this Systemuser.
+        Must be unique per user. 
+
+        :return: The employee_identifier of this Systemuser.
+        :rtype: str
+        """
+        return self._employee_identifier
+
+    @employee_identifier.setter
+    def employee_identifier(self, employee_identifier):
+        """
+        Sets the employee_identifier of this Systemuser.
+        Must be unique per user. 
+
+        :param employee_identifier: The employee_identifier of this Systemuser.
+        :type: str
+        """
+        if employee_identifier is not None and len(employee_identifier) > 256:
+            raise ValueError("Invalid value for `employee_identifier`, length must be less than or equal to `256`")
+
+        self._employee_identifier = employee_identifier
+
+    @property
+    def job_title(self):
+        """
+        Gets the job_title of this Systemuser.
+
+        :return: The job_title of this Systemuser.
+        :rtype: str
+        """
+        return self._job_title
+
+    @job_title.setter
+    def job_title(self, job_title):
+        """
+        Sets the job_title of this Systemuser.
+
+        :param job_title: The job_title of this Systemuser.
+        :type: str
+        """
+
+        self._job_title = job_title
+
+    @property
+    def department(self):
+        """
+        Gets the department of this Systemuser.
+
+        :return: The department of this Systemuser.
+        :rtype: str
+        """
+        return self._department
+
+    @department.setter
+    def department(self, department):
+        """
+        Sets the department of this Systemuser.
+
+        :param department: The department of this Systemuser.
+        :type: str
+        """
+
+        self._department = department
 
     def to_dict(self):
         """

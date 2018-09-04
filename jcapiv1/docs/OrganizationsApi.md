@@ -8,9 +8,11 @@ Method | HTTP request | Description
 
 
 # **organization_list**
-> Organizationslist organization_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Organizationslist organization_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, search=search)
 
 Get Organization Details
+
+This endpoint returns Organization Details.  #### Sample Request   ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example 
 ```python
@@ -33,10 +35,11 @@ fields = '' # str | Use a space seperated string of field parameters to include 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+search = 'search_example' # str |  (optional)
 
 try: 
     # Get Organization Details
-    api_response = api_instance.organization_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.organization_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, search=search)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OrganizationsApi->organization_list: %s\n" % e)
@@ -52,6 +55,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **search** | **str**|  | [optional] 
 
 ### Return type
 

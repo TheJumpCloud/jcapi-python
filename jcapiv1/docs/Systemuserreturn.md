@@ -37,6 +37,14 @@ Name | Type | Description | Notes
 **relationships** | **list[object]** |  | [optional] 
 **bad_login_attempts** | **int** |  | [optional] 
 **password_never_expires** | **bool** |  | [optional] 
+**middlename** | **str** |  | [optional] 
+**displayname** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**location** | **str** |  | [optional] 
+**cost_center** | **str** |  | [optional] 
+**employee_type** | **str** |  | [optional] 
+**company** | **str** |  | [optional] 
+**employee_identifier** | **str** | Must be unique per user.  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

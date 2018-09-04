@@ -32,6 +32,16 @@ Name | Type | Description | Notes
 **samba_service_user** | **bool** |  | [optional] 
 **password_never_expires** | **bool** |  | [optional] 
 **id** | **str** |  | [optional] 
+**middlename** | **str** |  | [optional] 
+**displayname** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
+**location** | **str** |  | [optional] 
+**cost_center** | **str** |  | [optional] 
+**employee_type** | **str** |  | [optional] 
+**company** | **str** |  | [optional] 
+**employee_identifier** | **str** | Must be unique per user.  | [optional] 
+**job_title** | **str** |  | [optional] 
+**department** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

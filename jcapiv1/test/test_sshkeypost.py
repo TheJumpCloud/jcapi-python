@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv1
 from jcapiv1.rest import ApiException
-from jcapiv1.models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
+from jcapiv1.models.sshkeypost import Sshkeypost
 
 
-class TestApplicationConfigIdpEntityIdTooltipVariables(unittest.TestCase):
-    """ ApplicationConfigIdpEntityIdTooltipVariables unit test stubs """
+class TestSshkeypost(unittest.TestCase):
+    """ Sshkeypost unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestApplicationConfigIdpEntityIdTooltipVariables(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApplicationConfigIdpEntityIdTooltipVariables(self):
+    def testSshkeypost(self):
         """
-        Test ApplicationConfigIdpEntityIdTooltipVariables
+        Test Sshkeypost
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.application_config_idp_entity_id_tooltip_variables.ApplicationConfigIdpEntityIdTooltipVariables()
+        #model = jcapiv1.models.sshkeypost.Sshkeypost()
         pass
 
 

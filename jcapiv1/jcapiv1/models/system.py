@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -53,7 +53,6 @@ class System(object):
         'agent_version': 'str',
         'connection_history': 'list[object]',
         'ssh_root_enabled': 'bool',
-        'id': 'str',
         'tags': 'list[str]',
         'id': 'str'
     }
@@ -81,12 +80,11 @@ class System(object):
         'agent_version': 'agentVersion',
         'connection_history': 'connectionHistory',
         'ssh_root_enabled': 'sshRootEnabled',
-        'id': 'id',
         'tags': 'tags',
         'id': '_id'
     }
 
-    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, id=None, tags=None):
+    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, tags=None, id=None):
         """
         System - a model defined in Swagger
         """
@@ -113,7 +111,6 @@ class System(object):
         self._agent_version = None
         self._connection_history = None
         self._ssh_root_enabled = None
-        self._id = None
         self._tags = None
         self._id = None
 
@@ -161,8 +158,6 @@ class System(object):
           self.connection_history = connection_history
         if ssh_root_enabled is not None:
           self.ssh_root_enabled = ssh_root_enabled
-        if id is not None:
-          self.id = id
         if tags is not None:
           self.tags = tags
         if id is not None:
@@ -629,27 +624,6 @@ class System(object):
         """
 
         self._ssh_root_enabled = ssh_root_enabled
-
-    @property
-    def id(self):
-        """
-        Gets the id of this System.
-
-        :return: The id of this System.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this System.
-
-        :param id: The id of this System.
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def tags(self):

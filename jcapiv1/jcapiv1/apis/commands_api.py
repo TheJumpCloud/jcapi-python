@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -60,6 +60,7 @@ class CommandsApi(object):
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: Commandfilereturn
                  If the method is called asynchronously,
                  returns the request thread.
@@ -91,12 +92,13 @@ class CommandsApi(object):
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: Commandfilereturn
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip']
+        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -141,6 +143,8 @@ class CommandsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -189,6 +193,7 @@ class CommandsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -217,12 +222,13 @@ class CommandsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -261,6 +267,8 @@ class CommandsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -310,6 +318,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
@@ -339,12 +348,13 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields']
+        all_params = ['id', 'content_type', 'accept', 'fields', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -385,6 +395,8 @@ class CommandsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -436,6 +448,7 @@ class CommandsApi(object):
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: Commandslist
                  If the method is called asynchronously,
                  returns the request thread.
@@ -467,12 +480,13 @@ class CommandsApi(object):
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: Commandslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'skip', 'fields', 'limit', 'sort']
+        all_params = ['content_type', 'accept', 'skip', 'fields', 'limit', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -514,6 +528,8 @@ class CommandsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -562,6 +578,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Command body:
+        :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
@@ -590,12 +607,13 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Command body:
+        :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body']
+        all_params = ['content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -629,6 +647,8 @@ class CommandsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -680,6 +700,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Command body:
+        :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
@@ -709,12 +730,13 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Command body:
+        :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -753,6 +775,8 @@ class CommandsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **radius_servers_list**
-> Radiusserverslist radius_servers_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Radiusserverslist radius_servers_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List Radius Servers
 
@@ -37,10 +37,11 @@ fields = '' # str | Use a space seperated string of field parameters to include 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List Radius Servers
-    api_response = api_instance.radius_servers_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.radius_servers_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RadiusServersApi->radius_servers_list: %s\n" % e)
@@ -56,6 +57,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -73,7 +75,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **radius_servers_post**
-> Radiusserverslist radius_servers_post(content_type, accept, body=body)
+> Radiusserverslist radius_servers_post(content_type, accept, body=body, x_org_id=x_org_id)
 
 Create a Radius Server
 
@@ -97,10 +99,11 @@ api_instance = jcapiv1.RadiusServersApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Radiusserverpost() # Radiusserverpost |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Create a Radius Server
-    api_response = api_instance.radius_servers_post(content_type, accept, body=body)
+    api_response = api_instance.radius_servers_post(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RadiusServersApi->radius_servers_post: %s\n" % e)
@@ -113,6 +116,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Radiusserverpost**](Radiusserverpost.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -130,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **radius_servers_put**
-> Radiusserverput radius_servers_put(content_type, accept, body=body)
+> Radiusserverput radius_servers_put(content_type, accept, body=body, x_org_id=x_org_id)
 
 Update Radius Servers
 
@@ -154,10 +158,11 @@ api_instance = jcapiv1.RadiusServersApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Body() # Body |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Update Radius Servers
-    api_response = api_instance.radius_servers_put(content_type, accept, body=body)
+    api_response = api_instance.radius_servers_put(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RadiusServersApi->radius_servers_put: %s\n" % e)
@@ -170,6 +175,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Body**](Body.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

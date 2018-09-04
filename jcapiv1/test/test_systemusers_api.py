@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -29,6 +29,30 @@ class TestSystemusersApi(unittest.TestCase):
         self.api = jcapiv1.apis.systemusers_api.SystemusersApi()
 
     def tearDown(self):
+        pass
+
+    def test_sshkey_delete(self):
+        """
+        Test case for sshkey_delete
+
+        Delete a system user's Public SSH Keys
+        """
+        pass
+
+    def test_sshkey_list(self):
+        """
+        Test case for sshkey_list
+
+        List a system user's public SSH keys
+        """
+        pass
+
+    def test_sshkey_post(self):
+        """
+        Test case for sshkey_post
+
+        Create a system user's Public SSH Key
+        """
         pass
 
     def test_systemusers_delete(self):

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
 
     OpenAPI spec version: 1.0
     
@@ -41,6 +41,8 @@ from .radiusserverpost import Radiusserverpost
 from .radiusserverput import Radiusserverput
 from .radiusserverslist import Radiusserverslist
 from .search import Search
+from .sshkeylist import Sshkeylist
+from .sshkeypost import Sshkeypost
 from .system import System
 from .system_network_interfaces import SystemNetworkInterfaces
 from .systemput import Systemput
