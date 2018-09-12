@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -60,6 +60,7 @@ class LDAPServersApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -91,12 +92,13 @@ class LDAPServersApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['ldapserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -145,6 +147,8 @@ class LDAPServersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -194,6 +198,7 @@ class LDAPServersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -223,12 +228,13 @@ class LDAPServersApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'content_type', 'accept', 'body']
+        all_params = ['ldapserver_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -267,6 +273,8 @@ class LDAPServersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -319,6 +327,7 @@ class LDAPServersApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -349,12 +358,13 @@ class LDAPServersApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -397,6 +407,8 @@ class LDAPServersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -447,6 +459,7 @@ class LDAPServersApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -477,12 +490,13 @@ class LDAPServersApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -525,6 +539,8 @@ class LDAPServersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -573,6 +589,7 @@ class LDAPServersApi(object):
         :param str id: Unique identifier of the LDAP server. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: LdapServerOutput
                  If the method is called asynchronously,
                  returns the request thread.
@@ -601,12 +618,13 @@ class LDAPServersApi(object):
         :param str id: Unique identifier of the LDAP server. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: LdapServerOutput
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -645,6 +663,8 @@ class LDAPServersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -697,6 +717,7 @@ class LDAPServersApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[LdapServerOutput]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -729,12 +750,13 @@ class LDAPServersApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[LdapServerOutput]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -781,6 +803,8 @@ class LDAPServersApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

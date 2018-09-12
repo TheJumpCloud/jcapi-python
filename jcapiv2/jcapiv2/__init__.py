@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -30,7 +30,9 @@ from .models.graph_object_with_paths import GraphObjectWithPaths
 from .models.graph_type import GraphType
 from .models.group import Group
 from .models.group_type import GroupType
+from .models.inline_response_200 import InlineResponse200
 from .models.inline_response_204 import InlineResponse204
+from .models.inline_response_400 import InlineResponse400
 from .models.job_details import JobDetails
 from .models.job_id import JobId
 from .models.job_workresult import JobWorkresult
@@ -80,6 +82,7 @@ from .apis.applications_api import ApplicationsApi
 from .apis.bulk_job_requests_api import BulkJobRequestsApi
 from .apis.commands_api import CommandsApi
 from .apis.directories_api import DirectoriesApi
+from .apis.fde_api import FdeApi
 from .apis.g_suite_api import GSuiteApi
 from .apis.graph_api import GraphApi
 from .apis.groups_api import GroupsApi

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -84,6 +84,14 @@ class TestSystemsApi(unittest.TestCase):
         Test case for graph_system_traverse_user_group
 
         List the User Groups bound to a System
+        """
+        pass
+
+    def test_systems_get_fde_key(self):
+        """
+        Test case for systems_get_fde_key
+
+        Get System FDE Key
         """
         pass
 

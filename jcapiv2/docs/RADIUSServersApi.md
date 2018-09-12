@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **graph_radius_server_associations_list**
-> list[GraphConnection] graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a RADIUS  Server
 
@@ -38,10 +38,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the associations of a RADIUS  Server
-    api_response = api_instance.graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RADIUSServersApi->graph_radius_server_associations_list: %s\n" % e)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_associations_post**
-> graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body)
+> graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a RADIUS Server
 
@@ -99,10 +101,11 @@ radiusserver_id = 'radiusserver_id_example' # str | ObjectID of the Radius Serve
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Manage the associations of a RADIUS Server
-    api_instance.graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body)
+    api_instance.graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling RADIUSServersApi->graph_radius_server_associations_post: %s\n" % e)
 ```
@@ -115,6 +118,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -132,7 +136,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_traverse_user**
-> list[GraphObjectWithPaths] graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a RADIUS  Server
 
@@ -158,10 +162,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the Users bound to a RADIUS  Server
-    api_response = api_instance.graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RADIUSServersApi->graph_radius_server_traverse_user: %s\n" % e)
@@ -176,6 +181,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -193,7 +199,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_traverse_user_group**
-> list[GraphObjectWithPaths] graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a RADIUS  Server
 
@@ -219,10 +225,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the User Groups bound to a RADIUS  Server
-    api_response = api_instance.graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RADIUSServersApi->graph_radius_server_traverse_user_group: %s\n" % e)
@@ -237,6 +244,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

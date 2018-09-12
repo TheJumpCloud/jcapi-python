@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -60,6 +60,7 @@ class PoliciesApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -91,12 +92,13 @@ class PoliciesApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['policy_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -145,6 +147,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -194,6 +198,7 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -223,12 +228,13 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'body']
+        all_params = ['policy_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -267,6 +273,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -319,6 +327,7 @@ class PoliciesApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -349,12 +358,13 @@ class PoliciesApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -397,6 +407,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -447,6 +459,7 @@ class PoliciesApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -477,12 +490,13 @@ class PoliciesApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -525,6 +539,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -573,6 +589,7 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy object. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -601,12 +618,13 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy object. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -645,6 +663,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -693,6 +713,7 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy object. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: PolicyWithDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -721,12 +742,13 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy object. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: PolicyWithDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -765,6 +787,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -817,6 +841,7 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[Policy]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -849,12 +874,13 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[Policy]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -901,6 +927,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -949,6 +977,7 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param PolicyRequest body:
+        :param str x_org_id: 
         :return: PolicyWithDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -977,12 +1006,13 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param PolicyRequest body:
+        :param str x_org_id: 
         :return: PolicyWithDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body']
+        all_params = ['content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1016,6 +1046,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1065,6 +1097,7 @@ class PoliciesApi(object):
             for asynchronous request. (optional)
         :param str id: ObjectID of the Policy object. (required)
         :param PolicyRequest body:
+        :param str x_org_id: 
         :return: Policy
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1092,12 +1125,13 @@ class PoliciesApi(object):
             for asynchronous request. (optional)
         :param str id: ObjectID of the Policy object. (required)
         :param PolicyRequest body:
+        :param str x_org_id: 
         :return: Policy
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'body']
+        all_params = ['id', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1126,6 +1160,8 @@ class PoliciesApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1176,6 +1212,7 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy Result. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: PolicyResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1204,12 +1241,13 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy Result. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: PolicyResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1248,6 +1286,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1301,6 +1341,7 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1334,12 +1375,13 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'aggregate', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'aggregate', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1389,6 +1431,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1443,6 +1487,7 @@ class PoliciesApi(object):
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param list[str] aggregate:
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1477,12 +1522,13 @@ class PoliciesApi(object):
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param list[str] aggregate:
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate']
+        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1537,6 +1583,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1590,6 +1638,7 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1623,12 +1672,13 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1680,6 +1730,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1733,6 +1785,7 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1766,12 +1819,13 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['system_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1823,6 +1877,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1871,6 +1927,7 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy Template. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: PolicyTemplateWithDetails
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1899,12 +1956,13 @@ class PoliciesApi(object):
         :param str id: ObjectID of the Policy Template. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: PolicyTemplateWithDetails
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1943,6 +2001,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1995,6 +2055,7 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyTemplate]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2027,12 +2088,13 @@ class PoliciesApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyTemplate]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2079,6 +2141,8 @@ class PoliciesApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

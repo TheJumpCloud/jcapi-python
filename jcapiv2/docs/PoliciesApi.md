@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **graph_policy_associations_list**
-> list[GraphConnection] graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a Policy
 
@@ -50,10 +50,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the associations of a Policy
-    api_response = api_instance.graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->graph_policy_associations_list: %s\n" % e)
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -86,7 +88,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_associations_post**
-> graph_policy_associations_post(policy_id, content_type, accept, body=body)
+> graph_policy_associations_post(policy_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a Policy
 
@@ -111,10 +113,11 @@ policy_id = 'policy_id_example' # str | ObjectID of the Policy.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Manage the associations of a Policy
-    api_instance.graph_policy_associations_post(policy_id, content_type, accept, body=body)
+    api_instance.graph_policy_associations_post(policy_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling PoliciesApi->graph_policy_associations_post: %s\n" % e)
 ```
@@ -127,6 +130,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -144,7 +148,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_traverse_system**
-> list[GraphObjectWithPaths] graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Systems bound to a Policy
 
@@ -170,10 +174,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the Systems bound to a Policy
-    api_response = api_instance.graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->graph_policy_traverse_system: %s\n" % e)
@@ -188,6 +193,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -205,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_traverse_system_group**
-> list[GraphObjectWithPaths] graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the System Groups bound to a Policy
 
@@ -231,10 +237,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the System Groups bound to a Policy
-    api_response = api_instance.graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->graph_policy_traverse_system_group: %s\n" % e)
@@ -249,6 +256,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -266,7 +274,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policies_delete**
-> policies_delete(id, content_type, accept)
+> policies_delete(id, content_type, accept, x_org_id=x_org_id)
 
 Deletes a Policy
 
@@ -290,10 +298,11 @@ api_instance = jcapiv2.PoliciesApi()
 id = 'id_example' # str | ObjectID of the Policy object.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Deletes a Policy
-    api_instance.policies_delete(id, content_type, accept)
+    api_instance.policies_delete(id, content_type, accept, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policies_delete: %s\n" % e)
 ```
@@ -305,6 +314,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the Policy object. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -322,7 +332,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policies_get**
-> PolicyWithDetails policies_get(id, content_type, accept)
+> PolicyWithDetails policies_get(id, content_type, accept, x_org_id=x_org_id)
 
 Gets a specific Policy.
 
@@ -346,10 +356,11 @@ api_instance = jcapiv2.PoliciesApi()
 id = 'id_example' # str | ObjectID of the Policy object.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Gets a specific Policy.
-    api_response = api_instance.policies_get(id, content_type, accept)
+    api_response = api_instance.policies_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policies_get: %s\n" % e)
@@ -362,6 +373,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the Policy object. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -379,7 +391,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policies_list**
-> list[Policy] policies_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[Policy] policies_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 Lists all the Policies
 
@@ -407,10 +419,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Lists all the Policies
-    api_response = api_instance.policies_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policies_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policies_list: %s\n" % e)
@@ -427,6 +440,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -444,7 +458,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policies_post**
-> PolicyWithDetails policies_post(content_type, accept, body=body)
+> PolicyWithDetails policies_post(content_type, accept, body=body, x_org_id=x_org_id)
 
 Create a new Policy
 
@@ -468,10 +482,11 @@ api_instance = jcapiv2.PoliciesApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.PolicyRequest() # PolicyRequest |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Create a new Policy
-    api_response = api_instance.policies_post(content_type, accept, body=body)
+    api_response = api_instance.policies_post(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policies_post: %s\n" % e)
@@ -484,6 +499,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**PolicyRequest**](PolicyRequest.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -501,7 +517,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policies_put**
-> Policy policies_put(id, body=body)
+> Policy policies_put(id, body=body, x_org_id=x_org_id)
 
 Update an existing Policy
 
@@ -524,10 +540,11 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.PoliciesApi()
 id = 'id_example' # str | ObjectID of the Policy object.
 body = jcapiv2.PolicyRequest() # PolicyRequest |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Update an existing Policy
-    api_response = api_instance.policies_put(id, body=body)
+    api_response = api_instance.policies_put(id, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policies_put: %s\n" % e)
@@ -539,6 +556,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| ObjectID of the Policy object. | 
  **body** | [**PolicyRequest**](PolicyRequest.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -556,7 +574,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policyresults_get**
-> PolicyResult policyresults_get(id, content_type, accept)
+> PolicyResult policyresults_get(id, content_type, accept, x_org_id=x_org_id)
 
 Get a specific Policy Result.
 
@@ -580,10 +598,11 @@ api_instance = jcapiv2.PoliciesApi()
 id = 'id_example' # str | ObjectID of the Policy Result.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Get a specific Policy Result.
-    api_response = api_instance.policyresults_get(id, content_type, accept)
+    api_response = api_instance.policyresults_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policyresults_get: %s\n" % e)
@@ -596,6 +615,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the Policy Result. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -613,7 +633,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policyresults_list**
-> list[PolicyResult] policyresults_list(content_type, accept, aggregate=aggregate, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[PolicyResult] policyresults_list(content_type, accept, aggregate=aggregate, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 Lists all the policy results for an organization.
 
@@ -642,10 +662,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Lists all the policy results for an organization.
-    api_response = api_instance.policyresults_list(content_type, accept, aggregate=aggregate, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policyresults_list(content_type, accept, aggregate=aggregate, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policyresults_list: %s\n" % e)
@@ -663,6 +684,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -680,7 +702,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policyresults_list_0**
-> list[PolicyResult] policyresults_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
+> list[PolicyResult] policyresults_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate, x_org_id=x_org_id)
 
 Lists all the policy results of a policy.
 
@@ -710,10 +732,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 aggregate = ['aggregate_example'] # list[str] |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Lists all the policy results of a policy.
-    api_response = api_instance.policyresults_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate)
+    api_response = api_instance.policyresults_list_0(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policyresults_list_0: %s\n" % e)
@@ -732,6 +755,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **aggregate** | [**list[str]**](str.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -749,7 +773,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policystatuses_list**
-> list[PolicyResult] policystatuses_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[PolicyResult] policystatuses_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 Lists the latest policy results of a policy.
 
@@ -778,10 +802,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Lists the latest policy results of a policy.
-    api_response = api_instance.policystatuses_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policystatuses_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policystatuses_list: %s\n" % e)
@@ -799,6 +824,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -816,7 +842,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policystatuses_list_0**
-> list[PolicyResult] policystatuses_list_0(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[PolicyResult] policystatuses_list_0(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the policy statuses for a system
 
@@ -845,10 +871,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the policy statuses for a system
-    api_response = api_instance.policystatuses_list_0(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policystatuses_list_0(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policystatuses_list_0: %s\n" % e)
@@ -866,6 +893,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -883,7 +911,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policytemplates_get**
-> PolicyTemplateWithDetails policytemplates_get(id, content_type, accept)
+> PolicyTemplateWithDetails policytemplates_get(id, content_type, accept, x_org_id=x_org_id)
 
 Get a specific Policy Template
 
@@ -907,10 +935,11 @@ api_instance = jcapiv2.PoliciesApi()
 id = 'id_example' # str | ObjectID of the Policy Template.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Get a specific Policy Template
-    api_response = api_instance.policytemplates_get(id, content_type, accept)
+    api_response = api_instance.policytemplates_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policytemplates_get: %s\n" % e)
@@ -923,6 +952,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the Policy Template. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -940,7 +970,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policytemplates_list**
-> list[PolicyTemplate] policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[PolicyTemplate] policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 Lists all of the Policy Templates
 
@@ -968,10 +998,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Lists all of the Policy Templates
-    api_response = api_instance.policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policytemplates_list: %s\n" % e)
@@ -988,6 +1019,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

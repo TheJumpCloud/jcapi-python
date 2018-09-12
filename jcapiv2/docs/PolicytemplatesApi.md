@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **policytemplates_get**
-> PolicyTemplateWithDetails policytemplates_get(id, content_type, accept)
+> PolicyTemplateWithDetails policytemplates_get(id, content_type, accept, x_org_id=x_org_id)
 
 Get a specific Policy Template
 
@@ -33,10 +33,11 @@ api_instance = jcapiv2.PolicytemplatesApi()
 id = 'id_example' # str | ObjectID of the Policy Template.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Get a specific Policy Template
-    api_response = api_instance.policytemplates_get(id, content_type, accept)
+    api_response = api_instance.policytemplates_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicytemplatesApi->policytemplates_get: %s\n" % e)
@@ -49,6 +50,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the Policy Template. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -66,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policytemplates_list**
-> list[PolicyTemplate] policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[PolicyTemplate] policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 Lists all of the Policy Templates
 
@@ -94,10 +96,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Lists all of the Policy Templates
-    api_response = api_instance.policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PolicytemplatesApi->policytemplates_list: %s\n" % e)
@@ -114,6 +117,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

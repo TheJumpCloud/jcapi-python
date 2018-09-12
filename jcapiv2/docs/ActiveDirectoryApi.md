@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **activedirectories_delete**
-> activedirectories_delete(id, content_type, accept)
+> activedirectories_delete(id, content_type, accept, x_org_id=x_org_id)
 
 Delete an Active Directory
 
@@ -38,10 +38,11 @@ api_instance = jcapiv2.ActiveDirectoryApi()
 id = 'id_example' # str | ObjectID of this Active Directory instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Delete an Active Directory
-    api_instance.activedirectories_delete(id, content_type, accept)
+    api_instance.activedirectories_delete(id, content_type, accept, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->activedirectories_delete: %s\n" % e)
 ```
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of this Active Directory instance. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -70,7 +72,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activedirectories_get**
-> ActiveDirectoryOutput activedirectories_get(id, content_type, accept)
+> ActiveDirectoryOutput activedirectories_get(id, content_type, accept, x_org_id=x_org_id)
 
 Get an Active Directory
 
@@ -94,10 +96,11 @@ api_instance = jcapiv2.ActiveDirectoryApi()
 id = 'id_example' # str | ObjectID of this Active Directory instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Get an Active Directory
-    api_response = api_instance.activedirectories_get(id, content_type, accept)
+    api_response = api_instance.activedirectories_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->activedirectories_get: %s\n" % e)
@@ -110,6 +113,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of this Active Directory instance. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -127,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activedirectories_list**
-> list[ActiveDirectoryOutput] activedirectories_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[ActiveDirectoryOutput] activedirectories_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List Active Directories
 
@@ -155,10 +159,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List Active Directories
-    api_response = api_instance.activedirectories_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.activedirectories_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->activedirectories_list: %s\n" % e)
@@ -175,6 +180,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -192,7 +198,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **activedirectories_post**
-> ActiveDirectoryOutput activedirectories_post(content_type, accept, body=body)
+> ActiveDirectoryOutput activedirectories_post(content_type, accept, body=body, x_org_id=x_org_id)
 
 Create a new Active Directory
 
@@ -216,10 +222,11 @@ api_instance = jcapiv2.ActiveDirectoryApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.ActiveDirectoryInput() # ActiveDirectoryInput |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Create a new Active Directory
-    api_response = api_instance.activedirectories_post(content_type, accept, body=body)
+    api_response = api_instance.activedirectories_post(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->activedirectories_post: %s\n" % e)
@@ -232,6 +239,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**ActiveDirectoryInput**](ActiveDirectoryInput.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -249,7 +257,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_active_directory_associations_list**
-> list[GraphConnection] graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of an Active Directory instance
 
@@ -276,10 +284,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the associations of an Active Directory instance
-    api_response = api_instance.graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->graph_active_directory_associations_list: %s\n" % e)
@@ -295,6 +304,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -312,7 +322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_active_directory_associations_post**
-> graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body)
+> graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of an Active Directory instance
 
@@ -337,10 +347,11 @@ activedirectory_id = 'activedirectory_id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Manage the associations of an Active Directory instance
-    api_instance.graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body)
+    api_instance.graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->graph_active_directory_associations_post: %s\n" % e)
 ```
@@ -353,6 +364,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -370,7 +382,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_active_directory_traverse_user_group**
-> list[GraphObjectWithPaths] graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to an Active Directory instance
 
@@ -396,10 +408,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the User Groups bound to an Active Directory instance
-    api_response = api_instance.graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ActiveDirectoryApi->graph_active_directory_traverse_user_group: %s\n" % e)
@@ -414,6 +427,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 

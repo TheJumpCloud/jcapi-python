@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -62,6 +62,7 @@ class SystemsApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -95,12 +96,13 @@ class SystemsApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -153,6 +155,8 @@ class SystemsApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -204,6 +208,7 @@ class SystemsApi(object):
         :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -235,12 +240,13 @@ class SystemsApi(object):
         :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'body', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -283,6 +289,8 @@ class SystemsApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -339,6 +347,7 @@ class SystemsApi(object):
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -373,12 +382,13 @@ class SystemsApi(object):
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'date', 'authorization', 'sort']
+        all_params = ['system_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'date', 'authorization', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -431,6 +441,8 @@ class SystemsApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -481,6 +493,7 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -511,12 +524,13 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -559,6 +573,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -609,6 +625,7 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -639,12 +656,13 @@ class SystemsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -687,6 +705,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -739,6 +759,7 @@ class SystemsApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -771,12 +792,13 @@ class SystemsApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -823,6 +845,8 @@ class SystemsApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -875,6 +899,7 @@ class SystemsApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -907,12 +932,13 @@ class SystemsApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -959,6 +985,8 @@ class SystemsApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -983,6 +1011,112 @@ class SystemsApi(object):
                                         post_params=form_params,
                                         files=local_var_files,
                                         response_type='list[GraphObjectWithPaths]',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def systems_get_fde_key(self, system_id, **kwargs):
+        """
+        Get System FDE Key
+        Public is OFF on purpose, this is not intended to be published  Retrieve the current (latest) fde key saved for this system.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.systems_get_fde_key(system_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str system_id: (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.systems_get_fde_key_with_http_info(system_id, **kwargs)
+        else:
+            (data) = self.systems_get_fde_key_with_http_info(system_id, **kwargs)
+            return data
+
+    def systems_get_fde_key_with_http_info(self, system_id, **kwargs):
+        """
+        Get System FDE Key
+        Public is OFF on purpose, this is not intended to be published  Retrieve the current (latest) fde key saved for this system.
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.systems_get_fde_key_with_http_info(system_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str system_id: (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systems_get_fde_key" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params) or (params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systems_get_fde_key`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/systems/{system_id}/fdekey', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='InlineResponse200',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

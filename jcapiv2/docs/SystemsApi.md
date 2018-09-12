@@ -11,10 +11,11 @@ Method | HTTP request | Description
 [**graph_system_traverse_policy**](SystemsApi.md#graph_system_traverse_policy) | **GET** /systems/{system_id}/policies | List the Policies bound to a System
 [**graph_system_traverse_user**](SystemsApi.md#graph_system_traverse_user) | **GET** /systems/{system_id}/users | List the Users bound to a System
 [**graph_system_traverse_user_group**](SystemsApi.md#graph_system_traverse_user_group) | **GET** /systems/{system_id}/usergroups | List the User Groups bound to a System
+[**systems_get_fde_key**](SystemsApi.md#systems_get_fde_key) | **GET** /systems/{system_id}/fdekey | Get System FDE Key
 
 
 # **graph_system_associations_list**
-> list[GraphConnection] graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphConnection] graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
 
 List the associations of a System
 
@@ -43,10 +44,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the associations of a System
-    api_response = api_instance.graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_associations_list: %s\n" % e)
@@ -64,6 +66,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -81,7 +84,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_associations_post**
-> graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization)
+> graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 
 Manage associations of a System
 
@@ -108,10 +111,11 @@ accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGraphManagementReq() # SystemGraphManagementReq |  (optional)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # Manage associations of a System
-    api_instance.graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization)
+    api_instance.graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_associations_post: %s\n" % e)
 ```
@@ -126,6 +130,7 @@ Name | Type | Description  | Notes
  **body** | [**SystemGraphManagementReq**](SystemGraphManagementReq.md)|  | [optional] 
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -143,7 +148,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_member_of**
-> list[GraphObjectWithPaths] graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort)
+> list[GraphObjectWithPaths] graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort, x_org_id=x_org_id)
 
 List the parent Groups of a System
 
@@ -173,10 +178,11 @@ skip = 0 # int | The offset into the records to return. (optional) (default to 0
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the parent Groups of a System
-    api_response = api_instance.graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort)
+    api_response = api_instance.graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_member_of: %s\n" % e)
@@ -195,6 +201,7 @@ Name | Type | Description  | Notes
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -212,7 +219,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_command**
-> list[GraphObjectWithPaths] graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Commands bound to a System
 
@@ -238,10 +245,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the Commands bound to a System
-    api_response = api_instance.graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_command: %s\n" % e)
@@ -256,6 +264,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -273,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_policy**
-> list[GraphObjectWithPaths] graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Policies bound to a System
 
@@ -299,10 +308,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the Policies bound to a System
-    api_response = api_instance.graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_policy: %s\n" % e)
@@ -317,6 +327,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -334,7 +345,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_user**
-> list[GraphObjectWithPaths] graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphObjectWithPaths] graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
 
 List the Users bound to a System
 
@@ -362,10 +373,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the Users bound to a System
-    api_response = api_instance.graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_user: %s\n" % e)
@@ -382,6 +394,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
@@ -399,7 +412,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_user_group**
-> list[GraphObjectWithPaths] graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphObjectWithPaths] graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
 
 List the User Groups bound to a System
 
@@ -427,10 +440,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
 
 try: 
     # List the User Groups bound to a System
-    api_response = api_instance.graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_user_group: %s\n" % e)
@@ -447,10 +461,64 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
 
 ### Return type
 
 [**list[GraphObjectWithPaths]**](GraphObjectWithPaths.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systems_get_fde_key**
+> InlineResponse200 systems_get_fde_key(system_id)
+
+Get System FDE Key
+
+Public is OFF on purpose, this is not intended to be published  Retrieve the current (latest) fde key saved for this system.
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemsApi()
+system_id = 'system_id_example' # str | 
+
+try: 
+    # Get System FDE Key
+    api_response = api_instance.systems_get_fde_key(system_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemsApi->systems_get_fde_key: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **system_id** | **str**|  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
