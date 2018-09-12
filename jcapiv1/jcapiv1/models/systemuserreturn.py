@@ -35,7 +35,7 @@ class Systemuserreturn(object):
         'username': 'str',
         'allow_public_key': 'bool',
         'public_key': 'str',
-        'ssh_keys': 'list[str]',
+        'ssh_keys': 'list[Sshkeylist]',
         'sudo': 'bool',
         'enable_managed_uid': 'bool',
         'unix_uid': 'int',
@@ -58,10 +58,10 @@ class Systemuserreturn(object):
         'samba_service_user': 'bool',
         'id': 'str',
         'organization': 'str',
-        'addresses': 'list[str]',
+        'addresses': 'list[SystemuserreturnAddresses]',
         'job_title': 'str',
         'department': 'str',
-        'phone_numbers': 'list[str]',
+        'phone_numbers': 'list[SystemuserreturnPhoneNumbers]',
         'relationships': 'list[object]',
         'bad_login_attempts': 'int',
         'password_never_expires': 'bool',
@@ -343,7 +343,7 @@ class Systemuserreturn(object):
         Gets the ssh_keys of this Systemuserreturn.
 
         :return: The ssh_keys of this Systemuserreturn.
-        :rtype: list[str]
+        :rtype: list[Sshkeylist]
         """
         return self._ssh_keys
 
@@ -353,7 +353,7 @@ class Systemuserreturn(object):
         Sets the ssh_keys of this Systemuserreturn.
 
         :param ssh_keys: The ssh_keys of this Systemuserreturn.
-        :type: list[str]
+        :type: list[Sshkeylist]
         """
 
         self._ssh_keys = ssh_keys
@@ -828,9 +828,10 @@ class Systemuserreturn(object):
     def addresses(self):
         """
         Gets the addresses of this Systemuserreturn.
+        
 
         :return: The addresses of this Systemuserreturn.
-        :rtype: list[str]
+        :rtype: list[SystemuserreturnAddresses]
         """
         return self._addresses
 
@@ -838,9 +839,10 @@ class Systemuserreturn(object):
     def addresses(self, addresses):
         """
         Sets the addresses of this Systemuserreturn.
+        
 
         :param addresses: The addresses of this Systemuserreturn.
-        :type: list[str]
+        :type: list[SystemuserreturnAddresses]
         """
 
         self._addresses = addresses
@@ -891,9 +893,10 @@ class Systemuserreturn(object):
     def phone_numbers(self):
         """
         Gets the phone_numbers of this Systemuserreturn.
+        
 
         :return: The phone_numbers of this Systemuserreturn.
-        :rtype: list[str]
+        :rtype: list[SystemuserreturnPhoneNumbers]
         """
         return self._phone_numbers
 
@@ -901,9 +904,10 @@ class Systemuserreturn(object):
     def phone_numbers(self, phone_numbers):
         """
         Sets the phone_numbers of this Systemuserreturn.
+        
 
         :param phone_numbers: The phone_numbers of this Systemuserreturn.
-        :type: list[str]
+        :type: list[SystemuserreturnPhoneNumbers]
         """
 
         self._phone_numbers = phone_numbers

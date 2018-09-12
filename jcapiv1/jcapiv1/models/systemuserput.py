@@ -35,7 +35,7 @@ class Systemuserput(object):
         'username': 'str',
         'allow_public_key': 'bool',
         'public_key': 'str',
-        'ssh_keys': 'list[str]',
+        'ssh_keys': 'list[Sshkeypost]',
         'sudo': 'bool',
         'enable_managed_uid': 'bool',
         'unix_uid': 'int',
@@ -51,10 +51,10 @@ class Systemuserput(object):
         'enable_user_portal_multifactor': 'bool',
         'attributes': 'list[object]',
         'samba_service_user': 'bool',
-        'addresses': 'list[str]',
+        'addresses': 'list[SystemuserputpostAddresses]',
         'job_title': 'str',
         'department': 'str',
-        'phone_numbers': 'list[str]',
+        'phone_numbers': 'list[SystemuserputpostPhoneNumbers]',
         'relationships': 'list[object]',
         'password': 'str',
         'password_never_expires': 'bool',
@@ -310,7 +310,7 @@ class Systemuserput(object):
         Gets the ssh_keys of this Systemuserput.
 
         :return: The ssh_keys of this Systemuserput.
-        :rtype: list[str]
+        :rtype: list[Sshkeypost]
         """
         return self._ssh_keys
 
@@ -320,7 +320,7 @@ class Systemuserput(object):
         Sets the ssh_keys of this Systemuserput.
 
         :param ssh_keys: The ssh_keys of this Systemuserput.
-        :type: list[str]
+        :type: list[Sshkeypost]
         """
 
         self._ssh_keys = ssh_keys
@@ -648,9 +648,10 @@ class Systemuserput(object):
     def addresses(self):
         """
         Gets the addresses of this Systemuserput.
+        type, poBox, extendedAddress, streetAddress, locality, region, postalCode, country
 
         :return: The addresses of this Systemuserput.
-        :rtype: list[str]
+        :rtype: list[SystemuserputpostAddresses]
         """
         return self._addresses
 
@@ -658,9 +659,10 @@ class Systemuserput(object):
     def addresses(self, addresses):
         """
         Sets the addresses of this Systemuserput.
+        type, poBox, extendedAddress, streetAddress, locality, region, postalCode, country
 
         :param addresses: The addresses of this Systemuserput.
-        :type: list[str]
+        :type: list[SystemuserputpostAddresses]
         """
 
         self._addresses = addresses
@@ -711,9 +713,10 @@ class Systemuserput(object):
     def phone_numbers(self):
         """
         Gets the phone_numbers of this Systemuserput.
+        
 
         :return: The phone_numbers of this Systemuserput.
-        :rtype: list[str]
+        :rtype: list[SystemuserputpostPhoneNumbers]
         """
         return self._phone_numbers
 
@@ -721,9 +724,10 @@ class Systemuserput(object):
     def phone_numbers(self, phone_numbers):
         """
         Sets the phone_numbers of this Systemuserput.
+        
 
         :param phone_numbers: The phone_numbers of this Systemuserput.
-        :type: list[str]
+        :type: list[SystemuserputpostPhoneNumbers]
         """
 
         self._phone_numbers = phone_numbers

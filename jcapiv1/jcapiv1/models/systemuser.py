@@ -35,7 +35,7 @@ class Systemuser(object):
         'username': 'str',
         'allow_public_key': 'bool',
         'public_key': 'str',
-        'ssh_keys': 'list[str]',
+        'ssh_keys': 'list[Sshkeylist]',
         'sudo': 'bool',
         'enable_managed_uid': 'bool',
         'unix_uid': 'int',
@@ -328,7 +328,7 @@ class Systemuser(object):
         Gets the ssh_keys of this Systemuser.
 
         :return: The ssh_keys of this Systemuser.
-        :rtype: list[str]
+        :rtype: list[Sshkeylist]
         """
         return self._ssh_keys
 
@@ -338,7 +338,7 @@ class Systemuser(object):
         Sets the ssh_keys of this Systemuser.
 
         :param ssh_keys: The ssh_keys of this Systemuser.
-        :type: list[str]
+        :type: list[Sshkeylist]
         """
 
         self._ssh_keys = ssh_keys

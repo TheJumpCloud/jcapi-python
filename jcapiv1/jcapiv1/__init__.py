@@ -33,6 +33,7 @@ from .models.commandresult_response_data import CommandresultResponseData
 from .models.commandresultslist import Commandresultslist
 from .models.commandslist import Commandslist
 from .models.commandslist_results import CommandslistResults
+from .models.fde import Fde
 from .models.inline_response_400 import InlineResponse400
 from .models.organizationslist import Organizationslist
 from .models.organizationslist_results import OrganizationslistResults
@@ -53,7 +54,11 @@ from .models.systemuserbinding import Systemuserbinding
 from .models.systemuserbindingsput import Systemuserbindingsput
 from .models.systemuserput import Systemuserput
 from .models.systemuserputpost import Systemuserputpost
+from .models.systemuserputpost_addresses import SystemuserputpostAddresses
+from .models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
 from .models.systemuserreturn import Systemuserreturn
+from .models.systemuserreturn_addresses import SystemuserreturnAddresses
+from .models.systemuserreturn_phone_numbers import SystemuserreturnPhoneNumbers
 from .models.systemuserslist import Systemuserslist
 from .models.tag import Tag
 from .models.tagpost import Tagpost

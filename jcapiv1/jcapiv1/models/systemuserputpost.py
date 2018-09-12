@@ -52,10 +52,10 @@ class Systemuserputpost(object):
         'enable_user_portal_multifactor': 'bool',
         'attributes': 'list[object]',
         'samba_service_user': 'bool',
-        'addresses': 'list[str]',
+        'addresses': 'list[SystemuserputpostAddresses]',
         'job_title': 'str',
         'department': 'str',
-        'phone_numbers': 'list[str]',
+        'phone_numbers': 'list[SystemuserputpostPhoneNumbers]',
         'relationships': 'list[object]',
         'password': 'str',
         'password_never_expires': 'bool',
@@ -674,9 +674,10 @@ class Systemuserputpost(object):
     def addresses(self):
         """
         Gets the addresses of this Systemuserputpost.
+        
 
         :return: The addresses of this Systemuserputpost.
-        :rtype: list[str]
+        :rtype: list[SystemuserputpostAddresses]
         """
         return self._addresses
 
@@ -684,9 +685,10 @@ class Systemuserputpost(object):
     def addresses(self, addresses):
         """
         Sets the addresses of this Systemuserputpost.
+        
 
         :param addresses: The addresses of this Systemuserputpost.
-        :type: list[str]
+        :type: list[SystemuserputpostAddresses]
         """
 
         self._addresses = addresses
@@ -737,9 +739,10 @@ class Systemuserputpost(object):
     def phone_numbers(self):
         """
         Gets the phone_numbers of this Systemuserputpost.
+        
 
         :return: The phone_numbers of this Systemuserputpost.
-        :rtype: list[str]
+        :rtype: list[SystemuserputpostPhoneNumbers]
         """
         return self._phone_numbers
 
@@ -747,9 +750,10 @@ class Systemuserputpost(object):
     def phone_numbers(self, phone_numbers):
         """
         Sets the phone_numbers of this Systemuserputpost.
+        
 
         :param phone_numbers: The phone_numbers of this Systemuserputpost.
-        :type: list[str]
+        :type: list[SystemuserputpostPhoneNumbers]
         """
 
         self._phone_numbers = phone_numbers

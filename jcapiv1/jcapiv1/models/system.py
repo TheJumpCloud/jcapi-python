@@ -54,7 +54,8 @@ class System(object):
         'connection_history': 'list[object]',
         'ssh_root_enabled': 'bool',
         'tags': 'list[str]',
-        'id': 'str'
+        'id': 'str',
+        'fde': 'Fde'
     }
 
     attribute_map = {
@@ -81,10 +82,11 @@ class System(object):
         'connection_history': 'connectionHistory',
         'ssh_root_enabled': 'sshRootEnabled',
         'tags': 'tags',
-        'id': '_id'
+        'id': '_id',
+        'fde': 'fde'
     }
 
-    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, tags=None, id=None):
+    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, tags=None, id=None, fde=None):
         """
         System - a model defined in Swagger
         """
@@ -113,6 +115,7 @@ class System(object):
         self._ssh_root_enabled = None
         self._tags = None
         self._id = None
+        self._fde = None
 
         if organization is not None:
           self.organization = organization
@@ -162,6 +165,8 @@ class System(object):
           self.tags = tags
         if id is not None:
           self.id = id
+        if fde is not None:
+          self.fde = fde
 
     @property
     def organization(self):
@@ -666,6 +671,27 @@ class System(object):
         """
 
         self._id = id
+
+    @property
+    def fde(self):
+        """
+        Gets the fde of this System.
+
+        :return: The fde of this System.
+        :rtype: Fde
+        """
+        return self._fde
+
+    @fde.setter
+    def fde(self, fde):
+        """
+        Sets the fde of this System.
+
+        :param fde: The fde of this System.
+        :type: Fde
+        """
+
+        self._fde = fde
 
     def to_dict(self):
         """

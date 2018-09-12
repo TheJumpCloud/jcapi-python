@@ -33,6 +33,7 @@ from .commandresult_response_data import CommandresultResponseData
 from .commandresultslist import Commandresultslist
 from .commandslist import Commandslist
 from .commandslist_results import CommandslistResults
+from .fde import Fde
 from .inline_response_400 import InlineResponse400
 from .organizationslist import Organizationslist
 from .organizationslist_results import OrganizationslistResults
@@ -53,7 +54,11 @@ from .systemuserbinding import Systemuserbinding
 from .systemuserbindingsput import Systemuserbindingsput
 from .systemuserput import Systemuserput
 from .systemuserputpost import Systemuserputpost
+from .systemuserputpost_addresses import SystemuserputpostAddresses
+from .systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
 from .systemuserreturn import Systemuserreturn
+from .systemuserreturn_addresses import SystemuserreturnAddresses
+from .systemuserreturn_phone_numbers import SystemuserreturnPhoneNumbers
 from .systemuserslist import Systemuserslist
 from .tag import Tag
 from .tagpost import Tagpost
