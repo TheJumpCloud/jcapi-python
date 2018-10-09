@@ -38,7 +38,7 @@ api_instance = jcapiv2.ActiveDirectoryApi()
 id = 'id_example' # str | ObjectID of this Active Directory instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Delete an Active Directory
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of this Active Directory instance. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -96,7 +96,7 @@ api_instance = jcapiv2.ActiveDirectoryApi()
 id = 'id_example' # str | ObjectID of this Active Directory instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get an Active Directory
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of this Active Directory instance. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -159,7 +159,7 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Active Directories
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -222,7 +222,7 @@ api_instance = jcapiv2.ActiveDirectoryApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.ActiveDirectoryInput() # ActiveDirectoryInput |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Create a new Active Directory
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**ActiveDirectoryInput**](ActiveDirectoryInput.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 List the associations of an Active Directory instance
 
-This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -284,7 +284,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of an Active Directory instance
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 Manage the associations of an Active Directory instance
 
-This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
+This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
 
 ### Example 
 ```python
@@ -347,7 +347,7 @@ activedirectory_id = 'activedirectory_id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of an Active Directory instance
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -408,7 +408,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to an Active Directory instance
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

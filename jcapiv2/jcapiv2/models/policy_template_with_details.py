@@ -87,7 +87,7 @@ class PolicyTemplateWithDetails(object):
     def id(self):
         """
         Gets the id of this PolicyTemplateWithDetails.
-        ObjectId uniquely indetifying a Policy Template.
+        ObjectId uniquely identifying a Policy Template.
 
         :return: The id of this PolicyTemplateWithDetails.
         :rtype: str
@@ -98,7 +98,7 @@ class PolicyTemplateWithDetails(object):
     def id(self, id):
         """
         Sets the id of this PolicyTemplateWithDetails.
-        ObjectId uniquely indetifying a Policy Template.
+        ObjectId uniquely identifying a Policy Template.
 
         :param id: The id of this PolicyTemplateWithDetails.
         :type: str

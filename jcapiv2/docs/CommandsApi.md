@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 List the associations of a Command
 
-This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -38,7 +38,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a Command
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 Manage the associations of a Command
 
-This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
+This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
 
 ### Example 
 ```python
@@ -101,7 +101,7 @@ command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a Command
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -163,7 +163,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Systems bound to a Command
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -226,7 +226,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Groups bound to a Command
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

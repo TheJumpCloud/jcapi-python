@@ -163,7 +163,7 @@ class TestUserGroupsApi(unittest.TestCase):
         """
         Test case for groups_user_get
 
-        View an indvidual User Group details
+        View an individual User Group details
         """
         pass
 

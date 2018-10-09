@@ -43,7 +43,7 @@ class FdeApi(object):
     def systems_get_fde_key(self, system_id, **kwargs):
         """
         Get System FDE Key
-        Public is OFF on purpose, this is not intended to be published  Retrieve the current (latest) fde key saved for this system.
+        This endpoint will return the current (latest) fde key saved for a system.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -69,7 +69,7 @@ class FdeApi(object):
     def systems_get_fde_key_with_http_info(self, system_id, **kwargs):
         """
         Get System FDE Key
-        Public is OFF on purpose, this is not intended to be published  Retrieve the current (latest) fde key saved for this system.
+        This endpoint will return the current (latest) fde key saved for a system.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

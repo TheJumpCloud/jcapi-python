@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "jcapiv2"
-VERSION = "1.0.5"
+VERSION = "1.1.0"
 # To install the library, run the following
 #
 # python setup.py install

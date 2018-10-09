@@ -72,7 +72,7 @@ class PolicyWithDetails(object):
     def id(self):
         """
         Gets the id of this PolicyWithDetails.
-        ObjectId uniquely indetifying a Policy.
+        ObjectId uniquely identifying a Policy.
 
         :return: The id of this PolicyWithDetails.
         :rtype: str
@@ -83,7 +83,7 @@ class PolicyWithDetails(object):
     def id(self, id):
         """
         Sets the id of this PolicyWithDetails.
-        ObjectId uniquely indetifying a Policy.
+        ObjectId uniquely identifying a Policy.
 
         :param id: The id of this PolicyWithDetails.
         :type: str

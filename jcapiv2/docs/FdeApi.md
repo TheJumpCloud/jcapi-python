@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Get System FDE Key
 
-Public is OFF on purpose, this is not intended to be published  Retrieve the current (latest) fde key saved for this system.
+This endpoint will return the current (latest) fde key saved for a system.
 
 ### Example 
 ```python

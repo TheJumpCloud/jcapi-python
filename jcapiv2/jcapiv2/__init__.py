@@ -22,6 +22,7 @@ from .models.authinput_basic import AuthinputBasic
 from .models.authinput_oauth import AuthinputOauth
 from .models.bulk_user_create import BulkUserCreate
 from .models.directory import Directory
+from .models.emailrequest import Emailrequest
 from .models.error import Error
 from .models.graph_connection import GraphConnection
 from .models.graph_management_req import GraphManagementReq
@@ -50,6 +51,7 @@ from .models.policy_template_with_details import PolicyTemplateWithDetails
 from .models.policy_value import PolicyValue
 from .models.policy_with_details import PolicyWithDetails
 from .models.samba_domain_input import SambaDomainInput
+from .models.sshkeylist import Sshkeylist
 from .models.system_graph_management_req import SystemGraphManagementReq
 from .models.system_graph_management_req_attributes import SystemGraphManagementReqAttributes
 from .models.system_graph_management_req_attributes_sudo import SystemGraphManagementReqAttributesSudo
@@ -57,6 +59,11 @@ from .models.system_group import SystemGroup
 from .models.system_group_data import SystemGroupData
 from .models.system_group_graph_management_req import SystemGroupGraphManagementReq
 from .models.system_group_members_req import SystemGroupMembersReq
+from .models.systemuser import Systemuser
+from .models.systemuser_attributes import SystemuserAttributes
+from .models.systemuserputpost import Systemuserputpost
+from .models.systemuserputpost_addresses import SystemuserputpostAddresses
+from .models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
 from .models.user_graph_management_req import UserGraphManagementReq
 from .models.user_group import UserGroup
 from .models.user_group_graph_management_req import UserGroupGraphManagementReq

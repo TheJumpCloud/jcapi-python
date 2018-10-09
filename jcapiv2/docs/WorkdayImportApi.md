@@ -43,7 +43,7 @@ workday_id = 'workday_id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.AuthInputObject() # AuthInputObject |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Authorize Workday
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**AuthInputObject**](AuthInputObject.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -102,7 +102,7 @@ api_instance = jcapiv2.WorkdayImportApi()
 workday_id = 'workday_id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Deauthorize Workday
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
  **workday_id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -160,7 +160,7 @@ api_instance = jcapiv2.WorkdayImportApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Delete Workday
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -219,7 +219,7 @@ api_instance = jcapiv2.WorkdayImportApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get Workday
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -279,7 +279,7 @@ workday_id = 'workday_id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = [jcapiv2.BulkUserCreate()] # list[BulkUserCreate] |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Workday Import
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**list[BulkUserCreate]**](BulkUserCreate.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -342,7 +342,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Import Results
@@ -362,7 +362,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -408,7 +408,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Workdays
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -471,7 +471,7 @@ api_instance = jcapiv2.WorkdayImportApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.WorkdayInput() # WorkdayInput |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Create new Workday
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**WorkdayInput**](WorkdayInput.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -530,7 +530,7 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.WorkdayFields() # WorkdayFields |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Update Workday
@@ -548,7 +548,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**WorkdayFields**](WorkdayFields.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -590,7 +590,7 @@ api_instance = jcapiv2.WorkdayImportApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 state = 'state_example' # str |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get Workday Settings (incomplete)
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **state** | **str**|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -651,7 +651,7 @@ accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Workday Workers
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

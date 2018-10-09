@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 List the associations of a System Group
 
-This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -49,7 +49,7 @@ accept = 'application/json' # str |  (default to application/json)
 targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a System Group
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 Manage the associations of a System Group
 
-This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
+This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
 
 ### Example 
 ```python
@@ -112,7 +112,7 @@ group_id = 'group_id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupGraphManagementReq() # SystemGroupGraphManagementReq |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a System Group
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**SystemGroupGraphManagementReq**](SystemGroupGraphManagementReq.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -175,7 +175,7 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Group's parents
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -240,7 +240,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the members of a System Group
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 
 Manage the members of a System Group
 
-This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
 
 ### Example 
 ```python
@@ -304,7 +304,7 @@ accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupMembersReq() # SystemGroupMembersReq |  (optional)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the members of a System Group
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
  **body** | [**SystemGroupMembersReq**](SystemGroupMembersReq.md)|  | [optional] 
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -369,7 +369,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Group's membership
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -434,7 +434,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Policies bound to a System Group
@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -497,7 +497,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a System Group
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -560,7 +560,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a System Group
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -621,7 +621,7 @@ api_instance = jcapiv2.SystemGroupsApi()
 id = 'id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Delete a System Group
@@ -637,7 +637,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the System Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -659,7 +659,7 @@ void (empty response body)
 
 View an individual System Group details
 
-This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -679,7 +679,7 @@ api_instance = jcapiv2.SystemGroupsApi()
 id = 'id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # View an individual System Group details
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
  **id** | **str**| ObjectID of the System Group. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -742,7 +742,7 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List all System Groups
@@ -763,7 +763,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -806,7 +806,7 @@ id = 'id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupData() # SystemGroupData |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Partial update a System Group
@@ -824,7 +824,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**SystemGroupData**](SystemGroupData.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -866,7 +866,7 @@ api_instance = jcapiv2.SystemGroupsApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupData() # SystemGroupData |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Create a new System Group
@@ -883,7 +883,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**SystemGroupData**](SystemGroupData.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 
 Update a System Group
 
-This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
+This endpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
 
 ### Example 
 ```python
@@ -926,7 +926,7 @@ id = 'id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupData() # SystemGroupData |  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Update a System Group
@@ -944,7 +944,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**SystemGroupData**](SystemGroupData.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

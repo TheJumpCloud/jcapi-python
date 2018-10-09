@@ -43,7 +43,7 @@ class PoliciesApi(object):
     def graph_policy_associations_list(self, policy_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Policy
-        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -75,7 +75,7 @@ class PoliciesApi(object):
     def graph_policy_associations_list_with_http_info(self, policy_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Policy
-        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -183,7 +183,7 @@ class PoliciesApi(object):
     def graph_policy_associations_post(self, policy_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Policy
-        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -213,7 +213,7 @@ class PoliciesApi(object):
     def graph_policy_associations_post_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Policy
-        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1319,152 +1319,7 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def policyresults_list(self, content_type, accept, **kwargs):
-        """
-        Lists all the policy results for an organization.
-        This endpoint returns all policies results for an Organization.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.policyresults_list(content_type, accept, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str content_type: (required)
-        :param str accept: (required)
-        :param list[str] aggregate:
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str x_org_id: 
-        :return: list[PolicyResult]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.policyresults_list_with_http_info(content_type, accept, **kwargs)
-        else:
-            (data) = self.policyresults_list_with_http_info(content_type, accept, **kwargs)
-            return data
-
-    def policyresults_list_with_http_info(self, content_type, accept, **kwargs):
-        """
-        Lists all the policy results for an organization.
-        This endpoint returns all policies results for an Organization.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.policyresults_list_with_http_info(content_type, accept, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str content_type: (required)
-        :param str accept: (required)
-        :param list[str] aggregate:
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
-        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
-        :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
-        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str x_org_id: 
-        :return: list[PolicyResult]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['content_type', 'accept', 'aggregate', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method policyresults_list" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'content_type' is set
-        if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list`")
-        # verify the required parameter 'accept' is set
-        if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list`")
-
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'aggregate' in params:
-            query_params.append(('aggregate', params['aggregate']))
-            collection_formats['aggregate'] = 'csv'
-        if 'fields' in params:
-            query_params.append(('fields', params['fields']))
-            collection_formats['fields'] = 'csv'
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
-            collection_formats['filter'] = 'csv'
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
-            collection_formats['sort'] = 'csv'
-
-        header_params = {}
-        if 'content_type' in params:
-            header_params['Content-Type'] = params['content_type']
-        if 'accept' in params:
-            header_params['Accept'] = params['accept']
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['x-api-key']
-
-        return self.api_client.call_api('/policyresults', 'GET',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='list[PolicyResult]',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def policyresults_list_0(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list(self, policy_id, content_type, accept, **kwargs):
         """
         Lists all the policy results of a policy.
         This endpoint returns all policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
@@ -1474,7 +1329,7 @@ class PoliciesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_0(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list(policy_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1494,12 +1349,12 @@ class PoliciesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.policyresults_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
+            return self.policyresults_list_with_http_info(policy_id, content_type, accept, **kwargs)
         else:
-            (data) = self.policyresults_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
+            (data) = self.policyresults_list_with_http_info(policy_id, content_type, accept, **kwargs)
             return data
 
-    def policyresults_list_0_with_http_info(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
         Lists all the policy results of a policy.
         This endpoint returns all policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
@@ -1509,7 +1364,7 @@ class PoliciesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policyresults_list_0_with_http_info(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_with_http_info(policy_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1539,19 +1394,19 @@ class PoliciesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method policyresults_list_0" % key
+                    " to method policyresults_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'policy_id' is set
         if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `policyresults_list_0`")
+            raise ValueError("Missing the required parameter `policy_id` when calling `policyresults_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list_0`")
+            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list_0`")
+            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list`")
 
 
         collection_formats = {}
@@ -1616,23 +1471,23 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def policystatuses_list(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list_0(self, content_type, accept, **kwargs):
         """
-        Lists the latest policy results of a policy.
-        This endpoint returns the latest policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+        Lists all the policy results for an organization.
+        This endpoint returns all policies results for an Organization.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policystatuses_list(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_0(content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] aggregate:
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
@@ -1645,28 +1500,28 @@ class PoliciesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.policystatuses_list_with_http_info(policy_id, content_type, accept, **kwargs)
+            return self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)
         else:
-            (data) = self.policystatuses_list_with_http_info(policy_id, content_type, accept, **kwargs)
+            (data) = self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)
             return data
 
-    def policystatuses_list_with_http_info(self, policy_id, content_type, accept, **kwargs):
+    def policyresults_list_0_with_http_info(self, content_type, accept, **kwargs):
         """
-        Lists the latest policy results of a policy.
-        This endpoint returns the latest policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+        Lists all the policy results for an organization.
+        This endpoint returns all policies results for an Organization.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policystatuses_list_with_http_info(policy_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policyresults_list_0_with_http_info(content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param list[str] aggregate:
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
@@ -1678,7 +1533,7 @@ class PoliciesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
+        all_params = ['content_type', 'accept', 'aggregate', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1689,28 +1544,26 @@ class PoliciesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method policystatuses_list" % key
+                    " to method policyresults_list_0" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'policy_id' is set
-        if ('policy_id' not in params) or (params['policy_id'] is None):
-            raise ValueError("Missing the required parameter `policy_id` when calling `policystatuses_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policystatuses_list`")
+            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list_0`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policystatuses_list`")
+            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list_0`")
 
 
         collection_formats = {}
 
         path_params = {}
-        if 'policy_id' in params:
-            path_params['policy_id'] = params['policy_id']
 
         query_params = []
+        if 'aggregate' in params:
+            query_params.append(('aggregate', params['aggregate']))
+            collection_formats['aggregate'] = 'csv'
         if 'fields' in params:
             query_params.append(('fields', params['fields']))
             collection_formats['fields'] = 'csv'
@@ -1748,7 +1601,7 @@ class PoliciesApi(object):
         # Authentication setting
         auth_settings = ['x-api-key']
 
-        return self.api_client.call_api('/policies/{policy_id}/policystatuses', 'GET',
+        return self.api_client.call_api('/policyresults', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -1763,7 +1616,7 @@ class PoliciesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def policystatuses_list_0(self, system_id, content_type, accept, **kwargs):
+    def policystatuses_list(self, system_id, content_type, accept, **kwargs):
         """
         List the policy statuses for a system
         This endpoint returns the policy results for a particular system.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
@@ -1773,7 +1626,7 @@ class PoliciesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policystatuses_list_0(system_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policystatuses_list(system_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1792,12 +1645,12 @@ class PoliciesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.policystatuses_list_0_with_http_info(system_id, content_type, accept, **kwargs)
+            return self.policystatuses_list_with_http_info(system_id, content_type, accept, **kwargs)
         else:
-            (data) = self.policystatuses_list_0_with_http_info(system_id, content_type, accept, **kwargs)
+            (data) = self.policystatuses_list_with_http_info(system_id, content_type, accept, **kwargs)
             return data
 
-    def policystatuses_list_0_with_http_info(self, system_id, content_type, accept, **kwargs):
+    def policystatuses_list_with_http_info(self, system_id, content_type, accept, **kwargs):
         """
         List the policy statuses for a system
         This endpoint returns the policy results for a particular system.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
@@ -1807,7 +1660,7 @@ class PoliciesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.policystatuses_list_0_with_http_info(system_id, content_type, accept, callback=callback_function)
+        >>> thread = api.policystatuses_list_with_http_info(system_id, content_type, accept, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -1836,19 +1689,19 @@ class PoliciesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method policystatuses_list_0" % key
+                    " to method policystatuses_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'system_id' is set
         if ('system_id' not in params) or (params['system_id'] is None):
-            raise ValueError("Missing the required parameter `system_id` when calling `policystatuses_list_0`")
+            raise ValueError("Missing the required parameter `system_id` when calling `policystatuses_list`")
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params) or (params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policystatuses_list_0`")
+            raise ValueError("Missing the required parameter `content_type` when calling `policystatuses_list`")
         # verify the required parameter 'accept' is set
         if ('accept' not in params) or (params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policystatuses_list_0`")
+            raise ValueError("Missing the required parameter `accept` when calling `policystatuses_list`")
 
 
         collection_formats = {}
@@ -1896,6 +1749,153 @@ class PoliciesApi(object):
         auth_settings = ['x-api-key']
 
         return self.api_client.call_api('/systems/{system_id}/policystatuses', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='list[PolicyResult]',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def policystatuses_list_0(self, policy_id, content_type, accept, **kwargs):
+        """
+        Lists the latest policy results of a policy.
+        This endpoint returns the latest policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.policystatuses_list_0(policy_id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
+        :return: list[PolicyResult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.policystatuses_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
+        else:
+            (data) = self.policystatuses_list_0_with_http_info(policy_id, content_type, accept, **kwargs)
+            return data
+
+    def policystatuses_list_0_with_http_info(self, policy_id, content_type, accept, **kwargs):
+        """
+        Lists the latest policy results of a policy.
+        This endpoint returns the latest policies results for a specific policy.   ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/policystatuses \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.policystatuses_list_0_with_http_info(policy_id, content_type, accept, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str policy_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
+        :return: list[PolicyResult]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method policystatuses_list_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'policy_id' is set
+        if ('policy_id' not in params) or (params['policy_id'] is None):
+            raise ValueError("Missing the required parameter `policy_id` when calling `policystatuses_list_0`")
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params) or (params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `policystatuses_list_0`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `policystatuses_list_0`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'policy_id' in params:
+            path_params['policy_id'] = params['policy_id']
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))
+            collection_formats['fields'] = 'csv'
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
+            collection_formats['filter'] = 'csv'
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['x-api-key']
+
+        return self.api_client.call_api('/policies/{policy_id}/policystatuses', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

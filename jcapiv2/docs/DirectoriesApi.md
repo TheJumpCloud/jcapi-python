@@ -35,7 +35,7 @@ fields = ['fields_example'] # list[str] | The comma separated fields included in
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List All Directories
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

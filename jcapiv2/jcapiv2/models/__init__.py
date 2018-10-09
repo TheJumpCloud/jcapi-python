@@ -22,6 +22,7 @@ from .authinput_basic import AuthinputBasic
 from .authinput_oauth import AuthinputOauth
 from .bulk_user_create import BulkUserCreate
 from .directory import Directory
+from .emailrequest import Emailrequest
 from .error import Error
 from .graph_connection import GraphConnection
 from .graph_management_req import GraphManagementReq
@@ -50,6 +51,7 @@ from .policy_template_with_details import PolicyTemplateWithDetails
 from .policy_value import PolicyValue
 from .policy_with_details import PolicyWithDetails
 from .samba_domain_input import SambaDomainInput
+from .sshkeylist import Sshkeylist
 from .system_graph_management_req import SystemGraphManagementReq
 from .system_graph_management_req_attributes import SystemGraphManagementReqAttributes
 from .system_graph_management_req_attributes_sudo import SystemGraphManagementReqAttributesSudo
@@ -57,6 +59,11 @@ from .system_group import SystemGroup
 from .system_group_data import SystemGroupData
 from .system_group_graph_management_req import SystemGroupGraphManagementReq
 from .system_group_members_req import SystemGroupMembersReq
+from .systemuser import Systemuser
+from .systemuser_attributes import SystemuserAttributes
+from .systemuserputpost import Systemuserputpost
+from .systemuserputpost_addresses import SystemuserputpostAddresses
+from .systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
 from .user_graph_management_req import UserGraphManagementReq
 from .user_group import UserGroup
 from .user_group_graph_management_req import UserGroupGraphManagementReq

@@ -37,7 +37,7 @@ ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP se
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Delete Samba Domain
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Unique identifier of the samba domain. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -98,7 +98,7 @@ ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP se
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get Samba Domain
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Unique identifier of the samba domain. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -163,7 +163,7 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Samba Domains
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -228,7 +228,7 @@ ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP se
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Create Samba Domain
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
  **body** | [**SambaDomainInput**](SambaDomainInput.md)|  | [optional] 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -290,7 +290,7 @@ id = 'id_example' # str | Unique identifier of the samba domain.
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Update Samba Domain
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
  **body** | [**SambaDomainInput**](SambaDomainInput.md)|  | [optional] 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

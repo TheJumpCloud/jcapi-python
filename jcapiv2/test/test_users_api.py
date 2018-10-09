@@ -119,6 +119,14 @@ class TestUsersApi(unittest.TestCase):
         """
         pass
 
+    def test_user_send_emails(self):
+        """
+        Test case for user_send_emails
+
+        Send User Emails
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()
