@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,61 +13,54 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.tags_api import TagsApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.tags_api import TagsApi
 
 
 class TestTagsApi(unittest.TestCase):
-    """ TagsApi unit test stubs """
+    """TagsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.tags_api.TagsApi()
+        self.api = jcapiv1.api.tags_api.TagsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_tags_delete(self):
-        """
-        Test case for tags_delete
+        """Test case for tags_delete
 
-        Delete a Tag
+        Delete a Tag  # noqa: E501
         """
         pass
 
     def test_tags_get(self):
-        """
-        Test case for tags_get
+        """Test case for tags_get
 
-        List a Tag
+        List a Tag  # noqa: E501
         """
         pass
 
     def test_tags_list(self):
-        """
-        Test case for tags_list
+        """Test case for tags_list
 
-        List All Tags
+        List All Tags  # noqa: E501
         """
         pass
 
     def test_tags_post(self):
-        """
-        Test case for tags_post
+        """Test case for tags_post
 
-        Create a Tag
+        Create a Tag  # noqa: E501
         """
         pass
 
     def test_tags_put(self):
-        """
-        Test case for tags_put
+        """Test case for tags_put
 
-        Update a Tag
+        Update a Tag  # noqa: E501
         """
         pass
 

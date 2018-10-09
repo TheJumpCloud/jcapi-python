@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.models.tagput import Tagput  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.models.tagput import Tagput
 
 
 class TestTagput(unittest.TestCase):
-    """ Tagput unit test stubs """
+    """Tagput unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestTagput(unittest.TestCase):
         pass
 
     def testTagput(self):
-        """
-        Test Tagput
-        """
+        """Test Tagput"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.tagput.Tagput()
+        # model = jcapiv1.models.tagput.Tagput()  # noqa: E501
         pass
 
 

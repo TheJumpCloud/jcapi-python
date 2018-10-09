@@ -1,9 +1,11 @@
 # coding: utf-8
 
+# flake8: noqa
+
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,75 +15,74 @@
 
 from __future__ import absolute_import
 
-# import models into sdk package
-from .models.application import Application
-from .models.application_config import ApplicationConfig
-from .models.application_config_constant_attributes import ApplicationConfigConstantAttributes
-from .models.application_config_constant_attributes_value import ApplicationConfigConstantAttributesValue
-from .models.application_config_database_attributes import ApplicationConfigDatabaseAttributes
-from .models.application_config_idp_entity_id import ApplicationConfigIdpEntityId
-from .models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
-from .models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
-from .models.applicationslist import Applicationslist
-from .models.body import Body
-from .models.command import Command
-from .models.commandfilereturn import Commandfilereturn
-from .models.commandfilereturn_results import CommandfilereturnResults
-from .models.commandresult import Commandresult
-from .models.commandresult_response import CommandresultResponse
-from .models.commandresult_response_data import CommandresultResponseData
-from .models.commandresultslist import Commandresultslist
-from .models.commandslist import Commandslist
-from .models.commandslist_results import CommandslistResults
-from .models.fde import Fde
-from .models.inline_response_400 import InlineResponse400
-from .models.organizationslist import Organizationslist
-from .models.organizationslist_results import OrganizationslistResults
-from .models.radiusserver import Radiusserver
-from .models.radiusserverpost import Radiusserverpost
-from .models.radiusserverput import Radiusserverput
-from .models.radiusserverslist import Radiusserverslist
-from .models.search import Search
-from .models.sshkeylist import Sshkeylist
-from .models.sshkeypost import Sshkeypost
-from .models.system import System
-from .models.system_network_interfaces import SystemNetworkInterfaces
-from .models.systemput import Systemput
-from .models.systemput_agent_bound_messages import SystemputAgentBoundMessages
-from .models.systemslist import Systemslist
-from .models.systemuser import Systemuser
-from .models.systemuserbinding import Systemuserbinding
-from .models.systemuserbindingsput import Systemuserbindingsput
-from .models.systemuserput import Systemuserput
-from .models.systemuserputpost import Systemuserputpost
-from .models.systemuserputpost_addresses import SystemuserputpostAddresses
-from .models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
-from .models.systemuserreturn import Systemuserreturn
-from .models.systemuserreturn_addresses import SystemuserreturnAddresses
-from .models.systemuserreturn_phone_numbers import SystemuserreturnPhoneNumbers
-from .models.systemuserslist import Systemuserslist
-from .models.tag import Tag
-from .models.tagpost import Tagpost
-from .models.tagput import Tagput
-from .models.tagslist import Tagslist
-from .models.usersystembinding import Usersystembinding
-from .models.usersystembindingsput import Usersystembindingsput
-
 # import apis into sdk package
-from .apis.applications_api import ApplicationsApi
-from .apis.command_results_api import CommandResultsApi
-from .apis.command_triggers_api import CommandTriggersApi
-from .apis.commands_api import CommandsApi
-from .apis.organizations_api import OrganizationsApi
-from .apis.radius_servers_api import RadiusServersApi
-from .apis.search_api import SearchApi
-from .apis.systems_api import SystemsApi
-from .apis.systemusers_api import SystemusersApi
-from .apis.tags_api import TagsApi
+from jcapiv1.api.applications_api import ApplicationsApi
+from jcapiv1.api.command_results_api import CommandResultsApi
+from jcapiv1.api.command_triggers_api import CommandTriggersApi
+from jcapiv1.api.commands_api import CommandsApi
+from jcapiv1.api.organizations_api import OrganizationsApi
+from jcapiv1.api.radius_servers_api import RadiusServersApi
+from jcapiv1.api.search_api import SearchApi
+from jcapiv1.api.systems_api import SystemsApi
+from jcapiv1.api.systemusers_api import SystemusersApi
+from jcapiv1.api.tags_api import TagsApi
 
 # import ApiClient
-from .api_client import ApiClient
-
-from .configuration import Configuration
-
-configuration = Configuration()
+from jcapiv1.api_client import ApiClient
+from jcapiv1.configuration import Configuration
+# import models into sdk package
+from jcapiv1.models.application import Application
+from jcapiv1.models.application_config import ApplicationConfig
+from jcapiv1.models.application_config_constant_attributes import ApplicationConfigConstantAttributes
+from jcapiv1.models.application_config_constant_attributes_value import ApplicationConfigConstantAttributesValue
+from jcapiv1.models.application_config_database_attributes import ApplicationConfigDatabaseAttributes
+from jcapiv1.models.application_config_idp_entity_id import ApplicationConfigIdpEntityId
+from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
+from jcapiv1.models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
+from jcapiv1.models.applicationslist import Applicationslist
+from jcapiv1.models.body import Body
+from jcapiv1.models.command import Command
+from jcapiv1.models.commandfilereturn import Commandfilereturn
+from jcapiv1.models.commandfilereturn_results import CommandfilereturnResults
+from jcapiv1.models.commandresult import Commandresult
+from jcapiv1.models.commandresult_response import CommandresultResponse
+from jcapiv1.models.commandresult_response_data import CommandresultResponseData
+from jcapiv1.models.commandresultslist import Commandresultslist
+from jcapiv1.models.commandslist import Commandslist
+from jcapiv1.models.commandslist_results import CommandslistResults
+from jcapiv1.models.fde import Fde
+from jcapiv1.models.inline_response_400 import InlineResponse400
+from jcapiv1.models.organizationslist import Organizationslist
+from jcapiv1.models.organizationslist_results import OrganizationslistResults
+from jcapiv1.models.radiusserver import Radiusserver
+from jcapiv1.models.radiusserverpost import Radiusserverpost
+from jcapiv1.models.radiusserverput import Radiusserverput
+from jcapiv1.models.radiusserverslist import Radiusserverslist
+from jcapiv1.models.search import Search
+from jcapiv1.models.sshkeylist import Sshkeylist
+from jcapiv1.models.sshkeypost import Sshkeypost
+from jcapiv1.models.system import System
+from jcapiv1.models.system_network_interfaces import SystemNetworkInterfaces
+from jcapiv1.models.systemput import Systemput
+from jcapiv1.models.systemput_agent_bound_messages import SystemputAgentBoundMessages
+from jcapiv1.models.systemslist import Systemslist
+from jcapiv1.models.systemuser import Systemuser
+from jcapiv1.models.systemuser_attributes import SystemuserAttributes
+from jcapiv1.models.systemuserbinding import Systemuserbinding
+from jcapiv1.models.systemuserbindingsput import Systemuserbindingsput
+from jcapiv1.models.systemuserput import Systemuserput
+from jcapiv1.models.systemuserput_addresses import SystemuserputAddresses
+from jcapiv1.models.systemuserput_phone_numbers import SystemuserputPhoneNumbers
+from jcapiv1.models.systemuserputpost import Systemuserputpost
+from jcapiv1.models.systemuserputpost_addresses import SystemuserputpostAddresses
+from jcapiv1.models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
+from jcapiv1.models.systemuserreturn import Systemuserreturn
+from jcapiv1.models.systemuserreturn_addresses import SystemuserreturnAddresses
+from jcapiv1.models.systemuserreturn_phone_numbers import SystemuserreturnPhoneNumbers
+from jcapiv1.models.systemuserslist import Systemuserslist
+from jcapiv1.models.tag import Tag
+from jcapiv1.models.tagpost import Tagpost
+from jcapiv1.models.tagput import Tagput
+from jcapiv1.models.tagslist import Tagslist
+from jcapiv1.models.usersystembinding import Usersystembinding
+from jcapiv1.models.usersystembindingsput import Usersystembindingsput

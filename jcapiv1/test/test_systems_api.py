@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,69 +13,61 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.systems_api import SystemsApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.systems_api import SystemsApi
 
 
 class TestSystemsApi(unittest.TestCase):
-    """ SystemsApi unit test stubs """
+    """SystemsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.systems_api.SystemsApi()
+        self.api = jcapiv1.api.systems_api.SystemsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_systems_delete(self):
-        """
-        Test case for systems_delete
+        """Test case for systems_delete
 
-        Delete a System
+        Delete a System  # noqa: E501
         """
         pass
 
     def test_systems_get(self):
-        """
-        Test case for systems_get
+        """Test case for systems_get
 
-        List an individual system
+        List an individual system  # noqa: E501
         """
         pass
 
     def test_systems_list(self):
-        """
-        Test case for systems_list
+        """Test case for systems_list
 
-        List All Systems
+        List All Systems  # noqa: E501
         """
         pass
 
     def test_systems_put(self):
-        """
-        Test case for systems_put
+        """Test case for systems_put
 
-        Update a system
+        Update a system  # noqa: E501
         """
         pass
 
     def test_systems_systemusers_binding_list(self):
-        """
-        Test case for systems_systemusers_binding_list
+        """Test case for systems_systemusers_binding_list
 
-        List system user bindings
+        List system user bindings  # noqa: E501
         """
         pass
 
     def test_systems_systemusers_binding_put(self):
-        """
-        Test case for systems_systemusers_binding_put
+        """Test case for systems_systemusers_binding_put
 
-        Update a system's or user's binding
+        Update a system's or user's binding  # noqa: E501
         """
         pass
 

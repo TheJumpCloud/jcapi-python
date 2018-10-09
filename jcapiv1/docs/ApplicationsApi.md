@@ -14,7 +14,7 @@ Applications
 
 The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -23,21 +23,22 @@ from jcapiv1.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv1.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv1.ApplicationsApi()
+api_instance = jcapiv1.ApplicationsApi(jcapiv1.ApiClient(configuration))
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-fields = 'fields_example' # str | The comma separated fileds included in the returned records. If omitted the default list of fields will be returned. (optional)
+fields = 'fields_example' # str | The comma separated fields included in the returned records. If omitted the default list of fields will be returned. (optional)
 limit = 56 # int | The number of records to return at once. (optional)
 skip = 56 # int | The offset into the records to return. (optional)
 sort = 'The comma separated fields used to sort the collection. Default sort is ascending, prefix with - to sort descending.' # str |  (optional) (default to The comma separated fields used to sort the collection. Default sort is ascending, prefix with - to sort descending.)
-x_org_id = '<<your org id>>' # str |  (optional) (default to <<your org id>>)
+x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Applications
     api_response = api_instance.applications_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
@@ -51,11 +52,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **fields** | **str**| The comma separated fileds included in the returned records. If omitted the default list of fields will be returned. | [optional] 
+ **fields** | **str**| The comma separated fields included in the returned records. If omitted the default list of fields will be returned. | [optional] 
  **limit** | **int**| The number of records to return at once. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] 
  **sort** | **str**|  | [optional] [default to The comma separated fields used to sort the collection. Default sort is ascending, prefix with - to sort descending.]
- **x_org_id** | **str**|  | [optional] [default to &lt;&lt;your org id&gt;&gt;]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

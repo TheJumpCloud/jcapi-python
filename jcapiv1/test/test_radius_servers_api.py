@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,45 +13,40 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.radius_servers_api import RadiusServersApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.radius_servers_api import RadiusServersApi
 
 
 class TestRadiusServersApi(unittest.TestCase):
-    """ RadiusServersApi unit test stubs """
+    """RadiusServersApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.radius_servers_api.RadiusServersApi()
+        self.api = jcapiv1.api.radius_servers_api.RadiusServersApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_radius_servers_list(self):
-        """
-        Test case for radius_servers_list
+        """Test case for radius_servers_list
 
-        List Radius Servers
+        List Radius Servers  # noqa: E501
         """
         pass
 
     def test_radius_servers_post(self):
-        """
-        Test case for radius_servers_post
+        """Test case for radius_servers_post
 
-        Create a Radius Server
+        Create a Radius Server  # noqa: E501
         """
         pass
 
     def test_radius_servers_put(self):
-        """
-        Test case for radius_servers_put
+        """Test case for radius_servers_put
 
-        Update Radius Servers
+        Update Radius Servers  # noqa: E501
         """
         pass
 

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,29 +13,26 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.applications_api import ApplicationsApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.applications_api import ApplicationsApi
 
 
 class TestApplicationsApi(unittest.TestCase):
-    """ ApplicationsApi unit test stubs """
+    """ApplicationsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.applications_api.ApplicationsApi()
+        self.api = jcapiv1.api.applications_api.ApplicationsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_applications_list(self):
-        """
-        Test case for applications_list
+        """Test case for applications_list
 
-        Applications
+        Applications  # noqa: E501
         """
         pass
 

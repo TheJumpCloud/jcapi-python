@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.models.systemslist import Systemslist  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.models.systemslist import Systemslist
 
 
 class TestSystemslist(unittest.TestCase):
-    """ Systemslist unit test stubs """
+    """Systemslist unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestSystemslist(unittest.TestCase):
         pass
 
     def testSystemslist(self):
-        """
-        Test Systemslist
-        """
+        """Test Systemslist"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.systemslist.Systemslist()
+        # model = jcapiv1.models.systemslist.Systemslist()  # noqa: E501
         pass
 
 

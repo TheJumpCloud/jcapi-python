@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,109 +13,96 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.systemusers_api import SystemusersApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.systemusers_api import SystemusersApi
 
 
 class TestSystemusersApi(unittest.TestCase):
-    """ SystemusersApi unit test stubs """
+    """SystemusersApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.systemusers_api.SystemusersApi()
+        self.api = jcapiv1.api.systemusers_api.SystemusersApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_sshkey_delete(self):
-        """
-        Test case for sshkey_delete
+        """Test case for sshkey_delete
 
-        Delete a system user's Public SSH Keys
+        Delete a system user's Public SSH Keys  # noqa: E501
         """
         pass
 
     def test_sshkey_list(self):
-        """
-        Test case for sshkey_list
+        """Test case for sshkey_list
 
-        List a system user's public SSH keys
+        List a system user's public SSH keys  # noqa: E501
         """
         pass
 
     def test_sshkey_post(self):
-        """
-        Test case for sshkey_post
+        """Test case for sshkey_post
 
-        Create a system user's Public SSH Key
+        Create a system user's Public SSH Key  # noqa: E501
         """
         pass
 
     def test_systemusers_delete(self):
-        """
-        Test case for systemusers_delete
+        """Test case for systemusers_delete
 
-        Delete a system user
+        Delete a system user  # noqa: E501
         """
         pass
 
     def test_systemusers_get(self):
-        """
-        Test case for systemusers_get
+        """Test case for systemusers_get
 
-        List a system user
+        List a system user  # noqa: E501
         """
         pass
 
     def test_systemusers_list(self):
-        """
-        Test case for systemusers_list
+        """Test case for systemusers_list
 
-        List all system users
+        List all system users  # noqa: E501
         """
         pass
 
     def test_systemusers_post(self):
-        """
-        Test case for systemusers_post
+        """Test case for systemusers_post
 
-        Create a system user
+        Create a system user  # noqa: E501
         """
         pass
 
     def test_systemusers_put(self):
-        """
-        Test case for systemusers_put
+        """Test case for systemusers_put
 
-        Update a system user
+        Update a system user  # noqa: E501
         """
         pass
 
     def test_systemusers_resetmfa(self):
-        """
-        Test case for systemusers_resetmfa
+        """Test case for systemusers_resetmfa
 
-        Reset a system user's MFA token
+        Reset a system user's MFA token  # noqa: E501
         """
         pass
 
     def test_systemusers_systems_binding_list(self):
-        """
-        Test case for systemusers_systems_binding_list
+        """Test case for systemusers_systems_binding_list
 
-        List system user binding
+        List system user binding  # noqa: E501
         """
         pass
 
     def test_systemusers_systems_binding_put(self):
-        """
-        Test case for systemusers_systems_binding_put
+        """Test case for systemusers_systems_binding_put
 
-        Update a system user binding
+        Update a system user binding  # noqa: E501
         """
         pass
 
