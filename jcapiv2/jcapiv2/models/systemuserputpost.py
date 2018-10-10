@@ -676,7 +676,6 @@ class Systemuserputpost(object):
     def addresses(self):
         """
         Gets the addresses of this Systemuserputpost.
-        
 
         :return: The addresses of this Systemuserputpost.
         :rtype: list[SystemuserputpostAddresses]
@@ -687,7 +686,6 @@ class Systemuserputpost(object):
     def addresses(self, addresses):
         """
         Sets the addresses of this Systemuserputpost.
-        
 
         :param addresses: The addresses of this Systemuserputpost.
         :type: list[SystemuserputpostAddresses]
@@ -741,7 +739,6 @@ class Systemuserputpost(object):
     def phone_numbers(self):
         """
         Gets the phone_numbers of this Systemuserputpost.
-        
 
         :return: The phone_numbers of this Systemuserputpost.
         :rtype: list[SystemuserputpostPhoneNumbers]
@@ -752,7 +749,6 @@ class Systemuserputpost(object):
     def phone_numbers(self, phone_numbers):
         """
         Sets the phone_numbers of this Systemuserputpost.
-        
 
         :param phone_numbers: The phone_numbers of this Systemuserputpost.
         :type: list[SystemuserputpostPhoneNumbers]
