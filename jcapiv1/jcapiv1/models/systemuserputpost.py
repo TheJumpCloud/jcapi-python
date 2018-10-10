@@ -678,7 +678,6 @@ class Systemuserputpost(object):
     def addresses(self):
         """Gets the addresses of this Systemuserputpost.  # noqa: E501
 
-          # noqa: E501
 
         :return: The addresses of this Systemuserputpost.  # noqa: E501
         :rtype: list[SystemuserputpostAddresses]
@@ -689,7 +688,6 @@ class Systemuserputpost(object):
     def addresses(self, addresses):
         """Sets the addresses of this Systemuserputpost.
 
-          # noqa: E501
 
         :param addresses: The addresses of this Systemuserputpost.  # noqa: E501
         :type: list[SystemuserputpostAddresses]
@@ -743,7 +741,6 @@ class Systemuserputpost(object):
     def phone_numbers(self):
         """Gets the phone_numbers of this Systemuserputpost.  # noqa: E501
 
-          # noqa: E501
 
         :return: The phone_numbers of this Systemuserputpost.  # noqa: E501
         :rtype: list[SystemuserputpostPhoneNumbers]
@@ -754,7 +751,6 @@ class Systemuserputpost(object):
     def phone_numbers(self, phone_numbers):
         """Sets the phone_numbers of this Systemuserputpost.
 
-          # noqa: E501
 
         :param phone_numbers: The phone_numbers of this Systemuserputpost.  # noqa: E501
         :type: list[SystemuserputpostPhoneNumbers]

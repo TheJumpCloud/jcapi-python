@@ -728,7 +728,6 @@ class Systemuserput(object):
     def phone_numbers(self):
         """Gets the phone_numbers of this Systemuserput.  # noqa: E501
 
-          # noqa: E501
 
         :return: The phone_numbers of this Systemuserput.  # noqa: E501
         :rtype: list[SystemuserputPhoneNumbers]
@@ -739,7 +738,6 @@ class Systemuserput(object):
     def phone_numbers(self, phone_numbers):
         """Sets the phone_numbers of this Systemuserput.
 
-          # noqa: E501
 
         :param phone_numbers: The phone_numbers of this Systemuserput.  # noqa: E501
         :type: list[SystemuserputPhoneNumbers]

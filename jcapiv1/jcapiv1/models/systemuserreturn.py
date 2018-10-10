@@ -839,7 +839,6 @@ class Systemuserreturn(object):
     def addresses(self):
         """Gets the addresses of this Systemuserreturn.  # noqa: E501
 
-          # noqa: E501
 
         :return: The addresses of this Systemuserreturn.  # noqa: E501
         :rtype: list[SystemuserreturnAddresses]
@@ -850,7 +849,6 @@ class Systemuserreturn(object):
     def addresses(self, addresses):
         """Sets the addresses of this Systemuserreturn.
 
-          # noqa: E501
 
         :param addresses: The addresses of this Systemuserreturn.  # noqa: E501
         :type: list[SystemuserreturnAddresses]
@@ -908,7 +906,6 @@ class Systemuserreturn(object):
     def phone_numbers(self):
         """Gets the phone_numbers of this Systemuserreturn.  # noqa: E501
 
-          # noqa: E501
 
         :return: The phone_numbers of this Systemuserreturn.  # noqa: E501
         :rtype: list[SystemuserreturnPhoneNumbers]
@@ -919,7 +916,6 @@ class Systemuserreturn(object):
     def phone_numbers(self, phone_numbers):
         """Sets the phone_numbers of this Systemuserreturn.
 
-          # noqa: E501
 
         :param phone_numbers: The phone_numbers of this Systemuserreturn.  # noqa: E501
         :type: list[SystemuserreturnPhoneNumbers]
