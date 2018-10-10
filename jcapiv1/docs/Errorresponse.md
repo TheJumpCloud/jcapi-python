@@ -1,4 +1,4 @@
-# InlineResponse400
+# Errorresponse
 
 ## Properties
 Name | Type | Description | Notes

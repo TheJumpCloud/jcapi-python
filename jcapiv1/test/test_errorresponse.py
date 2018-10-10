@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv1
-from jcapiv1.models.inline_response_400 import InlineResponse400  # noqa: E501
+from jcapiv1.models.errorresponse import Errorresponse  # noqa: E501
 from jcapiv1.rest import ApiException
 
 
-class TestInlineResponse400(unittest.TestCase):
-    """InlineResponse400 unit test stubs"""
+class TestErrorresponse(unittest.TestCase):
+    """Errorresponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestInlineResponse400(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse400(self):
-        """Test InlineResponse400"""
+    def testErrorresponse(self):
+        """Test Errorresponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv1.models.inline_response_400.InlineResponse400()  # noqa: E501
+        # model = jcapiv1.models.errorresponse.Errorresponse()  # noqa: E501
         pass
 
 
