@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **systems_get_fde_key**
-> InlineResponse200 systems_get_fde_key(system_id)
+> Systemfdekey systems_get_fde_key(system_id)
 
 Get System FDE Key
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**Systemfdekey**](Systemfdekey.md)
 
 ### Authorization
 

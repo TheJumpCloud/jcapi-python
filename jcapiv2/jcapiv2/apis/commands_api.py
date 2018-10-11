@@ -199,7 +199,7 @@ class CommandsApi(object):
         :param str accept: (required)
         :param GraphManagementReq body:
         :param str x_org_id: 
-        :return: InlineResponse204
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -229,7 +229,7 @@ class CommandsApi(object):
         :param str accept: (required)
         :param GraphManagementReq body:
         :param str x_org_id: 
-        :return: InlineResponse204
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -300,7 +300,7 @@ class CommandsApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='InlineResponse204',
+                                        response_type=None,
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

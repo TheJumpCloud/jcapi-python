@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv2
 from jcapiv2.rest import ApiException
-from jcapiv2.models.inline_response_204 import InlineResponse204
+from jcapiv2.models.errorresponse import Errorresponse
 
 
-class TestInlineResponse204(unittest.TestCase):
-    """ InlineResponse204 unit test stubs """
+class TestErrorresponse(unittest.TestCase):
+    """ Errorresponse unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestInlineResponse204(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse204(self):
+    def testErrorresponse(self):
         """
-        Test InlineResponse204
+        Test Errorresponse
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.inline_response_204.InlineResponse204()
+        #model = jcapiv2.models.errorresponse.Errorresponse()
         pass
 
 

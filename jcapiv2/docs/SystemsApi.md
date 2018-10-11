@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_get_fde_key**
-> InlineResponse200 systems_get_fde_key(system_id)
+> Systemfdekey systems_get_fde_key(system_id)
 
 Get System FDE Key
 
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**Systemfdekey**](Systemfdekey.md)
 
 ### Authorization
 

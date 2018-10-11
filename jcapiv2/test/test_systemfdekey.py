@@ -19,11 +19,11 @@ import unittest
 
 import jcapiv2
 from jcapiv2.rest import ApiException
-from jcapiv2.models.inline_response_400 import InlineResponse400
+from jcapiv2.models.systemfdekey import Systemfdekey
 
 
-class TestInlineResponse400(unittest.TestCase):
-    """ InlineResponse400 unit test stubs """
+class TestSystemfdekey(unittest.TestCase):
+    """ Systemfdekey unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestInlineResponse400(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse400(self):
+    def testSystemfdekey(self):
         """
-        Test InlineResponse400
+        Test Systemfdekey
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.inline_response_400.InlineResponse400()
+        #model = jcapiv2.models.systemfdekey.Systemfdekey()
         pass
 
 

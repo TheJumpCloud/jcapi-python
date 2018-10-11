@@ -586,7 +586,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_associations_post**
-> InlineResponse204 graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
+> graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a Command
 
@@ -615,8 +615,7 @@ x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a Command
-    api_response = api_instance.graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
-    pprint(api_response)
+    api_instance.graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_command_associations_post: %s\n" % e)
 ```
@@ -633,7 +632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse204**](InlineResponse204.md)
+void (empty response body)
 
 ### Authorization
 
