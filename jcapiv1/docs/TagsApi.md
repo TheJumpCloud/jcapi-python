@@ -18,7 +18,7 @@ Delete a Tag
 
 Hidden as Tags is deprecated  Delete a Tag.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -27,17 +27,18 @@ from jcapiv1.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv1.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv1.TagsApi()
+api_instance = jcapiv1.TagsApi(jcapiv1.ApiClient(configuration))
 name = 'name_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 
-try: 
+try:
     # Delete a Tag
     api_response = api_instance.tags_delete(name, content_type, accept)
     pprint(api_response)
@@ -75,7 +76,7 @@ List a Tag
 
 Hidden as Tags is deprecated  Returns a specific tag.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -84,12 +85,13 @@ from jcapiv1.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv1.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv1.TagsApi()
+api_instance = jcapiv1.TagsApi(jcapiv1.ApiClient(configuration))
 name = 'name_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -98,7 +100,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
 
-try: 
+try:
     # List a Tag
     api_response = api_instance.tags_get(name, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
     pprint(api_response)
@@ -140,7 +142,7 @@ List All Tags
 
 Hidden as Tags is deprecated  Returns all Tags.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -149,12 +151,13 @@ from jcapiv1.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv1.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv1.TagsApi()
+api_instance = jcapiv1.TagsApi(jcapiv1.ApiClient(configuration))
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
@@ -162,7 +165,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
 
-try: 
+try:
     # List All Tags
     api_response = api_instance.tags_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
     pprint(api_response)
@@ -203,7 +206,7 @@ Create a Tag
 
 Hidden as Tags is deprecated  Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -212,17 +215,18 @@ from jcapiv1.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv1.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv1.TagsApi()
+api_instance = jcapiv1.TagsApi(jcapiv1.ApiClient(configuration))
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Tagpost() # Tagpost |  (optional)
 
-try: 
+try:
     # Create a Tag
     api_response = api_instance.tags_post(content_type, accept, body=body)
     pprint(api_response)
@@ -260,7 +264,7 @@ Update a Tag
 
 Hidden as Tags is deprecated  Update a specific tag.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -269,18 +273,19 @@ from jcapiv1.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv1.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv1.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv1.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv1.TagsApi()
+api_instance = jcapiv1.TagsApi(jcapiv1.ApiClient(configuration))
 name = 'name_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Tagput() # Tagput |  (optional)
 
-try: 
+try:
     # Update a Tag
     api_response = api_instance.tags_put(name, content_type, accept, body=body)
     pprint(api_response)

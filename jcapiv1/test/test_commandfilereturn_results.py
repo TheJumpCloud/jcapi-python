@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.models.commandfilereturn_results import CommandfilereturnResults  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.models.commandfilereturn_results import CommandfilereturnResults
 
 
 class TestCommandfilereturnResults(unittest.TestCase):
-    """ CommandfilereturnResults unit test stubs """
+    """CommandfilereturnResults unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestCommandfilereturnResults(unittest.TestCase):
         pass
 
     def testCommandfilereturnResults(self):
-        """
-        Test CommandfilereturnResults
-        """
+        """Test CommandfilereturnResults"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.commandfilereturn_results.CommandfilereturnResults()
+        # model = jcapiv1.models.commandfilereturn_results.CommandfilereturnResults()  # noqa: E501
         pass
 
 

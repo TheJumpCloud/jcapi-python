@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
 
 
 class TestApplicationConfigIdpEntityIdTooltip(unittest.TestCase):
-    """ ApplicationConfigIdpEntityIdTooltip unit test stubs """
+    """ApplicationConfigIdpEntityIdTooltip unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestApplicationConfigIdpEntityIdTooltip(unittest.TestCase):
         pass
 
     def testApplicationConfigIdpEntityIdTooltip(self):
-        """
-        Test ApplicationConfigIdpEntityIdTooltip
-        """
+        """Test ApplicationConfigIdpEntityIdTooltip"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv1.models.application_config_idp_entity_id_tooltip.ApplicationConfigIdpEntityIdTooltip()
+        # model = jcapiv1.models.application_config_idp_entity_id_tooltip.ApplicationConfigIdpEntityIdTooltip()  # noqa: E501
         pass
 
 
