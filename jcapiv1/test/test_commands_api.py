@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,69 +13,61 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.commands_api import CommandsApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.commands_api import CommandsApi
 
 
 class TestCommandsApi(unittest.TestCase):
-    """ CommandsApi unit test stubs """
+    """CommandsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.commands_api.CommandsApi()
+        self.api = jcapiv1.api.commands_api.CommandsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_command_file_get(self):
-        """
-        Test case for command_file_get
+        """Test case for command_file_get
 
-        Get a Command File
+        Get a Command File  # noqa: E501
         """
         pass
 
     def test_commands_delete(self):
-        """
-        Test case for commands_delete
+        """Test case for commands_delete
 
-        Delete a Command
+        Delete a Command  # noqa: E501
         """
         pass
 
     def test_commands_get(self):
-        """
-        Test case for commands_get
+        """Test case for commands_get
 
-        List an individual Command
+        List an individual Command  # noqa: E501
         """
         pass
 
     def test_commands_list(self):
-        """
-        Test case for commands_list
+        """Test case for commands_list
 
-        List All Commands
+        List All Commands  # noqa: E501
         """
         pass
 
     def test_commands_post(self):
-        """
-        Test case for commands_post
+        """Test case for commands_post
 
-        Create A Command
+        Create A Command  # noqa: E501
         """
         pass
 
     def test_commands_put(self):
-        """
-        Test case for commands_put
+        """Test case for commands_put
 
-        Update a Command
+        Update a Command  # noqa: E501
         """
         pass
 

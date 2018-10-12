@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -11,11 +11,10 @@
 """
 
 
-import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "jcapiv1"
-VERSION = "1.0.3"
+VERSION = "1.1.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -36,6 +35,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    V1 &amp; V2 versions of JumpCloud&#39;s API. The previous version of JumpCloud&#39;s API. This set of endpoints allows JumpCloud customers to manage commands, systems, &amp; system users.
+     JumpCloud&#39;s V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, &amp; system users.  # noqa: E501
     """
 )

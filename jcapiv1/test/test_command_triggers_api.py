@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The previous version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.
+     JumpCloud's V1 API. This set of endpoints allows JumpCloud customers to manage commands, systems, & system users.  # noqa: E501
 
     OpenAPI spec version: 1.0
     
@@ -13,29 +13,26 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv1
+from jcapiv1.api.command_triggers_api import CommandTriggersApi  # noqa: E501
 from jcapiv1.rest import ApiException
-from jcapiv1.apis.command_triggers_api import CommandTriggersApi
 
 
 class TestCommandTriggersApi(unittest.TestCase):
-    """ CommandTriggersApi unit test stubs """
+    """CommandTriggersApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv1.apis.command_triggers_api.CommandTriggersApi()
+        self.api = jcapiv1.api.command_triggers_api.CommandTriggersApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_command_trigger_webhook_post(self):
-        """
-        Test case for command_trigger_webhook_post
+        """Test case for command_trigger_webhook_post
 
-        Launch a command via a Trigger
+        Launch a command via a Trigger  # noqa: E501
         """
         pass
 

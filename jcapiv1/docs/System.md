@@ -25,9 +25,9 @@ Name | Type | Description | Notes
 **agent_version** | **str** |  | [optional] 
 **connection_history** | **list[object]** |  | [optional] 
 **ssh_root_enabled** | **bool** |  | [optional] 
-**id** | **str** |  | [optional] 
 **tags** | **list[str]** |  | [optional] 
 **id** | **str** |  | [optional] 
+**fde** | [**Fde**](Fde.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
