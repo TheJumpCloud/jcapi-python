@@ -234,7 +234,7 @@ class CommandslistResults(object):
     def trigger(self):
         """Gets the trigger of this CommandslistResults.  # noqa: E501
 
-        trigger to execute command.  # noqa: E501
+        Trigger to execute command.  # noqa: E501
 
         :return: The trigger of this CommandslistResults.  # noqa: E501
         :rtype: str
@@ -245,7 +245,7 @@ class CommandslistResults(object):
     def trigger(self, trigger):
         """Sets the trigger of this CommandslistResults.
 
-        trigger to execute command.  # noqa: E501
+        Trigger to execute command.  # noqa: E501
 
         :param trigger: The trigger of this CommandslistResults.  # noqa: E501
         :type: str

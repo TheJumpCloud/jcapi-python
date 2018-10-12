@@ -15,7 +15,7 @@ Get a specific Policy Template
 
 This endpoint returns a specific policy template.  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -24,18 +24,19 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.PolicytemplatesApi()
+api_instance = jcapiv2.PolicytemplatesApi(jcapiv2.ApiClient(configuration))
 id = 'id_example' # str | ObjectID of the Policy Template.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Get a specific Policy Template
     api_response = api_instance.policytemplates_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
@@ -74,7 +75,7 @@ Lists all of the Policy Templates
 
 This endpoint returns all policy templates.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policytemplates \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -83,12 +84,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.PolicytemplatesApi()
+api_instance = jcapiv2.PolicytemplatesApi(jcapiv2.ApiClient(configuration))
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted the default list of fields will be returned.  (optional)
@@ -98,7 +100,7 @@ skip = 0 # int | The offset into the records to return. (optional) (default to 0
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Lists all of the Policy Templates
     api_response = api_instance.policytemplates_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)

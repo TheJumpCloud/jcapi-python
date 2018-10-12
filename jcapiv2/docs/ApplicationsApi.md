@@ -17,7 +17,7 @@ List the associations of an Application
 
 This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -26,12 +26,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.ApplicationsApi()
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
 targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
@@ -40,7 +41,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List the associations of an Application
     api_response = api_instance.graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
@@ -82,7 +83,7 @@ Manage the associations of an Application
 
 This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -91,19 +92,20 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.ApplicationsApi()
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Manage the associations of an Application
     api_instance.graph_application_associations_post(application_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
@@ -142,7 +144,7 @@ List the Users bound to an Application
 
 This endpoint will return all Users bound to an Application, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Application to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this Application.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/applications/{Application_ID}/users \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -151,12 +153,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.ApplicationsApi()
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -164,7 +167,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List the Users bound to an Application
     api_response = api_instance.graph_application_traverse_user(application_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
@@ -205,7 +208,7 @@ List the User Groups bound to an Application
 
 This endpoint will return all Users Groups bound to an Application, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates  each path from this Application to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this Application.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/applications/{Application_ID}/usergroups \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -214,12 +217,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.ApplicationsApi()
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -227,7 +231,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List the User Groups bound to an Application
     api_response = api_instance.graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)

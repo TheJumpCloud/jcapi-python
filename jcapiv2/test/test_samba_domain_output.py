@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.models.samba_domain_output import SambaDomainOutput  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.models.samba_domain_output import SambaDomainOutput
 
 
 class TestSambaDomainOutput(unittest.TestCase):
-    """ SambaDomainOutput unit test stubs """
+    """SambaDomainOutput unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestSambaDomainOutput(unittest.TestCase):
         pass
 
     def testSambaDomainOutput(self):
-        """
-        Test SambaDomainOutput
-        """
+        """Test SambaDomainOutput"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.samba_domain_output.SambaDomainOutput()
+        # model = jcapiv2.models.samba_domain_output.SambaDomainOutput()  # noqa: E501
         pass
 
 

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.models.workday_input import WorkdayInput  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.models.workday_input import WorkdayInput
 
 
 class TestWorkdayInput(unittest.TestCase):
-    """ WorkdayInput unit test stubs """
+    """WorkdayInput unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestWorkdayInput(unittest.TestCase):
         pass
 
     def testWorkdayInput(self):
-        """
-        Test WorkdayInput
-        """
+        """Test WorkdayInput"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.workday_input.WorkdayInput()
+        # model = jcapiv2.models.workday_input.WorkdayInput()  # noqa: E501
         pass
 
 

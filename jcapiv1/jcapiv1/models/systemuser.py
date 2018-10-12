@@ -17,7 +17,6 @@ import re  # noqa: F401
 import six
 
 from jcapiv1.models.sshkeylist import Sshkeylist  # noqa: F401,E501
-from jcapiv1.models.systemuser_attributes import SystemuserAttributes  # noqa: F401,E501
 
 
 class Systemuser(object):
@@ -58,7 +57,7 @@ class Systemuser(object):
         'associated_tag_count': 'int',
         'totp_enabled': 'bool',
         'password_expiration_date': 'str',
-        'attributes': 'list[SystemuserAttributes]',
+        'attributes': 'list[object]',
         'created': 'str',
         'samba_service_user': 'bool',
         'password_never_expires': 'bool',
@@ -764,7 +763,7 @@ class Systemuser(object):
 
 
         :return: The attributes of this Systemuser.  # noqa: E501
-        :rtype: list[SystemuserAttributes]
+        :rtype: list[object]
         """
         return self._attributes
 
@@ -774,7 +773,7 @@ class Systemuser(object):
 
 
         :param attributes: The attributes of this Systemuser.  # noqa: E501
-        :type: list[SystemuserAttributes]
+        :type: list[object]
         """
 
         self._attributes = attributes

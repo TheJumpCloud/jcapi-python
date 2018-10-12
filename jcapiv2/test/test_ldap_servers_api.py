@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,69 +13,61 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.ldap_servers_api import LDAPServersApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.ldap_servers_api import LDAPServersApi
 
 
 class TestLDAPServersApi(unittest.TestCase):
-    """ LDAPServersApi unit test stubs """
+    """LDAPServersApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.ldap_servers_api.LDAPServersApi()
+        self.api = jcapiv2.api.ldap_servers_api.LDAPServersApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_graph_ldap_server_associations_list(self):
-        """
-        Test case for graph_ldap_server_associations_list
+        """Test case for graph_ldap_server_associations_list
 
-        List the associations of a LDAP Server
+        List the associations of a LDAP Server  # noqa: E501
         """
         pass
 
     def test_graph_ldap_server_associations_post(self):
-        """
-        Test case for graph_ldap_server_associations_post
+        """Test case for graph_ldap_server_associations_post
 
-        Manage the associations of a LDAP Server
+        Manage the associations of a LDAP Server  # noqa: E501
         """
         pass
 
     def test_graph_ldap_server_traverse_user(self):
-        """
-        Test case for graph_ldap_server_traverse_user
+        """Test case for graph_ldap_server_traverse_user
 
-        List the Users bound to a LDAP Server
+        List the Users bound to a LDAP Server  # noqa: E501
         """
         pass
 
     def test_graph_ldap_server_traverse_user_group(self):
-        """
-        Test case for graph_ldap_server_traverse_user_group
+        """Test case for graph_ldap_server_traverse_user_group
 
-        List the User Groups bound to a LDAP Server
+        List the User Groups bound to a LDAP Server  # noqa: E501
         """
         pass
 
     def test_ldapservers_get(self):
-        """
-        Test case for ldapservers_get
+        """Test case for ldapservers_get
 
-        Get LDAP Server
+        Get LDAP Server  # noqa: E501
         """
         pass
 
     def test_ldapservers_list(self):
-        """
-        Test case for ldapservers_list
+        """Test case for ldapservers_list
 
-        List LDAP Servers
+        List LDAP Servers  # noqa: E501
         """
         pass
 

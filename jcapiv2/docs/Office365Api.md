@@ -17,7 +17,7 @@ List the associations of an Office 365 instance
 
 This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -26,12 +26,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.Office365Api()
+api_instance = jcapiv2.Office365Api(jcapiv2.ApiClient(configuration))
 office365_id = 'office365_id_example' # str | ObjectID of the Office 365 instance.
 targets = ['targets_example'] # list[str] | 
 content_type = 'application/json' # str |  (default to application/json)
@@ -40,7 +41,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List the associations of an Office 365 instance
     api_response = api_instance.graph_office365_associations_list(office365_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
@@ -82,7 +83,7 @@ Manage the associations of an Office 365 instance
 
 This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -91,19 +92,20 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.Office365Api()
+api_instance = jcapiv2.Office365Api(jcapiv2.ApiClient(configuration))
 office365_id = 'office365_id_example' # str | ObjectID of the Office 365 instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Manage the associations of an Office 365 instance
     api_instance.graph_office365_associations_post(office365_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
@@ -142,7 +144,7 @@ List the Users bound to an Office 365 instance
 
 This endpoint will return all Users bound to an Office 365 instance, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Office 365 instance to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this Office 365 instance.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -151,12 +153,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.Office365Api()
+api_instance = jcapiv2.Office365Api(jcapiv2.ApiClient(configuration))
 office365_id = 'office365_id_example' # str | ObjectID of the Office 365 suite.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -164,7 +167,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List the Users bound to an Office 365 instance
     api_response = api_instance.graph_office365_traverse_user(office365_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
@@ -205,7 +208,7 @@ List the User Groups bound to an Office 365 instance
 
 This endpoint will return all Users Groups bound to an Office 365 instance, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this Office 365 instance to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this Office 365 instance.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ```   curl -X GET https://console.jumpcloud.com/api/v2/office365s/{O365_ID/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -214,12 +217,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.Office365Api()
+api_instance = jcapiv2.Office365Api(jcapiv2.ApiClient(configuration))
 office365_id = 'office365_id_example' # str | ObjectID of the Office 365 suite.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -227,7 +231,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List the User Groups bound to an Office 365 instance
     api_response = api_instance.graph_office365_traverse_user_group(office365_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)

@@ -61,7 +61,7 @@ class OrganizationslistResults(object):
     def id(self):
         """Gets the id of this OrganizationslistResults.  # noqa: E501
 
-        the ID of the organization.  # noqa: E501
+        The ID of the organization.  # noqa: E501
 
         :return: The id of this OrganizationslistResults.  # noqa: E501
         :rtype: str
@@ -72,7 +72,7 @@ class OrganizationslistResults(object):
     def id(self, id):
         """Sets the id of this OrganizationslistResults.
 
-        the ID of the organization.  # noqa: E501
+        The ID of the organization.  # noqa: E501
 
         :param id: The id of this OrganizationslistResults.  # noqa: E501
         :type: str

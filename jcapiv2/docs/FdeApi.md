@@ -14,7 +14,7 @@ Get System FDE Key
 
 This endpoint will return the current (latest) fde key saved for a system.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -23,16 +23,17 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.FdeApi()
+api_instance = jcapiv2.FdeApi(jcapiv2.ApiClient(configuration))
 system_id = 'system_id_example' # str | 
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Get System FDE Key
     api_response = api_instance.systems_get_fde_key(system_id, x_org_id=x_org_id)
     pprint(api_response)

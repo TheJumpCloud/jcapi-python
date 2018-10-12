@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,37 +13,33 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.policytemplates_api import PolicytemplatesApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.policytemplates_api import PolicytemplatesApi
 
 
 class TestPolicytemplatesApi(unittest.TestCase):
-    """ PolicytemplatesApi unit test stubs """
+    """PolicytemplatesApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.policytemplates_api.PolicytemplatesApi()
+        self.api = jcapiv2.api.policytemplates_api.PolicytemplatesApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_policytemplates_get(self):
-        """
-        Test case for policytemplates_get
+        """Test case for policytemplates_get
 
-        Get a specific Policy Template
+        Get a specific Policy Template  # noqa: E501
         """
         pass
 
     def test_policytemplates_list(self):
-        """
-        Test case for policytemplates_list
+        """Test case for policytemplates_list
 
-        Lists all of the Policy Templates
+        Lists all of the Policy Templates  # noqa: E501
         """
         pass
 

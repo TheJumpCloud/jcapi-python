@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | the ID of the organization. | [optional] 
+**id** | **str** | The ID of the organization. | [optional] 
 **display_name** | **str** | The name of the organization. | [optional] 
 **logo_url** | **str** | The organization logo image URL.  | [optional] 
 

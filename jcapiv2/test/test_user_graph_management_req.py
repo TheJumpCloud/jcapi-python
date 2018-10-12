@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.models.user_graph_management_req import UserGraphManagementReq  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.models.user_graph_management_req import UserGraphManagementReq
 
 
 class TestUserGraphManagementReq(unittest.TestCase):
-    """ UserGraphManagementReq unit test stubs """
+    """UserGraphManagementReq unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestUserGraphManagementReq(unittest.TestCase):
         pass
 
     def testUserGraphManagementReq(self):
-        """
-        Test UserGraphManagementReq
-        """
+        """Test UserGraphManagementReq"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.user_graph_management_req.UserGraphManagementReq()
+        # model = jcapiv2.models.user_graph_management_req.UserGraphManagementReq()  # noqa: E501
         pass
 
 

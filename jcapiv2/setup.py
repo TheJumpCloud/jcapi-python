@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -11,11 +11,10 @@
 """
 
 
-import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "jcapiv2"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -36,6 +35,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-     JumpCloud&#39;s V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud&#39;s V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
     """
 )

@@ -18,7 +18,7 @@ Delete Samba Domain
 
 This endpoint allows you to delete a samba domain from an LDAP server.  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -27,19 +27,20 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.SambaDomainsApi()
+api_instance = jcapiv2.SambaDomainsApi(jcapiv2.ApiClient(configuration))
 ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Delete Samba Domain
     api_response = api_instance.ldapservers_samba_domains_delete(ldapserver_id, id, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
@@ -79,7 +80,7 @@ Get Samba Domain
 
 This endpoint returns a specific samba domain for an LDAP server.  ##### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/ldapservers/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -88,19 +89,20 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.SambaDomainsApi()
+api_instance = jcapiv2.SambaDomainsApi(jcapiv2.ApiClient(configuration))
 ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Get Samba Domain
     api_response = api_instance.ldapservers_samba_domains_get(ldapserver_id, id, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
@@ -140,7 +142,7 @@ List Samba Domains
 
 This endpoint returns all samba domains for an LDAP server.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -149,12 +151,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.SambaDomainsApi()
+api_instance = jcapiv2.SambaDomainsApi(jcapiv2.ApiClient(configuration))
 ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
@@ -165,7 +168,7 @@ skip = 0 # int | The offset into the records to return. (optional) (default to 0
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List Samba Domains
     api_response = api_instance.ldapservers_samba_domains_list(ldapserver_id, content_type=content_type, accept=accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
@@ -209,7 +212,7 @@ Create Samba Domain
 
 This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\"  }' ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -218,19 +221,20 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.SambaDomainsApi()
+api_instance = jcapiv2.SambaDomainsApi(jcapiv2.ApiClient(configuration))
 ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Create Samba Domain
     api_response = api_instance.ldapservers_samba_domains_post(ldapserver_id, body=body, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
@@ -270,7 +274,7 @@ Update Samba Domain
 
 This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\" }'  ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -279,12 +283,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.SambaDomainsApi()
+api_instance = jcapiv2.SambaDomainsApi(jcapiv2.ApiClient(configuration))
 ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP server.
 id = 'id_example' # str | Unique identifier of the samba domain.
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
@@ -292,7 +297,7 @@ content_type = 'application/json' # str |  (optional) (default to application/js
 accept = 'application/json' # str |  (optional) (default to application/json)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Update Samba Domain
     api_response = api_instance.ldapservers_samba_domains_put(ldapserver_id, id, body=body, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)

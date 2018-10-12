@@ -17,7 +17,7 @@ Bulk Users Create
 
 The endpoint allows you to create a bulk job to asynchronously create users.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"Custom\",\"value\":\"attribute\"}   ]  } ] ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -26,18 +26,19 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.BulkJobRequestsApi()
+api_instance = jcapiv2.BulkJobRequestsApi(jcapiv2.ApiClient(configuration))
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = [jcapiv2.BulkUserCreate()] # list[BulkUserCreate] |  (optional)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Bulk Users Create
     api_response = api_instance.bulk_users_create(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
@@ -76,7 +77,7 @@ List Bulk Users Create Results
 
 This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -85,12 +86,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.BulkJobRequestsApi()
+api_instance = jcapiv2.BulkJobRequestsApi(jcapiv2.ApiClient(configuration))
 job_id = 'job_id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -98,7 +100,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List Bulk Users Create Results
     api_response = api_instance.bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
@@ -139,7 +141,7 @@ Get Job (incomplete)
 
 **This endpoint is not complete and should remain hidden as it's not functional yet.**
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -148,18 +150,19 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.BulkJobRequestsApi()
+api_instance = jcapiv2.BulkJobRequestsApi(jcapiv2.ApiClient(configuration))
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # Get Job (incomplete)
     api_response = api_instance.jobs_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
@@ -198,7 +201,7 @@ List Job Results
 
 This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -207,12 +210,13 @@ from jcapiv2.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: x-api-key
-jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# jcapiv2.configuration.api_key_prefix['x-api-key'] = 'Bearer'
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = jcapiv2.BulkJobRequestsApi()
+api_instance = jcapiv2.BulkJobRequestsApi(jcapiv2.ApiClient(configuration))
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
@@ -220,7 +224,7 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
 
-try: 
+try:
     # List Job Results
     api_response = api_instance.jobs_results(id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
