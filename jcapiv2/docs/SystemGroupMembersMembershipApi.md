@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **graph_system_group_member_of**
-> list[GraphObjectWithPaths] graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the System Group's parents
 
@@ -39,10 +39,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Group's parents
-    api_response = api_instance.graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemGroupMembersMembershipApi->graph_system_group_member_of: %s\n" % e)
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -76,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_members_list**
-> list[GraphConnection] graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the members of a System Group
 
@@ -102,10 +104,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the members of a System Group
-    api_response = api_instance.graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemGroupMembersMembershipApi->graph_system_group_members_list: %s\n" % e)
@@ -120,6 +123,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -137,11 +141,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_members_post**
-> graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization)
+> graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 
 Manage the members of a System Group
 
-This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
 
 ### Example 
 ```python
@@ -164,10 +168,11 @@ accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupMembersReq() # SystemGroupMembersReq |  (optional)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the members of a System Group
-    api_instance.graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization)
+    api_instance.graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling SystemGroupMembersMembershipApi->graph_system_group_members_post: %s\n" % e)
 ```
@@ -182,6 +187,7 @@ Name | Type | Description  | Notes
  **body** | [**SystemGroupMembersReq**](SystemGroupMembersReq.md)|  | [optional] 
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -199,7 +205,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_membership**
-> list[GraphObjectWithPaths] graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter)
+> list[GraphObjectWithPaths] graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
 
 List the System Group's membership
 
@@ -227,10 +233,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Group's membership
-    api_response = api_instance.graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter)
+    api_response = api_instance.graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemGroupMembersMembershipApi->graph_system_group_membership: %s\n" % e)
@@ -247,6 +254,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

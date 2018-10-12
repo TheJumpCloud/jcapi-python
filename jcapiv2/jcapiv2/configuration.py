@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -227,5 +227,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 2.0\n"\
-               "SDK Package Version: 1.0.3".\
+               "SDK Package Version: 1.1.0".\
                format(env=sys.platform, pyversion=sys.version)

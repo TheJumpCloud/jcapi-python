@@ -13,11 +13,11 @@ Method | HTTP request | Description
 
 
 # **graph_ldap_server_associations_list**
-> list[GraphConnection] graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a LDAP Server
 
-This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -40,10 +40,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a LDAP Server
-    api_response = api_instance.graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->graph_ldap_server_associations_list: %s\n" % e)
@@ -59,6 +60,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -76,11 +78,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_associations_post**
-> graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body)
+> graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a LDAP Server
 
-This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
+This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
 
 ### Example 
 ```python
@@ -101,10 +103,11 @@ ldapserver_id = 'ldapserver_id_example' # str | ObjectID of the LDAP Server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a LDAP Server
-    api_instance.graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body)
+    api_instance.graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->graph_ldap_server_associations_post: %s\n" % e)
 ```
@@ -117,6 +120,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -134,7 +138,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_traverse_user**
-> list[GraphObjectWithPaths] graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a LDAP Server
 
@@ -160,10 +164,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a LDAP Server
-    api_response = api_instance.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->graph_ldap_server_traverse_user: %s\n" % e)
@@ -178,6 +183,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -195,7 +201,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_traverse_user_group**
-> list[GraphObjectWithPaths] graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a LDAP Server
 
@@ -221,10 +227,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a LDAP Server
-    api_response = api_instance.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->graph_ldap_server_traverse_user_group: %s\n" % e)
@@ -239,6 +246,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -256,7 +264,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ldapservers_get**
-> LdapServerOutput ldapservers_get(id, content_type, accept)
+> LdapServerOutput ldapservers_get(id, content_type, accept, x_org_id=x_org_id)
 
 Get LDAP Server
 
@@ -280,10 +288,11 @@ api_instance = jcapiv2.LDAPServersApi()
 id = 'id_example' # str | Unique identifier of the LDAP server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get LDAP Server
-    api_response = api_instance.ldapservers_get(id, content_type, accept)
+    api_response = api_instance.ldapservers_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->ldapservers_get: %s\n" % e)
@@ -296,6 +305,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Unique identifier of the LDAP server. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -313,7 +323,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ldapservers_list**
-> list[LdapServerOutput] ldapservers_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[LdapServerOutput] ldapservers_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List LDAP Servers
 
@@ -341,10 +351,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List LDAP Servers
-    api_response = api_instance.ldapservers_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.ldapservers_list(content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->ldapservers_list: %s\n" % e)
@@ -361,6 +372,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

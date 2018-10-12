@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **bulk_users_create**
-> JobId bulk_users_create(content_type, accept, body=body)
+> JobId bulk_users_create(content_type, accept, body=body, x_org_id=x_org_id)
 
 Bulk Users Create
 
@@ -35,10 +35,11 @@ api_instance = jcapiv2.BulkJobRequestsApi()
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = [jcapiv2.BulkUserCreate()] # list[BulkUserCreate] |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Bulk Users Create
-    api_response = api_instance.bulk_users_create(content_type, accept, body=body)
+    api_response = api_instance.bulk_users_create(content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BulkJobRequestsApi->bulk_users_create: %s\n" % e)
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**list[BulkUserCreate]**](BulkUserCreate.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -68,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **bulk_users_create_results**
-> list[JobWorkresult] bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip)
+> list[JobWorkresult] bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List Bulk Users Create Results
 
@@ -94,10 +96,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Bulk Users Create Results
-    api_response = api_instance.bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BulkJobRequestsApi->bulk_users_create_results: %s\n" % e)
@@ -112,6 +115,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -129,7 +133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_get**
-> JobDetails jobs_get(id, content_type, accept)
+> JobDetails jobs_get(id, content_type, accept, x_org_id=x_org_id)
 
 Get Job (incomplete)
 
@@ -153,10 +157,11 @@ api_instance = jcapiv2.BulkJobRequestsApi()
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get Job (incomplete)
-    api_response = api_instance.jobs_get(id, content_type, accept)
+    api_response = api_instance.jobs_get(id, content_type, accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BulkJobRequestsApi->jobs_get: %s\n" % e)
@@ -169,6 +174,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -186,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_results**
-> list[JobWorkresult] jobs_results(id, content_type, accept, limit=limit, skip=skip)
+> list[JobWorkresult] jobs_results(id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List Job Results
 
@@ -212,10 +218,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Job Results
-    api_response = api_instance.jobs_results(id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.jobs_results(id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BulkJobRequestsApi->jobs_results: %s\n" % e)
@@ -230,6 +237,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

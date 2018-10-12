@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **ldapservers_samba_domains_delete**
-> str ldapservers_samba_domains_delete(ldapserver_id, id, content_type=content_type, accept=accept)
+> str ldapservers_samba_domains_delete(ldapserver_id, id, content_type=content_type, accept=accept, x_org_id=x_org_id)
 
 Delete Samba Domain
 
@@ -37,10 +37,11 @@ ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP se
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Delete Samba Domain
-    api_response = api_instance.ldapservers_samba_domains_delete(ldapserver_id, id, content_type=content_type, accept=accept)
+    api_response = api_instance.ldapservers_samba_domains_delete(ldapserver_id, id, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SambaDomainsApi->ldapservers_samba_domains_delete: %s\n" % e)
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Unique identifier of the samba domain. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ldapservers_samba_domains_get**
-> SambaDomainOutput ldapservers_samba_domains_get(ldapserver_id, id, content_type=content_type, accept=accept)
+> SambaDomainOutput ldapservers_samba_domains_get(ldapserver_id, id, content_type=content_type, accept=accept, x_org_id=x_org_id)
 
 Get Samba Domain
 
@@ -96,10 +98,11 @@ ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP se
 id = 'id_example' # str | Unique identifier of the samba domain.
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get Samba Domain
-    api_response = api_instance.ldapservers_samba_domains_get(ldapserver_id, id, content_type=content_type, accept=accept)
+    api_response = api_instance.ldapservers_samba_domains_get(ldapserver_id, id, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SambaDomainsApi->ldapservers_samba_domains_get: %s\n" % e)
@@ -113,6 +116,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Unique identifier of the samba domain. | 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -130,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ldapservers_samba_domains_list**
-> list[SambaDomainOutput] ldapservers_samba_domains_list(ldapserver_id, content_type=content_type, accept=accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[SambaDomainOutput] ldapservers_samba_domains_list(ldapserver_id, content_type=content_type, accept=accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List Samba Domains
 
@@ -159,10 +163,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List Samba Domains
-    api_response = api_instance.ldapservers_samba_domains_list(ldapserver_id, content_type=content_type, accept=accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.ldapservers_samba_domains_list(ldapserver_id, content_type=content_type, accept=accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SambaDomainsApi->ldapservers_samba_domains_list: %s\n" % e)
@@ -180,6 +185,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -197,7 +203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ldapservers_samba_domains_post**
-> SambaDomainOutput ldapservers_samba_domains_post(ldapserver_id, body=body, content_type=content_type, accept=accept)
+> SambaDomainOutput ldapservers_samba_domains_post(ldapserver_id, body=body, content_type=content_type, accept=accept, x_org_id=x_org_id)
 
 Create Samba Domain
 
@@ -222,10 +228,11 @@ ldapserver_id = 'ldapserver_id_example' # str | Unique identifier of the LDAP se
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Create Samba Domain
-    api_response = api_instance.ldapservers_samba_domains_post(ldapserver_id, body=body, content_type=content_type, accept=accept)
+    api_response = api_instance.ldapservers_samba_domains_post(ldapserver_id, body=body, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SambaDomainsApi->ldapservers_samba_domains_post: %s\n" % e)
@@ -239,6 +246,7 @@ Name | Type | Description  | Notes
  **body** | [**SambaDomainInput**](SambaDomainInput.md)|  | [optional] 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -256,7 +264,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ldapservers_samba_domains_put**
-> SambaDomainOutput ldapservers_samba_domains_put(ldapserver_id, id, body=body, content_type=content_type, accept=accept)
+> SambaDomainOutput ldapservers_samba_domains_put(ldapserver_id, id, body=body, content_type=content_type, accept=accept, x_org_id=x_org_id)
 
 Update Samba Domain
 
@@ -282,10 +290,11 @@ id = 'id_example' # str | Unique identifier of the samba domain.
 body = jcapiv2.SambaDomainInput() # SambaDomainInput |  (optional)
 content_type = 'application/json' # str |  (optional) (default to application/json)
 accept = 'application/json' # str |  (optional) (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Update Samba Domain
-    api_response = api_instance.ldapservers_samba_domains_put(ldapserver_id, id, body=body, content_type=content_type, accept=accept)
+    api_response = api_instance.ldapservers_samba_domains_put(ldapserver_id, id, body=body, content_type=content_type, accept=accept, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SambaDomainsApi->ldapservers_samba_domains_put: %s\n" % e)
@@ -300,6 +309,7 @@ Name | Type | Description  | Notes
  **body** | [**SambaDomainInput**](SambaDomainInput.md)|  | [optional] 
  **content_type** | **str**|  | [optional] [default to application/json]
  **accept** | **str**|  | [optional] [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

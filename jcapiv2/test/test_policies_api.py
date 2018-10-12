@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -115,7 +115,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list
 
-        Lists all the policy results for an organization.
+        Lists all the policy results of a policy.
         """
         pass
 
@@ -123,7 +123,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policyresults_list_0
 
-        Lists all the policy results of a policy.
+        Lists all the policy results for an organization.
         """
         pass
 
@@ -131,7 +131,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policystatuses_list
 
-        Lists the latest policy results of a policy.
+        List the policy statuses for a system
         """
         pass
 
@@ -139,7 +139,7 @@ class TestPoliciesApi(unittest.TestCase):
         """
         Test case for policystatuses_list_0
 
-        List the policy statuses for a system
+        Lists the latest policy results of a policy.
         """
         pass
 

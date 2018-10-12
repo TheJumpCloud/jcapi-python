@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -37,7 +37,8 @@ class PolicyTemplate(object):
         'display_name': 'str',
         'os_meta_family': 'str',
         'activation': 'str',
-        'behavior': 'str'
+        'behavior': 'str',
+        'state': 'str'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class PolicyTemplate(object):
         'display_name': 'displayName',
         'os_meta_family': 'osMetaFamily',
         'activation': 'activation',
-        'behavior': 'behavior'
+        'behavior': 'behavior',
+        'state': 'state'
     }
 
-    def __init__(self, id=None, name=None, description=None, display_name=None, os_meta_family=None, activation=None, behavior=None):
+    def __init__(self, id=None, name=None, description=None, display_name=None, os_meta_family=None, activation=None, behavior=None, state=''):
         """
         PolicyTemplate - a model defined in Swagger
         """
@@ -62,6 +64,7 @@ class PolicyTemplate(object):
         self._os_meta_family = None
         self._activation = None
         self._behavior = None
+        self._state = None
 
         if id is not None:
           self.id = id
@@ -77,6 +80,8 @@ class PolicyTemplate(object):
           self.activation = activation
         if behavior is not None:
           self.behavior = behavior
+        if state is not None:
+          self.state = state
 
     @property
     def id(self):
@@ -242,6 +247,29 @@ class PolicyTemplate(object):
         """
 
         self._behavior = behavior
+
+    @property
+    def state(self):
+        """
+        Gets the state of this PolicyTemplate.
+        String describing the release status of the policy template.
+
+        :return: The state of this PolicyTemplate.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """
+        Sets the state of this PolicyTemplate.
+        String describing the release status of the policy template.
+
+        :param state: The state of this PolicyTemplate.
+        :type: str
+        """
+
+        self._state = state
 
     def to_dict(self):
         """

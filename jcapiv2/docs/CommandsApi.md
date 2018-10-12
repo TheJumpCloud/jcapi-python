@@ -11,11 +11,11 @@ Method | HTTP request | Description
 
 
 # **graph_command_associations_list**
-> list[GraphConnection] graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a Command
 
-This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -38,10 +38,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a Command
-    api_response = api_instance.graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_associations_list: %s\n" % e)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -74,11 +76,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_associations_post**
-> InlineResponse204 graph_command_associations_post(command_id, content_type, accept, body=body)
+> graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a Command
 
-This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
+This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
 
 ### Example 
 ```python
@@ -99,11 +101,11 @@ command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a Command
-    api_response = api_instance.graph_command_associations_post(command_id, content_type, accept, body=body)
-    pprint(api_response)
+    api_instance.graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_associations_post: %s\n" % e)
 ```
@@ -116,10 +118,11 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
-[**InlineResponse204**](InlineResponse204.md)
+void (empty response body)
 
 ### Authorization
 
@@ -133,7 +136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_traverse_system**
-> list[GraphObjectWithPaths] graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Systems bound to a Command
 
@@ -159,10 +162,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Systems bound to a Command
-    api_response = api_instance.graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_traverse_system: %s\n" % e)
@@ -177,6 +181,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -194,7 +199,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_traverse_system_group**
-> list[GraphObjectWithPaths] graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the System Groups bound to a Command
 
@@ -220,10 +225,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Groups bound to a Command
-    api_response = api_instance.graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_traverse_system_group: %s\n" % e)
@@ -238,6 +244,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

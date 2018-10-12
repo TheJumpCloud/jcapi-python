@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -43,7 +43,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
-        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -60,6 +60,7 @@ class SystemGroupsApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -74,7 +75,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
-        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -91,12 +92,13 @@ class SystemGroupsApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -145,6 +147,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -179,7 +183,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a System Group
-        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -194,6 +198,7 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -208,7 +213,7 @@ class SystemGroupsApi(object):
     def graph_system_group_associations_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a System Group
-        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -223,12 +228,13 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -267,6 +273,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -321,6 +329,7 @@ class SystemGroupsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -353,12 +362,13 @@ class SystemGroupsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -407,6 +417,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -457,6 +469,7 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -487,12 +500,13 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -535,6 +549,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -569,7 +585,7 @@ class SystemGroupsApi(object):
     def graph_system_group_members_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a System Group
-        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -586,6 +602,7 @@ class SystemGroupsApi(object):
         :param SystemGroupMembersReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -600,7 +617,7 @@ class SystemGroupsApi(object):
     def graph_system_group_members_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a System Group
-        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -617,12 +634,13 @@ class SystemGroupsApi(object):
         :param SystemGroupMembersReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body', 'date', 'authorization']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -665,6 +683,8 @@ class SystemGroupsApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -719,6 +739,7 @@ class SystemGroupsApi(object):
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -751,12 +772,13 @@ class SystemGroupsApi(object):
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'sort', 'filter']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'sort', 'filter', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -805,6 +827,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -855,6 +879,7 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -885,12 +910,13 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -933,6 +959,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -983,6 +1011,7 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1013,12 +1042,13 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1061,6 +1091,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1111,6 +1143,7 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1141,12 +1174,13 @@ class SystemGroupsApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1189,6 +1223,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1237,6 +1273,7 @@ class SystemGroupsApi(object):
         :param str id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1265,12 +1302,13 @@ class SystemGroupsApi(object):
         :param str id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1309,6 +1347,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1343,7 +1383,7 @@ class SystemGroupsApi(object):
     def groups_system_get(self, id, content_type, accept, **kwargs):
         """
         View an individual System Group details
-        This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1357,6 +1397,7 @@ class SystemGroupsApi(object):
         :param str id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1371,7 +1412,7 @@ class SystemGroupsApi(object):
     def groups_system_get_with_http_info(self, id, content_type, accept, **kwargs):
         """
         View an individual System Group details
-        This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns the details of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1385,12 +1426,13 @@ class SystemGroupsApi(object):
         :param str id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept']
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1429,6 +1471,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1481,6 +1525,7 @@ class SystemGroupsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[SystemGroup]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1513,12 +1558,13 @@ class SystemGroupsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[SystemGroup]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1565,6 +1611,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1614,6 +1662,7 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupData body:
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1643,12 +1692,13 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupData body:
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1687,6 +1737,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1737,6 +1789,7 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupData body:
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1765,12 +1818,13 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupData body:
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body']
+        all_params = ['content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1804,6 +1858,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1840,7 +1896,7 @@ class SystemGroupsApi(object):
     def groups_system_put(self, id, content_type, accept, **kwargs):
         """
         Update a System Group
-        This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
+        This endpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1855,6 +1911,7 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupData body:
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1869,7 +1926,7 @@ class SystemGroupsApi(object):
     def groups_system_put_with_http_info(self, id, content_type, accept, **kwargs):
         """
         Update a System Group
-        This enpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
+        This endpoint allows you to do a full update of the System Group.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\": \"Name_Update\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1884,12 +1941,13 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupData body:
+        :param str x_org_id: 
         :return: SystemGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body']
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1928,6 +1986,8 @@ class SystemGroupsApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

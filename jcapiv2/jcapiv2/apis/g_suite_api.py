@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -43,7 +43,7 @@ class GSuiteApi(object):
     def graph_g_suite_associations_list(self, gsuite_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -60,6 +60,7 @@ class GSuiteApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -74,7 +75,7 @@ class GSuiteApi(object):
     def graph_g_suite_associations_list_with_http_info(self, gsuite_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -91,12 +92,13 @@ class GSuiteApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['gsuite_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -145,6 +147,8 @@ class GSuiteApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -179,7 +183,7 @@ class GSuiteApi(object):
     def graph_g_suite_associations_post(self, gsuite_id, **kwargs):
         """
         Manage the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -192,6 +196,7 @@ class GSuiteApi(object):
             for asynchronous request. (optional)
         :param str gsuite_id: ObjectID of the G Suite instance. (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -206,7 +211,7 @@ class GSuiteApi(object):
     def graph_g_suite_associations_post_with_http_info(self, gsuite_id, **kwargs):
         """
         Manage the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -219,12 +224,13 @@ class GSuiteApi(object):
             for asynchronous request. (optional)
         :param str gsuite_id: ObjectID of the G Suite instance. (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'body']
+        all_params = ['gsuite_id', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -253,6 +259,8 @@ class GSuiteApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -305,6 +313,7 @@ class GSuiteApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -335,12 +344,13 @@ class GSuiteApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -383,6 +393,8 @@ class GSuiteApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -433,6 +445,7 @@ class GSuiteApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -463,12 +476,13 @@ class GSuiteApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -511,6 +525,8 @@ class GSuiteApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

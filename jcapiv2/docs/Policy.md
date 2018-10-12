@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | ObjectId uniquely indetifying a Policy. | [optional] 
+**id** | **str** | ObjectId uniquely identifying a Policy. | [optional] 
 **template** | [**PolicyTemplate**](PolicyTemplate.md) |  | [optional] 
 **name** | **str** | The description for this specific Policy. | [optional] 
 

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -43,7 +43,7 @@ class Office365Api(object):
     def graph_office365_associations_list(self, office365_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Office 365 instance
-        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -60,6 +60,7 @@ class Office365Api(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -74,7 +75,7 @@ class Office365Api(object):
     def graph_office365_associations_list_with_http_info(self, office365_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Office 365 instance
-        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -91,12 +92,13 @@ class Office365Api(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['office365_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -145,6 +147,8 @@ class Office365Api(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -179,7 +183,7 @@ class Office365Api(object):
     def graph_office365_associations_post(self, office365_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Office 365 instance
-        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -194,6 +198,7 @@ class Office365Api(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -208,7 +213,7 @@ class Office365Api(object):
     def graph_office365_associations_post_with_http_info(self, office365_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Office 365 instance
-        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -223,12 +228,13 @@ class Office365Api(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'content_type', 'accept', 'body']
+        all_params = ['office365_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -267,6 +273,8 @@ class Office365Api(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -319,6 +327,7 @@ class Office365Api(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -349,12 +358,13 @@ class Office365Api(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -397,6 +407,8 @@ class Office365Api(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -447,6 +459,7 @@ class Office365Api(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -477,12 +490,13 @@ class Office365Api(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -525,6 +539,8 @@ class Office365Api(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

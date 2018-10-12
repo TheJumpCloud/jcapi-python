@@ -11,11 +11,11 @@ Method | HTTP request | Description
 
 
 # **graph_g_suite_associations_list**
-> list[GraphConnection] graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a G Suite instance
 
-This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -38,10 +38,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a G Suite instance
-    api_response = api_instance.graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GSuiteApi->graph_g_suite_associations_list: %s\n" % e)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -74,11 +76,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_associations_post**
-> graph_g_suite_associations_post(gsuite_id, body=body)
+> graph_g_suite_associations_post(gsuite_id, body=body, x_org_id=x_org_id)
 
 Manage the associations of a G Suite instance
 
-This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
 
 ### Example 
 ```python
@@ -97,10 +99,11 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.GSuiteApi()
 gsuite_id = 'gsuite_id_example' # str | ObjectID of the G Suite instance.
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a G Suite instance
-    api_instance.graph_g_suite_associations_post(gsuite_id, body=body)
+    api_instance.graph_g_suite_associations_post(gsuite_id, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GSuiteApi->graph_g_suite_associations_post: %s\n" % e)
 ```
@@ -111,6 +114,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gsuite_id** | **str**| ObjectID of the G Suite instance. | 
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -128,7 +132,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_traverse_user**
-> list[GraphObjectWithPaths] graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a G Suite instance
 
@@ -154,10 +158,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a G Suite instance
-    api_response = api_instance.graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GSuiteApi->graph_g_suite_traverse_user: %s\n" % e)
@@ -172,6 +177,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -189,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_traverse_user_group**
-> list[GraphObjectWithPaths] graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a G Suite instance
 
@@ -215,10 +221,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a G Suite instance
-    api_response = api_instance.graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GSuiteApi->graph_g_suite_traverse_user_group: %s\n" % e)
@@ -233,6 +240,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -87,7 +87,7 @@ class PolicyTemplateWithDetails(object):
     def id(self):
         """
         Gets the id of this PolicyTemplateWithDetails.
-        ObjectId uniquely indetifying a Policy Template.
+        ObjectId uniquely identifying a Policy Template.
 
         :return: The id of this PolicyTemplateWithDetails.
         :rtype: str
@@ -98,7 +98,7 @@ class PolicyTemplateWithDetails(object):
     def id(self, id):
         """
         Sets the id of this PolicyTemplateWithDetails.
-        ObjectId uniquely indetifying a Policy Template.
+        ObjectId uniquely identifying a Policy Template.
 
         :param id: The id of this PolicyTemplateWithDetails.
         :type: str

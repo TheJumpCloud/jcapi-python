@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -43,7 +43,7 @@ class GraphApi(object):
     def graph_active_directory_associations_list(self, activedirectory_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Active Directory instance
-        This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -60,6 +60,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -74,7 +75,7 @@ class GraphApi(object):
     def graph_active_directory_associations_list_with_http_info(self, activedirectory_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Active Directory instance
-        This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -91,12 +92,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['activedirectory_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['activedirectory_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -145,6 +147,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -179,7 +183,7 @@ class GraphApi(object):
     def graph_active_directory_associations_post(self, activedirectory_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Active Directory instance
-        This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
+        This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -194,6 +198,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -208,7 +213,7 @@ class GraphApi(object):
     def graph_active_directory_associations_post_with_http_info(self, activedirectory_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Active Directory instance
-        This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
+        This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -223,12 +228,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['activedirectory_id', 'content_type', 'accept', 'body']
+        all_params = ['activedirectory_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -267,6 +273,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -319,6 +327,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -349,12 +358,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['activedirectory_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['activedirectory_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -397,6 +407,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -431,7 +443,7 @@ class GraphApi(object):
     def graph_application_associations_list(self, application_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Application
-        This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogenous relationship between 2 different objects. for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -448,6 +460,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -462,7 +475,7 @@ class GraphApi(object):
     def graph_application_associations_list_with_http_info(self, application_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Application
-        This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogenous relationship between 2 different objects. for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -479,12 +492,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['application_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['application_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -533,6 +547,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -567,7 +583,7 @@ class GraphApi(object):
     def graph_application_associations_post(self, application_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Application
-        This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogenous relationship between 2 different objects. for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -582,6 +598,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -596,7 +613,7 @@ class GraphApi(object):
     def graph_application_associations_post_with_http_info(self, application_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Application
-        This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogenous relationship between 2 different objects. for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -611,12 +628,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['application_id', 'content_type', 'accept', 'body']
+        all_params = ['application_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -655,6 +673,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -707,6 +727,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -737,12 +758,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['application_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['application_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -785,6 +807,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -835,6 +859,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -865,12 +890,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['application_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['application_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -913,6 +939,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -947,7 +975,7 @@ class GraphApi(object):
     def graph_command_associations_list(self, command_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Command
-        This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -964,6 +992,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -978,7 +1007,7 @@ class GraphApi(object):
     def graph_command_associations_list_with_http_info(self, command_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Command
-        This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -995,12 +1024,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['command_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['command_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1049,6 +1079,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1083,7 +1115,7 @@ class GraphApi(object):
     def graph_command_associations_post(self, command_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Command
-        This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
+        This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1098,7 +1130,8 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
-        :return: InlineResponse204
+        :param str x_org_id: 
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1112,7 +1145,7 @@ class GraphApi(object):
     def graph_command_associations_post_with_http_info(self, command_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Command
-        This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
+        This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1127,12 +1160,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
-        :return: InlineResponse204
+        :param str x_org_id: 
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['command_id', 'content_type', 'accept', 'body']
+        all_params = ['command_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1171,6 +1205,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1196,7 +1232,7 @@ class GraphApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='InlineResponse204',
+                                        response_type=None,
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -1223,6 +1259,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1253,12 +1290,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['command_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['command_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1301,6 +1339,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1351,6 +1391,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1381,12 +1422,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['command_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['command_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1429,6 +1471,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1463,7 +1507,7 @@ class GraphApi(object):
     def graph_g_suite_associations_list(self, gsuite_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1480,6 +1524,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1494,7 +1539,7 @@ class GraphApi(object):
     def graph_g_suite_associations_list_with_http_info(self, gsuite_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1511,12 +1556,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['gsuite_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1565,6 +1611,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1599,7 +1647,7 @@ class GraphApi(object):
     def graph_g_suite_associations_post(self, gsuite_id, **kwargs):
         """
         Manage the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1612,6 +1660,7 @@ class GraphApi(object):
             for asynchronous request. (optional)
         :param str gsuite_id: ObjectID of the G Suite instance. (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1626,7 +1675,7 @@ class GraphApi(object):
     def graph_g_suite_associations_post_with_http_info(self, gsuite_id, **kwargs):
         """
         Manage the associations of a G Suite instance
-        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1639,12 +1688,13 @@ class GraphApi(object):
             for asynchronous request. (optional)
         :param str gsuite_id: ObjectID of the G Suite instance. (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'body']
+        all_params = ['gsuite_id', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1673,6 +1723,8 @@ class GraphApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1725,6 +1777,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1755,12 +1808,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1803,6 +1857,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1853,6 +1909,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1883,12 +1940,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['gsuite_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1931,6 +1989,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -1965,7 +2025,7 @@ class GraphApi(object):
     def graph_ldap_server_associations_list(self, ldapserver_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a LDAP Server
-        This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1982,6 +2042,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1996,7 +2057,7 @@ class GraphApi(object):
     def graph_ldap_server_associations_list_with_http_info(self, ldapserver_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a LDAP Server
-        This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2013,12 +2074,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['ldapserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2067,6 +2129,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2101,7 +2165,7 @@ class GraphApi(object):
     def graph_ldap_server_associations_post(self, ldapserver_id, content_type, accept, **kwargs):
         """
         Manage the associations of a LDAP Server
-        This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2116,6 +2180,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2130,7 +2195,7 @@ class GraphApi(object):
     def graph_ldap_server_associations_post_with_http_info(self, ldapserver_id, content_type, accept, **kwargs):
         """
         Manage the associations of a LDAP Server
-        This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2145,12 +2210,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'content_type', 'accept', 'body']
+        all_params = ['ldapserver_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2189,6 +2255,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2241,6 +2309,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2271,12 +2340,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2319,6 +2389,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2369,6 +2441,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2399,12 +2472,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2447,6 +2521,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2481,7 +2557,7 @@ class GraphApi(object):
     def graph_office365_associations_list(self, office365_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Office 365 instance
-        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2498,6 +2574,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2512,7 +2589,7 @@ class GraphApi(object):
     def graph_office365_associations_list_with_http_info(self, office365_id, targets, content_type, accept, **kwargs):
         """
         List the associations of an Office 365 instance
-        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2529,12 +2606,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['office365_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2583,6 +2661,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2617,7 +2697,7 @@ class GraphApi(object):
     def graph_office365_associations_post(self, office365_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Office 365 instance
-        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2632,6 +2712,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2646,7 +2727,7 @@ class GraphApi(object):
     def graph_office365_associations_post_with_http_info(self, office365_id, content_type, accept, **kwargs):
         """
         Manage the associations of an Office 365 instance
-        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -2661,12 +2742,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'content_type', 'accept', 'body']
+        all_params = ['office365_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2705,6 +2787,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2757,6 +2841,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2787,12 +2872,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2835,6 +2921,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2885,6 +2973,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2915,12 +3004,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['office365_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2963,6 +3053,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -2997,7 +3089,7 @@ class GraphApi(object):
     def graph_policy_associations_list(self, policy_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Policy
-        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3014,6 +3106,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3028,7 +3121,7 @@ class GraphApi(object):
     def graph_policy_associations_list_with_http_info(self, policy_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a Policy
-        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3045,12 +3138,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['policy_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3099,6 +3193,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3133,7 +3229,7 @@ class GraphApi(object):
     def graph_policy_associations_post(self, policy_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Policy
-        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3148,6 +3244,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3162,7 +3259,7 @@ class GraphApi(object):
     def graph_policy_associations_post_with_http_info(self, policy_id, content_type, accept, **kwargs):
         """
         Manage the associations of a Policy
-        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
+        This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3177,12 +3274,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'body']
+        all_params = ['policy_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3221,6 +3319,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3273,6 +3373,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3303,12 +3404,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3351,6 +3453,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3401,6 +3505,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3431,12 +3536,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3479,6 +3585,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3513,7 +3621,7 @@ class GraphApi(object):
     def graph_radius_server_associations_list(self, radiusserver_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a RADIUS  Server
-        This endpoint returns the _direct_ associations of a Radius Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example Radius Servers and Users.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a Radius Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Radius Servers and Users.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3530,6 +3638,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3544,7 +3653,7 @@ class GraphApi(object):
     def graph_radius_server_associations_list_with_http_info(self, radiusserver_id, targets, content_type, accept, **kwargs):
         """
         List the associations of a RADIUS  Server
-        This endpoint returns the _direct_ associations of a Radius Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example Radius Servers and Users.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a Radius Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Radius Servers and Users.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3561,12 +3670,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['radiusserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['radiusserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3615,6 +3725,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3649,7 +3761,7 @@ class GraphApi(object):
     def graph_radius_server_associations_post(self, radiusserver_id, content_type, accept, **kwargs):
         """
         Manage the associations of a RADIUS Server
-        This endpoint allows you to manage the _direct_ associations of a Radius Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example Radius Servers and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"type\":\"user\",  \"id\":\"{USER_ID}\",  \"op\":\"add\"   }' ```
+        This endpoint allows you to manage the _direct_ associations of a Radius Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Radius Servers and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"type\":\"user\",  \"id\":\"{USER_ID}\",  \"op\":\"add\"   }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3664,6 +3776,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3678,7 +3791,7 @@ class GraphApi(object):
     def graph_radius_server_associations_post_with_http_info(self, radiusserver_id, content_type, accept, **kwargs):
         """
         Manage the associations of a RADIUS Server
-        This endpoint allows you to manage the _direct_ associations of a Radius Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example Radius Servers and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"type\":\"user\",  \"id\":\"{USER_ID}\",  \"op\":\"add\"   }' ```
+        This endpoint allows you to manage the _direct_ associations of a Radius Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Radius Servers and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"type\":\"user\",  \"id\":\"{USER_ID}\",  \"op\":\"add\"   }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -3693,12 +3806,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['radiusserver_id', 'content_type', 'accept', 'body']
+        all_params = ['radiusserver_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3737,6 +3851,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3789,6 +3905,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3819,12 +3936,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['radiusserver_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['radiusserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3867,6 +3985,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -3917,6 +4037,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3947,12 +4068,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['radiusserver_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['radiusserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3995,6 +4117,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4029,7 +4153,7 @@ class GraphApi(object):
     def graph_system_associations_list(self, system_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System
-        This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4048,6 +4172,7 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4062,7 +4187,7 @@ class GraphApi(object):
     def graph_system_associations_list_with_http_info(self, system_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System
-        This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4081,12 +4206,13 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4139,6 +4265,8 @@ class GraphApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4173,7 +4301,7 @@ class GraphApi(object):
     def graph_system_associations_post(self, system_id, content_type, accept, **kwargs):
         """
         Manage associations of a System
-        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4190,6 +4318,7 @@ class GraphApi(object):
         :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4204,7 +4333,7 @@ class GraphApi(object):
     def graph_system_associations_post_with_http_info(self, system_id, content_type, accept, **kwargs):
         """
         Manage associations of a System
-        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4221,12 +4350,13 @@ class GraphApi(object):
         :param SystemGraphManagementReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'body', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4269,6 +4399,8 @@ class GraphApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4305,7 +4437,7 @@ class GraphApi(object):
     def graph_system_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
-        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4322,6 +4454,7 @@ class GraphApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4336,7 +4469,7 @@ class GraphApi(object):
     def graph_system_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a System Group
-        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4353,12 +4486,13 @@ class GraphApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4407,6 +4541,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4441,7 +4577,7 @@ class GraphApi(object):
     def graph_system_group_associations_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a System Group
-        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4456,6 +4592,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4470,7 +4607,7 @@ class GraphApi(object):
     def graph_system_group_associations_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a System Group
-        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
+        This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4485,12 +4622,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4529,6 +4667,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4583,6 +4723,7 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4615,12 +4756,13 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4669,6 +4811,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4719,6 +4863,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4749,12 +4894,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4797,6 +4943,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4831,7 +4979,7 @@ class GraphApi(object):
     def graph_system_group_members_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a System Group
-        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4848,6 +4996,7 @@ class GraphApi(object):
         :param SystemGroupMembersReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4862,7 +5011,7 @@ class GraphApi(object):
     def graph_system_group_members_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the members of a System Group
-        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+        This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -4879,12 +5028,13 @@ class GraphApi(object):
         :param SystemGroupMembersReq body:
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body', 'date', 'authorization']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -4927,6 +5077,8 @@ class GraphApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -4981,6 +5133,7 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5013,12 +5166,13 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'sort', 'filter']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'sort', 'filter', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5067,6 +5221,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5117,6 +5273,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5147,12 +5304,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5195,6 +5353,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5245,6 +5405,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5275,12 +5436,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5323,6 +5485,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5373,6 +5537,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5403,12 +5568,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5451,6 +5617,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5501,6 +5669,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5531,12 +5700,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5579,6 +5749,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5633,6 +5805,7 @@ class GraphApi(object):
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5667,12 +5840,13 @@ class GraphApi(object):
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'date', 'authorization', 'sort']
+        all_params = ['system_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'date', 'authorization', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5725,6 +5899,8 @@ class GraphApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5775,6 +5951,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5805,12 +5982,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5853,6 +6031,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -5903,6 +6083,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5933,12 +6114,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -5981,6 +6163,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6033,6 +6217,7 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6065,12 +6250,13 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6117,6 +6303,8 @@ class GraphApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6169,6 +6357,7 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6201,12 +6390,13 @@ class GraphApi(object):
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization']
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6253,6 +6443,8 @@ class GraphApi(object):
             header_params['Date'] = params['date']
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6287,7 +6479,7 @@ class GraphApi(object):
     def graph_user_associations_list(self, user_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User
-        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6304,6 +6496,7 @@ class GraphApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6318,7 +6511,7 @@ class GraphApi(object):
     def graph_user_associations_list_with_http_info(self, user_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User
-        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6335,12 +6528,13 @@ class GraphApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6389,6 +6583,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6423,7 +6619,7 @@ class GraphApi(object):
     def graph_user_associations_post(self, user_id, content_type, accept, **kwargs):
         """
         Manage the associations of a User
-        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
+        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6438,6 +6634,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param UserGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6452,7 +6649,7 @@ class GraphApi(object):
     def graph_user_associations_post_with_http_info(self, user_id, content_type, accept, **kwargs):
         """
         Manage the associations of a User
-        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
+        This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6467,12 +6664,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param UserGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'body']
+        all_params = ['user_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6511,6 +6709,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6547,7 +6747,7 @@ class GraphApi(object):
     def graph_user_group_associations_list(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User Group.
-        This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations?targets=system \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations?targets=system \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6564,6 +6764,7 @@ class GraphApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6578,7 +6779,7 @@ class GraphApi(object):
     def graph_user_group_associations_list_with_http_info(self, group_id, content_type, accept, targets, **kwargs):
         """
         List the associations of a User Group.
-        This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations?targets=system \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+        This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations?targets=system \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6595,12 +6796,13 @@ class GraphApi(object):
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6649,6 +6851,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6683,7 +6887,7 @@ class GraphApi(object):
     def graph_user_group_associations_post(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a User Group
-        This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
+        This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6698,6 +6902,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param UserGroupGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6712,7 +6917,7 @@ class GraphApi(object):
     def graph_user_group_associations_post_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         Manage the associations of a User Group
-        This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
+        This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6727,12 +6932,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param UserGroupGraphManagementReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6771,6 +6977,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6807,7 +7015,7 @@ class GraphApi(object):
     def graph_user_group_member_of(self, group_id, content_type, accept, **kwargs):
         """
         List the User Group's parents
-        This endpoint returns all User Groups a User Group is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/membersof ```  Not public yet, as the code is not finished,
+        This endpoint returns all User Groups a User Group is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/memberof ```  Not public yet, as the code is not finished,
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6825,6 +7033,7 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6839,7 +7048,7 @@ class GraphApi(object):
     def graph_user_group_member_of_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         List the User Group's parents
-        This endpoint returns all User Groups a User Group is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/membersof ```  Not public yet, as the code is not finished,
+        This endpoint returns all User Groups a User Group is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/memberof ```  Not public yet, as the code is not finished,
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -6857,12 +7066,13 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -6911,6 +7121,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -6961,6 +7173,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6991,12 +7204,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphConnection]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7039,6 +7253,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7088,6 +7304,7 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param UserGroupMembersReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7117,12 +7334,13 @@ class GraphApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param UserGroupMembersReq body:
+        :param str x_org_id: 
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body']
+        all_params = ['group_id', 'content_type', 'accept', 'body', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7161,6 +7379,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7215,6 +7435,7 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7247,12 +7468,13 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7301,6 +7523,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7351,6 +7575,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7381,12 +7606,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7429,6 +7655,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7479,6 +7707,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7509,12 +7738,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7557,6 +7787,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7607,6 +7839,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7637,12 +7870,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7685,6 +7919,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7719,7 +7955,7 @@ class GraphApi(object):
     def graph_user_group_traverse_g_suite(self, group_id, content_type, accept, **kwargs):
         """
         List the G Suite instances bound to a User Group
-        This endpoint will return all Gsuite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint will return all G Suite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -7735,6 +7971,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7749,7 +7986,7 @@ class GraphApi(object):
     def graph_user_group_traverse_g_suite_with_http_info(self, group_id, content_type, accept, **kwargs):
         """
         List the G Suite instances bound to a User Group
-        This endpoint will return all Gsuite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+        This endpoint will return all G Suite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -7765,12 +8002,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7813,6 +8051,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7863,6 +8103,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7893,12 +8134,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -7941,6 +8183,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -7991,6 +8235,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8021,12 +8266,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8069,6 +8315,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8119,6 +8367,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8149,12 +8398,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8197,6 +8447,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8247,6 +8499,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8277,12 +8530,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8325,6 +8579,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8375,6 +8631,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8405,12 +8662,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8453,6 +8711,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8505,6 +8765,7 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8537,12 +8798,13 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['user_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8591,6 +8853,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8641,6 +8905,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8671,12 +8936,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8719,6 +8985,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8769,6 +9037,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8799,12 +9068,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8847,6 +9117,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -8897,6 +9169,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -8927,12 +9200,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -8975,6 +9249,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -9025,6 +9301,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9055,12 +9332,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9103,6 +9381,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -9153,6 +9433,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9183,12 +9464,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9231,6 +9513,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -9281,6 +9565,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9311,12 +9596,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9359,6 +9645,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -9409,6 +9697,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9439,12 +9728,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9487,6 +9777,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -9537,6 +9829,7 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9567,12 +9860,13 @@ class GraphApi(object):
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
+        :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip']
+        all_params = ['user_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9615,6 +9909,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
@@ -9668,6 +9964,7 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -9701,12 +9998,13 @@ class GraphApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']
+        all_params = ['system_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -9758,6 +10056,8 @@ class GraphApi(object):
             header_params['Content-Type'] = params['content_type']
         if 'accept' in params:
             header_params['Accept'] = params['accept']
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}

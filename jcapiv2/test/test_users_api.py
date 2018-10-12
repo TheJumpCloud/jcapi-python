@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -116,6 +116,14 @@ class TestUsersApi(unittest.TestCase):
         Test case for graph_user_traverse_system_group
 
         List the System Groups bound to a User
+        """
+        pass
+
+    def test_user_send_emails(self):
+        """
+        Test case for user_send_emails
+
+        Send User Emails
         """
         pass
 

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-    V1 & V2 versions of JumpCloud's API. The next version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings. The most recent version of JumpCloud's API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
 
     OpenAPI spec version: 2.0
     
@@ -22,7 +22,9 @@ from .authinput_basic import AuthinputBasic
 from .authinput_oauth import AuthinputOauth
 from .bulk_user_create import BulkUserCreate
 from .directory import Directory
+from .emailrequest import Emailrequest
 from .error import Error
+from .errorresponse import Errorresponse
 from .graph_connection import GraphConnection
 from .graph_management_req import GraphManagementReq
 from .graph_object import GraphObject
@@ -30,7 +32,6 @@ from .graph_object_with_paths import GraphObjectWithPaths
 from .graph_type import GraphType
 from .group import Group
 from .group_type import GroupType
-from .inline_response_204 import InlineResponse204
 from .job_details import JobDetails
 from .job_id import JobId
 from .job_workresult import JobWorkresult
@@ -48,6 +49,7 @@ from .policy_template_with_details import PolicyTemplateWithDetails
 from .policy_value import PolicyValue
 from .policy_with_details import PolicyWithDetails
 from .samba_domain_input import SambaDomainInput
+from .sshkeylist import Sshkeylist
 from .system_graph_management_req import SystemGraphManagementReq
 from .system_graph_management_req_attributes import SystemGraphManagementReqAttributes
 from .system_graph_management_req_attributes_sudo import SystemGraphManagementReqAttributesSudo
@@ -55,6 +57,12 @@ from .system_group import SystemGroup
 from .system_group_data import SystemGroupData
 from .system_group_graph_management_req import SystemGroupGraphManagementReq
 from .system_group_members_req import SystemGroupMembersReq
+from .systemfdekey import Systemfdekey
+from .systemuser import Systemuser
+from .systemuser_attributes import SystemuserAttributes
+from .systemuserputpost import Systemuserputpost
+from .systemuserputpost_addresses import SystemuserputpostAddresses
+from .systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
 from .user_graph_management_req import UserGraphManagementReq
 from .user_group import UserGroup
 from .user_group_graph_management_req import UserGroupGraphManagementReq

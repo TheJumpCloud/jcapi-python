@@ -82,11 +82,11 @@ Method | HTTP request | Description
 
 
 # **graph_active_directory_associations_list**
-> list[GraphConnection] graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of an Active Directory instance
 
-This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the direct associations of this Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/activedirectories/{ActiveDirectory_ID}/associations?targets=user \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -109,10 +109,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of an Active Directory instance
-    api_response = api_instance.graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_active_directory_associations_list(activedirectory_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_active_directory_associations_list: %s\n" % e)
@@ -128,6 +129,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -145,11 +147,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_active_directory_associations_post**
-> graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body)
+> graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of an Active Directory instance
 
-This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogenous relationship between 2 different objects. For example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
+This endpoint allows you to manage the _direct_ associations of an Active Directory instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Active Directory and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/activedirectories/{AD_Instance_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{         \"op\": \"add\",         \"type\": \"user\",         \"id\": \"{User_ID}\" } ' ```
 
 ### Example 
 ```python
@@ -170,10 +172,11 @@ activedirectory_id = 'activedirectory_id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of an Active Directory instance
-    api_instance.graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body)
+    api_instance.graph_active_directory_associations_post(activedirectory_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_active_directory_associations_post: %s\n" % e)
 ```
@@ -186,6 +189,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -203,7 +207,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_active_directory_traverse_user_group**
-> list[GraphObjectWithPaths] graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to an Active Directory instance
 
@@ -229,10 +233,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to an Active Directory instance
-    api_response = api_instance.graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_active_directory_traverse_user_group(activedirectory_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_active_directory_traverse_user_group: %s\n" % e)
@@ -247,6 +252,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -264,11 +270,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_associations_list**
-> list[GraphConnection] graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of an Application
 
-This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogenous relationship between 2 different objects. for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint will return the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Applications and User Groups.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -291,10 +297,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of an Application
-    api_response = api_instance.graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_application_associations_list: %s\n" % e)
@@ -310,6 +317,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -327,11 +335,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_associations_post**
-> graph_application_associations_post(application_id, content_type, accept, body=body)
+> graph_application_associations_post(application_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of an Application
 
-This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogenous relationship between 2 different objects. for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
 
 ### Example 
 ```python
@@ -352,10 +360,11 @@ application_id = 'application_id_example' # str | ObjectID of the Application.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of an Application
-    api_instance.graph_application_associations_post(application_id, content_type, accept, body=body)
+    api_instance.graph_application_associations_post(application_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_application_associations_post: %s\n" % e)
 ```
@@ -368,6 +377,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -385,7 +395,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_traverse_user**
-> list[GraphObjectWithPaths] graph_application_traverse_user(application_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_application_traverse_user(application_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to an Application
 
@@ -411,10 +421,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to an Application
-    api_response = api_instance.graph_application_traverse_user(application_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_application_traverse_user(application_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_application_traverse_user: %s\n" % e)
@@ -429,6 +440,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -446,7 +458,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_traverse_user_group**
-> list[GraphObjectWithPaths] graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to an Application
 
@@ -472,10 +484,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to an Application
-    api_response = api_instance.graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_application_traverse_user_group: %s\n" % e)
@@ -490,6 +503,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -507,11 +521,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_associations_list**
-> list[GraphConnection] graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a Command
 
-This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint will return the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations?targets=system_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -534,10 +548,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a Command
-    api_response = api_instance.graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_command_associations_list(command_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_command_associations_list: %s\n" % e)
@@ -553,6 +568,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -570,11 +586,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_associations_post**
-> InlineResponse204 graph_command_associations_post(command_id, content_type, accept, body=body)
+> graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a Command
 
-This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogenous relationship between 2 different objects. for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
+This endpoint will allow you to manage the _direct_ associations of this Command.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Commands and User Groups.   #### Sample Request ```  curl -X POST https://console.jumpcloud.com/api/v2/commands/{Command_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"Group_ID\" }' ```
 
 ### Example 
 ```python
@@ -595,11 +611,11 @@ command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a Command
-    api_response = api_instance.graph_command_associations_post(command_id, content_type, accept, body=body)
-    pprint(api_response)
+    api_instance.graph_command_associations_post(command_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_command_associations_post: %s\n" % e)
 ```
@@ -612,10 +628,11 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
-[**InlineResponse204**](InlineResponse204.md)
+void (empty response body)
 
 ### Authorization
 
@@ -629,7 +646,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_traverse_system**
-> list[GraphObjectWithPaths] graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Systems bound to a Command
 
@@ -655,10 +672,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Systems bound to a Command
-    api_response = api_instance.graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_command_traverse_system: %s\n" % e)
@@ -673,6 +691,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -690,7 +709,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_traverse_system_group**
-> list[GraphObjectWithPaths] graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the System Groups bound to a Command
 
@@ -716,10 +735,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Groups bound to a Command
-    api_response = api_instance.graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_command_traverse_system_group: %s\n" % e)
@@ -734,6 +754,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -751,11 +772,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_associations_list**
-> list[GraphConnection] graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a G Suite instance
 
-This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -778,10 +799,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a G Suite instance
-    api_response = api_instance.graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_g_suite_associations_list(gsuite_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_g_suite_associations_list: %s\n" % e)
@@ -797,6 +819,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -814,11 +837,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_associations_post**
-> graph_g_suite_associations_post(gsuite_id, body=body)
+> graph_g_suite_associations_post(gsuite_id, body=body, x_org_id=x_org_id)
 
 Manage the associations of a G Suite instance
 
-This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+This endpoint returns the _direct_ associations of this G Suite instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example G Suite and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/gsuites/{Gsuite_ID}/associations \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
 
 ### Example 
 ```python
@@ -837,10 +860,11 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.GraphApi()
 gsuite_id = 'gsuite_id_example' # str | ObjectID of the G Suite instance.
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a G Suite instance
-    api_instance.graph_g_suite_associations_post(gsuite_id, body=body)
+    api_instance.graph_g_suite_associations_post(gsuite_id, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_g_suite_associations_post: %s\n" % e)
 ```
@@ -851,6 +875,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gsuite_id** | **str**| ObjectID of the G Suite instance. | 
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -868,7 +893,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_traverse_user**
-> list[GraphObjectWithPaths] graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a G Suite instance
 
@@ -894,10 +919,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a G Suite instance
-    api_response = api_instance.graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_g_suite_traverse_user: %s\n" % e)
@@ -912,6 +938,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -929,7 +956,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_traverse_user_group**
-> list[GraphObjectWithPaths] graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a G Suite instance
 
@@ -955,10 +982,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a G Suite instance
-    api_response = api_instance.graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_g_suite_traverse_user_group: %s\n" % e)
@@ -973,6 +1001,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -990,11 +1019,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_associations_list**
-> list[GraphConnection] graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a LDAP Server
 
-This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -1017,10 +1046,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a LDAP Server
-    api_response = api_instance.graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_ldap_server_associations_list: %s\n" % e)
@@ -1036,6 +1066,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1053,11 +1084,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_associations_post**
-> graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body)
+> graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a LDAP Server
 
-This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
+This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```
 
 ### Example 
 ```python
@@ -1078,10 +1109,11 @@ ldapserver_id = 'ldapserver_id_example' # str | ObjectID of the LDAP Server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a LDAP Server
-    api_instance.graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body)
+    api_instance.graph_ldap_server_associations_post(ldapserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_ldap_server_associations_post: %s\n" % e)
 ```
@@ -1094,6 +1126,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1111,7 +1144,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_traverse_user**
-> list[GraphObjectWithPaths] graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a LDAP Server
 
@@ -1137,10 +1170,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a LDAP Server
-    api_response = api_instance.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_ldap_server_traverse_user: %s\n" % e)
@@ -1155,6 +1189,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1172,7 +1207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_traverse_user_group**
-> list[GraphObjectWithPaths] graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a LDAP Server
 
@@ -1198,10 +1233,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a LDAP Server
-    api_response = api_instance.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_ldap_server_traverse_user_group: %s\n" % e)
@@ -1216,6 +1252,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1233,11 +1270,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_office365_associations_list**
-> list[GraphConnection] graph_office365_associations_list(office365_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_office365_associations_list(office365_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of an Office 365 instance
 
-This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint returns _direct_ associations of an Office 365 instance.   A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
 
 ### Example 
 ```python
@@ -1260,10 +1297,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of an Office 365 instance
-    api_response = api_instance.graph_office365_associations_list(office365_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_office365_associations_list(office365_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_office365_associations_list: %s\n" % e)
@@ -1279,6 +1317,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1296,11 +1335,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_office365_associations_post**
-> graph_office365_associations_post(office365_id, content_type, accept, body=body)
+> graph_office365_associations_post(office365_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of an Office 365 instance
 
-This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogenous relationship between 2 different objects. for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+This endpoint allows you to manage the _direct_ associations of a Office 365 instance.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Office 365 and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{O365_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
 
 ### Example 
 ```python
@@ -1321,10 +1360,11 @@ office365_id = 'office365_id_example' # str | ObjectID of the Office 365 instanc
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of an Office 365 instance
-    api_instance.graph_office365_associations_post(office365_id, content_type, accept, body=body)
+    api_instance.graph_office365_associations_post(office365_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_office365_associations_post: %s\n" % e)
 ```
@@ -1337,6 +1377,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1354,7 +1395,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_office365_traverse_user**
-> list[GraphObjectWithPaths] graph_office365_traverse_user(office365_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_office365_traverse_user(office365_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to an Office 365 instance
 
@@ -1380,10 +1421,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to an Office 365 instance
-    api_response = api_instance.graph_office365_traverse_user(office365_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_office365_traverse_user(office365_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_office365_traverse_user: %s\n" % e)
@@ -1398,6 +1440,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1415,7 +1458,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_office365_traverse_user_group**
-> list[GraphObjectWithPaths] graph_office365_traverse_user_group(office365_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_office365_traverse_user_group(office365_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to an Office 365 instance
 
@@ -1441,10 +1484,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to an Office 365 instance
-    api_response = api_instance.graph_office365_traverse_user_group(office365_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_office365_traverse_user_group(office365_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_office365_traverse_user_group: %s\n" % e)
@@ -1459,6 +1503,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1476,11 +1521,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_associations_list**
-> list[GraphConnection] graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a Policy
 
-This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X GET 'https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -1503,10 +1548,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a Policy
-    api_response = api_instance.graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_policy_associations_list(policy_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_policy_associations_list: %s\n" % e)
@@ -1522,6 +1568,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1539,11 +1586,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_associations_post**
-> graph_policy_associations_post(policy_id, content_type, accept, body=body)
+> graph_policy_associations_post(policy_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a Policy
 
-This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogenous relationship between 2 different objects. for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
+This endpoint allows you to manage the _direct_ associations of a Policy.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Policies and Systems.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/policies/{Policy_ID}/associations/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system_group\",     \"id\": \"{Group_ID}\" }' ```
 
 ### Example 
 ```python
@@ -1564,10 +1611,11 @@ policy_id = 'policy_id_example' # str | ObjectID of the Policy.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a Policy
-    api_instance.graph_policy_associations_post(policy_id, content_type, accept, body=body)
+    api_instance.graph_policy_associations_post(policy_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_policy_associations_post: %s\n" % e)
 ```
@@ -1580,6 +1628,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1597,7 +1646,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_traverse_system**
-> list[GraphObjectWithPaths] graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Systems bound to a Policy
 
@@ -1623,10 +1672,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Systems bound to a Policy
-    api_response = api_instance.graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_policy_traverse_system(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_policy_traverse_system: %s\n" % e)
@@ -1641,6 +1691,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1658,7 +1709,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_policy_traverse_system_group**
-> list[GraphObjectWithPaths] graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the System Groups bound to a Policy
 
@@ -1684,10 +1735,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Groups bound to a Policy
-    api_response = api_instance.graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_policy_traverse_system_group(policy_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_policy_traverse_system_group: %s\n" % e)
@@ -1702,6 +1754,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1719,11 +1772,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_associations_list**
-> list[GraphConnection] graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a RADIUS  Server
 
-This endpoint returns the _direct_ associations of a Radius Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example Radius Servers and Users.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of a Radius Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Radius Servers and Users.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations?targets=user_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -1746,10 +1799,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a RADIUS  Server
-    api_response = api_instance.graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_radius_server_associations_list(radiusserver_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_radius_server_associations_list: %s\n" % e)
@@ -1765,6 +1819,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1782,11 +1837,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_associations_post**
-> graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body)
+> graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a RADIUS Server
 
-This endpoint allows you to manage the _direct_ associations of a Radius Server.  A direct association can be a non-homogenous relationship between 2 different objects. for example Radius Servers and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"type\":\"user\",  \"id\":\"{USER_ID}\",  \"op\":\"add\"   }' ```
+This endpoint allows you to manage the _direct_ associations of a Radius Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Radius Servers and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/radiusservers/{RADIUS_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"type\":\"user\",  \"id\":\"{USER_ID}\",  \"op\":\"add\"   }' ```
 
 ### Example 
 ```python
@@ -1807,10 +1862,11 @@ radiusserver_id = 'radiusserver_id_example' # str | ObjectID of the Radius Serve
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a RADIUS Server
-    api_instance.graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body)
+    api_instance.graph_radius_server_associations_post(radiusserver_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_radius_server_associations_post: %s\n" % e)
 ```
@@ -1823,6 +1879,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1840,7 +1897,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_traverse_user**
-> list[GraphObjectWithPaths] graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a RADIUS  Server
 
@@ -1866,10 +1923,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a RADIUS  Server
-    api_response = api_instance.graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_radius_server_traverse_user(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_radius_server_traverse_user: %s\n" % e)
@@ -1884,6 +1942,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1901,7 +1960,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_radius_server_traverse_user_group**
-> list[GraphObjectWithPaths] graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a RADIUS  Server
 
@@ -1927,10 +1986,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a RADIUS  Server
-    api_response = api_instance.graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_radius_server_traverse_user_group(radiusserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_radius_server_traverse_user_group: %s\n" % e)
@@ -1945,6 +2005,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -1962,11 +2023,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_associations_list**
-> list[GraphConnection] graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphConnection] graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
 
 List the associations of a System
 
-This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
 
 ### Example 
 ```python
@@ -1991,10 +2052,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a System
-    api_response = api_instance.graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_associations_list(system_id, content_type, accept, targets, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_associations_list: %s\n" % e)
@@ -2012,6 +2074,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2029,11 +2092,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_associations_post**
-> graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization)
+> graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 
 Manage associations of a System
 
-This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogenous relationship between 2 different objects. for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
+This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```
 
 ### Example 
 ```python
@@ -2056,10 +2119,11 @@ accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGraphManagementReq() # SystemGraphManagementReq |  (optional)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage associations of a System
-    api_instance.graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization)
+    api_instance.graph_system_associations_post(system_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_associations_post: %s\n" % e)
 ```
@@ -2074,6 +2138,7 @@ Name | Type | Description  | Notes
  **body** | [**SystemGraphManagementReq**](SystemGraphManagementReq.md)|  | [optional] 
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2091,11 +2156,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_associations_list**
-> list[GraphConnection] graph_system_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
+> list[GraphConnection] graph_system_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a System Group
 
-This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -2118,10 +2183,11 @@ accept = 'application/json' # str |  (default to application/json)
 targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a System Group
-    api_response = api_instance.graph_system_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_associations_list: %s\n" % e)
@@ -2137,6 +2203,7 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2154,11 +2221,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_associations_post**
-> graph_system_group_associations_post(group_id, content_type, accept, body=body)
+> graph_system_group_associations_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a System Group
 
-This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
+This endpoint allows you to manage the _direct_ associations of a System Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example System Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{UserID}\" }'  ```
 
 ### Example 
 ```python
@@ -2179,10 +2246,11 @@ group_id = 'group_id_example' # str | ObjectID of the System Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupGraphManagementReq() # SystemGroupGraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a System Group
-    api_instance.graph_system_group_associations_post(group_id, content_type, accept, body=body)
+    api_instance.graph_system_group_associations_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_associations_post: %s\n" % e)
 ```
@@ -2195,6 +2263,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**SystemGroupGraphManagementReq**](SystemGroupGraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2212,7 +2281,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_member_of**
-> list[GraphObjectWithPaths] graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the System Group's parents
 
@@ -2240,10 +2309,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Group's parents
-    api_response = api_instance.graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_system_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_member_of: %s\n" % e)
@@ -2260,6 +2330,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2277,7 +2348,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_members_list**
-> list[GraphConnection] graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the members of a System Group
 
@@ -2303,10 +2374,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the members of a System Group
-    api_response = api_instance.graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_members_list(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_members_list: %s\n" % e)
@@ -2321,6 +2393,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2338,11 +2411,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_members_post**
-> graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization)
+> graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 
 Manage the members of a System Group
 
-This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID\" }' ```
+This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```
 
 ### Example 
 ```python
@@ -2365,10 +2438,11 @@ accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.SystemGroupMembersReq() # SystemGroupMembersReq |  (optional)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the members of a System Group
-    api_instance.graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization)
+    api_instance.graph_system_group_members_post(group_id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_members_post: %s\n" % e)
 ```
@@ -2383,6 +2457,7 @@ Name | Type | Description  | Notes
  **body** | [**SystemGroupMembersReq**](SystemGroupMembersReq.md)|  | [optional] 
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2400,7 +2475,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_membership**
-> list[GraphObjectWithPaths] graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter)
+> list[GraphObjectWithPaths] graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
 
 List the System Group's membership
 
@@ -2428,10 +2503,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Group's membership
-    api_response = api_instance.graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter)
+    api_response = api_instance.graph_system_group_membership(group_id, content_type, accept, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_membership: %s\n" % e)
@@ -2448,6 +2524,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2465,7 +2542,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_traverse_command**
-> list[GraphObjectWithPaths] graph_system_group_traverse_command(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_group_traverse_command(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Commands bound to a System Group
 
@@ -2491,10 +2568,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Commands bound to a System Group
-    api_response = api_instance.graph_system_group_traverse_command(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_traverse_command(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_traverse_command: %s\n" % e)
@@ -2509,6 +2587,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2526,7 +2605,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_traverse_policy**
-> list[GraphObjectWithPaths] graph_system_group_traverse_policy(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_group_traverse_policy(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Policies bound to a System Group
 
@@ -2552,10 +2631,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Policies bound to a System Group
-    api_response = api_instance.graph_system_group_traverse_policy(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_traverse_policy(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_traverse_policy: %s\n" % e)
@@ -2570,6 +2650,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2587,7 +2668,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_traverse_user**
-> list[GraphObjectWithPaths] graph_system_group_traverse_user(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_group_traverse_user(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Users bound to a System Group
 
@@ -2613,10 +2694,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a System Group
-    api_response = api_instance.graph_system_group_traverse_user(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_traverse_user(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_traverse_user: %s\n" % e)
@@ -2631,6 +2713,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2648,7 +2731,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_group_traverse_user_group**
-> list[GraphObjectWithPaths] graph_system_group_traverse_user_group(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_group_traverse_user_group(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the User Groups bound to a System Group
 
@@ -2674,10 +2757,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a System Group
-    api_response = api_instance.graph_system_group_traverse_user_group(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_group_traverse_user_group(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_group_traverse_user_group: %s\n" % e)
@@ -2692,6 +2776,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2709,7 +2794,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_member_of**
-> list[GraphObjectWithPaths] graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort)
+> list[GraphObjectWithPaths] graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort, x_org_id=x_org_id)
 
 List the parent Groups of a System
 
@@ -2739,10 +2824,11 @@ skip = 0 # int | The offset into the records to return. (optional) (default to 0
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the parent Groups of a System
-    api_response = api_instance.graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort)
+    api_response = api_instance.graph_system_member_of(system_id, content_type, accept, filter=filter, limit=limit, skip=skip, date=date, authorization=authorization, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_member_of: %s\n" % e)
@@ -2761,6 +2847,7 @@ Name | Type | Description  | Notes
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2778,7 +2865,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_command**
-> list[GraphObjectWithPaths] graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Commands bound to a System
 
@@ -2804,10 +2891,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Commands bound to a System
-    api_response = api_instance.graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_traverse_command: %s\n" % e)
@@ -2822,6 +2910,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2839,7 +2928,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_policy**
-> list[GraphObjectWithPaths] graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Policies bound to a System
 
@@ -2865,10 +2954,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Policies bound to a System
-    api_response = api_instance.graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_traverse_policy: %s\n" % e)
@@ -2883,6 +2973,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2900,7 +2991,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_user**
-> list[GraphObjectWithPaths] graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphObjectWithPaths] graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
 
 List the Users bound to a System
 
@@ -2928,10 +3019,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Users bound to a System
-    api_response = api_instance.graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_traverse_user(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_traverse_user: %s\n" % e)
@@ -2948,6 +3040,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -2965,7 +3058,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_user_group**
-> list[GraphObjectWithPaths] graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+> list[GraphObjectWithPaths] graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
 
 List the User Groups bound to a System
 
@@ -2993,10 +3086,11 @@ limit = 10 # int | The number of records to return at once. Limited to 100. (opt
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 date = 'date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Groups bound to a System
-    api_response = api_instance.graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization)
+    api_response = api_instance.graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, date=date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_system_traverse_user_group: %s\n" % e)
@@ -3013,6 +3107,7 @@ Name | Type | Description  | Notes
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3030,11 +3125,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_associations_list**
-> list[GraphConnection] graph_user_associations_list(user_id, content_type, accept, targets, limit=limit, skip=skip)
+> list[GraphConnection] graph_user_associations_list(user_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a User
 
-This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint returns the _direct_ associations of a User.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Users and Systems.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/users/{UserID}/associations?targets=system_group \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
 
 ### Example 
 ```python
@@ -3057,10 +3152,11 @@ accept = 'application/json' # str |  (default to application/json)
 targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a User
-    api_response = api_instance.graph_user_associations_list(user_id, content_type, accept, targets, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_associations_list(user_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_associations_list: %s\n" % e)
@@ -3076,6 +3172,7 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3093,11 +3190,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_associations_post**
-> graph_user_associations_post(user_id, content_type, accept, body=body)
+> graph_user_associations_post(user_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a User
 
-This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogenous relationship between 2 different objects. for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
+This endpoint allows you to manage the _direct_ associations of a User.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Users and Systems.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/users/{UserID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",    \"type\": \"system_group\",    \"id\": \"{GroupID}\" }'
 
 ### Example 
 ```python
@@ -3118,10 +3215,11 @@ user_id = 'user_id_example' # str | ObjectID of the User.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.UserGraphManagementReq() # UserGraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a User
-    api_instance.graph_user_associations_post(user_id, content_type, accept, body=body)
+    api_instance.graph_user_associations_post(user_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_associations_post: %s\n" % e)
 ```
@@ -3134,6 +3232,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**UserGraphManagementReq**](UserGraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3151,11 +3250,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_associations_list**
-> list[GraphConnection] graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
+> list[GraphConnection] graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a User Group.
 
-This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations?targets=system \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+This endpoint returns the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations?targets=system \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example 
 ```python
@@ -3178,10 +3277,11 @@ accept = 'application/json' # str |  (default to application/json)
 targets = ['targets_example'] # list[str] | 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the associations of a User Group.
-    api_response = api_instance.graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_associations_list: %s\n" % e)
@@ -3197,6 +3297,7 @@ Name | Type | Description  | Notes
  **targets** | [**list[str]**](str.md)|  | 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3214,11 +3315,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_associations_post**
-> graph_user_group_associations_post(group_id, content_type, accept, body=body)
+> graph_user_group_associations_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the associations of a User Group
 
-This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogenous relationship between 2 different objects. for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
+This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
 
 ### Example 
 ```python
@@ -3239,10 +3340,11 @@ group_id = 'group_id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.UserGroupGraphManagementReq() # UserGroupGraphManagementReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the associations of a User Group
-    api_instance.graph_user_group_associations_post(group_id, content_type, accept, body=body)
+    api_instance.graph_user_group_associations_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_associations_post: %s\n" % e)
 ```
@@ -3255,6 +3357,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**UserGroupGraphManagementReq**](UserGroupGraphManagementReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3272,11 +3375,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_member_of**
-> list[GraphObjectWithPaths] graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the User Group's parents
 
-This endpoint returns all User Groups a User Group is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/membersof ```  Not public yet, as the code is not finished,
+This endpoint returns all User Groups a User Group is a member of.  #### Sample Request ``` https://console.jumpcloud.com/api/v2/usergroups/{group_id}/memberof ```  Not public yet, as the code is not finished,
 
 ### Example 
 ```python
@@ -3300,10 +3403,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Group's parents
-    api_response = api_instance.graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_user_group_member_of(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_member_of: %s\n" % e)
@@ -3320,6 +3424,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3337,7 +3442,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_members_list**
-> list[GraphConnection] graph_user_group_members_list(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphConnection] graph_user_group_members_list(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the members of a User Group
 
@@ -3363,10 +3468,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the members of a User Group
-    api_response = api_instance.graph_user_group_members_list(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_members_list(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_members_list: %s\n" % e)
@@ -3381,6 +3487,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3398,7 +3505,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_members_post**
-> graph_user_group_members_post(group_id, content_type, accept, body=body)
+> graph_user_group_members_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Manage the members of a User Group
 
@@ -3423,10 +3530,11 @@ group_id = 'group_id_example' # str | ObjectID of the User Group.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv2.UserGroupMembersReq() # UserGroupMembersReq |  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Manage the members of a User Group
-    api_instance.graph_user_group_members_post(group_id, content_type, accept, body=body)
+    api_instance.graph_user_group_members_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_members_post: %s\n" % e)
 ```
@@ -3439,6 +3547,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**UserGroupMembersReq**](UserGroupMembersReq.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3456,7 +3565,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_membership**
-> list[GraphObjectWithPaths] graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the User Group's membership
 
@@ -3484,10 +3593,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the User Group's membership
-    api_response = api_instance.graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_user_group_membership(group_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_membership: %s\n" % e)
@@ -3504,6 +3614,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3521,7 +3632,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_active_directory**
-> list[GraphObjectWithPaths] graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Active Directories bound to a User Group
 
@@ -3547,10 +3658,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Active Directories bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_active_directory: %s\n" % e)
@@ -3565,6 +3677,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3582,7 +3695,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_application**
-> list[GraphObjectWithPaths] graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Applications bound to a User Group
 
@@ -3608,10 +3721,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Applications bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_application: %s\n" % e)
@@ -3626,6 +3740,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3643,7 +3758,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_directory**
-> list[GraphObjectWithPaths] graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Directories bound to a User Group
 
@@ -3669,10 +3784,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Directories bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_directory: %s\n" % e)
@@ -3687,6 +3803,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3704,11 +3821,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_g_suite**
-> list[GraphObjectWithPaths] graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the G Suite instances bound to a User Group
 
-This endpoint will return all Gsuite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint will return all G Suite Instances bound to a User Group, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this User Group to the corresponding G Suite instance; this array represents all grouping and/or associations that would have to be removed to deprovision the G Suite instance from this User Group.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/usergroups/{GroupID/gsuites \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
 
 ### Example 
 ```python
@@ -3730,10 +3847,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the G Suite instances bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_g_suite: %s\n" % e)
@@ -3748,6 +3866,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3765,7 +3884,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_ldap_server**
-> list[GraphObjectWithPaths] graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the LDAP Servers bound to a User Group
 
@@ -3791,10 +3910,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the LDAP Servers bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_ldap_server: %s\n" % e)
@@ -3809,6 +3929,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3826,7 +3947,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_office365**
-> list[GraphObjectWithPaths] graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Office 365 instances bound to a User Group
 
@@ -3852,10 +3973,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Office 365 instances bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_office365: %s\n" % e)
@@ -3870,6 +3992,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3887,7 +4010,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_radius_server**
-> list[GraphObjectWithPaths] graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the RADIUS Servers bound to a User Group
 
@@ -3913,10 +4036,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the RADIUS Servers bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_radius_server: %s\n" % e)
@@ -3931,6 +4055,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -3948,7 +4073,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_system**
-> list[GraphObjectWithPaths] graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Systems bound to a User Group
 
@@ -3974,10 +4099,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Systems bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_system: %s\n" % e)
@@ -3992,6 +4118,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4009,7 +4136,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_system_group**
-> list[GraphObjectWithPaths] graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the System Groups bound to User Groups
 
@@ -4035,10 +4162,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Groups bound to User Groups
-    api_response = api_instance.graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_group_traverse_system_group: %s\n" % e)
@@ -4053,6 +4181,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4070,7 +4199,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_member_of**
-> list[GraphObjectWithPaths] graph_user_member_of(user_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[GraphObjectWithPaths] graph_user_member_of(user_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the parent Groups of a User
 
@@ -4098,10 +4227,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the parent Groups of a User
-    api_response = api_instance.graph_user_member_of(user_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.graph_user_member_of(user_id, content_type, accept, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_member_of: %s\n" % e)
@@ -4118,6 +4248,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4135,7 +4266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_application**
-> list[GraphObjectWithPaths] graph_user_traverse_application(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_application(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Applications bound to a User
 
@@ -4161,10 +4292,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Applications bound to a User
-    api_response = api_instance.graph_user_traverse_application(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_application(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_application: %s\n" % e)
@@ -4179,6 +4311,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4196,7 +4329,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_directory**
-> list[GraphObjectWithPaths] graph_user_traverse_directory(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_directory(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Directories bound to a User
 
@@ -4222,10 +4355,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Directories bound to a User
-    api_response = api_instance.graph_user_traverse_directory(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_directory(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_directory: %s\n" % e)
@@ -4240,6 +4374,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4257,7 +4392,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_g_suite**
-> list[GraphObjectWithPaths] graph_user_traverse_g_suite(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_g_suite(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the G Suite instances bound to a User
 
@@ -4283,10 +4418,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the G Suite instances bound to a User
-    api_response = api_instance.graph_user_traverse_g_suite(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_g_suite(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_g_suite: %s\n" % e)
@@ -4301,6 +4437,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4318,7 +4455,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_ldap_server**
-> list[GraphObjectWithPaths] graph_user_traverse_ldap_server(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_ldap_server(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the LDAP servers bound to a User
 
@@ -4344,10 +4481,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the LDAP servers bound to a User
-    api_response = api_instance.graph_user_traverse_ldap_server(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_ldap_server(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_ldap_server: %s\n" % e)
@@ -4362,6 +4500,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4379,7 +4518,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_office365**
-> list[GraphObjectWithPaths] graph_user_traverse_office365(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_office365(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Office 365 instances bound to a User
 
@@ -4405,10 +4544,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Office 365 instances bound to a User
-    api_response = api_instance.graph_user_traverse_office365(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_office365(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_office365: %s\n" % e)
@@ -4423,6 +4563,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4440,7 +4581,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_radius_server**
-> list[GraphObjectWithPaths] graph_user_traverse_radius_server(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_radius_server(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the RADIUS Servers bound to a User
 
@@ -4466,10 +4607,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the RADIUS Servers bound to a User
-    api_response = api_instance.graph_user_traverse_radius_server(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_radius_server(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_radius_server: %s\n" % e)
@@ -4484,6 +4626,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4501,7 +4644,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_system**
-> list[GraphObjectWithPaths] graph_user_traverse_system(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_system(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the Systems bound to a User
 
@@ -4527,10 +4670,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the Systems bound to a User
-    api_response = api_instance.graph_user_traverse_system(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_system(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_system: %s\n" % e)
@@ -4545,6 +4689,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4562,7 +4707,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_traverse_system_group**
-> list[GraphObjectWithPaths] graph_user_traverse_system_group(user_id, content_type, accept, limit=limit, skip=skip)
+> list[GraphObjectWithPaths] graph_user_traverse_system_group(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the System Groups bound to a User
 
@@ -4588,10 +4733,11 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the System Groups bound to a User
-    api_response = api_instance.graph_user_traverse_system_group(user_id, content_type, accept, limit=limit, skip=skip)
+    api_response = api_instance.graph_user_traverse_system_group(user_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->graph_user_traverse_system_group: %s\n" % e)
@@ -4606,6 +4752,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -4623,7 +4770,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policystatuses_list**
-> list[PolicyResult] policystatuses_list(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> list[PolicyResult] policystatuses_list(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
 
 List the policy statuses for a system
 
@@ -4652,10 +4799,11 @@ filter = ['filter_example'] # list[str] | Supported operators are: eq, ne, gt, g
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # List the policy statuses for a system
-    api_response = api_instance.policystatuses_list(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.policystatuses_list(system_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GraphApi->policystatuses_list: %s\n" % e)
@@ -4673,6 +4821,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

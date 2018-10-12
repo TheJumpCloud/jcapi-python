@@ -6,6 +6,7 @@ from .applications_api import ApplicationsApi
 from .bulk_job_requests_api import BulkJobRequestsApi
 from .commands_api import CommandsApi
 from .directories_api import DirectoriesApi
+from .fde_api import FdeApi
 from .g_suite_api import GSuiteApi
 from .graph_api import GraphApi
 from .groups_api import GroupsApi
