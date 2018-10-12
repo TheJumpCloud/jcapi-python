@@ -479,7 +479,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_get_fde_key**
-> Systemfdekey systems_get_fde_key(system_id)
+> Systemfdekey systems_get_fde_key(system_id, x_org_id=x_org_id)
 
 Get System FDE Key
 
@@ -501,10 +501,11 @@ jcapiv2.configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.SystemsApi()
 system_id = 'system_id_example' # str | 
+x_org_id = '' # str |  (optional) (default to )
 
 try: 
     # Get System FDE Key
-    api_response = api_instance.systems_get_fde_key(system_id)
+    api_response = api_instance.systems_get_fde_key(system_id, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_get_fde_key: %s\n" % e)
@@ -515,6 +516,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **system_id** | **str**|  | 
+ **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

@@ -55,6 +55,7 @@ class FdeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str system_id: (required)
+        :param str x_org_id: 
         :return: Systemfdekey
                  If the method is called asynchronously,
                  returns the request thread.
@@ -81,12 +82,13 @@ class FdeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str system_id: (required)
+        :param str x_org_id: 
         :return: Systemfdekey
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id']
+        all_params = ['system_id', 'x_org_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -115,6 +117,8 @@ class FdeApi(object):
         query_params = []
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']
 
         form_params = []
         local_var_files = {}
