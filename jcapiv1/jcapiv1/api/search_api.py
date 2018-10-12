@@ -48,7 +48,6 @@ class SearchApi(object):
         :param Search body:
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
-        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :return: Organizationslist
                  If the method is called asynchronously,
@@ -76,14 +75,13 @@ class SearchApi(object):
         :param Search body:
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
-        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :return: Organizationslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body', 'fields', 'limit', 'x_org_id', 'skip']  # noqa: E501
+        all_params = ['content_type', 'accept', 'body', 'fields', 'limit', 'skip']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -120,8 +118,6 @@ class SearchApi(object):
             query_params.append(('skip', params['skip']))  # noqa: E501
 
         header_params = {}
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:

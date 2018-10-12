@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **search_organizations_post**
-> Organizationslist search_organizations_post(content_type, accept, body=body, fields=fields, limit=limit, x_org_id=x_org_id, skip=skip)
+> Organizationslist search_organizations_post(content_type, accept, body=body, fields=fields, limit=limit, skip=skip)
 
 Search Organizations
 
@@ -37,12 +37,11 @@ accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Search() # Search |  (optional)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 
 try:
     # Search Organizations
-    api_response = api_instance.search_organizations_post(content_type, accept, body=body, fields=fields, limit=limit, x_org_id=x_org_id, skip=skip)
+    api_response = api_instance.search_organizations_post(content_type, accept, body=body, fields=fields, limit=limit, skip=skip)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->search_organizations_post: %s\n" % e)
@@ -57,7 +56,6 @@ Name | Type | Description  | Notes
  **body** | [**Search**](Search.md)|  | [optional] 
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
 
 ### Return type

@@ -134,7 +134,7 @@ class SystemusersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systemusers/{id}/sshkeys/{id}', 'DELETE',
@@ -253,7 +253,7 @@ class SystemusersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systemusers/{id}/sshkeys', 'GET',
@@ -376,7 +376,7 @@ class SystemusersApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systemusers/{id}/sshkeys', 'POST',
