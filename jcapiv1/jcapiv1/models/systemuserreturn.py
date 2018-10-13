@@ -962,8 +962,8 @@ class Systemuserreturn(object):
         :param bad_login_attempts: The bad_login_attempts of this Systemuserreturn.  # noqa: E501
         :type: int
         """
-        if bad_login_attempts is not None and bad_login_attempts < 1:  # noqa: E501
-            raise ValueError("Invalid value for `bad_login_attempts`, must be a value greater than or equal to `1`")  # noqa: E501
+        if bad_login_attempts is not None and bad_login_attempts < 0:  # noqa: E501
+            raise ValueError("Invalid value for `bad_login_attempts`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._bad_login_attempts = bad_login_attempts
 
