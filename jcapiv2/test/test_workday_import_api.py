@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,109 +13,96 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.workday_import_api import WorkdayImportApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.workday_import_api import WorkdayImportApi
 
 
 class TestWorkdayImportApi(unittest.TestCase):
-    """ WorkdayImportApi unit test stubs """
+    """WorkdayImportApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.workday_import_api.WorkdayImportApi()
+        self.api = jcapiv2.api.workday_import_api.WorkdayImportApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_workdays_authorize(self):
-        """
-        Test case for workdays_authorize
+        """Test case for workdays_authorize
 
-        Authorize Workday
+        Authorize Workday  # noqa: E501
         """
         pass
 
     def test_workdays_deauthorize(self):
-        """
-        Test case for workdays_deauthorize
+        """Test case for workdays_deauthorize
 
-        Deauthorize Workday
+        Deauthorize Workday  # noqa: E501
         """
         pass
 
     def test_workdays_delete(self):
-        """
-        Test case for workdays_delete
+        """Test case for workdays_delete
 
-        Delete Workday
+        Delete Workday  # noqa: E501
         """
         pass
 
     def test_workdays_get(self):
-        """
-        Test case for workdays_get
+        """Test case for workdays_get
 
-        Get Workday
+        Get Workday  # noqa: E501
         """
         pass
 
     def test_workdays_import(self):
-        """
-        Test case for workdays_import
+        """Test case for workdays_import
 
-        Workday Import
+        Workday Import  # noqa: E501
         """
         pass
 
     def test_workdays_importresults(self):
-        """
-        Test case for workdays_importresults
+        """Test case for workdays_importresults
 
-        List Import Results
+        List Import Results  # noqa: E501
         """
         pass
 
     def test_workdays_list(self):
-        """
-        Test case for workdays_list
+        """Test case for workdays_list
 
-        List Workdays
+        List Workdays  # noqa: E501
         """
         pass
 
     def test_workdays_post(self):
-        """
-        Test case for workdays_post
+        """Test case for workdays_post
 
-        Create new Workday
+        Create new Workday  # noqa: E501
         """
         pass
 
     def test_workdays_put(self):
-        """
-        Test case for workdays_put
+        """Test case for workdays_put
 
-        Update Workday
+        Update Workday  # noqa: E501
         """
         pass
 
     def test_workdays_settings(self):
-        """
-        Test case for workdays_settings
+        """Test case for workdays_settings
 
-        Get Workday Settings (incomplete)
+        Get Workday Settings (incomplete)  # noqa: E501
         """
         pass
 
     def test_workdays_workers(self):
-        """
-        Test case for workdays_workers
+        """Test case for workdays_workers
 
-        List Workday Workers
+        List Workday Workers  # noqa: E501
         """
         pass
 

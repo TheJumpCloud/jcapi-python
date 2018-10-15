@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,141 +13,124 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.system_groups_api import SystemGroupsApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.system_groups_api import SystemGroupsApi
 
 
 class TestSystemGroupsApi(unittest.TestCase):
-    """ SystemGroupsApi unit test stubs """
+    """SystemGroupsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.system_groups_api.SystemGroupsApi()
+        self.api = jcapiv2.api.system_groups_api.SystemGroupsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_graph_system_group_associations_list(self):
-        """
-        Test case for graph_system_group_associations_list
+        """Test case for graph_system_group_associations_list
 
-        List the associations of a System Group
+        List the associations of a System Group  # noqa: E501
         """
         pass
 
     def test_graph_system_group_associations_post(self):
-        """
-        Test case for graph_system_group_associations_post
+        """Test case for graph_system_group_associations_post
 
-        Manage the associations of a System Group
+        Manage the associations of a System Group  # noqa: E501
         """
         pass
 
     def test_graph_system_group_member_of(self):
-        """
-        Test case for graph_system_group_member_of
+        """Test case for graph_system_group_member_of
 
-        List the System Group's parents
+        List the System Group's parents  # noqa: E501
         """
         pass
 
     def test_graph_system_group_members_list(self):
-        """
-        Test case for graph_system_group_members_list
+        """Test case for graph_system_group_members_list
 
-        List the members of a System Group
+        List the members of a System Group  # noqa: E501
         """
         pass
 
     def test_graph_system_group_members_post(self):
-        """
-        Test case for graph_system_group_members_post
+        """Test case for graph_system_group_members_post
 
-        Manage the members of a System Group
+        Manage the members of a System Group  # noqa: E501
         """
         pass
 
     def test_graph_system_group_membership(self):
-        """
-        Test case for graph_system_group_membership
+        """Test case for graph_system_group_membership
 
-        List the System Group's membership
+        List the System Group's membership  # noqa: E501
         """
         pass
 
     def test_graph_system_group_traverse_policy(self):
-        """
-        Test case for graph_system_group_traverse_policy
+        """Test case for graph_system_group_traverse_policy
 
-        List the Policies bound to a System Group
+        List the Policies bound to a System Group  # noqa: E501
         """
         pass
 
     def test_graph_system_group_traverse_user(self):
-        """
-        Test case for graph_system_group_traverse_user
+        """Test case for graph_system_group_traverse_user
 
-        List the Users bound to a System Group
+        List the Users bound to a System Group  # noqa: E501
         """
         pass
 
     def test_graph_system_group_traverse_user_group(self):
-        """
-        Test case for graph_system_group_traverse_user_group
+        """Test case for graph_system_group_traverse_user_group
 
-        List the User Groups bound to a System Group
+        List the User Groups bound to a System Group  # noqa: E501
         """
         pass
 
     def test_groups_system_delete(self):
-        """
-        Test case for groups_system_delete
+        """Test case for groups_system_delete
 
-        Delete a System Group
+        Delete a System Group  # noqa: E501
         """
         pass
 
     def test_groups_system_get(self):
-        """
-        Test case for groups_system_get
+        """Test case for groups_system_get
 
-        View an individual System Group details
+        View an individual System Group details  # noqa: E501
         """
         pass
 
     def test_groups_system_list(self):
-        """
-        Test case for groups_system_list
+        """Test case for groups_system_list
 
-        List all System Groups
+        List all System Groups  # noqa: E501
         """
         pass
 
     def test_groups_system_patch(self):
-        """
-        Test case for groups_system_patch
+        """Test case for groups_system_patch
 
-        Partial update a System Group
+        Partial update a System Group  # noqa: E501
         """
         pass
 
     def test_groups_system_post(self):
-        """
-        Test case for groups_system_post
+        """Test case for groups_system_post
 
-        Create a new System Group
+        Create a new System Group  # noqa: E501
         """
         pass
 
     def test_groups_system_put(self):
-        """
-        Test case for groups_system_put
+        """Test case for groups_system_put
 
-        Update a System Group
+        Update a System Group  # noqa: E501
         """
         pass
 

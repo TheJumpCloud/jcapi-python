@@ -67,7 +67,6 @@ from jcapiv1.models.systemput import Systemput
 from jcapiv1.models.systemput_agent_bound_messages import SystemputAgentBoundMessages
 from jcapiv1.models.systemslist import Systemslist
 from jcapiv1.models.systemuser import Systemuser
-from jcapiv1.models.systemuser_attributes import SystemuserAttributes
 from jcapiv1.models.systemuserbinding import Systemuserbinding
 from jcapiv1.models.systemuserbindingsput import Systemuserbindingsput
 from jcapiv1.models.systemuserput import Systemuserput

@@ -1,9 +1,11 @@
 # coding: utf-8
 
+# flake8: noqa
+
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,104 +15,99 @@
 
 from __future__ import absolute_import
 
-# import models into sdk package
-from .models.active_directory_input import ActiveDirectoryInput
-from .models.auth_info import AuthInfo
-from .models.auth_input import AuthInput
-from .models.auth_input_object import AuthInputObject
-from .models.authinput_basic import AuthinputBasic
-from .models.authinput_oauth import AuthinputOauth
-from .models.bulk_user_create import BulkUserCreate
-from .models.directory import Directory
-from .models.emailrequest import Emailrequest
-from .models.error import Error
-from .models.errorresponse import Errorresponse
-from .models.graph_connection import GraphConnection
-from .models.graph_management_req import GraphManagementReq
-from .models.graph_object import GraphObject
-from .models.graph_object_with_paths import GraphObjectWithPaths
-from .models.graph_type import GraphType
-from .models.group import Group
-from .models.group_type import GroupType
-from .models.job_details import JobDetails
-from .models.job_id import JobId
-from .models.job_workresult import JobWorkresult
-from .models.ldap_server_input import LdapServerInput
-from .models.oauth_code_input import OauthCodeInput
-from .models.policy import Policy
-from .models.policy_request import PolicyRequest
-from .models.policy_request_template import PolicyRequestTemplate
-from .models.policy_result import PolicyResult
-from .models.policy_template import PolicyTemplate
-from .models.policy_template_config_field import PolicyTemplateConfigField
-from .models.policy_template_config_field_tooltip import PolicyTemplateConfigFieldTooltip
-from .models.policy_template_config_field_tooltip_variables import PolicyTemplateConfigFieldTooltipVariables
-from .models.policy_template_with_details import PolicyTemplateWithDetails
-from .models.policy_value import PolicyValue
-from .models.policy_with_details import PolicyWithDetails
-from .models.samba_domain_input import SambaDomainInput
-from .models.sshkeylist import Sshkeylist
-from .models.system_graph_management_req import SystemGraphManagementReq
-from .models.system_graph_management_req_attributes import SystemGraphManagementReqAttributes
-from .models.system_graph_management_req_attributes_sudo import SystemGraphManagementReqAttributesSudo
-from .models.system_group import SystemGroup
-from .models.system_group_data import SystemGroupData
-from .models.system_group_graph_management_req import SystemGroupGraphManagementReq
-from .models.system_group_members_req import SystemGroupMembersReq
-from .models.systemfdekey import Systemfdekey
-from .models.systemuser import Systemuser
-from .models.systemuser_attributes import SystemuserAttributes
-from .models.systemuserputpost import Systemuserputpost
-from .models.systemuserputpost_addresses import SystemuserputpostAddresses
-from .models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
-from .models.user_graph_management_req import UserGraphManagementReq
-from .models.user_group import UserGroup
-from .models.user_group_graph_management_req import UserGroupGraphManagementReq
-from .models.user_group_members_req import UserGroupMembersReq
-from .models.user_group_post import UserGroupPost
-from .models.user_group_post_attributes import UserGroupPostAttributes
-from .models.user_group_post_attributes_posix_groups import UserGroupPostAttributesPosixGroups
-from .models.user_group_put import UserGroupPut
-from .models.user_group_put_attributes import UserGroupPutAttributes
-from .models.workday_fields import WorkdayFields
-from .models.workday_input import WorkdayInput
-from .models.workday_output import WorkdayOutput
-from .models.workday_request import WorkdayRequest
-from .models.workday_worker import WorkdayWorker
-from .models.workdayoutput_auth import WorkdayoutputAuth
-from .models.active_directory_output import ActiveDirectoryOutput
-from .models.ldap_server_output import LdapServerOutput
-from .models.samba_domain_output import SambaDomainOutput
-
 # import apis into sdk package
-from .apis.active_directory_api import ActiveDirectoryApi
-from .apis.applications_api import ApplicationsApi
-from .apis.bulk_job_requests_api import BulkJobRequestsApi
-from .apis.commands_api import CommandsApi
-from .apis.directories_api import DirectoriesApi
-from .apis.fde_api import FdeApi
-from .apis.g_suite_api import GSuiteApi
-from .apis.graph_api import GraphApi
-from .apis.groups_api import GroupsApi
-from .apis.ldap_servers_api import LDAPServersApi
-from .apis.office365_api import Office365Api
-from .apis.policies_api import PoliciesApi
-from .apis.policytemplates_api import PolicytemplatesApi
-from .apis.radius_servers_api import RADIUSServersApi
-from .apis.samba_domains_api import SambaDomainsApi
-from .apis.system_group_associations_api import SystemGroupAssociationsApi
-from .apis.system_group_members_membership_api import SystemGroupMembersMembershipApi
-from .apis.system_groups_api import SystemGroupsApi
-from .apis.systems_api import SystemsApi
-from .apis.user_group_associations_api import UserGroupAssociationsApi
-from .apis.user_group_members_membership_api import UserGroupMembersMembershipApi
-from .apis.user_groups_api import UserGroupsApi
-from .apis.users_api import UsersApi
-from .apis.workday_import_api import WorkdayImportApi
+from jcapiv2.api.active_directory_api import ActiveDirectoryApi
+from jcapiv2.api.applications_api import ApplicationsApi
+from jcapiv2.api.bulk_job_requests_api import BulkJobRequestsApi
+from jcapiv2.api.commands_api import CommandsApi
+from jcapiv2.api.directories_api import DirectoriesApi
+from jcapiv2.api.g_suite_api import GSuiteApi
+from jcapiv2.api.graph_api import GraphApi
+from jcapiv2.api.groups_api import GroupsApi
+from jcapiv2.api.ldap_servers_api import LDAPServersApi
+from jcapiv2.api.office_365_api import Office365Api
+from jcapiv2.api.policies_api import PoliciesApi
+from jcapiv2.api.policytemplates_api import PolicytemplatesApi
+from jcapiv2.api.radius_servers_api import RADIUSServersApi
+from jcapiv2.api.samba_domains_api import SambaDomainsApi
+from jcapiv2.api.system_group_associations_api import SystemGroupAssociationsApi
+from jcapiv2.api.system_group_members__membership_api import SystemGroupMembersMembershipApi
+from jcapiv2.api.system_groups_api import SystemGroupsApi
+from jcapiv2.api.systems_api import SystemsApi
+from jcapiv2.api.user_group_associations_api import UserGroupAssociationsApi
+from jcapiv2.api.user_group_members__membership_api import UserGroupMembersMembershipApi
+from jcapiv2.api.user_groups_api import UserGroupsApi
+from jcapiv2.api.users_api import UsersApi
+from jcapiv2.api.workday_import_api import WorkdayImportApi
+from jcapiv2.api.fde_api import FdeApi
 
 # import ApiClient
-from .api_client import ApiClient
-
-from .configuration import Configuration
-
-configuration = Configuration()
+from jcapiv2.api_client import ApiClient
+from jcapiv2.configuration import Configuration
+# import models into sdk package
+from jcapiv2.models.active_directory_input import ActiveDirectoryInput
+from jcapiv2.models.auth_info import AuthInfo
+from jcapiv2.models.auth_input import AuthInput
+from jcapiv2.models.auth_input_object import AuthInputObject
+from jcapiv2.models.authinput_basic import AuthinputBasic
+from jcapiv2.models.authinput_oauth import AuthinputOauth
+from jcapiv2.models.bulk_user_create import BulkUserCreate
+from jcapiv2.models.directory import Directory
+from jcapiv2.models.emailrequest import Emailrequest
+from jcapiv2.models.error import Error
+from jcapiv2.models.errorresponse import Errorresponse
+from jcapiv2.models.graph_connection import GraphConnection
+from jcapiv2.models.graph_management_req import GraphManagementReq
+from jcapiv2.models.graph_object import GraphObject
+from jcapiv2.models.graph_object_with_paths import GraphObjectWithPaths
+from jcapiv2.models.graph_type import GraphType
+from jcapiv2.models.group import Group
+from jcapiv2.models.group_type import GroupType
+from jcapiv2.models.job_details import JobDetails
+from jcapiv2.models.job_id import JobId
+from jcapiv2.models.job_workresult import JobWorkresult
+from jcapiv2.models.ldap_server_input import LdapServerInput
+from jcapiv2.models.oauth_code_input import OauthCodeInput
+from jcapiv2.models.policy import Policy
+from jcapiv2.models.policy_request import PolicyRequest
+from jcapiv2.models.policy_request_template import PolicyRequestTemplate
+from jcapiv2.models.policy_result import PolicyResult
+from jcapiv2.models.policy_template import PolicyTemplate
+from jcapiv2.models.policy_template_config_field import PolicyTemplateConfigField
+from jcapiv2.models.policy_template_config_field_tooltip import PolicyTemplateConfigFieldTooltip
+from jcapiv2.models.policy_template_config_field_tooltip_variables import PolicyTemplateConfigFieldTooltipVariables
+from jcapiv2.models.policy_template_with_details import PolicyTemplateWithDetails
+from jcapiv2.models.policy_value import PolicyValue
+from jcapiv2.models.policy_with_details import PolicyWithDetails
+from jcapiv2.models.samba_domain_input import SambaDomainInput
+from jcapiv2.models.sshkeylist import Sshkeylist
+from jcapiv2.models.system_graph_management_req import SystemGraphManagementReq
+from jcapiv2.models.system_graph_management_req_attributes import SystemGraphManagementReqAttributes
+from jcapiv2.models.system_graph_management_req_attributes_sudo import SystemGraphManagementReqAttributesSudo
+from jcapiv2.models.system_group import SystemGroup
+from jcapiv2.models.system_group_data import SystemGroupData
+from jcapiv2.models.system_group_graph_management_req import SystemGroupGraphManagementReq
+from jcapiv2.models.system_group_members_req import SystemGroupMembersReq
+from jcapiv2.models.systemfdekey import Systemfdekey
+from jcapiv2.models.systemuser import Systemuser
+from jcapiv2.models.systemuserputpost import Systemuserputpost
+from jcapiv2.models.systemuserputpost_addresses import SystemuserputpostAddresses
+from jcapiv2.models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
+from jcapiv2.models.user_graph_management_req import UserGraphManagementReq
+from jcapiv2.models.user_group import UserGroup
+from jcapiv2.models.user_group_graph_management_req import UserGroupGraphManagementReq
+from jcapiv2.models.user_group_members_req import UserGroupMembersReq
+from jcapiv2.models.user_group_post import UserGroupPost
+from jcapiv2.models.user_group_post_attributes import UserGroupPostAttributes
+from jcapiv2.models.user_group_post_attributes_posix_groups import UserGroupPostAttributesPosixGroups
+from jcapiv2.models.user_group_put import UserGroupPut
+from jcapiv2.models.user_group_put_attributes import UserGroupPutAttributes
+from jcapiv2.models.workday_fields import WorkdayFields
+from jcapiv2.models.workday_input import WorkdayInput
+from jcapiv2.models.workday_output import WorkdayOutput
+from jcapiv2.models.workday_request import WorkdayRequest
+from jcapiv2.models.workday_worker import WorkdayWorker
+from jcapiv2.models.workdayoutput_auth import WorkdayoutputAuth
+from jcapiv2.models.active_directory_output import ActiveDirectoryOutput
+from jcapiv2.models.ldap_server_output import LdapServerOutput
+from jcapiv2.models.samba_domain_output import SambaDomainOutput

@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,117 +13,103 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.users_api import UsersApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.users_api import UsersApi
 
 
 class TestUsersApi(unittest.TestCase):
-    """ UsersApi unit test stubs """
+    """UsersApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.users_api.UsersApi()
+        self.api = jcapiv2.api.users_api.UsersApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_graph_user_associations_list(self):
-        """
-        Test case for graph_user_associations_list
+        """Test case for graph_user_associations_list
 
-        List the associations of a User
+        List the associations of a User  # noqa: E501
         """
         pass
 
     def test_graph_user_associations_post(self):
-        """
-        Test case for graph_user_associations_post
+        """Test case for graph_user_associations_post
 
-        Manage the associations of a User
+        Manage the associations of a User  # noqa: E501
         """
         pass
 
     def test_graph_user_member_of(self):
-        """
-        Test case for graph_user_member_of
+        """Test case for graph_user_member_of
 
-        List the parent Groups of a User
+        List the parent Groups of a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_application(self):
-        """
-        Test case for graph_user_traverse_application
+        """Test case for graph_user_traverse_application
 
-        List the Applications bound to a User
+        List the Applications bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_directory(self):
-        """
-        Test case for graph_user_traverse_directory
+        """Test case for graph_user_traverse_directory
 
-        List the Directories bound to a User
+        List the Directories bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_g_suite(self):
-        """
-        Test case for graph_user_traverse_g_suite
+        """Test case for graph_user_traverse_g_suite
 
-        List the G Suite instances bound to a User
+        List the G Suite instances bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_ldap_server(self):
-        """
-        Test case for graph_user_traverse_ldap_server
+        """Test case for graph_user_traverse_ldap_server
 
-        List the LDAP servers bound to a User
+        List the LDAP servers bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_office365(self):
-        """
-        Test case for graph_user_traverse_office365
+        """Test case for graph_user_traverse_office365
 
-        List the Office 365 instances bound to a User
+        List the Office 365 instances bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_radius_server(self):
-        """
-        Test case for graph_user_traverse_radius_server
+        """Test case for graph_user_traverse_radius_server
 
-        List the RADIUS Servers bound to a User
+        List the RADIUS Servers bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_system(self):
-        """
-        Test case for graph_user_traverse_system
+        """Test case for graph_user_traverse_system
 
-        List the Systems bound to a User
+        List the Systems bound to a User  # noqa: E501
         """
         pass
 
     def test_graph_user_traverse_system_group(self):
-        """
-        Test case for graph_user_traverse_system_group
+        """Test case for graph_user_traverse_system_group
 
-        List the System Groups bound to a User
+        List the System Groups bound to a User  # noqa: E501
         """
         pass
 
     def test_user_send_emails(self):
-        """
-        Test case for user_send_emails
+        """Test case for user_send_emails
 
-        Send User Emails
+        Send User Emails  # noqa: E501
         """
         pass
 

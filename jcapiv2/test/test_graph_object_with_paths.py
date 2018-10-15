@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.models.graph_object_with_paths import GraphObjectWithPaths  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.models.graph_object_with_paths import GraphObjectWithPaths
 
 
 class TestGraphObjectWithPaths(unittest.TestCase):
-    """ GraphObjectWithPaths unit test stubs """
+    """GraphObjectWithPaths unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestGraphObjectWithPaths(unittest.TestCase):
         pass
 
     def testGraphObjectWithPaths(self):
-        """
-        Test GraphObjectWithPaths
-        """
+        """Test GraphObjectWithPaths"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = jcapiv2.models.graph_object_with_paths.GraphObjectWithPaths()
+        # model = jcapiv2.models.graph_object_with_paths.GraphObjectWithPaths()  # noqa: E501
         pass
 
 

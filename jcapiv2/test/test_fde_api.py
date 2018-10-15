@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,29 +13,26 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.fde_api import FdeApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.fde_api import FdeApi
 
 
 class TestFdeApi(unittest.TestCase):
-    """ FdeApi unit test stubs """
+    """FdeApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.fde_api.FdeApi()
+        self.api = jcapiv2.api.fde_api.FdeApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_systems_get_fde_key(self):
-        """
-        Test case for systems_get_fde_key
+        """Test case for systems_get_fde_key
 
-        Get System FDE Key
+        Get System FDE Key  # noqa: E501
         """
         pass
 

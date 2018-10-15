@@ -183,7 +183,7 @@ class Command(object):
     def command_runners(self):
         """Gets the command_runners of this Command.  # noqa: E501
 
-        an array of IDs of the Command Runner Users that can execute this command.  # noqa: E501
+        An array of IDs of the Command Runner Users that can execute this command.  # noqa: E501
 
         :return: The command_runners of this Command.  # noqa: E501
         :rtype: list[str]
@@ -194,7 +194,7 @@ class Command(object):
     def command_runners(self, command_runners):
         """Sets the command_runners of this Command.
 
-        an array of IDs of the Command Runner Users that can execute this command.  # noqa: E501
+        An array of IDs of the Command Runner Users that can execute this command.  # noqa: E501
 
         :param command_runners: The command_runners of this Command.  # noqa: E501
         :type: list[str]

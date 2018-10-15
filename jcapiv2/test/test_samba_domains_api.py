@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,61 +13,54 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.samba_domains_api import SambaDomainsApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.samba_domains_api import SambaDomainsApi
 
 
 class TestSambaDomainsApi(unittest.TestCase):
-    """ SambaDomainsApi unit test stubs """
+    """SambaDomainsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.samba_domains_api.SambaDomainsApi()
+        self.api = jcapiv2.api.samba_domains_api.SambaDomainsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_ldapservers_samba_domains_delete(self):
-        """
-        Test case for ldapservers_samba_domains_delete
+        """Test case for ldapservers_samba_domains_delete
 
-        Delete Samba Domain
+        Delete Samba Domain  # noqa: E501
         """
         pass
 
     def test_ldapservers_samba_domains_get(self):
-        """
-        Test case for ldapservers_samba_domains_get
+        """Test case for ldapservers_samba_domains_get
 
-        Get Samba Domain
+        Get Samba Domain  # noqa: E501
         """
         pass
 
     def test_ldapservers_samba_domains_list(self):
-        """
-        Test case for ldapservers_samba_domains_list
+        """Test case for ldapservers_samba_domains_list
 
-        List Samba Domains
+        List Samba Domains  # noqa: E501
         """
         pass
 
     def test_ldapservers_samba_domains_post(self):
-        """
-        Test case for ldapservers_samba_domains_post
+        """Test case for ldapservers_samba_domains_post
 
-        Create Samba Domain
+        Create Samba Domain  # noqa: E501
         """
         pass
 
     def test_ldapservers_samba_domains_put(self):
-        """
-        Test case for ldapservers_samba_domains_put
+        """Test case for ldapservers_samba_domains_put
 
-        Update Samba Domain
+        Update Samba Domain  # noqa: E501
         """
         pass
 

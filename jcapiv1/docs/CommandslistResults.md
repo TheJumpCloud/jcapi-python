@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **launch_type** | **str** | How the Command is executed. | [optional] 
 **listens_to** | **str** |  | [optional] 
 **schedule** | **str** | A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.  | [optional] 
-**trigger** | **str** | trigger to execute command. | [optional] 
+**trigger** | **str** | Trigger to execute command. | [optional] 
 **schedule_repeat_type** | **str** | When the command will repeat. | [optional] 
 **organization** | **str** | The ID of the Organization. | [optional] 
 **id** | **str** | The ID of the command. | [optional] 

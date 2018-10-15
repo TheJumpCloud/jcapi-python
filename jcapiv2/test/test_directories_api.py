@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,29 +13,26 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.directories_api import DirectoriesApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.directories_api import DirectoriesApi
 
 
 class TestDirectoriesApi(unittest.TestCase):
-    """ DirectoriesApi unit test stubs """
+    """DirectoriesApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.directories_api.DirectoriesApi()
+        self.api = jcapiv2.api.directories_api.DirectoriesApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_directories_list(self):
-        """
-        Test case for directories_list
+        """Test case for directories_list
 
-        List All Directories
+        List All Directories  # noqa: E501
         """
         pass
 

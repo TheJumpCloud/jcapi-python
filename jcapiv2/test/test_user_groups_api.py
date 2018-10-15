@@ -3,7 +3,7 @@
 """
     JumpCloud APIs
 
-     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.
+     JumpCloud's V2 API. This set of endpoints allows JumpCloud customers to manage objects, groupings and mappings and interact with the JumpCloud Graph.  # noqa: E501
 
     OpenAPI spec version: 2.0
     
@@ -13,189 +13,166 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import jcapiv2
+from jcapiv2.api.user_groups_api import UserGroupsApi  # noqa: E501
 from jcapiv2.rest import ApiException
-from jcapiv2.apis.user_groups_api import UserGroupsApi
 
 
 class TestUserGroupsApi(unittest.TestCase):
-    """ UserGroupsApi unit test stubs """
+    """UserGroupsApi unit test stubs"""
 
     def setUp(self):
-        self.api = jcapiv2.apis.user_groups_api.UserGroupsApi()
+        self.api = jcapiv2.api.user_groups_api.UserGroupsApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_graph_user_group_associations_list(self):
-        """
-        Test case for graph_user_group_associations_list
+        """Test case for graph_user_group_associations_list
 
-        List the associations of a User Group.
+        List the associations of a User Group.  # noqa: E501
         """
         pass
 
     def test_graph_user_group_associations_post(self):
-        """
-        Test case for graph_user_group_associations_post
+        """Test case for graph_user_group_associations_post
 
-        Manage the associations of a User Group
+        Manage the associations of a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_member_of(self):
-        """
-        Test case for graph_user_group_member_of
+        """Test case for graph_user_group_member_of
 
-        List the User Group's parents
+        List the User Group's parents  # noqa: E501
         """
         pass
 
     def test_graph_user_group_members_list(self):
-        """
-        Test case for graph_user_group_members_list
+        """Test case for graph_user_group_members_list
 
-        List the members of a User Group
+        List the members of a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_members_post(self):
-        """
-        Test case for graph_user_group_members_post
+        """Test case for graph_user_group_members_post
 
-        Manage the members of a User Group
+        Manage the members of a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_membership(self):
-        """
-        Test case for graph_user_group_membership
+        """Test case for graph_user_group_membership
 
-        List the User Group's membership
+        List the User Group's membership  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_active_directory(self):
-        """
-        Test case for graph_user_group_traverse_active_directory
+        """Test case for graph_user_group_traverse_active_directory
 
-        List the Active Directories bound to a User Group
+        List the Active Directories bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_application(self):
-        """
-        Test case for graph_user_group_traverse_application
+        """Test case for graph_user_group_traverse_application
 
-        List the Applications bound to a User Group
+        List the Applications bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_directory(self):
-        """
-        Test case for graph_user_group_traverse_directory
+        """Test case for graph_user_group_traverse_directory
 
-        List the Directories bound to a User Group
+        List the Directories bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_g_suite(self):
-        """
-        Test case for graph_user_group_traverse_g_suite
+        """Test case for graph_user_group_traverse_g_suite
 
-        List the G Suite instances bound to a User Group
+        List the G Suite instances bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_ldap_server(self):
-        """
-        Test case for graph_user_group_traverse_ldap_server
+        """Test case for graph_user_group_traverse_ldap_server
 
-        List the LDAP Servers bound to a User Group
+        List the LDAP Servers bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_office365(self):
-        """
-        Test case for graph_user_group_traverse_office365
+        """Test case for graph_user_group_traverse_office365
 
-        List the Office 365 instances bound to a User Group
+        List the Office 365 instances bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_radius_server(self):
-        """
-        Test case for graph_user_group_traverse_radius_server
+        """Test case for graph_user_group_traverse_radius_server
 
-        List the RADIUS Servers bound to a User Group
+        List the RADIUS Servers bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_system(self):
-        """
-        Test case for graph_user_group_traverse_system
+        """Test case for graph_user_group_traverse_system
 
-        List the Systems bound to a User Group
+        List the Systems bound to a User Group  # noqa: E501
         """
         pass
 
     def test_graph_user_group_traverse_system_group(self):
-        """
-        Test case for graph_user_group_traverse_system_group
+        """Test case for graph_user_group_traverse_system_group
 
-        List the System Groups bound to User Groups
+        List the System Groups bound to User Groups  # noqa: E501
         """
         pass
 
     def test_groups_user_delete(self):
-        """
-        Test case for groups_user_delete
+        """Test case for groups_user_delete
 
-        Delete a User Group
+        Delete a User Group  # noqa: E501
         """
         pass
 
     def test_groups_user_get(self):
-        """
-        Test case for groups_user_get
+        """Test case for groups_user_get
 
-        View an individual User Group details
+        View an individual User Group details  # noqa: E501
         """
         pass
 
     def test_groups_user_list(self):
-        """
-        Test case for groups_user_list
+        """Test case for groups_user_list
 
-        List all User Groups
+        List all User Groups  # noqa: E501
         """
         pass
 
     def test_groups_user_patch(self):
-        """
-        Test case for groups_user_patch
+        """Test case for groups_user_patch
 
-        Partial update a User Group
+        Partial update a User Group  # noqa: E501
         """
         pass
 
     def test_groups_user_post(self):
-        """
-        Test case for groups_user_post
+        """Test case for groups_user_post
 
-        Create a new User Group
+        Create a new User Group  # noqa: E501
         """
         pass
 
     def test_groups_user_put(self):
-        """
-        Test case for groups_user_put
+        """Test case for groups_user_put
 
-        Update a User Group
+        Update a User Group  # noqa: E501
         """
         pass
 
