@@ -155,6 +155,7 @@ class BulkUserCreate(object):
     def attributes(self):
         """Gets the attributes of this BulkUserCreate.  # noqa: E501
 
+        Map of additional attributes.  # noqa: E501
 
         :return: The attributes of this BulkUserCreate.  # noqa: E501
         :rtype: list[object]
@@ -165,6 +166,7 @@ class BulkUserCreate(object):
     def attributes(self, attributes):
         """Sets the attributes of this BulkUserCreate.
 
+        Map of additional attributes.  # noqa: E501
 
         :param attributes: The attributes of this BulkUserCreate.  # noqa: E501
         :type: list[object]

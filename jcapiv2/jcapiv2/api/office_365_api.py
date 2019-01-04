@@ -545,3 +545,506 @@ class Office365Api(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+    def translation_rules_office365_delete(self, office365_id, id, content_type, accept, **kwargs):  # noqa: E501
+        """Deletes a Office 365 translation rule  # noqa: E501
+
+        This endpoint allows you to delete a translation rule for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  #### Sample Request  ``` curl -X DELETE https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules/{id} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_delete(office365_id, id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.translation_rules_office365_delete_with_http_info(office365_id, id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.translation_rules_office365_delete_with_http_info(office365_id, id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def translation_rules_office365_delete_with_http_info(self, office365_id, id, content_type, accept, **kwargs):  # noqa: E501
+        """Deletes a Office 365 translation rule  # noqa: E501
+
+        This endpoint allows you to delete a translation rule for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  #### Sample Request  ``` curl -X DELETE https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules/{id} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_delete_with_http_info(office365_id, id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['office365_id', 'id', 'content_type', 'accept']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method translation_rules_office365_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'office365_id' is set
+        if ('office365_id' not in params or
+                params['office365_id'] is None):
+            raise ValueError("Missing the required parameter `office365_id` when calling `translation_rules_office365_delete`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `translation_rules_office365_delete`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `translation_rules_office365_delete`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `translation_rules_office365_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'office365_id' in params:
+            path_params['office365_id'] = params['office365_id']  # noqa: E501
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/office365s/{office365_id}/translationrules/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def translation_rules_office365_get(self, office365_id, id, content_type, accept, **kwargs):  # noqa: E501
+        """Gets a specific Office 365 translation rule  # noqa: E501
+
+        This endpoint returns a specific translation rule for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  ###### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules/{id} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_get(office365_id, id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :return: Office365TranslationRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.translation_rules_office365_get_with_http_info(office365_id, id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.translation_rules_office365_get_with_http_info(office365_id, id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def translation_rules_office365_get_with_http_info(self, office365_id, id, content_type, accept, **kwargs):  # noqa: E501
+        """Gets a specific Office 365 translation rule  # noqa: E501
+
+        This endpoint returns a specific translation rule for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  ###### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules/{id} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_get_with_http_info(office365_id, id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :return: Office365TranslationRule
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['office365_id', 'id', 'content_type', 'accept']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method translation_rules_office365_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'office365_id' is set
+        if ('office365_id' not in params or
+                params['office365_id'] is None):
+            raise ValueError("Missing the required parameter `office365_id` when calling `translation_rules_office365_get`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `translation_rules_office365_get`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `translation_rules_office365_get`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `translation_rules_office365_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'office365_id' in params:
+            path_params['office365_id'] = params['office365_id']  # noqa: E501
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/office365s/{office365_id}/translationrules/{id}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Office365TranslationRule',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def translation_rules_office365_list(self, office365_id, content_type, accept, **kwargs):  # noqa: E501
+        """List all the Office 365 Translation Rules  # noqa: E501
+
+        This endpoint returns all translation rules for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  ##### Sample Request  ```  curl -X GET  https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_list(office365_id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :return: list[Office365TranslationRule]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.translation_rules_office365_list_with_http_info(office365_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.translation_rules_office365_list_with_http_info(office365_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def translation_rules_office365_list_with_http_info(self, office365_id, content_type, accept, **kwargs):  # noqa: E501
+        """List all the Office 365 Translation Rules  # noqa: E501
+
+        This endpoint returns all translation rules for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  ##### Sample Request  ```  curl -X GET  https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_list_with_http_info(office365_id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
+        :param int limit: The number of records to return at once. Limited to 100.
+        :param int skip: The offset into the records to return.
+        :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
+        :return: list[Office365TranslationRule]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['office365_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method translation_rules_office365_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'office365_id' is set
+        if ('office365_id' not in params or
+                params['office365_id'] is None):
+            raise ValueError("Missing the required parameter `office365_id` when calling `translation_rules_office365_list`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `translation_rules_office365_list`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `translation_rules_office365_list`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'office365_id' in params:
+            path_params['office365_id'] = params['office365_id']  # noqa: E501
+
+        query_params = []
+        if 'fields' in params:
+            query_params.append(('fields', params['fields']))  # noqa: E501
+            collection_formats['fields'] = 'csv'  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))  # noqa: E501
+            collection_formats['sort'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/office365s/{office365_id}/translationrules', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[Office365TranslationRule]',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def translation_rules_office365_post(self, office365_id, content_type, accept, **kwargs):  # noqa: E501
+        """Create a new Office 365 Translation Rule  # noqa: E501
+
+        This endpoint allows you to create a translation rule for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   {Translation Rule Parameters} }'  ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_post(office365_id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param Office365TranslationRuleRequest body:
+        :return: InlineResponse2011
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.translation_rules_office365_post_with_http_info(office365_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.translation_rules_office365_post_with_http_info(office365_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def translation_rules_office365_post_with_http_info(self, office365_id, content_type, accept, **kwargs):  # noqa: E501
+        """Create a new Office 365 Translation Rule  # noqa: E501
+
+        This endpoint allows you to create a translation rule for a specific Office 365 instance. These rules specify how JumpCloud attributes translate to [Microsoft Graph](https://developer.microsoft.com/en-us/graph) attributes.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/office365s/{office365_id}/translationrules \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   {Translation Rule Parameters} }'  ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.translation_rules_office365_post_with_http_info(office365_id, content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str office365_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param Office365TranslationRuleRequest body:
+        :return: InlineResponse2011
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['office365_id', 'content_type', 'accept', 'body']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method translation_rules_office365_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'office365_id' is set
+        if ('office365_id' not in params or
+                params['office365_id'] is None):
+            raise ValueError("Missing the required parameter `office365_id` when calling `translation_rules_office365_post`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `translation_rules_office365_post`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `translation_rules_office365_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'office365_id' in params:
+            path_params['office365_id'] = params['office365_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/office365s/{office365_id}/translationrules', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse2011',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)

@@ -31,21 +31,26 @@ class Fde(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key_present': 'bool'
+        'key_present': 'bool',
+        'active': 'bool'
     }
 
     attribute_map = {
-        'key_present': 'keyPresent'
+        'key_present': 'keyPresent',
+        'active': 'active'
     }
 
-    def __init__(self, key_present=None):  # noqa: E501
+    def __init__(self, key_present=None, active=None):  # noqa: E501
         """Fde - a model defined in Swagger"""  # noqa: E501
 
         self._key_present = None
+        self._active = None
         self.discriminator = None
 
         if key_present is not None:
             self.key_present = key_present
+        if active is not None:
+            self.active = active
 
     @property
     def key_present(self):
@@ -67,6 +72,27 @@ class Fde(object):
         """
 
         self._key_present = key_present
+
+    @property
+    def active(self):
+        """Gets the active of this Fde.  # noqa: E501
+
+
+        :return: The active of this Fde.  # noqa: E501
+        :rtype: bool
+        """
+        return self._active
+
+    @active.setter
+    def active(self, active):
+        """Sets the active of this Fde.
+
+
+        :param active: The active of this Fde.  # noqa: E501
+        :type: bool
+        """
+
+        self._active = active
 
     def to_dict(self):
         """Returns the model properties as a dict"""

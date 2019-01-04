@@ -65,6 +65,12 @@ class Emailrequest(object):
         :param email_type: The email_type of this Emailrequest.  # noqa: E501
         :type: str
         """
+        allowed_values = ["activation"]  # noqa: E501
+        if email_type not in allowed_values:
+            raise ValueError(
+                "Invalid value for `email_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(email_type, allowed_values)
+            )
 
         self._email_type = email_type
 

@@ -180,7 +180,7 @@ class SystemsApi(object):
     def graph_system_associations_post(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """Manage associations of a System  # noqa: E501
 
-        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```  # noqa: E501
+        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_associations_post(system_id, content_type, accept, async=True)
@@ -208,7 +208,7 @@ class SystemsApi(object):
     def graph_system_associations_post_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """Manage associations of a System  # noqa: E501
 
-        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },      \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```  # noqa: E501
+        This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_associations_post_with_http_info(system_id, content_type, accept, async=True)
@@ -583,7 +583,7 @@ class SystemsApi(object):
     def graph_system_traverse_policy(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List the Policies bound to a System  # noqa: E501
 
-        This endpoint will return all Policies bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not yet public as we have finish the code.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/{System_ID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint will return all Policies bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not yet public as we have finish the code.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/{System_ID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_traverse_policy(system_id, content_type, accept, async=True)
@@ -610,7 +610,7 @@ class SystemsApi(object):
     def graph_system_traverse_policy_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List the Policies bound to a System  # noqa: E501
 
-        This endpoint will return all Policies bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not yet public as we have finish the code.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/{System_ID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint will return all Policies bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not yet public as we have finish the code.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/{System_ID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_traverse_policy_with_http_info(system_id, content_type, accept, async=True)
@@ -710,7 +710,7 @@ class SystemsApi(object):
     def graph_system_traverse_user(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List the Users bound to a System  # noqa: E501
 
-        This endpoint will return all Users bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint will return all Users bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_traverse_user(system_id, content_type, accept, async=True)
@@ -721,10 +721,11 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
-        :param str x_org_id: 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -739,7 +740,7 @@ class SystemsApi(object):
     def graph_system_traverse_user_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List the Users bound to a System  # noqa: E501
 
-        This endpoint will return all Users bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint will return all Users bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_traverse_user_with_http_info(system_id, content_type, accept, async=True)
@@ -750,16 +751,17 @@ class SystemsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param str date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
-        :param str x_org_id: 
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'date', 'authorization', 'filter']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -798,8 +800,13 @@ class SystemsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
@@ -808,8 +815,6 @@ class SystemsApi(object):
             header_params['Date'] = params['date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -845,7 +850,7 @@ class SystemsApi(object):
     def graph_system_traverse_user_group(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List the User Groups bound to a System  # noqa: E501
 
-        This endpoint will return all User Groups bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint will return all User Groups bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_traverse_user_group(system_id, content_type, accept, async=True)
@@ -874,7 +879,7 @@ class SystemsApi(object):
     def graph_system_traverse_user_group_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List the User Groups bound to a System  # noqa: E501
 
-        This endpoint will return all User Groups bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.   Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint will return all User Groups bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.graph_system_traverse_user_group_with_http_info(system_id, content_type, accept, async=True)

@@ -408,7 +408,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_post(self, ldapserver_id, **kwargs):  # noqa: E501
         """Create Samba Domain  # noqa: E501
 
-        This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\"  }' ```  # noqa: E501
+        This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.ldapservers_samba_domains_post(ldapserver_id, async=True)
@@ -434,7 +434,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_post_with_http_info(self, ldapserver_id, **kwargs):  # noqa: E501
         """Create Samba Domain  # noqa: E501
 
-        This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\"  }' ```  # noqa: E501
+        This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.ldapservers_samba_domains_post_with_http_info(ldapserver_id, async=True)
@@ -523,7 +523,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_put(self, ldapserver_id, id, **kwargs):  # noqa: E501
         """Update Samba Domain  # noqa: E501
 
-        This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\" }'  ```  # noqa: E501
+        This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.ldapservers_samba_domains_put(ldapserver_id, id, async=True)
@@ -550,7 +550,7 @@ class SambaDomainsApi(object):
     def ldapservers_samba_domains_put_with_http_info(self, ldapserver_id, id, **kwargs):  # noqa: E501
         """Update Samba Domain  # noqa: E501
 
-        This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\",  \"name\":\"{WORKGROUP_NAME}\" }'  ```  # noqa: E501
+        This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.ldapservers_samba_domains_put_with_http_info(ldapserver_id, id, async=True)

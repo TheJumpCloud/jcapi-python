@@ -5,7 +5,8 @@ All URIs are relative to *https://console.jumpcloud.com/api/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bulk_users_create**](BulkJobRequestsApi.md#bulk_users_create) | **POST** /bulk/users | Bulk Users Create
-[**bulk_users_create_results**](BulkJobRequestsApi.md#bulk_users_create_results) | **GET** /bulk/users/{job_id}/results | List Bulk Users Create Results
+[**bulk_users_create_results**](BulkJobRequestsApi.md#bulk_users_create_results) | **GET** /bulk/users/{job_id}/results | List Bulk Users Results
+[**bulk_users_update**](BulkJobRequestsApi.md#bulk_users_update) | **PATCH** /bulk/users | Bulk Users Update
 [**jobs_get**](BulkJobRequestsApi.md#jobs_get) | **GET** /jobs/{id} | Get Job (incomplete)
 [**jobs_results**](BulkJobRequestsApi.md#jobs_results) | **GET** /jobs/{id}/results | List Job Results
 
@@ -73,9 +74,9 @@ Name | Type | Description  | Notes
 # **bulk_users_create_results**
 > list[JobWorkresult] bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
 
-List Bulk Users Create Results
+List Bulk Users Results
 
-This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint will return the results of particular user import or update job request.  ###Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example
 ```python
@@ -101,7 +102,7 @@ skip = 0 # int | The offset into the records to return. (optional) (default to 0
 x_org_id = '' # str |  (optional) (default to )
 
 try:
-    # List Bulk Users Create Results
+    # List Bulk Users Results
     api_response = api_instance.bulk_users_create_results(job_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
@@ -122,6 +123,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[JobWorkresult]**](JobWorkresult.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bulk_users_update**
+> JobId bulk_users_update(content_type, accept, body=body, x_org_id=x_org_id)
+
+Bulk Users Update
+
+The endpoint allows you to create a bulk job to asynchronously update users.  #### Sample Request  ``` curl -X PATCH https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {    \"id\":\"5be9fb4ddb01290001e85109\",   \"firstname\":\"{UPDATED_FIRSTNAME}\",   \"department\":\"{UPDATED_DEPARTMENT}\",   \"attributes\":[    {\"name\":\"Custom\",\"value\":\"{ATTRIBUTE_VALUE}\"}   ]  },  {    \"id\":\"5be9fb4ddb01290001e85109\",   \"firstname\":\"{UPDATED_FIRSTNAME}\",   \"costCenter\":\"{UPDATED_COST_CENTER}\",   \"phoneNumbers\":[    {\"type\":\"home\",\"number\":\"{HOME_PHONE_NUMBER}\"},    {\"type\":\"work\",\"number\":\"{WORK_PHONE_NUMBER}\"}   ]  } ] ```
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.BulkJobRequestsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+body = [jcapiv2.BulkUserUpdate()] # list[BulkUserUpdate] |  (optional)
+x_org_id = '' # str |  (optional) (default to )
+
+try:
+    # Bulk Users Update
+    api_response = api_instance.bulk_users_update(content_type, accept, body=body, x_org_id=x_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BulkJobRequestsApi->bulk_users_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **body** | [**list[BulkUserUpdate]**](BulkUserUpdate.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
+
+### Return type
+
+[**JobId**](JobId.md)
 
 ### Authorization
 
@@ -199,7 +260,7 @@ Name | Type | Description  | Notes
 
 List Job Results
 
-This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint will return the results of particular import job request.  ###Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example
 ```python

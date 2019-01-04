@@ -57,6 +57,34 @@ class TestOffice365Api(unittest.TestCase):
         """
         pass
 
+    def test_translation_rules_office365_delete(self):
+        """Test case for translation_rules_office365_delete
+
+        Deletes a Office 365 translation rule  # noqa: E501
+        """
+        pass
+
+    def test_translation_rules_office365_get(self):
+        """Test case for translation_rules_office365_get
+
+        Gets a specific Office 365 translation rule  # noqa: E501
+        """
+        pass
+
+    def test_translation_rules_office365_list(self):
+        """Test case for translation_rules_office365_list
+
+        List all the Office 365 Translation Rules  # noqa: E501
+        """
+        pass
+
+    def test_translation_rules_office365_post(self):
+        """Test case for translation_rules_office365_post
+
+        Create a new Office 365 Translation Rule  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

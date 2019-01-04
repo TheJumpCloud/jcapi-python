@@ -41,6 +41,7 @@ from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationC
 from jcapiv1.models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
 from jcapiv1.models.applicationslist import Applicationslist
 from jcapiv1.models.body import Body
+from jcapiv1.models.body_1 import Body1
 from jcapiv1.models.command import Command
 from jcapiv1.models.commandfilereturn import Commandfilereturn
 from jcapiv1.models.commandfilereturn_results import CommandfilereturnResults
