@@ -43,8 +43,8 @@ class Commandresult(object):
         'user': 'str',
         'sudo': 'bool',
         'files': 'list[str]',
-        'request_time': 'int',
-        'response_time': 'int',
+        'request_time': 'str',
+        'response_time': 'str',
         'response': 'CommandresultResponse',
         'id': 'str'
     }
@@ -347,7 +347,7 @@ class Commandresult(object):
         The time that the command was sent.  # noqa: E501
 
         :return: The request_time of this Commandresult.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._request_time
 
@@ -358,7 +358,7 @@ class Commandresult(object):
         The time that the command was sent.  # noqa: E501
 
         :param request_time: The request_time of this Commandresult.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._request_time = request_time
@@ -370,7 +370,7 @@ class Commandresult(object):
         The time that the command was completed.  # noqa: E501
 
         :return: The response_time of this Commandresult.  # noqa: E501
-        :rtype: int
+        :rtype: str
         """
         return self._response_time
 
@@ -381,7 +381,7 @@ class Commandresult(object):
         The time that the command was completed.  # noqa: E501
 
         :param response_time: The response_time of this Commandresult.  # noqa: E501
-        :type: int
+        :type: str
         """
 
         self._response_time = response_time

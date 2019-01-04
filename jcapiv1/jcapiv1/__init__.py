@@ -64,6 +64,7 @@ from jcapiv1.models.sshkeylist import Sshkeylist
 from jcapiv1.models.sshkeypost import Sshkeypost
 from jcapiv1.models.system import System
 from jcapiv1.models.system_network_interfaces import SystemNetworkInterfaces
+from jcapiv1.models.system_sshd_params import SystemSshdParams
 from jcapiv1.models.systemput import Systemput
 from jcapiv1.models.systemput_agent_bound_messages import SystemputAgentBoundMessages
 from jcapiv1.models.systemslist import Systemslist

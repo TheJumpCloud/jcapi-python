@@ -18,6 +18,7 @@ import six
 
 from jcapiv1.models.fde import Fde  # noqa: F401,E501
 from jcapiv1.models.system_network_interfaces import SystemNetworkInterfaces  # noqa: F401,E501
+from jcapiv1.models.system_sshd_params import SystemSshdParams  # noqa: F401,E501
 
 
 class System(object):
@@ -47,7 +48,7 @@ class System(object):
         'template_name': 'str',
         'remote_ip': 'str',
         'active': 'bool',
-        'sshd_params': 'list[str]',
+        'sshd_params': 'SystemSshdParams',
         'allow_ssh_password_authentication': 'bool',
         'allow_ssh_root_login': 'bool',
         'allow_multi_factor_authentication': 'bool',
@@ -449,7 +450,7 @@ class System(object):
 
 
         :return: The sshd_params of this System.  # noqa: E501
-        :rtype: list[str]
+        :rtype: SystemSshdParams
         """
         return self._sshd_params
 
@@ -459,7 +460,7 @@ class System(object):
 
 
         :param sshd_params: The sshd_params of this System.  # noqa: E501
-        :type: list[str]
+        :type: SystemSshdParams
         """
 
         self._sshd_params = sshd_params

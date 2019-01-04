@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **template_name** | **str** |  | [optional] 
 **remote_ip** | **str** |  | [optional] 
 **active** | **bool** |  | [optional] 
-**sshd_params** | **list[str]** |  | [optional] 
+**sshd_params** | [**SystemSshdParams**](SystemSshdParams.md) |  | [optional] 
 **allow_ssh_password_authentication** | **bool** |  | [optional] 
 **allow_ssh_root_login** | **bool** |  | [optional] 
 **allow_multi_factor_authentication** | **bool** |  | [optional] 
