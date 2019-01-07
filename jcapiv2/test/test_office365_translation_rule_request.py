@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv2
-from jcapiv2.models.office_365_builtin_translation import Office365BuiltinTranslation  # noqa: E501
+from jcapiv2.models.office365_translation_rule_request import Office365TranslationRuleRequest  # noqa: E501
 from jcapiv2.rest import ApiException
 
 
-class TestOffice365BuiltinTranslation(unittest.TestCase):
-    """Office365BuiltinTranslation unit test stubs"""
+class TestOffice365TranslationRuleRequest(unittest.TestCase):
+    """Office365TranslationRuleRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestOffice365BuiltinTranslation(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testOffice365BuiltinTranslation(self):
-        """Test Office365BuiltinTranslation"""
+    def testOffice365TranslationRuleRequest(self):
+        """Test Office365TranslationRuleRequest"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv2.models.office_365_builtin_translation.Office365BuiltinTranslation()  # noqa: E501
+        # model = jcapiv2.models.office365_translation_rule_request.Office365TranslationRuleRequest()  # noqa: E501
         pass
 
 

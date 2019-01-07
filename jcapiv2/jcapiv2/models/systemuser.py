@@ -408,8 +408,8 @@ class Systemuser(object):
         :param unix_uid: The unix_uid of this Systemuser.  # noqa: E501
         :type: int
         """
-        if unix_uid is not None and unix_uid < 0:  # noqa: E501
-            raise ValueError("Invalid value for `unix_uid`, must be a value greater than or equal to `0`")  # noqa: E501
+        if unix_uid is not None and unix_uid < 1:  # noqa: E501
+            raise ValueError("Invalid value for `unix_uid`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._unix_uid = unix_uid
 
@@ -431,8 +431,8 @@ class Systemuser(object):
         :param unix_guid: The unix_guid of this Systemuser.  # noqa: E501
         :type: int
         """
-        if unix_guid is not None and unix_guid < 0:  # noqa: E501
-            raise ValueError("Invalid value for `unix_guid`, must be a value greater than or equal to `0`")  # noqa: E501
+        if unix_guid is not None and unix_guid < 1:  # noqa: E501
+            raise ValueError("Invalid value for `unix_guid`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._unix_guid = unix_guid
 

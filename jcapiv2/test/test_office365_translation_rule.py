@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv2
-from jcapiv2.models.office_365_translation_rule import Office365TranslationRule  # noqa: E501
+from jcapiv2.models.office365_translation_rule import Office365TranslationRule  # noqa: E501
 from jcapiv2.rest import ApiException
 
 
@@ -32,7 +32,7 @@ class TestOffice365TranslationRule(unittest.TestCase):
     def testOffice365TranslationRule(self):
         """Test Office365TranslationRule"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv2.models.office_365_translation_rule.Office365TranslationRule()  # noqa: E501
+        # model = jcapiv2.models.office365_translation_rule.Office365TranslationRule()  # noqa: E501
         pass
 
 

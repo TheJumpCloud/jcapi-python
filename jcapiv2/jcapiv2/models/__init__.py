@@ -45,9 +45,9 @@ from jcapiv2.models.job_id import JobId
 from jcapiv2.models.job_workresult import JobWorkresult
 from jcapiv2.models.ldap_server_input import LdapServerInput
 from jcapiv2.models.oauth_code_input import OauthCodeInput
-from jcapiv2.models.office_365_builtin_translation import Office365BuiltinTranslation
-from jcapiv2.models.office_365_translation_rule import Office365TranslationRule
-from jcapiv2.models.office_365_translation_rule_request import Office365TranslationRuleRequest
+from jcapiv2.models.office365_builtin_translation import Office365BuiltinTranslation
+from jcapiv2.models.office365_translation_rule import Office365TranslationRule
+from jcapiv2.models.office365_translation_rule_request import Office365TranslationRuleRequest
 from jcapiv2.models.policy import Policy
 from jcapiv2.models.policy_request import PolicyRequest
 from jcapiv2.models.policy_request_template import PolicyRequestTemplate
