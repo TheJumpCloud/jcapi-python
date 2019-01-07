@@ -69,7 +69,6 @@ from jcapiv2.models.group import Group
 from jcapiv2.models.group_type import GroupType
 from jcapiv2.models.inline_response_201 import InlineResponse201
 from jcapiv2.models.inline_response_201_1 import InlineResponse2011
-from jcapiv2.models.inline_response_500 import InlineResponse500
 from jcapiv2.models.job_details import JobDetails
 from jcapiv2.models.job_id import JobId
 from jcapiv2.models.job_workresult import JobWorkresult

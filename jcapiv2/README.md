@@ -343,7 +343,6 @@ Class | Method | HTTP request | Description
  - [GroupType](docs/GroupType.md)
  - [InlineResponse201](docs/InlineResponse201.md)
  - [InlineResponse2011](docs/InlineResponse2011.md)
- - [InlineResponse500](docs/InlineResponse500.md)
  - [JobDetails](docs/JobDetails.md)
  - [JobId](docs/JobId.md)
  - [JobWorkresult](docs/JobWorkresult.md)
