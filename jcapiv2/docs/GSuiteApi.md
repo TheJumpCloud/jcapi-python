@@ -453,7 +453,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **translation_rules_g_suite_post**
-> InlineResponse201 translation_rules_g_suite_post(gsuite_id, content_type, accept, body=body)
+> GSuiteTranslationRule translation_rules_g_suite_post(gsuite_id, content_type, accept, body=body)
 
 Create a new G Suite Translation Rule
 
@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse201**](InlineResponse201.md)
+[**GSuiteTranslationRule**](GSuiteTranslationRule.md)
 
 ### Authorization
 

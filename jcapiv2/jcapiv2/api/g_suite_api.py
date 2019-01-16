@@ -928,7 +928,7 @@ class GSuiteApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GSuiteTranslationRuleRequest body:
-        :return: InlineResponse201
+        :return: GSuiteTranslationRule
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -953,7 +953,7 @@ class GSuiteApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param GSuiteTranslationRuleRequest body:
-        :return: InlineResponse201
+        :return: GSuiteTranslationRule
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1025,7 +1025,7 @@ class GSuiteApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse201',  # noqa: E501
+            response_type='GSuiteTranslationRule',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

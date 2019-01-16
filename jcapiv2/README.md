@@ -341,8 +341,6 @@ Class | Method | HTTP request | Description
  - [GraphType](docs/GraphType.md)
  - [Group](docs/Group.md)
  - [GroupType](docs/GroupType.md)
- - [InlineResponse201](docs/InlineResponse201.md)
- - [InlineResponse2011](docs/InlineResponse2011.md)
  - [JobDetails](docs/JobDetails.md)
  - [JobId](docs/JobId.md)
  - [JobWorkresult](docs/JobWorkresult.md)

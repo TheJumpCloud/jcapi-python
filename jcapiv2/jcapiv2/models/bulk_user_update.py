@@ -32,23 +32,43 @@ class BulkUserUpdate(object):
     """
     swagger_types = {
         'id': 'str',
+        'username': 'str',
+        'firstname': 'str',
+        'lastname': 'str',
+        'email': 'str',
         'attributes': 'list[object]'
     }
 
     attribute_map = {
         'id': 'id',
+        'username': 'username',
+        'firstname': 'firstname',
+        'lastname': 'lastname',
+        'email': 'email',
         'attributes': 'attributes'
     }
 
-    def __init__(self, id=None, attributes=None):  # noqa: E501
+    def __init__(self, id=None, username=None, firstname=None, lastname=None, email=None, attributes=None):  # noqa: E501
         """BulkUserUpdate - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
+        self._username = None
+        self._firstname = None
+        self._lastname = None
+        self._email = None
         self._attributes = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
+        if username is not None:
+            self.username = username
+        if firstname is not None:
+            self.firstname = firstname
+        if lastname is not None:
+            self.lastname = lastname
+        if email is not None:
+            self.email = email
         if attributes is not None:
             self.attributes = attributes
 
@@ -74,6 +94,90 @@ class BulkUserUpdate(object):
         """
 
         self._id = id
+
+    @property
+    def username(self):
+        """Gets the username of this BulkUserUpdate.  # noqa: E501
+
+
+        :return: The username of this BulkUserUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this BulkUserUpdate.
+
+
+        :param username: The username of this BulkUserUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
+
+    @property
+    def firstname(self):
+        """Gets the firstname of this BulkUserUpdate.  # noqa: E501
+
+
+        :return: The firstname of this BulkUserUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._firstname
+
+    @firstname.setter
+    def firstname(self, firstname):
+        """Sets the firstname of this BulkUserUpdate.
+
+
+        :param firstname: The firstname of this BulkUserUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._firstname = firstname
+
+    @property
+    def lastname(self):
+        """Gets the lastname of this BulkUserUpdate.  # noqa: E501
+
+
+        :return: The lastname of this BulkUserUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._lastname
+
+    @lastname.setter
+    def lastname(self, lastname):
+        """Sets the lastname of this BulkUserUpdate.
+
+
+        :param lastname: The lastname of this BulkUserUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._lastname = lastname
+
+    @property
+    def email(self):
+        """Gets the email of this BulkUserUpdate.  # noqa: E501
+
+
+        :return: The email of this BulkUserUpdate.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this BulkUserUpdate.
+
+
+        :param email: The email of this BulkUserUpdate.  # noqa: E501
+        :type: str
+        """
+
+        self._email = email
 
     @property
     def attributes(self):
