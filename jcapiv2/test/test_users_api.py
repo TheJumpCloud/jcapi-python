@@ -106,8 +106,8 @@ class TestUsersApi(unittest.TestCase):
         """
         pass
 
-    def test_user_send_emails(self):
-        """Test case for user_send_emails
+    def test_users_send_emails(self):
+        """Test case for users_send_emails
 
         Send User Emails  # noqa: E501
         """

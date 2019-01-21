@@ -18,6 +18,7 @@ import six
 
 from jcapiv1.models.fde import Fde  # noqa: F401,E501
 from jcapiv1.models.system_network_interfaces import SystemNetworkInterfaces  # noqa: F401,E501
+from jcapiv1.models.system_sshd_params import SystemSshdParams  # noqa: F401,E501
 
 
 class System(object):
@@ -47,7 +48,7 @@ class System(object):
         'template_name': 'str',
         'remote_ip': 'str',
         'active': 'bool',
-        'sshd_params': 'list[str]',
+        'sshd_params': 'list[SystemSshdParams]',
         'allow_ssh_password_authentication': 'bool',
         'allow_ssh_root_login': 'bool',
         'allow_multi_factor_authentication': 'bool',
@@ -58,7 +59,8 @@ class System(object):
         'ssh_root_enabled': 'bool',
         'tags': 'list[str]',
         'id': 'str',
-        'fde': 'Fde'
+        'fde': 'Fde',
+        'amazon_instance_id': 'str'
     }
 
     attribute_map = {
@@ -86,10 +88,11 @@ class System(object):
         'ssh_root_enabled': 'sshRootEnabled',
         'tags': 'tags',
         'id': '_id',
-        'fde': 'fde'
+        'fde': 'fde',
+        'amazon_instance_id': 'amazonInstanceID'
     }
 
-    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, tags=None, id=None, fde=None):  # noqa: E501
+    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, tags=None, id=None, fde=None, amazon_instance_id=None):  # noqa: E501
         """System - a model defined in Swagger"""  # noqa: E501
 
         self._organization = None
@@ -117,6 +120,7 @@ class System(object):
         self._tags = None
         self._id = None
         self._fde = None
+        self._amazon_instance_id = None
         self.discriminator = None
 
         if organization is not None:
@@ -169,6 +173,8 @@ class System(object):
             self.id = id
         if fde is not None:
             self.fde = fde
+        if amazon_instance_id is not None:
+            self.amazon_instance_id = amazon_instance_id
 
     @property
     def organization(self):
@@ -449,7 +455,7 @@ class System(object):
 
 
         :return: The sshd_params of this System.  # noqa: E501
-        :rtype: list[str]
+        :rtype: list[SystemSshdParams]
         """
         return self._sshd_params
 
@@ -459,7 +465,7 @@ class System(object):
 
 
         :param sshd_params: The sshd_params of this System.  # noqa: E501
-        :type: list[str]
+        :type: list[SystemSshdParams]
         """
 
         self._sshd_params = sshd_params
@@ -694,6 +700,27 @@ class System(object):
         """
 
         self._fde = fde
+
+    @property
+    def amazon_instance_id(self):
+        """Gets the amazon_instance_id of this System.  # noqa: E501
+
+
+        :return: The amazon_instance_id of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._amazon_instance_id
+
+    @amazon_instance_id.setter
+    def amazon_instance_id(self, amazon_instance_id):
+        """Sets the amazon_instance_id of this System.
+
+
+        :param amazon_instance_id: The amazon_instance_id of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._amazon_instance_id = amazon_instance_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

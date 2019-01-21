@@ -52,10 +52,14 @@ from jcapiv2.models.auth_input_object import AuthInputObject
 from jcapiv2.models.authinput_basic import AuthinputBasic
 from jcapiv2.models.authinput_oauth import AuthinputOauth
 from jcapiv2.models.bulk_user_create import BulkUserCreate
+from jcapiv2.models.bulk_user_update import BulkUserUpdate
 from jcapiv2.models.directory import Directory
 from jcapiv2.models.emailrequest import Emailrequest
 from jcapiv2.models.error import Error
 from jcapiv2.models.errorresponse import Errorresponse
+from jcapiv2.models.g_suite_builtin_translation import GSuiteBuiltinTranslation
+from jcapiv2.models.g_suite_translation_rule import GSuiteTranslationRule
+from jcapiv2.models.g_suite_translation_rule_request import GSuiteTranslationRuleRequest
 from jcapiv2.models.graph_connection import GraphConnection
 from jcapiv2.models.graph_management_req import GraphManagementReq
 from jcapiv2.models.graph_object import GraphObject
@@ -68,6 +72,9 @@ from jcapiv2.models.job_id import JobId
 from jcapiv2.models.job_workresult import JobWorkresult
 from jcapiv2.models.ldap_server_input import LdapServerInput
 from jcapiv2.models.oauth_code_input import OauthCodeInput
+from jcapiv2.models.office365_builtin_translation import Office365BuiltinTranslation
+from jcapiv2.models.office365_translation_rule import Office365TranslationRule
+from jcapiv2.models.office365_translation_rule_request import Office365TranslationRuleRequest
 from jcapiv2.models.policy import Policy
 from jcapiv2.models.policy_request import PolicyRequest
 from jcapiv2.models.policy_request_template import PolicyRequestTemplate

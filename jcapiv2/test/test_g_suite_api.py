@@ -57,6 +57,34 @@ class TestGSuiteApi(unittest.TestCase):
         """
         pass
 
+    def test_translation_rules_g_suite_delete(self):
+        """Test case for translation_rules_g_suite_delete
+
+        Deletes a G Suite translation rule  # noqa: E501
+        """
+        pass
+
+    def test_translation_rules_g_suite_get(self):
+        """Test case for translation_rules_g_suite_get
+
+        Gets a specific g suite translation rule  # noqa: E501
+        """
+        pass
+
+    def test_translation_rules_g_suite_list(self):
+        """Test case for translation_rules_g_suite_list
+
+        List all the G Suite Translation Rules  # noqa: E501
+        """
+        pass
+
+    def test_translation_rules_g_suite_post(self):
+        """Test case for translation_rules_g_suite_post
+
+        Create a new G Suite Translation Rule  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

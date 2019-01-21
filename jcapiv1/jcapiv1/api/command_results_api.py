@@ -36,7 +36,7 @@ class CommandResultsApi(object):
     def command_results_delete(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Delete a Command result  # noqa: E501
 
-        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ````  # noqa: E501
+        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ````  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_delete(id, content_type, accept, async=True)
@@ -61,7 +61,7 @@ class CommandResultsApi(object):
     def command_results_delete_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Delete a Command result  # noqa: E501
 
-        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ````  # noqa: E501
+        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ````  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_delete_with_http_info(id, content_type, accept, async=True)
@@ -155,7 +155,7 @@ class CommandResultsApi(object):
     def command_results_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command result  # noqa: E501
 
-        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
+        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_get(id, content_type, accept, async=True)
@@ -181,7 +181,7 @@ class CommandResultsApi(object):
     def command_results_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command result  # noqa: E501
 
-        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
+        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_get_with_http_info(id, content_type, accept, async=True)

@@ -39,7 +39,14 @@ class TestBulkJobRequestsApi(unittest.TestCase):
     def test_bulk_users_create_results(self):
         """Test case for bulk_users_create_results
 
-        List Bulk Users Create Results  # noqa: E501
+        List Bulk Users Results  # noqa: E501
+        """
+        pass
+
+    def test_bulk_users_update(self):
+        """Test case for bulk_users_update
+
+        Bulk Users Update  # noqa: E501
         """
         pass
 

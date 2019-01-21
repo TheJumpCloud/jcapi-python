@@ -39,7 +39,9 @@ class PolicyResult(object):
         'success': 'bool',
         'exit_status': 'int',
         'std_err': 'str',
-        'std_out': 'str'
+        'std_out': 'str',
+        'state': 'str',
+        'detail': 'str'
     }
 
     attribute_map = {
@@ -51,10 +53,12 @@ class PolicyResult(object):
         'success': 'success',
         'exit_status': 'exitStatus',
         'std_err': 'stdErr',
-        'std_out': 'stdOut'
+        'std_out': 'stdOut',
+        'state': 'state',
+        'detail': 'detail'
     }
 
-    def __init__(self, policy_id=None, system_id=None, id=None, started_at=None, ended_at=None, success=None, exit_status=None, std_err=None, std_out=None):  # noqa: E501
+    def __init__(self, policy_id=None, system_id=None, id=None, started_at=None, ended_at=None, success=None, exit_status=None, std_err=None, std_out=None, state=None, detail=None):  # noqa: E501
         """PolicyResult - a model defined in Swagger"""  # noqa: E501
 
         self._policy_id = None
@@ -66,6 +70,8 @@ class PolicyResult(object):
         self._exit_status = None
         self._std_err = None
         self._std_out = None
+        self._state = None
+        self._detail = None
         self.discriminator = None
 
         if policy_id is not None:
@@ -86,6 +92,10 @@ class PolicyResult(object):
             self.std_err = std_err
         if std_out is not None:
             self.std_out = std_out
+        if state is not None:
+            self.state = state
+        if detail is not None:
+            self.detail = detail
 
     @property
     def policy_id(self):
@@ -293,6 +303,52 @@ class PolicyResult(object):
         """
 
         self._std_out = std_out
+
+    @property
+    def state(self):
+        """Gets the state of this PolicyResult.  # noqa: E501
+
+        Enumeration describing the state of the policy. Success, failed, or pending.  # noqa: E501
+
+        :return: The state of this PolicyResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this PolicyResult.
+
+        Enumeration describing the state of the policy. Success, failed, or pending.  # noqa: E501
+
+        :param state: The state of this PolicyResult.  # noqa: E501
+        :type: str
+        """
+
+        self._state = state
+
+    @property
+    def detail(self):
+        """Gets the detail of this PolicyResult.  # noqa: E501
+
+        Details pertaining to the policy result.  # noqa: E501
+
+        :return: The detail of this PolicyResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._detail
+
+    @detail.setter
+    def detail(self, detail):
+        """Sets the detail of this PolicyResult.
+
+        Details pertaining to the policy result.  # noqa: E501
+
+        :param detail: The detail of this PolicyResult.  # noqa: E501
+        :type: str
+        """
+
+        self._detail = detail
 
     def to_dict(self):
         """Returns the model properties as a dict"""

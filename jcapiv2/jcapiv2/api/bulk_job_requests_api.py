@@ -36,7 +36,7 @@ class BulkJobRequestsApi(object):
     def bulk_users_create(self, content_type, accept, **kwargs):  # noqa: E501
         """Bulk Users Create  # noqa: E501
 
-        The endpoint allows you to create a bulk job to asynchronously create users.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"Custom\",\"value\":\"attribute\"}   ]  } ] ```  # noqa: E501
+        The endpoint allows you to create a bulk job to asynchronously create users. See [Create a System User](https://docs.jumpcloud.com/1.0/systemusers/create-a-system-user) for full list of attributes.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"Custom\",\"value\":\"attribute\"}   ]  } ] ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.bulk_users_create(content_type, accept, async=True)
@@ -61,7 +61,7 @@ class BulkJobRequestsApi(object):
     def bulk_users_create_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Bulk Users Create  # noqa: E501
 
-        The endpoint allows you to create a bulk job to asynchronously create users.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"Custom\",\"value\":\"attribute\"}   ]  } ] ```  # noqa: E501
+        The endpoint allows you to create a bulk job to asynchronously create users. See [Create a System User](https://docs.jumpcloud.com/1.0/systemusers/create-a-system-user) for full list of attributes.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {   \"email\":\"{email}\",   \"firstname\":\"{firstname}\",   \"lastname\":\"{firstname}\",   \"username\":\"{username}\",   \"attributes\":[    {\"name\":\"EmployeeID\",\"value\":\"0000\"},    {\"name\":\"Custom\",\"value\":\"attribute\"}   ]  } ] ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.bulk_users_create_with_http_info(content_type, accept, async=True)
@@ -149,9 +149,9 @@ class BulkJobRequestsApi(object):
             collection_formats=collection_formats)
 
     def bulk_users_create_results(self, job_id, content_type, accept, **kwargs):  # noqa: E501
-        """List Bulk Users Create Results  # noqa: E501
+        """List Bulk Users Results  # noqa: E501
 
-        This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint will return the results of particular user import or update job request.  #### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.bulk_users_create_results(job_id, content_type, accept, async=True)
@@ -176,9 +176,9 @@ class BulkJobRequestsApi(object):
             return data
 
     def bulk_users_create_results_with_http_info(self, job_id, content_type, accept, **kwargs):  # noqa: E501
-        """List Bulk Users Create Results  # noqa: E501
+        """List Bulk Users Results  # noqa: E501
 
-        This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint will return the results of particular user import or update job request.  #### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/bulk/users/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.bulk_users_create_results_with_http_info(job_id, content_type, accept, async=True)
@@ -268,6 +268,121 @@ class BulkJobRequestsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[JobWorkresult]',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bulk_users_update(self, content_type, accept, **kwargs):  # noqa: E501
+        """Bulk Users Update  # noqa: E501
+
+        The endpoint allows you to create a bulk job to asynchronously update users. See [Update a System User](https://docs.jumpcloud.com/1.0/systemusers/update-a-system-user) for full list of attributes.  #### Sample Request  ``` curl -X PATCH https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {    \"id\":\"5be9fb4ddb01290001e85109\",   \"firstname\":\"{UPDATED_FIRSTNAME}\",   \"department\":\"{UPDATED_DEPARTMENT}\",   \"attributes\":[    {\"name\":\"Custom\",\"value\":\"{ATTRIBUTE_VALUE}\"}   ]  },  {    \"id\":\"5be9fb4ddb01290001e85109\",   \"firstname\":\"{UPDATED_FIRSTNAME}\",   \"costCenter\":\"{UPDATED_COST_CENTER}\",   \"phoneNumbers\":[    {\"type\":\"home\",\"number\":\"{HOME_PHONE_NUMBER}\"},    {\"type\":\"work\",\"number\":\"{WORK_PHONE_NUMBER}\"}   ]  } ] ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.bulk_users_update(content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[BulkUserUpdate] body:
+        :param str x_org_id: 
+        :return: JobId
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.bulk_users_update_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bulk_users_update_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def bulk_users_update_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """Bulk Users Update  # noqa: E501
+
+        The endpoint allows you to create a bulk job to asynchronously update users. See [Update a System User](https://docs.jumpcloud.com/1.0/systemusers/update-a-system-user) for full list of attributes.  #### Sample Request  ``` curl -X PATCH https://console.jumpcloud.com/api/v2/bulk/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '[  {    \"id\":\"5be9fb4ddb01290001e85109\",   \"firstname\":\"{UPDATED_FIRSTNAME}\",   \"department\":\"{UPDATED_DEPARTMENT}\",   \"attributes\":[    {\"name\":\"Custom\",\"value\":\"{ATTRIBUTE_VALUE}\"}   ]  },  {    \"id\":\"5be9fb4ddb01290001e85109\",   \"firstname\":\"{UPDATED_FIRSTNAME}\",   \"costCenter\":\"{UPDATED_COST_CENTER}\",   \"phoneNumbers\":[    {\"type\":\"home\",\"number\":\"{HOME_PHONE_NUMBER}\"},    {\"type\":\"work\",\"number\":\"{WORK_PHONE_NUMBER}\"}   ]  } ] ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.bulk_users_update_with_http_info(content_type, accept, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param list[BulkUserUpdate] body:
+        :param str x_org_id: 
+        :return: JobId
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bulk_users_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `bulk_users_update`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `bulk_users_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/bulk/users', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='JobId',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -397,7 +512,7 @@ class BulkJobRequestsApi(object):
     def jobs_results(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List Job Results  # noqa: E501
 
-        This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint will return the results of particular import job request.  #### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.jobs_results(id, content_type, accept, async=True)
@@ -424,7 +539,7 @@ class BulkJobRequestsApi(object):
     def jobs_results_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List Job Results  # noqa: E501
 
-        This endpoint will return the results of particular import job request.  ###Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint will return the results of particular import job request.  #### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/jobs/{ImportJobID}/results \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.jobs_results_with_http_info(id, content_type, accept, async=True)

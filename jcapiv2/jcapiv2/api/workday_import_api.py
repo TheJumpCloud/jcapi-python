@@ -278,7 +278,7 @@ class WorkdayImportApi(object):
     def workdays_delete(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Delete Workday  # noqa: E501
 
-        This endpoint allows you to delete an instance of Workday.   **This functionality is currently not enable for users.**  # noqa: E501
+        This endpoint allows you to delete an instance of Workday.  **This functionality is currently not enable for users.**  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_delete(id, content_type, accept, async=True)
@@ -303,7 +303,7 @@ class WorkdayImportApi(object):
     def workdays_delete_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Delete Workday  # noqa: E501
 
-        This endpoint allows you to delete an instance of Workday.   **This functionality is currently not enable for users.**  # noqa: E501
+        This endpoint allows you to delete an instance of Workday.  **This functionality is currently not enable for users.**  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_delete_with_http_info(id, content_type, accept, async=True)
@@ -908,7 +908,7 @@ class WorkdayImportApi(object):
     def workdays_post(self, content_type, accept, **kwargs):  # noqa: E501
         """Create new Workday  # noqa: E501
 
-        This endpoint allows you to create a new workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  Currently, only one instance is allowed and it must be `Workday Import`.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"name\": \"Workday2\",    \"reportUrl\":\"https://workday.com/ccx/service/customreport2/gms/user/reportname?format=json\",    \"auth\": {     \"basic\": {       \"username\": \"someDeveloper\",        \"password\": \"notTheRealPassword\"     }   } }' ```  # noqa: E501
+        This endpoint allows you to create a new workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  Currently, only one instance is allowed and it must be `Workday Import`.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"name\": \"Workday2\",   \"reportUrl\":\"https://workday.com/ccx/service/customreport2/gms/user/reportname?format=json\",   \"auth\": {     \"basic\": {       \"username\": \"someDeveloper\",       \"password\": \"notTheRealPassword\"     }   } }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_post(content_type, accept, async=True)
@@ -933,7 +933,7 @@ class WorkdayImportApi(object):
     def workdays_post_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Create new Workday  # noqa: E501
 
-        This endpoint allows you to create a new workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  Currently, only one instance is allowed and it must be `Workday Import`.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"name\": \"Workday2\",    \"reportUrl\":\"https://workday.com/ccx/service/customreport2/gms/user/reportname?format=json\",    \"auth\": {     \"basic\": {       \"username\": \"someDeveloper\",        \"password\": \"notTheRealPassword\"     }   } }' ```  # noqa: E501
+        This endpoint allows you to create a new workday instance.  You must supply a username and password for `Basic Authentication` that is the same as your WorkDay Integrator System User.  Failure to provide these credentials  will result in the request being rejected.  Currently `O-Auth` isn't a supported authentication protocol for WorkDay, but will be in the future.  Currently, only one instance is allowed and it must be `Workday Import`.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/workdays/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{   \"name\": \"Workday2\",   \"reportUrl\":\"https://workday.com/ccx/service/customreport2/gms/user/reportname?format=json\",   \"auth\": {     \"basic\": {       \"username\": \"someDeveloper\",       \"password\": \"notTheRealPassword\"     }   } }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_post_with_http_info(content_type, accept, async=True)
@@ -1146,7 +1146,7 @@ class WorkdayImportApi(object):
     def workdays_settings(self, content_type, accept, **kwargs):  # noqa: E501
         """Get Workday Settings (incomplete)  # noqa: E501
 
-        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.   **This functionality is currently not enable for users.**  # noqa: E501
+        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.  **This functionality is currently not enable for users.**  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_settings(content_type, accept, async=True)
@@ -1171,7 +1171,7 @@ class WorkdayImportApi(object):
     def workdays_settings_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Get Workday Settings (incomplete)  # noqa: E501
 
-        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.   **This functionality is currently not enable for users.**  # noqa: E501
+        This endpoint allows you to obtain all settings needed for creating a workday instance, specifically the URL to initiate Basic Authentication with WorkDay.  **This functionality is currently not enable for users.**  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_settings_with_http_info(content_type, accept, async=True)
@@ -1261,7 +1261,7 @@ class WorkdayImportApi(object):
     def workdays_workers(self, workday_id, content_type, accept, **kwargs):  # noqa: E501
         """List Workday Workers  # noqa: E501
 
-        This endpoint will return all of the data in your WorkDay Custom Report that has been associated with your WorkDay Instance in JumpCloud.  ##### Sample Request   ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/workers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint will return all of the data in your WorkDay Custom Report that has been associated with your WorkDay Instance in JumpCloud.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/workers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_workers(workday_id, content_type, accept, async=True)
@@ -1289,7 +1289,7 @@ class WorkdayImportApi(object):
     def workdays_workers_with_http_info(self, workday_id, content_type, accept, **kwargs):  # noqa: E501
         """List Workday Workers  # noqa: E501
 
-        This endpoint will return all of the data in your WorkDay Custom Report that has been associated with your WorkDay Instance in JumpCloud.  ##### Sample Request   ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/workers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint will return all of the data in your WorkDay Custom Report that has been associated with your WorkDay Instance in JumpCloud.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/workdays/{WorkDayID}/workers \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.workdays_workers_with_http_info(workday_id, content_type, accept, async=True)
