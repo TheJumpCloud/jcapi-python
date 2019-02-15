@@ -36,7 +36,7 @@ class CommandResultsApi(object):
     def command_results_delete(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Delete a Command result  # noqa: E501
 
-        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ````  # noqa: E501
+        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ````  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_delete(id, content_type, accept, async=True)
@@ -61,7 +61,7 @@ class CommandResultsApi(object):
     def command_results_delete_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Delete a Command result  # noqa: E501
 
-        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ````  # noqa: E501
+        This endpoint deletes a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ````  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_delete_with_http_info(id, content_type, accept, async=True)
@@ -155,7 +155,7 @@ class CommandResultsApi(object):
     def command_results_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command result  # noqa: E501
 
-        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandResultID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_get(id, content_type, accept, async=True)
@@ -166,6 +166,7 @@ class CommandResultsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Commandresult
                  If the method is called asynchronously,
@@ -181,7 +182,7 @@ class CommandResultsApi(object):
     def command_results_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command result  # noqa: E501
 
-        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandResultID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.command_results_get_with_http_info(id, content_type, accept, async=True)
@@ -192,13 +193,14 @@ class CommandResultsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Commandresult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'x_org_id']  # noqa: E501
+        all_params = ['id', 'content_type', 'accept', 'fields', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -235,6 +237,8 @@ class CommandResultsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:
@@ -291,6 +295,7 @@ class CommandResultsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Commandresultslist
                  If the method is called asynchronously,
@@ -319,13 +324,14 @@ class CommandResultsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Commandresultslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -362,6 +368,8 @@ class CommandResultsApi(object):
             query_params.append(('skip', params['skip']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:

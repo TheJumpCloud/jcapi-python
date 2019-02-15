@@ -36,7 +36,7 @@ class ApplicationsApi(object):
     def applications_list(self, content_type, accept, **kwargs):  # noqa: E501
         """Applications  # noqa: E501
 
-        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.applications_list(content_type, accept, async=True)
@@ -49,6 +49,7 @@ class ApplicationsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort:
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Applicationslist
                  If the method is called asynchronously,
@@ -64,7 +65,7 @@ class ApplicationsApi(object):
     def applications_list_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Applications  # noqa: E501
 
-        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
         >>> thread = api.applications_list_with_http_info(content_type, accept, async=True)
@@ -77,13 +78,14 @@ class ApplicationsApi(object):
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort:
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Applicationslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -120,6 +122,8 @@ class ApplicationsApi(object):
             query_params.append(('skip', params['skip']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:

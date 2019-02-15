@@ -37,6 +37,7 @@ from jcapiv1.models.commandslist import Commandslist
 from jcapiv1.models.commandslist_results import CommandslistResults
 from jcapiv1.models.errorresponse import Errorresponse
 from jcapiv1.models.fde import Fde
+from jcapiv1.models.mfa import Mfa
 from jcapiv1.models.organizationslist import Organizationslist
 from jcapiv1.models.organizationslist_results import OrganizationslistResults
 from jcapiv1.models.radiusserver import Radiusserver

@@ -106,6 +106,13 @@ class TestSystemusersApi(unittest.TestCase):
         """
         pass
 
+    def test_systemusers_unlock(self):
+        """Test case for systemusers_unlock
+
+        Unlock a system user  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

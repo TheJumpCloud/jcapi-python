@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tags_get**
-> Tag tags_get(name, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Tag tags_get(name, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter)
 
 List a Tag
 
@@ -99,10 +99,11 @@ fields = '' # str | Use a space seperated string of field parameters to include 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
 
 try:
     # List a Tag
-    api_response = api_instance.tags_get(name, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.tags_get(name, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagsApi->tags_get: %s\n" % e)
@@ -119,6 +120,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **filter** | **str**| A filter to apply to the query. | [optional] 
 
 ### Return type
 
@@ -136,7 +138,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **tags_list**
-> Tagslist tags_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+> Tagslist tags_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter)
 
 List All Tags
 
@@ -164,10 +166,11 @@ fields = '' # str | Use a space seperated string of field parameters to include 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
 
 try:
     # List All Tags
-    api_response = api_instance.tags_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort)
+    api_response = api_instance.tags_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TagsApi->tags_list: %s\n" % e)
@@ -183,6 +186,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **filter** | **str**| A filter to apply to the query. | [optional] 
 
 ### Return type
 

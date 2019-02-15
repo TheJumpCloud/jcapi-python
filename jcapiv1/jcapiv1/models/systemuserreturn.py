@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from jcapiv1.models.mfa import Mfa  # noqa: F401,E501
 from jcapiv1.models.sshkeylist import Sshkeylist  # noqa: F401,E501
 from jcapiv1.models.systemuserreturn_addresses import SystemuserreturnAddresses  # noqa: F401,E501
 from jcapiv1.models.systemuserreturn_phone_numbers import SystemuserreturnPhoneNumbers  # noqa: F401,E501
@@ -76,7 +77,8 @@ class Systemuserreturn(object):
         'cost_center': 'str',
         'employee_type': 'str',
         'company': 'str',
-        'employee_identifier': 'str'
+        'employee_identifier': 'str',
+        'mfa': 'Mfa'
     }
 
     attribute_map = {
@@ -121,10 +123,11 @@ class Systemuserreturn(object):
         'cost_center': 'costCenter',
         'employee_type': 'employeeType',
         'company': 'company',
-        'employee_identifier': 'employeeIdentifier'
+        'employee_identifier': 'employeeIdentifier',
+        'mfa': 'mfa'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, totp_enabled=None, attributes=None, created=None, samba_service_user=None, id=None, organization=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, bad_login_attempts=None, password_never_expires=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None):  # noqa: E501
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, totp_enabled=None, attributes=None, created=None, samba_service_user=None, id=None, organization=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, bad_login_attempts=None, password_never_expires=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None, mfa=None):  # noqa: E501
         """Systemuserreturn - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -169,6 +172,7 @@ class Systemuserreturn(object):
         self._employee_type = None
         self._company = None
         self._employee_identifier = None
+        self._mfa = None
         self.discriminator = None
 
         if email is not None:
@@ -255,6 +259,8 @@ class Systemuserreturn(object):
             self.company = company
         if employee_identifier is not None:
             self.employee_identifier = employee_identifier
+        if mfa is not None:
+            self.mfa = mfa
 
     @property
     def email(self):
@@ -1173,6 +1179,27 @@ class Systemuserreturn(object):
             raise ValueError("Invalid value for `employee_identifier`, length must be less than or equal to `256`")  # noqa: E501
 
         self._employee_identifier = employee_identifier
+
+    @property
+    def mfa(self):
+        """Gets the mfa of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The mfa of this Systemuserreturn.  # noqa: E501
+        :rtype: Mfa
+        """
+        return self._mfa
+
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Systemuserreturn.
+
+
+        :param mfa: The mfa of this Systemuserreturn.  # noqa: E501
+        :type: Mfa
+        """
+
+        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from jcapiv2.models.mfa import Mfa  # noqa: F401,E501
 from jcapiv2.models.sshkeylist import Sshkeylist  # noqa: F401,E501
 
 
@@ -71,7 +72,8 @@ class Systemuser(object):
         'company': 'str',
         'employee_identifier': 'str',
         'job_title': 'str',
-        'department': 'str'
+        'department': 'str',
+        'mfa': 'Mfa'
     }
 
     attribute_map = {
@@ -113,10 +115,11 @@ class Systemuser(object):
         'company': 'company',
         'employee_identifier': 'employeeIdentifier',
         'job_title': 'jobTitle',
-        'department': 'department'
+        'department': 'department',
+        'mfa': 'mfa'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, associated_tag_count=None, totp_enabled=None, password_expiration_date=None, attributes=None, created=None, samba_service_user=None, password_never_expires=None, id=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None, job_title=None, department=None):  # noqa: E501
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, associated_tag_count=None, totp_enabled=None, password_expiration_date=None, attributes=None, created=None, samba_service_user=None, password_never_expires=None, id=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None, job_title=None, department=None, mfa=None):  # noqa: E501
         """Systemuser - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -158,6 +161,7 @@ class Systemuser(object):
         self._employee_identifier = None
         self._job_title = None
         self._department = None
+        self._mfa = None
         self.discriminator = None
 
         if email is not None:
@@ -238,6 +242,8 @@ class Systemuser(object):
             self.job_title = job_title
         if department is not None:
             self.department = department
+        if mfa is not None:
+            self.mfa = mfa
 
     @property
     def email(self):
@@ -1093,6 +1099,27 @@ class Systemuser(object):
             raise ValueError("Invalid value for `department`, length must be less than or equal to `1024`")  # noqa: E501
 
         self._department = department
+
+    @property
+    def mfa(self):
+        """Gets the mfa of this Systemuser.  # noqa: E501
+
+
+        :return: The mfa of this Systemuser.  # noqa: E501
+        :rtype: Mfa
+        """
+        return self._mfa
+
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Systemuser.
+
+
+        :param mfa: The mfa of this Systemuser.  # noqa: E501
+        :type: Mfa
+        """
+
+        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""
