@@ -89,6 +89,9 @@ class JobId(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(JobId, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

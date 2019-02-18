@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv2
-from jcapiv2.models.inline_response_200 import InlineResponse200  # noqa: E501
+from jcapiv2.models.inline_response401 import InlineResponse401  # noqa: E501
 from jcapiv2.rest import ApiException
 
 
-class TestInlineResponse200(unittest.TestCase):
-    """InlineResponse200 unit test stubs"""
+class TestInlineResponse401(unittest.TestCase):
+    """InlineResponse401 unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestInlineResponse200(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testInlineResponse200(self):
-        """Test InlineResponse200"""
+    def testInlineResponse401(self):
+        """Test InlineResponse401"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv2.models.inline_response_200.InlineResponse200()  # noqa: E501
+        # model = jcapiv2.models.inline_response401.InlineResponse401()  # noqa: E501
         pass
 
 

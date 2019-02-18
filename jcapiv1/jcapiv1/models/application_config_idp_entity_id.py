@@ -273,6 +273,9 @@ class ApplicationConfigIdpEntityId(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ApplicationConfigIdpEntityId, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

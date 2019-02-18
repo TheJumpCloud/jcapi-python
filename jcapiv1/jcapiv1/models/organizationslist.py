@@ -121,6 +121,9 @@ class Organizationslist(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Organizationslist, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

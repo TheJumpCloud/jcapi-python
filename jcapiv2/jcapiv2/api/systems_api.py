@@ -38,18 +38,18 @@ class SystemsApi(object):
 
         This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_associations_list(system_id, content_type, accept, targets, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_associations_list(system_id, content_type, accept, targets, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: list[GraphConnection]
@@ -57,7 +57,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, **kwargs)  # noqa: E501
@@ -68,18 +68,18 @@ class SystemsApi(object):
 
         This endpoint returns the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations?targets=user \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_associations_list_with_http_info(system_id, content_type, accept, targets, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] targets:  (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: list[GraphConnection]
@@ -87,8 +87,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['system_id', 'content_type', 'accept', 'targets', 'limit', 'skip', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -139,8 +139,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -171,7 +171,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='list[GraphConnection]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -182,16 +182,16 @@ class SystemsApi(object):
 
         This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_associations_post(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_associations_post(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGraphManagementReq body:
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: None
@@ -199,7 +199,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_associations_post_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_associations_post_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
@@ -210,16 +210,16 @@ class SystemsApi(object):
 
         This endpoint allows you to manage the _direct_ associations of a System.  A direct association can be a non-homogeneous relationship between 2 different objects, for example Systems and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systems/{System_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{    \"attributes\": {       \"sudo\": {          \"enabled\": true,          \"withoutPassword\": false       }    },     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"UserID\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_associations_post_with_http_info(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_associations_post_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGraphManagementReq body:
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: None
@@ -227,8 +227,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['system_id', 'content_type', 'accept', 'body', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -268,8 +268,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -302,7 +302,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -313,18 +313,18 @@ class SystemsApi(object):
 
         This endpoint returns all the System Groups a System is a member of.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/memberof \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_member_of(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_member_of(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param str x_org_id: 
@@ -333,7 +333,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_member_of_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_member_of_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
@@ -344,18 +344,18 @@ class SystemsApi(object):
 
         This endpoint returns all the System Groups a System is a member of.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/memberof \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_member_of_with_http_info(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_member_of_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param str x_org_id: 
@@ -364,8 +364,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'date', 'authorization', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['system_id', 'content_type', 'accept', 'filter', 'limit', 'skip', '_date', 'authorization', 'sort', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -415,8 +415,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -447,7 +447,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -458,11 +458,11 @@ class SystemsApi(object):
 
         This endpoint will return all Commands bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Command; this array represents all grouping and/or associations that would have to be removed to deprovision the Command from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/commands \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_command(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_command(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -474,7 +474,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_traverse_command_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_traverse_command_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
@@ -485,11 +485,11 @@ class SystemsApi(object):
 
         This endpoint will return all Commands bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Command; this array represents all grouping and/or associations that would have to be removed to deprovision the Command from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/commands \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_command_with_http_info(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_command_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -502,7 +502,7 @@ class SystemsApi(object):
         """
 
         all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -574,7 +574,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -585,11 +585,11 @@ class SystemsApi(object):
 
         This endpoint will return all Policies bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not yet public as we have finish the code.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/{System_ID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_policy(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_policy(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -601,7 +601,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_traverse_policy_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_traverse_policy_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
@@ -612,11 +612,11 @@ class SystemsApi(object):
 
         This endpoint will return all Policies bound to a System, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding Policy; this array represents all grouping and/or associations that would have to be removed to deprovision the Policy from this System.  See `/members` and `/associations` endpoints to manage those collections.  This endpoint is not yet public as we have finish the code.  ##### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/v2/{System_ID}/policies \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_policy_with_http_info(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_policy_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -629,7 +629,7 @@ class SystemsApi(object):
         """
 
         all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -701,7 +701,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -712,18 +712,18 @@ class SystemsApi(object):
 
         This endpoint will return all Users bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_user(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_user(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param str x_org_id: 
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
@@ -731,7 +731,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_traverse_user_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_traverse_user_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
@@ -742,18 +742,18 @@ class SystemsApi(object):
 
         This endpoint will return all Users bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_user_with_http_info(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_user_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param str x_org_id: 
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
@@ -761,8 +761,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'date', 'authorization', 'filter']  # noqa: E501
-        all_params.append('async')
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', '_date', 'authorization', 'filter']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -811,8 +811,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
 
@@ -841,7 +841,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -852,17 +852,17 @@ class SystemsApi(object):
 
         This endpoint will return all User Groups bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_user_group(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_user_group(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
@@ -870,7 +870,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_traverse_user_group_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_traverse_user_group_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
@@ -881,17 +881,17 @@ class SystemsApi(object):
 
         This endpoint will return all User Groups bound to a System, either directly or indirectly essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this System to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this System.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systems/{System_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_traverse_user_group_with_http_info(system_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_traverse_user_group_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: list[GraphObjectWithPaths]
@@ -899,8 +899,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -944,8 +944,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -976,7 +976,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -987,11 +987,11 @@ class SystemsApi(object):
 
         This endpoint will return the current (latest) fde key saved for a system.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_get_fde_key(system_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_get_fde_key(system_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: (required)
         :param str x_org_id: 
         :return: Systemfdekey
@@ -999,7 +999,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_get_fde_key_with_http_info(system_id, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_get_fde_key_with_http_info(system_id, **kwargs)  # noqa: E501
@@ -1010,11 +1010,11 @@ class SystemsApi(object):
 
         This endpoint will return the current (latest) fde key saved for a system.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_get_fde_key_with_http_info(system_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_get_fde_key_with_http_info(system_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str system_id: (required)
         :param str x_org_id: 
         :return: Systemfdekey
@@ -1023,7 +1023,7 @@ class SystemsApi(object):
         """
 
         all_params = ['system_id', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1079,7 +1079,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='Systemfdekey',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

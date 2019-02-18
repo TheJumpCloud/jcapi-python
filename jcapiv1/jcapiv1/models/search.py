@@ -115,6 +115,9 @@ class Search(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Search, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

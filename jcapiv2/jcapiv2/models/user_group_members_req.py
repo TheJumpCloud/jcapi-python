@@ -162,6 +162,9 @@ class UserGroupMembersReq(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserGroupMembersReq, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

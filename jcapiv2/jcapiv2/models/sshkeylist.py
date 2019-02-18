@@ -175,6 +175,9 @@ class Sshkeylist(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Sshkeylist, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

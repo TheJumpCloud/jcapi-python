@@ -38,11 +38,11 @@ class SambaDomainsApi(object):
 
         This endpoint allows you to delete a samba domain from an LDAP server.  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_delete(ldapserver_id, id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_delete(ldapserver_id, id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
@@ -53,7 +53,7 @@ class SambaDomainsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_samba_domains_delete_with_http_info(ldapserver_id, id, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_samba_domains_delete_with_http_info(ldapserver_id, id, **kwargs)  # noqa: E501
@@ -64,11 +64,11 @@ class SambaDomainsApi(object):
 
         This endpoint allows you to delete a samba domain from an LDAP server.  ##### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_delete_with_http_info(ldapserver_id, id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_delete_with_http_info(ldapserver_id, id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
@@ -80,7 +80,7 @@ class SambaDomainsApi(object):
         """
 
         all_params = ['ldapserver_id', 'id', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -146,7 +146,7 @@ class SambaDomainsApi(object):
             files=local_var_files,
             response_type='str',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -157,11 +157,11 @@ class SambaDomainsApi(object):
 
         This endpoint returns a specific samba domain for an LDAP server.  ##### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/ldapservers/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_get(ldapserver_id, id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_get(ldapserver_id, id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
@@ -172,7 +172,7 @@ class SambaDomainsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_samba_domains_get_with_http_info(ldapserver_id, id, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_samba_domains_get_with_http_info(ldapserver_id, id, **kwargs)  # noqa: E501
@@ -183,11 +183,11 @@ class SambaDomainsApi(object):
 
         This endpoint returns a specific samba domain for an LDAP server.  ##### Sample Request ``` curl -X GET \\   https://console.jumpcloud.com/api/v2/ldapservers/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_get_with_http_info(ldapserver_id, id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_get_with_http_info(ldapserver_id, id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param str content_type:
@@ -199,7 +199,7 @@ class SambaDomainsApi(object):
         """
 
         all_params = ['ldapserver_id', 'id', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -265,7 +265,7 @@ class SambaDomainsApi(object):
             files=local_var_files,
             response_type='SambaDomainOutput',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -276,11 +276,11 @@ class SambaDomainsApi(object):
 
         This endpoint returns all samba domains for an LDAP server.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_list(ldapserver_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_list(ldapserver_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str content_type:
         :param str accept:
@@ -295,7 +295,7 @@ class SambaDomainsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_samba_domains_list_with_http_info(ldapserver_id, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_samba_domains_list_with_http_info(ldapserver_id, **kwargs)  # noqa: E501
@@ -306,11 +306,11 @@ class SambaDomainsApi(object):
 
         This endpoint returns all samba domains for an LDAP server.  ##### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_list_with_http_info(ldapserver_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_list_with_http_info(ldapserver_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str content_type:
         :param str accept:
@@ -326,7 +326,7 @@ class SambaDomainsApi(object):
         """
 
         all_params = ['ldapserver_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -399,7 +399,7 @@ class SambaDomainsApi(object):
             files=local_var_files,
             response_type='list[SambaDomainOutput]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -410,11 +410,11 @@ class SambaDomainsApi(object):
 
         This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_post(ldapserver_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_post(ldapserver_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param SambaDomainInput body:
         :param str content_type:
@@ -425,7 +425,7 @@ class SambaDomainsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_samba_domains_post_with_http_info(ldapserver_id, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_samba_domains_post_with_http_info(ldapserver_id, **kwargs)  # noqa: E501
@@ -436,11 +436,11 @@ class SambaDomainsApi(object):
 
         This endpoint allows you to create a samba domain for an LDAP server.  ##### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_post_with_http_info(ldapserver_id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_post_with_http_info(ldapserver_id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param SambaDomainInput body:
         :param str content_type:
@@ -452,7 +452,7 @@ class SambaDomainsApi(object):
         """
 
         all_params = ['ldapserver_id', 'body', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -514,7 +514,7 @@ class SambaDomainsApi(object):
             files=local_var_files,
             response_type='SambaDomainOutput',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -525,11 +525,11 @@ class SambaDomainsApi(object):
 
         This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_put(ldapserver_id, id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_put(ldapserver_id, id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param SambaDomainInput body:
@@ -541,7 +541,7 @@ class SambaDomainsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_samba_domains_put_with_http_info(ldapserver_id, id, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_samba_domains_put_with_http_info(ldapserver_id, id, **kwargs)  # noqa: E501
@@ -552,11 +552,11 @@ class SambaDomainsApi(object):
 
         This endpoint allows you to update the samba domain information for an LDAP server.  ##### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/sambadomains/{SAMBA_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{ \"sid\":\"{SID_ID}\", \"name\":\"{WORKGROUP_NAME}\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_samba_domains_put_with_http_info(ldapserver_id, id, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_samba_domains_put_with_http_info(ldapserver_id, id, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: Unique identifier of the LDAP server. (required)
         :param str id: Unique identifier of the samba domain. (required)
         :param SambaDomainInput body:
@@ -569,7 +569,7 @@ class SambaDomainsApi(object):
         """
 
         all_params = ['ldapserver_id', 'id', 'body', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -637,7 +637,7 @@ class SambaDomainsApi(object):
             files=local_var_files,
             response_type='SambaDomainOutput',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

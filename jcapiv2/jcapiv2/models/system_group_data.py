@@ -92,6 +92,9 @@ class SystemGroupData(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SystemGroupData, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

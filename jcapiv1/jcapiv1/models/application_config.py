@@ -223,6 +223,9 @@ class ApplicationConfig(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ApplicationConfig, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

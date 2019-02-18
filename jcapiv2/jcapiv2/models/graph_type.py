@@ -77,6 +77,9 @@ class GraphType(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GraphType, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

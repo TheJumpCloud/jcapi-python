@@ -147,6 +147,9 @@ class CommandfilereturnResults(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CommandfilereturnResults, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

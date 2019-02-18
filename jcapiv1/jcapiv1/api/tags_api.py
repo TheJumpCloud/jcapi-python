@@ -38,11 +38,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Delete a Tag.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_delete(name, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_delete(name, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -51,7 +51,7 @@ class TagsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.tags_delete_with_http_info(name, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.tags_delete_with_http_info(name, content_type, accept, **kwargs)  # noqa: E501
@@ -62,11 +62,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Delete a Tag.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_delete_with_http_info(name, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_delete_with_http_info(name, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -76,7 +76,7 @@ class TagsApi(object):
         """
 
         all_params = ['name', 'content_type', 'accept']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -142,7 +142,7 @@ class TagsApi(object):
             files=local_var_files,
             response_type='Tag',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -153,11 +153,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Returns a specific tag.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_get(name, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_get(name, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -171,7 +171,7 @@ class TagsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.tags_get_with_http_info(name, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.tags_get_with_http_info(name, content_type, accept, **kwargs)  # noqa: E501
@@ -182,11 +182,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Returns a specific tag.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_get_with_http_info(name, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_get_with_http_info(name, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -201,7 +201,7 @@ class TagsApi(object):
         """
 
         all_params = ['name', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -277,7 +277,7 @@ class TagsApi(object):
             files=local_var_files,
             response_type='Tag',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -288,11 +288,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Returns all Tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_list(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
@@ -305,7 +305,7 @@ class TagsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.tags_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.tags_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -316,11 +316,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Returns all Tags.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_list_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
@@ -334,7 +334,7 @@ class TagsApi(object):
         """
 
         all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -404,7 +404,7 @@ class TagsApi(object):
             files=local_var_files,
             response_type='Tagslist',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -415,11 +415,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_post(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_post(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param Tagpost body:
@@ -428,7 +428,7 @@ class TagsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.tags_post_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.tags_post_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -439,11 +439,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Create a tag.  ### Examples #### Create a new Tag  ``` curl \\   -d '{\"name\" : \"Developers\"}' \\   -X 'POST' \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/tags\" ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_post_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_post_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param Tagpost body:
@@ -453,7 +453,7 @@ class TagsApi(object):
         """
 
         all_params = ['content_type', 'accept', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -515,7 +515,7 @@ class TagsApi(object):
             files=local_var_files,
             response_type='Tag',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -526,11 +526,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Update a specific tag.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_put(name, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_put(name, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -540,7 +540,7 @@ class TagsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.tags_put_with_http_info(name, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.tags_put_with_http_info(name, content_type, accept, **kwargs)  # noqa: E501
@@ -551,11 +551,11 @@ class TagsApi(object):
 
         Hidden as Tags is deprecated  Update a specific tag.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.tags_put_with_http_info(name, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tags_put_with_http_info(name, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str name: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -566,7 +566,7 @@ class TagsApi(object):
         """
 
         all_params = ['name', 'content_type', 'accept', 'body']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -634,7 +634,7 @@ class TagsApi(object):
             files=local_var_files,
             response_type='Tag',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

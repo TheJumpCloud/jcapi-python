@@ -120,6 +120,9 @@ class UserGroupPost(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserGroupPost, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

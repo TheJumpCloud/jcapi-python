@@ -141,6 +141,9 @@ class Mfa(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Mfa, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

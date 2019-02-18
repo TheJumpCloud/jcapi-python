@@ -121,6 +121,9 @@ class Usersystembindingsput(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Usersystembindingsput, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

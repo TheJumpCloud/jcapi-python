@@ -91,6 +91,9 @@ class Office365TranslationRuleRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Office365TranslationRuleRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

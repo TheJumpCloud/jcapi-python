@@ -121,6 +121,9 @@ class Systemuserslist(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Systemuserslist, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

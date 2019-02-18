@@ -219,6 +219,9 @@ class Administrator(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Administrator, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

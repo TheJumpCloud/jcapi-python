@@ -91,6 +91,9 @@ class SystemGraphManagementReqAttributes(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SystemGraphManagementReqAttributes, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

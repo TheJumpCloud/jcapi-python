@@ -91,6 +91,9 @@ class AuthInputObject(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AuthInputObject, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

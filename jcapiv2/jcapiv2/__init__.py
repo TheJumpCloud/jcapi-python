@@ -69,8 +69,8 @@ from jcapiv2.models.graph_object_with_paths import GraphObjectWithPaths
 from jcapiv2.models.graph_type import GraphType
 from jcapiv2.models.group import Group
 from jcapiv2.models.group_type import GroupType
-from jcapiv2.models.inline_response_200 import InlineResponse200
-from jcapiv2.models.inline_response_401 import InlineResponse401
+from jcapiv2.models.inline_response200 import InlineResponse200
+from jcapiv2.models.inline_response401 import InlineResponse401
 from jcapiv2.models.job_details import JobDetails
 from jcapiv2.models.job_id import JobId
 from jcapiv2.models.job_workresult import JobWorkresult

@@ -16,7 +16,7 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv1
-from jcapiv1.models.body_1 import Body1  # noqa: E501
+from jcapiv1.models.body1 import Body1  # noqa: E501
 from jcapiv1.rest import ApiException
 
 
@@ -32,7 +32,7 @@ class TestBody1(unittest.TestCase):
     def testBody1(self):
         """Test Body1"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv1.models.body_1.Body1()  # noqa: E501
+        # model = jcapiv1.models.body1.Body1()  # noqa: E501
         pass
 
 

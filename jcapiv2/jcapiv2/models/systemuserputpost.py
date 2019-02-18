@@ -1043,6 +1043,9 @@ class Systemuserputpost(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Systemuserputpost, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

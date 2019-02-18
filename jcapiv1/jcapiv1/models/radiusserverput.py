@@ -167,6 +167,9 @@ class Radiusserverput(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Radiusserverput, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

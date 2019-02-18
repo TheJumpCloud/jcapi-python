@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **systems_delete**
-> System systems_delete(id, content_type, accept, date=date, authorization=authorization, x_org_id=x_org_id)
+> System systems_delete(id, content_type, accept, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 Delete a System
 
@@ -38,13 +38,13 @@ api_instance = jcapiv1.SystemsApi(jcapiv1.ApiClient(configuration))
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-date = 'date_example' # str | Current date header for the System Context API (optional)
+_date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Delete a System
-    api_response = api_instance.systems_delete(id, content_type, accept, date=date, authorization=authorization, x_org_id=x_org_id)
+    api_response = api_instance.systems_delete(id, content_type, accept, _date=_date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_delete: %s\n" % e)
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **date** | **str**| Current date header for the System Context API | [optional] 
+ **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_get**
-> System systems_get(id, content_type, accept, fields=fields, filter=filter, date=date, authorization=authorization, x_org_id=x_org_id)
+> System systems_get(id, content_type, accept, fields=fields, filter=filter, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 List an individual system
 
@@ -104,13 +104,13 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
 filter = 'filter_example' # str | A filter to apply to the query. (optional)
-date = 'date_example' # str | Current date header for the System Context API (optional)
+_date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # List an individual system
-    api_response = api_instance.systems_get(id, content_type, accept, fields=fields, filter=filter, date=date, authorization=authorization, x_org_id=x_org_id)
+    api_response = api_instance.systems_get(id, content_type, accept, fields=fields, filter=filter, _date=_date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_get: %s\n" % e)
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
  **filter** | **str**| A filter to apply to the query. | [optional] 
- **date** | **str**| Current date header for the System Context API | [optional] 
+ **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_put**
-> systems_put(id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
+> systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 Update a system
 
@@ -241,13 +241,13 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Systemput() # Systemput |  (optional)
-date = 'date_example' # str | Current date header for the System Context API (optional)
+_date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Update a system
-    api_instance.systems_put(id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
+    api_instance.systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_put: %s\n" % e)
 ```
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Systemput**](Systemput.md)|  | [optional] 
- **date** | **str**| Current date header for the System Context API | [optional] 
+ **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 

@@ -89,6 +89,9 @@ class ApplicationConfigDatabaseAttributes(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ApplicationConfigDatabaseAttributes, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -119,6 +119,9 @@ class Commandslist(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Commandslist, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

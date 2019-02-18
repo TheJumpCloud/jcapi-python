@@ -188,6 +188,9 @@ class UserGraphManagementReq(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserGraphManagementReq, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

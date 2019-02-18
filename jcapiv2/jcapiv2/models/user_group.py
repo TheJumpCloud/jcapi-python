@@ -153,6 +153,9 @@ class UserGroup(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserGroup, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

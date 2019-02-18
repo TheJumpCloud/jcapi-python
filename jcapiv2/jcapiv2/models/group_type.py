@@ -67,6 +67,9 @@ class GroupType(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GroupType, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

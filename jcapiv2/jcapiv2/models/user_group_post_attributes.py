@@ -117,6 +117,9 @@ class UserGroupPostAttributes(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserGroupPostAttributes, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
