@@ -15,7 +15,6 @@ from jcapiv2.api.ldap_servers_api import LDAPServersApi
 from jcapiv2.api.office_365_api import Office365Api
 from jcapiv2.api.policies_api import PoliciesApi
 from jcapiv2.api.policytemplates_api import PolicytemplatesApi
-from jcapiv2.api.providers_api import ProvidersApi
 from jcapiv2.api.radius_servers_api import RADIUSServersApi
 from jcapiv2.api.samba_domains_api import SambaDomainsApi
 from jcapiv2.api.system_group_associations_api import SystemGroupAssociationsApi
