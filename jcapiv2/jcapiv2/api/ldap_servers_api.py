@@ -38,11 +38,11 @@ class LDAPServersApi(object):
 
         This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_associations_list(ldapserver_id, targets, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param list[str] targets:  (required)
         :param str content_type: (required)
@@ -55,7 +55,7 @@ class LDAPServersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_ldap_server_associations_list_with_http_info(ldapserver_id, targets, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_ldap_server_associations_list_with_http_info(ldapserver_id, targets, content_type, accept, **kwargs)  # noqa: E501
@@ -66,11 +66,11 @@ class LDAPServersApi(object):
 
         This endpoint returns the _direct_ associations of this LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request  ```  curl -X GET 'https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations?targets=user_group \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_associations_list_with_http_info(ldapserver_id, targets, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_associations_list_with_http_info(ldapserver_id, targets, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param list[str] targets:  (required)
         :param str content_type: (required)
@@ -84,7 +84,7 @@ class LDAPServersApi(object):
         """
 
         all_params = ['ldapserver_id', 'targets', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -163,7 +163,7 @@ class LDAPServersApi(object):
             files=local_var_files,
             response_type='list[GraphConnection]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -174,11 +174,11 @@ class LDAPServersApi(object):
 
         This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_associations_post(ldapserver_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_associations_post(ldapserver_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -189,7 +189,7 @@ class LDAPServersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_ldap_server_associations_post_with_http_info(ldapserver_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_ldap_server_associations_post_with_http_info(ldapserver_id, content_type, accept, **kwargs)  # noqa: E501
@@ -200,11 +200,11 @@ class LDAPServersApi(object):
 
         This endpoint allows you to manage the _direct_ associations of a LDAP Server.  A direct association can be a non-homogeneous relationship between 2 different objects, for example LDAP and Users.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user\",     \"id\": \"{User_ID}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_associations_post_with_http_info(ldapserver_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_associations_post_with_http_info(ldapserver_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -216,7 +216,7 @@ class LDAPServersApi(object):
         """
 
         all_params = ['ldapserver_id', 'content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -286,7 +286,7 @@ class LDAPServersApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -297,11 +297,11 @@ class LDAPServersApi(object):
 
         This endpoint will return all Users bound to an LDAP Server, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this LDAP server instance to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this LDAP server instance.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -313,7 +313,7 @@ class LDAPServersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_ldap_server_traverse_user_with_http_info(ldapserver_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_ldap_server_traverse_user_with_http_info(ldapserver_id, content_type, accept, **kwargs)  # noqa: E501
@@ -324,11 +324,11 @@ class LDAPServersApi(object):
 
         This endpoint will return all Users bound to an LDAP Server, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this LDAP server instance to the corresponding User; this array represents all grouping and/or associations that would have to be removed to deprovision the User from this LDAP server instance.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/users \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_traverse_user_with_http_info(ldapserver_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_traverse_user_with_http_info(ldapserver_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -341,7 +341,7 @@ class LDAPServersApi(object):
         """
 
         all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -413,7 +413,7 @@ class LDAPServersApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -424,11 +424,11 @@ class LDAPServersApi(object):
 
         This endpoint will return all Users Groups bound to a LDAP Server, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this LDAP server instance to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this LDAP server instance.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -440,7 +440,7 @@ class LDAPServersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_ldap_server_traverse_user_group_with_http_info(ldapserver_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_ldap_server_traverse_user_group_with_http_info(ldapserver_id, content_type, accept, **kwargs)  # noqa: E501
@@ -451,11 +451,11 @@ class LDAPServersApi(object):
 
         This endpoint will return all Users Groups bound to a LDAP Server, either directly or indirectly, essentially traversing the JumpCloud Graph for your Organization.  Each element will contain the group's type, id, attributes and paths.  The `attributes` object is a key/value hash of compiled graph attributes for all paths followed.  The `paths` array enumerates each path from this LDAP server instance to the corresponding User Group; this array represents all grouping and/or associations that would have to be removed to deprovision the User Group from this LDAP server instance.  See `/members` and `/associations` endpoints to manage those collections.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID}/usergroups \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_ldap_server_traverse_user_group_with_http_info(ldapserver_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_ldap_server_traverse_user_group_with_http_info(ldapserver_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str ldapserver_id: ObjectID of the LDAP Server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -468,7 +468,7 @@ class LDAPServersApi(object):
         """
 
         all_params = ['ldapserver_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -540,7 +540,7 @@ class LDAPServersApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -551,11 +551,11 @@ class LDAPServersApi(object):
 
         This endpoint returns a specific LDAP server.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_get(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_get(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: Unique identifier of the LDAP server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -565,7 +565,7 @@ class LDAPServersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -576,11 +576,11 @@ class LDAPServersApi(object):
 
         This endpoint returns a specific LDAP server.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_get_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_get_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: Unique identifier of the LDAP server. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -591,7 +591,7 @@ class LDAPServersApi(object):
         """
 
         all_params = ['id', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -659,7 +659,7 @@ class LDAPServersApi(object):
             files=local_var_files,
             response_type='LdapServerOutput',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -670,11 +670,11 @@ class LDAPServersApi(object):
 
         This endpoint returns the object IDs of your LDAP servers.   ##### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_list(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -688,7 +688,7 @@ class LDAPServersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.ldapservers_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.ldapservers_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -699,11 +699,11 @@ class LDAPServersApi(object):
 
         This endpoint returns the object IDs of your LDAP servers.   ##### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/ldapservers/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.ldapservers_list_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ldapservers_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -718,7 +718,7 @@ class LDAPServersApi(object):
         """
 
         all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -793,7 +793,7 @@ class LDAPServersApi(object):
             files=local_var_files,
             response_type='list[LdapServerOutput]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

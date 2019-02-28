@@ -147,6 +147,9 @@ class PolicyRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(PolicyRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

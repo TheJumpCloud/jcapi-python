@@ -38,11 +38,11 @@ class CommandTriggersApi(object):
 
         This endpoint allows you to launch a command based on a defined trigger.  #### Sample Requests  **Launch a Command via a Trigger**  ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: {API_KEY}\" \\      \"https://console.jumpcloud.com/api/command/trigger/{TriggerName}\" ``` **Launch a Command via a Trigger passing a JSON object to the command** ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: {API_KEY}\" \\      -H 'Accept: application/json' \\      -H 'Content-Type: application/json' \\      -d '{ \"srcip\":\"192.168.2.32\", \"attack\":\"Cross Site Scripting Attempt\" }' \\      \"https://console.jumpcloud.com/api/command/trigger/{TriggerName}\" ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.command_trigger_webhook_post(triggername, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.command_trigger_webhook_post(triggername, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str triggername: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -52,7 +52,7 @@ class CommandTriggersApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.command_trigger_webhook_post_with_http_info(triggername, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.command_trigger_webhook_post_with_http_info(triggername, content_type, accept, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class CommandTriggersApi(object):
 
         This endpoint allows you to launch a command based on a defined trigger.  #### Sample Requests  **Launch a Command via a Trigger**  ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: {API_KEY}\" \\      \"https://console.jumpcloud.com/api/command/trigger/{TriggerName}\" ``` **Launch a Command via a Trigger passing a JSON object to the command** ``` curl --silent \\      -X 'POST' \\      -H \"x-api-key: {API_KEY}\" \\      -H 'Accept: application/json' \\      -H 'Content-Type: application/json' \\      -d '{ \"srcip\":\"192.168.2.32\", \"attack\":\"Cross Site Scripting Attempt\" }' \\      \"https://console.jumpcloud.com/api/command/trigger/{TriggerName}\" ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.command_trigger_webhook_post_with_http_info(triggername, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.command_trigger_webhook_post_with_http_info(triggername, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str triggername: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -78,7 +78,7 @@ class CommandTriggersApi(object):
         """
 
         all_params = ['triggername', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -146,7 +146,7 @@ class CommandTriggersApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

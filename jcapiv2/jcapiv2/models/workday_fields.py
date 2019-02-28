@@ -115,6 +115,9 @@ class WorkdayFields(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(WorkdayFields, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

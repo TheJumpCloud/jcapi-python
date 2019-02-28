@@ -70,11 +70,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **command_results_get**
-> Commandresult command_results_get(id, content_type, accept, fields=fields, x_org_id=x_org_id)
+> Commandresult command_results_get(id, content_type, accept, fields=fields, filter=filter, x_org_id=x_org_id)
 
 List an individual Command result
 
-This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint returns a specific command result.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commandresults/{CommandResultID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example
 ```python
@@ -96,11 +96,12 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # List an individual Command result
-    api_response = api_instance.command_results_get(id, content_type, accept, fields=fields, x_org_id=x_org_id)
+    api_response = api_instance.command_results_get(id, content_type, accept, fields=fields, filter=filter, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandResultsApi->command_results_get: %s\n" % e)
@@ -114,6 +115,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
+ **filter** | **str**| A filter to apply to the query. | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
@@ -132,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **command_results_list**
-> Commandresultslist command_results_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+> Commandresultslist command_results_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
 
 List all Command Results
 
@@ -160,11 +162,12 @@ fields = '' # str | Use a space seperated string of field parameters to include 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # List all Command Results
-    api_response = api_instance.command_results_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+    api_response = api_instance.command_results_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandResultsApi->command_results_list: %s\n" % e)
@@ -180,6 +183,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **filter** | **str**| A filter to apply to the query. | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type

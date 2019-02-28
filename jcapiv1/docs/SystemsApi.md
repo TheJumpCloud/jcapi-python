@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **systems_delete**
-> System systems_delete(id, content_type, accept, date=date, authorization=authorization, x_org_id=x_org_id)
+> System systems_delete(id, content_type, accept, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 Delete a System
 
@@ -38,13 +38,13 @@ api_instance = jcapiv1.SystemsApi(jcapiv1.ApiClient(configuration))
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-date = 'date_example' # str | Current date header for the System Context API (optional)
+_date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Delete a System
-    api_response = api_instance.systems_delete(id, content_type, accept, date=date, authorization=authorization, x_org_id=x_org_id)
+    api_response = api_instance.systems_delete(id, content_type, accept, _date=_date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_delete: %s\n" % e)
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **date** | **str**| Current date header for the System Context API | [optional] 
+ **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_get**
-> System systems_get(id, content_type, accept, fields=fields, date=date, authorization=authorization, x_org_id=x_org_id)
+> System systems_get(id, content_type, accept, fields=fields, filter=filter, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 List an individual system
 
@@ -103,13 +103,14 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
-date = 'date_example' # str | Current date header for the System Context API (optional)
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
+_date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # List an individual system
-    api_response = api_instance.systems_get(id, content_type, accept, fields=fields, date=date, authorization=authorization, x_org_id=x_org_id)
+    api_response = api_instance.systems_get(id, content_type, accept, fields=fields, filter=filter, _date=_date, authorization=authorization, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_get: %s\n" % e)
@@ -123,7 +124,8 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
- **date** | **str**| Current date header for the System Context API | [optional] 
+ **filter** | **str**| A filter to apply to the query. | [optional] 
+ **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
@@ -143,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_list**
-> Systemslist systems_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+> Systemslist systems_list(content_type, accept, fields=fields, limit=limit, x_org_id=x_org_id, search=search, skip=skip, sort=sort, filter=filter)
 
 List All Systems
 
@@ -169,13 +171,15 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 fields = '' # str | Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  (optional) (default to )
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+search = 'search_example' # str | A nested object containing a string `searchTerm` and a list of `fields` to search on. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
-x_org_id = '' # str |  (optional) (default to )
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
 
 try:
     # List All Systems
-    api_response = api_instance.systems_list(content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+    api_response = api_instance.systems_list(content_type, accept, fields=fields, limit=limit, x_org_id=x_org_id, search=search, skip=skip, sort=sort, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_list: %s\n" % e)
@@ -189,9 +193,11 @@ Name | Type | Description  | Notes
  **accept** | **str**|  | [default to application/json]
  **fields** | **str**| Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned.  | [optional] [default to ]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **search** | **str**| A nested object containing a string &#x60;searchTerm&#x60; and a list of &#x60;fields&#x60; to search on. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **filter** | **str**| A filter to apply to the query. | [optional] 
 
 ### Return type
 
@@ -209,7 +215,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_put**
-> systems_put(id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
+> systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 Update a system
 
@@ -235,13 +241,13 @@ id = 'id_example' # str |
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Systemput() # Systemput |  (optional)
-date = 'date_example' # str | Current date header for the System Context API (optional)
+_date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Update a system
-    api_instance.systems_put(id, content_type, accept, body=body, date=date, authorization=authorization, x_org_id=x_org_id)
+    api_instance.systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_put: %s\n" % e)
 ```
@@ -254,7 +260,7 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Systemput**](Systemput.md)|  | [optional] 
- **date** | **str**| Current date header for the System Context API | [optional] 
+ **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
@@ -274,7 +280,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_systemusers_binding_list**
-> Systemuserbinding systems_systemusers_binding_list(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+> Systemuserbinding systems_systemusers_binding_list(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
 
 List system user bindings
 
@@ -303,11 +309,12 @@ fields = '' # str | Use a space seperated string of field parameters to include 
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = '' # str | Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending.  (optional) (default to )
+filter = 'filter_example' # str | A filter to apply to the query. (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
     # List system user bindings
-    api_response = api_instance.systems_systemusers_binding_list(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+    api_response = api_instance.systems_systemusers_binding_list(id, content_type, accept, fields=fields, limit=limit, skip=skip, sort=sort, filter=filter, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_systemusers_binding_list: %s\n" % e)
@@ -324,6 +331,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | **str**| Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to ]
+ **filter** | **str**| A filter to apply to the query. | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type

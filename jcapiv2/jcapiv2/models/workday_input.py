@@ -143,6 +143,9 @@ class WorkdayInput(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(WorkdayInput, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -743,6 +743,9 @@ class System(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(System, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

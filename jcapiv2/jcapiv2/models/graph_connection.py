@@ -118,6 +118,9 @@ class GraphConnection(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(GraphConnection, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

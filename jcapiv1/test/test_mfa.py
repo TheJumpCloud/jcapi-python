@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv1
-from jcapiv1.models.body_1 import Body1  # noqa: E501
+from jcapiv1.models.mfa import Mfa  # noqa: E501
 from jcapiv1.rest import ApiException
 
 
-class TestBody1(unittest.TestCase):
-    """Body1 unit test stubs"""
+class TestMfa(unittest.TestCase):
+    """Mfa unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestBody1(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testBody1(self):
-        """Test Body1"""
+    def testMfa(self):
+        """Test Mfa"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv1.models.body_1.Body1()  # noqa: E501
+        # model = jcapiv1.models.mfa.Mfa()  # noqa: E501
         pass
 
 

@@ -45,6 +45,7 @@ Name | Type | Description | Notes
 **employee_type** | **str** |  | [optional] 
 **company** | **str** |  | [optional] 
 **employee_identifier** | **str** | Must be unique per user.  | [optional] 
+**mfa** | [**Mfa**](Mfa.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -41,7 +41,7 @@ from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationC
 from jcapiv1.models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
 from jcapiv1.models.applicationslist import Applicationslist
 from jcapiv1.models.body import Body
-from jcapiv1.models.body_1 import Body1
+from jcapiv1.models.body1 import Body1
 from jcapiv1.models.command import Command
 from jcapiv1.models.commandfilereturn import Commandfilereturn
 from jcapiv1.models.commandfilereturn_results import CommandfilereturnResults
@@ -53,6 +53,7 @@ from jcapiv1.models.commandslist import Commandslist
 from jcapiv1.models.commandslist_results import CommandslistResults
 from jcapiv1.models.errorresponse import Errorresponse
 from jcapiv1.models.fde import Fde
+from jcapiv1.models.mfa import Mfa
 from jcapiv1.models.organizationslist import Organizationslist
 from jcapiv1.models.organizationslist_results import OrganizationslistResults
 from jcapiv1.models.radiusserver import Radiusserver

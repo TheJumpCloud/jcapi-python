@@ -118,6 +118,9 @@ class AuthInput(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AuthInput, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -117,6 +117,9 @@ class ApplicationConfigIdpEntityIdTooltip(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ApplicationConfigIdpEntityIdTooltip, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

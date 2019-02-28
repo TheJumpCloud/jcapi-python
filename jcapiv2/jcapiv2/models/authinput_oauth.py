@@ -89,6 +89,9 @@ class AuthinputOauth(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(AuthinputOauth, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

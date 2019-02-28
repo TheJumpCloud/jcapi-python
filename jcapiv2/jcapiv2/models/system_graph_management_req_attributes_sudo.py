@@ -115,6 +115,9 @@ class SystemGraphManagementReqAttributesSudo(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SystemGraphManagementReqAttributesSudo, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

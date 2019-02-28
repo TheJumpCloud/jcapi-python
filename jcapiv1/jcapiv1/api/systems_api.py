@@ -38,15 +38,15 @@ class SystemsApi(object):
 
         This endpoint allows you to delete a system. This command will cause the system to uninstall the JumpCloud agent from its self which can can take about a minute. If the system is not connected to JumpCloud the system record will simply be removed.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_delete(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_delete(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: System
@@ -54,7 +54,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_delete_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_delete_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -65,15 +65,15 @@ class SystemsApi(object):
 
         This endpoint allows you to delete a system. This command will cause the system to uninstall the JumpCloud agent from its self which can can take about a minute. If the system is not connected to JumpCloud the system record will simply be removed.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_delete_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_delete_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: System
@@ -81,8 +81,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['id', 'content_type', 'accept', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -122,8 +122,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -154,7 +154,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='System',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -165,16 +165,17 @@ class SystemsApi(object):
 
         This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_get(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_get(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
-        :param str date: Current date header for the System Context API
+        :param str filter: A filter to apply to the query.
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: System
@@ -182,7 +183,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -193,16 +194,17 @@ class SystemsApi(object):
 
         This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_get_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_get_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
-        :param str date: Current date header for the System Context API
+        :param str filter: A filter to apply to the query.
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: System
@@ -210,8 +212,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['id', 'content_type', 'accept', 'fields', 'filter', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -247,14 +249,16 @@ class SystemsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -285,7 +289,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='System',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -296,24 +300,26 @@ class SystemsApi(object):
 
         This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_list(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
+        :param str search: A nested object containing a string `searchTerm` and a list of `fields` to search on.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
-        :param str x_org_id: 
+        :param str filter: A filter to apply to the query.
         :return: Systemslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -324,25 +330,27 @@ class SystemsApi(object):
 
         This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_list_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
+        :param str search: A nested object containing a string `searchTerm` and a list of `fields` to search on.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
-        :param str x_org_id: 
+        :param str filter: A filter to apply to the query.
         :return: Systemslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'x_org_id', 'search', 'skip', 'sort', 'filter']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -374,18 +382,22 @@ class SystemsApi(object):
             query_params.append(('fields', params['fields']))  # noqa: E501
         if 'limit' in params:
             query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'search' in params:
+            query_params.append(('search', params['search']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -412,7 +424,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='Systemslist',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -423,16 +435,16 @@ class SystemsApi(object):
 
         This endpoint allows you to update a system.  #### Sample Request  ``` curl -X PUT https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"displayName\":\"Name_Update\",  \"allowSshPasswordAuthentication\":\"true\",  \"allowSshRootLogin\":\"true\",  \"allowMultiFactorAuthentication\":\"true\",  \"allowPublicKeyAuthentication\":\"false\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_put(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_put(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemput body:
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: None
@@ -440,7 +452,7 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -451,16 +463,16 @@ class SystemsApi(object):
 
         This endpoint allows you to update a system.  #### Sample Request  ``` curl -X PUT https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"displayName\":\"Name_Update\",  \"allowSshPasswordAuthentication\":\"true\",  \"allowSshRootLogin\":\"true\",  \"allowMultiFactorAuthentication\":\"true\",  \"allowPublicKeyAuthentication\":\"false\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_put_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_put_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param Systemput body:
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: None
@@ -468,8 +480,8 @@ class SystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['id', 'content_type', 'accept', 'body', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -509,8 +521,8 @@ class SystemsApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -543,7 +555,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -554,11 +566,11 @@ class SystemsApi(object):
 
         Hidden as Tags is deprecated  List system user bindings for a specific system in a system and user binding format.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  #### Sample Request  *List system user bindings for specific system*  ``` curl -X https://console.jumpcloud.com/api/systems/{SystemID}/systemusers\\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   \" ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_systemusers_binding_list(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_systemusers_binding_list(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -566,13 +578,14 @@ class SystemsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Systemuserbinding
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_systemusers_binding_list_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_systemusers_binding_list_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -583,11 +596,11 @@ class SystemsApi(object):
 
         Hidden as Tags is deprecated  List system user bindings for a specific system in a system and user binding format.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  #### Sample Request  *List system user bindings for specific system*  ``` curl -X https://console.jumpcloud.com/api/systems/{SystemID}/systemusers\\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   \" ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_systemusers_binding_list_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_systemusers_binding_list_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -595,14 +608,15 @@ class SystemsApi(object):
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Systemuserbinding
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -644,6 +658,8 @@ class SystemsApi(object):
             query_params.append(('skip', params['skip']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:
@@ -678,22 +694,22 @@ class SystemsApi(object):
             files=local_var_files,
             response_type='Systemuserbinding',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
     def systems_systemusers_binding_put(self, id, content_type, accept, **kwargs):  # noqa: E501
-        """Update a system&#39;s or user&#39;s binding  # noqa: E501
+        """Update a system's or user's binding  # noqa: E501
 
         Hidden as Tags is deprecated  Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  #### Sample Request  *Add (or remove) a system user to (from) a system*  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_USER_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_USER_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_systemusers_binding_put(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_systemusers_binding_put(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -704,22 +720,22 @@ class SystemsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.systems_systemusers_binding_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.systems_systemusers_binding_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
     def systems_systemusers_binding_put_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
-        """Update a system&#39;s or user&#39;s binding  # noqa: E501
+        """Update a system's or user's binding  # noqa: E501
 
         Hidden as Tags is deprecated  Adds or removes a user binding for a system.  This endpoint is only used for users still using JumpCloud Tags. If you are using JumpCloud Groups please refer to the documentation found [here](https://docs.jumpcloud.com/2.0/systems/manage-associations-of-a-system).  #### Sample Request  *Add (or remove) a system user to (from) a system*  ``` curl \\   -d '{ \"add\": [\"[SYSTEM_USER_ID_TO_ADD_HERE]\"], \"remove\": [\"[SYSTEM_USER_ID_TO_REMOVE_HERE]\"] }' \\   -X PUT \\   -H 'Content-Type: application/json' \\   -H 'Accept: application/json' \\   -H \"x-api-key: [YOUR_API_KEY_HERE]\" \\   \"https://console.jumpcloud.com/api/systems/[SYSTEM_ID_HERE]/systemusers  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.systems_systemusers_binding_put_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systems_systemusers_binding_put_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -731,7 +747,7 @@ class SystemsApi(object):
         """
 
         all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -801,7 +817,7 @@ class SystemsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

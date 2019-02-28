@@ -120,6 +120,9 @@ class UserGroupPut(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(UserGroupPut, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

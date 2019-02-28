@@ -116,14 +116,14 @@ class TestPoliciesApi(unittest.TestCase):
     def test_policystatuses_list(self):
         """Test case for policystatuses_list
 
-        Lists the latest policy results of a policy.  # noqa: E501
+        List the policy statuses for a system  # noqa: E501
         """
         pass
 
     def test_policystatuses_list_0(self):
         """Test case for policystatuses_list_0
 
-        List the policy statuses for a system  # noqa: E501
+        Lists the latest policy results of a policy.  # noqa: E501
         """
         pass
 

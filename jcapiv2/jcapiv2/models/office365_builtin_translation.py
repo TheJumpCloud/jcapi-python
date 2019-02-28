@@ -75,6 +75,9 @@ class Office365BuiltinTranslation(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Office365BuiltinTranslation, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

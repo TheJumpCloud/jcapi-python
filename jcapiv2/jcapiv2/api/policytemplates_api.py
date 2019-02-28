@@ -38,11 +38,11 @@ class PolicytemplatesApi(object):
 
         This endpoint returns a specific policy template.  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.policytemplates_get(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.policytemplates_get(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: ObjectID of the Policy Template. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -52,7 +52,7 @@ class PolicytemplatesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.policytemplates_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.policytemplates_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -63,11 +63,11 @@ class PolicytemplatesApi(object):
 
         This endpoint returns a specific policy template.  #### Sample Request ```  curl -X GET https://console.jumpcloud.com/api/v2/policies/{Policy_ID}\\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.policytemplates_get_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.policytemplates_get_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: ObjectID of the Policy Template. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -78,7 +78,7 @@ class PolicytemplatesApi(object):
         """
 
         all_params = ['id', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -146,7 +146,7 @@ class PolicytemplatesApi(object):
             files=local_var_files,
             response_type='PolicyTemplateWithDetails',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -157,11 +157,11 @@ class PolicytemplatesApi(object):
 
         This endpoint returns all policy templates.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policytemplates \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.policytemplates_list(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.policytemplates_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -175,7 +175,7 @@ class PolicytemplatesApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.policytemplates_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.policytemplates_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -186,11 +186,11 @@ class PolicytemplatesApi(object):
 
         This endpoint returns all policy templates.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/policytemplates \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.policytemplates_list_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.policytemplates_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
@@ -205,7 +205,7 @@ class PolicytemplatesApi(object):
         """
 
         all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -280,7 +280,7 @@ class PolicytemplatesApi(object):
             files=local_var_files,
             response_type='list[PolicyTemplate]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -115,6 +115,9 @@ class SystemSshdParams(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SystemSshdParams, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

@@ -34,15 +34,15 @@ class SystemGroupMembersMembershipApi(object):
         self.api_client = api_client
 
     def graph_system_group_member_of(self, group_id, content_type, accept, **kwargs):  # noqa: E501
-        """List the System Group&#39;s parents  # noqa: E501
+        """List the System Group's parents  # noqa: E501
 
         This endpoint returns all System Groups a System Group is a member of.  This endpoint is not yet public as we haven't completed the code yet.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_member_of(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_member_of(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -56,22 +56,22 @@ class SystemGroupMembersMembershipApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_group_member_of_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_group_member_of_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
     def graph_system_group_member_of_with_http_info(self, group_id, content_type, accept, **kwargs):  # noqa: E501
-        """List the System Group&#39;s parents  # noqa: E501
+        """List the System Group's parents  # noqa: E501
 
         This endpoint returns all System Groups a System Group is a member of.  This endpoint is not yet public as we haven't completed the code yet.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_member_of_with_http_info(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_member_of_with_http_info(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -86,7 +86,7 @@ class SystemGroupMembersMembershipApi(object):
         """
 
         all_params = ['group_id', 'content_type', 'accept', 'filter', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -164,7 +164,7 @@ class SystemGroupMembersMembershipApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -175,11 +175,11 @@ class SystemGroupMembersMembershipApi(object):
 
         This endpoint returns the system members of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_members_list(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_members_list(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -191,7 +191,7 @@ class SystemGroupMembersMembershipApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_group_members_list_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_group_members_list_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
@@ -202,11 +202,11 @@ class SystemGroupMembersMembershipApi(object):
 
         This endpoint returns the system members of a System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_members_list_with_http_info(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_members_list_with_http_info(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -219,7 +219,7 @@ class SystemGroupMembersMembershipApi(object):
         """
 
         all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -291,7 +291,7 @@ class SystemGroupMembersMembershipApi(object):
             files=local_var_files,
             response_type='list[GraphConnection]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -302,16 +302,16 @@ class SystemGroupMembersMembershipApi(object):
 
         This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_members_post(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_members_post(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupMembersReq body:
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: None
@@ -319,7 +319,7 @@ class SystemGroupMembersMembershipApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_group_members_post_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_group_members_post_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
@@ -330,16 +330,16 @@ class SystemGroupMembersMembershipApi(object):
 
         This endpoint allows you to manage the system members of a System Group.  #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID}/members \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{System_ID}\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_members_post_with_http_info(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_members_post_with_http_info(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param SystemGroupMembersReq body:
-        :param str date: Current date header for the System Context API
+        :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
         :return: None
@@ -347,8 +347,8 @@ class SystemGroupMembersMembershipApi(object):
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'body', 'date', 'authorization', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['group_id', 'content_type', 'accept', 'body', '_date', 'authorization', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -388,8 +388,8 @@ class SystemGroupMembersMembershipApi(object):
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'date' in params:
-            header_params['Date'] = params['date']  # noqa: E501
+        if '_date' in params:
+            header_params['Date'] = params['_date']  # noqa: E501
         if 'authorization' in params:
             header_params['Authorization'] = params['authorization']  # noqa: E501
         if 'x_org_id' in params:
@@ -422,22 +422,22 @@ class SystemGroupMembersMembershipApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
     def graph_system_group_membership(self, group_id, content_type, accept, **kwargs):  # noqa: E501
-        """List the System Group&#39;s membership  # noqa: E501
+        """List the System Group's membership  # noqa: E501
 
         This endpoint returns all Systems that are a member of this System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID/membership \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_membership(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_membership(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -451,22 +451,22 @@ class SystemGroupMembersMembershipApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.graph_system_group_membership_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.graph_system_group_membership_with_http_info(group_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
     def graph_system_group_membership_with_http_info(self, group_id, content_type, accept, **kwargs):  # noqa: E501
-        """List the System Group&#39;s membership  # noqa: E501
+        """List the System Group's membership  # noqa: E501
 
         This endpoint returns all Systems that are a member of this System Group.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/v2/systemgroups/{Group_ID/membership \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.graph_system_group_membership_with_http_info(group_id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.graph_system_group_membership_with_http_info(group_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str group_id: ObjectID of the System Group. (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -481,7 +481,7 @@ class SystemGroupMembersMembershipApi(object):
         """
 
         all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'sort', 'filter', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -559,7 +559,7 @@ class SystemGroupMembersMembershipApi(object):
             files=local_var_files,
             response_type='list[GraphObjectWithPaths]',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

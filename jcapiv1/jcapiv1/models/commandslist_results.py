@@ -343,6 +343,9 @@ class CommandslistResults(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CommandslistResults, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

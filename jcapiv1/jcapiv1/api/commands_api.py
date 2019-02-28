@@ -38,11 +38,11 @@ class CommandsApi(object):
 
         This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.command_file_get(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.command_file_get(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -55,7 +55,7 @@ class CommandsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.command_file_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.command_file_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -66,11 +66,11 @@ class CommandsApi(object):
 
         This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.command_file_get_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.command_file_get_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -84,7 +84,7 @@ class CommandsApi(object):
         """
 
         all_params = ['id', 'content_type', 'accept', 'fields', 'limit', 'skip', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -158,7 +158,7 @@ class CommandsApi(object):
             files=local_var_files,
             response_type='Commandfilereturn',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -169,11 +169,11 @@ class CommandsApi(object):
 
         This endpoint deletes a specific command based on the Command ID.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_delete(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_delete(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -183,7 +183,7 @@ class CommandsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.commands_delete_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.commands_delete_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -194,11 +194,11 @@ class CommandsApi(object):
 
         This endpoint deletes a specific command based on the Command ID.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_delete_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_delete_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -209,7 +209,7 @@ class CommandsApi(object):
         """
 
         all_params = ['id', 'content_type', 'accept', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -277,7 +277,7 @@ class CommandsApi(object):
             files=local_var_files,
             response_type=None,  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -288,22 +288,23 @@ class CommandsApi(object):
 
         This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_get(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_get(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.commands_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.commands_get_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -314,23 +315,24 @@ class CommandsApi(object):
 
         This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_get_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_get_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Command
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'content_type', 'accept', 'fields', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['id', 'content_type', 'accept', 'fields', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -366,6 +368,8 @@ class CommandsApi(object):
         query_params = []
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:
@@ -400,7 +404,7 @@ class CommandsApi(object):
             files=local_var_files,
             response_type='Command',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -411,24 +415,25 @@ class CommandsApi(object):
 
         This endpoint returns all commands.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_list(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param int skip: The offset into the records to return.
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Commandslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.commands_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.commands_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -439,25 +444,26 @@ class CommandsApi(object):
 
         This endpoint returns all commands.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_list_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param int skip: The offset into the records to return.
         :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Commandslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'skip', 'fields', 'limit', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['content_type', 'accept', 'skip', 'fields', 'limit', 'sort', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -493,6 +499,8 @@ class CommandsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:
@@ -527,7 +535,7 @@ class CommandsApi(object):
             files=local_var_files,
             response_type='Commandslist',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -538,11 +546,11 @@ class CommandsApi(object):
 
         This endpoint allows you to create a new command.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/commands/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\":\"Test API Command\",  \"command\":\"String\",  \"user\":\"{UserID}\",  \"schedule\":\"\",  \"timeout\":\"100\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_post(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_post(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param Command body:
@@ -552,7 +560,7 @@ class CommandsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.commands_post_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.commands_post_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -563,11 +571,11 @@ class CommandsApi(object):
 
         This endpoint allows you to create a new command.  #### Sample Request  ``` curl -X POST https://console.jumpcloud.com/api/commands/ \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\":\"Test API Command\",  \"command\":\"String\",  \"user\":\"{UserID}\",  \"schedule\":\"\",  \"timeout\":\"100\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_post_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_post_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param Command body:
@@ -578,7 +586,7 @@ class CommandsApi(object):
         """
 
         all_params = ['content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -642,7 +650,7 @@ class CommandsApi(object):
             files=local_var_files,
             response_type='Command',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -653,11 +661,11 @@ class CommandsApi(object):
 
         This endpoint Updates a command based on the command ID and returns the modified command record.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\":\"Test API Command\",  \"command\":\"String\",  \"user\":\"{UserID}\",  \"schedule\":\"\",  \"timeout\":\"100\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_put(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_put(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -668,7 +676,7 @@ class CommandsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.commands_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.commands_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
@@ -679,11 +687,11 @@ class CommandsApi(object):
 
         This endpoint Updates a command based on the command ID and returns the modified command record.  #### Sample Request ``` curl -X PUT https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{  \"name\":\"Test API Command\",  \"command\":\"String\",  \"user\":\"{UserID}\",  \"schedule\":\"\",  \"timeout\":\"100\" }'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.commands_put_with_http_info(id, content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.commands_put_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
@@ -695,7 +703,7 @@ class CommandsApi(object):
         """
 
         all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -765,7 +773,7 @@ class CommandsApi(object):
             files=local_var_files,
             response_type='Command',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

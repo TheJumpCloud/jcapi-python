@@ -38,24 +38,25 @@ class ApplicationsApi(object):
 
         The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_list(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned.
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort:
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Applicationslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('async_req'):
             return self.applications_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
             (data) = self.applications_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
@@ -66,25 +67,26 @@ class ApplicationsApi(object):
 
         The endpoint returns all your SSO / SAML Applications.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/applications \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.applications_list_with_http_info(content_type, accept, async=True)
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.applications_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
-        :param async bool
+        :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
         :param str fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned.
         :param int limit: The number of records to return at once.
         :param int skip: The offset into the records to return.
         :param str sort:
+        :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Applicationslist
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
-        all_params.append('async')
+        all_params = ['content_type', 'accept', 'fields', 'limit', 'skip', 'sort', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -120,6 +122,8 @@ class ApplicationsApi(object):
             query_params.append(('skip', params['skip']))  # noqa: E501
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
 
         header_params = {}
         if 'content_type' in params:
@@ -154,7 +158,7 @@ class ApplicationsApi(object):
             files=local_var_files,
             response_type='Applicationslist',  # noqa: E501
             auth_settings=auth_settings,
-            async=params.get('async'),
+            async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

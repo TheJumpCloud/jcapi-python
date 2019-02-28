@@ -160,6 +160,9 @@ class SystemGroupGraphManagementReq(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(SystemGroupGraphManagementReq, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

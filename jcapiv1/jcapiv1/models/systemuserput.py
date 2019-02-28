@@ -16,6 +16,7 @@ import re  # noqa: F401
 
 import six
 
+from jcapiv1.models.mfa import Mfa  # noqa: F401,E501
 from jcapiv1.models.sshkeypost import Sshkeypost  # noqa: F401,E501
 from jcapiv1.models.systemuserput_addresses import SystemuserputAddresses  # noqa: F401,E501
 from jcapiv1.models.systemuserput_phone_numbers import SystemuserputPhoneNumbers  # noqa: F401,E501
@@ -69,7 +70,8 @@ class Systemuserput(object):
         'cost_center': 'str',
         'employee_type': 'str',
         'company': 'str',
-        'employee_identifier': 'str'
+        'employee_identifier': 'str',
+        'mfa': 'Mfa'
     }
 
     attribute_map = {
@@ -107,10 +109,11 @@ class Systemuserput(object):
         'cost_center': 'costCenter',
         'employee_type': 'employeeType',
         'company': 'company',
-        'employee_identifier': 'employeeIdentifier'
+        'employee_identifier': 'employeeIdentifier',
+        'mfa': 'mfa'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, tags=None, account_locked=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, attributes=None, samba_service_user=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, password=None, password_never_expires=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None):  # noqa: E501
+    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, tags=None, account_locked=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, attributes=None, samba_service_user=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, password=None, password_never_expires=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None, mfa=None):  # noqa: E501
         """Systemuserput - a model defined in Swagger"""  # noqa: E501
 
         self._email = None
@@ -148,6 +151,7 @@ class Systemuserput(object):
         self._employee_type = None
         self._company = None
         self._employee_identifier = None
+        self._mfa = None
         self.discriminator = None
 
         self.email = email
@@ -218,6 +222,8 @@ class Systemuserput(object):
             self.company = company
         if employee_identifier is not None:
             self.employee_identifier = employee_identifier
+        if mfa is not None:
+            self.mfa = mfa
 
     @property
     def email(self):
@@ -994,6 +1000,27 @@ class Systemuserput(object):
 
         self._employee_identifier = employee_identifier
 
+    @property
+    def mfa(self):
+        """Gets the mfa of this Systemuserput.  # noqa: E501
+
+
+        :return: The mfa of this Systemuserput.  # noqa: E501
+        :rtype: Mfa
+        """
+        return self._mfa
+
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Systemuserput.
+
+
+        :param mfa: The mfa of this Systemuserput.  # noqa: E501
+        :type: Mfa
+        """
+
+        self._mfa = mfa
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}
@@ -1015,6 +1042,9 @@ class Systemuserput(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(Systemuserput, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
