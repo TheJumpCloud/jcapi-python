@@ -1,11 +1,10 @@
-# Search
+# InlineResponse200
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**filter** | **object** |  | [optional] 
-**fields** | **str** |  | [optional] 
-**search_filter** | **object** |  | [optional] 
+**total_count** | **int** |  | [optional] 
+**results** | [**list[Administrator]**](Administrator.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

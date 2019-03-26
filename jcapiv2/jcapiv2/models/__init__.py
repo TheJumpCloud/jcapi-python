@@ -15,6 +15,9 @@
 from __future__ import absolute_import
 
 # import models into model package
+from jcapiv2.models.active_directory_agent_get_output import ActiveDirectoryAgentGetOutput
+from jcapiv2.models.active_directory_agent_input import ActiveDirectoryAgentInput
+from jcapiv2.models.active_directory_agent_list_output import ActiveDirectoryAgentListOutput
 from jcapiv2.models.active_directory_input import ActiveDirectoryInput
 from jcapiv2.models.administrator import Administrator
 from jcapiv2.models.auth_info import AuthInfo
@@ -38,6 +41,8 @@ from jcapiv2.models.graph_object_with_paths import GraphObjectWithPaths
 from jcapiv2.models.graph_type import GraphType
 from jcapiv2.models.group import Group
 from jcapiv2.models.group_type import GroupType
+from jcapiv2.models.inline_response200 import InlineResponse200
+from jcapiv2.models.inline_response401 import InlineResponse401
 from jcapiv2.models.job_details import JobDetails
 from jcapiv2.models.job_id import JobId
 from jcapiv2.models.job_workresult import JobWorkresult
@@ -58,6 +63,9 @@ from jcapiv2.models.policy_template_config_field_tooltip_variables import Policy
 from jcapiv2.models.policy_template_with_details import PolicyTemplateWithDetails
 from jcapiv2.models.policy_value import PolicyValue
 from jcapiv2.models.policy_with_details import PolicyWithDetails
+from jcapiv2.models.provider import Provider
+from jcapiv2.models.provider_admin_req import ProviderAdminReq
+from jcapiv2.models.provider_contact import ProviderContact
 from jcapiv2.models.samba_domain_input import SambaDomainInput
 from jcapiv2.models.sshkeylist import Sshkeylist
 from jcapiv2.models.system_graph_management_req import SystemGraphManagementReq

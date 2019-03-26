@@ -29,6 +29,20 @@ class TestActiveDirectoryApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_activedirectories_agents_list(self):
+        """Test case for activedirectories_agents_list
+
+        List Active Directory Agents  # noqa: E501
+        """
+        pass
+
+    def test_activedirectories_agents_post(self):
+        """Test case for activedirectories_agents_post
+
+        Create a new Active Directory Agent  # noqa: E501
+        """
+        pass
+
     def test_activedirectories_delete(self):
         """Test case for activedirectories_delete
 
