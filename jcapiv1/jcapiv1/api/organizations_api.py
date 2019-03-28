@@ -45,7 +45,7 @@ class OrganizationsApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -74,7 +74,7 @@ class OrganizationsApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.

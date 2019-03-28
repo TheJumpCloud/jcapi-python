@@ -796,7 +796,7 @@ class PoliciesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -825,7 +825,7 @@ class PoliciesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1272,7 +1272,7 @@ class PoliciesApi(object):
         :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1303,7 +1303,7 @@ class PoliciesApi(object):
         :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1419,7 +1419,7 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] aggregate:
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1449,7 +1449,7 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param list[str] aggregate:
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1558,7 +1558,7 @@ class PoliciesApi(object):
         :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1588,7 +1588,7 @@ class PoliciesApi(object):
         :param str policy_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1700,7 +1700,7 @@ class PoliciesApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1730,7 +1730,7 @@ class PoliciesApi(object):
         :param str system_id: ObjectID of the System. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1960,7 +1960,7 @@ class PoliciesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -1989,7 +1989,7 @@ class PoliciesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.

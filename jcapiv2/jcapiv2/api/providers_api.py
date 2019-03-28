@@ -46,7 +46,7 @@ class ProvidersApi(object):
         :param str provider_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -75,7 +75,7 @@ class ProvidersApi(object):
         :param str provider_id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -174,7 +174,7 @@ class ProvidersApi(object):
     def providers_post_admins(self, provider_id, content_type, accept, **kwargs):  # noqa: E501
         """Create a new Provider Administrator  # noqa: E501
 
-        This endpoint allows you to create a provider administrator. You must be associated to given provider to use this route.  **Sample Request**  ``` curl -X POST https://console.jumpcloud.com/api/v2/providers/{ProviderID}/administrators \\     -H 'Accept: application/json' \\     -H 'Context-Type: application/json' \\     -H 'x-api-key: {API_KEY}' \\     -d '{       \"email\":\"{ADMIN_EMAIL}\"     }' ```  # noqa: E501
+        This endpoint allows you to create a provider administrator. You must be associated to the provider to use this route.  **Sample Request**  ``` curl -X POST https://console.jumpcloud.com/api/v2/providers/{ProviderID}/administrators \\     -H 'Accept: application/json' \\     -H 'Context-Type: application/json' \\     -H 'x-api-key: {API_KEY}' \\     -d '{       \"email\":\"{ADMIN_EMAIL}\"     }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.providers_post_admins(provider_id, content_type, accept, async_req=True)
@@ -199,7 +199,7 @@ class ProvidersApi(object):
     def providers_post_admins_with_http_info(self, provider_id, content_type, accept, **kwargs):  # noqa: E501
         """Create a new Provider Administrator  # noqa: E501
 
-        This endpoint allows you to create a provider administrator. You must be associated to given provider to use this route.  **Sample Request**  ``` curl -X POST https://console.jumpcloud.com/api/v2/providers/{ProviderID}/administrators \\     -H 'Accept: application/json' \\     -H 'Context-Type: application/json' \\     -H 'x-api-key: {API_KEY}' \\     -d '{       \"email\":\"{ADMIN_EMAIL}\"     }' ```  # noqa: E501
+        This endpoint allows you to create a provider administrator. You must be associated to the provider to use this route.  **Sample Request**  ``` curl -X POST https://console.jumpcloud.com/api/v2/providers/{ProviderID}/administrators \\     -H 'Accept: application/json' \\     -H 'Context-Type: application/json' \\     -H 'x-api-key: {API_KEY}' \\     -d '{       \"email\":\"{ADMIN_EMAIL}\"     }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.providers_post_admins_with_http_info(provider_id, content_type, accept, async_req=True)

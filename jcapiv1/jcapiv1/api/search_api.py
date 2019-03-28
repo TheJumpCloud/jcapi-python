@@ -46,7 +46,7 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -74,7 +74,7 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -173,7 +173,7 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str x_org_id: 
         :param int skip: The offset into the records to return.
@@ -202,7 +202,7 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str x_org_id: 
         :param int skip: The offset into the records to return.
@@ -304,7 +304,7 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -333,7 +333,7 @@ class SearchApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param Search body:
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
