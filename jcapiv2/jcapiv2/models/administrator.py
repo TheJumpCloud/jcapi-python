@@ -40,7 +40,7 @@ class Administrator(object):
     }
 
     attribute_map = {
-        'id': 'id',
+        'id': '_id',
         'email': 'email',
         'firstname': 'firstname',
         'lastname': 'lastname',
