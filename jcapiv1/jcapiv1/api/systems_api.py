@@ -163,7 +163,7 @@ class SystemsApi(object):
     def systems_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual system  # noqa: E501
 
-        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_get(id, content_type, accept, async_req=True)
@@ -173,7 +173,7 @@ class SystemsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -192,7 +192,7 @@ class SystemsApi(object):
     def systems_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual system  # noqa: E501
 
-        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_get_with_http_info(id, content_type, accept, async_req=True)
@@ -202,7 +202,7 @@ class SystemsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
@@ -298,7 +298,7 @@ class SystemsApi(object):
     def systems_list(self, content_type, accept, **kwargs):  # noqa: E501
         """List All Systems  # noqa: E501
 
-        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_list(content_type, accept, async_req=True)
@@ -307,7 +307,7 @@ class SystemsApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str x_org_id: 
         :param str search: A nested object containing a string `searchTerm` and a list of `fields` to search on.
@@ -328,7 +328,7 @@ class SystemsApi(object):
     def systems_list_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List All Systems  # noqa: E501
 
-        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_list_with_http_info(content_type, accept, async_req=True)
@@ -337,7 +337,7 @@ class SystemsApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str x_org_id: 
         :param str search: A nested object containing a string `searchTerm` and a list of `fields` to search on.
@@ -574,7 +574,7 @@ class SystemsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
@@ -604,7 +604,7 @@ class SystemsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 

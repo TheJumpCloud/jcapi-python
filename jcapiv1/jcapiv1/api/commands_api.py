@@ -36,7 +36,7 @@ class CommandsApi(object):
     def command_file_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Command File  # noqa: E501
 
-        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.command_file_get(id, content_type, accept, async_req=True)
@@ -46,7 +46,7 @@ class CommandsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str x_org_id: 
@@ -64,7 +64,7 @@ class CommandsApi(object):
     def command_file_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Command File  # noqa: E501
 
-        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.command_file_get_with_http_info(id, content_type, accept, async_req=True)
@@ -74,7 +74,7 @@ class CommandsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
         :param str x_org_id: 
@@ -286,7 +286,7 @@ class CommandsApi(object):
     def commands_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command  # noqa: E501
 
-        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
+        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.commands_get(id, content_type, accept, async_req=True)
@@ -296,7 +296,7 @@ class CommandsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Command
@@ -313,7 +313,7 @@ class CommandsApi(object):
     def commands_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command  # noqa: E501
 
-        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
+        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.commands_get_with_http_info(id, content_type, accept, async_req=True)
@@ -323,7 +323,7 @@ class CommandsApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param str x_org_id: 
         :return: Command
@@ -423,7 +423,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int skip: The offset into the records to return.
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :param str filter: A filter to apply to the query.
@@ -452,7 +452,7 @@ class CommandsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int skip: The offset into the records to return.
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param str sort: Use space separated sort parameters to sort the collection. Default sort is ascending. Prefix with `-` to sort descending. 
         :param str filter: A filter to apply to the query.

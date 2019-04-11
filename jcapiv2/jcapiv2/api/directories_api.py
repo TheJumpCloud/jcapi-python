@@ -45,7 +45,7 @@ class DirectoriesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param int skip: The offset into the records to return.
@@ -73,7 +73,7 @@ class DirectoriesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] fields: The comma separated fields included in the returned records. If omitted the default list of fields will be returned. 
+        :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param int limit: The number of records to return at once. Limited to 100.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
         :param int skip: The offset into the records to return.

@@ -36,7 +36,7 @@ class OrganizationsApi(object):
     def organization_list(self, content_type, accept, **kwargs):  # noqa: E501
         """Get Organization Details  # noqa: E501
 
-        This endpoint returns Organization Details.  #### Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns Organization Details.  #### Sample Request   ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.organization_list(content_type, accept, async_req=True)
@@ -45,7 +45,7 @@ class OrganizationsApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.
@@ -65,7 +65,7 @@ class OrganizationsApi(object):
     def organization_list_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Get Organization Details  # noqa: E501
 
-        This endpoint returns Organization Details.  #### Sample Request  ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns Organization Details.  #### Sample Request   ``` curl -X GET \\   https://console.jumpcloud.com/api/organizations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.organization_list_with_http_info(content_type, accept, async_req=True)
@@ -74,7 +74,7 @@ class OrganizationsApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted the default list of fields will be returned. 
+        :param str fields: Use a space seperated string of field parameters to include the data in the response. If omitted, the default list of fields will be returned. 
         :param str filter: A filter to apply to the query.
         :param int limit: The number of records to return at once. Limited to 100.
         :param int skip: The offset into the records to return.

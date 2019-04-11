@@ -32,25 +32,30 @@ class Search(object):
     """
     swagger_types = {
         'filter': 'object',
-        'fields': 'str'
+        'fields': 'str',
+        'search_filter': 'object'
     }
 
     attribute_map = {
         'filter': 'filter',
-        'fields': 'fields'
+        'fields': 'fields',
+        'search_filter': 'searchFilter'
     }
 
-    def __init__(self, filter=None, fields=None):  # noqa: E501
+    def __init__(self, filter=None, fields=None, search_filter=None):  # noqa: E501
         """Search - a model defined in Swagger"""  # noqa: E501
 
         self._filter = None
         self._fields = None
+        self._search_filter = None
         self.discriminator = None
 
         if filter is not None:
             self.filter = filter
         if fields is not None:
             self.fields = fields
+        if search_filter is not None:
+            self.search_filter = search_filter
 
     @property
     def filter(self):
@@ -93,6 +98,27 @@ class Search(object):
         """
 
         self._fields = fields
+
+    @property
+    def search_filter(self):
+        """Gets the search_filter of this Search.  # noqa: E501
+
+
+        :return: The search_filter of this Search.  # noqa: E501
+        :rtype: object
+        """
+        return self._search_filter
+
+    @search_filter.setter
+    def search_filter(self, search_filter):
+        """Sets the search_filter of this Search.
+
+
+        :param search_filter: The search_filter of this Search.  # noqa: E501
+        :type: object
+        """
+
+        self._search_filter = search_filter
 
     def to_dict(self):
         """Returns the model properties as a dict"""
