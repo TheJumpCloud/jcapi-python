@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from jcapiv2.models.administrator import Administrator  # noqa: F401,E501
+from jcapiv2.models.ldap_server_action import LdapServerAction  # noqa: F401,E501
 
 
 class InlineResponse200(object):
@@ -33,68 +33,120 @@ class InlineResponse200(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'total_count': 'int',
-        'results': 'list[Administrator]'
+        'id': 'str',
+        'name': 'str',
+        'user_lockout_action': 'LdapServerAction',
+        'user_password_expiration_action': 'LdapServerAction'
     }
 
     attribute_map = {
-        'total_count': 'totalCount',
-        'results': 'results'
+        'id': 'id',
+        'name': 'name',
+        'user_lockout_action': 'userLockoutAction',
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, total_count=None, results=None):  # noqa: E501
+    def __init__(self, id=None, name=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """InlineResponse200 - a model defined in Swagger"""  # noqa: E501
 
-        self._total_count = None
-        self._results = None
+        self._id = None
+        self._name = None
+        self._user_lockout_action = None
+        self._user_password_expiration_action = None
         self.discriminator = None
 
-        if total_count is not None:
-            self.total_count = total_count
-        if results is not None:
-            self.results = results
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if user_lockout_action is not None:
+            self.user_lockout_action = user_lockout_action
+        if user_password_expiration_action is not None:
+            self.user_password_expiration_action = user_password_expiration_action
 
     @property
-    def total_count(self):
-        """Gets the total_count of this InlineResponse200.  # noqa: E501
+    def id(self):
+        """Gets the id of this InlineResponse200.  # noqa: E501
 
 
-        :return: The total_count of this InlineResponse200.  # noqa: E501
-        :rtype: int
+        :return: The id of this InlineResponse200.  # noqa: E501
+        :rtype: str
         """
-        return self._total_count
+        return self._id
 
-    @total_count.setter
-    def total_count(self, total_count):
-        """Sets the total_count of this InlineResponse200.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this InlineResponse200.
 
 
-        :param total_count: The total_count of this InlineResponse200.  # noqa: E501
-        :type: int
+        :param id: The id of this InlineResponse200.  # noqa: E501
+        :type: str
         """
 
-        self._total_count = total_count
+        self._id = id
 
     @property
-    def results(self):
-        """Gets the results of this InlineResponse200.  # noqa: E501
+    def name(self):
+        """Gets the name of this InlineResponse200.  # noqa: E501
 
 
-        :return: The results of this InlineResponse200.  # noqa: E501
-        :rtype: list[Administrator]
+        :return: The name of this InlineResponse200.  # noqa: E501
+        :rtype: str
         """
-        return self._results
+        return self._name
 
-    @results.setter
-    def results(self, results):
-        """Sets the results of this InlineResponse200.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this InlineResponse200.
 
 
-        :param results: The results of this InlineResponse200.  # noqa: E501
-        :type: list[Administrator]
+        :param name: The name of this InlineResponse200.  # noqa: E501
+        :type: str
         """
 
-        self._results = results
+        self._name = name
+
+    @property
+    def user_lockout_action(self):
+        """Gets the user_lockout_action of this InlineResponse200.  # noqa: E501
+
+
+        :return: The user_lockout_action of this InlineResponse200.  # noqa: E501
+        :rtype: LdapServerAction
+        """
+        return self._user_lockout_action
+
+    @user_lockout_action.setter
+    def user_lockout_action(self, user_lockout_action):
+        """Sets the user_lockout_action of this InlineResponse200.
+
+
+        :param user_lockout_action: The user_lockout_action of this InlineResponse200.  # noqa: E501
+        :type: LdapServerAction
+        """
+
+        self._user_lockout_action = user_lockout_action
+
+    @property
+    def user_password_expiration_action(self):
+        """Gets the user_password_expiration_action of this InlineResponse200.  # noqa: E501
+
+
+        :return: The user_password_expiration_action of this InlineResponse200.  # noqa: E501
+        :rtype: LdapServerAction
+        """
+        return self._user_password_expiration_action
+
+    @user_password_expiration_action.setter
+    def user_password_expiration_action(self, user_password_expiration_action):
+        """Sets the user_password_expiration_action of this InlineResponse200.
+
+
+        :param user_password_expiration_action: The user_password_expiration_action of this InlineResponse200.  # noqa: E501
+        :type: LdapServerAction
+        """
+
+        self._user_password_expiration_action = user_password_expiration_action
 
     def to_dict(self):
         """Returns the model properties as a dict"""

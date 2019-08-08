@@ -718,6 +718,8 @@ class WorkdayImportApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `workdays_importresults`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `workdays_importresults`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -847,6 +849,8 @@ class WorkdayImportApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `workdays_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `workdays_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1336,6 +1340,8 @@ class WorkdayImportApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `workdays_workers`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `workdays_workers`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

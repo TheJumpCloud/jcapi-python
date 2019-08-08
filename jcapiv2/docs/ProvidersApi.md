@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **providers_list_administrators**
-> InlineResponse200 providers_list_administrators(provider_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
+> InlineResponse2001 providers_list_administrators(provider_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort)
 
 List Provider Administrators
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](InlineResponse200.md)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
