@@ -8,8 +8,10 @@ Method | HTTP request | Description
 [**graph_g_suite_associations_post**](GSuiteApi.md#graph_g_suite_associations_post) | **POST** /gsuites/{gsuite_id}/associations | Manage the associations of a G Suite instance
 [**graph_g_suite_traverse_user**](GSuiteApi.md#graph_g_suite_traverse_user) | **GET** /gsuites/{gsuite_id}/users | List the Users bound to a G Suite instance
 [**graph_g_suite_traverse_user_group**](GSuiteApi.md#graph_g_suite_traverse_user_group) | **GET** /gsuites/{gsuite_id}/usergroups | List the User Groups bound to a G Suite instance
+[**gsuites_get**](GSuiteApi.md#gsuites_get) | **GET** /gsuites/{id} | Get G Suite
+[**gsuites_patch**](GSuiteApi.md#gsuites_patch) | **PATCH** /gsuites/{id} | Update existing G Suite
 [**translation_rules_g_suite_delete**](GSuiteApi.md#translation_rules_g_suite_delete) | **DELETE** /gsuites/{gsuite_id}/translationrules/{id} | Deletes a G Suite translation rule
-[**translation_rules_g_suite_get**](GSuiteApi.md#translation_rules_g_suite_get) | **GET** /gsuites/{gsuite_id}/translationrules/{id} | Gets a specific g suite translation rule
+[**translation_rules_g_suite_get**](GSuiteApi.md#translation_rules_g_suite_get) | **GET** /gsuites/{gsuite_id}/translationrules/{id} | Gets a specific G Suite translation rule
 [**translation_rules_g_suite_list**](GSuiteApi.md#translation_rules_g_suite_list) | **GET** /gsuites/{gsuite_id}/translationrules | List all the G Suite Translation Rules
 [**translation_rules_g_suite_post**](GSuiteApi.md#translation_rules_g_suite_post) | **POST** /gsuites/{gsuite_id}/translationrules | Create a new G Suite Translation Rule
 
@@ -138,7 +140,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_traverse_user**
-> list[GraphObjectWithPaths] graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Users bound to a G Suite instance
 
@@ -164,12 +166,13 @@ gsuite_id = 'gsuite_id_example' # str | ObjectID of the G Suite instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the Users bound to a G Suite instance
-    api_response = api_instance.graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_g_suite_traverse_user(gsuite_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GSuiteApi->graph_g_suite_traverse_user: %s\n" % e)
@@ -183,8 +186,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -202,7 +206,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_g_suite_traverse_user_group**
-> list[GraphObjectWithPaths] graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the User Groups bound to a G Suite instance
 
@@ -228,12 +232,13 @@ gsuite_id = 'gsuite_id_example' # str | ObjectID of the G Suite instance.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the User Groups bound to a G Suite instance
-    api_response = api_instance.graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_g_suite_traverse_user_group(gsuite_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GSuiteApi->graph_g_suite_traverse_user_group: %s\n" % e)
@@ -247,8 +252,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -257,6 +263,116 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gsuites_get**
+> GsuiteOutput gsuites_get(id, content_type, accept, x_org_id=x_org_id)
+
+Get G Suite
+
+This endpoint returns a specific G Suite.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/gsuites/{GSUITE_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = jcapiv2.GSuiteApi()
+id = 'id_example' # str | Unique identifier of the GSuite.
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+x_org_id = '' # str |  (optional) (default to )
+
+try:
+    # Get G Suite
+    api_response = api_instance.gsuites_get(id, content_type, accept, x_org_id=x_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GSuiteApi->gsuites_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique identifier of the GSuite. | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **x_org_id** | **str**|  | [optional] [default to ]
+
+### Return type
+
+[**GsuiteOutput**](GsuiteOutput.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **gsuites_patch**
+> GsuiteOutput gsuites_patch(id, content_type, accept, body=body, x_org_id=x_org_id)
+
+Update existing G Suite
+
+This endpoint allows updating some attributes of a G Suite.  ##### Sample Request  ``` curl -X PATCH https://console.jumpcloud.com/api/v2/gsuites/{GSUITE_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"userLockoutAction\": \"remove\",     \"userPasswordExpirationAction\": \"disable\"   }' ```
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = jcapiv2.GSuiteApi()
+id = 'id_example' # str | Unique identifier of the GSuite.
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+body = jcapiv2.GsuitePatchInput() # GsuitePatchInput |  (optional)
+x_org_id = '' # str |  (optional) (default to )
+
+try:
+    # Update existing G Suite
+    api_response = api_instance.gsuites_patch(id, content_type, accept, body=body, x_org_id=x_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GSuiteApi->gsuites_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique identifier of the GSuite. | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **body** | [**GsuitePatchInput**](GsuitePatchInput.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] [default to ]
+
+### Return type
+
+[**GsuiteOutput**](GsuiteOutput.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 
@@ -327,7 +443,7 @@ void (empty response body)
 # **translation_rules_g_suite_get**
 > GSuiteTranslationRule translation_rules_g_suite_get(gsuite_id, id, content_type, accept)
 
-Gets a specific g suite translation rule
+Gets a specific G Suite translation rule
 
 This endpoint returns a specific translation rule for a specific G Suite instance. These rules specify how JumpCloud attributes translate to [G Suite Admin SDK](https://developers.google.com/admin-sdk/directory/) attributes.  ###### Sample Request  ```   curl -X GET https://console.jumpcloud.com/api/v2/gsuites/{gsuite_id}/translationrules/{id} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
@@ -353,7 +469,7 @@ content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 
 try:
-    # Gets a specific g suite translation rule
+    # Gets a specific G Suite translation rule
     api_response = api_instance.translation_rules_g_suite_get(gsuite_id, id, content_type, accept)
     pprint(api_response)
 except ApiException as e:

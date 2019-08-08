@@ -115,6 +115,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_policy_associations_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_policy_associations_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -306,8 +308,9 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -333,14 +336,15 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
+        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -368,6 +372,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_policy_traverse_system`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_policy_traverse_system`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -379,14 +385,17 @@ class PoliciesApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -433,8 +442,9 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -460,14 +470,15 @@ class PoliciesApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
+        all_params = ['policy_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -495,6 +506,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_policy_traverse_system_group`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_policy_traverse_system_group`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -506,14 +519,17 @@ class PoliciesApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -860,6 +876,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `policies_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policies_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1343,6 +1361,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `policyresults_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policyresults_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1409,7 +1429,7 @@ class PoliciesApi(object):
     def policyresults_list_0(self, content_type, accept, **kwargs):  # noqa: E501
         """Lists all the policy results for an organization.  # noqa: E501
 
-        This endpoint returns all policies results for an Organization.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns all policies results for an organization.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.policyresults_list_0(content_type, accept, async_req=True)
@@ -1439,7 +1459,7 @@ class PoliciesApi(object):
     def policyresults_list_0_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Lists all the policy results for an organization.  # noqa: E501
 
-        This endpoint returns all policies results for an Organization.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns all policies results for an organization.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.policyresults_list_0_with_http_info(content_type, accept, async_req=True)
@@ -1484,6 +1504,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `policyresults_list_0`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policyresults_list_0`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1627,6 +1649,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `policystatuses_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policystatuses_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1769,6 +1793,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `policystatuses_list_0`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policystatuses_list_0`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2024,6 +2050,8 @@ class PoliciesApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `policytemplates_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policytemplates_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

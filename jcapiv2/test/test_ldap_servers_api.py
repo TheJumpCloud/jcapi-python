@@ -71,6 +71,13 @@ class TestLDAPServersApi(unittest.TestCase):
         """
         pass
 
+    def test_ldapservers_patch(self):
+        """Test case for ldapservers_patch
+
+        Update existing LDAP server  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

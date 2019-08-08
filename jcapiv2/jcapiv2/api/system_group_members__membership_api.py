@@ -113,6 +113,8 @@ class SystemGroupMembersMembershipApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_member_of`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_member_of`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -246,6 +248,8 @@ class SystemGroupMembersMembershipApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_members_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_members_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -508,6 +512,8 @@ class SystemGroupMembersMembershipApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_membership`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_membership`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
