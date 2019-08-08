@@ -31,21 +31,31 @@ class LdapServerInput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str'
+        'name': 'str',
+        'user_lockout_action': 'str',
+        'user_password_expiration_action': 'str'
     }
 
     attribute_map = {
-        'name': 'name'
+        'name': 'name',
+        'user_lockout_action': 'userLockoutAction',
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, name=None):  # noqa: E501
+    def __init__(self, name=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """LdapServerInput - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
+        self._user_lockout_action = None
+        self._user_password_expiration_action = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
+        if user_lockout_action is not None:
+            self.user_lockout_action = user_lockout_action
+        if user_password_expiration_action is not None:
+            self.user_password_expiration_action = user_password_expiration_action
 
     @property
     def name(self):
@@ -69,6 +79,64 @@ class LdapServerInput(object):
         """
 
         self._name = name
+
+    @property
+    def user_lockout_action(self):
+        """Gets the user_lockout_action of this LdapServerInput.  # noqa: E501
+
+        action to take; one of 'remove' or 'disable'  # noqa: E501
+
+        :return: The user_lockout_action of this LdapServerInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_lockout_action
+
+    @user_lockout_action.setter
+    def user_lockout_action(self, user_lockout_action):
+        """Sets the user_lockout_action of this LdapServerInput.
+
+        action to take; one of 'remove' or 'disable'  # noqa: E501
+
+        :param user_lockout_action: The user_lockout_action of this LdapServerInput.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["disable", "remove"]  # noqa: E501
+        if user_lockout_action not in allowed_values:
+            raise ValueError(
+                "Invalid value for `user_lockout_action` ({0}), must be one of {1}"  # noqa: E501
+                .format(user_lockout_action, allowed_values)
+            )
+
+        self._user_lockout_action = user_lockout_action
+
+    @property
+    def user_password_expiration_action(self):
+        """Gets the user_password_expiration_action of this LdapServerInput.  # noqa: E501
+
+        action to take; one of 'remove' or 'disable'  # noqa: E501
+
+        :return: The user_password_expiration_action of this LdapServerInput.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_password_expiration_action
+
+    @user_password_expiration_action.setter
+    def user_password_expiration_action(self, user_password_expiration_action):
+        """Sets the user_password_expiration_action of this LdapServerInput.
+
+        action to take; one of 'remove' or 'disable'  # noqa: E501
+
+        :param user_password_expiration_action: The user_password_expiration_action of this LdapServerInput.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["disable", "remove"]  # noqa: E501
+        if user_password_expiration_action not in allowed_values:
+            raise ValueError(
+                "Invalid value for `user_password_expiration_action` ({0}), must be one of {1}"  # noqa: E501
+                .format(user_password_expiration_action, allowed_values)
+            )
+
+        self._user_password_expiration_action = user_password_expiration_action
 
     def to_dict(self):
         """Returns the model properties as a dict"""

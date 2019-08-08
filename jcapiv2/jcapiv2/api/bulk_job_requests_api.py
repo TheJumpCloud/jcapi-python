@@ -224,6 +224,8 @@ class BulkJobRequestsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `bulk_users_create_results`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `bulk_users_create_results`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -585,6 +587,8 @@ class BulkJobRequestsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `jobs_results`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `jobs_results`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

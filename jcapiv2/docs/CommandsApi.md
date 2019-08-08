@@ -138,7 +138,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_traverse_system**
-> list[GraphObjectWithPaths] graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_command_traverse_system(command_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Systems bound to a Command
 
@@ -164,12 +164,13 @@ command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the Systems bound to a Command
-    api_response = api_instance.graph_command_traverse_system(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_command_traverse_system(command_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_traverse_system: %s\n" % e)
@@ -183,8 +184,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -202,7 +204,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_command_traverse_system_group**
-> list[GraphObjectWithPaths] graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the System Groups bound to a Command
 
@@ -228,12 +230,13 @@ command_id = 'command_id_example' # str | ObjectID of the Command.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the System Groups bound to a Command
-    api_response = api_instance.graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_command_traverse_system_group(command_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandsApi->graph_command_traverse_system_group: %s\n" % e)
@@ -247,8 +250,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 

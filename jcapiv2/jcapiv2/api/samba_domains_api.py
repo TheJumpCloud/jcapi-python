@@ -345,6 +345,8 @@ class SambaDomainsApi(object):
                 params['ldapserver_id'] is None):
             raise ValueError("Missing the required parameter `ldapserver_id` when calling `ldapservers_samba_domains_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `ldapservers_samba_domains_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
