@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**graph_ldap_server_traverse_user_group**](LDAPServersApi.md#graph_ldap_server_traverse_user_group) | **GET** /ldapservers/{ldapserver_id}/usergroups | List the User Groups bound to a LDAP Server
 [**ldapservers_get**](LDAPServersApi.md#ldapservers_get) | **GET** /ldapservers/{id} | Get LDAP Server
 [**ldapservers_list**](LDAPServersApi.md#ldapservers_list) | **GET** /ldapservers | List LDAP Servers
+[**ldapservers_patch**](LDAPServersApi.md#ldapservers_patch) | **PATCH** /ldapservers/{id} | Update existing LDAP server
 
 
 # **graph_ldap_server_associations_list**
@@ -140,7 +141,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_traverse_user**
-> list[GraphObjectWithPaths] graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Users bound to a LDAP Server
 
@@ -166,12 +167,13 @@ ldapserver_id = 'ldapserver_id_example' # str | ObjectID of the LDAP Server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the Users bound to a LDAP Server
-    api_response = api_instance.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_ldap_server_traverse_user(ldapserver_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->graph_ldap_server_traverse_user: %s\n" % e)
@@ -185,8 +187,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -204,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_ldap_server_traverse_user_group**
-> list[GraphObjectWithPaths] graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the User Groups bound to a LDAP Server
 
@@ -230,12 +233,13 @@ ldapserver_id = 'ldapserver_id_example' # str | ObjectID of the LDAP Server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the User Groups bound to a LDAP Server
-    api_response = api_instance.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_ldap_server_traverse_user_group(ldapserver_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LDAPServersApi->graph_ldap_server_traverse_user_group: %s\n" % e)
@@ -249,8 +253,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -383,6 +388,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[LdapServerOutput]**](LdapServerOutput.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ldapservers_patch**
+> InlineResponse200 ldapservers_patch(id, content_type, accept, body=body, x_api_key=x_api_key, x_org_id=x_org_id)
+
+Update existing LDAP server
+
+This endpoint allows updating some attributes of an LDAP server.  Sample Request  ``` curl -X PATCH https://console.jumpcloud.com/api/v2/ldapservers/{LDAP_ID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"userLockoutAction\": \"remove\",     \"userPasswordExpirationAction\": \"disable\"   }' ```
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.LDAPServersApi(jcapiv2.ApiClient(configuration))
+id = 'id_example' # str | Unique identifier of the LDAP server.
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+body = jcapiv2.Body() # Body |  (optional)
+x_api_key = 'x_api_key_example' # str |  (optional)
+x_org_id = 'x_org_id_example' # str |  (optional)
+
+try:
+    # Update existing LDAP server
+    api_response = api_instance.ldapservers_patch(id, content_type, accept, body=body, x_api_key=x_api_key, x_org_id=x_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LDAPServersApi->ldapservers_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| Unique identifier of the LDAP server. | 
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **body** | [**Body**](Body.md)|  | [optional] 
+ **x_api_key** | **str**|  | [optional] 
+ **x_org_id** | **str**|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

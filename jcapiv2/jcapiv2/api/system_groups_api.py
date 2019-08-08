@@ -115,6 +115,8 @@ class SystemGroupsApi(object):
                 params['targets'] is None):
             raise ValueError("Missing the required parameter `targets` when calling `graph_system_group_associations_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_associations_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -372,6 +374,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_member_of`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_member_of`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -505,6 +509,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_members_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_members_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -767,6 +773,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_membership`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_membership`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -838,8 +846,9 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -865,14 +874,15 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -900,6 +910,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_traverse_policy`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_traverse_policy`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -911,14 +923,17 @@ class SystemGroupsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -965,8 +980,9 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -992,14 +1008,15 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1027,6 +1044,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_traverse_user`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_traverse_user`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1038,14 +1057,17 @@ class SystemGroupsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1092,8 +1114,9 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1119,14 +1142,15 @@ class SystemGroupsApi(object):
         :param str content_type: (required)
         :param str accept: (required)
         :param int limit: The number of records to return at once. Limited to 100.
-        :param int skip: The offset into the records to return.
         :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :return: list[GraphObjectWithPaths]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_id', 'content_type', 'accept', 'limit', 'skip', 'x_org_id']  # noqa: E501
+        all_params = ['group_id', 'content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1154,6 +1178,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `graph_system_group_traverse_user_group`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `graph_system_group_traverse_user_group`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1165,14 +1191,17 @@ class SystemGroupsApi(object):
             query_params.append(('limit', params['limit']))  # noqa: E501
         if 'skip' in params:
             query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1519,6 +1548,8 @@ class SystemGroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `groups_system_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `groups_system_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

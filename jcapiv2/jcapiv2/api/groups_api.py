@@ -109,6 +109,8 @@ class GroupsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `groups_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `groups_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
