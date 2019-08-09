@@ -51,8 +51,7 @@ class SystemInsightsApps(object):
         'copyright': 'str',
         'last_opened_time': 'float',
         'jc_collection_time': 'str',
-        'jc_system_id': 'str',
-        'jc_organization_id': 'str'
+        'jc_system_id': 'str'
     }
 
     attribute_map = {
@@ -76,11 +75,10 @@ class SystemInsightsApps(object):
         'copyright': 'copyright',
         'last_opened_time': 'last_opened_time',
         'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id',
-        'jc_organization_id': 'jc_organization_id'
+        'jc_system_id': 'jc_system_id'
     }
 
-    def __init__(self, name=None, path=None, bundle_executable=None, bundle_identifier=None, bundle_name=None, bundle_short_version=None, bundle_version=None, bundle_package_type=None, environment=None, element=None, compiler=None, development_region=None, display_name=None, info_string=None, minimum_system_version=None, category=None, applescript_enabled=None, copyright=None, last_opened_time=None, jc_collection_time=None, jc_system_id=None, jc_organization_id=None):  # noqa: E501
+    def __init__(self, name=None, path=None, bundle_executable=None, bundle_identifier=None, bundle_name=None, bundle_short_version=None, bundle_version=None, bundle_package_type=None, environment=None, element=None, compiler=None, development_region=None, display_name=None, info_string=None, minimum_system_version=None, category=None, applescript_enabled=None, copyright=None, last_opened_time=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
         """SystemInsightsApps - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
@@ -104,7 +102,6 @@ class SystemInsightsApps(object):
         self._last_opened_time = None
         self._jc_collection_time = None
         self._jc_system_id = None
-        self._jc_organization_id = None
         self.discriminator = None
 
         if name is not None:
@@ -149,8 +146,6 @@ class SystemInsightsApps(object):
             self.jc_collection_time = jc_collection_time
         if jc_system_id is not None:
             self.jc_system_id = jc_system_id
-        if jc_organization_id is not None:
-            self.jc_organization_id = jc_organization_id
 
     @property
     def name(self):
@@ -592,27 +587,6 @@ class SystemInsightsApps(object):
         """
 
         self._jc_system_id = jc_system_id
-
-    @property
-    def jc_organization_id(self):
-        """Gets the jc_organization_id of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The jc_organization_id of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_organization_id
-
-    @jc_organization_id.setter
-    def jc_organization_id(self, jc_organization_id):
-        """Sets the jc_organization_id of this SystemInsightsApps.
-
-
-        :param jc_organization_id: The jc_organization_id of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_organization_id = jc_organization_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

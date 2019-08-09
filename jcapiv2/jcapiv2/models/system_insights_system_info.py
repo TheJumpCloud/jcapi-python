@@ -47,8 +47,7 @@ class SystemInsightsSystemInfo(object):
         'computer_name': 'str',
         'local_hostname': 'str',
         'jc_collection_time': 'str',
-        'jc_system_id': 'str',
-        'jc_organization_id': 'str'
+        'jc_system_id': 'str'
     }
 
     attribute_map = {
@@ -68,11 +67,10 @@ class SystemInsightsSystemInfo(object):
         'computer_name': 'computer_name',
         'local_hostname': 'local_hostname',
         'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id',
-        'jc_organization_id': 'jc_organization_id'
+        'jc_system_id': 'jc_system_id'
     }
 
-    def __init__(self, hostname=None, uuid=None, cpu_type=None, cpu_subtype=None, cpu_brand=None, cpu_physical_cores=None, cpu_logical_cores=None, cpu_microcode=None, physical_memory=None, hardware_vendor=None, hardware_model=None, hardware_version=None, hardware_serial=None, computer_name=None, local_hostname=None, jc_collection_time=None, jc_system_id=None, jc_organization_id=None):  # noqa: E501
+    def __init__(self, hostname=None, uuid=None, cpu_type=None, cpu_subtype=None, cpu_brand=None, cpu_physical_cores=None, cpu_logical_cores=None, cpu_microcode=None, physical_memory=None, hardware_vendor=None, hardware_model=None, hardware_version=None, hardware_serial=None, computer_name=None, local_hostname=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
         """SystemInsightsSystemInfo - a model defined in Swagger"""  # noqa: E501
 
         self._hostname = None
@@ -92,7 +90,6 @@ class SystemInsightsSystemInfo(object):
         self._local_hostname = None
         self._jc_collection_time = None
         self._jc_system_id = None
-        self._jc_organization_id = None
         self.discriminator = None
 
         if hostname is not None:
@@ -129,8 +126,6 @@ class SystemInsightsSystemInfo(object):
             self.jc_collection_time = jc_collection_time
         if jc_system_id is not None:
             self.jc_system_id = jc_system_id
-        if jc_organization_id is not None:
-            self.jc_organization_id = jc_organization_id
 
     @property
     def hostname(self):
@@ -488,27 +483,6 @@ class SystemInsightsSystemInfo(object):
         """
 
         self._jc_system_id = jc_system_id
-
-    @property
-    def jc_organization_id(self):
-        """Gets the jc_organization_id of this SystemInsightsSystemInfo.  # noqa: E501
-
-
-        :return: The jc_organization_id of this SystemInsightsSystemInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_organization_id
-
-    @jc_organization_id.setter
-    def jc_organization_id(self, jc_organization_id):
-        """Sets the jc_organization_id of this SystemInsightsSystemInfo.
-
-
-        :param jc_organization_id: The jc_organization_id of this SystemInsightsSystemInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_organization_id = jc_organization_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

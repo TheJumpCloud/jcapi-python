@@ -39,8 +39,7 @@ class SystemInsightsInterfaceAddresses(object):
         'type': 'str',
         'friendly_name': 'str',
         'jc_collection_time': 'str',
-        'jc_system_id': 'str',
-        'jc_organization_id': 'str'
+        'jc_system_id': 'str'
     }
 
     attribute_map = {
@@ -52,11 +51,10 @@ class SystemInsightsInterfaceAddresses(object):
         'type': 'type',
         'friendly_name': 'friendly_name',
         'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id',
-        'jc_organization_id': 'jc_organization_id'
+        'jc_system_id': 'jc_system_id'
     }
 
-    def __init__(self, interface=None, address=None, mask=None, broadcast=None, point_to_point=None, type=None, friendly_name=None, jc_collection_time=None, jc_system_id=None, jc_organization_id=None):  # noqa: E501
+    def __init__(self, interface=None, address=None, mask=None, broadcast=None, point_to_point=None, type=None, friendly_name=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
         """SystemInsightsInterfaceAddresses - a model defined in Swagger"""  # noqa: E501
 
         self._interface = None
@@ -68,7 +66,6 @@ class SystemInsightsInterfaceAddresses(object):
         self._friendly_name = None
         self._jc_collection_time = None
         self._jc_system_id = None
-        self._jc_organization_id = None
         self.discriminator = None
 
         if interface is not None:
@@ -89,8 +86,6 @@ class SystemInsightsInterfaceAddresses(object):
             self.jc_collection_time = jc_collection_time
         if jc_system_id is not None:
             self.jc_system_id = jc_system_id
-        if jc_organization_id is not None:
-            self.jc_organization_id = jc_organization_id
 
     @property
     def interface(self):
@@ -280,27 +275,6 @@ class SystemInsightsInterfaceAddresses(object):
         """
 
         self._jc_system_id = jc_system_id
-
-    @property
-    def jc_organization_id(self):
-        """Gets the jc_organization_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
-
-
-        :return: The jc_organization_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_organization_id
-
-    @jc_organization_id.setter
-    def jc_organization_id(self, jc_organization_id):
-        """Sets the jc_organization_id of this SystemInsightsInterfaceAddresses.
-
-
-        :param jc_organization_id: The jc_organization_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_organization_id = jc_organization_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

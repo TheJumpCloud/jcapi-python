@@ -43,8 +43,7 @@ class SystemInsightsMounts(object):
         'inodes_free': 'str',
         'flags': 'str',
         'jc_collection_time': 'str',
-        'jc_system_id': 'str',
-        'jc_organization_id': 'str'
+        'jc_system_id': 'str'
     }
 
     attribute_map = {
@@ -60,11 +59,10 @@ class SystemInsightsMounts(object):
         'inodes_free': 'inodes_free',
         'flags': 'flags',
         'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id',
-        'jc_organization_id': 'jc_organization_id'
+        'jc_system_id': 'jc_system_id'
     }
 
-    def __init__(self, device=None, device_alias=None, path=None, type=None, blocks_size=None, blocks=None, blocks_free=None, blocks_available=None, inodes=None, inodes_free=None, flags=None, jc_collection_time=None, jc_system_id=None, jc_organization_id=None):  # noqa: E501
+    def __init__(self, device=None, device_alias=None, path=None, type=None, blocks_size=None, blocks=None, blocks_free=None, blocks_available=None, inodes=None, inodes_free=None, flags=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
         """SystemInsightsMounts - a model defined in Swagger"""  # noqa: E501
 
         self._device = None
@@ -80,7 +78,6 @@ class SystemInsightsMounts(object):
         self._flags = None
         self._jc_collection_time = None
         self._jc_system_id = None
-        self._jc_organization_id = None
         self.discriminator = None
 
         if device is not None:
@@ -109,8 +106,6 @@ class SystemInsightsMounts(object):
             self.jc_collection_time = jc_collection_time
         if jc_system_id is not None:
             self.jc_system_id = jc_system_id
-        if jc_organization_id is not None:
-            self.jc_organization_id = jc_organization_id
 
     @property
     def device(self):
@@ -384,27 +379,6 @@ class SystemInsightsMounts(object):
         """
 
         self._jc_system_id = jc_system_id
-
-    @property
-    def jc_organization_id(self):
-        """Gets the jc_organization_id of this SystemInsightsMounts.  # noqa: E501
-
-
-        :return: The jc_organization_id of this SystemInsightsMounts.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_organization_id
-
-    @jc_organization_id.setter
-    def jc_organization_id(self, jc_organization_id):
-        """Sets the jc_organization_id of this SystemInsightsMounts.
-
-
-        :param jc_organization_id: The jc_organization_id of this SystemInsightsMounts.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_organization_id = jc_organization_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

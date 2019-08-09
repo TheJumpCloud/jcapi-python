@@ -37,8 +37,7 @@ class SystemInsightsGroups(object):
         'group_sid': 'str',
         'comment': 'str',
         'jc_collection_time': 'str',
-        'jc_system_id': 'str',
-        'jc_organization_id': 'str'
+        'jc_system_id': 'str'
     }
 
     attribute_map = {
@@ -48,11 +47,10 @@ class SystemInsightsGroups(object):
         'group_sid': 'group_sid',
         'comment': 'comment',
         'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id',
-        'jc_organization_id': 'jc_organization_id'
+        'jc_system_id': 'jc_system_id'
     }
 
-    def __init__(self, gid=None, gid_signed=None, groupname=None, group_sid=None, comment=None, jc_collection_time=None, jc_system_id=None, jc_organization_id=None):  # noqa: E501
+    def __init__(self, gid=None, gid_signed=None, groupname=None, group_sid=None, comment=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
         """SystemInsightsGroups - a model defined in Swagger"""  # noqa: E501
 
         self._gid = None
@@ -62,7 +60,6 @@ class SystemInsightsGroups(object):
         self._comment = None
         self._jc_collection_time = None
         self._jc_system_id = None
-        self._jc_organization_id = None
         self.discriminator = None
 
         if gid is not None:
@@ -79,8 +76,6 @@ class SystemInsightsGroups(object):
             self.jc_collection_time = jc_collection_time
         if jc_system_id is not None:
             self.jc_system_id = jc_system_id
-        if jc_organization_id is not None:
-            self.jc_organization_id = jc_organization_id
 
     @property
     def gid(self):
@@ -228,27 +223,6 @@ class SystemInsightsGroups(object):
         """
 
         self._jc_system_id = jc_system_id
-
-    @property
-    def jc_organization_id(self):
-        """Gets the jc_organization_id of this SystemInsightsGroups.  # noqa: E501
-
-
-        :return: The jc_organization_id of this SystemInsightsGroups.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_organization_id
-
-    @jc_organization_id.setter
-    def jc_organization_id(self, jc_organization_id):
-        """Sets the jc_organization_id of this SystemInsightsGroups.
-
-
-        :param jc_organization_id: The jc_organization_id of this SystemInsightsGroups.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_organization_id = jc_organization_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -42,8 +42,7 @@ class SystemInsightsSafariExtensions(object):
         'description': 'str',
         'path': 'str',
         'jc_collection_time': 'str',
-        'jc_system_id': 'str',
-        'jc_organization_id': 'str'
+        'jc_system_id': 'str'
     }
 
     attribute_map = {
@@ -58,11 +57,10 @@ class SystemInsightsSafariExtensions(object):
         'description': 'description',
         'path': 'path',
         'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id',
-        'jc_organization_id': 'jc_organization_id'
+        'jc_system_id': 'jc_system_id'
     }
 
-    def __init__(self, uid=None, name=None, identifier=None, version=None, sdk=None, update_url=None, author=None, developer_id=None, description=None, path=None, jc_collection_time=None, jc_system_id=None, jc_organization_id=None):  # noqa: E501
+    def __init__(self, uid=None, name=None, identifier=None, version=None, sdk=None, update_url=None, author=None, developer_id=None, description=None, path=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
         """SystemInsightsSafariExtensions - a model defined in Swagger"""  # noqa: E501
 
         self._uid = None
@@ -77,7 +75,6 @@ class SystemInsightsSafariExtensions(object):
         self._path = None
         self._jc_collection_time = None
         self._jc_system_id = None
-        self._jc_organization_id = None
         self.discriminator = None
 
         if uid is not None:
@@ -104,8 +101,6 @@ class SystemInsightsSafariExtensions(object):
             self.jc_collection_time = jc_collection_time
         if jc_system_id is not None:
             self.jc_system_id = jc_system_id
-        if jc_organization_id is not None:
-            self.jc_organization_id = jc_organization_id
 
     @property
     def uid(self):
@@ -358,27 +353,6 @@ class SystemInsightsSafariExtensions(object):
         """
 
         self._jc_system_id = jc_system_id
-
-    @property
-    def jc_organization_id(self):
-        """Gets the jc_organization_id of this SystemInsightsSafariExtensions.  # noqa: E501
-
-
-        :return: The jc_organization_id of this SystemInsightsSafariExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_organization_id
-
-    @jc_organization_id.setter
-    def jc_organization_id(self, jc_organization_id):
-        """Sets the jc_organization_id of this SystemInsightsSafariExtensions.
-
-
-        :param jc_organization_id: The jc_organization_id of this SystemInsightsSafariExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_organization_id = jc_organization_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
