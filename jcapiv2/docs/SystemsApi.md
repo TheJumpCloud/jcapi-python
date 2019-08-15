@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_command**
-> list[GraphObjectWithPaths] graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_system_traverse_command(system_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Commands bound to a System
 
@@ -248,12 +248,13 @@ system_id = 'system_id_example' # str | ObjectID of the System.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the Commands bound to a System
-    api_response = api_instance.graph_system_traverse_command(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_system_traverse_command(system_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_command: %s\n" % e)
@@ -267,8 +268,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -286,7 +288,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_policy**
-> list[GraphObjectWithPaths] graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_system_traverse_policy(system_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Policies bound to a System
 
@@ -312,12 +314,13 @@ system_id = 'system_id_example' # str | ObjectID of the System.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the Policies bound to a System
-    api_response = api_instance.graph_system_traverse_policy(system_id, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_system_traverse_policy(system_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_policy: %s\n" % e)
@@ -331,8 +334,9 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 
@@ -420,7 +424,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_system_traverse_user_group**
-> list[GraphObjectWithPaths] graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, _date=_date, authorization=authorization, x_org_id=x_org_id)
+> list[GraphObjectWithPaths] graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, _date=_date, authorization=authorization, filter=filter)
 
 List the User Groups bound to a System
 
@@ -446,14 +450,15 @@ system_id = 'system_id_example' # str | ObjectID of the System.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 _date = '_date_example' # str | Current date header for the System Context API (optional)
 authorization = 'authorization_example' # str | Authorization header for the System Context API (optional)
-x_org_id = '' # str |  (optional) (default to )
+filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 
 try:
     # List the User Groups bound to a System
-    api_response = api_instance.graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, skip=skip, _date=_date, authorization=authorization, x_org_id=x_org_id)
+    api_response = api_instance.graph_system_traverse_user_group(system_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, _date=_date, authorization=authorization, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->graph_system_traverse_user_group: %s\n" % e)
@@ -467,10 +472,11 @@ Name | Type | Description  | Notes
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **_date** | **str**| Current date header for the System Context API | [optional] 
  **authorization** | **str**| Authorization header for the System Context API | [optional] 
- **x_org_id** | **str**|  | [optional] [default to ]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
 
 ### Return type
 

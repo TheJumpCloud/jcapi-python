@@ -37,7 +37,10 @@ class Radiusserver(object):
         'shared_secret': 'str',
         'name': 'str',
         'tags': 'list[str]',
-        'tag_names': 'list[str]'
+        'tag_names': 'list[str]',
+        'user_lockout_action': 'str',
+        'user_password_expiration_action': 'str',
+        'mfa': 'str'
     }
 
     attribute_map = {
@@ -47,10 +50,13 @@ class Radiusserver(object):
         'shared_secret': 'sharedSecret',
         'name': 'name',
         'tags': 'tags',
-        'tag_names': 'tagNames'
+        'tag_names': 'tagNames',
+        'user_lockout_action': 'userLockoutAction',
+        'user_password_expiration_action': 'userPasswordExpirationAction',
+        'mfa': 'mfa'
     }
 
-    def __init__(self, id=None, organization=None, network_source_ip=None, shared_secret=None, name=None, tags=None, tag_names=None):  # noqa: E501
+    def __init__(self, id=None, organization=None, network_source_ip=None, shared_secret=None, name=None, tags=None, tag_names=None, user_lockout_action=None, user_password_expiration_action=None, mfa=None):  # noqa: E501
         """Radiusserver - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -60,6 +66,9 @@ class Radiusserver(object):
         self._name = None
         self._tags = None
         self._tag_names = None
+        self._user_lockout_action = None
+        self._user_password_expiration_action = None
+        self._mfa = None
         self.discriminator = None
 
         if id is not None:
@@ -76,6 +85,12 @@ class Radiusserver(object):
             self.tags = tags
         if tag_names is not None:
             self.tag_names = tag_names
+        if user_lockout_action is not None:
+            self.user_lockout_action = user_lockout_action
+        if user_password_expiration_action is not None:
+            self.user_password_expiration_action = user_password_expiration_action
+        if mfa is not None:
+            self.mfa = mfa
 
     @property
     def id(self):
@@ -223,6 +238,75 @@ class Radiusserver(object):
         """
 
         self._tag_names = tag_names
+
+    @property
+    def user_lockout_action(self):
+        """Gets the user_lockout_action of this Radiusserver.  # noqa: E501
+
+
+        :return: The user_lockout_action of this Radiusserver.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_lockout_action
+
+    @user_lockout_action.setter
+    def user_lockout_action(self, user_lockout_action):
+        """Sets the user_lockout_action of this Radiusserver.
+
+
+        :param user_lockout_action: The user_lockout_action of this Radiusserver.  # noqa: E501
+        :type: str
+        """
+
+        self._user_lockout_action = user_lockout_action
+
+    @property
+    def user_password_expiration_action(self):
+        """Gets the user_password_expiration_action of this Radiusserver.  # noqa: E501
+
+
+        :return: The user_password_expiration_action of this Radiusserver.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_password_expiration_action
+
+    @user_password_expiration_action.setter
+    def user_password_expiration_action(self, user_password_expiration_action):
+        """Sets the user_password_expiration_action of this Radiusserver.
+
+
+        :param user_password_expiration_action: The user_password_expiration_action of this Radiusserver.  # noqa: E501
+        :type: str
+        """
+
+        self._user_password_expiration_action = user_password_expiration_action
+
+    @property
+    def mfa(self):
+        """Gets the mfa of this Radiusserver.  # noqa: E501
+
+
+        :return: The mfa of this Radiusserver.  # noqa: E501
+        :rtype: str
+        """
+        return self._mfa
+
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Radiusserver.
+
+
+        :param mfa: The mfa of this Radiusserver.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
+        if mfa not in allowed_values:
+            raise ValueError(
+                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
+                .format(mfa, allowed_values)
+            )
+
+        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""
