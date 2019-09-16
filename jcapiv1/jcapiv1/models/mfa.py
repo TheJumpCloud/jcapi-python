@@ -31,31 +31,52 @@ class Mfa(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'configured': 'bool',
         'exclusion': 'bool',
-        'exclusion_until': 'datetime',
-        'configured': 'bool'
+        'exclusion_until': 'datetime'
     }
 
     attribute_map = {
+        'configured': 'configured',
         'exclusion': 'exclusion',
-        'exclusion_until': 'exclusionUntil',
-        'configured': 'configured'
+        'exclusion_until': 'exclusionUntil'
     }
 
-    def __init__(self, exclusion=None, exclusion_until=None, configured=None):  # noqa: E501
+    def __init__(self, configured=None, exclusion=None, exclusion_until=None):  # noqa: E501
         """Mfa - a model defined in Swagger"""  # noqa: E501
 
+        self._configured = None
         self._exclusion = None
         self._exclusion_until = None
-        self._configured = None
         self.discriminator = None
 
+        if configured is not None:
+            self.configured = configured
         if exclusion is not None:
             self.exclusion = exclusion
         if exclusion_until is not None:
             self.exclusion_until = exclusion_until
-        if configured is not None:
-            self.configured = configured
+
+    @property
+    def configured(self):
+        """Gets the configured of this Mfa.  # noqa: E501
+
+
+        :return: The configured of this Mfa.  # noqa: E501
+        :rtype: bool
+        """
+        return self._configured
+
+    @configured.setter
+    def configured(self, configured):
+        """Sets the configured of this Mfa.
+
+
+        :param configured: The configured of this Mfa.  # noqa: E501
+        :type: bool
+        """
+
+        self._configured = configured
 
     @property
     def exclusion(self):
@@ -98,27 +119,6 @@ class Mfa(object):
         """
 
         self._exclusion_until = exclusion_until
-
-    @property
-    def configured(self):
-        """Gets the configured of this Mfa.  # noqa: E501
-
-
-        :return: The configured of this Mfa.  # noqa: E501
-        :rtype: bool
-        """
-        return self._configured
-
-    @configured.setter
-    def configured(self, configured):
-        """Sets the configured of this Mfa.
-
-
-        :param configured: The configured of this Mfa.  # noqa: E501
-        :type: bool
-        """
-
-        self._configured = configured
 
     def to_dict(self):
         """Returns the model properties as a dict"""

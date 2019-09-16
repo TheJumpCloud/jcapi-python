@@ -32,40 +32,40 @@ class ApplicationConfigConstantAttributesValue(object):
     """
     swagger_types = {
         'name': 'str',
-        'value': 'str',
+        'read_only': 'bool',
         'required': 'bool',
-        'visible': 'bool',
-        'read_only': 'bool'
+        'value': 'str',
+        'visible': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
-        'value': 'value',
+        'read_only': 'readOnly',
         'required': 'required',
-        'visible': 'visible',
-        'read_only': 'readOnly'
+        'value': 'value',
+        'visible': 'visible'
     }
 
-    def __init__(self, name=None, value=None, required=None, visible=None, read_only=None):  # noqa: E501
+    def __init__(self, name=None, read_only=None, required=None, value=None, visible=None):  # noqa: E501
         """ApplicationConfigConstantAttributesValue - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
-        self._value = None
-        self._required = None
-        self._visible = None
         self._read_only = None
+        self._required = None
+        self._value = None
+        self._visible = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
-        if value is not None:
-            self.value = value
-        if required is not None:
-            self.required = required
-        if visible is not None:
-            self.visible = visible
         if read_only is not None:
             self.read_only = read_only
+        if required is not None:
+            self.required = required
+        if value is not None:
+            self.value = value
+        if visible is not None:
+            self.visible = visible
 
     @property
     def name(self):
@@ -89,25 +89,25 @@ class ApplicationConfigConstantAttributesValue(object):
         self._name = name
 
     @property
-    def value(self):
-        """Gets the value of this ApplicationConfigConstantAttributesValue.  # noqa: E501
+    def read_only(self):
+        """Gets the read_only of this ApplicationConfigConstantAttributesValue.  # noqa: E501
 
 
-        :return: The value of this ApplicationConfigConstantAttributesValue.  # noqa: E501
-        :rtype: str
+        :return: The read_only of this ApplicationConfigConstantAttributesValue.  # noqa: E501
+        :rtype: bool
         """
-        return self._value
+        return self._read_only
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this ApplicationConfigConstantAttributesValue.
+    @read_only.setter
+    def read_only(self, read_only):
+        """Sets the read_only of this ApplicationConfigConstantAttributesValue.
 
 
-        :param value: The value of this ApplicationConfigConstantAttributesValue.  # noqa: E501
-        :type: str
+        :param read_only: The read_only of this ApplicationConfigConstantAttributesValue.  # noqa: E501
+        :type: bool
         """
 
-        self._value = value
+        self._read_only = read_only
 
     @property
     def required(self):
@@ -131,6 +131,27 @@ class ApplicationConfigConstantAttributesValue(object):
         self._required = required
 
     @property
+    def value(self):
+        """Gets the value of this ApplicationConfigConstantAttributesValue.  # noqa: E501
+
+
+        :return: The value of this ApplicationConfigConstantAttributesValue.  # noqa: E501
+        :rtype: str
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this ApplicationConfigConstantAttributesValue.
+
+
+        :param value: The value of this ApplicationConfigConstantAttributesValue.  # noqa: E501
+        :type: str
+        """
+
+        self._value = value
+
+    @property
     def visible(self):
         """Gets the visible of this ApplicationConfigConstantAttributesValue.  # noqa: E501
 
@@ -150,27 +171,6 @@ class ApplicationConfigConstantAttributesValue(object):
         """
 
         self._visible = visible
-
-    @property
-    def read_only(self):
-        """Gets the read_only of this ApplicationConfigConstantAttributesValue.  # noqa: E501
-
-
-        :return: The read_only of this ApplicationConfigConstantAttributesValue.  # noqa: E501
-        :rtype: bool
-        """
-        return self._read_only
-
-    @read_only.setter
-    def read_only(self, read_only):
-        """Sets the read_only of this ApplicationConfigConstantAttributesValue.
-
-
-        :param read_only: The read_only of this ApplicationConfigConstantAttributesValue.  # noqa: E501
-        :type: bool
-        """
-
-        self._read_only = read_only
 
     def to_dict(self):
         """Returns the model properties as a dict"""

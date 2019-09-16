@@ -33,49 +33,26 @@ class Organizationslist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'total_count': 'int',
-        'results': 'list[OrganizationslistResults]'
+        'results': 'list[OrganizationslistResults]',
+        'total_count': 'int'
     }
 
     attribute_map = {
-        'total_count': 'totalCount',
-        'results': 'results'
+        'results': 'results',
+        'total_count': 'totalCount'
     }
 
-    def __init__(self, total_count=None, results=None):  # noqa: E501
+    def __init__(self, results=None, total_count=None):  # noqa: E501
         """Organizationslist - a model defined in Swagger"""  # noqa: E501
 
-        self._total_count = None
         self._results = None
+        self._total_count = None
         self.discriminator = None
 
-        if total_count is not None:
-            self.total_count = total_count
         if results is not None:
             self.results = results
-
-    @property
-    def total_count(self):
-        """Gets the total_count of this Organizationslist.  # noqa: E501
-
-        The total number of organizations.   # noqa: E501
-
-        :return: The total_count of this Organizationslist.  # noqa: E501
-        :rtype: int
-        """
-        return self._total_count
-
-    @total_count.setter
-    def total_count(self, total_count):
-        """Sets the total_count of this Organizationslist.
-
-        The total number of organizations.   # noqa: E501
-
-        :param total_count: The total_count of this Organizationslist.  # noqa: E501
-        :type: int
-        """
-
-        self._total_count = total_count
+        if total_count is not None:
+            self.total_count = total_count
 
     @property
     def results(self):
@@ -99,6 +76,29 @@ class Organizationslist(object):
         """
 
         self._results = results
+
+    @property
+    def total_count(self):
+        """Gets the total_count of this Organizationslist.  # noqa: E501
+
+        The total number of organizations.   # noqa: E501
+
+        :return: The total_count of this Organizationslist.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_count
+
+    @total_count.setter
+    def total_count(self, total_count):
+        """Sets the total_count of this Organizationslist.
+
+        The total number of organizations.   # noqa: E501
+
+        :param total_count: The total_count of this Organizationslist.  # noqa: E501
+        :type: int
+        """
+
+        self._total_count = total_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

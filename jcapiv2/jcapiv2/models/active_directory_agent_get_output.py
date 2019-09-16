@@ -31,25 +31,48 @@ class ActiveDirectoryAgentGetOutput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'connect_key': 'str'
+        'connect_key': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'connect_key': 'connectKey'
+        'connect_key': 'connectKey',
+        'id': 'id'
     }
 
-    def __init__(self, id=None, connect_key=None):  # noqa: E501
+    def __init__(self, connect_key=None, id=None):  # noqa: E501
         """ActiveDirectoryAgentGetOutput - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
         self._connect_key = None
+        self._id = None
         self.discriminator = None
 
-        self.id = id
         if connect_key is not None:
             self.connect_key = connect_key
+        self.id = id
+
+    @property
+    def connect_key(self):
+        """Gets the connect_key of this ActiveDirectoryAgentGetOutput.  # noqa: E501
+
+        The connect key to use when installing the Agent on a Domain Controller.  # noqa: E501
+
+        :return: The connect_key of this ActiveDirectoryAgentGetOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._connect_key
+
+    @connect_key.setter
+    def connect_key(self, connect_key):
+        """Sets the connect_key of this ActiveDirectoryAgentGetOutput.
+
+        The connect key to use when installing the Agent on a Domain Controller.  # noqa: E501
+
+        :param connect_key: The connect_key of this ActiveDirectoryAgentGetOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._connect_key = connect_key
 
     @property
     def id(self):
@@ -75,29 +98,6 @@ class ActiveDirectoryAgentGetOutput(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
-
-    @property
-    def connect_key(self):
-        """Gets the connect_key of this ActiveDirectoryAgentGetOutput.  # noqa: E501
-
-        The connect key to use when installing the Agent on a Domain Controller.  # noqa: E501
-
-        :return: The connect_key of this ActiveDirectoryAgentGetOutput.  # noqa: E501
-        :rtype: str
-        """
-        return self._connect_key
-
-    @connect_key.setter
-    def connect_key(self, connect_key):
-        """Sets the connect_key of this ActiveDirectoryAgentGetOutput.
-
-        The connect key to use when installing the Agent on a Domain Controller.  # noqa: E501
-
-        :param connect_key: The connect_key of this ActiveDirectoryAgentGetOutput.  # noqa: E501
-        :type: str
-        """
-
-        self._connect_key = connect_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

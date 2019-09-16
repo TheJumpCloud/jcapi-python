@@ -36,231 +36,521 @@ class Systemuserreturn(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str',
-        'username': 'str',
-        'allow_public_key': 'bool',
-        'public_key': 'str',
-        'ssh_keys': 'list[Sshkeylist]',
-        'sudo': 'bool',
-        'enable_managed_uid': 'bool',
-        'unix_uid': 'int',
-        'unix_guid': 'int',
-        'activated': 'bool',
-        'tags': 'list[str]',
-        'password_expired': 'bool',
+        'id': 'str',
         'account_locked': 'bool',
-        'passwordless_sudo': 'bool',
-        'externally_managed': 'bool',
+        'activated': 'bool',
+        'addresses': 'list[SystemuserreturnAddresses]',
+        'allow_public_key': 'bool',
+        'attributes': 'list[object]',
+        'bad_login_attempts': 'int',
+        'company': 'str',
+        'cost_center': 'str',
+        'created': 'str',
+        'department': 'str',
+        'description': 'str',
+        'displayname': 'str',
+        'email': 'str',
+        'employee_identifier': 'str',
+        'employee_type': 'str',
+        'enable_managed_uid': 'bool',
+        'enable_user_portal_multifactor': 'bool',
         'external_dn': 'str',
         'external_source_type': 'str',
+        'externally_managed': 'bool',
         'firstname': 'str',
+        'job_title': 'str',
         'lastname': 'str',
         'ldap_binding_user': 'bool',
-        'enable_user_portal_multifactor': 'bool',
-        'totp_enabled': 'bool',
-        'attributes': 'list[object]',
-        'created': 'str',
-        'samba_service_user': 'bool',
-        'id': 'str',
-        'organization': 'str',
-        'addresses': 'list[SystemuserreturnAddresses]',
-        'job_title': 'str',
-        'department': 'str',
-        'phone_numbers': 'list[SystemuserreturnPhoneNumbers]',
-        'relationships': 'list[object]',
-        'bad_login_attempts': 'int',
-        'password_never_expires': 'bool',
-        'middlename': 'str',
-        'displayname': 'str',
-        'description': 'str',
         'location': 'str',
-        'cost_center': 'str',
-        'employee_type': 'str',
-        'company': 'str',
-        'employee_identifier': 'str',
-        'mfa': 'Mfa'
+        'mfa': 'Mfa',
+        'middlename': 'str',
+        'organization': 'str',
+        'password_expiration_date': 'str',
+        'password_expired': 'bool',
+        'password_never_expires': 'bool',
+        'passwordless_sudo': 'bool',
+        'phone_numbers': 'list[SystemuserreturnPhoneNumbers]',
+        'public_key': 'str',
+        'relationships': 'list[object]',
+        'samba_service_user': 'bool',
+        'ssh_keys': 'list[Sshkeylist]',
+        'sudo': 'bool',
+        'tags': 'list[str]',
+        'totp_enabled': 'bool',
+        'unix_guid': 'int',
+        'unix_uid': 'int',
+        'username': 'str'
     }
 
     attribute_map = {
-        'email': 'email',
-        'username': 'username',
-        'allow_public_key': 'allow_public_key',
-        'public_key': 'public_key',
-        'ssh_keys': 'ssh_keys',
-        'sudo': 'sudo',
-        'enable_managed_uid': 'enable_managed_uid',
-        'unix_uid': 'unix_uid',
-        'unix_guid': 'unix_guid',
-        'activated': 'activated',
-        'tags': 'tags',
-        'password_expired': 'password_expired',
+        'id': '_id',
         'account_locked': 'account_locked',
-        'passwordless_sudo': 'passwordless_sudo',
-        'externally_managed': 'externally_managed',
+        'activated': 'activated',
+        'addresses': 'addresses',
+        'allow_public_key': 'allow_public_key',
+        'attributes': 'attributes',
+        'bad_login_attempts': 'badLoginAttempts',
+        'company': 'company',
+        'cost_center': 'costCenter',
+        'created': 'created',
+        'department': 'department',
+        'description': 'description',
+        'displayname': 'displayname',
+        'email': 'email',
+        'employee_identifier': 'employeeIdentifier',
+        'employee_type': 'employeeType',
+        'enable_managed_uid': 'enable_managed_uid',
+        'enable_user_portal_multifactor': 'enable_user_portal_multifactor',
         'external_dn': 'external_dn',
         'external_source_type': 'external_source_type',
+        'externally_managed': 'externally_managed',
         'firstname': 'firstname',
+        'job_title': 'jobTitle',
         'lastname': 'lastname',
         'ldap_binding_user': 'ldap_binding_user',
-        'enable_user_portal_multifactor': 'enable_user_portal_multifactor',
-        'totp_enabled': 'totp_enabled',
-        'attributes': 'attributes',
-        'created': 'created',
-        'samba_service_user': 'samba_service_user',
-        'id': '_id',
-        'organization': 'organization',
-        'addresses': 'addresses',
-        'job_title': 'jobTitle',
-        'department': 'department',
-        'phone_numbers': 'phoneNumbers',
-        'relationships': 'relationships',
-        'bad_login_attempts': 'badLoginAttempts',
-        'password_never_expires': 'password_never_expires',
-        'middlename': 'middlename',
-        'displayname': 'displayname',
-        'description': 'description',
         'location': 'location',
-        'cost_center': 'costCenter',
-        'employee_type': 'employeeType',
-        'company': 'company',
-        'employee_identifier': 'employeeIdentifier',
-        'mfa': 'mfa'
+        'mfa': 'mfa',
+        'middlename': 'middlename',
+        'organization': 'organization',
+        'password_expiration_date': 'password_expiration_date',
+        'password_expired': 'password_expired',
+        'password_never_expires': 'password_never_expires',
+        'passwordless_sudo': 'passwordless_sudo',
+        'phone_numbers': 'phoneNumbers',
+        'public_key': 'public_key',
+        'relationships': 'relationships',
+        'samba_service_user': 'samba_service_user',
+        'ssh_keys': 'ssh_keys',
+        'sudo': 'sudo',
+        'tags': 'tags',
+        'totp_enabled': 'totp_enabled',
+        'unix_guid': 'unix_guid',
+        'unix_uid': 'unix_uid',
+        'username': 'username'
     }
 
-    def __init__(self, email=None, username=None, allow_public_key=None, public_key=None, ssh_keys=None, sudo=None, enable_managed_uid=None, unix_uid=None, unix_guid=None, activated=None, tags=None, password_expired=None, account_locked=None, passwordless_sudo=None, externally_managed=None, external_dn=None, external_source_type=None, firstname=None, lastname=None, ldap_binding_user=None, enable_user_portal_multifactor=None, totp_enabled=None, attributes=None, created=None, samba_service_user=None, id=None, organization=None, addresses=None, job_title=None, department=None, phone_numbers=None, relationships=None, bad_login_attempts=None, password_never_expires=None, middlename=None, displayname=None, description=None, location=None, cost_center=None, employee_type=None, company=None, employee_identifier=None, mfa=None):  # noqa: E501
+    def __init__(self, id=None, account_locked=None, activated=None, addresses=None, allow_public_key=None, attributes=None, bad_login_attempts=None, company=None, cost_center=None, created=None, department=None, description=None, displayname=None, email=None, employee_identifier=None, employee_type=None, enable_managed_uid=None, enable_user_portal_multifactor=None, external_dn=None, external_source_type=None, externally_managed=None, firstname=None, job_title=None, lastname=None, ldap_binding_user=None, location=None, mfa=None, middlename=None, organization=None, password_expiration_date=None, password_expired=None, password_never_expires=None, passwordless_sudo=None, phone_numbers=None, public_key=None, relationships=None, samba_service_user=None, ssh_keys=None, sudo=None, tags=None, totp_enabled=None, unix_guid=None, unix_uid=None, username=None):  # noqa: E501
         """Systemuserreturn - a model defined in Swagger"""  # noqa: E501
 
-        self._email = None
-        self._username = None
-        self._allow_public_key = None
-        self._public_key = None
-        self._ssh_keys = None
-        self._sudo = None
-        self._enable_managed_uid = None
-        self._unix_uid = None
-        self._unix_guid = None
-        self._activated = None
-        self._tags = None
-        self._password_expired = None
+        self._id = None
         self._account_locked = None
-        self._passwordless_sudo = None
-        self._externally_managed = None
+        self._activated = None
+        self._addresses = None
+        self._allow_public_key = None
+        self._attributes = None
+        self._bad_login_attempts = None
+        self._company = None
+        self._cost_center = None
+        self._created = None
+        self._department = None
+        self._description = None
+        self._displayname = None
+        self._email = None
+        self._employee_identifier = None
+        self._employee_type = None
+        self._enable_managed_uid = None
+        self._enable_user_portal_multifactor = None
         self._external_dn = None
         self._external_source_type = None
+        self._externally_managed = None
         self._firstname = None
+        self._job_title = None
         self._lastname = None
         self._ldap_binding_user = None
-        self._enable_user_portal_multifactor = None
-        self._totp_enabled = None
-        self._attributes = None
-        self._created = None
-        self._samba_service_user = None
-        self._id = None
-        self._organization = None
-        self._addresses = None
-        self._job_title = None
-        self._department = None
-        self._phone_numbers = None
-        self._relationships = None
-        self._bad_login_attempts = None
-        self._password_never_expires = None
-        self._middlename = None
-        self._displayname = None
-        self._description = None
         self._location = None
-        self._cost_center = None
-        self._employee_type = None
-        self._company = None
-        self._employee_identifier = None
         self._mfa = None
+        self._middlename = None
+        self._organization = None
+        self._password_expiration_date = None
+        self._password_expired = None
+        self._password_never_expires = None
+        self._passwordless_sudo = None
+        self._phone_numbers = None
+        self._public_key = None
+        self._relationships = None
+        self._samba_service_user = None
+        self._ssh_keys = None
+        self._sudo = None
+        self._tags = None
+        self._totp_enabled = None
+        self._unix_guid = None
+        self._unix_uid = None
+        self._username = None
         self.discriminator = None
 
-        if email is not None:
-            self.email = email
-        if username is not None:
-            self.username = username
-        if allow_public_key is not None:
-            self.allow_public_key = allow_public_key
-        if public_key is not None:
-            self.public_key = public_key
-        if ssh_keys is not None:
-            self.ssh_keys = ssh_keys
-        if sudo is not None:
-            self.sudo = sudo
-        if enable_managed_uid is not None:
-            self.enable_managed_uid = enable_managed_uid
-        if unix_uid is not None:
-            self.unix_uid = unix_uid
-        if unix_guid is not None:
-            self.unix_guid = unix_guid
-        if activated is not None:
-            self.activated = activated
-        if tags is not None:
-            self.tags = tags
-        if password_expired is not None:
-            self.password_expired = password_expired
+        if id is not None:
+            self.id = id
         if account_locked is not None:
             self.account_locked = account_locked
-        if passwordless_sudo is not None:
-            self.passwordless_sudo = passwordless_sudo
-        if externally_managed is not None:
-            self.externally_managed = externally_managed
+        if activated is not None:
+            self.activated = activated
+        if addresses is not None:
+            self.addresses = addresses
+        if allow_public_key is not None:
+            self.allow_public_key = allow_public_key
+        if attributes is not None:
+            self.attributes = attributes
+        if bad_login_attempts is not None:
+            self.bad_login_attempts = bad_login_attempts
+        if company is not None:
+            self.company = company
+        if cost_center is not None:
+            self.cost_center = cost_center
+        if created is not None:
+            self.created = created
+        if department is not None:
+            self.department = department
+        if description is not None:
+            self.description = description
+        if displayname is not None:
+            self.displayname = displayname
+        if email is not None:
+            self.email = email
+        if employee_identifier is not None:
+            self.employee_identifier = employee_identifier
+        if employee_type is not None:
+            self.employee_type = employee_type
+        if enable_managed_uid is not None:
+            self.enable_managed_uid = enable_managed_uid
+        if enable_user_portal_multifactor is not None:
+            self.enable_user_portal_multifactor = enable_user_portal_multifactor
         if external_dn is not None:
             self.external_dn = external_dn
         if external_source_type is not None:
             self.external_source_type = external_source_type
+        if externally_managed is not None:
+            self.externally_managed = externally_managed
         if firstname is not None:
             self.firstname = firstname
+        if job_title is not None:
+            self.job_title = job_title
         if lastname is not None:
             self.lastname = lastname
         if ldap_binding_user is not None:
             self.ldap_binding_user = ldap_binding_user
-        if enable_user_portal_multifactor is not None:
-            self.enable_user_portal_multifactor = enable_user_portal_multifactor
-        if totp_enabled is not None:
-            self.totp_enabled = totp_enabled
-        if attributes is not None:
-            self.attributes = attributes
-        if created is not None:
-            self.created = created
-        if samba_service_user is not None:
-            self.samba_service_user = samba_service_user
-        if id is not None:
-            self.id = id
-        if organization is not None:
-            self.organization = organization
-        if addresses is not None:
-            self.addresses = addresses
-        if job_title is not None:
-            self.job_title = job_title
-        if department is not None:
-            self.department = department
-        if phone_numbers is not None:
-            self.phone_numbers = phone_numbers
-        if relationships is not None:
-            self.relationships = relationships
-        if bad_login_attempts is not None:
-            self.bad_login_attempts = bad_login_attempts
-        if password_never_expires is not None:
-            self.password_never_expires = password_never_expires
-        if middlename is not None:
-            self.middlename = middlename
-        if displayname is not None:
-            self.displayname = displayname
-        if description is not None:
-            self.description = description
         if location is not None:
             self.location = location
-        if cost_center is not None:
-            self.cost_center = cost_center
-        if employee_type is not None:
-            self.employee_type = employee_type
-        if company is not None:
-            self.company = company
-        if employee_identifier is not None:
-            self.employee_identifier = employee_identifier
         if mfa is not None:
             self.mfa = mfa
+        if middlename is not None:
+            self.middlename = middlename
+        if organization is not None:
+            self.organization = organization
+        if password_expiration_date is not None:
+            self.password_expiration_date = password_expiration_date
+        if password_expired is not None:
+            self.password_expired = password_expired
+        if password_never_expires is not None:
+            self.password_never_expires = password_never_expires
+        if passwordless_sudo is not None:
+            self.passwordless_sudo = passwordless_sudo
+        if phone_numbers is not None:
+            self.phone_numbers = phone_numbers
+        if public_key is not None:
+            self.public_key = public_key
+        if relationships is not None:
+            self.relationships = relationships
+        if samba_service_user is not None:
+            self.samba_service_user = samba_service_user
+        if ssh_keys is not None:
+            self.ssh_keys = ssh_keys
+        if sudo is not None:
+            self.sudo = sudo
+        if tags is not None:
+            self.tags = tags
+        if totp_enabled is not None:
+            self.totp_enabled = totp_enabled
+        if unix_guid is not None:
+            self.unix_guid = unix_guid
+        if unix_uid is not None:
+            self.unix_uid = unix_uid
+        if username is not None:
+            self.username = username
+
+    @property
+    def id(self):
+        """Gets the id of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The id of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Systemuserreturn.
+
+
+        :param id: The id of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def account_locked(self):
+        """Gets the account_locked of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The account_locked of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._account_locked
+
+    @account_locked.setter
+    def account_locked(self, account_locked):
+        """Sets the account_locked of this Systemuserreturn.
+
+
+        :param account_locked: The account_locked of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._account_locked = account_locked
+
+    @property
+    def activated(self):
+        """Gets the activated of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The activated of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._activated
+
+    @activated.setter
+    def activated(self, activated):
+        """Sets the activated of this Systemuserreturn.
+
+
+        :param activated: The activated of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._activated = activated
+
+    @property
+    def addresses(self):
+        """Gets the addresses of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The addresses of this Systemuserreturn.  # noqa: E501
+        :rtype: list[SystemuserreturnAddresses]
+        """
+        return self._addresses
+
+    @addresses.setter
+    def addresses(self, addresses):
+        """Sets the addresses of this Systemuserreturn.
+
+
+        :param addresses: The addresses of this Systemuserreturn.  # noqa: E501
+        :type: list[SystemuserreturnAddresses]
+        """
+
+        self._addresses = addresses
+
+    @property
+    def allow_public_key(self):
+        """Gets the allow_public_key of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The allow_public_key of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_public_key
+
+    @allow_public_key.setter
+    def allow_public_key(self, allow_public_key):
+        """Sets the allow_public_key of this Systemuserreturn.
+
+
+        :param allow_public_key: The allow_public_key of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_public_key = allow_public_key
+
+    @property
+    def attributes(self):
+        """Gets the attributes of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The attributes of this Systemuserreturn.  # noqa: E501
+        :rtype: list[object]
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this Systemuserreturn.
+
+
+        :param attributes: The attributes of this Systemuserreturn.  # noqa: E501
+        :type: list[object]
+        """
+
+        self._attributes = attributes
+
+    @property
+    def bad_login_attempts(self):
+        """Gets the bad_login_attempts of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The bad_login_attempts of this Systemuserreturn.  # noqa: E501
+        :rtype: int
+        """
+        return self._bad_login_attempts
+
+    @bad_login_attempts.setter
+    def bad_login_attempts(self, bad_login_attempts):
+        """Sets the bad_login_attempts of this Systemuserreturn.
+
+
+        :param bad_login_attempts: The bad_login_attempts of this Systemuserreturn.  # noqa: E501
+        :type: int
+        """
+        if bad_login_attempts is not None and bad_login_attempts < 0:  # noqa: E501
+            raise ValueError("Invalid value for `bad_login_attempts`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._bad_login_attempts = bad_login_attempts
+
+    @property
+    def company(self):
+        """Gets the company of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The company of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._company
+
+    @company.setter
+    def company(self, company):
+        """Sets the company of this Systemuserreturn.
+
+
+        :param company: The company of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+        if company is not None and len(company) > 1024:
+            raise ValueError("Invalid value for `company`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._company = company
+
+    @property
+    def cost_center(self):
+        """Gets the cost_center of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The cost_center of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._cost_center
+
+    @cost_center.setter
+    def cost_center(self, cost_center):
+        """Sets the cost_center of this Systemuserreturn.
+
+
+        :param cost_center: The cost_center of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+        if cost_center is not None and len(cost_center) > 1024:
+            raise ValueError("Invalid value for `cost_center`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._cost_center = cost_center
+
+    @property
+    def created(self):
+        """Gets the created of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The created of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this Systemuserreturn.
+
+
+        :param created: The created of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+
+        self._created = created
+
+    @property
+    def department(self):
+        """Gets the department of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The department of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._department
+
+    @department.setter
+    def department(self, department):
+        """Sets the department of this Systemuserreturn.
+
+
+        :param department: The department of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+        if department is not None and len(department) > 1024:
+            raise ValueError("Invalid value for `department`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._department = department
+
+    @property
+    def description(self):
+        """Gets the description of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The description of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this Systemuserreturn.
+
+
+        :param description: The description of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+        if description is not None and len(description) > 1024:
+            raise ValueError("Invalid value for `description`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._description = description
+
+    @property
+    def displayname(self):
+        """Gets the displayname of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The displayname of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._displayname
+
+    @displayname.setter
+    def displayname(self, displayname):
+        """Sets the displayname of this Systemuserreturn.
+
+
+        :param displayname: The displayname of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+        if displayname is not None and len(displayname) > 1024:
+            raise ValueError("Invalid value for `displayname`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._displayname = displayname
 
     @property
     def email(self):
@@ -286,111 +576,52 @@ class Systemuserreturn(object):
         self._email = email
 
     @property
-    def username(self):
-        """Gets the username of this Systemuserreturn.  # noqa: E501
+    def employee_identifier(self):
+        """Gets the employee_identifier of this Systemuserreturn.  # noqa: E501
 
+        Must be unique per user.   # noqa: E501
 
-        :return: The username of this Systemuserreturn.  # noqa: E501
+        :return: The employee_identifier of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._username
+        return self._employee_identifier
 
-    @username.setter
-    def username(self, username):
-        """Sets the username of this Systemuserreturn.
+    @employee_identifier.setter
+    def employee_identifier(self, employee_identifier):
+        """Sets the employee_identifier of this Systemuserreturn.
 
+        Must be unique per user.   # noqa: E501
 
-        :param username: The username of this Systemuserreturn.  # noqa: E501
+        :param employee_identifier: The employee_identifier of this Systemuserreturn.  # noqa: E501
         :type: str
         """
-        if username is not None and len(username) > 1024:
-            raise ValueError("Invalid value for `username`, length must be less than or equal to `1024`")  # noqa: E501
+        if employee_identifier is not None and len(employee_identifier) > 256:
+            raise ValueError("Invalid value for `employee_identifier`, length must be less than or equal to `256`")  # noqa: E501
 
-        self._username = username
-
-    @property
-    def allow_public_key(self):
-        """Gets the allow_public_key of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The allow_public_key of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_public_key
-
-    @allow_public_key.setter
-    def allow_public_key(self, allow_public_key):
-        """Sets the allow_public_key of this Systemuserreturn.
-
-
-        :param allow_public_key: The allow_public_key of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_public_key = allow_public_key
+        self._employee_identifier = employee_identifier
 
     @property
-    def public_key(self):
-        """Gets the public_key of this Systemuserreturn.  # noqa: E501
+    def employee_type(self):
+        """Gets the employee_type of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The public_key of this Systemuserreturn.  # noqa: E501
+        :return: The employee_type of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._public_key
+        return self._employee_type
 
-    @public_key.setter
-    def public_key(self, public_key):
-        """Sets the public_key of this Systemuserreturn.
+    @employee_type.setter
+    def employee_type(self, employee_type):
+        """Sets the employee_type of this Systemuserreturn.
 
 
-        :param public_key: The public_key of this Systemuserreturn.  # noqa: E501
+        :param employee_type: The employee_type of this Systemuserreturn.  # noqa: E501
         :type: str
         """
+        if employee_type is not None and len(employee_type) > 1024:
+            raise ValueError("Invalid value for `employee_type`, length must be less than or equal to `1024`")  # noqa: E501
 
-        self._public_key = public_key
-
-    @property
-    def ssh_keys(self):
-        """Gets the ssh_keys of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The ssh_keys of this Systemuserreturn.  # noqa: E501
-        :rtype: list[Sshkeylist]
-        """
-        return self._ssh_keys
-
-    @ssh_keys.setter
-    def ssh_keys(self, ssh_keys):
-        """Sets the ssh_keys of this Systemuserreturn.
-
-
-        :param ssh_keys: The ssh_keys of this Systemuserreturn.  # noqa: E501
-        :type: list[Sshkeylist]
-        """
-
-        self._ssh_keys = ssh_keys
-
-    @property
-    def sudo(self):
-        """Gets the sudo of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The sudo of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._sudo
-
-    @sudo.setter
-    def sudo(self, sudo):
-        """Sets the sudo of this Systemuserreturn.
-
-
-        :param sudo: The sudo of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._sudo = sudo
+        self._employee_type = employee_type
 
     @property
     def enable_managed_uid(self):
@@ -414,176 +645,25 @@ class Systemuserreturn(object):
         self._enable_managed_uid = enable_managed_uid
 
     @property
-    def unix_uid(self):
-        """Gets the unix_uid of this Systemuserreturn.  # noqa: E501
+    def enable_user_portal_multifactor(self):
+        """Gets the enable_user_portal_multifactor of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The unix_uid of this Systemuserreturn.  # noqa: E501
-        :rtype: int
-        """
-        return self._unix_uid
-
-    @unix_uid.setter
-    def unix_uid(self, unix_uid):
-        """Sets the unix_uid of this Systemuserreturn.
-
-
-        :param unix_uid: The unix_uid of this Systemuserreturn.  # noqa: E501
-        :type: int
-        """
-        if unix_uid is not None and unix_uid < 1:  # noqa: E501
-            raise ValueError("Invalid value for `unix_uid`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._unix_uid = unix_uid
-
-    @property
-    def unix_guid(self):
-        """Gets the unix_guid of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The unix_guid of this Systemuserreturn.  # noqa: E501
-        :rtype: int
-        """
-        return self._unix_guid
-
-    @unix_guid.setter
-    def unix_guid(self, unix_guid):
-        """Sets the unix_guid of this Systemuserreturn.
-
-
-        :param unix_guid: The unix_guid of this Systemuserreturn.  # noqa: E501
-        :type: int
-        """
-        if unix_guid is not None and unix_guid < 1:  # noqa: E501
-            raise ValueError("Invalid value for `unix_guid`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._unix_guid = unix_guid
-
-    @property
-    def activated(self):
-        """Gets the activated of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The activated of this Systemuserreturn.  # noqa: E501
+        :return: The enable_user_portal_multifactor of this Systemuserreturn.  # noqa: E501
         :rtype: bool
         """
-        return self._activated
+        return self._enable_user_portal_multifactor
 
-    @activated.setter
-    def activated(self, activated):
-        """Sets the activated of this Systemuserreturn.
+    @enable_user_portal_multifactor.setter
+    def enable_user_portal_multifactor(self, enable_user_portal_multifactor):
+        """Sets the enable_user_portal_multifactor of this Systemuserreturn.
 
 
-        :param activated: The activated of this Systemuserreturn.  # noqa: E501
+        :param enable_user_portal_multifactor: The enable_user_portal_multifactor of this Systemuserreturn.  # noqa: E501
         :type: bool
         """
 
-        self._activated = activated
-
-    @property
-    def tags(self):
-        """Gets the tags of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The tags of this Systemuserreturn.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this Systemuserreturn.
-
-
-        :param tags: The tags of this Systemuserreturn.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._tags = tags
-
-    @property
-    def password_expired(self):
-        """Gets the password_expired of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The password_expired of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._password_expired
-
-    @password_expired.setter
-    def password_expired(self, password_expired):
-        """Sets the password_expired of this Systemuserreturn.
-
-
-        :param password_expired: The password_expired of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._password_expired = password_expired
-
-    @property
-    def account_locked(self):
-        """Gets the account_locked of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The account_locked of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._account_locked
-
-    @account_locked.setter
-    def account_locked(self, account_locked):
-        """Sets the account_locked of this Systemuserreturn.
-
-
-        :param account_locked: The account_locked of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._account_locked = account_locked
-
-    @property
-    def passwordless_sudo(self):
-        """Gets the passwordless_sudo of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The passwordless_sudo of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._passwordless_sudo
-
-    @passwordless_sudo.setter
-    def passwordless_sudo(self, passwordless_sudo):
-        """Sets the passwordless_sudo of this Systemuserreturn.
-
-
-        :param passwordless_sudo: The passwordless_sudo of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._passwordless_sudo = passwordless_sudo
-
-    @property
-    def externally_managed(self):
-        """Gets the externally_managed of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The externally_managed of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._externally_managed
-
-    @externally_managed.setter
-    def externally_managed(self, externally_managed):
-        """Sets the externally_managed of this Systemuserreturn.
-
-
-        :param externally_managed: The externally_managed of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._externally_managed = externally_managed
+        self._enable_user_portal_multifactor = enable_user_portal_multifactor
 
     @property
     def external_dn(self):
@@ -628,6 +708,27 @@ class Systemuserreturn(object):
         self._external_source_type = external_source_type
 
     @property
+    def externally_managed(self):
+        """Gets the externally_managed of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The externally_managed of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._externally_managed
+
+    @externally_managed.setter
+    def externally_managed(self, externally_managed):
+        """Sets the externally_managed of this Systemuserreturn.
+
+
+        :param externally_managed: The externally_managed of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._externally_managed = externally_managed
+
+    @property
     def firstname(self):
         """Gets the firstname of this Systemuserreturn.  # noqa: E501
 
@@ -649,6 +750,29 @@ class Systemuserreturn(object):
             raise ValueError("Invalid value for `firstname`, length must be less than or equal to `1024`")  # noqa: E501
 
         self._firstname = firstname
+
+    @property
+    def job_title(self):
+        """Gets the job_title of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The job_title of this Systemuserreturn.  # noqa: E501
+        :rtype: str
+        """
+        return self._job_title
+
+    @job_title.setter
+    def job_title(self, job_title):
+        """Sets the job_title of this Systemuserreturn.
+
+
+        :param job_title: The job_title of this Systemuserreturn.  # noqa: E501
+        :type: str
+        """
+        if job_title is not None and len(job_title) > 1024:
+            raise ValueError("Invalid value for `job_title`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._job_title = job_title
 
     @property
     def lastname(self):
@@ -695,304 +819,48 @@ class Systemuserreturn(object):
         self._ldap_binding_user = ldap_binding_user
 
     @property
-    def enable_user_portal_multifactor(self):
-        """Gets the enable_user_portal_multifactor of this Systemuserreturn.  # noqa: E501
+    def location(self):
+        """Gets the location of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The enable_user_portal_multifactor of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_user_portal_multifactor
-
-    @enable_user_portal_multifactor.setter
-    def enable_user_portal_multifactor(self, enable_user_portal_multifactor):
-        """Sets the enable_user_portal_multifactor of this Systemuserreturn.
-
-
-        :param enable_user_portal_multifactor: The enable_user_portal_multifactor of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_user_portal_multifactor = enable_user_portal_multifactor
-
-    @property
-    def totp_enabled(self):
-        """Gets the totp_enabled of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The totp_enabled of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._totp_enabled
-
-    @totp_enabled.setter
-    def totp_enabled(self, totp_enabled):
-        """Sets the totp_enabled of this Systemuserreturn.
-
-
-        :param totp_enabled: The totp_enabled of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._totp_enabled = totp_enabled
-
-    @property
-    def attributes(self):
-        """Gets the attributes of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The attributes of this Systemuserreturn.  # noqa: E501
-        :rtype: list[object]
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """Sets the attributes of this Systemuserreturn.
-
-
-        :param attributes: The attributes of this Systemuserreturn.  # noqa: E501
-        :type: list[object]
-        """
-
-        self._attributes = attributes
-
-    @property
-    def created(self):
-        """Gets the created of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The created of this Systemuserreturn.  # noqa: E501
+        :return: The location of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._created
+        return self._location
 
-    @created.setter
-    def created(self, created):
-        """Sets the created of this Systemuserreturn.
+    @location.setter
+    def location(self, location):
+        """Sets the location of this Systemuserreturn.
 
 
-        :param created: The created of this Systemuserreturn.  # noqa: E501
+        :param location: The location of this Systemuserreturn.  # noqa: E501
         :type: str
         """
+        if location is not None and len(location) > 1024:
+            raise ValueError("Invalid value for `location`, length must be less than or equal to `1024`")  # noqa: E501
 
-        self._created = created
-
-    @property
-    def samba_service_user(self):
-        """Gets the samba_service_user of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The samba_service_user of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._samba_service_user
-
-    @samba_service_user.setter
-    def samba_service_user(self, samba_service_user):
-        """Sets the samba_service_user of this Systemuserreturn.
-
-
-        :param samba_service_user: The samba_service_user of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._samba_service_user = samba_service_user
+        self._location = location
 
     @property
-    def id(self):
-        """Gets the id of this Systemuserreturn.  # noqa: E501
+    def mfa(self):
+        """Gets the mfa of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The id of this Systemuserreturn.  # noqa: E501
-        :rtype: str
+        :return: The mfa of this Systemuserreturn.  # noqa: E501
+        :rtype: Mfa
         """
-        return self._id
+        return self._mfa
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Systemuserreturn.
-
-
-        :param id: The id of this Systemuserreturn.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def organization(self):
-        """Gets the organization of this Systemuserreturn.  # noqa: E501
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Systemuserreturn.
 
 
-        :return: The organization of this Systemuserreturn.  # noqa: E501
-        :rtype: str
-        """
-        return self._organization
-
-    @organization.setter
-    def organization(self, organization):
-        """Sets the organization of this Systemuserreturn.
-
-
-        :param organization: The organization of this Systemuserreturn.  # noqa: E501
-        :type: str
+        :param mfa: The mfa of this Systemuserreturn.  # noqa: E501
+        :type: Mfa
         """
 
-        self._organization = organization
-
-    @property
-    def addresses(self):
-        """Gets the addresses of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The addresses of this Systemuserreturn.  # noqa: E501
-        :rtype: list[SystemuserreturnAddresses]
-        """
-        return self._addresses
-
-    @addresses.setter
-    def addresses(self, addresses):
-        """Sets the addresses of this Systemuserreturn.
-
-
-        :param addresses: The addresses of this Systemuserreturn.  # noqa: E501
-        :type: list[SystemuserreturnAddresses]
-        """
-
-        self._addresses = addresses
-
-    @property
-    def job_title(self):
-        """Gets the job_title of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The job_title of this Systemuserreturn.  # noqa: E501
-        :rtype: str
-        """
-        return self._job_title
-
-    @job_title.setter
-    def job_title(self, job_title):
-        """Sets the job_title of this Systemuserreturn.
-
-
-        :param job_title: The job_title of this Systemuserreturn.  # noqa: E501
-        :type: str
-        """
-        if job_title is not None and len(job_title) > 1024:
-            raise ValueError("Invalid value for `job_title`, length must be less than or equal to `1024`")  # noqa: E501
-
-        self._job_title = job_title
-
-    @property
-    def department(self):
-        """Gets the department of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The department of this Systemuserreturn.  # noqa: E501
-        :rtype: str
-        """
-        return self._department
-
-    @department.setter
-    def department(self, department):
-        """Sets the department of this Systemuserreturn.
-
-
-        :param department: The department of this Systemuserreturn.  # noqa: E501
-        :type: str
-        """
-        if department is not None and len(department) > 1024:
-            raise ValueError("Invalid value for `department`, length must be less than or equal to `1024`")  # noqa: E501
-
-        self._department = department
-
-    @property
-    def phone_numbers(self):
-        """Gets the phone_numbers of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The phone_numbers of this Systemuserreturn.  # noqa: E501
-        :rtype: list[SystemuserreturnPhoneNumbers]
-        """
-        return self._phone_numbers
-
-    @phone_numbers.setter
-    def phone_numbers(self, phone_numbers):
-        """Sets the phone_numbers of this Systemuserreturn.
-
-
-        :param phone_numbers: The phone_numbers of this Systemuserreturn.  # noqa: E501
-        :type: list[SystemuserreturnPhoneNumbers]
-        """
-
-        self._phone_numbers = phone_numbers
-
-    @property
-    def relationships(self):
-        """Gets the relationships of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The relationships of this Systemuserreturn.  # noqa: E501
-        :rtype: list[object]
-        """
-        return self._relationships
-
-    @relationships.setter
-    def relationships(self, relationships):
-        """Sets the relationships of this Systemuserreturn.
-
-
-        :param relationships: The relationships of this Systemuserreturn.  # noqa: E501
-        :type: list[object]
-        """
-
-        self._relationships = relationships
-
-    @property
-    def bad_login_attempts(self):
-        """Gets the bad_login_attempts of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The bad_login_attempts of this Systemuserreturn.  # noqa: E501
-        :rtype: int
-        """
-        return self._bad_login_attempts
-
-    @bad_login_attempts.setter
-    def bad_login_attempts(self, bad_login_attempts):
-        """Sets the bad_login_attempts of this Systemuserreturn.
-
-
-        :param bad_login_attempts: The bad_login_attempts of this Systemuserreturn.  # noqa: E501
-        :type: int
-        """
-        if bad_login_attempts is not None and bad_login_attempts < 0:  # noqa: E501
-            raise ValueError("Invalid value for `bad_login_attempts`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._bad_login_attempts = bad_login_attempts
-
-    @property
-    def password_never_expires(self):
-        """Gets the password_never_expires of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The password_never_expires of this Systemuserreturn.  # noqa: E501
-        :rtype: bool
-        """
-        return self._password_never_expires
-
-    @password_never_expires.setter
-    def password_never_expires(self, password_never_expires):
-        """Sets the password_never_expires of this Systemuserreturn.
-
-
-        :param password_never_expires: The password_never_expires of this Systemuserreturn.  # noqa: E501
-        :type: bool
-        """
-
-        self._password_never_expires = password_never_expires
+        self._mfa = mfa
 
     @property
     def middlename(self):
@@ -1018,188 +886,346 @@ class Systemuserreturn(object):
         self._middlename = middlename
 
     @property
-    def displayname(self):
-        """Gets the displayname of this Systemuserreturn.  # noqa: E501
+    def organization(self):
+        """Gets the organization of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The displayname of this Systemuserreturn.  # noqa: E501
+        :return: The organization of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._displayname
+        return self._organization
 
-    @displayname.setter
-    def displayname(self, displayname):
-        """Sets the displayname of this Systemuserreturn.
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this Systemuserreturn.
 
 
-        :param displayname: The displayname of this Systemuserreturn.  # noqa: E501
+        :param organization: The organization of this Systemuserreturn.  # noqa: E501
         :type: str
         """
-        if displayname is not None and len(displayname) > 1024:
-            raise ValueError("Invalid value for `displayname`, length must be less than or equal to `1024`")  # noqa: E501
 
-        self._displayname = displayname
+        self._organization = organization
 
     @property
-    def description(self):
-        """Gets the description of this Systemuserreturn.  # noqa: E501
+    def password_expiration_date(self):
+        """Gets the password_expiration_date of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The description of this Systemuserreturn.  # noqa: E501
+        :return: The password_expiration_date of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._description
+        return self._password_expiration_date
 
-    @description.setter
-    def description(self, description):
-        """Sets the description of this Systemuserreturn.
+    @password_expiration_date.setter
+    def password_expiration_date(self, password_expiration_date):
+        """Sets the password_expiration_date of this Systemuserreturn.
 
 
-        :param description: The description of this Systemuserreturn.  # noqa: E501
+        :param password_expiration_date: The password_expiration_date of this Systemuserreturn.  # noqa: E501
         :type: str
         """
-        if description is not None and len(description) > 1024:
-            raise ValueError("Invalid value for `description`, length must be less than or equal to `1024`")  # noqa: E501
 
-        self._description = description
+        self._password_expiration_date = password_expiration_date
 
     @property
-    def location(self):
-        """Gets the location of this Systemuserreturn.  # noqa: E501
+    def password_expired(self):
+        """Gets the password_expired of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The location of this Systemuserreturn.  # noqa: E501
+        :return: The password_expired of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._password_expired
+
+    @password_expired.setter
+    def password_expired(self, password_expired):
+        """Sets the password_expired of this Systemuserreturn.
+
+
+        :param password_expired: The password_expired of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._password_expired = password_expired
+
+    @property
+    def password_never_expires(self):
+        """Gets the password_never_expires of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The password_never_expires of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._password_never_expires
+
+    @password_never_expires.setter
+    def password_never_expires(self, password_never_expires):
+        """Sets the password_never_expires of this Systemuserreturn.
+
+
+        :param password_never_expires: The password_never_expires of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._password_never_expires = password_never_expires
+
+    @property
+    def passwordless_sudo(self):
+        """Gets the passwordless_sudo of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The passwordless_sudo of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._passwordless_sudo
+
+    @passwordless_sudo.setter
+    def passwordless_sudo(self, passwordless_sudo):
+        """Sets the passwordless_sudo of this Systemuserreturn.
+
+
+        :param passwordless_sudo: The passwordless_sudo of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._passwordless_sudo = passwordless_sudo
+
+    @property
+    def phone_numbers(self):
+        """Gets the phone_numbers of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The phone_numbers of this Systemuserreturn.  # noqa: E501
+        :rtype: list[SystemuserreturnPhoneNumbers]
+        """
+        return self._phone_numbers
+
+    @phone_numbers.setter
+    def phone_numbers(self, phone_numbers):
+        """Sets the phone_numbers of this Systemuserreturn.
+
+
+        :param phone_numbers: The phone_numbers of this Systemuserreturn.  # noqa: E501
+        :type: list[SystemuserreturnPhoneNumbers]
+        """
+
+        self._phone_numbers = phone_numbers
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The public_key of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._location
+        return self._public_key
 
-    @location.setter
-    def location(self, location):
-        """Sets the location of this Systemuserreturn.
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this Systemuserreturn.
 
 
-        :param location: The location of this Systemuserreturn.  # noqa: E501
+        :param public_key: The public_key of this Systemuserreturn.  # noqa: E501
         :type: str
         """
-        if location is not None and len(location) > 1024:
-            raise ValueError("Invalid value for `location`, length must be less than or equal to `1024`")  # noqa: E501
 
-        self._location = location
+        self._public_key = public_key
 
     @property
-    def cost_center(self):
-        """Gets the cost_center of this Systemuserreturn.  # noqa: E501
+    def relationships(self):
+        """Gets the relationships of this Systemuserreturn.  # noqa: E501
 
 
-        :return: The cost_center of this Systemuserreturn.  # noqa: E501
+        :return: The relationships of this Systemuserreturn.  # noqa: E501
+        :rtype: list[object]
+        """
+        return self._relationships
+
+    @relationships.setter
+    def relationships(self, relationships):
+        """Sets the relationships of this Systemuserreturn.
+
+
+        :param relationships: The relationships of this Systemuserreturn.  # noqa: E501
+        :type: list[object]
+        """
+
+        self._relationships = relationships
+
+    @property
+    def samba_service_user(self):
+        """Gets the samba_service_user of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The samba_service_user of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._samba_service_user
+
+    @samba_service_user.setter
+    def samba_service_user(self, samba_service_user):
+        """Sets the samba_service_user of this Systemuserreturn.
+
+
+        :param samba_service_user: The samba_service_user of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._samba_service_user = samba_service_user
+
+    @property
+    def ssh_keys(self):
+        """Gets the ssh_keys of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The ssh_keys of this Systemuserreturn.  # noqa: E501
+        :rtype: list[Sshkeylist]
+        """
+        return self._ssh_keys
+
+    @ssh_keys.setter
+    def ssh_keys(self, ssh_keys):
+        """Sets the ssh_keys of this Systemuserreturn.
+
+
+        :param ssh_keys: The ssh_keys of this Systemuserreturn.  # noqa: E501
+        :type: list[Sshkeylist]
+        """
+
+        self._ssh_keys = ssh_keys
+
+    @property
+    def sudo(self):
+        """Gets the sudo of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The sudo of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sudo
+
+    @sudo.setter
+    def sudo(self, sudo):
+        """Sets the sudo of this Systemuserreturn.
+
+
+        :param sudo: The sudo of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._sudo = sudo
+
+    @property
+    def tags(self):
+        """Gets the tags of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The tags of this Systemuserreturn.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this Systemuserreturn.
+
+
+        :param tags: The tags of this Systemuserreturn.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
+
+    @property
+    def totp_enabled(self):
+        """Gets the totp_enabled of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The totp_enabled of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._totp_enabled
+
+    @totp_enabled.setter
+    def totp_enabled(self, totp_enabled):
+        """Sets the totp_enabled of this Systemuserreturn.
+
+
+        :param totp_enabled: The totp_enabled of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._totp_enabled = totp_enabled
+
+    @property
+    def unix_guid(self):
+        """Gets the unix_guid of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The unix_guid of this Systemuserreturn.  # noqa: E501
+        :rtype: int
+        """
+        return self._unix_guid
+
+    @unix_guid.setter
+    def unix_guid(self, unix_guid):
+        """Sets the unix_guid of this Systemuserreturn.
+
+
+        :param unix_guid: The unix_guid of this Systemuserreturn.  # noqa: E501
+        :type: int
+        """
+        if unix_guid is not None and unix_guid < 1:  # noqa: E501
+            raise ValueError("Invalid value for `unix_guid`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._unix_guid = unix_guid
+
+    @property
+    def unix_uid(self):
+        """Gets the unix_uid of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The unix_uid of this Systemuserreturn.  # noqa: E501
+        :rtype: int
+        """
+        return self._unix_uid
+
+    @unix_uid.setter
+    def unix_uid(self, unix_uid):
+        """Sets the unix_uid of this Systemuserreturn.
+
+
+        :param unix_uid: The unix_uid of this Systemuserreturn.  # noqa: E501
+        :type: int
+        """
+        if unix_uid is not None and unix_uid < 1:  # noqa: E501
+            raise ValueError("Invalid value for `unix_uid`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._unix_uid = unix_uid
+
+    @property
+    def username(self):
+        """Gets the username of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The username of this Systemuserreturn.  # noqa: E501
         :rtype: str
         """
-        return self._cost_center
+        return self._username
 
-    @cost_center.setter
-    def cost_center(self, cost_center):
-        """Sets the cost_center of this Systemuserreturn.
+    @username.setter
+    def username(self, username):
+        """Sets the username of this Systemuserreturn.
 
 
-        :param cost_center: The cost_center of this Systemuserreturn.  # noqa: E501
+        :param username: The username of this Systemuserreturn.  # noqa: E501
         :type: str
         """
-        if cost_center is not None and len(cost_center) > 1024:
-            raise ValueError("Invalid value for `cost_center`, length must be less than or equal to `1024`")  # noqa: E501
+        if username is not None and len(username) > 1024:
+            raise ValueError("Invalid value for `username`, length must be less than or equal to `1024`")  # noqa: E501
 
-        self._cost_center = cost_center
-
-    @property
-    def employee_type(self):
-        """Gets the employee_type of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The employee_type of this Systemuserreturn.  # noqa: E501
-        :rtype: str
-        """
-        return self._employee_type
-
-    @employee_type.setter
-    def employee_type(self, employee_type):
-        """Sets the employee_type of this Systemuserreturn.
-
-
-        :param employee_type: The employee_type of this Systemuserreturn.  # noqa: E501
-        :type: str
-        """
-        if employee_type is not None and len(employee_type) > 1024:
-            raise ValueError("Invalid value for `employee_type`, length must be less than or equal to `1024`")  # noqa: E501
-
-        self._employee_type = employee_type
-
-    @property
-    def company(self):
-        """Gets the company of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The company of this Systemuserreturn.  # noqa: E501
-        :rtype: str
-        """
-        return self._company
-
-    @company.setter
-    def company(self, company):
-        """Sets the company of this Systemuserreturn.
-
-
-        :param company: The company of this Systemuserreturn.  # noqa: E501
-        :type: str
-        """
-        if company is not None and len(company) > 1024:
-            raise ValueError("Invalid value for `company`, length must be less than or equal to `1024`")  # noqa: E501
-
-        self._company = company
-
-    @property
-    def employee_identifier(self):
-        """Gets the employee_identifier of this Systemuserreturn.  # noqa: E501
-
-        Must be unique per user.   # noqa: E501
-
-        :return: The employee_identifier of this Systemuserreturn.  # noqa: E501
-        :rtype: str
-        """
-        return self._employee_identifier
-
-    @employee_identifier.setter
-    def employee_identifier(self, employee_identifier):
-        """Sets the employee_identifier of this Systemuserreturn.
-
-        Must be unique per user.   # noqa: E501
-
-        :param employee_identifier: The employee_identifier of this Systemuserreturn.  # noqa: E501
-        :type: str
-        """
-        if employee_identifier is not None and len(employee_identifier) > 256:
-            raise ValueError("Invalid value for `employee_identifier`, length must be less than or equal to `256`")  # noqa: E501
-
-        self._employee_identifier = employee_identifier
-
-    @property
-    def mfa(self):
-        """Gets the mfa of this Systemuserreturn.  # noqa: E501
-
-
-        :return: The mfa of this Systemuserreturn.  # noqa: E501
-        :rtype: Mfa
-        """
-        return self._mfa
-
-    @mfa.setter
-    def mfa(self, mfa):
-        """Sets the mfa of this Systemuserreturn.
-
-
-        :param mfa: The mfa of this Systemuserreturn.  # noqa: E501
-        :type: Mfa
-        """
-
-        self._mfa = mfa
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

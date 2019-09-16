@@ -19,6 +19,7 @@ import six
 from jcapiv1.models.fde import Fde  # noqa: F401,E501
 from jcapiv1.models.system_network_interfaces import SystemNetworkInterfaces  # noqa: F401,E501
 from jcapiv1.models.system_sshd_params import SystemSshdParams  # noqa: F401,E501
+from jcapiv1.models.system_system_insights import SystemSystemInsights  # noqa: F401,E501
 
 
 class System(object):
@@ -35,398 +36,172 @@ class System(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'organization': 'str',
-        'created': 'str',
-        'last_contact': 'str',
-        'os': 'str',
-        'version': 'str',
-        'arch': 'str',
-        'network_interfaces': 'list[SystemNetworkInterfaces]',
-        'hostname': 'str',
-        'display_name': 'str',
-        'system_timezone': 'int',
-        'template_name': 'str',
-        'remote_ip': 'str',
+        'id': 'str',
         'active': 'bool',
-        'sshd_params': 'list[SystemSshdParams]',
-        'allow_ssh_password_authentication': 'bool',
-        'allow_ssh_root_login': 'bool',
+        'agent_version': 'str',
         'allow_multi_factor_authentication': 'bool',
         'allow_public_key_authentication': 'bool',
-        'modify_sshd_config': 'bool',
-        'agent_version': 'str',
+        'allow_ssh_password_authentication': 'bool',
+        'allow_ssh_root_login': 'bool',
+        'amazon_instance_id': 'str',
+        'arch': 'str',
         'connection_history': 'list[object]',
-        'ssh_root_enabled': 'bool',
-        'tags': 'list[str]',
-        'id': 'str',
+        'created': 'str',
+        'display_name': 'str',
         'fde': 'Fde',
-        'amazon_instance_id': 'str'
+        'hostname': 'str',
+        'last_contact': 'str',
+        'modify_sshd_config': 'bool',
+        'network_interfaces': 'list[SystemNetworkInterfaces]',
+        'organization': 'str',
+        'os': 'str',
+        'remote_ip': 'str',
+        'ssh_root_enabled': 'bool',
+        'sshd_params': 'list[SystemSshdParams]',
+        'system_insights': 'SystemSystemInsights',
+        'system_timezone': 'int',
+        'tags': 'list[str]',
+        'template_name': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
-        'organization': 'organization',
-        'created': 'created',
-        'last_contact': 'lastContact',
-        'os': 'os',
-        'version': 'version',
-        'arch': 'arch',
-        'network_interfaces': 'networkInterfaces',
-        'hostname': 'hostname',
-        'display_name': 'displayName',
-        'system_timezone': 'systemTimezone',
-        'template_name': 'templateName',
-        'remote_ip': 'remoteIP',
+        'id': '_id',
         'active': 'active',
-        'sshd_params': 'sshdParams',
-        'allow_ssh_password_authentication': 'allowSshPasswordAuthentication',
-        'allow_ssh_root_login': 'allowSshRootLogin',
+        'agent_version': 'agentVersion',
         'allow_multi_factor_authentication': 'allowMultiFactorAuthentication',
         'allow_public_key_authentication': 'allowPublicKeyAuthentication',
-        'modify_sshd_config': 'modifySSHDConfig',
-        'agent_version': 'agentVersion',
+        'allow_ssh_password_authentication': 'allowSshPasswordAuthentication',
+        'allow_ssh_root_login': 'allowSshRootLogin',
+        'amazon_instance_id': 'amazonInstanceID',
+        'arch': 'arch',
         'connection_history': 'connectionHistory',
-        'ssh_root_enabled': 'sshRootEnabled',
-        'tags': 'tags',
-        'id': '_id',
+        'created': 'created',
+        'display_name': 'displayName',
         'fde': 'fde',
-        'amazon_instance_id': 'amazonInstanceID'
+        'hostname': 'hostname',
+        'last_contact': 'lastContact',
+        'modify_sshd_config': 'modifySSHDConfig',
+        'network_interfaces': 'networkInterfaces',
+        'organization': 'organization',
+        'os': 'os',
+        'remote_ip': 'remoteIP',
+        'ssh_root_enabled': 'sshRootEnabled',
+        'sshd_params': 'sshdParams',
+        'system_insights': 'systemInsights',
+        'system_timezone': 'systemTimezone',
+        'tags': 'tags',
+        'template_name': 'templateName',
+        'version': 'version'
     }
 
-    def __init__(self, organization=None, created=None, last_contact=None, os=None, version=None, arch=None, network_interfaces=None, hostname=None, display_name=None, system_timezone=None, template_name=None, remote_ip=None, active=None, sshd_params=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, modify_sshd_config=None, agent_version=None, connection_history=None, ssh_root_enabled=None, tags=None, id=None, fde=None, amazon_instance_id=None):  # noqa: E501
+    def __init__(self, id=None, active=None, agent_version=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, amazon_instance_id=None, arch=None, connection_history=None, created=None, display_name=None, fde=None, hostname=None, last_contact=None, modify_sshd_config=None, network_interfaces=None, organization=None, os=None, remote_ip=None, ssh_root_enabled=None, sshd_params=None, system_insights=None, system_timezone=None, tags=None, template_name=None, version=None):  # noqa: E501
         """System - a model defined in Swagger"""  # noqa: E501
 
-        self._organization = None
-        self._created = None
-        self._last_contact = None
-        self._os = None
-        self._version = None
-        self._arch = None
-        self._network_interfaces = None
-        self._hostname = None
-        self._display_name = None
-        self._system_timezone = None
-        self._template_name = None
-        self._remote_ip = None
+        self._id = None
         self._active = None
-        self._sshd_params = None
-        self._allow_ssh_password_authentication = None
-        self._allow_ssh_root_login = None
+        self._agent_version = None
         self._allow_multi_factor_authentication = None
         self._allow_public_key_authentication = None
-        self._modify_sshd_config = None
-        self._agent_version = None
-        self._connection_history = None
-        self._ssh_root_enabled = None
-        self._tags = None
-        self._id = None
-        self._fde = None
+        self._allow_ssh_password_authentication = None
+        self._allow_ssh_root_login = None
         self._amazon_instance_id = None
+        self._arch = None
+        self._connection_history = None
+        self._created = None
+        self._display_name = None
+        self._fde = None
+        self._hostname = None
+        self._last_contact = None
+        self._modify_sshd_config = None
+        self._network_interfaces = None
+        self._organization = None
+        self._os = None
+        self._remote_ip = None
+        self._ssh_root_enabled = None
+        self._sshd_params = None
+        self._system_insights = None
+        self._system_timezone = None
+        self._tags = None
+        self._template_name = None
+        self._version = None
         self.discriminator = None
 
-        if organization is not None:
-            self.organization = organization
-        if created is not None:
-            self.created = created
-        if last_contact is not None:
-            self.last_contact = last_contact
-        if os is not None:
-            self.os = os
-        if version is not None:
-            self.version = version
-        if arch is not None:
-            self.arch = arch
-        if network_interfaces is not None:
-            self.network_interfaces = network_interfaces
-        if hostname is not None:
-            self.hostname = hostname
-        if display_name is not None:
-            self.display_name = display_name
-        if system_timezone is not None:
-            self.system_timezone = system_timezone
-        if template_name is not None:
-            self.template_name = template_name
-        if remote_ip is not None:
-            self.remote_ip = remote_ip
+        if id is not None:
+            self.id = id
         if active is not None:
             self.active = active
-        if sshd_params is not None:
-            self.sshd_params = sshd_params
-        if allow_ssh_password_authentication is not None:
-            self.allow_ssh_password_authentication = allow_ssh_password_authentication
-        if allow_ssh_root_login is not None:
-            self.allow_ssh_root_login = allow_ssh_root_login
+        if agent_version is not None:
+            self.agent_version = agent_version
         if allow_multi_factor_authentication is not None:
             self.allow_multi_factor_authentication = allow_multi_factor_authentication
         if allow_public_key_authentication is not None:
             self.allow_public_key_authentication = allow_public_key_authentication
-        if modify_sshd_config is not None:
-            self.modify_sshd_config = modify_sshd_config
-        if agent_version is not None:
-            self.agent_version = agent_version
-        if connection_history is not None:
-            self.connection_history = connection_history
-        if ssh_root_enabled is not None:
-            self.ssh_root_enabled = ssh_root_enabled
-        if tags is not None:
-            self.tags = tags
-        if id is not None:
-            self.id = id
-        if fde is not None:
-            self.fde = fde
+        if allow_ssh_password_authentication is not None:
+            self.allow_ssh_password_authentication = allow_ssh_password_authentication
+        if allow_ssh_root_login is not None:
+            self.allow_ssh_root_login = allow_ssh_root_login
         if amazon_instance_id is not None:
             self.amazon_instance_id = amazon_instance_id
+        if arch is not None:
+            self.arch = arch
+        if connection_history is not None:
+            self.connection_history = connection_history
+        if created is not None:
+            self.created = created
+        if display_name is not None:
+            self.display_name = display_name
+        if fde is not None:
+            self.fde = fde
+        if hostname is not None:
+            self.hostname = hostname
+        if last_contact is not None:
+            self.last_contact = last_contact
+        if modify_sshd_config is not None:
+            self.modify_sshd_config = modify_sshd_config
+        if network_interfaces is not None:
+            self.network_interfaces = network_interfaces
+        if organization is not None:
+            self.organization = organization
+        if os is not None:
+            self.os = os
+        if remote_ip is not None:
+            self.remote_ip = remote_ip
+        if ssh_root_enabled is not None:
+            self.ssh_root_enabled = ssh_root_enabled
+        if sshd_params is not None:
+            self.sshd_params = sshd_params
+        if system_insights is not None:
+            self.system_insights = system_insights
+        if system_timezone is not None:
+            self.system_timezone = system_timezone
+        if tags is not None:
+            self.tags = tags
+        if template_name is not None:
+            self.template_name = template_name
+        if version is not None:
+            self.version = version
 
     @property
-    def organization(self):
-        """Gets the organization of this System.  # noqa: E501
+    def id(self):
+        """Gets the id of this System.  # noqa: E501
 
 
-        :return: The organization of this System.  # noqa: E501
+        :return: The id of this System.  # noqa: E501
         :rtype: str
         """
-        return self._organization
+        return self._id
 
-    @organization.setter
-    def organization(self, organization):
-        """Sets the organization of this System.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this System.
 
 
-        :param organization: The organization of this System.  # noqa: E501
+        :param id: The id of this System.  # noqa: E501
         :type: str
         """
 
-        self._organization = organization
-
-    @property
-    def created(self):
-        """Gets the created of this System.  # noqa: E501
-
-
-        :return: The created of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._created
-
-    @created.setter
-    def created(self, created):
-        """Sets the created of this System.
-
-
-        :param created: The created of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._created = created
-
-    @property
-    def last_contact(self):
-        """Gets the last_contact of this System.  # noqa: E501
-
-
-        :return: The last_contact of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_contact
-
-    @last_contact.setter
-    def last_contact(self, last_contact):
-        """Sets the last_contact of this System.
-
-
-        :param last_contact: The last_contact of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._last_contact = last_contact
-
-    @property
-    def os(self):
-        """Gets the os of this System.  # noqa: E501
-
-
-        :return: The os of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._os
-
-    @os.setter
-    def os(self, os):
-        """Sets the os of this System.
-
-
-        :param os: The os of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._os = os
-
-    @property
-    def version(self):
-        """Gets the version of this System.  # noqa: E501
-
-
-        :return: The version of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this System.
-
-
-        :param version: The version of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
-
-    @property
-    def arch(self):
-        """Gets the arch of this System.  # noqa: E501
-
-
-        :return: The arch of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._arch
-
-    @arch.setter
-    def arch(self, arch):
-        """Sets the arch of this System.
-
-
-        :param arch: The arch of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._arch = arch
-
-    @property
-    def network_interfaces(self):
-        """Gets the network_interfaces of this System.  # noqa: E501
-
-
-        :return: The network_interfaces of this System.  # noqa: E501
-        :rtype: list[SystemNetworkInterfaces]
-        """
-        return self._network_interfaces
-
-    @network_interfaces.setter
-    def network_interfaces(self, network_interfaces):
-        """Sets the network_interfaces of this System.
-
-
-        :param network_interfaces: The network_interfaces of this System.  # noqa: E501
-        :type: list[SystemNetworkInterfaces]
-        """
-
-        self._network_interfaces = network_interfaces
-
-    @property
-    def hostname(self):
-        """Gets the hostname of this System.  # noqa: E501
-
-
-        :return: The hostname of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._hostname
-
-    @hostname.setter
-    def hostname(self, hostname):
-        """Sets the hostname of this System.
-
-
-        :param hostname: The hostname of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._hostname = hostname
-
-    @property
-    def display_name(self):
-        """Gets the display_name of this System.  # noqa: E501
-
-
-        :return: The display_name of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._display_name
-
-    @display_name.setter
-    def display_name(self, display_name):
-        """Sets the display_name of this System.
-
-
-        :param display_name: The display_name of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._display_name = display_name
-
-    @property
-    def system_timezone(self):
-        """Gets the system_timezone of this System.  # noqa: E501
-
-
-        :return: The system_timezone of this System.  # noqa: E501
-        :rtype: int
-        """
-        return self._system_timezone
-
-    @system_timezone.setter
-    def system_timezone(self, system_timezone):
-        """Sets the system_timezone of this System.
-
-
-        :param system_timezone: The system_timezone of this System.  # noqa: E501
-        :type: int
-        """
-
-        self._system_timezone = system_timezone
-
-    @property
-    def template_name(self):
-        """Gets the template_name of this System.  # noqa: E501
-
-
-        :return: The template_name of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._template_name
-
-    @template_name.setter
-    def template_name(self, template_name):
-        """Sets the template_name of this System.
-
-
-        :param template_name: The template_name of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._template_name = template_name
-
-    @property
-    def remote_ip(self):
-        """Gets the remote_ip of this System.  # noqa: E501
-
-
-        :return: The remote_ip of this System.  # noqa: E501
-        :rtype: str
-        """
-        return self._remote_ip
-
-    @remote_ip.setter
-    def remote_ip(self, remote_ip):
-        """Sets the remote_ip of this System.
-
-
-        :param remote_ip: The remote_ip of this System.  # noqa: E501
-        :type: str
-        """
-
-        self._remote_ip = remote_ip
+        self._id = id
 
     @property
     def active(self):
@@ -450,67 +225,25 @@ class System(object):
         self._active = active
 
     @property
-    def sshd_params(self):
-        """Gets the sshd_params of this System.  # noqa: E501
+    def agent_version(self):
+        """Gets the agent_version of this System.  # noqa: E501
 
 
-        :return: The sshd_params of this System.  # noqa: E501
-        :rtype: list[SystemSshdParams]
+        :return: The agent_version of this System.  # noqa: E501
+        :rtype: str
         """
-        return self._sshd_params
+        return self._agent_version
 
-    @sshd_params.setter
-    def sshd_params(self, sshd_params):
-        """Sets the sshd_params of this System.
-
-
-        :param sshd_params: The sshd_params of this System.  # noqa: E501
-        :type: list[SystemSshdParams]
-        """
-
-        self._sshd_params = sshd_params
-
-    @property
-    def allow_ssh_password_authentication(self):
-        """Gets the allow_ssh_password_authentication of this System.  # noqa: E501
+    @agent_version.setter
+    def agent_version(self, agent_version):
+        """Sets the agent_version of this System.
 
 
-        :return: The allow_ssh_password_authentication of this System.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_ssh_password_authentication
-
-    @allow_ssh_password_authentication.setter
-    def allow_ssh_password_authentication(self, allow_ssh_password_authentication):
-        """Sets the allow_ssh_password_authentication of this System.
-
-
-        :param allow_ssh_password_authentication: The allow_ssh_password_authentication of this System.  # noqa: E501
-        :type: bool
+        :param agent_version: The agent_version of this System.  # noqa: E501
+        :type: str
         """
 
-        self._allow_ssh_password_authentication = allow_ssh_password_authentication
-
-    @property
-    def allow_ssh_root_login(self):
-        """Gets the allow_ssh_root_login of this System.  # noqa: E501
-
-
-        :return: The allow_ssh_root_login of this System.  # noqa: E501
-        :rtype: bool
-        """
-        return self._allow_ssh_root_login
-
-    @allow_ssh_root_login.setter
-    def allow_ssh_root_login(self, allow_ssh_root_login):
-        """Sets the allow_ssh_root_login of this System.
-
-
-        :param allow_ssh_root_login: The allow_ssh_root_login of this System.  # noqa: E501
-        :type: bool
-        """
-
-        self._allow_ssh_root_login = allow_ssh_root_login
+        self._agent_version = agent_version
 
     @property
     def allow_multi_factor_authentication(self):
@@ -555,46 +288,88 @@ class System(object):
         self._allow_public_key_authentication = allow_public_key_authentication
 
     @property
-    def modify_sshd_config(self):
-        """Gets the modify_sshd_config of this System.  # noqa: E501
+    def allow_ssh_password_authentication(self):
+        """Gets the allow_ssh_password_authentication of this System.  # noqa: E501
 
 
-        :return: The modify_sshd_config of this System.  # noqa: E501
+        :return: The allow_ssh_password_authentication of this System.  # noqa: E501
         :rtype: bool
         """
-        return self._modify_sshd_config
+        return self._allow_ssh_password_authentication
 
-    @modify_sshd_config.setter
-    def modify_sshd_config(self, modify_sshd_config):
-        """Sets the modify_sshd_config of this System.
+    @allow_ssh_password_authentication.setter
+    def allow_ssh_password_authentication(self, allow_ssh_password_authentication):
+        """Sets the allow_ssh_password_authentication of this System.
 
 
-        :param modify_sshd_config: The modify_sshd_config of this System.  # noqa: E501
+        :param allow_ssh_password_authentication: The allow_ssh_password_authentication of this System.  # noqa: E501
         :type: bool
         """
 
-        self._modify_sshd_config = modify_sshd_config
+        self._allow_ssh_password_authentication = allow_ssh_password_authentication
 
     @property
-    def agent_version(self):
-        """Gets the agent_version of this System.  # noqa: E501
+    def allow_ssh_root_login(self):
+        """Gets the allow_ssh_root_login of this System.  # noqa: E501
 
 
-        :return: The agent_version of this System.  # noqa: E501
+        :return: The allow_ssh_root_login of this System.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_ssh_root_login
+
+    @allow_ssh_root_login.setter
+    def allow_ssh_root_login(self, allow_ssh_root_login):
+        """Sets the allow_ssh_root_login of this System.
+
+
+        :param allow_ssh_root_login: The allow_ssh_root_login of this System.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_ssh_root_login = allow_ssh_root_login
+
+    @property
+    def amazon_instance_id(self):
+        """Gets the amazon_instance_id of this System.  # noqa: E501
+
+
+        :return: The amazon_instance_id of this System.  # noqa: E501
         :rtype: str
         """
-        return self._agent_version
+        return self._amazon_instance_id
 
-    @agent_version.setter
-    def agent_version(self, agent_version):
-        """Sets the agent_version of this System.
+    @amazon_instance_id.setter
+    def amazon_instance_id(self, amazon_instance_id):
+        """Sets the amazon_instance_id of this System.
 
 
-        :param agent_version: The agent_version of this System.  # noqa: E501
+        :param amazon_instance_id: The amazon_instance_id of this System.  # noqa: E501
         :type: str
         """
 
-        self._agent_version = agent_version
+        self._amazon_instance_id = amazon_instance_id
+
+    @property
+    def arch(self):
+        """Gets the arch of this System.  # noqa: E501
+
+
+        :return: The arch of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._arch
+
+    @arch.setter
+    def arch(self, arch):
+        """Sets the arch of this System.
+
+
+        :param arch: The arch of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._arch = arch
 
     @property
     def connection_history(self):
@@ -618,67 +393,46 @@ class System(object):
         self._connection_history = connection_history
 
     @property
-    def ssh_root_enabled(self):
-        """Gets the ssh_root_enabled of this System.  # noqa: E501
+    def created(self):
+        """Gets the created of this System.  # noqa: E501
 
 
-        :return: The ssh_root_enabled of this System.  # noqa: E501
-        :rtype: bool
-        """
-        return self._ssh_root_enabled
-
-    @ssh_root_enabled.setter
-    def ssh_root_enabled(self, ssh_root_enabled):
-        """Sets the ssh_root_enabled of this System.
-
-
-        :param ssh_root_enabled: The ssh_root_enabled of this System.  # noqa: E501
-        :type: bool
-        """
-
-        self._ssh_root_enabled = ssh_root_enabled
-
-    @property
-    def tags(self):
-        """Gets the tags of this System.  # noqa: E501
-
-
-        :return: The tags of this System.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._tags
-
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this System.
-
-
-        :param tags: The tags of this System.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._tags = tags
-
-    @property
-    def id(self):
-        """Gets the id of this System.  # noqa: E501
-
-
-        :return: The id of this System.  # noqa: E501
+        :return: The created of this System.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._created
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this System.
+    @created.setter
+    def created(self, created):
+        """Sets the created of this System.
 
 
-        :param id: The id of this System.  # noqa: E501
+        :param created: The created of this System.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._created = created
+
+    @property
+    def display_name(self):
+        """Gets the display_name of this System.  # noqa: E501
+
+
+        :return: The display_name of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """Sets the display_name of this System.
+
+
+        :param display_name: The display_name of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._display_name = display_name
 
     @property
     def fde(self):
@@ -702,25 +456,298 @@ class System(object):
         self._fde = fde
 
     @property
-    def amazon_instance_id(self):
-        """Gets the amazon_instance_id of this System.  # noqa: E501
+    def hostname(self):
+        """Gets the hostname of this System.  # noqa: E501
 
 
-        :return: The amazon_instance_id of this System.  # noqa: E501
+        :return: The hostname of this System.  # noqa: E501
         :rtype: str
         """
-        return self._amazon_instance_id
+        return self._hostname
 
-    @amazon_instance_id.setter
-    def amazon_instance_id(self, amazon_instance_id):
-        """Sets the amazon_instance_id of this System.
+    @hostname.setter
+    def hostname(self, hostname):
+        """Sets the hostname of this System.
 
 
-        :param amazon_instance_id: The amazon_instance_id of this System.  # noqa: E501
+        :param hostname: The hostname of this System.  # noqa: E501
         :type: str
         """
 
-        self._amazon_instance_id = amazon_instance_id
+        self._hostname = hostname
+
+    @property
+    def last_contact(self):
+        """Gets the last_contact of this System.  # noqa: E501
+
+
+        :return: The last_contact of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_contact
+
+    @last_contact.setter
+    def last_contact(self, last_contact):
+        """Sets the last_contact of this System.
+
+
+        :param last_contact: The last_contact of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._last_contact = last_contact
+
+    @property
+    def modify_sshd_config(self):
+        """Gets the modify_sshd_config of this System.  # noqa: E501
+
+
+        :return: The modify_sshd_config of this System.  # noqa: E501
+        :rtype: bool
+        """
+        return self._modify_sshd_config
+
+    @modify_sshd_config.setter
+    def modify_sshd_config(self, modify_sshd_config):
+        """Sets the modify_sshd_config of this System.
+
+
+        :param modify_sshd_config: The modify_sshd_config of this System.  # noqa: E501
+        :type: bool
+        """
+
+        self._modify_sshd_config = modify_sshd_config
+
+    @property
+    def network_interfaces(self):
+        """Gets the network_interfaces of this System.  # noqa: E501
+
+
+        :return: The network_interfaces of this System.  # noqa: E501
+        :rtype: list[SystemNetworkInterfaces]
+        """
+        return self._network_interfaces
+
+    @network_interfaces.setter
+    def network_interfaces(self, network_interfaces):
+        """Sets the network_interfaces of this System.
+
+
+        :param network_interfaces: The network_interfaces of this System.  # noqa: E501
+        :type: list[SystemNetworkInterfaces]
+        """
+
+        self._network_interfaces = network_interfaces
+
+    @property
+    def organization(self):
+        """Gets the organization of this System.  # noqa: E501
+
+
+        :return: The organization of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this System.
+
+
+        :param organization: The organization of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._organization = organization
+
+    @property
+    def os(self):
+        """Gets the os of this System.  # noqa: E501
+
+
+        :return: The os of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._os
+
+    @os.setter
+    def os(self, os):
+        """Sets the os of this System.
+
+
+        :param os: The os of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._os = os
+
+    @property
+    def remote_ip(self):
+        """Gets the remote_ip of this System.  # noqa: E501
+
+
+        :return: The remote_ip of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._remote_ip
+
+    @remote_ip.setter
+    def remote_ip(self, remote_ip):
+        """Sets the remote_ip of this System.
+
+
+        :param remote_ip: The remote_ip of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._remote_ip = remote_ip
+
+    @property
+    def ssh_root_enabled(self):
+        """Gets the ssh_root_enabled of this System.  # noqa: E501
+
+
+        :return: The ssh_root_enabled of this System.  # noqa: E501
+        :rtype: bool
+        """
+        return self._ssh_root_enabled
+
+    @ssh_root_enabled.setter
+    def ssh_root_enabled(self, ssh_root_enabled):
+        """Sets the ssh_root_enabled of this System.
+
+
+        :param ssh_root_enabled: The ssh_root_enabled of this System.  # noqa: E501
+        :type: bool
+        """
+
+        self._ssh_root_enabled = ssh_root_enabled
+
+    @property
+    def sshd_params(self):
+        """Gets the sshd_params of this System.  # noqa: E501
+
+
+        :return: The sshd_params of this System.  # noqa: E501
+        :rtype: list[SystemSshdParams]
+        """
+        return self._sshd_params
+
+    @sshd_params.setter
+    def sshd_params(self, sshd_params):
+        """Sets the sshd_params of this System.
+
+
+        :param sshd_params: The sshd_params of this System.  # noqa: E501
+        :type: list[SystemSshdParams]
+        """
+
+        self._sshd_params = sshd_params
+
+    @property
+    def system_insights(self):
+        """Gets the system_insights of this System.  # noqa: E501
+
+
+        :return: The system_insights of this System.  # noqa: E501
+        :rtype: SystemSystemInsights
+        """
+        return self._system_insights
+
+    @system_insights.setter
+    def system_insights(self, system_insights):
+        """Sets the system_insights of this System.
+
+
+        :param system_insights: The system_insights of this System.  # noqa: E501
+        :type: SystemSystemInsights
+        """
+
+        self._system_insights = system_insights
+
+    @property
+    def system_timezone(self):
+        """Gets the system_timezone of this System.  # noqa: E501
+
+
+        :return: The system_timezone of this System.  # noqa: E501
+        :rtype: int
+        """
+        return self._system_timezone
+
+    @system_timezone.setter
+    def system_timezone(self, system_timezone):
+        """Sets the system_timezone of this System.
+
+
+        :param system_timezone: The system_timezone of this System.  # noqa: E501
+        :type: int
+        """
+
+        self._system_timezone = system_timezone
+
+    @property
+    def tags(self):
+        """Gets the tags of this System.  # noqa: E501
+
+
+        :return: The tags of this System.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this System.
+
+
+        :param tags: The tags of this System.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
+
+    @property
+    def template_name(self):
+        """Gets the template_name of this System.  # noqa: E501
+
+
+        :return: The template_name of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._template_name
+
+    @template_name.setter
+    def template_name(self, template_name):
+        """Sets the template_name of this System.
+
+
+        :param template_name: The template_name of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._template_name = template_name
+
+    @property
+    def version(self):
+        """Gets the version of this System.  # noqa: E501
+
+
+        :return: The version of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this System.
+
+
+        :param version: The version of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**network_source_ip** | **str** |  | 
+**mfa** | **str** |  | [optional] 
 **name** | **str** |  | 
-**tag_names** | **list[str]** |  | [optional] 
+**network_source_ip** | **str** |  | 
 **shared_secret** | **str** | RADIUS shared secret between the server and client. | 
+**tag_names** | **list[str]** |  | [optional] 
 **user_lockout_action** | **str** |  | [optional] 
 **user_password_expiration_action** | **str** |  | [optional] 
-**mfa** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

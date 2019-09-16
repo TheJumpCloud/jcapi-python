@@ -31,67 +31,46 @@ class Administrator(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'email': 'str',
-        'firstname': 'str',
-        'lastname': 'str',
         'enable_multi_factor': 'bool',
+        'firstname': 'str',
+        'id': 'str',
+        'lastname': 'str',
         'registered': 'bool'
     }
 
     attribute_map = {
-        'id': 'id',
         'email': 'email',
-        'firstname': 'firstname',
-        'lastname': 'lastname',
         'enable_multi_factor': 'enableMultiFactor',
+        'firstname': 'firstname',
+        'id': 'id',
+        'lastname': 'lastname',
         'registered': 'registered'
     }
 
-    def __init__(self, id=None, email=None, firstname=None, lastname=None, enable_multi_factor=None, registered=None):  # noqa: E501
+    def __init__(self, email=None, enable_multi_factor=None, firstname=None, id=None, lastname=None, registered=None):  # noqa: E501
         """Administrator - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
         self._email = None
-        self._firstname = None
-        self._lastname = None
         self._enable_multi_factor = None
+        self._firstname = None
+        self._id = None
+        self._lastname = None
         self._registered = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
         if email is not None:
             self.email = email
-        if firstname is not None:
-            self.firstname = firstname
-        if lastname is not None:
-            self.lastname = lastname
         if enable_multi_factor is not None:
             self.enable_multi_factor = enable_multi_factor
+        if firstname is not None:
+            self.firstname = firstname
+        if id is not None:
+            self.id = id
+        if lastname is not None:
+            self.lastname = lastname
         if registered is not None:
             self.registered = registered
-
-    @property
-    def id(self):
-        """Gets the id of this Administrator.  # noqa: E501
-
-
-        :return: The id of this Administrator.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Administrator.
-
-
-        :param id: The id of this Administrator.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def email(self):
@@ -115,6 +94,27 @@ class Administrator(object):
         self._email = email
 
     @property
+    def enable_multi_factor(self):
+        """Gets the enable_multi_factor of this Administrator.  # noqa: E501
+
+
+        :return: The enable_multi_factor of this Administrator.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_multi_factor
+
+    @enable_multi_factor.setter
+    def enable_multi_factor(self, enable_multi_factor):
+        """Sets the enable_multi_factor of this Administrator.
+
+
+        :param enable_multi_factor: The enable_multi_factor of this Administrator.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_multi_factor = enable_multi_factor
+
+    @property
     def firstname(self):
         """Gets the firstname of this Administrator.  # noqa: E501
 
@@ -136,6 +136,27 @@ class Administrator(object):
         self._firstname = firstname
 
     @property
+    def id(self):
+        """Gets the id of this Administrator.  # noqa: E501
+
+
+        :return: The id of this Administrator.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Administrator.
+
+
+        :param id: The id of this Administrator.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
     def lastname(self):
         """Gets the lastname of this Administrator.  # noqa: E501
 
@@ -155,27 +176,6 @@ class Administrator(object):
         """
 
         self._lastname = lastname
-
-    @property
-    def enable_multi_factor(self):
-        """Gets the enable_multi_factor of this Administrator.  # noqa: E501
-
-
-        :return: The enable_multi_factor of this Administrator.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_multi_factor
-
-    @enable_multi_factor.setter
-    def enable_multi_factor(self, enable_multi_factor):
-        """Sets the enable_multi_factor of this Administrator.
-
-
-        :param enable_multi_factor: The enable_multi_factor of this Administrator.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_multi_factor = enable_multi_factor
 
     @property
     def registered(self):

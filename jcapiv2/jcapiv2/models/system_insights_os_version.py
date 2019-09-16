@@ -31,118 +31,160 @@ class SystemInsightsOsVersion(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'version': 'str',
+        'build': 'str',
+        'codename': 'str',
+        'collection_time': 'str',
+        'install_date': 'str',
         'major': 'int',
         'minor': 'int',
+        'name': 'str',
         'patch': 'int',
-        'build': 'str',
         'platform': 'str',
         'platform_like': 'str',
-        'codename': 'str',
-        'install_date': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'system_id': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'version': 'version',
+        'build': 'build',
+        'codename': 'codename',
+        'collection_time': 'collection_time',
+        'install_date': 'install_date',
         'major': 'major',
         'minor': 'minor',
+        'name': 'name',
         'patch': 'patch',
-        'build': 'build',
         'platform': 'platform',
         'platform_like': 'platform_like',
-        'codename': 'codename',
-        'install_date': 'install_date',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'system_id': 'system_id',
+        'version': 'version'
     }
 
-    def __init__(self, name=None, version=None, major=None, minor=None, patch=None, build=None, platform=None, platform_like=None, codename=None, install_date=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, build=None, codename=None, collection_time=None, install_date=None, major=None, minor=None, name=None, patch=None, platform=None, platform_like=None, system_id=None, version=None):  # noqa: E501
         """SystemInsightsOsVersion - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._version = None
+        self._build = None
+        self._codename = None
+        self._collection_time = None
+        self._install_date = None
         self._major = None
         self._minor = None
+        self._name = None
         self._patch = None
-        self._build = None
         self._platform = None
         self._platform_like = None
-        self._codename = None
-        self._install_date = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._system_id = None
+        self._version = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
-        if version is not None:
-            self.version = version
+        if build is not None:
+            self.build = build
+        if codename is not None:
+            self.codename = codename
+        if collection_time is not None:
+            self.collection_time = collection_time
+        if install_date is not None:
+            self.install_date = install_date
         if major is not None:
             self.major = major
         if minor is not None:
             self.minor = minor
+        if name is not None:
+            self.name = name
         if patch is not None:
             self.patch = patch
-        if build is not None:
-            self.build = build
         if platform is not None:
             self.platform = platform
         if platform_like is not None:
             self.platform_like = platform_like
-        if codename is not None:
-            self.codename = codename
-        if install_date is not None:
-            self.install_date = install_date
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if system_id is not None:
+            self.system_id = system_id
+        if version is not None:
+            self.version = version
 
     @property
-    def name(self):
-        """Gets the name of this SystemInsightsOsVersion.  # noqa: E501
+    def build(self):
+        """Gets the build of this SystemInsightsOsVersion.  # noqa: E501
 
 
-        :return: The name of this SystemInsightsOsVersion.  # noqa: E501
+        :return: The build of this SystemInsightsOsVersion.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._build
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SystemInsightsOsVersion.
+    @build.setter
+    def build(self, build):
+        """Sets the build of this SystemInsightsOsVersion.
 
 
-        :param name: The name of this SystemInsightsOsVersion.  # noqa: E501
+        :param build: The build of this SystemInsightsOsVersion.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._build = build
 
     @property
-    def version(self):
-        """Gets the version of this SystemInsightsOsVersion.  # noqa: E501
+    def codename(self):
+        """Gets the codename of this SystemInsightsOsVersion.  # noqa: E501
 
 
-        :return: The version of this SystemInsightsOsVersion.  # noqa: E501
+        :return: The codename of this SystemInsightsOsVersion.  # noqa: E501
         :rtype: str
         """
-        return self._version
+        return self._codename
 
-    @version.setter
-    def version(self, version):
-        """Sets the version of this SystemInsightsOsVersion.
+    @codename.setter
+    def codename(self, codename):
+        """Sets the codename of this SystemInsightsOsVersion.
 
 
-        :param version: The version of this SystemInsightsOsVersion.  # noqa: E501
+        :param codename: The codename of this SystemInsightsOsVersion.  # noqa: E501
         :type: str
         """
 
-        self._version = version
+        self._codename = codename
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsOsVersion.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsOsVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsOsVersion.
+
+
+        :param collection_time: The collection_time of this SystemInsightsOsVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
+
+    @property
+    def install_date(self):
+        """Gets the install_date of this SystemInsightsOsVersion.  # noqa: E501
+
+
+        :return: The install_date of this SystemInsightsOsVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._install_date
+
+    @install_date.setter
+    def install_date(self, install_date):
+        """Sets the install_date of this SystemInsightsOsVersion.
+
+
+        :param install_date: The install_date of this SystemInsightsOsVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._install_date = install_date
 
     @property
     def major(self):
@@ -187,6 +229,27 @@ class SystemInsightsOsVersion(object):
         self._minor = minor
 
     @property
+    def name(self):
+        """Gets the name of this SystemInsightsOsVersion.  # noqa: E501
+
+
+        :return: The name of this SystemInsightsOsVersion.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SystemInsightsOsVersion.
+
+
+        :param name: The name of this SystemInsightsOsVersion.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
     def patch(self):
         """Gets the patch of this SystemInsightsOsVersion.  # noqa: E501
 
@@ -206,27 +269,6 @@ class SystemInsightsOsVersion(object):
         """
 
         self._patch = patch
-
-    @property
-    def build(self):
-        """Gets the build of this SystemInsightsOsVersion.  # noqa: E501
-
-
-        :return: The build of this SystemInsightsOsVersion.  # noqa: E501
-        :rtype: str
-        """
-        return self._build
-
-    @build.setter
-    def build(self, build):
-        """Sets the build of this SystemInsightsOsVersion.
-
-
-        :param build: The build of this SystemInsightsOsVersion.  # noqa: E501
-        :type: str
-        """
-
-        self._build = build
 
     @property
     def platform(self):
@@ -271,88 +313,46 @@ class SystemInsightsOsVersion(object):
         self._platform_like = platform_like
 
     @property
-    def codename(self):
-        """Gets the codename of this SystemInsightsOsVersion.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsOsVersion.  # noqa: E501
 
 
-        :return: The codename of this SystemInsightsOsVersion.  # noqa: E501
+        :return: The system_id of this SystemInsightsOsVersion.  # noqa: E501
         :rtype: str
         """
-        return self._codename
+        return self._system_id
 
-    @codename.setter
-    def codename(self, codename):
-        """Sets the codename of this SystemInsightsOsVersion.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsOsVersion.
 
 
-        :param codename: The codename of this SystemInsightsOsVersion.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsOsVersion.  # noqa: E501
         :type: str
         """
 
-        self._codename = codename
+        self._system_id = system_id
 
     @property
-    def install_date(self):
-        """Gets the install_date of this SystemInsightsOsVersion.  # noqa: E501
+    def version(self):
+        """Gets the version of this SystemInsightsOsVersion.  # noqa: E501
 
 
-        :return: The install_date of this SystemInsightsOsVersion.  # noqa: E501
+        :return: The version of this SystemInsightsOsVersion.  # noqa: E501
         :rtype: str
         """
-        return self._install_date
+        return self._version
 
-    @install_date.setter
-    def install_date(self, install_date):
-        """Sets the install_date of this SystemInsightsOsVersion.
+    @version.setter
+    def version(self, version):
+        """Sets the version of this SystemInsightsOsVersion.
 
 
-        :param install_date: The install_date of this SystemInsightsOsVersion.  # noqa: E501
+        :param version: The version of this SystemInsightsOsVersion.  # noqa: E501
         :type: str
         """
 
-        self._install_date = install_date
-
-    @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsOsVersion.  # noqa: E501
-
-
-        :return: The jc_collection_time of this SystemInsightsOsVersion.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_collection_time
-
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsOsVersion.
-
-
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsOsVersion.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_collection_time = jc_collection_time
-
-    @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsOsVersion.  # noqa: E501
-
-
-        :return: The jc_system_id of this SystemInsightsOsVersion.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_system_id
-
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsOsVersion.
-
-
-        :param jc_system_id: The jc_system_id of this SystemInsightsOsVersion.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_system_id = jc_system_id
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

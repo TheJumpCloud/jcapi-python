@@ -31,62 +31,85 @@ class BulkUserCreate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'username': 'str',
+        'attributes': 'list[object]',
+        'email': 'str',
         'firstname': 'str',
         'lastname': 'str',
-        'email': 'str',
-        'attributes': 'list[object]'
+        'username': 'str'
     }
 
     attribute_map = {
-        'username': 'username',
+        'attributes': 'attributes',
+        'email': 'email',
         'firstname': 'firstname',
         'lastname': 'lastname',
-        'email': 'email',
-        'attributes': 'attributes'
+        'username': 'username'
     }
 
-    def __init__(self, username=None, firstname=None, lastname=None, email=None, attributes=None):  # noqa: E501
+    def __init__(self, attributes=None, email=None, firstname=None, lastname=None, username=None):  # noqa: E501
         """BulkUserCreate - a model defined in Swagger"""  # noqa: E501
 
-        self._username = None
+        self._attributes = None
+        self._email = None
         self._firstname = None
         self._lastname = None
-        self._email = None
-        self._attributes = None
+        self._username = None
         self.discriminator = None
 
-        if username is not None:
-            self.username = username
+        if attributes is not None:
+            self.attributes = attributes
+        if email is not None:
+            self.email = email
         if firstname is not None:
             self.firstname = firstname
         if lastname is not None:
             self.lastname = lastname
-        if email is not None:
-            self.email = email
-        if attributes is not None:
-            self.attributes = attributes
+        if username is not None:
+            self.username = username
 
     @property
-    def username(self):
-        """Gets the username of this BulkUserCreate.  # noqa: E501
+    def attributes(self):
+        """Gets the attributes of this BulkUserCreate.  # noqa: E501
+
+        Map of additional attributes.  # noqa: E501
+
+        :return: The attributes of this BulkUserCreate.  # noqa: E501
+        :rtype: list[object]
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this BulkUserCreate.
+
+        Map of additional attributes.  # noqa: E501
+
+        :param attributes: The attributes of this BulkUserCreate.  # noqa: E501
+        :type: list[object]
+        """
+
+        self._attributes = attributes
+
+    @property
+    def email(self):
+        """Gets the email of this BulkUserCreate.  # noqa: E501
 
 
-        :return: The username of this BulkUserCreate.  # noqa: E501
+        :return: The email of this BulkUserCreate.  # noqa: E501
         :rtype: str
         """
-        return self._username
+        return self._email
 
-    @username.setter
-    def username(self, username):
-        """Sets the username of this BulkUserCreate.
+    @email.setter
+    def email(self, email):
+        """Sets the email of this BulkUserCreate.
 
 
-        :param username: The username of this BulkUserCreate.  # noqa: E501
+        :param email: The email of this BulkUserCreate.  # noqa: E501
         :type: str
         """
 
-        self._username = username
+        self._email = email
 
     @property
     def firstname(self):
@@ -131,48 +154,25 @@ class BulkUserCreate(object):
         self._lastname = lastname
 
     @property
-    def email(self):
-        """Gets the email of this BulkUserCreate.  # noqa: E501
+    def username(self):
+        """Gets the username of this BulkUserCreate.  # noqa: E501
 
 
-        :return: The email of this BulkUserCreate.  # noqa: E501
+        :return: The username of this BulkUserCreate.  # noqa: E501
         :rtype: str
         """
-        return self._email
+        return self._username
 
-    @email.setter
-    def email(self, email):
-        """Sets the email of this BulkUserCreate.
+    @username.setter
+    def username(self, username):
+        """Sets the username of this BulkUserCreate.
 
 
-        :param email: The email of this BulkUserCreate.  # noqa: E501
+        :param username: The username of this BulkUserCreate.  # noqa: E501
         :type: str
         """
 
-        self._email = email
-
-    @property
-    def attributes(self):
-        """Gets the attributes of this BulkUserCreate.  # noqa: E501
-
-        Map of additional attributes.  # noqa: E501
-
-        :return: The attributes of this BulkUserCreate.  # noqa: E501
-        :rtype: list[object]
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """Sets the attributes of this BulkUserCreate.
-
-        Map of additional attributes.  # noqa: E501
-
-        :param attributes: The attributes of this BulkUserCreate.  # noqa: E501
-        :type: list[object]
-        """
-
-        self._attributes = attributes
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

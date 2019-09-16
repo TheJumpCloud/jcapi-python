@@ -31,181 +31,97 @@ class SystemInsightsUsers(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'uid': 'str',
-        'gid': 'str',
-        'uid_signed': 'str',
-        'gid_signed': 'str',
-        'username': 'str',
+        'collection_time': 'str',
         'description': 'str',
         'directory': 'str',
+        'gid': 'str',
+        'gid_signed': 'str',
         'shell': 'str',
-        'uuid': 'str',
+        'system_id': 'str',
         'type': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'uid': 'str',
+        'uid_signed': 'str',
+        'username': 'str',
+        'uuid': 'str'
     }
 
     attribute_map = {
-        'uid': 'uid',
-        'gid': 'gid',
-        'uid_signed': 'uid_signed',
-        'gid_signed': 'gid_signed',
-        'username': 'username',
+        'collection_time': 'collection_time',
         'description': 'description',
         'directory': 'directory',
+        'gid': 'gid',
+        'gid_signed': 'gid_signed',
         'shell': 'shell',
-        'uuid': 'uuid',
+        'system_id': 'system_id',
         'type': 'type',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'uid': 'uid',
+        'uid_signed': 'uid_signed',
+        'username': 'username',
+        'uuid': 'uuid'
     }
 
-    def __init__(self, uid=None, gid=None, uid_signed=None, gid_signed=None, username=None, description=None, directory=None, shell=None, uuid=None, type=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, collection_time=None, description=None, directory=None, gid=None, gid_signed=None, shell=None, system_id=None, type=None, uid=None, uid_signed=None, username=None, uuid=None):  # noqa: E501
         """SystemInsightsUsers - a model defined in Swagger"""  # noqa: E501
 
-        self._uid = None
-        self._gid = None
-        self._uid_signed = None
-        self._gid_signed = None
-        self._username = None
+        self._collection_time = None
         self._description = None
         self._directory = None
+        self._gid = None
+        self._gid_signed = None
         self._shell = None
-        self._uuid = None
+        self._system_id = None
         self._type = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._uid = None
+        self._uid_signed = None
+        self._username = None
+        self._uuid = None
         self.discriminator = None
 
-        if uid is not None:
-            self.uid = uid
-        if gid is not None:
-            self.gid = gid
-        if uid_signed is not None:
-            self.uid_signed = uid_signed
-        if gid_signed is not None:
-            self.gid_signed = gid_signed
-        if username is not None:
-            self.username = username
+        if collection_time is not None:
+            self.collection_time = collection_time
         if description is not None:
             self.description = description
         if directory is not None:
             self.directory = directory
+        if gid is not None:
+            self.gid = gid
+        if gid_signed is not None:
+            self.gid_signed = gid_signed
         if shell is not None:
             self.shell = shell
-        if uuid is not None:
-            self.uuid = uuid
+        if system_id is not None:
+            self.system_id = system_id
         if type is not None:
             self.type = type
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if uid is not None:
+            self.uid = uid
+        if uid_signed is not None:
+            self.uid_signed = uid_signed
+        if username is not None:
+            self.username = username
+        if uuid is not None:
+            self.uuid = uuid
 
     @property
-    def uid(self):
-        """Gets the uid of this SystemInsightsUsers.  # noqa: E501
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsUsers.  # noqa: E501
 
 
-        :return: The uid of this SystemInsightsUsers.  # noqa: E501
+        :return: The collection_time of this SystemInsightsUsers.  # noqa: E501
         :rtype: str
         """
-        return self._uid
+        return self._collection_time
 
-    @uid.setter
-    def uid(self, uid):
-        """Sets the uid of this SystemInsightsUsers.
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsUsers.
 
 
-        :param uid: The uid of this SystemInsightsUsers.  # noqa: E501
+        :param collection_time: The collection_time of this SystemInsightsUsers.  # noqa: E501
         :type: str
         """
 
-        self._uid = uid
-
-    @property
-    def gid(self):
-        """Gets the gid of this SystemInsightsUsers.  # noqa: E501
-
-
-        :return: The gid of this SystemInsightsUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._gid
-
-    @gid.setter
-    def gid(self, gid):
-        """Sets the gid of this SystemInsightsUsers.
-
-
-        :param gid: The gid of this SystemInsightsUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._gid = gid
-
-    @property
-    def uid_signed(self):
-        """Gets the uid_signed of this SystemInsightsUsers.  # noqa: E501
-
-
-        :return: The uid_signed of this SystemInsightsUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._uid_signed
-
-    @uid_signed.setter
-    def uid_signed(self, uid_signed):
-        """Sets the uid_signed of this SystemInsightsUsers.
-
-
-        :param uid_signed: The uid_signed of this SystemInsightsUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._uid_signed = uid_signed
-
-    @property
-    def gid_signed(self):
-        """Gets the gid_signed of this SystemInsightsUsers.  # noqa: E501
-
-
-        :return: The gid_signed of this SystemInsightsUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._gid_signed
-
-    @gid_signed.setter
-    def gid_signed(self, gid_signed):
-        """Sets the gid_signed of this SystemInsightsUsers.
-
-
-        :param gid_signed: The gid_signed of this SystemInsightsUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._gid_signed = gid_signed
-
-    @property
-    def username(self):
-        """Gets the username of this SystemInsightsUsers.  # noqa: E501
-
-
-        :return: The username of this SystemInsightsUsers.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this SystemInsightsUsers.
-
-
-        :param username: The username of this SystemInsightsUsers.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
+        self._collection_time = collection_time
 
     @property
     def description(self):
@@ -250,6 +166,48 @@ class SystemInsightsUsers(object):
         self._directory = directory
 
     @property
+    def gid(self):
+        """Gets the gid of this SystemInsightsUsers.  # noqa: E501
+
+
+        :return: The gid of this SystemInsightsUsers.  # noqa: E501
+        :rtype: str
+        """
+        return self._gid
+
+    @gid.setter
+    def gid(self, gid):
+        """Sets the gid of this SystemInsightsUsers.
+
+
+        :param gid: The gid of this SystemInsightsUsers.  # noqa: E501
+        :type: str
+        """
+
+        self._gid = gid
+
+    @property
+    def gid_signed(self):
+        """Gets the gid_signed of this SystemInsightsUsers.  # noqa: E501
+
+
+        :return: The gid_signed of this SystemInsightsUsers.  # noqa: E501
+        :rtype: str
+        """
+        return self._gid_signed
+
+    @gid_signed.setter
+    def gid_signed(self, gid_signed):
+        """Sets the gid_signed of this SystemInsightsUsers.
+
+
+        :param gid_signed: The gid_signed of this SystemInsightsUsers.  # noqa: E501
+        :type: str
+        """
+
+        self._gid_signed = gid_signed
+
+    @property
     def shell(self):
         """Gets the shell of this SystemInsightsUsers.  # noqa: E501
 
@@ -271,25 +229,25 @@ class SystemInsightsUsers(object):
         self._shell = shell
 
     @property
-    def uuid(self):
-        """Gets the uuid of this SystemInsightsUsers.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsUsers.  # noqa: E501
 
 
-        :return: The uuid of this SystemInsightsUsers.  # noqa: E501
+        :return: The system_id of this SystemInsightsUsers.  # noqa: E501
         :rtype: str
         """
-        return self._uuid
+        return self._system_id
 
-    @uuid.setter
-    def uuid(self, uuid):
-        """Sets the uuid of this SystemInsightsUsers.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsUsers.
 
 
-        :param uuid: The uuid of this SystemInsightsUsers.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsUsers.  # noqa: E501
         :type: str
         """
 
-        self._uuid = uuid
+        self._system_id = system_id
 
     @property
     def type(self):
@@ -313,46 +271,88 @@ class SystemInsightsUsers(object):
         self._type = type
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsUsers.  # noqa: E501
+    def uid(self):
+        """Gets the uid of this SystemInsightsUsers.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsUsers.  # noqa: E501
+        :return: The uid of this SystemInsightsUsers.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._uid
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsUsers.
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this SystemInsightsUsers.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsUsers.  # noqa: E501
+        :param uid: The uid of this SystemInsightsUsers.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._uid = uid
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsUsers.  # noqa: E501
+    def uid_signed(self):
+        """Gets the uid_signed of this SystemInsightsUsers.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsUsers.  # noqa: E501
+        :return: The uid_signed of this SystemInsightsUsers.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._uid_signed
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsUsers.
+    @uid_signed.setter
+    def uid_signed(self, uid_signed):
+        """Sets the uid_signed of this SystemInsightsUsers.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsUsers.  # noqa: E501
+        :param uid_signed: The uid_signed of this SystemInsightsUsers.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._uid_signed = uid_signed
+
+    @property
+    def username(self):
+        """Gets the username of this SystemInsightsUsers.  # noqa: E501
+
+
+        :return: The username of this SystemInsightsUsers.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this SystemInsightsUsers.
+
+
+        :param username: The username of this SystemInsightsUsers.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
+
+    @property
+    def uuid(self):
+        """Gets the uuid of this SystemInsightsUsers.  # noqa: E501
+
+
+        :return: The uuid of this SystemInsightsUsers.  # noqa: E501
+        :rtype: str
+        """
+        return self._uuid
+
+    @uuid.setter
+    def uuid(self, uuid):
+        """Sets the uuid of this SystemInsightsUsers.
+
+
+        :param uuid: The uuid of this SystemInsightsUsers.  # noqa: E501
+        :type: str
+        """
+
+        self._uuid = uuid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

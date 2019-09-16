@@ -33,102 +33,125 @@ class PolicyTemplateWithDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str',
+        'activation': 'str',
+        'behavior': 'str',
+        'config_fields': 'list[PolicyTemplateConfigField]',
         'description': 'str',
         'display_name': 'str',
-        'os_meta_family': 'str',
-        'config_fields': 'list[PolicyTemplateConfigField]',
-        'activation': 'str',
-        'behavior': 'str'
+        'id': 'str',
+        'name': 'str',
+        'os_meta_family': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
+        'activation': 'activation',
+        'behavior': 'behavior',
+        'config_fields': 'configFields',
         'description': 'description',
         'display_name': 'displayName',
-        'os_meta_family': 'osMetaFamily',
-        'config_fields': 'configFields',
-        'activation': 'activation',
-        'behavior': 'behavior'
+        'id': 'id',
+        'name': 'name',
+        'os_meta_family': 'osMetaFamily'
     }
 
-    def __init__(self, id=None, name=None, description=None, display_name=None, os_meta_family=None, config_fields=None, activation=None, behavior=None):  # noqa: E501
+    def __init__(self, activation=None, behavior=None, config_fields=None, description=None, display_name=None, id=None, name=None, os_meta_family=None):  # noqa: E501
         """PolicyTemplateWithDetails - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
-        self._name = None
-        self._description = None
-        self._display_name = None
-        self._os_meta_family = None
-        self._config_fields = None
         self._activation = None
         self._behavior = None
+        self._config_fields = None
+        self._description = None
+        self._display_name = None
+        self._id = None
+        self._name = None
+        self._os_meta_family = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if description is not None:
-            self.description = description
-        if display_name is not None:
-            self.display_name = display_name
-        if os_meta_family is not None:
-            self.os_meta_family = os_meta_family
-        if config_fields is not None:
-            self.config_fields = config_fields
         if activation is not None:
             self.activation = activation
         if behavior is not None:
             self.behavior = behavior
+        if config_fields is not None:
+            self.config_fields = config_fields
+        if description is not None:
+            self.description = description
+        if display_name is not None:
+            self.display_name = display_name
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if os_meta_family is not None:
+            self.os_meta_family = os_meta_family
 
     @property
-    def id(self):
-        """Gets the id of this PolicyTemplateWithDetails.  # noqa: E501
+    def activation(self):
+        """Gets the activation of this PolicyTemplateWithDetails.  # noqa: E501
 
-        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+        Requirements before the policy can be activated.  # noqa: E501
 
-        :return: The id of this PolicyTemplateWithDetails.  # noqa: E501
+        :return: The activation of this PolicyTemplateWithDetails.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._activation
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PolicyTemplateWithDetails.
+    @activation.setter
+    def activation(self, activation):
+        """Sets the activation of this PolicyTemplateWithDetails.
 
-        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+        Requirements before the policy can be activated.  # noqa: E501
 
-        :param id: The id of this PolicyTemplateWithDetails.  # noqa: E501
+        :param activation: The activation of this PolicyTemplateWithDetails.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._activation = activation
 
     @property
-    def name(self):
-        """Gets the name of this PolicyTemplateWithDetails.  # noqa: E501
+    def behavior(self):
+        """Gets the behavior of this PolicyTemplateWithDetails.  # noqa: E501
 
-        The unique name for the Policy Template.  # noqa: E501
+        Specifics about the behavior of the policy.  # noqa: E501
 
-        :return: The name of this PolicyTemplateWithDetails.  # noqa: E501
+        :return: The behavior of this PolicyTemplateWithDetails.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._behavior
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PolicyTemplateWithDetails.
+    @behavior.setter
+    def behavior(self, behavior):
+        """Sets the behavior of this PolicyTemplateWithDetails.
 
-        The unique name for the Policy Template.  # noqa: E501
+        Specifics about the behavior of the policy.  # noqa: E501
 
-        :param name: The name of this PolicyTemplateWithDetails.  # noqa: E501
+        :param behavior: The behavior of this PolicyTemplateWithDetails.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._behavior = behavior
+
+    @property
+    def config_fields(self):
+        """Gets the config_fields of this PolicyTemplateWithDetails.  # noqa: E501
+
+        An unordered list of all the fields that can be configured for this Policy Template.  # noqa: E501
+
+        :return: The config_fields of this PolicyTemplateWithDetails.  # noqa: E501
+        :rtype: list[PolicyTemplateConfigField]
+        """
+        return self._config_fields
+
+    @config_fields.setter
+    def config_fields(self, config_fields):
+        """Sets the config_fields of this PolicyTemplateWithDetails.
+
+        An unordered list of all the fields that can be configured for this Policy Template.  # noqa: E501
+
+        :param config_fields: The config_fields of this PolicyTemplateWithDetails.  # noqa: E501
+        :type: list[PolicyTemplateConfigField]
+        """
+
+        self._config_fields = config_fields
 
     @property
     def description(self):
@@ -177,6 +200,52 @@ class PolicyTemplateWithDetails(object):
         self._display_name = display_name
 
     @property
+    def id(self):
+        """Gets the id of this PolicyTemplateWithDetails.  # noqa: E501
+
+        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+
+        :return: The id of this PolicyTemplateWithDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PolicyTemplateWithDetails.
+
+        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+
+        :param id: The id of this PolicyTemplateWithDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this PolicyTemplateWithDetails.  # noqa: E501
+
+        The unique name for the Policy Template.  # noqa: E501
+
+        :return: The name of this PolicyTemplateWithDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PolicyTemplateWithDetails.
+
+        The unique name for the Policy Template.  # noqa: E501
+
+        :param name: The name of this PolicyTemplateWithDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
     def os_meta_family(self):
         """Gets the os_meta_family of this PolicyTemplateWithDetails.  # noqa: E501
 
@@ -202,75 +271,6 @@ class PolicyTemplateWithDetails(object):
             )
 
         self._os_meta_family = os_meta_family
-
-    @property
-    def config_fields(self):
-        """Gets the config_fields of this PolicyTemplateWithDetails.  # noqa: E501
-
-        An unordered list of all the fields that can be configured for this Policy Template.  # noqa: E501
-
-        :return: The config_fields of this PolicyTemplateWithDetails.  # noqa: E501
-        :rtype: list[PolicyTemplateConfigField]
-        """
-        return self._config_fields
-
-    @config_fields.setter
-    def config_fields(self, config_fields):
-        """Sets the config_fields of this PolicyTemplateWithDetails.
-
-        An unordered list of all the fields that can be configured for this Policy Template.  # noqa: E501
-
-        :param config_fields: The config_fields of this PolicyTemplateWithDetails.  # noqa: E501
-        :type: list[PolicyTemplateConfigField]
-        """
-
-        self._config_fields = config_fields
-
-    @property
-    def activation(self):
-        """Gets the activation of this PolicyTemplateWithDetails.  # noqa: E501
-
-        Requirements before the policy can be activated.  # noqa: E501
-
-        :return: The activation of this PolicyTemplateWithDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._activation
-
-    @activation.setter
-    def activation(self, activation):
-        """Sets the activation of this PolicyTemplateWithDetails.
-
-        Requirements before the policy can be activated.  # noqa: E501
-
-        :param activation: The activation of this PolicyTemplateWithDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._activation = activation
-
-    @property
-    def behavior(self):
-        """Gets the behavior of this PolicyTemplateWithDetails.  # noqa: E501
-
-        Specifics about the behavior of the policy.  # noqa: E501
-
-        :return: The behavior of this PolicyTemplateWithDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._behavior
-
-    @behavior.setter
-    def behavior(self, behavior):
-        """Sets the behavior of this PolicyTemplateWithDetails.
-
-        Specifics about the behavior of the policy.  # noqa: E501
-
-        :param behavior: The behavior of this PolicyTemplateWithDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._behavior = behavior
 
     def to_dict(self):
         """Returns the model properties as a dict"""

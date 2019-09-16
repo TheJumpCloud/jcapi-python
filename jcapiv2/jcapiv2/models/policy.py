@@ -34,30 +34,30 @@ class Policy(object):
     """
     swagger_types = {
         'id': 'str',
-        'template': 'PolicyTemplate',
-        'name': 'str'
+        'name': 'str',
+        'template': 'PolicyTemplate'
     }
 
     attribute_map = {
         'id': 'id',
-        'template': 'template',
-        'name': 'name'
+        'name': 'name',
+        'template': 'template'
     }
 
-    def __init__(self, id=None, template=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, template=None):  # noqa: E501
         """Policy - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._template = None
         self._name = None
+        self._template = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if template is not None:
-            self.template = template
         if name is not None:
             self.name = name
+        if template is not None:
+            self.template = template
 
     @property
     def id(self):
@@ -83,27 +83,6 @@ class Policy(object):
         self._id = id
 
     @property
-    def template(self):
-        """Gets the template of this Policy.  # noqa: E501
-
-
-        :return: The template of this Policy.  # noqa: E501
-        :rtype: PolicyTemplate
-        """
-        return self._template
-
-    @template.setter
-    def template(self, template):
-        """Sets the template of this Policy.
-
-
-        :param template: The template of this Policy.  # noqa: E501
-        :type: PolicyTemplate
-        """
-
-        self._template = template
-
-    @property
     def name(self):
         """Gets the name of this Policy.  # noqa: E501
 
@@ -125,6 +104,27 @@ class Policy(object):
         """
 
         self._name = name
+
+    @property
+    def template(self):
+        """Gets the template of this Policy.  # noqa: E501
+
+
+        :return: The template of this Policy.  # noqa: E501
+        :rtype: PolicyTemplate
+        """
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        """Sets the template of this Policy.
+
+
+        :param template: The template of this Policy.  # noqa: E501
+        :type: PolicyTemplate
+        """
+
+        self._template = template
 
     def to_dict(self):
         """Returns the model properties as a dict"""
