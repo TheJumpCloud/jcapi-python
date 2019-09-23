@@ -33,41 +33,62 @@ class WorkdayOutput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'auth': 'WorkdayoutputAuth',
         'id': 'str',
-        'name': 'str',
-        'report_url': 'str',
         'last_import': 'str',
-        'auth': 'WorkdayoutputAuth'
+        'name': 'str',
+        'report_url': 'str'
     }
 
     attribute_map = {
+        'auth': 'auth',
         'id': 'id',
-        'name': 'name',
-        'report_url': 'reportUrl',
         'last_import': 'lastImport',
-        'auth': 'auth'
+        'name': 'name',
+        'report_url': 'reportUrl'
     }
 
-    def __init__(self, id=None, name=None, report_url=None, last_import=None, auth=None):  # noqa: E501
+    def __init__(self, auth=None, id=None, last_import=None, name=None, report_url=None):  # noqa: E501
         """WorkdayOutput - a model defined in Swagger"""  # noqa: E501
 
+        self._auth = None
         self._id = None
+        self._last_import = None
         self._name = None
         self._report_url = None
-        self._last_import = None
-        self._auth = None
         self.discriminator = None
 
+        if auth is not None:
+            self.auth = auth
         if id is not None:
             self.id = id
+        if last_import is not None:
+            self.last_import = last_import
         if name is not None:
             self.name = name
         if report_url is not None:
             self.report_url = report_url
-        if last_import is not None:
-            self.last_import = last_import
-        if auth is not None:
-            self.auth = auth
+
+    @property
+    def auth(self):
+        """Gets the auth of this WorkdayOutput.  # noqa: E501
+
+
+        :return: The auth of this WorkdayOutput.  # noqa: E501
+        :rtype: WorkdayoutputAuth
+        """
+        return self._auth
+
+    @auth.setter
+    def auth(self, auth):
+        """Sets the auth of this WorkdayOutput.
+
+
+        :param auth: The auth of this WorkdayOutput.  # noqa: E501
+        :type: WorkdayoutputAuth
+        """
+
+        self._auth = auth
 
     @property
     def id(self):
@@ -89,6 +110,27 @@ class WorkdayOutput(object):
         """
 
         self._id = id
+
+    @property
+    def last_import(self):
+        """Gets the last_import of this WorkdayOutput.  # noqa: E501
+
+
+        :return: The last_import of this WorkdayOutput.  # noqa: E501
+        :rtype: str
+        """
+        return self._last_import
+
+    @last_import.setter
+    def last_import(self, last_import):
+        """Sets the last_import of this WorkdayOutput.
+
+
+        :param last_import: The last_import of this WorkdayOutput.  # noqa: E501
+        :type: str
+        """
+
+        self._last_import = last_import
 
     @property
     def name(self):
@@ -131,48 +173,6 @@ class WorkdayOutput(object):
         """
 
         self._report_url = report_url
-
-    @property
-    def last_import(self):
-        """Gets the last_import of this WorkdayOutput.  # noqa: E501
-
-
-        :return: The last_import of this WorkdayOutput.  # noqa: E501
-        :rtype: str
-        """
-        return self._last_import
-
-    @last_import.setter
-    def last_import(self, last_import):
-        """Sets the last_import of this WorkdayOutput.
-
-
-        :param last_import: The last_import of this WorkdayOutput.  # noqa: E501
-        :type: str
-        """
-
-        self._last_import = last_import
-
-    @property
-    def auth(self):
-        """Gets the auth of this WorkdayOutput.  # noqa: E501
-
-
-        :return: The auth of this WorkdayOutput.  # noqa: E501
-        :rtype: WorkdayoutputAuth
-        """
-        return self._auth
-
-    @auth.setter
-    def auth(self, auth):
-        """Sets the auth of this WorkdayOutput.
-
-
-        :param auth: The auth of this WorkdayOutput.  # noqa: E501
-        :type: WorkdayoutputAuth
-        """
-
-        self._auth = auth
 
     def to_dict(self):
         """Returns the model properties as a dict"""

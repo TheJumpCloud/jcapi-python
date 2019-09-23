@@ -34,51 +34,28 @@ class GraphObjectWithPaths(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'GraphType',
         'id': 'str',
-        'paths': 'list[list[GraphConnection]]'
+        'paths': 'list[list[GraphConnection]]',
+        'type': 'GraphType'
     }
 
     attribute_map = {
-        'type': 'type',
         'id': 'id',
-        'paths': 'paths'
+        'paths': 'paths',
+        'type': 'type'
     }
 
-    def __init__(self, type=None, id=None, paths=None):  # noqa: E501
+    def __init__(self, id=None, paths=None, type=None):  # noqa: E501
         """GraphObjectWithPaths - a model defined in Swagger"""  # noqa: E501
 
-        self._type = None
         self._id = None
         self._paths = None
+        self._type = None
         self.discriminator = None
 
-        self.type = type
         self.id = id
         self.paths = paths
-
-    @property
-    def type(self):
-        """Gets the type of this GraphObjectWithPaths.  # noqa: E501
-
-
-        :return: The type of this GraphObjectWithPaths.  # noqa: E501
-        :rtype: GraphType
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this GraphObjectWithPaths.
-
-
-        :param type: The type of this GraphObjectWithPaths.  # noqa: E501
-        :type: GraphType
-        """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-
-        self._type = type
+        self.type = type
 
     @property
     def id(self):
@@ -129,6 +106,29 @@ class GraphObjectWithPaths(object):
             raise ValueError("Invalid value for `paths`, must not be `None`")  # noqa: E501
 
         self._paths = paths
+
+    @property
+    def type(self):
+        """Gets the type of this GraphObjectWithPaths.  # noqa: E501
+
+
+        :return: The type of this GraphObjectWithPaths.  # noqa: E501
+        :rtype: GraphType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this GraphObjectWithPaths.
+
+
+        :param type: The type of this GraphObjectWithPaths.  # noqa: E501
+        :type: GraphType
+        """
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -31,47 +31,26 @@ class Fde(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key_present': 'bool',
-        'active': 'bool'
+        'active': 'bool',
+        'key_present': 'bool'
     }
 
     attribute_map = {
-        'key_present': 'keyPresent',
-        'active': 'active'
+        'active': 'active',
+        'key_present': 'keyPresent'
     }
 
-    def __init__(self, key_present=None, active=None):  # noqa: E501
+    def __init__(self, active=None, key_present=None):  # noqa: E501
         """Fde - a model defined in Swagger"""  # noqa: E501
 
-        self._key_present = None
         self._active = None
+        self._key_present = None
         self.discriminator = None
 
-        if key_present is not None:
-            self.key_present = key_present
         if active is not None:
             self.active = active
-
-    @property
-    def key_present(self):
-        """Gets the key_present of this Fde.  # noqa: E501
-
-
-        :return: The key_present of this Fde.  # noqa: E501
-        :rtype: bool
-        """
-        return self._key_present
-
-    @key_present.setter
-    def key_present(self, key_present):
-        """Sets the key_present of this Fde.
-
-
-        :param key_present: The key_present of this Fde.  # noqa: E501
-        :type: bool
-        """
-
-        self._key_present = key_present
+        if key_present is not None:
+            self.key_present = key_present
 
     @property
     def active(self):
@@ -93,6 +72,27 @@ class Fde(object):
         """
 
         self._active = active
+
+    @property
+    def key_present(self):
+        """Gets the key_present of this Fde.  # noqa: E501
+
+
+        :return: The key_present of this Fde.  # noqa: E501
+        :rtype: bool
+        """
+        return self._key_present
+
+    @key_present.setter
+    def key_present(self, key_present):
+        """Sets the key_present of this Fde.
+
+
+        :param key_present: The key_present of this Fde.  # noqa: E501
+        :type: bool
+        """
+
+        self._key_present = key_present
 
     def to_dict(self):
         """Returns the model properties as a dict"""

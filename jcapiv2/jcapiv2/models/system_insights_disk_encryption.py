@@ -31,61 +31,124 @@ class SystemInsightsDiskEncryption(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'uuid': 'str',
+        'collection_time': 'str',
         'encrypted': 'int',
+        'encryption_status': 'str',
+        'name': 'str',
+        'system_id': 'str',
         'type': 'str',
         'uid': 'str',
         'user_uuid': 'str',
-        'encryption_status': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'uuid': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'uuid': 'uuid',
+        'collection_time': 'collection_time',
         'encrypted': 'encrypted',
+        'encryption_status': 'encryption_status',
+        'name': 'name',
+        'system_id': 'system_id',
         'type': 'type',
         'uid': 'uid',
         'user_uuid': 'user_uuid',
-        'encryption_status': 'encryption_status',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'uuid': 'uuid'
     }
 
-    def __init__(self, name=None, uuid=None, encrypted=None, type=None, uid=None, user_uuid=None, encryption_status=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, collection_time=None, encrypted=None, encryption_status=None, name=None, system_id=None, type=None, uid=None, user_uuid=None, uuid=None):  # noqa: E501
         """SystemInsightsDiskEncryption - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._uuid = None
+        self._collection_time = None
         self._encrypted = None
+        self._encryption_status = None
+        self._name = None
+        self._system_id = None
         self._type = None
         self._uid = None
         self._user_uuid = None
-        self._encryption_status = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._uuid = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
-        if uuid is not None:
-            self.uuid = uuid
+        if collection_time is not None:
+            self.collection_time = collection_time
         if encrypted is not None:
             self.encrypted = encrypted
+        if encryption_status is not None:
+            self.encryption_status = encryption_status
+        if name is not None:
+            self.name = name
+        if system_id is not None:
+            self.system_id = system_id
         if type is not None:
             self.type = type
         if uid is not None:
             self.uid = uid
         if user_uuid is not None:
             self.user_uuid = user_uuid
-        if encryption_status is not None:
-            self.encryption_status = encryption_status
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if uuid is not None:
+            self.uuid = uuid
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsDiskEncryption.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsDiskEncryption.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsDiskEncryption.
+
+
+        :param collection_time: The collection_time of this SystemInsightsDiskEncryption.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
+
+    @property
+    def encrypted(self):
+        """Gets the encrypted of this SystemInsightsDiskEncryption.  # noqa: E501
+
+
+        :return: The encrypted of this SystemInsightsDiskEncryption.  # noqa: E501
+        :rtype: int
+        """
+        return self._encrypted
+
+    @encrypted.setter
+    def encrypted(self, encrypted):
+        """Sets the encrypted of this SystemInsightsDiskEncryption.
+
+
+        :param encrypted: The encrypted of this SystemInsightsDiskEncryption.  # noqa: E501
+        :type: int
+        """
+
+        self._encrypted = encrypted
+
+    @property
+    def encryption_status(self):
+        """Gets the encryption_status of this SystemInsightsDiskEncryption.  # noqa: E501
+
+
+        :return: The encryption_status of this SystemInsightsDiskEncryption.  # noqa: E501
+        :rtype: str
+        """
+        return self._encryption_status
+
+    @encryption_status.setter
+    def encryption_status(self, encryption_status):
+        """Sets the encryption_status of this SystemInsightsDiskEncryption.
+
+
+        :param encryption_status: The encryption_status of this SystemInsightsDiskEncryption.  # noqa: E501
+        :type: str
+        """
+
+        self._encryption_status = encryption_status
 
     @property
     def name(self):
@@ -109,46 +172,25 @@ class SystemInsightsDiskEncryption(object):
         self._name = name
 
     @property
-    def uuid(self):
-        """Gets the uuid of this SystemInsightsDiskEncryption.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsDiskEncryption.  # noqa: E501
 
 
-        :return: The uuid of this SystemInsightsDiskEncryption.  # noqa: E501
+        :return: The system_id of this SystemInsightsDiskEncryption.  # noqa: E501
         :rtype: str
         """
-        return self._uuid
+        return self._system_id
 
-    @uuid.setter
-    def uuid(self, uuid):
-        """Sets the uuid of this SystemInsightsDiskEncryption.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsDiskEncryption.
 
 
-        :param uuid: The uuid of this SystemInsightsDiskEncryption.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsDiskEncryption.  # noqa: E501
         :type: str
         """
 
-        self._uuid = uuid
-
-    @property
-    def encrypted(self):
-        """Gets the encrypted of this SystemInsightsDiskEncryption.  # noqa: E501
-
-
-        :return: The encrypted of this SystemInsightsDiskEncryption.  # noqa: E501
-        :rtype: int
-        """
-        return self._encrypted
-
-    @encrypted.setter
-    def encrypted(self, encrypted):
-        """Sets the encrypted of this SystemInsightsDiskEncryption.
-
-
-        :param encrypted: The encrypted of this SystemInsightsDiskEncryption.  # noqa: E501
-        :type: int
-        """
-
-        self._encrypted = encrypted
+        self._system_id = system_id
 
     @property
     def type(self):
@@ -214,67 +256,25 @@ class SystemInsightsDiskEncryption(object):
         self._user_uuid = user_uuid
 
     @property
-    def encryption_status(self):
-        """Gets the encryption_status of this SystemInsightsDiskEncryption.  # noqa: E501
+    def uuid(self):
+        """Gets the uuid of this SystemInsightsDiskEncryption.  # noqa: E501
 
 
-        :return: The encryption_status of this SystemInsightsDiskEncryption.  # noqa: E501
+        :return: The uuid of this SystemInsightsDiskEncryption.  # noqa: E501
         :rtype: str
         """
-        return self._encryption_status
+        return self._uuid
 
-    @encryption_status.setter
-    def encryption_status(self, encryption_status):
-        """Sets the encryption_status of this SystemInsightsDiskEncryption.
+    @uuid.setter
+    def uuid(self, uuid):
+        """Sets the uuid of this SystemInsightsDiskEncryption.
 
 
-        :param encryption_status: The encryption_status of this SystemInsightsDiskEncryption.  # noqa: E501
+        :param uuid: The uuid of this SystemInsightsDiskEncryption.  # noqa: E501
         :type: str
         """
 
-        self._encryption_status = encryption_status
-
-    @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsDiskEncryption.  # noqa: E501
-
-
-        :return: The jc_collection_time of this SystemInsightsDiskEncryption.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_collection_time
-
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsDiskEncryption.
-
-
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsDiskEncryption.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_collection_time = jc_collection_time
-
-    @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsDiskEncryption.  # noqa: E501
-
-
-        :return: The jc_system_id of this SystemInsightsDiskEncryption.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_system_id
-
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsDiskEncryption.
-
-
-        :param jc_system_id: The jc_system_id of this SystemInsightsDiskEncryption.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_system_id = jc_system_id
+        self._uuid = uuid
 
     def to_dict(self):
         """Returns the model properties as a dict"""

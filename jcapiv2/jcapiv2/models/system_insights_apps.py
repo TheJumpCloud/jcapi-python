@@ -31,163 +31,142 @@ class SystemInsightsApps(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'path': 'str',
+        'applescript_enabled': 'str',
         'bundle_executable': 'str',
         'bundle_identifier': 'str',
         'bundle_name': 'str',
+        'bundle_package_type': 'str',
         'bundle_short_version': 'str',
         'bundle_version': 'str',
-        'bundle_package_type': 'str',
-        'environment': 'str',
-        'element': 'str',
+        'category': 'str',
+        'collection_time': 'str',
         'compiler': 'str',
+        'copyright': 'str',
         'development_region': 'str',
         'display_name': 'str',
+        'element': 'str',
+        'environment': 'str',
         'info_string': 'str',
-        'minimum_system_version': 'str',
-        'category': 'str',
-        'applescript_enabled': 'str',
-        'copyright': 'str',
         'last_opened_time': 'float',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'minimum_system_version': 'str',
+        'name': 'str',
+        'path': 'str',
+        'system_id': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'path': 'path',
+        'applescript_enabled': 'applescript_enabled',
         'bundle_executable': 'bundle_executable',
         'bundle_identifier': 'bundle_identifier',
         'bundle_name': 'bundle_name',
+        'bundle_package_type': 'bundle_package_type',
         'bundle_short_version': 'bundle_short_version',
         'bundle_version': 'bundle_version',
-        'bundle_package_type': 'bundle_package_type',
-        'environment': 'environment',
-        'element': 'element',
+        'category': 'category',
+        'collection_time': 'collection_time',
         'compiler': 'compiler',
+        'copyright': 'copyright',
         'development_region': 'development_region',
         'display_name': 'display_name',
+        'element': 'element',
+        'environment': 'environment',
         'info_string': 'info_string',
-        'minimum_system_version': 'minimum_system_version',
-        'category': 'category',
-        'applescript_enabled': 'applescript_enabled',
-        'copyright': 'copyright',
         'last_opened_time': 'last_opened_time',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'minimum_system_version': 'minimum_system_version',
+        'name': 'name',
+        'path': 'path',
+        'system_id': 'system_id'
     }
 
-    def __init__(self, name=None, path=None, bundle_executable=None, bundle_identifier=None, bundle_name=None, bundle_short_version=None, bundle_version=None, bundle_package_type=None, environment=None, element=None, compiler=None, development_region=None, display_name=None, info_string=None, minimum_system_version=None, category=None, applescript_enabled=None, copyright=None, last_opened_time=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, applescript_enabled=None, bundle_executable=None, bundle_identifier=None, bundle_name=None, bundle_package_type=None, bundle_short_version=None, bundle_version=None, category=None, collection_time=None, compiler=None, copyright=None, development_region=None, display_name=None, element=None, environment=None, info_string=None, last_opened_time=None, minimum_system_version=None, name=None, path=None, system_id=None):  # noqa: E501
         """SystemInsightsApps - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._path = None
+        self._applescript_enabled = None
         self._bundle_executable = None
         self._bundle_identifier = None
         self._bundle_name = None
+        self._bundle_package_type = None
         self._bundle_short_version = None
         self._bundle_version = None
-        self._bundle_package_type = None
-        self._environment = None
-        self._element = None
+        self._category = None
+        self._collection_time = None
         self._compiler = None
+        self._copyright = None
         self._development_region = None
         self._display_name = None
+        self._element = None
+        self._environment = None
         self._info_string = None
-        self._minimum_system_version = None
-        self._category = None
-        self._applescript_enabled = None
-        self._copyright = None
         self._last_opened_time = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._minimum_system_version = None
+        self._name = None
+        self._path = None
+        self._system_id = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
-        if path is not None:
-            self.path = path
+        if applescript_enabled is not None:
+            self.applescript_enabled = applescript_enabled
         if bundle_executable is not None:
             self.bundle_executable = bundle_executable
         if bundle_identifier is not None:
             self.bundle_identifier = bundle_identifier
         if bundle_name is not None:
             self.bundle_name = bundle_name
+        if bundle_package_type is not None:
+            self.bundle_package_type = bundle_package_type
         if bundle_short_version is not None:
             self.bundle_short_version = bundle_short_version
         if bundle_version is not None:
             self.bundle_version = bundle_version
-        if bundle_package_type is not None:
-            self.bundle_package_type = bundle_package_type
-        if environment is not None:
-            self.environment = environment
-        if element is not None:
-            self.element = element
+        if category is not None:
+            self.category = category
+        if collection_time is not None:
+            self.collection_time = collection_time
         if compiler is not None:
             self.compiler = compiler
+        if copyright is not None:
+            self.copyright = copyright
         if development_region is not None:
             self.development_region = development_region
         if display_name is not None:
             self.display_name = display_name
+        if element is not None:
+            self.element = element
+        if environment is not None:
+            self.environment = environment
         if info_string is not None:
             self.info_string = info_string
-        if minimum_system_version is not None:
-            self.minimum_system_version = minimum_system_version
-        if category is not None:
-            self.category = category
-        if applescript_enabled is not None:
-            self.applescript_enabled = applescript_enabled
-        if copyright is not None:
-            self.copyright = copyright
         if last_opened_time is not None:
             self.last_opened_time = last_opened_time
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if minimum_system_version is not None:
+            self.minimum_system_version = minimum_system_version
+        if name is not None:
+            self.name = name
+        if path is not None:
+            self.path = path
+        if system_id is not None:
+            self.system_id = system_id
 
     @property
-    def name(self):
-        """Gets the name of this SystemInsightsApps.  # noqa: E501
+    def applescript_enabled(self):
+        """Gets the applescript_enabled of this SystemInsightsApps.  # noqa: E501
 
 
-        :return: The name of this SystemInsightsApps.  # noqa: E501
+        :return: The applescript_enabled of this SystemInsightsApps.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._applescript_enabled
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SystemInsightsApps.
+    @applescript_enabled.setter
+    def applescript_enabled(self, applescript_enabled):
+        """Sets the applescript_enabled of this SystemInsightsApps.
 
 
-        :param name: The name of this SystemInsightsApps.  # noqa: E501
+        :param applescript_enabled: The applescript_enabled of this SystemInsightsApps.  # noqa: E501
         :type: str
         """
 
-        self._name = name
-
-    @property
-    def path(self):
-        """Gets the path of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The path of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._path
-
-    @path.setter
-    def path(self, path):
-        """Sets the path of this SystemInsightsApps.
-
-
-        :param path: The path of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._path = path
+        self._applescript_enabled = applescript_enabled
 
     @property
     def bundle_executable(self):
@@ -253,6 +232,27 @@ class SystemInsightsApps(object):
         self._bundle_name = bundle_name
 
     @property
+    def bundle_package_type(self):
+        """Gets the bundle_package_type of this SystemInsightsApps.  # noqa: E501
+
+
+        :return: The bundle_package_type of this SystemInsightsApps.  # noqa: E501
+        :rtype: str
+        """
+        return self._bundle_package_type
+
+    @bundle_package_type.setter
+    def bundle_package_type(self, bundle_package_type):
+        """Sets the bundle_package_type of this SystemInsightsApps.
+
+
+        :param bundle_package_type: The bundle_package_type of this SystemInsightsApps.  # noqa: E501
+        :type: str
+        """
+
+        self._bundle_package_type = bundle_package_type
+
+    @property
     def bundle_short_version(self):
         """Gets the bundle_short_version of this SystemInsightsApps.  # noqa: E501
 
@@ -295,67 +295,46 @@ class SystemInsightsApps(object):
         self._bundle_version = bundle_version
 
     @property
-    def bundle_package_type(self):
-        """Gets the bundle_package_type of this SystemInsightsApps.  # noqa: E501
+    def category(self):
+        """Gets the category of this SystemInsightsApps.  # noqa: E501
 
 
-        :return: The bundle_package_type of this SystemInsightsApps.  # noqa: E501
+        :return: The category of this SystemInsightsApps.  # noqa: E501
         :rtype: str
         """
-        return self._bundle_package_type
+        return self._category
 
-    @bundle_package_type.setter
-    def bundle_package_type(self, bundle_package_type):
-        """Sets the bundle_package_type of this SystemInsightsApps.
+    @category.setter
+    def category(self, category):
+        """Sets the category of this SystemInsightsApps.
 
 
-        :param bundle_package_type: The bundle_package_type of this SystemInsightsApps.  # noqa: E501
+        :param category: The category of this SystemInsightsApps.  # noqa: E501
         :type: str
         """
 
-        self._bundle_package_type = bundle_package_type
+        self._category = category
 
     @property
-    def environment(self):
-        """Gets the environment of this SystemInsightsApps.  # noqa: E501
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsApps.  # noqa: E501
 
 
-        :return: The environment of this SystemInsightsApps.  # noqa: E501
+        :return: The collection_time of this SystemInsightsApps.  # noqa: E501
         :rtype: str
         """
-        return self._environment
+        return self._collection_time
 
-    @environment.setter
-    def environment(self, environment):
-        """Sets the environment of this SystemInsightsApps.
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsApps.
 
 
-        :param environment: The environment of this SystemInsightsApps.  # noqa: E501
+        :param collection_time: The collection_time of this SystemInsightsApps.  # noqa: E501
         :type: str
         """
 
-        self._environment = environment
-
-    @property
-    def element(self):
-        """Gets the element of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The element of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._element
-
-    @element.setter
-    def element(self, element):
-        """Sets the element of this SystemInsightsApps.
-
-
-        :param element: The element of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._element = element
+        self._collection_time = collection_time
 
     @property
     def compiler(self):
@@ -377,6 +356,27 @@ class SystemInsightsApps(object):
         """
 
         self._compiler = compiler
+
+    @property
+    def copyright(self):
+        """Gets the copyright of this SystemInsightsApps.  # noqa: E501
+
+
+        :return: The copyright of this SystemInsightsApps.  # noqa: E501
+        :rtype: str
+        """
+        return self._copyright
+
+    @copyright.setter
+    def copyright(self, copyright):
+        """Sets the copyright of this SystemInsightsApps.
+
+
+        :param copyright: The copyright of this SystemInsightsApps.  # noqa: E501
+        :type: str
+        """
+
+        self._copyright = copyright
 
     @property
     def development_region(self):
@@ -421,6 +421,48 @@ class SystemInsightsApps(object):
         self._display_name = display_name
 
     @property
+    def element(self):
+        """Gets the element of this SystemInsightsApps.  # noqa: E501
+
+
+        :return: The element of this SystemInsightsApps.  # noqa: E501
+        :rtype: str
+        """
+        return self._element
+
+    @element.setter
+    def element(self, element):
+        """Sets the element of this SystemInsightsApps.
+
+
+        :param element: The element of this SystemInsightsApps.  # noqa: E501
+        :type: str
+        """
+
+        self._element = element
+
+    @property
+    def environment(self):
+        """Gets the environment of this SystemInsightsApps.  # noqa: E501
+
+
+        :return: The environment of this SystemInsightsApps.  # noqa: E501
+        :rtype: str
+        """
+        return self._environment
+
+    @environment.setter
+    def environment(self, environment):
+        """Sets the environment of this SystemInsightsApps.
+
+
+        :param environment: The environment of this SystemInsightsApps.  # noqa: E501
+        :type: str
+        """
+
+        self._environment = environment
+
+    @property
     def info_string(self):
         """Gets the info_string of this SystemInsightsApps.  # noqa: E501
 
@@ -440,90 +482,6 @@ class SystemInsightsApps(object):
         """
 
         self._info_string = info_string
-
-    @property
-    def minimum_system_version(self):
-        """Gets the minimum_system_version of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The minimum_system_version of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._minimum_system_version
-
-    @minimum_system_version.setter
-    def minimum_system_version(self, minimum_system_version):
-        """Sets the minimum_system_version of this SystemInsightsApps.
-
-
-        :param minimum_system_version: The minimum_system_version of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._minimum_system_version = minimum_system_version
-
-    @property
-    def category(self):
-        """Gets the category of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The category of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._category
-
-    @category.setter
-    def category(self, category):
-        """Sets the category of this SystemInsightsApps.
-
-
-        :param category: The category of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._category = category
-
-    @property
-    def applescript_enabled(self):
-        """Gets the applescript_enabled of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The applescript_enabled of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._applescript_enabled
-
-    @applescript_enabled.setter
-    def applescript_enabled(self, applescript_enabled):
-        """Sets the applescript_enabled of this SystemInsightsApps.
-
-
-        :param applescript_enabled: The applescript_enabled of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._applescript_enabled = applescript_enabled
-
-    @property
-    def copyright(self):
-        """Gets the copyright of this SystemInsightsApps.  # noqa: E501
-
-
-        :return: The copyright of this SystemInsightsApps.  # noqa: E501
-        :rtype: str
-        """
-        return self._copyright
-
-    @copyright.setter
-    def copyright(self, copyright):
-        """Sets the copyright of this SystemInsightsApps.
-
-
-        :param copyright: The copyright of this SystemInsightsApps.  # noqa: E501
-        :type: str
-        """
-
-        self._copyright = copyright
 
     @property
     def last_opened_time(self):
@@ -547,46 +505,88 @@ class SystemInsightsApps(object):
         self._last_opened_time = last_opened_time
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsApps.  # noqa: E501
+    def minimum_system_version(self):
+        """Gets the minimum_system_version of this SystemInsightsApps.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsApps.  # noqa: E501
+        :return: The minimum_system_version of this SystemInsightsApps.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._minimum_system_version
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsApps.
+    @minimum_system_version.setter
+    def minimum_system_version(self, minimum_system_version):
+        """Sets the minimum_system_version of this SystemInsightsApps.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsApps.  # noqa: E501
+        :param minimum_system_version: The minimum_system_version of this SystemInsightsApps.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._minimum_system_version = minimum_system_version
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsApps.  # noqa: E501
+    def name(self):
+        """Gets the name of this SystemInsightsApps.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsApps.  # noqa: E501
+        :return: The name of this SystemInsightsApps.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._name
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsApps.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SystemInsightsApps.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsApps.  # noqa: E501
+        :param name: The name of this SystemInsightsApps.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._name = name
+
+    @property
+    def path(self):
+        """Gets the path of this SystemInsightsApps.  # noqa: E501
+
+
+        :return: The path of this SystemInsightsApps.  # noqa: E501
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """Sets the path of this SystemInsightsApps.
+
+
+        :param path: The path of this SystemInsightsApps.  # noqa: E501
+        :type: str
+        """
+
+        self._path = path
+
+    @property
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsApps.  # noqa: E501
+
+
+        :return: The system_id of this SystemInsightsApps.  # noqa: E501
+        :rtype: str
+        """
+        return self._system_id
+
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsApps.
+
+
+        :param system_id: The system_id of this SystemInsightsApps.  # noqa: E501
+        :type: str
+        """
+
+        self._system_id = system_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

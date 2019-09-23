@@ -32,65 +32,65 @@ class Radiusserver(object):
     """
     swagger_types = {
         'id': 'str',
-        'organization': 'str',
-        'network_source_ip': 'str',
-        'shared_secret': 'str',
+        'mfa': 'str',
         'name': 'str',
-        'tags': 'list[str]',
+        'network_source_ip': 'str',
+        'organization': 'str',
+        'shared_secret': 'str',
         'tag_names': 'list[str]',
+        'tags': 'list[str]',
         'user_lockout_action': 'str',
-        'user_password_expiration_action': 'str',
-        'mfa': 'str'
+        'user_password_expiration_action': 'str'
     }
 
     attribute_map = {
         'id': '_id',
-        'organization': 'organization',
-        'network_source_ip': 'networkSourceIp',
-        'shared_secret': 'sharedSecret',
+        'mfa': 'mfa',
         'name': 'name',
-        'tags': 'tags',
+        'network_source_ip': 'networkSourceIp',
+        'organization': 'organization',
+        'shared_secret': 'sharedSecret',
         'tag_names': 'tagNames',
+        'tags': 'tags',
         'user_lockout_action': 'userLockoutAction',
-        'user_password_expiration_action': 'userPasswordExpirationAction',
-        'mfa': 'mfa'
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, id=None, organization=None, network_source_ip=None, shared_secret=None, name=None, tags=None, tag_names=None, user_lockout_action=None, user_password_expiration_action=None, mfa=None):  # noqa: E501
+    def __init__(self, id=None, mfa=None, name=None, network_source_ip=None, organization=None, shared_secret=None, tag_names=None, tags=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """Radiusserver - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._organization = None
-        self._network_source_ip = None
-        self._shared_secret = None
+        self._mfa = None
         self._name = None
-        self._tags = None
+        self._network_source_ip = None
+        self._organization = None
+        self._shared_secret = None
         self._tag_names = None
+        self._tags = None
         self._user_lockout_action = None
         self._user_password_expiration_action = None
-        self._mfa = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if organization is not None:
-            self.organization = organization
-        if network_source_ip is not None:
-            self.network_source_ip = network_source_ip
-        if shared_secret is not None:
-            self.shared_secret = shared_secret
+        if mfa is not None:
+            self.mfa = mfa
         if name is not None:
             self.name = name
-        if tags is not None:
-            self.tags = tags
+        if network_source_ip is not None:
+            self.network_source_ip = network_source_ip
+        if organization is not None:
+            self.organization = organization
+        if shared_secret is not None:
+            self.shared_secret = shared_secret
         if tag_names is not None:
             self.tag_names = tag_names
+        if tags is not None:
+            self.tags = tags
         if user_lockout_action is not None:
             self.user_lockout_action = user_lockout_action
         if user_password_expiration_action is not None:
             self.user_password_expiration_action = user_password_expiration_action
-        if mfa is not None:
-            self.mfa = mfa
 
     @property
     def id(self):
@@ -114,67 +114,31 @@ class Radiusserver(object):
         self._id = id
 
     @property
-    def organization(self):
-        """Gets the organization of this Radiusserver.  # noqa: E501
+    def mfa(self):
+        """Gets the mfa of this Radiusserver.  # noqa: E501
 
 
-        :return: The organization of this Radiusserver.  # noqa: E501
+        :return: The mfa of this Radiusserver.  # noqa: E501
         :rtype: str
         """
-        return self._organization
+        return self._mfa
 
-    @organization.setter
-    def organization(self, organization):
-        """Sets the organization of this Radiusserver.
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Radiusserver.
 
 
-        :param organization: The organization of this Radiusserver.  # noqa: E501
+        :param mfa: The mfa of this Radiusserver.  # noqa: E501
         :type: str
         """
+        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
+        if mfa not in allowed_values:
+            raise ValueError(
+                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
+                .format(mfa, allowed_values)
+            )
 
-        self._organization = organization
-
-    @property
-    def network_source_ip(self):
-        """Gets the network_source_ip of this Radiusserver.  # noqa: E501
-
-
-        :return: The network_source_ip of this Radiusserver.  # noqa: E501
-        :rtype: str
-        """
-        return self._network_source_ip
-
-    @network_source_ip.setter
-    def network_source_ip(self, network_source_ip):
-        """Sets the network_source_ip of this Radiusserver.
-
-
-        :param network_source_ip: The network_source_ip of this Radiusserver.  # noqa: E501
-        :type: str
-        """
-
-        self._network_source_ip = network_source_ip
-
-    @property
-    def shared_secret(self):
-        """Gets the shared_secret of this Radiusserver.  # noqa: E501
-
-
-        :return: The shared_secret of this Radiusserver.  # noqa: E501
-        :rtype: str
-        """
-        return self._shared_secret
-
-    @shared_secret.setter
-    def shared_secret(self, shared_secret):
-        """Sets the shared_secret of this Radiusserver.
-
-
-        :param shared_secret: The shared_secret of this Radiusserver.  # noqa: E501
-        :type: str
-        """
-
-        self._shared_secret = shared_secret
+        self._mfa = mfa
 
     @property
     def name(self):
@@ -198,25 +162,67 @@ class Radiusserver(object):
         self._name = name
 
     @property
-    def tags(self):
-        """Gets the tags of this Radiusserver.  # noqa: E501
+    def network_source_ip(self):
+        """Gets the network_source_ip of this Radiusserver.  # noqa: E501
 
 
-        :return: The tags of this Radiusserver.  # noqa: E501
-        :rtype: list[str]
+        :return: The network_source_ip of this Radiusserver.  # noqa: E501
+        :rtype: str
         """
-        return self._tags
+        return self._network_source_ip
 
-    @tags.setter
-    def tags(self, tags):
-        """Sets the tags of this Radiusserver.
+    @network_source_ip.setter
+    def network_source_ip(self, network_source_ip):
+        """Sets the network_source_ip of this Radiusserver.
 
 
-        :param tags: The tags of this Radiusserver.  # noqa: E501
-        :type: list[str]
+        :param network_source_ip: The network_source_ip of this Radiusserver.  # noqa: E501
+        :type: str
         """
 
-        self._tags = tags
+        self._network_source_ip = network_source_ip
+
+    @property
+    def organization(self):
+        """Gets the organization of this Radiusserver.  # noqa: E501
+
+
+        :return: The organization of this Radiusserver.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this Radiusserver.
+
+
+        :param organization: The organization of this Radiusserver.  # noqa: E501
+        :type: str
+        """
+
+        self._organization = organization
+
+    @property
+    def shared_secret(self):
+        """Gets the shared_secret of this Radiusserver.  # noqa: E501
+
+
+        :return: The shared_secret of this Radiusserver.  # noqa: E501
+        :rtype: str
+        """
+        return self._shared_secret
+
+    @shared_secret.setter
+    def shared_secret(self, shared_secret):
+        """Sets the shared_secret of this Radiusserver.
+
+
+        :param shared_secret: The shared_secret of this Radiusserver.  # noqa: E501
+        :type: str
+        """
+
+        self._shared_secret = shared_secret
 
     @property
     def tag_names(self):
@@ -238,6 +244,27 @@ class Radiusserver(object):
         """
 
         self._tag_names = tag_names
+
+    @property
+    def tags(self):
+        """Gets the tags of this Radiusserver.  # noqa: E501
+
+
+        :return: The tags of this Radiusserver.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this Radiusserver.
+
+
+        :param tags: The tags of this Radiusserver.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tags = tags
 
     @property
     def user_lockout_action(self):
@@ -280,33 +307,6 @@ class Radiusserver(object):
         """
 
         self._user_password_expiration_action = user_password_expiration_action
-
-    @property
-    def mfa(self):
-        """Gets the mfa of this Radiusserver.  # noqa: E501
-
-
-        :return: The mfa of this Radiusserver.  # noqa: E501
-        :rtype: str
-        """
-        return self._mfa
-
-    @mfa.setter
-    def mfa(self, mfa):
-        """Sets the mfa of this Radiusserver.
-
-
-        :param mfa: The mfa of this Radiusserver.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
-        if mfa not in allowed_values:
-            raise ValueError(
-                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
-                .format(mfa, allowed_values)
-            )
-
-        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""

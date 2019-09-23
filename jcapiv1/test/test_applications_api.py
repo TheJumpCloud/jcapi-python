@@ -29,10 +29,38 @@ class TestApplicationsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_applications_delete(self):
+        """Test case for applications_delete
+
+        Delete an Application  # noqa: E501
+        """
+        pass
+
+    def test_applications_get(self):
+        """Test case for applications_get
+
+        Get an Application  # noqa: E501
+        """
+        pass
+
     def test_applications_list(self):
         """Test case for applications_list
 
         Applications  # noqa: E501
+        """
+        pass
+
+    def test_applications_post(self):
+        """Test case for applications_post
+
+        Create an Application  # noqa: E501
+        """
+        pass
+
+    def test_applications_put(self):
+        """Test case for applications_put
+
+        Update an Application  # noqa: E501
         """
         pass
 

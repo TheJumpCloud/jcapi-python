@@ -31,62 +31,83 @@ class WorkdayWorker(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'username': 'str',
+        'attributes': 'object',
+        'email': 'str',
         'first_name': 'str',
         'last_name': 'str',
-        'email': 'str',
-        'attributes': 'object'
+        'username': 'str'
     }
 
     attribute_map = {
-        'username': 'username',
+        'attributes': 'attributes',
+        'email': 'email',
         'first_name': 'firstName',
         'last_name': 'lastName',
-        'email': 'email',
-        'attributes': 'attributes'
+        'username': 'username'
     }
 
-    def __init__(self, username=None, first_name=None, last_name=None, email=None, attributes=None):  # noqa: E501
+    def __init__(self, attributes=None, email=None, first_name=None, last_name=None, username=None):  # noqa: E501
         """WorkdayWorker - a model defined in Swagger"""  # noqa: E501
 
-        self._username = None
+        self._attributes = None
+        self._email = None
         self._first_name = None
         self._last_name = None
-        self._email = None
-        self._attributes = None
+        self._username = None
         self.discriminator = None
 
-        if username is not None:
-            self.username = username
+        if attributes is not None:
+            self.attributes = attributes
+        if email is not None:
+            self.email = email
         if first_name is not None:
             self.first_name = first_name
         if last_name is not None:
             self.last_name = last_name
-        if email is not None:
-            self.email = email
-        if attributes is not None:
-            self.attributes = attributes
+        if username is not None:
+            self.username = username
 
     @property
-    def username(self):
-        """Gets the username of this WorkdayWorker.  # noqa: E501
+    def attributes(self):
+        """Gets the attributes of this WorkdayWorker.  # noqa: E501
 
 
-        :return: The username of this WorkdayWorker.  # noqa: E501
+        :return: The attributes of this WorkdayWorker.  # noqa: E501
+        :rtype: object
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this WorkdayWorker.
+
+
+        :param attributes: The attributes of this WorkdayWorker.  # noqa: E501
+        :type: object
+        """
+
+        self._attributes = attributes
+
+    @property
+    def email(self):
+        """Gets the email of this WorkdayWorker.  # noqa: E501
+
+
+        :return: The email of this WorkdayWorker.  # noqa: E501
         :rtype: str
         """
-        return self._username
+        return self._email
 
-    @username.setter
-    def username(self, username):
-        """Sets the username of this WorkdayWorker.
+    @email.setter
+    def email(self, email):
+        """Sets the email of this WorkdayWorker.
 
 
-        :param username: The username of this WorkdayWorker.  # noqa: E501
+        :param email: The email of this WorkdayWorker.  # noqa: E501
         :type: str
         """
 
-        self._username = username
+        self._email = email
 
     @property
     def first_name(self):
@@ -131,46 +152,25 @@ class WorkdayWorker(object):
         self._last_name = last_name
 
     @property
-    def email(self):
-        """Gets the email of this WorkdayWorker.  # noqa: E501
+    def username(self):
+        """Gets the username of this WorkdayWorker.  # noqa: E501
 
 
-        :return: The email of this WorkdayWorker.  # noqa: E501
+        :return: The username of this WorkdayWorker.  # noqa: E501
         :rtype: str
         """
-        return self._email
+        return self._username
 
-    @email.setter
-    def email(self, email):
-        """Sets the email of this WorkdayWorker.
+    @username.setter
+    def username(self, username):
+        """Sets the username of this WorkdayWorker.
 
 
-        :param email: The email of this WorkdayWorker.  # noqa: E501
+        :param username: The username of this WorkdayWorker.  # noqa: E501
         :type: str
         """
 
-        self._email = email
-
-    @property
-    def attributes(self):
-        """Gets the attributes of this WorkdayWorker.  # noqa: E501
-
-
-        :return: The attributes of this WorkdayWorker.  # noqa: E501
-        :rtype: object
-        """
-        return self._attributes
-
-    @attributes.setter
-    def attributes(self, attributes):
-        """Sets the attributes of this WorkdayWorker.
-
-
-        :param attributes: The attributes of this WorkdayWorker.  # noqa: E501
-        :type: object
-        """
-
-        self._attributes = attributes
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""

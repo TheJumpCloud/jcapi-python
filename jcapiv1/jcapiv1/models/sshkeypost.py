@@ -31,49 +31,24 @@ class Sshkeypost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'public_key': 'str',
-        'name': 'str'
+        'name': 'str',
+        'public_key': 'str'
     }
 
     attribute_map = {
-        'public_key': 'public_key',
-        'name': 'name'
+        'name': 'name',
+        'public_key': 'public_key'
     }
 
-    def __init__(self, public_key=None, name=None):  # noqa: E501
+    def __init__(self, name=None, public_key=None):  # noqa: E501
         """Sshkeypost - a model defined in Swagger"""  # noqa: E501
 
-        self._public_key = None
         self._name = None
+        self._public_key = None
         self.discriminator = None
 
-        self.public_key = public_key
         self.name = name
-
-    @property
-    def public_key(self):
-        """Gets the public_key of this Sshkeypost.  # noqa: E501
-
-        The Public SSH key.  # noqa: E501
-
-        :return: The public_key of this Sshkeypost.  # noqa: E501
-        :rtype: str
-        """
-        return self._public_key
-
-    @public_key.setter
-    def public_key(self, public_key):
-        """Sets the public_key of this Sshkeypost.
-
-        The Public SSH key.  # noqa: E501
-
-        :param public_key: The public_key of this Sshkeypost.  # noqa: E501
-        :type: str
-        """
-        if public_key is None:
-            raise ValueError("Invalid value for `public_key`, must not be `None`")  # noqa: E501
-
-        self._public_key = public_key
+        self.public_key = public_key
 
     @property
     def name(self):
@@ -99,6 +74,31 @@ class Sshkeypost(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this Sshkeypost.  # noqa: E501
+
+        The Public SSH key.  # noqa: E501
+
+        :return: The public_key of this Sshkeypost.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this Sshkeypost.
+
+        The Public SSH key.  # noqa: E501
+
+        :param public_key: The public_key of this Sshkeypost.  # noqa: E501
+        :type: str
+        """
+        if public_key is None:
+            raise ValueError("Invalid value for `public_key`, must not be `None`")  # noqa: E501
+
+        self._public_key = public_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

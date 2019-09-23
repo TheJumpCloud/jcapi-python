@@ -31,77 +31,56 @@ class JobDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'admin_id': 'str',
-        'work_units_count': 'int',
-        'name': 'str',
-        'status': 'str',
+        'id': 'str',
         'meta': 'object',
+        'name': 'str',
+        'persisted_fields': 'list[str]',
+        'status': 'str',
         'updated_at': 'str',
-        'persisted_fields': 'list[str]'
+        'work_units_count': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'admin_id': 'adminId',
-        'work_units_count': 'workUnitsCount',
-        'name': 'name',
-        'status': 'status',
+        'id': 'id',
         'meta': 'meta',
+        'name': 'name',
+        'persisted_fields': 'persistedFields',
+        'status': 'status',
         'updated_at': 'updatedAt',
-        'persisted_fields': 'persistedFields'
+        'work_units_count': 'workUnitsCount'
     }
 
-    def __init__(self, id=None, admin_id=None, work_units_count=None, name=None, status=None, meta=None, updated_at=None, persisted_fields=None):  # noqa: E501
+    def __init__(self, admin_id=None, id=None, meta=None, name=None, persisted_fields=None, status=None, updated_at=None, work_units_count=None):  # noqa: E501
         """JobDetails - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
         self._admin_id = None
-        self._work_units_count = None
-        self._name = None
-        self._status = None
+        self._id = None
         self._meta = None
-        self._updated_at = None
+        self._name = None
         self._persisted_fields = None
+        self._status = None
+        self._updated_at = None
+        self._work_units_count = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
         if admin_id is not None:
             self.admin_id = admin_id
-        if work_units_count is not None:
-            self.work_units_count = work_units_count
-        if name is not None:
-            self.name = name
-        if status is not None:
-            self.status = status
+        if id is not None:
+            self.id = id
         if meta is not None:
             self.meta = meta
-        if updated_at is not None:
-            self.updated_at = updated_at
+        if name is not None:
+            self.name = name
         if persisted_fields is not None:
             self.persisted_fields = persisted_fields
-
-    @property
-    def id(self):
-        """Gets the id of this JobDetails.  # noqa: E501
-
-
-        :return: The id of this JobDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this JobDetails.
-
-
-        :param id: The id of this JobDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
+        if status is not None:
+            self.status = status
+        if updated_at is not None:
+            self.updated_at = updated_at
+        if work_units_count is not None:
+            self.work_units_count = work_units_count
 
     @property
     def admin_id(self):
@@ -125,67 +104,25 @@ class JobDetails(object):
         self._admin_id = admin_id
 
     @property
-    def work_units_count(self):
-        """Gets the work_units_count of this JobDetails.  # noqa: E501
+    def id(self):
+        """Gets the id of this JobDetails.  # noqa: E501
 
 
-        :return: The work_units_count of this JobDetails.  # noqa: E501
-        :rtype: int
-        """
-        return self._work_units_count
-
-    @work_units_count.setter
-    def work_units_count(self, work_units_count):
-        """Sets the work_units_count of this JobDetails.
-
-
-        :param work_units_count: The work_units_count of this JobDetails.  # noqa: E501
-        :type: int
-        """
-
-        self._work_units_count = work_units_count
-
-    @property
-    def name(self):
-        """Gets the name of this JobDetails.  # noqa: E501
-
-
-        :return: The name of this JobDetails.  # noqa: E501
+        :return: The id of this JobDetails.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._id
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this JobDetails.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this JobDetails.
 
 
-        :param name: The name of this JobDetails.  # noqa: E501
+        :param id: The id of this JobDetails.  # noqa: E501
         :type: str
         """
 
-        self._name = name
-
-    @property
-    def status(self):
-        """Gets the status of this JobDetails.  # noqa: E501
-
-
-        :return: The status of this JobDetails.  # noqa: E501
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status):
-        """Sets the status of this JobDetails.
-
-
-        :param status: The status of this JobDetails.  # noqa: E501
-        :type: str
-        """
-
-        self._status = status
+        self._id = id
 
     @property
     def meta(self):
@@ -209,25 +146,25 @@ class JobDetails(object):
         self._meta = meta
 
     @property
-    def updated_at(self):
-        """Gets the updated_at of this JobDetails.  # noqa: E501
+    def name(self):
+        """Gets the name of this JobDetails.  # noqa: E501
 
 
-        :return: The updated_at of this JobDetails.  # noqa: E501
+        :return: The name of this JobDetails.  # noqa: E501
         :rtype: str
         """
-        return self._updated_at
+        return self._name
 
-    @updated_at.setter
-    def updated_at(self, updated_at):
-        """Sets the updated_at of this JobDetails.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this JobDetails.
 
 
-        :param updated_at: The updated_at of this JobDetails.  # noqa: E501
+        :param name: The name of this JobDetails.  # noqa: E501
         :type: str
         """
 
-        self._updated_at = updated_at
+        self._name = name
 
     @property
     def persisted_fields(self):
@@ -249,6 +186,69 @@ class JobDetails(object):
         """
 
         self._persisted_fields = persisted_fields
+
+    @property
+    def status(self):
+        """Gets the status of this JobDetails.  # noqa: E501
+
+
+        :return: The status of this JobDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status):
+        """Sets the status of this JobDetails.
+
+
+        :param status: The status of this JobDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._status = status
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this JobDetails.  # noqa: E501
+
+
+        :return: The updated_at of this JobDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this JobDetails.
+
+
+        :param updated_at: The updated_at of this JobDetails.  # noqa: E501
+        :type: str
+        """
+
+        self._updated_at = updated_at
+
+    @property
+    def work_units_count(self):
+        """Gets the work_units_count of this JobDetails.  # noqa: E501
+
+
+        :return: The work_units_count of this JobDetails.  # noqa: E501
+        :rtype: int
+        """
+        return self._work_units_count
+
+    @work_units_count.setter
+    def work_units_count(self, work_units_count):
+        """Sets the work_units_count of this JobDetails.
+
+
+        :param work_units_count: The work_units_count of this JobDetails.  # noqa: E501
+        :type: int
+        """
+
+        self._work_units_count = work_units_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

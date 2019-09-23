@@ -31,48 +31,48 @@ class CommandslistResults(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
+        'id': 'str',
         'command': 'str',
         'command_type': 'str',
         'launch_type': 'str',
         'listens_to': 'str',
-        'schedule': 'str',
-        'trigger': 'str',
-        'schedule_repeat_type': 'str',
+        'name': 'str',
         'organization': 'str',
-        'id': 'str'
+        'schedule': 'str',
+        'schedule_repeat_type': 'str',
+        'trigger': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
+        'id': '_id',
         'command': 'command',
         'command_type': 'commandType',
         'launch_type': 'launchType',
         'listens_to': 'listensTo',
-        'schedule': 'schedule',
-        'trigger': 'trigger',
-        'schedule_repeat_type': 'scheduleRepeatType',
+        'name': 'name',
         'organization': 'organization',
-        'id': '_id'
+        'schedule': 'schedule',
+        'schedule_repeat_type': 'scheduleRepeatType',
+        'trigger': 'trigger'
     }
 
-    def __init__(self, name=None, command=None, command_type=None, launch_type=None, listens_to=None, schedule=None, trigger=None, schedule_repeat_type=None, organization=None, id=None):  # noqa: E501
+    def __init__(self, id=None, command=None, command_type=None, launch_type=None, listens_to=None, name=None, organization=None, schedule=None, schedule_repeat_type=None, trigger=None):  # noqa: E501
         """CommandslistResults - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
+        self._id = None
         self._command = None
         self._command_type = None
         self._launch_type = None
         self._listens_to = None
-        self._schedule = None
-        self._trigger = None
-        self._schedule_repeat_type = None
+        self._name = None
         self._organization = None
-        self._id = None
+        self._schedule = None
+        self._schedule_repeat_type = None
+        self._trigger = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
+        if id is not None:
+            self.id = id
         if command is not None:
             self.command = command
         if command_type is not None:
@@ -81,39 +81,39 @@ class CommandslistResults(object):
             self.launch_type = launch_type
         if listens_to is not None:
             self.listens_to = listens_to
-        if schedule is not None:
-            self.schedule = schedule
-        if trigger is not None:
-            self.trigger = trigger
-        if schedule_repeat_type is not None:
-            self.schedule_repeat_type = schedule_repeat_type
+        if name is not None:
+            self.name = name
         if organization is not None:
             self.organization = organization
-        if id is not None:
-            self.id = id
+        if schedule is not None:
+            self.schedule = schedule
+        if schedule_repeat_type is not None:
+            self.schedule_repeat_type = schedule_repeat_type
+        if trigger is not None:
+            self.trigger = trigger
 
     @property
-    def name(self):
-        """Gets the name of this CommandslistResults.  # noqa: E501
+    def id(self):
+        """Gets the id of this CommandslistResults.  # noqa: E501
 
-        The name of the Command.  # noqa: E501
+        The ID of the command.  # noqa: E501
 
-        :return: The name of this CommandslistResults.  # noqa: E501
+        :return: The id of this CommandslistResults.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._id
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CommandslistResults.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this CommandslistResults.
 
-        The name of the Command.  # noqa: E501
+        The ID of the command.  # noqa: E501
 
-        :param name: The name of this CommandslistResults.  # noqa: E501
+        :param id: The id of this CommandslistResults.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._id = id
 
     @property
     def command(self):
@@ -208,73 +208,27 @@ class CommandslistResults(object):
         self._listens_to = listens_to
 
     @property
-    def schedule(self):
-        """Gets the schedule of this CommandslistResults.  # noqa: E501
+    def name(self):
+        """Gets the name of this CommandslistResults.  # noqa: E501
 
-        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.   # noqa: E501
+        The name of the Command.  # noqa: E501
 
-        :return: The schedule of this CommandslistResults.  # noqa: E501
+        :return: The name of this CommandslistResults.  # noqa: E501
         :rtype: str
         """
-        return self._schedule
+        return self._name
 
-    @schedule.setter
-    def schedule(self, schedule):
-        """Sets the schedule of this CommandslistResults.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this CommandslistResults.
 
-        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.   # noqa: E501
+        The name of the Command.  # noqa: E501
 
-        :param schedule: The schedule of this CommandslistResults.  # noqa: E501
+        :param name: The name of this CommandslistResults.  # noqa: E501
         :type: str
         """
 
-        self._schedule = schedule
-
-    @property
-    def trigger(self):
-        """Gets the trigger of this CommandslistResults.  # noqa: E501
-
-        Trigger to execute command.  # noqa: E501
-
-        :return: The trigger of this CommandslistResults.  # noqa: E501
-        :rtype: str
-        """
-        return self._trigger
-
-    @trigger.setter
-    def trigger(self, trigger):
-        """Sets the trigger of this CommandslistResults.
-
-        Trigger to execute command.  # noqa: E501
-
-        :param trigger: The trigger of this CommandslistResults.  # noqa: E501
-        :type: str
-        """
-
-        self._trigger = trigger
-
-    @property
-    def schedule_repeat_type(self):
-        """Gets the schedule_repeat_type of this CommandslistResults.  # noqa: E501
-
-        When the command will repeat.  # noqa: E501
-
-        :return: The schedule_repeat_type of this CommandslistResults.  # noqa: E501
-        :rtype: str
-        """
-        return self._schedule_repeat_type
-
-    @schedule_repeat_type.setter
-    def schedule_repeat_type(self, schedule_repeat_type):
-        """Sets the schedule_repeat_type of this CommandslistResults.
-
-        When the command will repeat.  # noqa: E501
-
-        :param schedule_repeat_type: The schedule_repeat_type of this CommandslistResults.  # noqa: E501
-        :type: str
-        """
-
-        self._schedule_repeat_type = schedule_repeat_type
+        self._name = name
 
     @property
     def organization(self):
@@ -300,27 +254,73 @@ class CommandslistResults(object):
         self._organization = organization
 
     @property
-    def id(self):
-        """Gets the id of this CommandslistResults.  # noqa: E501
+    def schedule(self):
+        """Gets the schedule of this CommandslistResults.  # noqa: E501
 
-        The ID of the command.  # noqa: E501
+        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.   # noqa: E501
 
-        :return: The id of this CommandslistResults.  # noqa: E501
+        :return: The schedule of this CommandslistResults.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._schedule
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this CommandslistResults.
+    @schedule.setter
+    def schedule(self, schedule):
+        """Sets the schedule of this CommandslistResults.
 
-        The ID of the command.  # noqa: E501
+        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.   # noqa: E501
 
-        :param id: The id of this CommandslistResults.  # noqa: E501
+        :param schedule: The schedule of this CommandslistResults.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._schedule = schedule
+
+    @property
+    def schedule_repeat_type(self):
+        """Gets the schedule_repeat_type of this CommandslistResults.  # noqa: E501
+
+        When the command will repeat.  # noqa: E501
+
+        :return: The schedule_repeat_type of this CommandslistResults.  # noqa: E501
+        :rtype: str
+        """
+        return self._schedule_repeat_type
+
+    @schedule_repeat_type.setter
+    def schedule_repeat_type(self, schedule_repeat_type):
+        """Sets the schedule_repeat_type of this CommandslistResults.
+
+        When the command will repeat.  # noqa: E501
+
+        :param schedule_repeat_type: The schedule_repeat_type of this CommandslistResults.  # noqa: E501
+        :type: str
+        """
+
+        self._schedule_repeat_type = schedule_repeat_type
+
+    @property
+    def trigger(self):
+        """Gets the trigger of this CommandslistResults.  # noqa: E501
+
+        Trigger to execute command.  # noqa: E501
+
+        :return: The trigger of this CommandslistResults.  # noqa: E501
+        :rtype: str
+        """
+        return self._trigger
+
+    @trigger.setter
+    def trigger(self, trigger):
+        """Sets the trigger of this CommandslistResults.
+
+        Trigger to execute command.  # noqa: E501
+
+        :param trigger: The trigger of this CommandslistResults.  # noqa: E501
+        :type: str
+        """
+
+        self._trigger = trigger
 
     def to_dict(self):
         """Returns the model properties as a dict"""

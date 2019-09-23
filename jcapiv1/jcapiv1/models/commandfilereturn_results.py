@@ -31,54 +31,54 @@ class CommandfilereturnResults(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
+        'id': 'str',
         'destination': 'str',
-        'id': 'str'
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
+        'id': '_id',
         'destination': 'destination',
-        'id': '_id'
+        'name': 'name'
     }
 
-    def __init__(self, name=None, destination=None, id=None):  # noqa: E501
+    def __init__(self, id=None, destination=None, name=None):  # noqa: E501
         """CommandfilereturnResults - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._destination = None
         self._id = None
+        self._destination = None
+        self._name = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
-        if destination is not None:
-            self.destination = destination
         if id is not None:
             self.id = id
+        if destination is not None:
+            self.destination = destination
+        if name is not None:
+            self.name = name
 
     @property
-    def name(self):
-        """Gets the name of this CommandfilereturnResults.  # noqa: E501
+    def id(self):
+        """Gets the id of this CommandfilereturnResults.  # noqa: E501
 
-        The file name.  # noqa: E501
+        The ID of the file.  # noqa: E501
 
-        :return: The name of this CommandfilereturnResults.  # noqa: E501
+        :return: The id of this CommandfilereturnResults.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._id
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this CommandfilereturnResults.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this CommandfilereturnResults.
 
-        The file name.  # noqa: E501
+        The ID of the file.  # noqa: E501
 
-        :param name: The name of this CommandfilereturnResults.  # noqa: E501
+        :param id: The id of this CommandfilereturnResults.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._id = id
 
     @property
     def destination(self):
@@ -104,27 +104,27 @@ class CommandfilereturnResults(object):
         self._destination = destination
 
     @property
-    def id(self):
-        """Gets the id of this CommandfilereturnResults.  # noqa: E501
+    def name(self):
+        """Gets the name of this CommandfilereturnResults.  # noqa: E501
 
-        The ID of the file.  # noqa: E501
+        The file name.  # noqa: E501
 
-        :return: The id of this CommandfilereturnResults.  # noqa: E501
+        :return: The name of this CommandfilereturnResults.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._name
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this CommandfilereturnResults.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this CommandfilereturnResults.
 
-        The ID of the file.  # noqa: E501
+        The file name.  # noqa: E501
 
-        :param id: The id of this CommandfilereturnResults.  # noqa: E501
+        :param name: The name of this CommandfilereturnResults.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

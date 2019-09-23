@@ -31,228 +31,81 @@ class SystemInsightsChromeExtensions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'uid': 'str',
-        'name': 'str',
-        'identifier': 'str',
-        'version': 'str',
-        'description': 'str',
-        'locale': 'str',
-        'update_url': 'str',
         'author': 'str',
-        'persistent': 'int',
+        'collection_time': 'str',
+        'description': 'str',
+        'identifier': 'str',
+        'locale': 'str',
+        'name': 'str',
         'path': 'str',
         'permissions': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'persistent': 'int',
+        'system_id': 'str',
+        'uid': 'str',
+        'update_url': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
-        'uid': 'uid',
-        'name': 'name',
-        'identifier': 'identifier',
-        'version': 'version',
-        'description': 'description',
-        'locale': 'locale',
-        'update_url': 'update_url',
         'author': 'author',
-        'persistent': 'persistent',
+        'collection_time': 'collection_time',
+        'description': 'description',
+        'identifier': 'identifier',
+        'locale': 'locale',
+        'name': 'name',
         'path': 'path',
         'permissions': 'permissions',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'persistent': 'persistent',
+        'system_id': 'system_id',
+        'uid': 'uid',
+        'update_url': 'update_url',
+        'version': 'version'
     }
 
-    def __init__(self, uid=None, name=None, identifier=None, version=None, description=None, locale=None, update_url=None, author=None, persistent=None, path=None, permissions=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, author=None, collection_time=None, description=None, identifier=None, locale=None, name=None, path=None, permissions=None, persistent=None, system_id=None, uid=None, update_url=None, version=None):  # noqa: E501
         """SystemInsightsChromeExtensions - a model defined in Swagger"""  # noqa: E501
 
-        self._uid = None
-        self._name = None
-        self._identifier = None
-        self._version = None
-        self._description = None
-        self._locale = None
-        self._update_url = None
         self._author = None
-        self._persistent = None
+        self._collection_time = None
+        self._description = None
+        self._identifier = None
+        self._locale = None
+        self._name = None
         self._path = None
         self._permissions = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._persistent = None
+        self._system_id = None
+        self._uid = None
+        self._update_url = None
+        self._version = None
         self.discriminator = None
 
-        if uid is not None:
-            self.uid = uid
-        if name is not None:
-            self.name = name
-        if identifier is not None:
-            self.identifier = identifier
-        if version is not None:
-            self.version = version
-        if description is not None:
-            self.description = description
-        if locale is not None:
-            self.locale = locale
-        if update_url is not None:
-            self.update_url = update_url
         if author is not None:
             self.author = author
-        if persistent is not None:
-            self.persistent = persistent
+        if collection_time is not None:
+            self.collection_time = collection_time
+        if description is not None:
+            self.description = description
+        if identifier is not None:
+            self.identifier = identifier
+        if locale is not None:
+            self.locale = locale
+        if name is not None:
+            self.name = name
         if path is not None:
             self.path = path
         if permissions is not None:
             self.permissions = permissions
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
-
-    @property
-    def uid(self):
-        """Gets the uid of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The uid of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._uid
-
-    @uid.setter
-    def uid(self, uid):
-        """Sets the uid of this SystemInsightsChromeExtensions.
-
-
-        :param uid: The uid of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._uid = uid
-
-    @property
-    def name(self):
-        """Gets the name of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The name of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SystemInsightsChromeExtensions.
-
-
-        :param name: The name of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def identifier(self):
-        """Gets the identifier of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The identifier of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this SystemInsightsChromeExtensions.
-
-
-        :param identifier: The identifier of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._identifier = identifier
-
-    @property
-    def version(self):
-        """Gets the version of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The version of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this SystemInsightsChromeExtensions.
-
-
-        :param version: The version of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
-
-    @property
-    def description(self):
-        """Gets the description of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The description of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SystemInsightsChromeExtensions.
-
-
-        :param description: The description of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def locale(self):
-        """Gets the locale of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The locale of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._locale
-
-    @locale.setter
-    def locale(self, locale):
-        """Sets the locale of this SystemInsightsChromeExtensions.
-
-
-        :param locale: The locale of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._locale = locale
-
-    @property
-    def update_url(self):
-        """Gets the update_url of this SystemInsightsChromeExtensions.  # noqa: E501
-
-
-        :return: The update_url of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
-        """
-        return self._update_url
-
-    @update_url.setter
-    def update_url(self, update_url):
-        """Sets the update_url of this SystemInsightsChromeExtensions.
-
-
-        :param update_url: The update_url of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
-        """
-
-        self._update_url = update_url
+        if persistent is not None:
+            self.persistent = persistent
+        if system_id is not None:
+            self.system_id = system_id
+        if uid is not None:
+            self.uid = uid
+        if update_url is not None:
+            self.update_url = update_url
+        if version is not None:
+            self.version = version
 
     @property
     def author(self):
@@ -276,25 +129,109 @@ class SystemInsightsChromeExtensions(object):
         self._author = author
 
     @property
-    def persistent(self):
-        """Gets the persistent of this SystemInsightsChromeExtensions.  # noqa: E501
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsChromeExtensions.  # noqa: E501
 
 
-        :return: The persistent of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: int
+        :return: The collection_time of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
         """
-        return self._persistent
+        return self._collection_time
 
-    @persistent.setter
-    def persistent(self, persistent):
-        """Sets the persistent of this SystemInsightsChromeExtensions.
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsChromeExtensions.
 
 
-        :param persistent: The persistent of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: int
+        :param collection_time: The collection_time of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
         """
 
-        self._persistent = persistent
+        self._collection_time = collection_time
+
+    @property
+    def description(self):
+        """Gets the description of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The description of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SystemInsightsChromeExtensions.
+
+
+        :param description: The description of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The identifier of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this SystemInsightsChromeExtensions.
+
+
+        :param identifier: The identifier of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._identifier = identifier
+
+    @property
+    def locale(self):
+        """Gets the locale of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The locale of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._locale
+
+    @locale.setter
+    def locale(self, locale):
+        """Sets the locale of this SystemInsightsChromeExtensions.
+
+
+        :param locale: The locale of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._locale = locale
+
+    @property
+    def name(self):
+        """Gets the name of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The name of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SystemInsightsChromeExtensions.
+
+
+        :param name: The name of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def path(self):
@@ -339,46 +276,109 @@ class SystemInsightsChromeExtensions(object):
         self._permissions = permissions
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsChromeExtensions.  # noqa: E501
+    def persistent(self):
+        """Gets the persistent of this SystemInsightsChromeExtensions.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsChromeExtensions.  # noqa: E501
-        :rtype: str
+        :return: The persistent of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: int
         """
-        return self._jc_collection_time
+        return self._persistent
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsChromeExtensions.
+    @persistent.setter
+    def persistent(self, persistent):
+        """Sets the persistent of this SystemInsightsChromeExtensions.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsChromeExtensions.  # noqa: E501
-        :type: str
+        :param persistent: The persistent of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: int
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._persistent = persistent
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsChromeExtensions.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsChromeExtensions.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsChromeExtensions.  # noqa: E501
+        :return: The system_id of this SystemInsightsChromeExtensions.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._system_id
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsChromeExtensions.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsChromeExtensions.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsChromeExtensions.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsChromeExtensions.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._system_id = system_id
+
+    @property
+    def uid(self):
+        """Gets the uid of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The uid of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this SystemInsightsChromeExtensions.
+
+
+        :param uid: The uid of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._uid = uid
+
+    @property
+    def update_url(self):
+        """Gets the update_url of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The update_url of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._update_url
+
+    @update_url.setter
+    def update_url(self, update_url):
+        """Sets the update_url of this SystemInsightsChromeExtensions.
+
+
+        :param update_url: The update_url of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._update_url = update_url
+
+    @property
+    def version(self):
+        """Gets the version of this SystemInsightsChromeExtensions.  # noqa: E501
+
+
+        :return: The version of this SystemInsightsChromeExtensions.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this SystemInsightsChromeExtensions.
+
+
+        :param version: The version of this SystemInsightsChromeExtensions.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""

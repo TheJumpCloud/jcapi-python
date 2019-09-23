@@ -32,50 +32,50 @@ class Radiusserverput(object):
     """
     swagger_types = {
         'id': 'str',
-        'network_source_ip': 'str',
+        'mfa': 'str',
         'name': 'str',
+        'network_source_ip': 'str',
         'tag_names': 'list[str]',
         'user_lockout_action': 'str',
-        'user_password_expiration_action': 'str',
-        'mfa': 'str'
+        'user_password_expiration_action': 'str'
     }
 
     attribute_map = {
         'id': '_id',
-        'network_source_ip': 'networkSourceIp',
+        'mfa': 'mfa',
         'name': 'name',
+        'network_source_ip': 'networkSourceIp',
         'tag_names': 'tagNames',
         'user_lockout_action': 'userLockoutAction',
-        'user_password_expiration_action': 'userPasswordExpirationAction',
-        'mfa': 'mfa'
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, id=None, network_source_ip=None, name=None, tag_names=None, user_lockout_action=None, user_password_expiration_action=None, mfa=None):  # noqa: E501
+    def __init__(self, id=None, mfa=None, name=None, network_source_ip=None, tag_names=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """Radiusserverput - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._network_source_ip = None
+        self._mfa = None
         self._name = None
+        self._network_source_ip = None
         self._tag_names = None
         self._user_lockout_action = None
         self._user_password_expiration_action = None
-        self._mfa = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if network_source_ip is not None:
-            self.network_source_ip = network_source_ip
+        if mfa is not None:
+            self.mfa = mfa
         if name is not None:
             self.name = name
+        if network_source_ip is not None:
+            self.network_source_ip = network_source_ip
         if tag_names is not None:
             self.tag_names = tag_names
         if user_lockout_action is not None:
             self.user_lockout_action = user_lockout_action
         if user_password_expiration_action is not None:
             self.user_password_expiration_action = user_password_expiration_action
-        if mfa is not None:
-            self.mfa = mfa
 
     @property
     def id(self):
@@ -99,25 +99,31 @@ class Radiusserverput(object):
         self._id = id
 
     @property
-    def network_source_ip(self):
-        """Gets the network_source_ip of this Radiusserverput.  # noqa: E501
+    def mfa(self):
+        """Gets the mfa of this Radiusserverput.  # noqa: E501
 
 
-        :return: The network_source_ip of this Radiusserverput.  # noqa: E501
+        :return: The mfa of this Radiusserverput.  # noqa: E501
         :rtype: str
         """
-        return self._network_source_ip
+        return self._mfa
 
-    @network_source_ip.setter
-    def network_source_ip(self, network_source_ip):
-        """Sets the network_source_ip of this Radiusserverput.
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Radiusserverput.
 
 
-        :param network_source_ip: The network_source_ip of this Radiusserverput.  # noqa: E501
+        :param mfa: The mfa of this Radiusserverput.  # noqa: E501
         :type: str
         """
+        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
+        if mfa not in allowed_values:
+            raise ValueError(
+                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
+                .format(mfa, allowed_values)
+            )
 
-        self._network_source_ip = network_source_ip
+        self._mfa = mfa
 
     @property
     def name(self):
@@ -139,6 +145,27 @@ class Radiusserverput(object):
         """
 
         self._name = name
+
+    @property
+    def network_source_ip(self):
+        """Gets the network_source_ip of this Radiusserverput.  # noqa: E501
+
+
+        :return: The network_source_ip of this Radiusserverput.  # noqa: E501
+        :rtype: str
+        """
+        return self._network_source_ip
+
+    @network_source_ip.setter
+    def network_source_ip(self, network_source_ip):
+        """Sets the network_source_ip of this Radiusserverput.
+
+
+        :param network_source_ip: The network_source_ip of this Radiusserverput.  # noqa: E501
+        :type: str
+        """
+
+        self._network_source_ip = network_source_ip
 
     @property
     def tag_names(self):
@@ -202,33 +229,6 @@ class Radiusserverput(object):
         """
 
         self._user_password_expiration_action = user_password_expiration_action
-
-    @property
-    def mfa(self):
-        """Gets the mfa of this Radiusserverput.  # noqa: E501
-
-
-        :return: The mfa of this Radiusserverput.  # noqa: E501
-        :rtype: str
-        """
-        return self._mfa
-
-    @mfa.setter
-    def mfa(self, mfa):
-        """Sets the mfa of this Radiusserverput.
-
-
-        :param mfa: The mfa of this Radiusserverput.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
-        if mfa not in allowed_values:
-            raise ValueError(
-                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
-                .format(mfa, allowed_values)
-            )
-
-        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,29 +35,29 @@ class PolicyRequest(object):
     """
     swagger_types = {
         'name': 'str',
-        'values': 'list[PolicyValue]',
-        'template': 'PolicyRequestTemplate'
+        'template': 'PolicyRequestTemplate',
+        'values': 'list[PolicyValue]'
     }
 
     attribute_map = {
         'name': 'name',
-        'values': 'values',
-        'template': 'template'
+        'template': 'template',
+        'values': 'values'
     }
 
-    def __init__(self, name=None, values=None, template=None):  # noqa: E501
+    def __init__(self, name=None, template=None, values=None):  # noqa: E501
         """PolicyRequest - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
-        self._values = None
         self._template = None
+        self._values = None
         self.discriminator = None
 
         self.name = name
-        if values is not None:
-            self.values = values
         if template is not None:
             self.template = template
+        if values is not None:
+            self.values = values
 
     @property
     def name(self):
@@ -85,27 +85,6 @@ class PolicyRequest(object):
         self._name = name
 
     @property
-    def values(self):
-        """Gets the values of this PolicyRequest.  # noqa: E501
-
-
-        :return: The values of this PolicyRequest.  # noqa: E501
-        :rtype: list[PolicyValue]
-        """
-        return self._values
-
-    @values.setter
-    def values(self, values):
-        """Sets the values of this PolicyRequest.
-
-
-        :param values: The values of this PolicyRequest.  # noqa: E501
-        :type: list[PolicyValue]
-        """
-
-        self._values = values
-
-    @property
     def template(self):
         """Gets the template of this PolicyRequest.  # noqa: E501
 
@@ -125,6 +104,27 @@ class PolicyRequest(object):
         """
 
         self._template = template
+
+    @property
+    def values(self):
+        """Gets the values of this PolicyRequest.  # noqa: E501
+
+
+        :return: The values of this PolicyRequest.  # noqa: E501
+        :rtype: list[PolicyValue]
+        """
+        return self._values
+
+    @values.setter
+    def values(self, values):
+        """Sets the values of this PolicyRequest.
+
+
+        :param values: The values of this PolicyRequest.  # noqa: E501
+        :type: list[PolicyValue]
+        """
+
+        self._values = values
 
     def to_dict(self):
         """Returns the model properties as a dict"""

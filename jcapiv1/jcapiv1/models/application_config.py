@@ -16,9 +16,9 @@ import re  # noqa: F401
 
 import six
 
+from jcapiv1.models.application_config_acs_url import ApplicationConfigAcsUrl  # noqa: F401,E501
 from jcapiv1.models.application_config_constant_attributes import ApplicationConfigConstantAttributes  # noqa: F401,E501
 from jcapiv1.models.application_config_database_attributes import ApplicationConfigDatabaseAttributes  # noqa: F401,E501
-from jcapiv1.models.application_config_idp_entity_id import ApplicationConfigIdpEntityId  # noqa: F401,E501
 
 
 class ApplicationConfig(object):
@@ -35,109 +35,46 @@ class ApplicationConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'idp_entity_id': 'ApplicationConfigIdpEntityId',
-        'idp_certificate': 'ApplicationConfigIdpEntityId',
-        'sp_entity_id': 'ApplicationConfigIdpEntityId',
-        'acs_url': 'ApplicationConfigIdpEntityId',
+        'acs_url': 'ApplicationConfigAcsUrl',
         'constant_attributes': 'ApplicationConfigConstantAttributes',
-        'database_attributes': 'ApplicationConfigDatabaseAttributes'
+        'database_attributes': 'ApplicationConfigDatabaseAttributes',
+        'idp_certificate': 'ApplicationConfigAcsUrl',
+        'idp_entity_id': 'ApplicationConfigAcsUrl',
+        'sp_entity_id': 'ApplicationConfigAcsUrl'
     }
 
     attribute_map = {
-        'idp_entity_id': 'idpEntityId',
-        'idp_certificate': 'idpCertificate',
-        'sp_entity_id': 'spEntityId',
         'acs_url': 'acsUrl',
         'constant_attributes': 'constantAttributes',
-        'database_attributes': 'databaseAttributes'
+        'database_attributes': 'databaseAttributes',
+        'idp_certificate': 'idpCertificate',
+        'idp_entity_id': 'idpEntityId',
+        'sp_entity_id': 'spEntityId'
     }
 
-    def __init__(self, idp_entity_id=None, idp_certificate=None, sp_entity_id=None, acs_url=None, constant_attributes=None, database_attributes=None):  # noqa: E501
+    def __init__(self, acs_url=None, constant_attributes=None, database_attributes=None, idp_certificate=None, idp_entity_id=None, sp_entity_id=None):  # noqa: E501
         """ApplicationConfig - a model defined in Swagger"""  # noqa: E501
 
-        self._idp_entity_id = None
-        self._idp_certificate = None
-        self._sp_entity_id = None
         self._acs_url = None
         self._constant_attributes = None
         self._database_attributes = None
+        self._idp_certificate = None
+        self._idp_entity_id = None
+        self._sp_entity_id = None
         self.discriminator = None
 
-        if idp_entity_id is not None:
-            self.idp_entity_id = idp_entity_id
-        if idp_certificate is not None:
-            self.idp_certificate = idp_certificate
-        if sp_entity_id is not None:
-            self.sp_entity_id = sp_entity_id
         if acs_url is not None:
             self.acs_url = acs_url
         if constant_attributes is not None:
             self.constant_attributes = constant_attributes
         if database_attributes is not None:
             self.database_attributes = database_attributes
-
-    @property
-    def idp_entity_id(self):
-        """Gets the idp_entity_id of this ApplicationConfig.  # noqa: E501
-
-
-        :return: The idp_entity_id of this ApplicationConfig.  # noqa: E501
-        :rtype: ApplicationConfigIdpEntityId
-        """
-        return self._idp_entity_id
-
-    @idp_entity_id.setter
-    def idp_entity_id(self, idp_entity_id):
-        """Sets the idp_entity_id of this ApplicationConfig.
-
-
-        :param idp_entity_id: The idp_entity_id of this ApplicationConfig.  # noqa: E501
-        :type: ApplicationConfigIdpEntityId
-        """
-
-        self._idp_entity_id = idp_entity_id
-
-    @property
-    def idp_certificate(self):
-        """Gets the idp_certificate of this ApplicationConfig.  # noqa: E501
-
-
-        :return: The idp_certificate of this ApplicationConfig.  # noqa: E501
-        :rtype: ApplicationConfigIdpEntityId
-        """
-        return self._idp_certificate
-
-    @idp_certificate.setter
-    def idp_certificate(self, idp_certificate):
-        """Sets the idp_certificate of this ApplicationConfig.
-
-
-        :param idp_certificate: The idp_certificate of this ApplicationConfig.  # noqa: E501
-        :type: ApplicationConfigIdpEntityId
-        """
-
-        self._idp_certificate = idp_certificate
-
-    @property
-    def sp_entity_id(self):
-        """Gets the sp_entity_id of this ApplicationConfig.  # noqa: E501
-
-
-        :return: The sp_entity_id of this ApplicationConfig.  # noqa: E501
-        :rtype: ApplicationConfigIdpEntityId
-        """
-        return self._sp_entity_id
-
-    @sp_entity_id.setter
-    def sp_entity_id(self, sp_entity_id):
-        """Sets the sp_entity_id of this ApplicationConfig.
-
-
-        :param sp_entity_id: The sp_entity_id of this ApplicationConfig.  # noqa: E501
-        :type: ApplicationConfigIdpEntityId
-        """
-
-        self._sp_entity_id = sp_entity_id
+        if idp_certificate is not None:
+            self.idp_certificate = idp_certificate
+        if idp_entity_id is not None:
+            self.idp_entity_id = idp_entity_id
+        if sp_entity_id is not None:
+            self.sp_entity_id = sp_entity_id
 
     @property
     def acs_url(self):
@@ -145,7 +82,7 @@ class ApplicationConfig(object):
 
 
         :return: The acs_url of this ApplicationConfig.  # noqa: E501
-        :rtype: ApplicationConfigIdpEntityId
+        :rtype: ApplicationConfigAcsUrl
         """
         return self._acs_url
 
@@ -155,7 +92,7 @@ class ApplicationConfig(object):
 
 
         :param acs_url: The acs_url of this ApplicationConfig.  # noqa: E501
-        :type: ApplicationConfigIdpEntityId
+        :type: ApplicationConfigAcsUrl
         """
 
         self._acs_url = acs_url
@@ -201,6 +138,69 @@ class ApplicationConfig(object):
         """
 
         self._database_attributes = database_attributes
+
+    @property
+    def idp_certificate(self):
+        """Gets the idp_certificate of this ApplicationConfig.  # noqa: E501
+
+
+        :return: The idp_certificate of this ApplicationConfig.  # noqa: E501
+        :rtype: ApplicationConfigAcsUrl
+        """
+        return self._idp_certificate
+
+    @idp_certificate.setter
+    def idp_certificate(self, idp_certificate):
+        """Sets the idp_certificate of this ApplicationConfig.
+
+
+        :param idp_certificate: The idp_certificate of this ApplicationConfig.  # noqa: E501
+        :type: ApplicationConfigAcsUrl
+        """
+
+        self._idp_certificate = idp_certificate
+
+    @property
+    def idp_entity_id(self):
+        """Gets the idp_entity_id of this ApplicationConfig.  # noqa: E501
+
+
+        :return: The idp_entity_id of this ApplicationConfig.  # noqa: E501
+        :rtype: ApplicationConfigAcsUrl
+        """
+        return self._idp_entity_id
+
+    @idp_entity_id.setter
+    def idp_entity_id(self, idp_entity_id):
+        """Sets the idp_entity_id of this ApplicationConfig.
+
+
+        :param idp_entity_id: The idp_entity_id of this ApplicationConfig.  # noqa: E501
+        :type: ApplicationConfigAcsUrl
+        """
+
+        self._idp_entity_id = idp_entity_id
+
+    @property
+    def sp_entity_id(self):
+        """Gets the sp_entity_id of this ApplicationConfig.  # noqa: E501
+
+
+        :return: The sp_entity_id of this ApplicationConfig.  # noqa: E501
+        :rtype: ApplicationConfigAcsUrl
+        """
+        return self._sp_entity_id
+
+    @sp_entity_id.setter
+    def sp_entity_id(self, sp_entity_id):
+        """Sets the sp_entity_id of this ApplicationConfig.
+
+
+        :param sp_entity_id: The sp_entity_id of this ApplicationConfig.  # noqa: E501
+        :type: ApplicationConfigAcsUrl
+        """
+
+        self._sp_entity_id = sp_entity_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

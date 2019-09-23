@@ -31,47 +31,26 @@ class ProviderContact(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'email': 'str'
+        'email': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'email': 'email'
+        'email': 'email',
+        'name': 'name'
     }
 
-    def __init__(self, name=None, email=None):  # noqa: E501
+    def __init__(self, email=None, name=None):  # noqa: E501
         """ProviderContact - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
         self._email = None
+        self._name = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
         if email is not None:
             self.email = email
-
-    @property
-    def name(self):
-        """Gets the name of this ProviderContact.  # noqa: E501
-
-
-        :return: The name of this ProviderContact.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this ProviderContact.
-
-
-        :param name: The name of this ProviderContact.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
+        if name is not None:
+            self.name = name
 
     @property
     def email(self):
@@ -93,6 +72,27 @@ class ProviderContact(object):
         """
 
         self._email = email
+
+    @property
+    def name(self):
+        """Gets the name of this ProviderContact.  # noqa: E501
+
+
+        :return: The name of this ProviderContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this ProviderContact.
+
+
+        :param name: The name of this ProviderContact.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

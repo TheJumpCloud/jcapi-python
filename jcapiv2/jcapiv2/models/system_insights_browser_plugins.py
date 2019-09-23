@@ -31,181 +31,97 @@ class SystemInsightsBrowserPlugins(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'uid': 'str',
-        'name': 'str',
-        'identifier': 'str',
-        'version': 'str',
-        'sdk': 'str',
+        'collection_time': 'str',
         'description': 'str',
         'development_region': 'str',
+        'disabled': 'int',
+        'identifier': 'str',
+        'name': 'str',
         'native': 'int',
         'path': 'str',
-        'disabled': 'int',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'sdk': 'str',
+        'system_id': 'str',
+        'uid': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
-        'uid': 'uid',
-        'name': 'name',
-        'identifier': 'identifier',
-        'version': 'version',
-        'sdk': 'sdk',
+        'collection_time': 'collection_time',
         'description': 'description',
         'development_region': 'development_region',
+        'disabled': 'disabled',
+        'identifier': 'identifier',
+        'name': 'name',
         'native': 'native',
         'path': 'path',
-        'disabled': 'disabled',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'sdk': 'sdk',
+        'system_id': 'system_id',
+        'uid': 'uid',
+        'version': 'version'
     }
 
-    def __init__(self, uid=None, name=None, identifier=None, version=None, sdk=None, description=None, development_region=None, native=None, path=None, disabled=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, collection_time=None, description=None, development_region=None, disabled=None, identifier=None, name=None, native=None, path=None, sdk=None, system_id=None, uid=None, version=None):  # noqa: E501
         """SystemInsightsBrowserPlugins - a model defined in Swagger"""  # noqa: E501
 
-        self._uid = None
-        self._name = None
-        self._identifier = None
-        self._version = None
-        self._sdk = None
+        self._collection_time = None
         self._description = None
         self._development_region = None
+        self._disabled = None
+        self._identifier = None
+        self._name = None
         self._native = None
         self._path = None
-        self._disabled = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._sdk = None
+        self._system_id = None
+        self._uid = None
+        self._version = None
         self.discriminator = None
 
-        if uid is not None:
-            self.uid = uid
-        if name is not None:
-            self.name = name
-        if identifier is not None:
-            self.identifier = identifier
-        if version is not None:
-            self.version = version
-        if sdk is not None:
-            self.sdk = sdk
+        if collection_time is not None:
+            self.collection_time = collection_time
         if description is not None:
             self.description = description
         if development_region is not None:
             self.development_region = development_region
+        if disabled is not None:
+            self.disabled = disabled
+        if identifier is not None:
+            self.identifier = identifier
+        if name is not None:
+            self.name = name
         if native is not None:
             self.native = native
         if path is not None:
             self.path = path
-        if disabled is not None:
-            self.disabled = disabled
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if sdk is not None:
+            self.sdk = sdk
+        if system_id is not None:
+            self.system_id = system_id
+        if uid is not None:
+            self.uid = uid
+        if version is not None:
+            self.version = version
 
     @property
-    def uid(self):
-        """Gets the uid of this SystemInsightsBrowserPlugins.  # noqa: E501
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsBrowserPlugins.  # noqa: E501
 
 
-        :return: The uid of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :return: The collection_time of this SystemInsightsBrowserPlugins.  # noqa: E501
         :rtype: str
         """
-        return self._uid
+        return self._collection_time
 
-    @uid.setter
-    def uid(self, uid):
-        """Sets the uid of this SystemInsightsBrowserPlugins.
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsBrowserPlugins.
 
 
-        :param uid: The uid of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :param collection_time: The collection_time of this SystemInsightsBrowserPlugins.  # noqa: E501
         :type: str
         """
 
-        self._uid = uid
-
-    @property
-    def name(self):
-        """Gets the name of this SystemInsightsBrowserPlugins.  # noqa: E501
-
-
-        :return: The name of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SystemInsightsBrowserPlugins.
-
-
-        :param name: The name of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def identifier(self):
-        """Gets the identifier of this SystemInsightsBrowserPlugins.  # noqa: E501
-
-
-        :return: The identifier of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :rtype: str
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this SystemInsightsBrowserPlugins.
-
-
-        :param identifier: The identifier of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :type: str
-        """
-
-        self._identifier = identifier
-
-    @property
-    def version(self):
-        """Gets the version of this SystemInsightsBrowserPlugins.  # noqa: E501
-
-
-        :return: The version of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this SystemInsightsBrowserPlugins.
-
-
-        :param version: The version of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
-
-    @property
-    def sdk(self):
-        """Gets the sdk of this SystemInsightsBrowserPlugins.  # noqa: E501
-
-
-        :return: The sdk of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :rtype: str
-        """
-        return self._sdk
-
-    @sdk.setter
-    def sdk(self, sdk):
-        """Sets the sdk of this SystemInsightsBrowserPlugins.
-
-
-        :param sdk: The sdk of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :type: str
-        """
-
-        self._sdk = sdk
+        self._collection_time = collection_time
 
     @property
     def description(self):
@@ -250,6 +166,69 @@ class SystemInsightsBrowserPlugins(object):
         self._development_region = development_region
 
     @property
+    def disabled(self):
+        """Gets the disabled of this SystemInsightsBrowserPlugins.  # noqa: E501
+
+
+        :return: The disabled of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :rtype: int
+        """
+        return self._disabled
+
+    @disabled.setter
+    def disabled(self, disabled):
+        """Sets the disabled of this SystemInsightsBrowserPlugins.
+
+
+        :param disabled: The disabled of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :type: int
+        """
+
+        self._disabled = disabled
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this SystemInsightsBrowserPlugins.  # noqa: E501
+
+
+        :return: The identifier of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this SystemInsightsBrowserPlugins.
+
+
+        :param identifier: The identifier of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :type: str
+        """
+
+        self._identifier = identifier
+
+    @property
+    def name(self):
+        """Gets the name of this SystemInsightsBrowserPlugins.  # noqa: E501
+
+
+        :return: The name of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SystemInsightsBrowserPlugins.
+
+
+        :param name: The name of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
     def native(self):
         """Gets the native of this SystemInsightsBrowserPlugins.  # noqa: E501
 
@@ -292,67 +271,88 @@ class SystemInsightsBrowserPlugins(object):
         self._path = path
 
     @property
-    def disabled(self):
-        """Gets the disabled of this SystemInsightsBrowserPlugins.  # noqa: E501
+    def sdk(self):
+        """Gets the sdk of this SystemInsightsBrowserPlugins.  # noqa: E501
 
 
-        :return: The disabled of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :rtype: int
-        """
-        return self._disabled
-
-    @disabled.setter
-    def disabled(self, disabled):
-        """Sets the disabled of this SystemInsightsBrowserPlugins.
-
-
-        :param disabled: The disabled of this SystemInsightsBrowserPlugins.  # noqa: E501
-        :type: int
-        """
-
-        self._disabled = disabled
-
-    @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsBrowserPlugins.  # noqa: E501
-
-
-        :return: The jc_collection_time of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :return: The sdk of this SystemInsightsBrowserPlugins.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._sdk
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsBrowserPlugins.
+    @sdk.setter
+    def sdk(self, sdk):
+        """Sets the sdk of this SystemInsightsBrowserPlugins.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :param sdk: The sdk of this SystemInsightsBrowserPlugins.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._sdk = sdk
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsBrowserPlugins.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsBrowserPlugins.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :return: The system_id of this SystemInsightsBrowserPlugins.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._system_id
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsBrowserPlugins.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsBrowserPlugins.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsBrowserPlugins.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._system_id = system_id
+
+    @property
+    def uid(self):
+        """Gets the uid of this SystemInsightsBrowserPlugins.  # noqa: E501
+
+
+        :return: The uid of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this SystemInsightsBrowserPlugins.
+
+
+        :param uid: The uid of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :type: str
+        """
+
+        self._uid = uid
+
+    @property
+    def version(self):
+        """Gets the version of this SystemInsightsBrowserPlugins.  # noqa: E501
+
+
+        :return: The version of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this SystemInsightsBrowserPlugins.
+
+
+        :param version: The version of this SystemInsightsBrowserPlugins.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """Returns the model properties as a dict"""
