@@ -33,54 +33,52 @@ class CommandresultResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
+        'data': 'CommandresultResponseData',
         'error': 'str',
-        'data': 'CommandresultResponseData'
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
+        'data': 'data',
         'error': 'error',
-        'data': 'data'
+        'id': 'id'
     }
 
-    def __init__(self, id=None, error=None, data=None):  # noqa: E501
+    def __init__(self, data=None, error=None, id=None):  # noqa: E501
         """CommandresultResponse - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
-        self._error = None
         self._data = None
+        self._error = None
+        self._id = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if error is not None:
-            self.error = error
         if data is not None:
             self.data = data
+        if error is not None:
+            self.error = error
+        if id is not None:
+            self.id = id
 
     @property
-    def id(self):
-        """Gets the id of this CommandresultResponse.  # noqa: E501
+    def data(self):
+        """Gets the data of this CommandresultResponse.  # noqa: E501
 
-        ID of the response.  # noqa: E501
 
-        :return: The id of this CommandresultResponse.  # noqa: E501
-        :rtype: str
+        :return: The data of this CommandresultResponse.  # noqa: E501
+        :rtype: CommandresultResponseData
         """
-        return self._id
+        return self._data
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this CommandresultResponse.
+    @data.setter
+    def data(self, data):
+        """Sets the data of this CommandresultResponse.
 
-        ID of the response.  # noqa: E501
 
-        :param id: The id of this CommandresultResponse.  # noqa: E501
-        :type: str
+        :param data: The data of this CommandresultResponse.  # noqa: E501
+        :type: CommandresultResponseData
         """
 
-        self._id = id
+        self._data = data
 
     @property
     def error(self):
@@ -106,25 +104,27 @@ class CommandresultResponse(object):
         self._error = error
 
     @property
-    def data(self):
-        """Gets the data of this CommandresultResponse.  # noqa: E501
+    def id(self):
+        """Gets the id of this CommandresultResponse.  # noqa: E501
 
+        ID of the response.  # noqa: E501
 
-        :return: The data of this CommandresultResponse.  # noqa: E501
-        :rtype: CommandresultResponseData
+        :return: The id of this CommandresultResponse.  # noqa: E501
+        :rtype: str
         """
-        return self._data
+        return self._id
 
-    @data.setter
-    def data(self, data):
-        """Sets the data of this CommandresultResponse.
+    @id.setter
+    def id(self, id):
+        """Sets the id of this CommandresultResponse.
 
+        ID of the response.  # noqa: E501
 
-        :param data: The data of this CommandresultResponse.  # noqa: E501
-        :type: CommandresultResponseData
+        :param id: The id of this CommandresultResponse.  # noqa: E501
+        :type: str
         """
 
-        self._data = data
+        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

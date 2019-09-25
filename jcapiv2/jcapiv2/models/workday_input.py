@@ -33,52 +33,52 @@ class WorkdayInput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'report_url': 'str',
+        'auth': 'AuthInput',
         'name': 'str',
-        'auth': 'AuthInput'
+        'report_url': 'str'
     }
 
     attribute_map = {
-        'report_url': 'reportUrl',
+        'auth': 'auth',
         'name': 'name',
-        'auth': 'auth'
+        'report_url': 'reportUrl'
     }
 
-    def __init__(self, report_url=None, name=None, auth=None):  # noqa: E501
+    def __init__(self, auth=None, name=None, report_url=None):  # noqa: E501
         """WorkdayInput - a model defined in Swagger"""  # noqa: E501
 
-        self._report_url = None
-        self._name = None
         self._auth = None
+        self._name = None
+        self._report_url = None
         self.discriminator = None
 
-        if report_url is not None:
-            self.report_url = report_url
-        if name is not None:
-            self.name = name
         if auth is not None:
             self.auth = auth
+        if name is not None:
+            self.name = name
+        if report_url is not None:
+            self.report_url = report_url
 
     @property
-    def report_url(self):
-        """Gets the report_url of this WorkdayInput.  # noqa: E501
+    def auth(self):
+        """Gets the auth of this WorkdayInput.  # noqa: E501
 
 
-        :return: The report_url of this WorkdayInput.  # noqa: E501
-        :rtype: str
+        :return: The auth of this WorkdayInput.  # noqa: E501
+        :rtype: AuthInput
         """
-        return self._report_url
+        return self._auth
 
-    @report_url.setter
-    def report_url(self, report_url):
-        """Sets the report_url of this WorkdayInput.
+    @auth.setter
+    def auth(self, auth):
+        """Sets the auth of this WorkdayInput.
 
 
-        :param report_url: The report_url of this WorkdayInput.  # noqa: E501
-        :type: str
+        :param auth: The auth of this WorkdayInput.  # noqa: E501
+        :type: AuthInput
         """
 
-        self._report_url = report_url
+        self._auth = auth
 
     @property
     def name(self):
@@ -102,25 +102,25 @@ class WorkdayInput(object):
         self._name = name
 
     @property
-    def auth(self):
-        """Gets the auth of this WorkdayInput.  # noqa: E501
+    def report_url(self):
+        """Gets the report_url of this WorkdayInput.  # noqa: E501
 
 
-        :return: The auth of this WorkdayInput.  # noqa: E501
-        :rtype: AuthInput
+        :return: The report_url of this WorkdayInput.  # noqa: E501
+        :rtype: str
         """
-        return self._auth
+        return self._report_url
 
-    @auth.setter
-    def auth(self, auth):
-        """Sets the auth of this WorkdayInput.
+    @report_url.setter
+    def report_url(self, report_url):
+        """Sets the report_url of this WorkdayInput.
 
 
-        :param auth: The auth of this WorkdayInput.  # noqa: E501
-        :type: AuthInput
+        :param report_url: The report_url of this WorkdayInput.  # noqa: E501
+        :type: str
         """
 
-        self._auth = auth
+        self._report_url = report_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

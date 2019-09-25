@@ -33,8 +33,8 @@ class PolicyTemplateConfigField(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'display_type': 'str',
+        'id': 'str',
         'label': 'str',
         'name': 'str',
         'position': 'float',
@@ -44,8 +44,8 @@ class PolicyTemplateConfigField(object):
     }
 
     attribute_map = {
-        'id': 'id',
         'display_type': 'displayType',
+        'id': 'id',
         'label': 'label',
         'name': 'name',
         'position': 'position',
@@ -54,11 +54,11 @@ class PolicyTemplateConfigField(object):
         'tooltip': 'tooltip'
     }
 
-    def __init__(self, id=None, display_type=None, label=None, name=None, position=None, read_only=None, required=None, tooltip=None):  # noqa: E501
+    def __init__(self, display_type=None, id=None, label=None, name=None, position=None, read_only=None, required=None, tooltip=None):  # noqa: E501
         """PolicyTemplateConfigField - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
         self._display_type = None
+        self._id = None
         self._label = None
         self._name = None
         self._position = None
@@ -67,9 +67,9 @@ class PolicyTemplateConfigField(object):
         self._tooltip = None
         self.discriminator = None
 
-        self.id = id
         if display_type is not None:
             self.display_type = display_type
+        self.id = id
         if label is not None:
             self.label = label
         self.name = name
@@ -81,31 +81,6 @@ class PolicyTemplateConfigField(object):
             self.required = required
         if tooltip is not None:
             self.tooltip = tooltip
-
-    @property
-    def id(self):
-        """Gets the id of this PolicyTemplateConfigField.  # noqa: E501
-
-        ObjectId uniquely identifying a Policy Template Configuration Field  # noqa: E501
-
-        :return: The id of this PolicyTemplateConfigField.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PolicyTemplateConfigField.
-
-        ObjectId uniquely identifying a Policy Template Configuration Field  # noqa: E501
-
-        :param id: The id of this PolicyTemplateConfigField.  # noqa: E501
-        :type: str
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
 
     @property
     def display_type(self):
@@ -135,6 +110,31 @@ class PolicyTemplateConfigField(object):
             )
 
         self._display_type = display_type
+
+    @property
+    def id(self):
+        """Gets the id of this PolicyTemplateConfigField.  # noqa: E501
+
+        ObjectId uniquely identifying a Policy Template Configuration Field  # noqa: E501
+
+        :return: The id of this PolicyTemplateConfigField.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PolicyTemplateConfigField.
+
+        ObjectId uniquely identifying a Policy Template Configuration Field  # noqa: E501
+
+        :param id: The id of this PolicyTemplateConfigField.  # noqa: E501
+        :type: str
+        """
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
 
     @property
     def label(self):

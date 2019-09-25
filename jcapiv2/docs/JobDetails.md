@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** |  | [optional] 
 **admin_id** | **str** |  | [optional] 
-**work_units_count** | **int** |  | [optional] 
-**name** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**id** | **str** |  | [optional] 
 **meta** | **object** |  | [optional] 
-**updated_at** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
 **persisted_fields** | **list[str]** |  | [optional] 
+**status** | **str** |  | [optional] 
+**updated_at** | **str** |  | [optional] 
+**work_units_count** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

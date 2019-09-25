@@ -31,82 +31,61 @@ class SystemInsightsInterfaceAddresses(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'interface': 'str',
         'address': 'str',
-        'mask': 'str',
         'broadcast': 'str',
-        'point_to_point': 'str',
-        'type': 'str',
+        'collection_time': 'str',
         'friendly_name': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'interface': 'str',
+        'mask': 'str',
+        'point_to_point': 'str',
+        'system_id': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'interface': 'interface',
         'address': 'address',
-        'mask': 'mask',
         'broadcast': 'broadcast',
-        'point_to_point': 'point_to_point',
-        'type': 'type',
+        'collection_time': 'collection_time',
         'friendly_name': 'friendly_name',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'interface': 'interface',
+        'mask': 'mask',
+        'point_to_point': 'point_to_point',
+        'system_id': 'system_id',
+        'type': 'type'
     }
 
-    def __init__(self, interface=None, address=None, mask=None, broadcast=None, point_to_point=None, type=None, friendly_name=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, address=None, broadcast=None, collection_time=None, friendly_name=None, interface=None, mask=None, point_to_point=None, system_id=None, type=None):  # noqa: E501
         """SystemInsightsInterfaceAddresses - a model defined in Swagger"""  # noqa: E501
 
-        self._interface = None
         self._address = None
-        self._mask = None
         self._broadcast = None
-        self._point_to_point = None
-        self._type = None
+        self._collection_time = None
         self._friendly_name = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._interface = None
+        self._mask = None
+        self._point_to_point = None
+        self._system_id = None
+        self._type = None
         self.discriminator = None
 
-        if interface is not None:
-            self.interface = interface
         if address is not None:
             self.address = address
-        if mask is not None:
-            self.mask = mask
         if broadcast is not None:
             self.broadcast = broadcast
-        if point_to_point is not None:
-            self.point_to_point = point_to_point
-        if type is not None:
-            self.type = type
+        if collection_time is not None:
+            self.collection_time = collection_time
         if friendly_name is not None:
             self.friendly_name = friendly_name
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
-
-    @property
-    def interface(self):
-        """Gets the interface of this SystemInsightsInterfaceAddresses.  # noqa: E501
-
-
-        :return: The interface of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :rtype: str
-        """
-        return self._interface
-
-    @interface.setter
-    def interface(self, interface):
-        """Sets the interface of this SystemInsightsInterfaceAddresses.
-
-
-        :param interface: The interface of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :type: str
-        """
-
-        self._interface = interface
+        if interface is not None:
+            self.interface = interface
+        if mask is not None:
+            self.mask = mask
+        if point_to_point is not None:
+            self.point_to_point = point_to_point
+        if system_id is not None:
+            self.system_id = system_id
+        if type is not None:
+            self.type = type
 
     @property
     def address(self):
@@ -130,27 +109,6 @@ class SystemInsightsInterfaceAddresses(object):
         self._address = address
 
     @property
-    def mask(self):
-        """Gets the mask of this SystemInsightsInterfaceAddresses.  # noqa: E501
-
-
-        :return: The mask of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :rtype: str
-        """
-        return self._mask
-
-    @mask.setter
-    def mask(self, mask):
-        """Sets the mask of this SystemInsightsInterfaceAddresses.
-
-
-        :param mask: The mask of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :type: str
-        """
-
-        self._mask = mask
-
-    @property
     def broadcast(self):
         """Gets the broadcast of this SystemInsightsInterfaceAddresses.  # noqa: E501
 
@@ -172,46 +130,25 @@ class SystemInsightsInterfaceAddresses(object):
         self._broadcast = broadcast
 
     @property
-    def point_to_point(self):
-        """Gets the point_to_point of this SystemInsightsInterfaceAddresses.  # noqa: E501
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsInterfaceAddresses.  # noqa: E501
 
 
-        :return: The point_to_point of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :return: The collection_time of this SystemInsightsInterfaceAddresses.  # noqa: E501
         :rtype: str
         """
-        return self._point_to_point
+        return self._collection_time
 
-    @point_to_point.setter
-    def point_to_point(self, point_to_point):
-        """Sets the point_to_point of this SystemInsightsInterfaceAddresses.
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsInterfaceAddresses.
 
 
-        :param point_to_point: The point_to_point of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :param collection_time: The collection_time of this SystemInsightsInterfaceAddresses.  # noqa: E501
         :type: str
         """
 
-        self._point_to_point = point_to_point
-
-    @property
-    def type(self):
-        """Gets the type of this SystemInsightsInterfaceAddresses.  # noqa: E501
-
-
-        :return: The type of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SystemInsightsInterfaceAddresses.
-
-
-        :param type: The type of this SystemInsightsInterfaceAddresses.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
+        self._collection_time = collection_time
 
     @property
     def friendly_name(self):
@@ -235,46 +172,109 @@ class SystemInsightsInterfaceAddresses(object):
         self._friendly_name = friendly_name
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsInterfaceAddresses.  # noqa: E501
+    def interface(self):
+        """Gets the interface of this SystemInsightsInterfaceAddresses.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :return: The interface of this SystemInsightsInterfaceAddresses.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._interface
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsInterfaceAddresses.
+    @interface.setter
+    def interface(self, interface):
+        """Sets the interface of this SystemInsightsInterfaceAddresses.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :param interface: The interface of this SystemInsightsInterfaceAddresses.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._interface = interface
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
+    def mask(self):
+        """Gets the mask of this SystemInsightsInterfaceAddresses.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :return: The mask of this SystemInsightsInterfaceAddresses.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._mask
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsInterfaceAddresses.
+    @mask.setter
+    def mask(self, mask):
+        """Sets the mask of this SystemInsightsInterfaceAddresses.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :param mask: The mask of this SystemInsightsInterfaceAddresses.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._mask = mask
+
+    @property
+    def point_to_point(self):
+        """Gets the point_to_point of this SystemInsightsInterfaceAddresses.  # noqa: E501
+
+
+        :return: The point_to_point of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :rtype: str
+        """
+        return self._point_to_point
+
+    @point_to_point.setter
+    def point_to_point(self, point_to_point):
+        """Sets the point_to_point of this SystemInsightsInterfaceAddresses.
+
+
+        :param point_to_point: The point_to_point of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :type: str
+        """
+
+        self._point_to_point = point_to_point
+
+    @property
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
+
+
+        :return: The system_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :rtype: str
+        """
+        return self._system_id
+
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsInterfaceAddresses.
+
+
+        :param system_id: The system_id of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :type: str
+        """
+
+        self._system_id = system_id
+
+    @property
+    def type(self):
+        """Gets the type of this SystemInsightsInterfaceAddresses.  # noqa: E501
+
+
+        :return: The type of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SystemInsightsInterfaceAddresses.
+
+
+        :param type: The type of this SystemInsightsInterfaceAddresses.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

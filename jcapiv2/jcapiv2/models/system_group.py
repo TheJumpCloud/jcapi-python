@@ -32,30 +32,30 @@ class SystemGroup(object):
     """
     swagger_types = {
         'id': 'str',
-        'type': 'str',
-        'name': 'str'
+        'name': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'type': 'type',
-        'name': 'name'
+        'name': 'name',
+        'type': 'type'
     }
 
-    def __init__(self, id=None, type=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None):  # noqa: E501
         """SystemGroup - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._type = None
         self._name = None
+        self._type = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if type is not None:
-            self.type = type
         if name is not None:
             self.name = name
+        if type is not None:
+            self.type = type
 
     @property
     def id(self):
@@ -79,6 +79,29 @@ class SystemGroup(object):
         """
 
         self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this SystemGroup.  # noqa: E501
+
+        Display name of a System Group.  # noqa: E501
+
+        :return: The name of this SystemGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SystemGroup.
+
+        Display name of a System Group.  # noqa: E501
+
+        :param name: The name of this SystemGroup.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def type(self):
@@ -108,29 +131,6 @@ class SystemGroup(object):
             )
 
         self._type = type
-
-    @property
-    def name(self):
-        """Gets the name of this SystemGroup.  # noqa: E501
-
-        Display name of a System Group.  # noqa: E501
-
-        :return: The name of this SystemGroup.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SystemGroup.
-
-        Display name of a System Group.  # noqa: E501
-
-        :param name: The name of this SystemGroup.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

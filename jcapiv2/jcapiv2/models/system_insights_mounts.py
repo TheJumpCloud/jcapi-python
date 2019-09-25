@@ -31,81 +31,186 @@ class SystemInsightsMounts(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'blocks': 'str',
+        'blocks_available': 'str',
+        'blocks_free': 'str',
+        'blocks_size': 'str',
+        'collection_time': 'str',
         'device': 'str',
         'device_alias': 'str',
-        'path': 'str',
-        'type': 'str',
-        'blocks_size': 'str',
-        'blocks': 'str',
-        'blocks_free': 'str',
-        'blocks_available': 'str',
+        'flags': 'str',
         'inodes': 'str',
         'inodes_free': 'str',
-        'flags': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'path': 'str',
+        'system_id': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
+        'blocks': 'blocks',
+        'blocks_available': 'blocks_available',
+        'blocks_free': 'blocks_free',
+        'blocks_size': 'blocks_size',
+        'collection_time': 'collection_time',
         'device': 'device',
         'device_alias': 'device_alias',
-        'path': 'path',
-        'type': 'type',
-        'blocks_size': 'blocks_size',
-        'blocks': 'blocks',
-        'blocks_free': 'blocks_free',
-        'blocks_available': 'blocks_available',
+        'flags': 'flags',
         'inodes': 'inodes',
         'inodes_free': 'inodes_free',
-        'flags': 'flags',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'path': 'path',
+        'system_id': 'system_id',
+        'type': 'type'
     }
 
-    def __init__(self, device=None, device_alias=None, path=None, type=None, blocks_size=None, blocks=None, blocks_free=None, blocks_available=None, inodes=None, inodes_free=None, flags=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, blocks=None, blocks_available=None, blocks_free=None, blocks_size=None, collection_time=None, device=None, device_alias=None, flags=None, inodes=None, inodes_free=None, path=None, system_id=None, type=None):  # noqa: E501
         """SystemInsightsMounts - a model defined in Swagger"""  # noqa: E501
 
+        self._blocks = None
+        self._blocks_available = None
+        self._blocks_free = None
+        self._blocks_size = None
+        self._collection_time = None
         self._device = None
         self._device_alias = None
-        self._path = None
-        self._type = None
-        self._blocks_size = None
-        self._blocks = None
-        self._blocks_free = None
-        self._blocks_available = None
+        self._flags = None
         self._inodes = None
         self._inodes_free = None
-        self._flags = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._path = None
+        self._system_id = None
+        self._type = None
         self.discriminator = None
 
+        if blocks is not None:
+            self.blocks = blocks
+        if blocks_available is not None:
+            self.blocks_available = blocks_available
+        if blocks_free is not None:
+            self.blocks_free = blocks_free
+        if blocks_size is not None:
+            self.blocks_size = blocks_size
+        if collection_time is not None:
+            self.collection_time = collection_time
         if device is not None:
             self.device = device
         if device_alias is not None:
             self.device_alias = device_alias
-        if path is not None:
-            self.path = path
-        if type is not None:
-            self.type = type
-        if blocks_size is not None:
-            self.blocks_size = blocks_size
-        if blocks is not None:
-            self.blocks = blocks
-        if blocks_free is not None:
-            self.blocks_free = blocks_free
-        if blocks_available is not None:
-            self.blocks_available = blocks_available
+        if flags is not None:
+            self.flags = flags
         if inodes is not None:
             self.inodes = inodes
         if inodes_free is not None:
             self.inodes_free = inodes_free
-        if flags is not None:
-            self.flags = flags
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if path is not None:
+            self.path = path
+        if system_id is not None:
+            self.system_id = system_id
+        if type is not None:
+            self.type = type
+
+    @property
+    def blocks(self):
+        """Gets the blocks of this SystemInsightsMounts.  # noqa: E501
+
+
+        :return: The blocks of this SystemInsightsMounts.  # noqa: E501
+        :rtype: str
+        """
+        return self._blocks
+
+    @blocks.setter
+    def blocks(self, blocks):
+        """Sets the blocks of this SystemInsightsMounts.
+
+
+        :param blocks: The blocks of this SystemInsightsMounts.  # noqa: E501
+        :type: str
+        """
+
+        self._blocks = blocks
+
+    @property
+    def blocks_available(self):
+        """Gets the blocks_available of this SystemInsightsMounts.  # noqa: E501
+
+
+        :return: The blocks_available of this SystemInsightsMounts.  # noqa: E501
+        :rtype: str
+        """
+        return self._blocks_available
+
+    @blocks_available.setter
+    def blocks_available(self, blocks_available):
+        """Sets the blocks_available of this SystemInsightsMounts.
+
+
+        :param blocks_available: The blocks_available of this SystemInsightsMounts.  # noqa: E501
+        :type: str
+        """
+
+        self._blocks_available = blocks_available
+
+    @property
+    def blocks_free(self):
+        """Gets the blocks_free of this SystemInsightsMounts.  # noqa: E501
+
+
+        :return: The blocks_free of this SystemInsightsMounts.  # noqa: E501
+        :rtype: str
+        """
+        return self._blocks_free
+
+    @blocks_free.setter
+    def blocks_free(self, blocks_free):
+        """Sets the blocks_free of this SystemInsightsMounts.
+
+
+        :param blocks_free: The blocks_free of this SystemInsightsMounts.  # noqa: E501
+        :type: str
+        """
+
+        self._blocks_free = blocks_free
+
+    @property
+    def blocks_size(self):
+        """Gets the blocks_size of this SystemInsightsMounts.  # noqa: E501
+
+
+        :return: The blocks_size of this SystemInsightsMounts.  # noqa: E501
+        :rtype: str
+        """
+        return self._blocks_size
+
+    @blocks_size.setter
+    def blocks_size(self, blocks_size):
+        """Sets the blocks_size of this SystemInsightsMounts.
+
+
+        :param blocks_size: The blocks_size of this SystemInsightsMounts.  # noqa: E501
+        :type: str
+        """
+
+        self._blocks_size = blocks_size
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsMounts.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsMounts.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsMounts.
+
+
+        :param collection_time: The collection_time of this SystemInsightsMounts.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
 
     @property
     def device(self):
@@ -150,130 +255,25 @@ class SystemInsightsMounts(object):
         self._device_alias = device_alias
 
     @property
-    def path(self):
-        """Gets the path of this SystemInsightsMounts.  # noqa: E501
+    def flags(self):
+        """Gets the flags of this SystemInsightsMounts.  # noqa: E501
 
 
-        :return: The path of this SystemInsightsMounts.  # noqa: E501
+        :return: The flags of this SystemInsightsMounts.  # noqa: E501
         :rtype: str
         """
-        return self._path
+        return self._flags
 
-    @path.setter
-    def path(self, path):
-        """Sets the path of this SystemInsightsMounts.
+    @flags.setter
+    def flags(self, flags):
+        """Sets the flags of this SystemInsightsMounts.
 
 
-        :param path: The path of this SystemInsightsMounts.  # noqa: E501
+        :param flags: The flags of this SystemInsightsMounts.  # noqa: E501
         :type: str
         """
 
-        self._path = path
-
-    @property
-    def type(self):
-        """Gets the type of this SystemInsightsMounts.  # noqa: E501
-
-
-        :return: The type of this SystemInsightsMounts.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SystemInsightsMounts.
-
-
-        :param type: The type of this SystemInsightsMounts.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
-
-    @property
-    def blocks_size(self):
-        """Gets the blocks_size of this SystemInsightsMounts.  # noqa: E501
-
-
-        :return: The blocks_size of this SystemInsightsMounts.  # noqa: E501
-        :rtype: str
-        """
-        return self._blocks_size
-
-    @blocks_size.setter
-    def blocks_size(self, blocks_size):
-        """Sets the blocks_size of this SystemInsightsMounts.
-
-
-        :param blocks_size: The blocks_size of this SystemInsightsMounts.  # noqa: E501
-        :type: str
-        """
-
-        self._blocks_size = blocks_size
-
-    @property
-    def blocks(self):
-        """Gets the blocks of this SystemInsightsMounts.  # noqa: E501
-
-
-        :return: The blocks of this SystemInsightsMounts.  # noqa: E501
-        :rtype: str
-        """
-        return self._blocks
-
-    @blocks.setter
-    def blocks(self, blocks):
-        """Sets the blocks of this SystemInsightsMounts.
-
-
-        :param blocks: The blocks of this SystemInsightsMounts.  # noqa: E501
-        :type: str
-        """
-
-        self._blocks = blocks
-
-    @property
-    def blocks_free(self):
-        """Gets the blocks_free of this SystemInsightsMounts.  # noqa: E501
-
-
-        :return: The blocks_free of this SystemInsightsMounts.  # noqa: E501
-        :rtype: str
-        """
-        return self._blocks_free
-
-    @blocks_free.setter
-    def blocks_free(self, blocks_free):
-        """Sets the blocks_free of this SystemInsightsMounts.
-
-
-        :param blocks_free: The blocks_free of this SystemInsightsMounts.  # noqa: E501
-        :type: str
-        """
-
-        self._blocks_free = blocks_free
-
-    @property
-    def blocks_available(self):
-        """Gets the blocks_available of this SystemInsightsMounts.  # noqa: E501
-
-
-        :return: The blocks_available of this SystemInsightsMounts.  # noqa: E501
-        :rtype: str
-        """
-        return self._blocks_available
-
-    @blocks_available.setter
-    def blocks_available(self, blocks_available):
-        """Sets the blocks_available of this SystemInsightsMounts.
-
-
-        :param blocks_available: The blocks_available of this SystemInsightsMounts.  # noqa: E501
-        :type: str
-        """
-
-        self._blocks_available = blocks_available
+        self._flags = flags
 
     @property
     def inodes(self):
@@ -318,67 +318,67 @@ class SystemInsightsMounts(object):
         self._inodes_free = inodes_free
 
     @property
-    def flags(self):
-        """Gets the flags of this SystemInsightsMounts.  # noqa: E501
+    def path(self):
+        """Gets the path of this SystemInsightsMounts.  # noqa: E501
 
 
-        :return: The flags of this SystemInsightsMounts.  # noqa: E501
+        :return: The path of this SystemInsightsMounts.  # noqa: E501
         :rtype: str
         """
-        return self._flags
+        return self._path
 
-    @flags.setter
-    def flags(self, flags):
-        """Sets the flags of this SystemInsightsMounts.
+    @path.setter
+    def path(self, path):
+        """Sets the path of this SystemInsightsMounts.
 
 
-        :param flags: The flags of this SystemInsightsMounts.  # noqa: E501
+        :param path: The path of this SystemInsightsMounts.  # noqa: E501
         :type: str
         """
 
-        self._flags = flags
+        self._path = path
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsMounts.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsMounts.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsMounts.  # noqa: E501
+        :return: The system_id of this SystemInsightsMounts.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._system_id
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsMounts.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsMounts.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsMounts.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsMounts.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._system_id = system_id
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsMounts.  # noqa: E501
+    def type(self):
+        """Gets the type of this SystemInsightsMounts.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsMounts.  # noqa: E501
+        :return: The type of this SystemInsightsMounts.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._type
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsMounts.
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SystemInsightsMounts.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsMounts.  # noqa: E501
+        :param type: The type of this SystemInsightsMounts.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

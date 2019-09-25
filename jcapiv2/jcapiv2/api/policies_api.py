@@ -1293,10 +1293,9 @@ class PoliciesApi(object):
         :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param list[str] aggregate:
-        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1324,16 +1323,15 @@ class PoliciesApi(object):
         :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param list[str] aggregate:
-        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'skip', 'sort', 'aggregate', 'x_org_id']  # noqa: E501
+        all_params = ['policy_id', 'content_type', 'accept', 'fields', 'filter', 'limit', 'x_org_id', 'skip', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1383,17 +1381,14 @@ class PoliciesApi(object):
         if 'sort' in params:
             query_params.append(('sort', params['sort']))  # noqa: E501
             collection_formats['sort'] = 'csv'  # noqa: E501
-        if 'aggregate' in params:
-            query_params.append(('aggregate', params['aggregate']))  # noqa: E501
-            collection_formats['aggregate'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1438,13 +1433,12 @@ class PoliciesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] aggregate:
         :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1468,19 +1462,18 @@ class PoliciesApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param list[str] aggregate:
         :param list[str] fields: The comma separated fields included in the returned records. If omitted, the default list of fields will be returned. 
         :param list[str] filter: Supported operators are: eq, ne, gt, ge, lt, le, between, search, in
         :param int limit: The number of records to return at once. Limited to 100.
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param list[str] sort: The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending. 
-        :param str x_org_id: 
         :return: list[PolicyResult]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'aggregate', 'fields', 'filter', 'limit', 'skip', 'sort', 'x_org_id']  # noqa: E501
+        all_params = ['content_type', 'accept', 'fields', 'filter', 'limit', 'x_org_id', 'skip', 'sort']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1511,9 +1504,6 @@ class PoliciesApi(object):
         path_params = {}
 
         query_params = []
-        if 'aggregate' in params:
-            query_params.append(('aggregate', params['aggregate']))  # noqa: E501
-            collection_formats['aggregate'] = 'csv'  # noqa: E501
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
             collection_formats['fields'] = 'csv'  # noqa: E501
@@ -1529,12 +1519,12 @@ class PoliciesApi(object):
             collection_formats['sort'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
         if 'accept' in params:
             header_params['Accept'] = params['accept']  # noqa: E501
-        if 'x_org_id' in params:
-            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
 
         form_params = []
         local_var_files = {}

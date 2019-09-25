@@ -34,32 +34,32 @@ class SystemGraphManagementReq(object):
     """
     swagger_types = {
         'attributes': 'SystemGraphManagementReqAttributes',
+        'id': 'str',
         'op': 'str',
-        'type': 'str',
-        'id': 'str'
+        'type': 'str'
     }
 
     attribute_map = {
         'attributes': 'attributes',
+        'id': 'id',
         'op': 'op',
-        'type': 'type',
-        'id': 'id'
+        'type': 'type'
     }
 
-    def __init__(self, attributes=None, op=None, type=None, id=None):  # noqa: E501
+    def __init__(self, attributes=None, id=None, op=None, type=None):  # noqa: E501
         """SystemGraphManagementReq - a model defined in Swagger"""  # noqa: E501
 
         self._attributes = None
+        self._id = None
         self._op = None
         self._type = None
-        self._id = None
         self.discriminator = None
 
         if attributes is not None:
             self.attributes = attributes
+        self.id = id
         self.op = op
         self.type = type
-        self.id = id
 
     @property
     def attributes(self):
@@ -81,6 +81,31 @@ class SystemGraphManagementReq(object):
         """
 
         self._attributes = attributes
+
+    @property
+    def id(self):
+        """Gets the id of this SystemGraphManagementReq.  # noqa: E501
+
+        The ObjectID of graph object being added or removed as an association.  # noqa: E501
+
+        :return: The id of this SystemGraphManagementReq.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this SystemGraphManagementReq.
+
+        The ObjectID of graph object being added or removed as an association.  # noqa: E501
+
+        :param id: The id of this SystemGraphManagementReq.  # noqa: E501
+        :type: str
+        """
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
 
     @property
     def op(self):
@@ -141,31 +166,6 @@ class SystemGraphManagementReq(object):
             )
 
         self._type = type
-
-    @property
-    def id(self):
-        """Gets the id of this SystemGraphManagementReq.  # noqa: E501
-
-        The ObjectID of graph object being added or removed as an association.  # noqa: E501
-
-        :return: The id of this SystemGraphManagementReq.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this SystemGraphManagementReq.
-
-        The ObjectID of graph object being added or removed as an association.  # noqa: E501
-
-        :param id: The id of this SystemGraphManagementReq.  # noqa: E501
-        :type: str
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

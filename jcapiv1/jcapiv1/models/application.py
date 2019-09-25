@@ -35,59 +35,59 @@ class Application(object):
     swagger_types = {
         'id': 'str',
         'active': 'bool',
-        'name': 'str',
-        'display_name': 'str',
+        'config': 'ApplicationConfig',
         'display_label': 'str',
-        'organization': 'str',
-        'sso_url': 'str',
+        'display_name': 'str',
         'learn_more': 'str',
-        'config': 'ApplicationConfig'
+        'name': 'str',
+        'organization': 'str',
+        'sso_url': 'str'
     }
 
     attribute_map = {
         'id': '_id',
         'active': 'active',
-        'name': 'name',
-        'display_name': 'displayName',
+        'config': 'config',
         'display_label': 'displayLabel',
-        'organization': 'organization',
-        'sso_url': 'ssoUrl',
+        'display_name': 'displayName',
         'learn_more': 'learnMore',
-        'config': 'config'
+        'name': 'name',
+        'organization': 'organization',
+        'sso_url': 'ssoUrl'
     }
 
-    def __init__(self, id=None, active=None, name=None, display_name=None, display_label=None, organization=None, sso_url=None, learn_more=None, config=None):  # noqa: E501
+    def __init__(self, id=None, active=None, config=None, display_label=None, display_name=None, learn_more=None, name=None, organization=None, sso_url=None):  # noqa: E501
         """Application - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._active = None
-        self._name = None
-        self._display_name = None
+        self._config = None
         self._display_label = None
+        self._display_name = None
+        self._learn_more = None
+        self._name = None
         self._organization = None
         self._sso_url = None
-        self._learn_more = None
-        self._config = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
         if active is not None:
             self.active = active
-        if name is not None:
-            self.name = name
-        if display_name is not None:
-            self.display_name = display_name
+        if config is not None:
+            self.config = config
         if display_label is not None:
             self.display_label = display_label
+        if display_name is not None:
+            self.display_name = display_name
+        if learn_more is not None:
+            self.learn_more = learn_more
+        if name is not None:
+            self.name = name
         if organization is not None:
             self.organization = organization
         if sso_url is not None:
             self.sso_url = sso_url
-        if learn_more is not None:
-            self.learn_more = learn_more
-        if config is not None:
-            self.config = config
 
     @property
     def id(self):
@@ -132,25 +132,46 @@ class Application(object):
         self._active = active
 
     @property
-    def name(self):
-        """Gets the name of this Application.  # noqa: E501
+    def config(self):
+        """Gets the config of this Application.  # noqa: E501
 
 
-        :return: The name of this Application.  # noqa: E501
+        :return: The config of this Application.  # noqa: E501
+        :rtype: ApplicationConfig
+        """
+        return self._config
+
+    @config.setter
+    def config(self, config):
+        """Sets the config of this Application.
+
+
+        :param config: The config of this Application.  # noqa: E501
+        :type: ApplicationConfig
+        """
+
+        self._config = config
+
+    @property
+    def display_label(self):
+        """Gets the display_label of this Application.  # noqa: E501
+
+
+        :return: The display_label of this Application.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._display_label
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Application.
+    @display_label.setter
+    def display_label(self, display_label):
+        """Sets the display_label of this Application.
 
 
-        :param name: The name of this Application.  # noqa: E501
+        :param display_label: The display_label of this Application.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._display_label = display_label
 
     @property
     def display_name(self):
@@ -174,25 +195,46 @@ class Application(object):
         self._display_name = display_name
 
     @property
-    def display_label(self):
-        """Gets the display_label of this Application.  # noqa: E501
+    def learn_more(self):
+        """Gets the learn_more of this Application.  # noqa: E501
 
 
-        :return: The display_label of this Application.  # noqa: E501
+        :return: The learn_more of this Application.  # noqa: E501
         :rtype: str
         """
-        return self._display_label
+        return self._learn_more
 
-    @display_label.setter
-    def display_label(self, display_label):
-        """Sets the display_label of this Application.
+    @learn_more.setter
+    def learn_more(self, learn_more):
+        """Sets the learn_more of this Application.
 
 
-        :param display_label: The display_label of this Application.  # noqa: E501
+        :param learn_more: The learn_more of this Application.  # noqa: E501
         :type: str
         """
 
-        self._display_label = display_label
+        self._learn_more = learn_more
+
+    @property
+    def name(self):
+        """Gets the name of this Application.  # noqa: E501
+
+
+        :return: The name of this Application.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Application.
+
+
+        :param name: The name of this Application.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
 
     @property
     def organization(self):
@@ -235,48 +277,6 @@ class Application(object):
         """
 
         self._sso_url = sso_url
-
-    @property
-    def learn_more(self):
-        """Gets the learn_more of this Application.  # noqa: E501
-
-
-        :return: The learn_more of this Application.  # noqa: E501
-        :rtype: str
-        """
-        return self._learn_more
-
-    @learn_more.setter
-    def learn_more(self, learn_more):
-        """Sets the learn_more of this Application.
-
-
-        :param learn_more: The learn_more of this Application.  # noqa: E501
-        :type: str
-        """
-
-        self._learn_more = learn_more
-
-    @property
-    def config(self):
-        """Gets the config of this Application.  # noqa: E501
-
-
-        :return: The config of this Application.  # noqa: E501
-        :rtype: ApplicationConfig
-        """
-        return self._config
-
-    @config.setter
-    def config(self, config):
-        """Sets the config of this Application.
-
-
-        :param config: The config of this Application.  # noqa: E501
-        :type: ApplicationConfig
-        """
-
-        self._config = config
 
     def to_dict(self):
         """Returns the model properties as a dict"""

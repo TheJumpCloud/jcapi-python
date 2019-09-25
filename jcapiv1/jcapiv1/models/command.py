@@ -31,105 +31,84 @@ class Command(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'command': 'str',
-        'command_type': 'str',
         'command_runners': 'list[str]',
-        'user': 'str',
-        'sudo': 'bool',
-        'systems': 'list[str]',
+        'command_type': 'str',
+        'files': 'list[str]',
         'launch_type': 'str',
         'listens_to': 'str',
-        'schedule_repeat_type': 'str',
+        'name': 'str',
+        'organization': 'str',
         'schedule': 'str',
-        'files': 'list[str]',
+        'schedule_repeat_type': 'str',
+        'sudo': 'bool',
+        'systems': 'list[str]',
         'timeout': 'str',
-        'organization': 'str'
+        'user': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
         'command': 'command',
-        'command_type': 'commandType',
         'command_runners': 'commandRunners',
-        'user': 'user',
-        'sudo': 'sudo',
-        'systems': 'systems',
+        'command_type': 'commandType',
+        'files': 'files',
         'launch_type': 'launchType',
         'listens_to': 'listensTo',
-        'schedule_repeat_type': 'scheduleRepeatType',
+        'name': 'name',
+        'organization': 'organization',
         'schedule': 'schedule',
-        'files': 'files',
+        'schedule_repeat_type': 'scheduleRepeatType',
+        'sudo': 'sudo',
+        'systems': 'systems',
         'timeout': 'timeout',
-        'organization': 'organization'
+        'user': 'user'
     }
 
-    def __init__(self, name=None, command=None, command_type=None, command_runners=None, user=None, sudo=None, systems=None, launch_type=None, listens_to=None, schedule_repeat_type=None, schedule=None, files=None, timeout=None, organization=None):  # noqa: E501
+    def __init__(self, command=None, command_runners=None, command_type=None, files=None, launch_type=None, listens_to=None, name=None, organization=None, schedule=None, schedule_repeat_type=None, sudo=None, systems=None, timeout=None, user=None):  # noqa: E501
         """Command - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
         self._command = None
-        self._command_type = None
         self._command_runners = None
-        self._user = None
-        self._sudo = None
-        self._systems = None
+        self._command_type = None
+        self._files = None
         self._launch_type = None
         self._listens_to = None
-        self._schedule_repeat_type = None
-        self._schedule = None
-        self._files = None
-        self._timeout = None
+        self._name = None
         self._organization = None
+        self._schedule = None
+        self._schedule_repeat_type = None
+        self._sudo = None
+        self._systems = None
+        self._timeout = None
+        self._user = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
         self.command = command
-        if command_type is not None:
-            self.command_type = command_type
         if command_runners is not None:
             self.command_runners = command_runners
-        self.user = user
-        if sudo is not None:
-            self.sudo = sudo
-        if systems is not None:
-            self.systems = systems
+        if command_type is not None:
+            self.command_type = command_type
+        if files is not None:
+            self.files = files
         if launch_type is not None:
             self.launch_type = launch_type
         if listens_to is not None:
             self.listens_to = listens_to
-        if schedule_repeat_type is not None:
-            self.schedule_repeat_type = schedule_repeat_type
-        if schedule is not None:
-            self.schedule = schedule
-        if files is not None:
-            self.files = files
-        if timeout is not None:
-            self.timeout = timeout
+        if name is not None:
+            self.name = name
         if organization is not None:
             self.organization = organization
-
-    @property
-    def name(self):
-        """Gets the name of this Command.  # noqa: E501
-
-
-        :return: The name of this Command.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this Command.
-
-
-        :param name: The name of this Command.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
+        if schedule is not None:
+            self.schedule = schedule
+        if schedule_repeat_type is not None:
+            self.schedule_repeat_type = schedule_repeat_type
+        if sudo is not None:
+            self.sudo = sudo
+        if systems is not None:
+            self.systems = systems
+        if timeout is not None:
+            self.timeout = timeout
+        self.user = user
 
     @property
     def command(self):
@@ -157,29 +136,6 @@ class Command(object):
         self._command = command
 
     @property
-    def command_type(self):
-        """Gets the command_type of this Command.  # noqa: E501
-
-        The Command OS  # noqa: E501
-
-        :return: The command_type of this Command.  # noqa: E501
-        :rtype: str
-        """
-        return self._command_type
-
-    @command_type.setter
-    def command_type(self, command_type):
-        """Sets the command_type of this Command.
-
-        The Command OS  # noqa: E501
-
-        :param command_type: The command_type of this Command.  # noqa: E501
-        :type: str
-        """
-
-        self._command_type = command_type
-
-    @property
     def command_runners(self):
         """Gets the command_runners of this Command.  # noqa: E501
 
@@ -203,75 +159,50 @@ class Command(object):
         self._command_runners = command_runners
 
     @property
-    def user(self):
-        """Gets the user of this Command.  # noqa: E501
+    def command_type(self):
+        """Gets the command_type of this Command.  # noqa: E501
 
-        The ID of the system user to run the command as.  # noqa: E501
+        The Command OS  # noqa: E501
 
-        :return: The user of this Command.  # noqa: E501
+        :return: The command_type of this Command.  # noqa: E501
         :rtype: str
         """
-        return self._user
+        return self._command_type
 
-    @user.setter
-    def user(self, user):
-        """Sets the user of this Command.
+    @command_type.setter
+    def command_type(self, command_type):
+        """Sets the command_type of this Command.
 
-        The ID of the system user to run the command as.  # noqa: E501
+        The Command OS  # noqa: E501
 
-        :param user: The user of this Command.  # noqa: E501
+        :param command_type: The command_type of this Command.  # noqa: E501
         :type: str
         """
-        if user is None:
-            raise ValueError("Invalid value for `user`, must not be `None`")  # noqa: E501
 
-        self._user = user
+        self._command_type = command_type
 
     @property
-    def sudo(self):
-        """Gets the sudo of this Command.  # noqa: E501
+    def files(self):
+        """Gets the files of this Command.  # noqa: E501
 
-          # noqa: E501
+        An array of file IDs to include with the command.  # noqa: E501
 
-        :return: The sudo of this Command.  # noqa: E501
-        :rtype: bool
-        """
-        return self._sudo
-
-    @sudo.setter
-    def sudo(self, sudo):
-        """Sets the sudo of this Command.
-
-          # noqa: E501
-
-        :param sudo: The sudo of this Command.  # noqa: E501
-        :type: bool
-        """
-
-        self._sudo = sudo
-
-    @property
-    def systems(self):
-        """Gets the systems of this Command.  # noqa: E501
-
-        An array of system IDs to run the command on. Not available if you are using Groups.  # noqa: E501
-
-        :return: The systems of this Command.  # noqa: E501
+        :return: The files of this Command.  # noqa: E501
         :rtype: list[str]
         """
-        return self._systems
+        return self._files
 
-    @systems.setter
-    def systems(self, systems):
-        """Sets the systems of this Command.
+    @files.setter
+    def files(self, files):
+        """Sets the files of this Command.
 
-        An array of system IDs to run the command on. Not available if you are using Groups.  # noqa: E501
+        An array of file IDs to include with the command.  # noqa: E501
 
-        :param systems: The systems of this Command.  # noqa: E501
+        :param files: The files of this Command.  # noqa: E501
         :type: list[str]
         """
 
-        self._systems = systems
+        self._files = files
 
     @property
     def launch_type(self):
@@ -320,27 +251,48 @@ class Command(object):
         self._listens_to = listens_to
 
     @property
-    def schedule_repeat_type(self):
-        """Gets the schedule_repeat_type of this Command.  # noqa: E501
+    def name(self):
+        """Gets the name of this Command.  # noqa: E501
 
-        When the command will repeat.  # noqa: E501
 
-        :return: The schedule_repeat_type of this Command.  # noqa: E501
+        :return: The name of this Command.  # noqa: E501
         :rtype: str
         """
-        return self._schedule_repeat_type
+        return self._name
 
-    @schedule_repeat_type.setter
-    def schedule_repeat_type(self, schedule_repeat_type):
-        """Sets the schedule_repeat_type of this Command.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Command.
 
-        When the command will repeat.  # noqa: E501
 
-        :param schedule_repeat_type: The schedule_repeat_type of this Command.  # noqa: E501
+        :param name: The name of this Command.  # noqa: E501
         :type: str
         """
 
-        self._schedule_repeat_type = schedule_repeat_type
+        self._name = name
+
+    @property
+    def organization(self):
+        """Gets the organization of this Command.  # noqa: E501
+
+        The ID of the organization.  # noqa: E501
+
+        :return: The organization of this Command.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this Command.
+
+        The ID of the organization.  # noqa: E501
+
+        :param organization: The organization of this Command.  # noqa: E501
+        :type: str
+        """
+
+        self._organization = organization
 
     @property
     def schedule(self):
@@ -366,27 +318,73 @@ class Command(object):
         self._schedule = schedule
 
     @property
-    def files(self):
-        """Gets the files of this Command.  # noqa: E501
+    def schedule_repeat_type(self):
+        """Gets the schedule_repeat_type of this Command.  # noqa: E501
 
-        An array of file IDs to include with the command.  # noqa: E501
+        When the command will repeat.  # noqa: E501
 
-        :return: The files of this Command.  # noqa: E501
+        :return: The schedule_repeat_type of this Command.  # noqa: E501
+        :rtype: str
+        """
+        return self._schedule_repeat_type
+
+    @schedule_repeat_type.setter
+    def schedule_repeat_type(self, schedule_repeat_type):
+        """Sets the schedule_repeat_type of this Command.
+
+        When the command will repeat.  # noqa: E501
+
+        :param schedule_repeat_type: The schedule_repeat_type of this Command.  # noqa: E501
+        :type: str
+        """
+
+        self._schedule_repeat_type = schedule_repeat_type
+
+    @property
+    def sudo(self):
+        """Gets the sudo of this Command.  # noqa: E501
+
+          # noqa: E501
+
+        :return: The sudo of this Command.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sudo
+
+    @sudo.setter
+    def sudo(self, sudo):
+        """Sets the sudo of this Command.
+
+          # noqa: E501
+
+        :param sudo: The sudo of this Command.  # noqa: E501
+        :type: bool
+        """
+
+        self._sudo = sudo
+
+    @property
+    def systems(self):
+        """Gets the systems of this Command.  # noqa: E501
+
+        An array of system IDs to run the command on. Not available if you are using Groups.  # noqa: E501
+
+        :return: The systems of this Command.  # noqa: E501
         :rtype: list[str]
         """
-        return self._files
+        return self._systems
 
-    @files.setter
-    def files(self, files):
-        """Sets the files of this Command.
+    @systems.setter
+    def systems(self, systems):
+        """Sets the systems of this Command.
 
-        An array of file IDs to include with the command.  # noqa: E501
+        An array of system IDs to run the command on. Not available if you are using Groups.  # noqa: E501
 
-        :param files: The files of this Command.  # noqa: E501
+        :param systems: The systems of this Command.  # noqa: E501
         :type: list[str]
         """
 
-        self._files = files
+        self._systems = systems
 
     @property
     def timeout(self):
@@ -412,27 +410,29 @@ class Command(object):
         self._timeout = timeout
 
     @property
-    def organization(self):
-        """Gets the organization of this Command.  # noqa: E501
+    def user(self):
+        """Gets the user of this Command.  # noqa: E501
 
-        The ID of the organization.  # noqa: E501
+        The ID of the system user to run the command as.  # noqa: E501
 
-        :return: The organization of this Command.  # noqa: E501
+        :return: The user of this Command.  # noqa: E501
         :rtype: str
         """
-        return self._organization
+        return self._user
 
-    @organization.setter
-    def organization(self, organization):
-        """Sets the organization of this Command.
+    @user.setter
+    def user(self, user):
+        """Sets the user of this Command.
 
-        The ID of the organization.  # noqa: E501
+        The ID of the system user to run the command as.  # noqa: E501
 
-        :param organization: The organization of this Command.  # noqa: E501
+        :param user: The user of this Command.  # noqa: E501
         :type: str
         """
+        if user is None:
+            raise ValueError("Invalid value for `user`, must not be `None`")  # noqa: E501
 
-        self._organization = organization
+        self._user = user
 
     def to_dict(self):
         """Returns the model properties as a dict"""

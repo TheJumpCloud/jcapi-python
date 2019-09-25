@@ -31,47 +31,26 @@ class WorkdayFields(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'report_url': 'str',
-        'name': 'str'
+        'name': 'str',
+        'report_url': 'str'
     }
 
     attribute_map = {
-        'report_url': 'reportUrl',
-        'name': 'name'
+        'name': 'name',
+        'report_url': 'reportUrl'
     }
 
-    def __init__(self, report_url=None, name=None):  # noqa: E501
+    def __init__(self, name=None, report_url=None):  # noqa: E501
         """WorkdayFields - a model defined in Swagger"""  # noqa: E501
 
-        self._report_url = None
         self._name = None
+        self._report_url = None
         self.discriminator = None
 
-        if report_url is not None:
-            self.report_url = report_url
         if name is not None:
             self.name = name
-
-    @property
-    def report_url(self):
-        """Gets the report_url of this WorkdayFields.  # noqa: E501
-
-
-        :return: The report_url of this WorkdayFields.  # noqa: E501
-        :rtype: str
-        """
-        return self._report_url
-
-    @report_url.setter
-    def report_url(self, report_url):
-        """Sets the report_url of this WorkdayFields.
-
-
-        :param report_url: The report_url of this WorkdayFields.  # noqa: E501
-        :type: str
-        """
-
-        self._report_url = report_url
+        if report_url is not None:
+            self.report_url = report_url
 
     @property
     def name(self):
@@ -93,6 +72,27 @@ class WorkdayFields(object):
         """
 
         self._name = name
+
+    @property
+    def report_url(self):
+        """Gets the report_url of this WorkdayFields.  # noqa: E501
+
+
+        :return: The report_url of this WorkdayFields.  # noqa: E501
+        :rtype: str
+        """
+        return self._report_url
+
+    @report_url.setter
+    def report_url(self, report_url):
+        """Sets the report_url of this WorkdayFields.
+
+
+        :param report_url: The report_url of this WorkdayFields.  # noqa: E501
+        :type: str
+        """
+
+        self._report_url = report_url
 
     def to_dict(self):
         """Returns the model properties as a dict"""

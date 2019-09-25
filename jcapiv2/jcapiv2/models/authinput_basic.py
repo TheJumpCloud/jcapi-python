@@ -31,47 +31,26 @@ class AuthinputBasic(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'username': 'str',
-        'password': 'str'
+        'password': 'str',
+        'username': 'str'
     }
 
     attribute_map = {
-        'username': 'username',
-        'password': 'password'
+        'password': 'password',
+        'username': 'username'
     }
 
-    def __init__(self, username=None, password=None):  # noqa: E501
+    def __init__(self, password=None, username=None):  # noqa: E501
         """AuthinputBasic - a model defined in Swagger"""  # noqa: E501
 
-        self._username = None
         self._password = None
+        self._username = None
         self.discriminator = None
 
-        if username is not None:
-            self.username = username
         if password is not None:
             self.password = password
-
-    @property
-    def username(self):
-        """Gets the username of this AuthinputBasic.  # noqa: E501
-
-
-        :return: The username of this AuthinputBasic.  # noqa: E501
-        :rtype: str
-        """
-        return self._username
-
-    @username.setter
-    def username(self, username):
-        """Sets the username of this AuthinputBasic.
-
-
-        :param username: The username of this AuthinputBasic.  # noqa: E501
-        :type: str
-        """
-
-        self._username = username
+        if username is not None:
+            self.username = username
 
     @property
     def password(self):
@@ -93,6 +72,27 @@ class AuthinputBasic(object):
         """
 
         self._password = password
+
+    @property
+    def username(self):
+        """Gets the username of this AuthinputBasic.  # noqa: E501
+
+
+        :return: The username of this AuthinputBasic.  # noqa: E501
+        :rtype: str
+        """
+        return self._username
+
+    @username.setter
+    def username(self, username):
+        """Sets the username of this AuthinputBasic.
+
+
+        :param username: The username of this AuthinputBasic.  # noqa: E501
+        :type: str
+        """
+
+        self._username = username
 
     def to_dict(self):
         """Returns the model properties as a dict"""
