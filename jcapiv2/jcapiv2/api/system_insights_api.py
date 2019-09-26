@@ -33,17 +33,20 @@ class SystemInsightsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def systeminsights_list_apps(self, **kwargs):  # noqa: E501
+    def systeminsights_list_apps(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Apps  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `bundle_name`.  # noqa: E501
+        Valid filter fields are `system_id` and `bundle_name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_apps(async_req=True)
+        >>> thread = api.systeminsights_list_apps(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
         :return: list[SystemInsightsApps]
@@ -52,22 +55,25 @@ class SystemInsightsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_apps_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_apps_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_apps_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_apps_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_apps_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_apps_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Apps  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `bundle_name`.  # noqa: E501
+        Valid filter fields are `system_id` and `bundle_name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_apps_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_apps_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
+        :param str x_org_id: 
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
         :return: list[SystemInsightsApps]
@@ -75,7 +81,7 @@ class SystemInsightsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -90,6 +96,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_apps`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_apps`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_apps`, must be a value less than or equal to `100`")  # noqa: E501
@@ -111,6 +125,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -125,7 +145,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/apps', 'GET',
@@ -143,51 +163,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_apps_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_apps_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Apps  # noqa: E501
 
         Valid filter fields are `bundle_name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_apps_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_apps_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsApps]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_apps_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_apps_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_apps_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_apps_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_apps_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_apps_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Apps  # noqa: E501
 
         Valid filter fields are `bundle_name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_apps_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_apps_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsApps]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -202,10 +228,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_apps_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_apps_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_apps_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_apps_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_apps_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -216,8 +250,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -229,6 +263,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -243,10 +283,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/apps', 'GET',
+            '/systeminsights/{system_id}/apps', 'GET',
             path_params,
             query_params,
             header_params,
@@ -261,51 +301,323 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_browser_plugins(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System Browser Plugins  # noqa: E501
+    def systeminsights_list_bitlocker_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Bitlocker Info  # noqa: E501
 
-        Valid filter fields are `name`.  # noqa: E501
+        Valid filter fields are `system_id` and `protection_status`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_browser_plugins(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_bitlocker_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_bitlocker_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_bitlocker_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_bitlocker_info_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Bitlocker Info  # noqa: E501
+
+        Valid filter fields are `system_id` and `protection_status`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_bitlocker_info_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_bitlocker_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_bitlocker_info`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_bitlocker_info`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_bitlocker_info`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_bitlocker_info`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_bitlocker_info`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/bitlocker_info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsBitlockerInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_bitlocker_info_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Bitlocker Info  # noqa: E501
+
+        Valid filter fields are `protection_status`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_bitlocker_info_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_bitlocker_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_bitlocker_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_bitlocker_info_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Bitlocker Info  # noqa: E501
+
+        Valid filter fields are `protection_status`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_bitlocker_info_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_bitlocker_info_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_bitlocker_info_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_bitlocker_info_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_bitlocker_info_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_bitlocker_info_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_bitlocker_info_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_bitlocker_info_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/bitlocker_info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsBitlockerInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_browser_plugins(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Browser Plugins  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_browser_plugins(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsBrowserPlugins]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_browser_plugins_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_browser_plugins_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_browser_plugins_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_browser_plugins_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_browser_plugins_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System Browser Plugins  # noqa: E501
+    def systeminsights_list_browser_plugins_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Browser Plugins  # noqa: E501
 
-        Valid filter fields are `name`.  # noqa: E501
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_browser_plugins_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_browser_plugins_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsBrowserPlugins]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -320,10 +632,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_browser_plugins`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_browser_plugins`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_browser_plugins`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_browser_plugins`, must be a value less than or equal to `100`")  # noqa: E501
@@ -334,8 +650,6 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -347,6 +661,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -361,117 +681,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/browser_plugins', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[SystemInsightsBrowserPlugins]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def systeminsights_list_browser_plugins_0(self, **kwargs):  # noqa: E501
-        """List System Insights Browser Plugins  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_browser_plugins_0(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsBrowserPlugins]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.systeminsights_list_browser_plugins_0_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.systeminsights_list_browser_plugins_0_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def systeminsights_list_browser_plugins_0_with_http_info(self, **kwargs):  # noqa: E501
-        """List System Insights Browser Plugins  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_browser_plugins_0_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsBrowserPlugins]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method systeminsights_list_browser_plugins_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        if 'limit' in params and params['limit'] > 100:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_browser_plugins_0`, must be a value less than or equal to `100`")  # noqa: E501
-        if 'limit' in params and params['limit'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_browser_plugins_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        if 'skip' in params and params['skip'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_browser_plugins_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
-            collection_formats['filter'] = 'csv'  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/browser_plugins', 'GET',
@@ -489,51 +699,193 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_chrome_extensions(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System Chrome Extensions  # noqa: E501
+    def systeminsights_list_browser_plugins_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Browser Plugins  # noqa: E501
 
         Valid filter fields are `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_chrome_extensions(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_browser_plugins_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBrowserPlugins]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_browser_plugins_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_browser_plugins_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_browser_plugins_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Browser Plugins  # noqa: E501
+
+        Valid filter fields are `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_browser_plugins_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBrowserPlugins]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_browser_plugins_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_browser_plugins_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_browser_plugins_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_browser_plugins_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_browser_plugins_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_browser_plugins_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_browser_plugins_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/browser_plugins', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsBrowserPlugins]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_chrome_extensions(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Chrome Extensions  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_chrome_extensions(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsChromeExtensions]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_chrome_extensions_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_chrome_extensions_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_chrome_extensions_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_chrome_extensions_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_chrome_extensions_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System Chrome Extensions  # noqa: E501
+    def systeminsights_list_chrome_extensions_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Chrome Extensions  # noqa: E501
 
-        Valid filter fields are `name`.  # noqa: E501
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_chrome_extensions_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_chrome_extensions_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsChromeExtensions]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -548,10 +900,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_chrome_extensions`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_chrome_extensions`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_chrome_extensions`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_chrome_extensions`, must be a value less than or equal to `100`")  # noqa: E501
@@ -562,8 +918,6 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -575,6 +929,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -589,117 +949,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/chrome_extensions', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[SystemInsightsChromeExtensions]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def systeminsights_list_chrome_extensions_0(self, **kwargs):  # noqa: E501
-        """List System Insights Chrome Extensions  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_chrome_extensions_0(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsChromeExtensions]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.systeminsights_list_chrome_extensions_0_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.systeminsights_list_chrome_extensions_0_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def systeminsights_list_chrome_extensions_0_with_http_info(self, **kwargs):  # noqa: E501
-        """List System Insights Chrome Extensions  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_chrome_extensions_0_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsChromeExtensions]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method systeminsights_list_chrome_extensions_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        if 'limit' in params and params['limit'] > 100:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_chrome_extensions_0`, must be a value less than or equal to `100`")  # noqa: E501
-        if 'limit' in params and params['limit'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_chrome_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        if 'skip' in params and params['skip'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_chrome_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
-            collection_formats['filter'] = 'csv'  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/chrome_extensions', 'GET',
@@ -717,49 +967,193 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_disk_encryption(self, **kwargs):  # noqa: E501
-        """List System Insights Disk Encryption  # noqa: E501
+    def systeminsights_list_chrome_extensions_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Chrome Extensions  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `encryption_status`.  # noqa: E501
+        Valid filter fields are `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_disk_encryption(async_req=True)
+        >>> thread = api.systeminsights_list_chrome_extensions_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsChromeExtensions]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_chrome_extensions_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_chrome_extensions_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_chrome_extensions_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Chrome Extensions  # noqa: E501
+
+        Valid filter fields are `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_chrome_extensions_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsChromeExtensions]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_chrome_extensions_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_chrome_extensions_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_chrome_extensions_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_chrome_extensions_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_chrome_extensions_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_chrome_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_chrome_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/chrome_extensions', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsChromeExtensions]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_disk_encryption(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Disk Encryption  # noqa: E501
+
+        Valid filter fields are `system_id` and `encryption_status`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_disk_encryption(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsDiskEncryption]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_disk_encryption_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_disk_encryption_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_disk_encryption_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_disk_encryption_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_disk_encryption_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_disk_encryption_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Disk Encryption  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `encryption_status`.  # noqa: E501
+        Valid filter fields are `system_id` and `encryption_status`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_disk_encryption_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_disk_encryption_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsDiskEncryption]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -774,6 +1168,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_disk_encryption`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_disk_encryption`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_disk_encryption`, must be a value less than or equal to `100`")  # noqa: E501
@@ -795,6 +1197,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -809,7 +1217,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/disk_encryption', 'GET',
@@ -827,51 +1235,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_disk_encryption_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_disk_encryption_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Disk Encryption  # noqa: E501
 
         Valid filter fields are `encryption_status`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_disk_encryption_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_disk_encryption_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsDiskEncryption]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_disk_encryption_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_disk_encryption_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_disk_encryption_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_disk_encryption_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_disk_encryption_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_disk_encryption_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Disk Encryption  # noqa: E501
 
         Valid filter fields are `encryption_status`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_disk_encryption_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_disk_encryption_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsDiskEncryption]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -886,10 +1300,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_disk_encryption_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_disk_encryption_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_disk_encryption_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_disk_encryption_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_disk_encryption_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -900,8 +1322,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -913,6 +1335,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -927,10 +1355,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/disk_encryption', 'GET',
+            '/systeminsights/{system_id}/disk_encryption', 'GET',
             path_params,
             query_params,
             header_params,
@@ -945,49 +1373,591 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_firefox_addons(self, **kwargs):  # noqa: E501
-        """List System Insights Firefox Addons  # noqa: E501
+    def systeminsights_list_disk_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Disk Info  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
+        Valid filter fields are `system_id` and `disk_index`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_firefox_addons(async_req=True)
+        >>> thread = api.systeminsights_list_disk_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsDiskInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_disk_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_disk_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_disk_info_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Disk Info  # noqa: E501
+
+        Valid filter fields are `system_id` and `disk_index`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_disk_info_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsDiskInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_disk_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_disk_info`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_disk_info`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_disk_info`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_disk_info`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_disk_info`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/disk_info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsDiskInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_disk_info_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Disk Info  # noqa: E501
+
+        Valid filter fields are `disk_index`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_disk_info_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_disk_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_disk_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_disk_info_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Disk Info  # noqa: E501
+
+        Valid filter fields are `disk_index`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_disk_info_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_disk_info_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_disk_info_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_disk_info_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_disk_info_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_disk_info_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_disk_info_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_disk_info_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/disk_info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsBitlockerInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_etc_hosts(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Etc Hosts  # noqa: E501
+
+        Valid filter fields are `system_id` and `address`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_etc_hosts(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsEtcHosts]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_etc_hosts_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_etc_hosts_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_etc_hosts_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Etc Hosts  # noqa: E501
+
+        Valid filter fields are `system_id` and `address`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_etc_hosts_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsEtcHosts]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_etc_hosts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_etc_hosts`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_etc_hosts`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_etc_hosts`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_etc_hosts`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_etc_hosts`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/etc_hosts', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsEtcHosts]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_etc_hosts_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Etc Hosts  # noqa: E501
+
+        Valid filter fields are `address`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_etc_hosts_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_etc_hosts_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_etc_hosts_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_etc_hosts_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Etc Hosts  # noqa: E501
+
+        Valid filter fields are `address`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_etc_hosts_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsBitlockerInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_etc_hosts_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_etc_hosts_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_etc_hosts_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_etc_hosts_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_etc_hosts_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_etc_hosts_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_etc_hosts_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/etc_hosts', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsBitlockerInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_firefox_addons(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Firefox Addons  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_firefox_addons(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsFirefoxAddons]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_firefox_addons_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_firefox_addons_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_firefox_addons_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_firefox_addons_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_firefox_addons_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_firefox_addons_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Firefox Addons  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_firefox_addons_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_firefox_addons_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsFirefoxAddons]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1002,6 +1972,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_firefox_addons`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_firefox_addons`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_firefox_addons`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1023,6 +2001,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1037,7 +2021,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/firefox_addons', 'GET',
@@ -1055,51 +2039,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_firefox_addons_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_firefox_addons_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Firefox Addons  # noqa: E501
 
         Valid filter fields are `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_firefox_addons_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_firefox_addons_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsFirefoxAddons]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_firefox_addons_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_firefox_addons_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_firefox_addons_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_firefox_addons_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_firefox_addons_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_firefox_addons_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Firefox Addons  # noqa: E501
 
         Valid filter fields are `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_firefox_addons_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_firefox_addons_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsFirefoxAddons]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1114,10 +2104,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_firefox_addons_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_firefox_addons_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_firefox_addons_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_firefox_addons_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_firefox_addons_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1128,8 +2126,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -1141,6 +2139,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1155,10 +2159,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/firefox_addons', 'GET',
+            '/systeminsights/{system_id}/firefox_addons', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1173,49 +2177,55 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_groups(self, **kwargs):  # noqa: E501
+    def systeminsights_list_groups(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Groups  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `groupname`.  # noqa: E501
+        Valid filter fields are `system_id` and `groupname`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_groups(async_req=True)
+        >>> thread = api.systeminsights_list_groups(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsGroups]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_groups_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_groups_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_groups_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_groups_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_groups_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_groups_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Groups  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `groupname`.  # noqa: E501
+        Valid filter fields are `system_id` and `groupname`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_groups_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_groups_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsGroups]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1230,6 +2240,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_groups`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_groups`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_groups`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1251,6 +2269,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1265,7 +2289,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/groups', 'GET',
@@ -1283,51 +2307,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_groups_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_groups_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Groups  # noqa: E501
 
         Valid filter fields are `groupname`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_groups_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_groups_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsGroups]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_groups_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_groups_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_groups_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_groups_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_groups_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_groups_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Groups  # noqa: E501
 
         Valid filter fields are `groupname`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_groups_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_groups_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsGroups]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1342,10 +2372,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_groups_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_groups_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_groups_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_groups_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_groups_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1356,8 +2394,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -1369,6 +2407,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1383,10 +2427,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/groups', 'GET',
+            '/systeminsights/{system_id}/groups', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1401,49 +2445,55 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_interface_addresses(self, **kwargs):  # noqa: E501
+    def systeminsights_list_interface_addresses(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Interface Addresses  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `address`.  # noqa: E501
+        Valid filter fields are `system_id` and `address`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_interface_addresses(async_req=True)
+        >>> thread = api.systeminsights_list_interface_addresses(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsInterfaceAddresses]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_interface_addresses_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_interface_addresses_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_interface_addresses_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_interface_addresses_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_interface_addresses_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_interface_addresses_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Interface Addresses  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `address`.  # noqa: E501
+        Valid filter fields are `system_id` and `address`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_interface_addresses_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_interface_addresses_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsInterfaceAddresses]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1458,6 +2508,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_interface_addresses`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_interface_addresses`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_interface_addresses`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1479,6 +2537,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1493,7 +2557,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/interface_addresses', 'GET',
@@ -1511,51 +2575,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_interface_addresses_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_interface_addresses_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Interface Addresses  # noqa: E501
 
         Valid filter fields are `address`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_interface_addresses_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_interface_addresses_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsInterfaceAddresses]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_interface_addresses_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_interface_addresses_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_interface_addresses_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_interface_addresses_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_interface_addresses_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_interface_addresses_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Interface Addresses  # noqa: E501
 
         Valid filter fields are `address`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_interface_addresses_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_interface_addresses_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsInterfaceAddresses]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1570,10 +2640,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_interface_addresses_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_interface_addresses_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_interface_addresses_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_interface_addresses_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_interface_addresses_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1584,8 +2662,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -1597,6 +2675,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1611,10 +2695,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/interface_addresses', 'GET',
+            '/systeminsights/{system_id}/interface_addresses', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1629,49 +2713,591 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_mounts(self, **kwargs):  # noqa: E501
-        """List System Insights Mounts  # noqa: E501
+    def systeminsights_list_kernel_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Kernel Info  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `path`.  # noqa: E501
+        Valid filter fields are `system_id` and `version`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_mounts(async_req=True)
+        >>> thread = api.systeminsights_list_kernel_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsKernelInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_kernel_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_kernel_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_kernel_info_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Kernel Info  # noqa: E501
+
+        Valid filter fields are `system_id` and `version`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_kernel_info_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsKernelInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_kernel_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_kernel_info`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_kernel_info`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_kernel_info`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_kernel_info`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_kernel_info`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/kernel_info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsKernelInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_kernel_info_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Kernel Info  # noqa: E501
+
+        Valid filter fields are `version`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_kernel_info_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsKernelInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_kernel_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_kernel_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_kernel_info_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Kernel Info  # noqa: E501
+
+        Valid filter fields are `version`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_kernel_info_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsKernelInfo]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_kernel_info_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_kernel_info_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_kernel_info_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_kernel_info_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_kernel_info_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_kernel_info_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_kernel_info_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/kernel_info', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsKernelInfo]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_logical_drives(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Logical Drives  # noqa: E501
+
+        Valid filter fields are `system_id` and `device_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_logical_drives(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsLogicalDrvies]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_logical_drives_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_logical_drives_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_logical_drives_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Logical Drives  # noqa: E501
+
+        Valid filter fields are `system_id` and `device_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_logical_drives_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsLogicalDrvies]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_logical_drives" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_logical_drives`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_logical_drives`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_logical_drives`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_logical_drives`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_logical_drives`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/logical_drives', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsLogicalDrvies]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_logical_drives_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Logical Drives  # noqa: E501
+
+        Valid filter fields are `device_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_logical_drives_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsLogicalDrvies]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_logical_drives_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_logical_drives_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_logical_drives_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Logical Drives  # noqa: E501
+
+        Valid filter fields are `device_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_logical_drives_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsLogicalDrvies]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_logical_drives_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_logical_drives_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_logical_drives_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_logical_drives_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_logical_drives_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_logical_drives_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_logical_drives_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/logical_drives', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsLogicalDrvies]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_mounts(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Mounts  # noqa: E501
+
+        Valid filter fields are `system_id` and `path`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_mounts(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsMounts]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_mounts_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_mounts_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_mounts_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_mounts_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_mounts_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_mounts_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Mounts  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `path`.  # noqa: E501
+        Valid filter fields are `system_id` and `path`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_mounts_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_mounts_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsMounts]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1686,6 +3312,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_mounts`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_mounts`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_mounts`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1707,6 +3341,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1721,7 +3361,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/mounts', 'GET',
@@ -1739,51 +3379,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_mounts_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_mounts_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Mounts  # noqa: E501
 
         Valid filter fields are `path`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_mounts_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_mounts_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsMounts]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_mounts_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_mounts_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_mounts_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_mounts_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_mounts_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_mounts_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Mounts  # noqa: E501
 
         Valid filter fields are `path`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_mounts_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_mounts_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsMounts]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1798,10 +3444,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_mounts_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_mounts_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_mounts_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_mounts_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_mounts_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1812,8 +3466,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -1825,6 +3479,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1839,10 +3499,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/mounts', 'GET',
+            '/systeminsights/{system_id}/mounts', 'GET',
             path_params,
             query_params,
             header_params,
@@ -1857,51 +3517,55 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_os_version(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System OS Version  # noqa: E501
+    def systeminsights_list_os_version(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights OS Version  # noqa: E501
 
-        Valid filter fields are `version`.  # noqa: E501
+        Valid filter fields are `system_id` and `version`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_os_version(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_os_version(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsOsVersion]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_os_version_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_os_version_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_os_version_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_os_version_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_os_version_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System OS Version  # noqa: E501
+    def systeminsights_list_os_version_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights OS Version  # noqa: E501
 
-        Valid filter fields are `version`.  # noqa: E501
+        Valid filter fields are `system_id` and `version`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_os_version_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_os_version_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsOsVersion]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1916,10 +3580,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_os_version`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_os_version`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_os_version`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_os_version`, must be a value less than or equal to `100`")  # noqa: E501
@@ -1930,8 +3598,6 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -1943,6 +3609,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1957,117 +3629,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/os_version', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[SystemInsightsOsVersion]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def systeminsights_list_os_version_0(self, **kwargs):  # noqa: E501
-        """List System Insights OS Version  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `version`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_os_version_0(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsOsVersion]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.systeminsights_list_os_version_0_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.systeminsights_list_os_version_0_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def systeminsights_list_os_version_0_with_http_info(self, **kwargs):  # noqa: E501
-        """List System Insights OS Version  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `version`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_os_version_0_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsOsVersion]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method systeminsights_list_os_version_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        if 'limit' in params and params['limit'] > 100:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_os_version_0`, must be a value less than or equal to `100`")  # noqa: E501
-        if 'limit' in params and params['limit'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_os_version_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        if 'skip' in params and params['skip'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_os_version_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
-            collection_formats['filter'] = 'csv'  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/os_version', 'GET',
@@ -2085,51 +3647,729 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_safari_extensions(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System Safari Extensions  # noqa: E501
+    def systeminsights_list_os_version_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System OS Version  # noqa: E501
+
+        Valid filter fields are `version`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_os_version_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsOsVersion]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_os_version_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_os_version_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_os_version_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System OS Version  # noqa: E501
+
+        Valid filter fields are `version`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_os_version_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsOsVersion]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_os_version_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_os_version_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_os_version_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_os_version_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_os_version_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_os_version_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_os_version_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/os_version', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsOsVersion]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_patches(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Patches  # noqa: E501
+
+        Valid filter fields are `system_id` and `hotfix_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_patches(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPatches]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_patches_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_patches_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_patches_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Patches  # noqa: E501
+
+        Valid filter fields are `system_id` and `hotfix_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_patches_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPatches]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_patches" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_patches`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_patches`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_patches`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_patches`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_patches`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/patches', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsPatches]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_patches_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Patches  # noqa: E501
+
+        Valid filter fields are `hotfix_id  `.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_patches_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPatches]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_patches_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_patches_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_patches_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Patches  # noqa: E501
+
+        Valid filter fields are `hotfix_id  `.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_patches_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPatches]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_patches_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_patches_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_patches_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_patches_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_patches_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_patches_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_patches_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/patches', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsPatches]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_programs(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Programs  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_programs(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPrograms]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_programs_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_programs_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_programs_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Programs  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_programs_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPrograms]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_programs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_programs`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_programs`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_programs`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_programs`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_programs`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/programs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsPrograms]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_programs_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Programs  # noqa: E501
 
         Valid filter fields are `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_safari_extensions(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_programs_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPrograms]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_programs_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_programs_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_programs_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Programs  # noqa: E501
+
+        Valid filter fields are `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_programs_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsPrograms]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_programs_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_programs_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_programs_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_programs_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_programs_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_programs_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_programs_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/programs', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsPrograms]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_safari_extensions(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Safari Extensions  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_safari_extensions(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsSafariExtensions]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_safari_extensions_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_safari_extensions_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_safari_extensions_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_safari_extensions_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_safari_extensions_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
-        """List System Insights System Safari Extensions  # noqa: E501
+    def systeminsights_list_safari_extensions_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Safari Extensions  # noqa: E501
 
-        Valid filter fields are `name`.  # noqa: E501
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_safari_extensions_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_safari_extensions_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsSafariExtensions]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2144,10 +4384,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_safari_extensions`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_safari_extensions`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_safari_extensions`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_safari_extensions`, must be a value less than or equal to `100`")  # noqa: E501
@@ -2158,8 +4402,6 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -2171,6 +4413,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2185,117 +4433,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/safari_extensions', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[SystemInsightsSafariExtensions]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def systeminsights_list_safari_extensions_0(self, **kwargs):  # noqa: E501
-        """List System Insights Safari Extensions  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_safari_extensions_0(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsSafariExtensions]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.systeminsights_list_safari_extensions_0_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.systeminsights_list_safari_extensions_0_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def systeminsights_list_safari_extensions_0_with_http_info(self, **kwargs):  # noqa: E501
-        """List System Insights Safari Extensions  # noqa: E501
-
-        Valid filter fields are `jc_system_id` and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_safari_extensions_0_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param int limit:
-        :param int skip: The offset into the records to return.
-        :param list[str] filter: Supported operators are: eq
-        :return: list[SystemInsightsSafariExtensions]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method systeminsights_list_safari_extensions_0" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        if 'limit' in params and params['limit'] > 100:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_safari_extensions_0`, must be a value less than or equal to `100`")  # noqa: E501
-        if 'limit' in params and params['limit'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_safari_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        if 'skip' in params and params['skip'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_safari_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'limit' in params:
-            query_params.append(('limit', params['limit']))  # noqa: E501
-        if 'skip' in params:
-            query_params.append(('skip', params['skip']))  # noqa: E501
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))  # noqa: E501
-            collection_formats['filter'] = 'csv'  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/safari_extensions', 'GET',
@@ -2313,49 +4451,461 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_system_info(self, **kwargs):  # noqa: E501
-        """List System Insights System Info  # noqa: E501
+    def systeminsights_list_safari_extensions_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Safari Extensions  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `cpu_subtype`.  # noqa: E501
+        Valid filter fields are `name`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_system_info(async_req=True)
+        >>> thread = api.systeminsights_list_safari_extensions_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsSafariExtensions]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_safari_extensions_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_safari_extensions_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_safari_extensions_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Safari Extensions  # noqa: E501
+
+        Valid filter fields are `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_safari_extensions_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsSafariExtensions]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_safari_extensions_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_safari_extensions_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_safari_extensions_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_safari_extensions_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_safari_extensions_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_safari_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_safari_extensions_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/safari_extensions', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSafariExtensions]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_system_controls(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Control  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_system_controls(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsSystemControls]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_system_controls_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_system_controls_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_system_controls_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Control  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_system_controls_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsSystemControls]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_system_controls" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_system_controls`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_system_controls`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_system_controls`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_system_controls`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_system_controls`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/system_controls', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSystemControls]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_system_controls_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System System Controls  # noqa: E501
+
+        Valid filter fields are `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_system_controls_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsSystemControls]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_system_controls_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_system_controls_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_system_controls_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System System Controls  # noqa: E501
+
+        Valid filter fields are `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_system_controls_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsSystemControls]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_system_controls_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_system_controls_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_system_controls_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_system_controls_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_system_controls_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_system_controls_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_system_controls_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/system_controls', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSystemControls]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_system_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Info  # noqa: E501
+
+        Valid filter fields are `system_id` and `cpu_subtype`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_system_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsSystemInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_system_info_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_system_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_system_info_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_system_info_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_system_info_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_system_info_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Info  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `cpu_subtype`.  # noqa: E501
+        Valid filter fields are `system_id` and `cpu_subtype`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_system_info_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_system_info_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsSystemInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2370,6 +4920,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_system_info`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_system_info`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_system_info`, must be a value less than or equal to `100`")  # noqa: E501
@@ -2391,6 +4949,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2405,7 +4969,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/system_info', 'GET',
@@ -2423,51 +4987,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_system_info_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_system_info_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System System Info  # noqa: E501
 
         Valid filter fields are `cpu_subtype`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_system_info_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_system_info_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsSystemInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_system_info_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_system_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_system_info_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_system_info_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_system_info_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_system_info_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System System Info  # noqa: E501
 
         Valid filter fields are `cpu_subtype`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_system_info_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_system_info_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsSystemInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2482,10 +5052,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_system_info_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_system_info_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_system_info_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_system_info_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_system_info_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -2496,8 +5074,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -2509,6 +5087,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2523,10 +5107,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/system_info', 'GET',
+            '/systeminsights/{system_id}/system_info', 'GET',
             path_params,
             query_params,
             header_params,
@@ -2541,49 +5125,323 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_users(self, **kwargs):  # noqa: E501
-        """List System Insights Users  # noqa: E501
+    def systeminsights_list_uptime(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Uptime  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `username`.  # noqa: E501
+        Valid filter fields are `system_id` and `days`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_users(async_req=True)
+        >>> thread = api.systeminsights_list_uptime(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsUptime]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_uptime_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_uptime_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_uptime_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Uptime  # noqa: E501
+
+        Valid filter fields are `system_id` and `days`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_uptime_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsUptime]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_uptime" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_uptime`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_uptime`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_uptime`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_uptime`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_uptime`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/uptime', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsUptime]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_uptime_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Uptime  # noqa: E501
+
+        Valid filter fields are `days`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_uptime_0(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsUptime]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_uptime_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_uptime_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_uptime_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights System Uptime  # noqa: E501
+
+        Valid filter fields are `days`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_uptime_0_with_http_info(system_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
+        :return: list[SystemInsightsUptime]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_uptime_0" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_uptime_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_uptime_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_uptime_0`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_uptime_0`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_uptime_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_uptime_0`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/{system_id}/uptime', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsUptime]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_users(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Users  # noqa: E501
+
+        Valid filter fields are `system_id` and `username`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_users(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsUsers]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_users_with_http_info(**kwargs)  # noqa: E501
+            return self.systeminsights_list_users_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_users_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_users_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_users_with_http_info(self, **kwargs):  # noqa: E501
+    def systeminsights_list_users_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Users  # noqa: E501
 
-        Valid filter fields are `jc_system_id` and `username`.  # noqa: E501
+        Valid filter fields are `system_id` and `username`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_users_with_http_info(async_req=True)
+        >>> thread = api.systeminsights_list_users_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsUsers]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2598,6 +5456,14 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_users`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_users`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_users`, must be a value less than or equal to `100`")  # noqa: E501
@@ -2619,6 +5485,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2633,7 +5505,7 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/systeminsights/users', 'GET',
@@ -2651,51 +5523,57 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def systeminsights_list_users_0(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_users_0(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Users  # noqa: E501
 
         Valid filter fields are `username`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_users_0(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_users_0(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsUsers]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.systeminsights_list_users_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            return self.systeminsights_list_users_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.systeminsights_list_users_0_with_http_info(jc_system_id, **kwargs)  # noqa: E501
+            (data) = self.systeminsights_list_users_0_with_http_info(system_id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def systeminsights_list_users_0_with_http_info(self, jc_system_id, **kwargs):  # noqa: E501
+    def systeminsights_list_users_0_with_http_info(self, system_id, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights System Users  # noqa: E501
 
         Valid filter fields are `username`.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.systeminsights_list_users_0_with_http_info(jc_system_id, async_req=True)
+        >>> thread = api.systeminsights_list_users_0_with_http_info(system_id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str jc_system_id: (required)
+        :param str system_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
         :param int limit:
         :param int skip: The offset into the records to return.
         :param list[str] filter: Supported operators are: eq
+        :param str x_org_id: 
         :return: list[SystemInsightsUsers]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['jc_system_id', 'limit', 'skip', 'filter']  # noqa: E501
+        all_params = ['system_id', 'content_type', 'accept', 'limit', 'skip', 'filter', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2710,10 +5588,18 @@ class SystemInsightsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'jc_system_id' is set
-        if ('jc_system_id' not in params or
-                params['jc_system_id'] is None):
-            raise ValueError("Missing the required parameter `jc_system_id` when calling `systeminsights_list_users_0`")  # noqa: E501
+        # verify the required parameter 'system_id' is set
+        if ('system_id' not in params or
+                params['system_id'] is None):
+            raise ValueError("Missing the required parameter `system_id` when calling `systeminsights_list_users_0`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_users_0`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_users_0`")  # noqa: E501
 
         if 'limit' in params and params['limit'] > 100:  # noqa: E501
             raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_users_0`, must be a value less than or equal to `100`")  # noqa: E501
@@ -2724,8 +5610,8 @@ class SystemInsightsApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'jc_system_id' in params:
-            path_params['jc_system_id'] = params['jc_system_id']  # noqa: E501
+        if 'system_id' in params:
+            path_params['system_id'] = params['system_id']  # noqa: E501
 
         query_params = []
         if 'limit' in params:
@@ -2737,6 +5623,12 @@ class SystemInsightsApi(object):
             collection_formats['filter'] = 'csv'  # noqa: E501
 
         header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2751,10 +5643,10 @@ class SystemInsightsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/systeminsights/{jc_system_id}/users', 'GET',
+            '/systeminsights/{system_id}/users', 'GET',
             path_params,
             query_params,
             header_params,

@@ -31,31 +31,52 @@ class OrgcryptosettingsSshKeys(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'key_size': 'int',
         'validate': 'bool',
-        'validate_key_size': 'bool',
-        'key_size': 'int'
+        'validate_key_size': 'bool'
     }
 
     attribute_map = {
+        'key_size': 'keySize',
         'validate': 'validate',
-        'validate_key_size': 'validateKeySize',
-        'key_size': 'keySize'
+        'validate_key_size': 'validateKeySize'
     }
 
-    def __init__(self, validate=None, validate_key_size=None, key_size=None):  # noqa: E501
+    def __init__(self, key_size=None, validate=None, validate_key_size=None):  # noqa: E501
         """OrgcryptosettingsSshKeys - a model defined in Swagger"""  # noqa: E501
 
+        self._key_size = None
         self._validate = None
         self._validate_key_size = None
-        self._key_size = None
         self.discriminator = None
 
+        if key_size is not None:
+            self.key_size = key_size
         if validate is not None:
             self.validate = validate
         if validate_key_size is not None:
             self.validate_key_size = validate_key_size
-        if key_size is not None:
-            self.key_size = key_size
+
+    @property
+    def key_size(self):
+        """Gets the key_size of this OrgcryptosettingsSshKeys.  # noqa: E501
+
+
+        :return: The key_size of this OrgcryptosettingsSshKeys.  # noqa: E501
+        :rtype: int
+        """
+        return self._key_size
+
+    @key_size.setter
+    def key_size(self, key_size):
+        """Sets the key_size of this OrgcryptosettingsSshKeys.
+
+
+        :param key_size: The key_size of this OrgcryptosettingsSshKeys.  # noqa: E501
+        :type: int
+        """
+
+        self._key_size = key_size
 
     @property
     def validate(self):
@@ -98,27 +119,6 @@ class OrgcryptosettingsSshKeys(object):
         """
 
         self._validate_key_size = validate_key_size
-
-    @property
-    def key_size(self):
-        """Gets the key_size of this OrgcryptosettingsSshKeys.  # noqa: E501
-
-
-        :return: The key_size of this OrgcryptosettingsSshKeys.  # noqa: E501
-        :rtype: int
-        """
-        return self._key_size
-
-    @key_size.setter
-    def key_size(self, key_size):
-        """Sets the key_size of this OrgcryptosettingsSshKeys.
-
-
-        :param key_size: The key_size of this OrgcryptosettingsSshKeys.  # noqa: E501
-        :type: int
-        """
-
-        self._key_size = key_size
 
     def to_dict(self):
         """Returns the model properties as a dict"""

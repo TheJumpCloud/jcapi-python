@@ -31,51 +31,93 @@ class SystemInsightsGroups(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'collection_time': 'str',
+        'comment': 'str',
         'gid': 'str',
         'gid_signed': 'str',
-        'groupname': 'str',
         'group_sid': 'str',
-        'comment': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'groupname': 'str',
+        'system_id': 'str'
     }
 
     attribute_map = {
+        'collection_time': 'collection_time',
+        'comment': 'comment',
         'gid': 'gid',
         'gid_signed': 'gid_signed',
-        'groupname': 'groupname',
         'group_sid': 'group_sid',
-        'comment': 'comment',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'groupname': 'groupname',
+        'system_id': 'system_id'
     }
 
-    def __init__(self, gid=None, gid_signed=None, groupname=None, group_sid=None, comment=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, collection_time=None, comment=None, gid=None, gid_signed=None, group_sid=None, groupname=None, system_id=None):  # noqa: E501
         """SystemInsightsGroups - a model defined in Swagger"""  # noqa: E501
 
+        self._collection_time = None
+        self._comment = None
         self._gid = None
         self._gid_signed = None
-        self._groupname = None
         self._group_sid = None
-        self._comment = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._groupname = None
+        self._system_id = None
         self.discriminator = None
 
+        if collection_time is not None:
+            self.collection_time = collection_time
+        if comment is not None:
+            self.comment = comment
         if gid is not None:
             self.gid = gid
         if gid_signed is not None:
             self.gid_signed = gid_signed
-        if groupname is not None:
-            self.groupname = groupname
         if group_sid is not None:
             self.group_sid = group_sid
-        if comment is not None:
-            self.comment = comment
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
+        if groupname is not None:
+            self.groupname = groupname
+        if system_id is not None:
+            self.system_id = system_id
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsGroups.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsGroups.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsGroups.
+
+
+        :param collection_time: The collection_time of this SystemInsightsGroups.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
+
+    @property
+    def comment(self):
+        """Gets the comment of this SystemInsightsGroups.  # noqa: E501
+
+
+        :return: The comment of this SystemInsightsGroups.  # noqa: E501
+        :rtype: str
+        """
+        return self._comment
+
+    @comment.setter
+    def comment(self, comment):
+        """Sets the comment of this SystemInsightsGroups.
+
+
+        :param comment: The comment of this SystemInsightsGroups.  # noqa: E501
+        :type: str
+        """
+
+        self._comment = comment
 
     @property
     def gid(self):
@@ -120,27 +162,6 @@ class SystemInsightsGroups(object):
         self._gid_signed = gid_signed
 
     @property
-    def groupname(self):
-        """Gets the groupname of this SystemInsightsGroups.  # noqa: E501
-
-
-        :return: The groupname of this SystemInsightsGroups.  # noqa: E501
-        :rtype: str
-        """
-        return self._groupname
-
-    @groupname.setter
-    def groupname(self, groupname):
-        """Sets the groupname of this SystemInsightsGroups.
-
-
-        :param groupname: The groupname of this SystemInsightsGroups.  # noqa: E501
-        :type: str
-        """
-
-        self._groupname = groupname
-
-    @property
     def group_sid(self):
         """Gets the group_sid of this SystemInsightsGroups.  # noqa: E501
 
@@ -162,67 +183,46 @@ class SystemInsightsGroups(object):
         self._group_sid = group_sid
 
     @property
-    def comment(self):
-        """Gets the comment of this SystemInsightsGroups.  # noqa: E501
+    def groupname(self):
+        """Gets the groupname of this SystemInsightsGroups.  # noqa: E501
 
 
-        :return: The comment of this SystemInsightsGroups.  # noqa: E501
+        :return: The groupname of this SystemInsightsGroups.  # noqa: E501
         :rtype: str
         """
-        return self._comment
+        return self._groupname
 
-    @comment.setter
-    def comment(self, comment):
-        """Sets the comment of this SystemInsightsGroups.
+    @groupname.setter
+    def groupname(self, groupname):
+        """Sets the groupname of this SystemInsightsGroups.
 
 
-        :param comment: The comment of this SystemInsightsGroups.  # noqa: E501
+        :param groupname: The groupname of this SystemInsightsGroups.  # noqa: E501
         :type: str
         """
 
-        self._comment = comment
+        self._groupname = groupname
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsGroups.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsGroups.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsGroups.  # noqa: E501
+        :return: The system_id of this SystemInsightsGroups.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._system_id
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsGroups.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsGroups.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsGroups.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsGroups.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
-
-    @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsGroups.  # noqa: E501
-
-
-        :return: The jc_system_id of this SystemInsightsGroups.  # noqa: E501
-        :rtype: str
-        """
-        return self._jc_system_id
-
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsGroups.
-
-
-        :param jc_system_id: The jc_system_id of this SystemInsightsGroups.  # noqa: E501
-        :type: str
-        """
-
-        self._jc_system_id = jc_system_id
+        self._system_id = system_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

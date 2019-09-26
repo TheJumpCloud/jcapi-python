@@ -34,30 +34,30 @@ class Group(object):
     """
     swagger_types = {
         'id': 'str',
-        'type': 'GroupType',
-        'name': 'str'
+        'name': 'str',
+        'type': 'GroupType'
     }
 
     attribute_map = {
         'id': 'id',
-        'type': 'type',
-        'name': 'name'
+        'name': 'name',
+        'type': 'type'
     }
 
-    def __init__(self, id=None, type=None, name=None):  # noqa: E501
+    def __init__(self, id=None, name=None, type=None):  # noqa: E501
         """Group - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._type = None
         self._name = None
+        self._type = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if type is not None:
-            self.type = type
         if name is not None:
             self.name = name
+        if type is not None:
+            self.type = type
 
     @property
     def id(self):
@@ -83,27 +83,6 @@ class Group(object):
         self._id = id
 
     @property
-    def type(self):
-        """Gets the type of this Group.  # noqa: E501
-
-
-        :return: The type of this Group.  # noqa: E501
-        :rtype: GroupType
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this Group.
-
-
-        :param type: The type of this Group.  # noqa: E501
-        :type: GroupType
-        """
-
-        self._type = type
-
-    @property
     def name(self):
         """Gets the name of this Group.  # noqa: E501
 
@@ -125,6 +104,27 @@ class Group(object):
         """
 
         self._name = name
+
+    @property
+    def type(self):
+        """Gets the type of this Group.  # noqa: E501
+
+
+        :return: The type of this Group.  # noqa: E501
+        :rtype: GroupType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this Group.
+
+
+        :param type: The type of this Group.  # noqa: E501
+        :type: GroupType
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

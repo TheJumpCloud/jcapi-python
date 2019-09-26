@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uid** | **str** |  | [optional] 
-**name** | **str** |  | [optional] 
-**identifier** | **str** |  | [optional] 
-**version** | **str** |  | [optional] 
-**sdk** | **str** |  | [optional] 
-**update_url** | **str** |  | [optional] 
 **author** | **str** |  | [optional] 
-**developer_id** | **str** |  | [optional] 
+**collection_time** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**developer_id** | **str** |  | [optional] 
+**identifier** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
 **path** | **str** |  | [optional] 
-**jc_collection_time** | **str** |  | [optional] 
-**jc_system_id** | **str** |  | [optional] 
+**sdk** | **str** |  | [optional] 
+**system_id** | **str** |  | [optional] 
+**uid** | **str** |  | [optional] 
+**update_url** | **str** |  | [optional] 
+**version** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -163,7 +163,7 @@ class SystemsApi(object):
     def systems_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual system  # noqa: E501
 
-        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_get(id, content_type, accept, async_req=True)
@@ -192,7 +192,7 @@ class SystemsApi(object):
     def systems_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual system  # noqa: E501
 
-        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
+        This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_get_with_http_info(id, content_type, accept, async_req=True)
@@ -298,7 +298,7 @@ class SystemsApi(object):
     def systems_list(self, content_type, accept, **kwargs):  # noqa: E501
         """List All Systems  # noqa: E501
 
-        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_list(content_type, accept, async_req=True)
@@ -328,7 +328,7 @@ class SystemsApi(object):
     def systems_list_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List All Systems  # noqa: E501
 
-        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.systems_list_with_http_info(content_type, accept, async_req=True)
@@ -447,7 +447,7 @@ class SystemsApi(object):
         :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
-        :return: None
+        :return: System
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -475,7 +475,7 @@ class SystemsApi(object):
         :param str _date: Current date header for the System Context API
         :param str authorization: Authorization header for the System Context API
         :param str x_org_id: 
-        :return: None
+        :return: System
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -553,7 +553,7 @@ class SystemsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='System',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -31,102 +31,102 @@ class PolicyTemplate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str',
-        'description': 'str',
-        'display_name': 'str',
-        'os_meta_family': 'str',
         'activation': 'str',
         'behavior': 'str',
+        'description': 'str',
+        'display_name': 'str',
+        'id': 'str',
+        'name': 'str',
+        'os_meta_family': 'str',
         'state': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
-        'description': 'description',
-        'display_name': 'displayName',
-        'os_meta_family': 'osMetaFamily',
         'activation': 'activation',
         'behavior': 'behavior',
+        'description': 'description',
+        'display_name': 'displayName',
+        'id': 'id',
+        'name': 'name',
+        'os_meta_family': 'osMetaFamily',
         'state': 'state'
     }
 
-    def __init__(self, id=None, name=None, description=None, display_name=None, os_meta_family=None, activation=None, behavior=None, state=''):  # noqa: E501
+    def __init__(self, activation=None, behavior=None, description=None, display_name=None, id=None, name=None, os_meta_family=None, state=''):  # noqa: E501
         """PolicyTemplate - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
-        self._name = None
-        self._description = None
-        self._display_name = None
-        self._os_meta_family = None
         self._activation = None
         self._behavior = None
+        self._description = None
+        self._display_name = None
+        self._id = None
+        self._name = None
+        self._os_meta_family = None
         self._state = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if description is not None:
-            self.description = description
-        if display_name is not None:
-            self.display_name = display_name
-        if os_meta_family is not None:
-            self.os_meta_family = os_meta_family
         if activation is not None:
             self.activation = activation
         if behavior is not None:
             self.behavior = behavior
+        if description is not None:
+            self.description = description
+        if display_name is not None:
+            self.display_name = display_name
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if os_meta_family is not None:
+            self.os_meta_family = os_meta_family
         if state is not None:
             self.state = state
 
     @property
-    def id(self):
-        """Gets the id of this PolicyTemplate.  # noqa: E501
+    def activation(self):
+        """Gets the activation of this PolicyTemplate.  # noqa: E501
 
-        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+        Requirements before the policy can be activated.  # noqa: E501
 
-        :return: The id of this PolicyTemplate.  # noqa: E501
+        :return: The activation of this PolicyTemplate.  # noqa: E501
         :rtype: str
         """
-        return self._id
+        return self._activation
 
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PolicyTemplate.
+    @activation.setter
+    def activation(self, activation):
+        """Sets the activation of this PolicyTemplate.
 
-        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+        Requirements before the policy can be activated.  # noqa: E501
 
-        :param id: The id of this PolicyTemplate.  # noqa: E501
+        :param activation: The activation of this PolicyTemplate.  # noqa: E501
         :type: str
         """
 
-        self._id = id
+        self._activation = activation
 
     @property
-    def name(self):
-        """Gets the name of this PolicyTemplate.  # noqa: E501
+    def behavior(self):
+        """Gets the behavior of this PolicyTemplate.  # noqa: E501
 
-        The unique name for the Policy Template.  # noqa: E501
+        Specifics about the behavior of the policy.  # noqa: E501
 
-        :return: The name of this PolicyTemplate.  # noqa: E501
+        :return: The behavior of this PolicyTemplate.  # noqa: E501
         :rtype: str
         """
-        return self._name
+        return self._behavior
 
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PolicyTemplate.
+    @behavior.setter
+    def behavior(self, behavior):
+        """Sets the behavior of this PolicyTemplate.
 
-        The unique name for the Policy Template.  # noqa: E501
+        Specifics about the behavior of the policy.  # noqa: E501
 
-        :param name: The name of this PolicyTemplate.  # noqa: E501
+        :param behavior: The behavior of this PolicyTemplate.  # noqa: E501
         :type: str
         """
 
-        self._name = name
+        self._behavior = behavior
 
     @property
     def description(self):
@@ -175,6 +175,52 @@ class PolicyTemplate(object):
         self._display_name = display_name
 
     @property
+    def id(self):
+        """Gets the id of this PolicyTemplate.  # noqa: E501
+
+        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+
+        :return: The id of this PolicyTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PolicyTemplate.
+
+        ObjectId uniquely identifying a Policy Template.  # noqa: E501
+
+        :param id: The id of this PolicyTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def name(self):
+        """Gets the name of this PolicyTemplate.  # noqa: E501
+
+        The unique name for the Policy Template.  # noqa: E501
+
+        :return: The name of this PolicyTemplate.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this PolicyTemplate.
+
+        The unique name for the Policy Template.  # noqa: E501
+
+        :param name: The name of this PolicyTemplate.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
     def os_meta_family(self):
         """Gets the os_meta_family of this PolicyTemplate.  # noqa: E501
 
@@ -200,52 +246,6 @@ class PolicyTemplate(object):
             )
 
         self._os_meta_family = os_meta_family
-
-    @property
-    def activation(self):
-        """Gets the activation of this PolicyTemplate.  # noqa: E501
-
-        Requirements before the policy can be activated.  # noqa: E501
-
-        :return: The activation of this PolicyTemplate.  # noqa: E501
-        :rtype: str
-        """
-        return self._activation
-
-    @activation.setter
-    def activation(self, activation):
-        """Sets the activation of this PolicyTemplate.
-
-        Requirements before the policy can be activated.  # noqa: E501
-
-        :param activation: The activation of this PolicyTemplate.  # noqa: E501
-        :type: str
-        """
-
-        self._activation = activation
-
-    @property
-    def behavior(self):
-        """Gets the behavior of this PolicyTemplate.  # noqa: E501
-
-        Specifics about the behavior of the policy.  # noqa: E501
-
-        :return: The behavior of this PolicyTemplate.  # noqa: E501
-        :rtype: str
-        """
-        return self._behavior
-
-    @behavior.setter
-    def behavior(self, behavior):
-        """Sets the behavior of this PolicyTemplate.
-
-        Specifics about the behavior of the policy.  # noqa: E501
-
-        :param behavior: The behavior of this PolicyTemplate.  # noqa: E501
-        :type: str
-        """
-
-        self._behavior = behavior
 
     @property
     def state(self):

@@ -8,6 +8,7 @@ from jcapiv2.api.applications_api import ApplicationsApi
 from jcapiv2.api.bulk_job_requests_api import BulkJobRequestsApi
 from jcapiv2.api.commands_api import CommandsApi
 from jcapiv2.api.directories_api import DirectoriesApi
+from jcapiv2.api.duo_api import DuoApi
 from jcapiv2.api.g_suite_api import GSuiteApi
 from jcapiv2.api.graph_api import GraphApi
 from jcapiv2.api.groups_api import GroupsApi

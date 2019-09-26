@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv1
-from jcapiv1.models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables  # noqa: E501
+from jcapiv1.models.application_config_acs_url_tooltip_variables import ApplicationConfigAcsUrlTooltipVariables  # noqa: E501
 from jcapiv1.rest import ApiException
 
 
-class TestApplicationConfigIdpEntityIdTooltipVariables(unittest.TestCase):
-    """ApplicationConfigIdpEntityIdTooltipVariables unit test stubs"""
+class TestApplicationConfigAcsUrlTooltipVariables(unittest.TestCase):
+    """ApplicationConfigAcsUrlTooltipVariables unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestApplicationConfigIdpEntityIdTooltipVariables(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApplicationConfigIdpEntityIdTooltipVariables(self):
-        """Test ApplicationConfigIdpEntityIdTooltipVariables"""
+    def testApplicationConfigAcsUrlTooltipVariables(self):
+        """Test ApplicationConfigAcsUrlTooltipVariables"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv1.models.application_config_idp_entity_id_tooltip_variables.ApplicationConfigIdpEntityIdTooltipVariables()  # noqa: E501
+        # model = jcapiv1.models.application_config_acs_url_tooltip_variables.ApplicationConfigAcsUrlTooltipVariables()  # noqa: E501
         pass
 
 

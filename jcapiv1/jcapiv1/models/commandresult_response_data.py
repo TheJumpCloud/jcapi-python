@@ -31,49 +31,26 @@ class CommandresultResponseData(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'output': 'str',
-        'exit_code': 'int'
+        'exit_code': 'int',
+        'output': 'str'
     }
 
     attribute_map = {
-        'output': 'output',
-        'exit_code': 'exitCode'
+        'exit_code': 'exitCode',
+        'output': 'output'
     }
 
-    def __init__(self, output=None, exit_code=None):  # noqa: E501
+    def __init__(self, exit_code=None, output=None):  # noqa: E501
         """CommandresultResponseData - a model defined in Swagger"""  # noqa: E501
 
-        self._output = None
         self._exit_code = None
+        self._output = None
         self.discriminator = None
 
-        if output is not None:
-            self.output = output
         if exit_code is not None:
             self.exit_code = exit_code
-
-    @property
-    def output(self):
-        """Gets the output of this CommandresultResponseData.  # noqa: E501
-
-        The output of the command that was executed.  # noqa: E501
-
-        :return: The output of this CommandresultResponseData.  # noqa: E501
-        :rtype: str
-        """
-        return self._output
-
-    @output.setter
-    def output(self, output):
-        """Sets the output of this CommandresultResponseData.
-
-        The output of the command that was executed.  # noqa: E501
-
-        :param output: The output of this CommandresultResponseData.  # noqa: E501
-        :type: str
-        """
-
-        self._output = output
+        if output is not None:
+            self.output = output
 
     @property
     def exit_code(self):
@@ -97,6 +74,29 @@ class CommandresultResponseData(object):
         """
 
         self._exit_code = exit_code
+
+    @property
+    def output(self):
+        """Gets the output of this CommandresultResponseData.  # noqa: E501
+
+        The output of the command that was executed.  # noqa: E501
+
+        :return: The output of this CommandresultResponseData.  # noqa: E501
+        :rtype: str
+        """
+        return self._output
+
+    @output.setter
+    def output(self, output):
+        """Sets the output of this CommandresultResponseData.
+
+        The output of the command that was executed.  # noqa: E501
+
+        :param output: The output of this CommandresultResponseData.  # noqa: E501
+        :type: str
+        """
+
+        self._output = output
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -32,30 +32,30 @@ class Error(object):
     """
     swagger_types = {
         'code': 'int',
-        'message': 'str',
-        'fields': 'str'
+        'fields': 'str',
+        'message': 'str'
     }
 
     attribute_map = {
         'code': 'code',
-        'message': 'message',
-        'fields': 'fields'
+        'fields': 'fields',
+        'message': 'message'
     }
 
-    def __init__(self, code=None, message=None, fields=None):  # noqa: E501
+    def __init__(self, code=None, fields=None, message=None):  # noqa: E501
         """Error - a model defined in Swagger"""  # noqa: E501
 
         self._code = None
-        self._message = None
         self._fields = None
+        self._message = None
         self.discriminator = None
 
         if code is not None:
             self.code = code
-        if message is not None:
-            self.message = message
         if fields is not None:
             self.fields = fields
+        if message is not None:
+            self.message = message
 
     @property
     def code(self):
@@ -79,27 +79,6 @@ class Error(object):
         self._code = code
 
     @property
-    def message(self):
-        """Gets the message of this Error.  # noqa: E501
-
-
-        :return: The message of this Error.  # noqa: E501
-        :rtype: str
-        """
-        return self._message
-
-    @message.setter
-    def message(self, message):
-        """Sets the message of this Error.
-
-
-        :param message: The message of this Error.  # noqa: E501
-        :type: str
-        """
-
-        self._message = message
-
-    @property
     def fields(self):
         """Gets the fields of this Error.  # noqa: E501
 
@@ -119,6 +98,27 @@ class Error(object):
         """
 
         self._fields = fields
+
+    @property
+    def message(self):
+        """Gets the message of this Error.  # noqa: E501
+
+
+        :return: The message of this Error.  # noqa: E501
+        :rtype: str
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message):
+        """Sets the message of this Error.
+
+
+        :param message: The message of this Error.  # noqa: E501
+        :type: str
+        """
+
+        self._message = message
 
     def to_dict(self):
         """Returns the model properties as a dict"""

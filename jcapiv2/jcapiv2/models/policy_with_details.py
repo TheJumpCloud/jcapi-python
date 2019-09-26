@@ -35,41 +35,62 @@ class PolicyWithDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'template': 'PolicyTemplate',
         'config_fields': 'list[PolicyTemplateConfigField]',
+        'id': 'str',
         'name': 'str',
+        'template': 'PolicyTemplate',
         'values': 'list[PolicyValue]'
     }
 
     attribute_map = {
-        'id': 'id',
-        'template': 'template',
         'config_fields': 'configFields',
+        'id': 'id',
         'name': 'name',
+        'template': 'template',
         'values': 'values'
     }
 
-    def __init__(self, id=None, template=None, config_fields=None, name=None, values=None):  # noqa: E501
+    def __init__(self, config_fields=None, id=None, name=None, template=None, values=None):  # noqa: E501
         """PolicyWithDetails - a model defined in Swagger"""  # noqa: E501
 
-        self._id = None
-        self._template = None
         self._config_fields = None
+        self._id = None
         self._name = None
+        self._template = None
         self._values = None
         self.discriminator = None
 
-        if id is not None:
-            self.id = id
-        if template is not None:
-            self.template = template
         if config_fields is not None:
             self.config_fields = config_fields
+        if id is not None:
+            self.id = id
         if name is not None:
             self.name = name
+        if template is not None:
+            self.template = template
         if values is not None:
             self.values = values
+
+    @property
+    def config_fields(self):
+        """Gets the config_fields of this PolicyWithDetails.  # noqa: E501
+
+
+        :return: The config_fields of this PolicyWithDetails.  # noqa: E501
+        :rtype: list[PolicyTemplateConfigField]
+        """
+        return self._config_fields
+
+    @config_fields.setter
+    def config_fields(self, config_fields):
+        """Sets the config_fields of this PolicyWithDetails.
+
+
+        :param config_fields: The config_fields of this PolicyWithDetails.  # noqa: E501
+        :type: list[PolicyTemplateConfigField]
+        """
+
+        self._config_fields = config_fields
 
     @property
     def id(self):
@@ -95,48 +116,6 @@ class PolicyWithDetails(object):
         self._id = id
 
     @property
-    def template(self):
-        """Gets the template of this PolicyWithDetails.  # noqa: E501
-
-
-        :return: The template of this PolicyWithDetails.  # noqa: E501
-        :rtype: PolicyTemplate
-        """
-        return self._template
-
-    @template.setter
-    def template(self, template):
-        """Sets the template of this PolicyWithDetails.
-
-
-        :param template: The template of this PolicyWithDetails.  # noqa: E501
-        :type: PolicyTemplate
-        """
-
-        self._template = template
-
-    @property
-    def config_fields(self):
-        """Gets the config_fields of this PolicyWithDetails.  # noqa: E501
-
-
-        :return: The config_fields of this PolicyWithDetails.  # noqa: E501
-        :rtype: list[PolicyTemplateConfigField]
-        """
-        return self._config_fields
-
-    @config_fields.setter
-    def config_fields(self, config_fields):
-        """Sets the config_fields of this PolicyWithDetails.
-
-
-        :param config_fields: The config_fields of this PolicyWithDetails.  # noqa: E501
-        :type: list[PolicyTemplateConfigField]
-        """
-
-        self._config_fields = config_fields
-
-    @property
     def name(self):
         """Gets the name of this PolicyWithDetails.  # noqa: E501
 
@@ -158,6 +137,27 @@ class PolicyWithDetails(object):
         """
 
         self._name = name
+
+    @property
+    def template(self):
+        """Gets the template of this PolicyWithDetails.  # noqa: E501
+
+
+        :return: The template of this PolicyWithDetails.  # noqa: E501
+        :rtype: PolicyTemplate
+        """
+        return self._template
+
+    @template.setter
+    def template(self, template):
+        """Sets the template of this PolicyWithDetails.
+
+
+        :param template: The template of this PolicyWithDetails.  # noqa: E501
+        :type: PolicyTemplate
+        """
+
+        self._template = template
 
     @property
     def values(self):

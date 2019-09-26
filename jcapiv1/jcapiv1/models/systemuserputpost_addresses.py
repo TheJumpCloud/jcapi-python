@@ -31,98 +31,77 @@ class SystemuserputpostAddresses(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
-        'po_box': 'str',
+        'country': 'str',
         'extended_address': 'str',
-        'street_address': 'str',
         'locality': 'str',
-        'region': 'str',
+        'po_box': 'str',
         'postal_code': 'str',
-        'country': 'str'
+        'region': 'str',
+        'street_address': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'type': 'type',
-        'po_box': 'poBox',
+        'country': 'country',
         'extended_address': 'extendedAddress',
-        'street_address': 'streetAddress',
         'locality': 'locality',
-        'region': 'region',
+        'po_box': 'poBox',
         'postal_code': 'postalCode',
-        'country': 'country'
+        'region': 'region',
+        'street_address': 'streetAddress',
+        'type': 'type'
     }
 
-    def __init__(self, type=None, po_box=None, extended_address=None, street_address=None, locality=None, region=None, postal_code=None, country=None):  # noqa: E501
+    def __init__(self, country=None, extended_address=None, locality=None, po_box=None, postal_code=None, region=None, street_address=None, type=None):  # noqa: E501
         """SystemuserputpostAddresses - a model defined in Swagger"""  # noqa: E501
 
-        self._type = None
-        self._po_box = None
-        self._extended_address = None
-        self._street_address = None
-        self._locality = None
-        self._region = None
-        self._postal_code = None
         self._country = None
+        self._extended_address = None
+        self._locality = None
+        self._po_box = None
+        self._postal_code = None
+        self._region = None
+        self._street_address = None
+        self._type = None
         self.discriminator = None
 
-        if type is not None:
-            self.type = type
-        if po_box is not None:
-            self.po_box = po_box
-        if extended_address is not None:
-            self.extended_address = extended_address
-        if street_address is not None:
-            self.street_address = street_address
-        if locality is not None:
-            self.locality = locality
-        if region is not None:
-            self.region = region
-        if postal_code is not None:
-            self.postal_code = postal_code
         if country is not None:
             self.country = country
+        if extended_address is not None:
+            self.extended_address = extended_address
+        if locality is not None:
+            self.locality = locality
+        if po_box is not None:
+            self.po_box = po_box
+        if postal_code is not None:
+            self.postal_code = postal_code
+        if region is not None:
+            self.region = region
+        if street_address is not None:
+            self.street_address = street_address
+        if type is not None:
+            self.type = type
 
     @property
-    def type(self):
-        """Gets the type of this SystemuserputpostAddresses.  # noqa: E501
+    def country(self):
+        """Gets the country of this SystemuserputpostAddresses.  # noqa: E501
 
 
-        :return: The type of this SystemuserputpostAddresses.  # noqa: E501
+        :return: The country of this SystemuserputpostAddresses.  # noqa: E501
         :rtype: str
         """
-        return self._type
+        return self._country
 
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SystemuserputpostAddresses.
+    @country.setter
+    def country(self, country):
+        """Sets the country of this SystemuserputpostAddresses.
 
 
-        :param type: The type of this SystemuserputpostAddresses.  # noqa: E501
+        :param country: The country of this SystemuserputpostAddresses.  # noqa: E501
         :type: str
         """
 
-        self._type = type
-
-    @property
-    def po_box(self):
-        """Gets the po_box of this SystemuserputpostAddresses.  # noqa: E501
-
-
-        :return: The po_box of this SystemuserputpostAddresses.  # noqa: E501
-        :rtype: str
-        """
-        return self._po_box
-
-    @po_box.setter
-    def po_box(self, po_box):
-        """Sets the po_box of this SystemuserputpostAddresses.
-
-
-        :param po_box: The po_box of this SystemuserputpostAddresses.  # noqa: E501
-        :type: str
-        """
-
-        self._po_box = po_box
+        self._country = country
 
     @property
     def extended_address(self):
@@ -146,27 +125,6 @@ class SystemuserputpostAddresses(object):
         self._extended_address = extended_address
 
     @property
-    def street_address(self):
-        """Gets the street_address of this SystemuserputpostAddresses.  # noqa: E501
-
-
-        :return: The street_address of this SystemuserputpostAddresses.  # noqa: E501
-        :rtype: str
-        """
-        return self._street_address
-
-    @street_address.setter
-    def street_address(self, street_address):
-        """Sets the street_address of this SystemuserputpostAddresses.
-
-
-        :param street_address: The street_address of this SystemuserputpostAddresses.  # noqa: E501
-        :type: str
-        """
-
-        self._street_address = street_address
-
-    @property
     def locality(self):
         """Gets the locality of this SystemuserputpostAddresses.  # noqa: E501
 
@@ -188,25 +146,25 @@ class SystemuserputpostAddresses(object):
         self._locality = locality
 
     @property
-    def region(self):
-        """Gets the region of this SystemuserputpostAddresses.  # noqa: E501
+    def po_box(self):
+        """Gets the po_box of this SystemuserputpostAddresses.  # noqa: E501
 
 
-        :return: The region of this SystemuserputpostAddresses.  # noqa: E501
+        :return: The po_box of this SystemuserputpostAddresses.  # noqa: E501
         :rtype: str
         """
-        return self._region
+        return self._po_box
 
-    @region.setter
-    def region(self, region):
-        """Sets the region of this SystemuserputpostAddresses.
+    @po_box.setter
+    def po_box(self, po_box):
+        """Sets the po_box of this SystemuserputpostAddresses.
 
 
-        :param region: The region of this SystemuserputpostAddresses.  # noqa: E501
+        :param po_box: The po_box of this SystemuserputpostAddresses.  # noqa: E501
         :type: str
         """
 
-        self._region = region
+        self._po_box = po_box
 
     @property
     def postal_code(self):
@@ -230,25 +188,67 @@ class SystemuserputpostAddresses(object):
         self._postal_code = postal_code
 
     @property
-    def country(self):
-        """Gets the country of this SystemuserputpostAddresses.  # noqa: E501
+    def region(self):
+        """Gets the region of this SystemuserputpostAddresses.  # noqa: E501
 
 
-        :return: The country of this SystemuserputpostAddresses.  # noqa: E501
+        :return: The region of this SystemuserputpostAddresses.  # noqa: E501
         :rtype: str
         """
-        return self._country
+        return self._region
 
-    @country.setter
-    def country(self, country):
-        """Sets the country of this SystemuserputpostAddresses.
+    @region.setter
+    def region(self, region):
+        """Sets the region of this SystemuserputpostAddresses.
 
 
-        :param country: The country of this SystemuserputpostAddresses.  # noqa: E501
+        :param region: The region of this SystemuserputpostAddresses.  # noqa: E501
         :type: str
         """
 
-        self._country = country
+        self._region = region
+
+    @property
+    def street_address(self):
+        """Gets the street_address of this SystemuserputpostAddresses.  # noqa: E501
+
+
+        :return: The street_address of this SystemuserputpostAddresses.  # noqa: E501
+        :rtype: str
+        """
+        return self._street_address
+
+    @street_address.setter
+    def street_address(self, street_address):
+        """Sets the street_address of this SystemuserputpostAddresses.
+
+
+        :param street_address: The street_address of this SystemuserputpostAddresses.  # noqa: E501
+        :type: str
+        """
+
+        self._street_address = street_address
+
+    @property
+    def type(self):
+        """Gets the type of this SystemuserputpostAddresses.  # noqa: E501
+
+
+        :return: The type of this SystemuserputpostAddresses.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SystemuserputpostAddresses.
+
+
+        :param type: The type of this SystemuserputpostAddresses.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

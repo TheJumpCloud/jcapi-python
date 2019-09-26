@@ -16,8 +16,8 @@ import re  # noqa: F401
 
 import six
 
+from jcapiv1.models.application_config_acs_url_tooltip import ApplicationConfigAcsUrlTooltip  # noqa: F401,E501
 from jcapiv1.models.application_config_constant_attributes_value import ApplicationConfigConstantAttributesValue  # noqa: F401,E501
-from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip  # noqa: F401,E501
 
 
 class ApplicationConfigConstantAttributes(object):
@@ -35,46 +35,52 @@ class ApplicationConfigConstantAttributes(object):
     """
     swagger_types = {
         'label': 'str',
+        'mutable': 'bool',
+        'position': 'int',
         'read_only': 'bool',
-        'tooltip': 'ApplicationConfigIdpEntityIdTooltip',
+        'required': 'bool',
+        'tooltip': 'ApplicationConfigAcsUrlTooltip',
         'type': 'str',
         'value': 'list[ApplicationConfigConstantAttributesValue]',
-        'visible': 'bool',
-        'mutable': 'bool',
-        'required': 'bool',
-        'position': 'int'
+        'visible': 'bool'
     }
 
     attribute_map = {
         'label': 'label',
+        'mutable': 'mutable',
+        'position': 'position',
         'read_only': 'readOnly',
+        'required': 'required',
         'tooltip': 'tooltip',
         'type': 'type',
         'value': 'value',
-        'visible': 'visible',
-        'mutable': 'mutable',
-        'required': 'required',
-        'position': 'position'
+        'visible': 'visible'
     }
 
-    def __init__(self, label=None, read_only=None, tooltip=None, type=None, value=None, visible=None, mutable=None, required=None, position=None):  # noqa: E501
+    def __init__(self, label=None, mutable=None, position=None, read_only=None, required=None, tooltip=None, type=None, value=None, visible=None):  # noqa: E501
         """ApplicationConfigConstantAttributes - a model defined in Swagger"""  # noqa: E501
 
         self._label = None
+        self._mutable = None
+        self._position = None
         self._read_only = None
+        self._required = None
         self._tooltip = None
         self._type = None
         self._value = None
         self._visible = None
-        self._mutable = None
-        self._required = None
-        self._position = None
         self.discriminator = None
 
         if label is not None:
             self.label = label
+        if mutable is not None:
+            self.mutable = mutable
+        if position is not None:
+            self.position = position
         if read_only is not None:
             self.read_only = read_only
+        if required is not None:
+            self.required = required
         if tooltip is not None:
             self.tooltip = tooltip
         if type is not None:
@@ -83,12 +89,6 @@ class ApplicationConfigConstantAttributes(object):
             self.value = value
         if visible is not None:
             self.visible = visible
-        if mutable is not None:
-            self.mutable = mutable
-        if required is not None:
-            self.required = required
-        if position is not None:
-            self.position = position
 
     @property
     def label(self):
@@ -112,6 +112,48 @@ class ApplicationConfigConstantAttributes(object):
         self._label = label
 
     @property
+    def mutable(self):
+        """Gets the mutable of this ApplicationConfigConstantAttributes.  # noqa: E501
+
+
+        :return: The mutable of this ApplicationConfigConstantAttributes.  # noqa: E501
+        :rtype: bool
+        """
+        return self._mutable
+
+    @mutable.setter
+    def mutable(self, mutable):
+        """Sets the mutable of this ApplicationConfigConstantAttributes.
+
+
+        :param mutable: The mutable of this ApplicationConfigConstantAttributes.  # noqa: E501
+        :type: bool
+        """
+
+        self._mutable = mutable
+
+    @property
+    def position(self):
+        """Gets the position of this ApplicationConfigConstantAttributes.  # noqa: E501
+
+
+        :return: The position of this ApplicationConfigConstantAttributes.  # noqa: E501
+        :rtype: int
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """Sets the position of this ApplicationConfigConstantAttributes.
+
+
+        :param position: The position of this ApplicationConfigConstantAttributes.  # noqa: E501
+        :type: int
+        """
+
+        self._position = position
+
+    @property
     def read_only(self):
         """Gets the read_only of this ApplicationConfigConstantAttributes.  # noqa: E501
 
@@ -133,12 +175,33 @@ class ApplicationConfigConstantAttributes(object):
         self._read_only = read_only
 
     @property
+    def required(self):
+        """Gets the required of this ApplicationConfigConstantAttributes.  # noqa: E501
+
+
+        :return: The required of this ApplicationConfigConstantAttributes.  # noqa: E501
+        :rtype: bool
+        """
+        return self._required
+
+    @required.setter
+    def required(self, required):
+        """Sets the required of this ApplicationConfigConstantAttributes.
+
+
+        :param required: The required of this ApplicationConfigConstantAttributes.  # noqa: E501
+        :type: bool
+        """
+
+        self._required = required
+
+    @property
     def tooltip(self):
         """Gets the tooltip of this ApplicationConfigConstantAttributes.  # noqa: E501
 
 
         :return: The tooltip of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :rtype: ApplicationConfigIdpEntityIdTooltip
+        :rtype: ApplicationConfigAcsUrlTooltip
         """
         return self._tooltip
 
@@ -148,7 +211,7 @@ class ApplicationConfigConstantAttributes(object):
 
 
         :param tooltip: The tooltip of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :type: ApplicationConfigIdpEntityIdTooltip
+        :type: ApplicationConfigAcsUrlTooltip
         """
 
         self._tooltip = tooltip
@@ -215,69 +278,6 @@ class ApplicationConfigConstantAttributes(object):
         """
 
         self._visible = visible
-
-    @property
-    def mutable(self):
-        """Gets the mutable of this ApplicationConfigConstantAttributes.  # noqa: E501
-
-
-        :return: The mutable of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :rtype: bool
-        """
-        return self._mutable
-
-    @mutable.setter
-    def mutable(self, mutable):
-        """Sets the mutable of this ApplicationConfigConstantAttributes.
-
-
-        :param mutable: The mutable of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :type: bool
-        """
-
-        self._mutable = mutable
-
-    @property
-    def required(self):
-        """Gets the required of this ApplicationConfigConstantAttributes.  # noqa: E501
-
-
-        :return: The required of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :rtype: bool
-        """
-        return self._required
-
-    @required.setter
-    def required(self, required):
-        """Sets the required of this ApplicationConfigConstantAttributes.
-
-
-        :param required: The required of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :type: bool
-        """
-
-        self._required = required
-
-    @property
-    def position(self):
-        """Gets the position of this ApplicationConfigConstantAttributes.  # noqa: E501
-
-
-        :return: The position of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :rtype: int
-        """
-        return self._position
-
-    @position.setter
-    def position(self, position):
-        """Sets the position of this ApplicationConfigConstantAttributes.
-
-
-        :param position: The position of this ApplicationConfigConstantAttributes.  # noqa: E501
-        :type: int
-        """
-
-        self._position = position
 
     def to_dict(self):
         """Returns the model properties as a dict"""

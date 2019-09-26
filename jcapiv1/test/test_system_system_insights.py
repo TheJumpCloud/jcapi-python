@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv1
-from jcapiv1.models.application_config_idp_entity_id import ApplicationConfigIdpEntityId  # noqa: E501
+from jcapiv1.models.system_system_insights import SystemSystemInsights  # noqa: E501
 from jcapiv1.rest import ApiException
 
 
-class TestApplicationConfigIdpEntityId(unittest.TestCase):
-    """ApplicationConfigIdpEntityId unit test stubs"""
+class TestSystemSystemInsights(unittest.TestCase):
+    """SystemSystemInsights unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestApplicationConfigIdpEntityId(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testApplicationConfigIdpEntityId(self):
-        """Test ApplicationConfigIdpEntityId"""
+    def testSystemSystemInsights(self):
+        """Test SystemSystemInsights"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv1.models.application_config_idp_entity_id.ApplicationConfigIdpEntityId()  # noqa: E501
+        # model = jcapiv1.models.system_system_insights.SystemSystemInsights()  # noqa: E501
         pass
 
 

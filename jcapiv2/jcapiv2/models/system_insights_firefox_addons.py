@@ -31,285 +31,96 @@ class SystemInsightsFirefoxAddons(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'uid': 'str',
-        'name': 'str',
-        'identifier': 'str',
-        'creator': 'str',
-        'type': 'str',
-        'version': 'str',
-        'description': 'str',
-        'source_url': 'str',
-        'visible': 'int',
         'active': 'int',
-        'disabled': 'int',
         'autoupdate': 'int',
+        'collection_time': 'str',
+        'creator': 'str',
+        'description': 'str',
+        'disabled': 'int',
+        'identifier': 'str',
         'location': 'str',
+        'name': 'str',
         'path': 'str',
-        'jc_collection_time': 'str',
-        'jc_system_id': 'str'
+        'source_url': 'str',
+        'system_id': 'str',
+        'type': 'str',
+        'uid': 'str',
+        'version': 'str',
+        'visible': 'int'
     }
 
     attribute_map = {
-        'uid': 'uid',
-        'name': 'name',
-        'identifier': 'identifier',
-        'creator': 'creator',
-        'type': 'type',
-        'version': 'version',
-        'description': 'description',
-        'source_url': 'source_url',
-        'visible': 'visible',
         'active': 'active',
-        'disabled': 'disabled',
         'autoupdate': 'autoupdate',
+        'collection_time': 'collection_time',
+        'creator': 'creator',
+        'description': 'description',
+        'disabled': 'disabled',
+        'identifier': 'identifier',
         'location': 'location',
+        'name': 'name',
         'path': 'path',
-        'jc_collection_time': 'jc_collection_time',
-        'jc_system_id': 'jc_system_id'
+        'source_url': 'source_url',
+        'system_id': 'system_id',
+        'type': 'type',
+        'uid': 'uid',
+        'version': 'version',
+        'visible': 'visible'
     }
 
-    def __init__(self, uid=None, name=None, identifier=None, creator=None, type=None, version=None, description=None, source_url=None, visible=None, active=None, disabled=None, autoupdate=None, location=None, path=None, jc_collection_time=None, jc_system_id=None):  # noqa: E501
+    def __init__(self, active=None, autoupdate=None, collection_time=None, creator=None, description=None, disabled=None, identifier=None, location=None, name=None, path=None, source_url=None, system_id=None, type=None, uid=None, version=None, visible=None):  # noqa: E501
         """SystemInsightsFirefoxAddons - a model defined in Swagger"""  # noqa: E501
 
-        self._uid = None
-        self._name = None
-        self._identifier = None
-        self._creator = None
-        self._type = None
-        self._version = None
-        self._description = None
-        self._source_url = None
-        self._visible = None
         self._active = None
-        self._disabled = None
         self._autoupdate = None
+        self._collection_time = None
+        self._creator = None
+        self._description = None
+        self._disabled = None
+        self._identifier = None
         self._location = None
+        self._name = None
         self._path = None
-        self._jc_collection_time = None
-        self._jc_system_id = None
+        self._source_url = None
+        self._system_id = None
+        self._type = None
+        self._uid = None
+        self._version = None
+        self._visible = None
         self.discriminator = None
 
-        if uid is not None:
-            self.uid = uid
-        if name is not None:
-            self.name = name
-        if identifier is not None:
-            self.identifier = identifier
-        if creator is not None:
-            self.creator = creator
-        if type is not None:
-            self.type = type
-        if version is not None:
-            self.version = version
-        if description is not None:
-            self.description = description
-        if source_url is not None:
-            self.source_url = source_url
-        if visible is not None:
-            self.visible = visible
         if active is not None:
             self.active = active
-        if disabled is not None:
-            self.disabled = disabled
         if autoupdate is not None:
             self.autoupdate = autoupdate
+        if collection_time is not None:
+            self.collection_time = collection_time
+        if creator is not None:
+            self.creator = creator
+        if description is not None:
+            self.description = description
+        if disabled is not None:
+            self.disabled = disabled
+        if identifier is not None:
+            self.identifier = identifier
         if location is not None:
             self.location = location
+        if name is not None:
+            self.name = name
         if path is not None:
             self.path = path
-        if jc_collection_time is not None:
-            self.jc_collection_time = jc_collection_time
-        if jc_system_id is not None:
-            self.jc_system_id = jc_system_id
-
-    @property
-    def uid(self):
-        """Gets the uid of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The uid of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._uid
-
-    @uid.setter
-    def uid(self, uid):
-        """Sets the uid of this SystemInsightsFirefoxAddons.
-
-
-        :param uid: The uid of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._uid = uid
-
-    @property
-    def name(self):
-        """Gets the name of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The name of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this SystemInsightsFirefoxAddons.
-
-
-        :param name: The name of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def identifier(self):
-        """Gets the identifier of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The identifier of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._identifier
-
-    @identifier.setter
-    def identifier(self, identifier):
-        """Sets the identifier of this SystemInsightsFirefoxAddons.
-
-
-        :param identifier: The identifier of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._identifier = identifier
-
-    @property
-    def creator(self):
-        """Gets the creator of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The creator of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._creator
-
-    @creator.setter
-    def creator(self, creator):
-        """Sets the creator of this SystemInsightsFirefoxAddons.
-
-
-        :param creator: The creator of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._creator = creator
-
-    @property
-    def type(self):
-        """Gets the type of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The type of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SystemInsightsFirefoxAddons.
-
-
-        :param type: The type of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
-
-    @property
-    def version(self):
-        """Gets the version of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The version of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """Sets the version of this SystemInsightsFirefoxAddons.
-
-
-        :param version: The version of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._version = version
-
-    @property
-    def description(self):
-        """Gets the description of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The description of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description):
-        """Sets the description of this SystemInsightsFirefoxAddons.
-
-
-        :param description: The description of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._description = description
-
-    @property
-    def source_url(self):
-        """Gets the source_url of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The source_url of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: str
-        """
-        return self._source_url
-
-    @source_url.setter
-    def source_url(self, source_url):
-        """Sets the source_url of this SystemInsightsFirefoxAddons.
-
-
-        :param source_url: The source_url of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: str
-        """
-
-        self._source_url = source_url
-
-    @property
-    def visible(self):
-        """Gets the visible of this SystemInsightsFirefoxAddons.  # noqa: E501
-
-
-        :return: The visible of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: int
-        """
-        return self._visible
-
-    @visible.setter
-    def visible(self, visible):
-        """Sets the visible of this SystemInsightsFirefoxAddons.
-
-
-        :param visible: The visible of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: int
-        """
-
-        self._visible = visible
+        if source_url is not None:
+            self.source_url = source_url
+        if system_id is not None:
+            self.system_id = system_id
+        if type is not None:
+            self.type = type
+        if uid is not None:
+            self.uid = uid
+        if version is not None:
+            self.version = version
+        if visible is not None:
+            self.visible = visible
 
     @property
     def active(self):
@@ -333,6 +144,90 @@ class SystemInsightsFirefoxAddons(object):
         self._active = active
 
     @property
+    def autoupdate(self):
+        """Gets the autoupdate of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The autoupdate of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: int
+        """
+        return self._autoupdate
+
+    @autoupdate.setter
+    def autoupdate(self, autoupdate):
+        """Sets the autoupdate of this SystemInsightsFirefoxAddons.
+
+
+        :param autoupdate: The autoupdate of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: int
+        """
+
+        self._autoupdate = autoupdate
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsFirefoxAddons.
+
+
+        :param collection_time: The collection_time of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
+
+    @property
+    def creator(self):
+        """Gets the creator of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The creator of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._creator
+
+    @creator.setter
+    def creator(self, creator):
+        """Sets the creator of this SystemInsightsFirefoxAddons.
+
+
+        :param creator: The creator of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._creator = creator
+
+    @property
+    def description(self):
+        """Gets the description of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The description of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this SystemInsightsFirefoxAddons.
+
+
+        :param description: The description of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._description = description
+
+    @property
     def disabled(self):
         """Gets the disabled of this SystemInsightsFirefoxAddons.  # noqa: E501
 
@@ -354,25 +249,25 @@ class SystemInsightsFirefoxAddons(object):
         self._disabled = disabled
 
     @property
-    def autoupdate(self):
-        """Gets the autoupdate of this SystemInsightsFirefoxAddons.  # noqa: E501
+    def identifier(self):
+        """Gets the identifier of this SystemInsightsFirefoxAddons.  # noqa: E501
 
 
-        :return: The autoupdate of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :rtype: int
+        :return: The identifier of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
         """
-        return self._autoupdate
+        return self._identifier
 
-    @autoupdate.setter
-    def autoupdate(self, autoupdate):
-        """Sets the autoupdate of this SystemInsightsFirefoxAddons.
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this SystemInsightsFirefoxAddons.
 
 
-        :param autoupdate: The autoupdate of this SystemInsightsFirefoxAddons.  # noqa: E501
-        :type: int
+        :param identifier: The identifier of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
         """
 
-        self._autoupdate = autoupdate
+        self._identifier = identifier
 
     @property
     def location(self):
@@ -396,6 +291,27 @@ class SystemInsightsFirefoxAddons(object):
         self._location = location
 
     @property
+    def name(self):
+        """Gets the name of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The name of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """Sets the name of this SystemInsightsFirefoxAddons.
+
+
+        :param name: The name of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._name = name
+
+    @property
     def path(self):
         """Gets the path of this SystemInsightsFirefoxAddons.  # noqa: E501
 
@@ -417,46 +333,130 @@ class SystemInsightsFirefoxAddons(object):
         self._path = path
 
     @property
-    def jc_collection_time(self):
-        """Gets the jc_collection_time of this SystemInsightsFirefoxAddons.  # noqa: E501
+    def source_url(self):
+        """Gets the source_url of this SystemInsightsFirefoxAddons.  # noqa: E501
 
 
-        :return: The jc_collection_time of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :return: The source_url of this SystemInsightsFirefoxAddons.  # noqa: E501
         :rtype: str
         """
-        return self._jc_collection_time
+        return self._source_url
 
-    @jc_collection_time.setter
-    def jc_collection_time(self, jc_collection_time):
-        """Sets the jc_collection_time of this SystemInsightsFirefoxAddons.
+    @source_url.setter
+    def source_url(self, source_url):
+        """Sets the source_url of this SystemInsightsFirefoxAddons.
 
 
-        :param jc_collection_time: The jc_collection_time of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :param source_url: The source_url of this SystemInsightsFirefoxAddons.  # noqa: E501
         :type: str
         """
 
-        self._jc_collection_time = jc_collection_time
+        self._source_url = source_url
 
     @property
-    def jc_system_id(self):
-        """Gets the jc_system_id of this SystemInsightsFirefoxAddons.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsFirefoxAddons.  # noqa: E501
 
 
-        :return: The jc_system_id of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :return: The system_id of this SystemInsightsFirefoxAddons.  # noqa: E501
         :rtype: str
         """
-        return self._jc_system_id
+        return self._system_id
 
-    @jc_system_id.setter
-    def jc_system_id(self, jc_system_id):
-        """Sets the jc_system_id of this SystemInsightsFirefoxAddons.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsFirefoxAddons.
 
 
-        :param jc_system_id: The jc_system_id of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :param system_id: The system_id of this SystemInsightsFirefoxAddons.  # noqa: E501
         :type: str
         """
 
-        self._jc_system_id = jc_system_id
+        self._system_id = system_id
+
+    @property
+    def type(self):
+        """Gets the type of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The type of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SystemInsightsFirefoxAddons.
+
+
+        :param type: The type of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._type = type
+
+    @property
+    def uid(self):
+        """Gets the uid of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The uid of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._uid
+
+    @uid.setter
+    def uid(self, uid):
+        """Sets the uid of this SystemInsightsFirefoxAddons.
+
+
+        :param uid: The uid of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._uid = uid
+
+    @property
+    def version(self):
+        """Gets the version of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The version of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """Sets the version of this SystemInsightsFirefoxAddons.
+
+
+        :param version: The version of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: str
+        """
+
+        self._version = version
+
+    @property
+    def visible(self):
+        """Gets the visible of this SystemInsightsFirefoxAddons.  # noqa: E501
+
+
+        :return: The visible of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :rtype: int
+        """
+        return self._visible
+
+    @visible.setter
+    def visible(self, visible):
+        """Sets the visible of this SystemInsightsFirefoxAddons.
+
+
+        :param visible: The visible of this SystemInsightsFirefoxAddons.  # noqa: E501
+        :type: int
+        """
+
+        self._visible = visible
 
     def to_dict(self):
         """Returns the model properties as a dict"""

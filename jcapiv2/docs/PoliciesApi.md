@@ -647,7 +647,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policyresults_list**
-> list[PolicyResult] policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate, x_org_id=x_org_id)
+> list[PolicyResult] policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
 
 Lists all the policy results of a policy.
 
@@ -675,14 +675,13 @@ accept = 'application/json' # str |  (default to application/json)
 fields = ['[]'] # list[str] | The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  (optional) (default to [])
 filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['[]'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to [])
-aggregate = ['[]'] # list[str] |  (optional) (default to [])
-x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Lists all the policy results of a policy.
-    api_response = api_instance.policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, aggregate=aggregate, x_org_id=x_org_id)
+    api_response = api_instance.policyresults_list(policy_id, content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policyresults_list: %s\n" % e)
@@ -698,10 +697,9 @@ Name | Type | Description  | Notes
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  | [optional] [default to []]
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to []]
- **aggregate** | [**list[str]**](str.md)|  | [optional] [default to []]
- **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 
@@ -719,7 +717,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policyresults_list_0**
-> list[PolicyResult] policyresults_list_0(content_type, accept, aggregate=aggregate, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+> list[PolicyResult] policyresults_list_0(content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
 
 Lists all the policy results for an organization.
 
@@ -743,17 +741,16 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 api_instance = jcapiv2.PoliciesApi(jcapiv2.ApiClient(configuration))
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-aggregate = ['[]'] # list[str] |  (optional) (default to [])
 fields = ['[]'] # list[str] | The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  (optional) (default to [])
 filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
 sort = ['[]'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to [])
-x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Lists all the policy results for an organization.
-    api_response = api_instance.policyresults_list_0(content_type, accept, aggregate=aggregate, fields=fields, filter=filter, limit=limit, skip=skip, sort=sort, x_org_id=x_org_id)
+    api_response = api_instance.policyresults_list_0(content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PoliciesApi->policyresults_list_0: %s\n" % e)
@@ -765,13 +762,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **aggregate** | [**list[str]**](str.md)|  | [optional] [default to []]
  **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  | [optional] [default to []]
  **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
  **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to []]
- **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
 

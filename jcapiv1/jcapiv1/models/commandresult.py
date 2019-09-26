@@ -33,86 +33,109 @@ class Commandresult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'command': 'str',
+        'files': 'list[str]',
         'name': 'str',
+        'organization': 'str',
+        'request_time': 'str',
+        'response': 'CommandresultResponse',
+        'response_time': 'str',
+        'sudo': 'bool',
         'system': 'str',
         'system_id': 'str',
-        'organization': 'str',
-        'workflow_id': 'str',
-        'workflow_instance_id': 'str',
         'user': 'str',
-        'sudo': 'bool',
-        'files': 'list[str]',
-        'request_time': 'str',
-        'response_time': 'str',
-        'response': 'CommandresultResponse',
-        'id': 'str'
+        'workflow_id': 'str',
+        'workflow_instance_id': 'str'
     }
 
     attribute_map = {
+        'id': '_id',
         'command': 'command',
+        'files': 'files',
         'name': 'name',
+        'organization': 'organization',
+        'request_time': 'requestTime',
+        'response': 'response',
+        'response_time': 'responseTime',
+        'sudo': 'sudo',
         'system': 'system',
         'system_id': 'systemId',
-        'organization': 'organization',
-        'workflow_id': 'workflowId',
-        'workflow_instance_id': 'workflowInstanceId',
         'user': 'user',
-        'sudo': 'sudo',
-        'files': 'files',
-        'request_time': 'requestTime',
-        'response_time': 'responseTime',
-        'response': 'response',
-        'id': '_id'
+        'workflow_id': 'workflowId',
+        'workflow_instance_id': 'workflowInstanceId'
     }
 
-    def __init__(self, command=None, name=None, system=None, system_id=None, organization=None, workflow_id=None, workflow_instance_id=None, user=None, sudo=None, files=None, request_time=None, response_time=None, response=None, id=None):  # noqa: E501
+    def __init__(self, id=None, command=None, files=None, name=None, organization=None, request_time=None, response=None, response_time=None, sudo=None, system=None, system_id=None, user=None, workflow_id=None, workflow_instance_id=None):  # noqa: E501
         """Commandresult - a model defined in Swagger"""  # noqa: E501
 
+        self._id = None
         self._command = None
+        self._files = None
         self._name = None
+        self._organization = None
+        self._request_time = None
+        self._response = None
+        self._response_time = None
+        self._sudo = None
         self._system = None
         self._system_id = None
-        self._organization = None
+        self._user = None
         self._workflow_id = None
         self._workflow_instance_id = None
-        self._user = None
-        self._sudo = None
-        self._files = None
-        self._request_time = None
-        self._response_time = None
-        self._response = None
-        self._id = None
         self.discriminator = None
 
+        if id is not None:
+            self.id = id
         if command is not None:
             self.command = command
+        if files is not None:
+            self.files = files
         if name is not None:
             self.name = name
+        if organization is not None:
+            self.organization = organization
+        if request_time is not None:
+            self.request_time = request_time
+        if response is not None:
+            self.response = response
+        if response_time is not None:
+            self.response_time = response_time
+        if sudo is not None:
+            self.sudo = sudo
         if system is not None:
             self.system = system
         if system_id is not None:
             self.system_id = system_id
-        if organization is not None:
-            self.organization = organization
+        if user is not None:
+            self.user = user
         if workflow_id is not None:
             self.workflow_id = workflow_id
         if workflow_instance_id is not None:
             self.workflow_instance_id = workflow_instance_id
-        if user is not None:
-            self.user = user
-        if sudo is not None:
-            self.sudo = sudo
-        if files is not None:
-            self.files = files
-        if request_time is not None:
-            self.request_time = request_time
-        if response_time is not None:
-            self.response_time = response_time
-        if response is not None:
-            self.response = response
-        if id is not None:
-            self.id = id
+
+    @property
+    def id(self):
+        """Gets the id of this Commandresult.  # noqa: E501
+
+        The ID of the command.  # noqa: E501
+
+        :return: The id of this Commandresult.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this Commandresult.
+
+        The ID of the command.  # noqa: E501
+
+        :param id: The id of this Commandresult.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
 
     @property
     def command(self):
@@ -138,6 +161,29 @@ class Commandresult(object):
         self._command = command
 
     @property
+    def files(self):
+        """Gets the files of this Commandresult.  # noqa: E501
+
+        An array of file ids that were included in the command  # noqa: E501
+
+        :return: The files of this Commandresult.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._files
+
+    @files.setter
+    def files(self, files):
+        """Sets the files of this Commandresult.
+
+        An array of file ids that were included in the command  # noqa: E501
+
+        :param files: The files of this Commandresult.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._files = files
+
+    @property
     def name(self):
         """Gets the name of this Commandresult.  # noqa: E501
 
@@ -159,6 +205,119 @@ class Commandresult(object):
         """
 
         self._name = name
+
+    @property
+    def organization(self):
+        """Gets the organization of this Commandresult.  # noqa: E501
+
+        The ID of the organization.  # noqa: E501
+
+        :return: The organization of this Commandresult.  # noqa: E501
+        :rtype: str
+        """
+        return self._organization
+
+    @organization.setter
+    def organization(self, organization):
+        """Sets the organization of this Commandresult.
+
+        The ID of the organization.  # noqa: E501
+
+        :param organization: The organization of this Commandresult.  # noqa: E501
+        :type: str
+        """
+
+        self._organization = organization
+
+    @property
+    def request_time(self):
+        """Gets the request_time of this Commandresult.  # noqa: E501
+
+        The time that the command was sent.  # noqa: E501
+
+        :return: The request_time of this Commandresult.  # noqa: E501
+        :rtype: str
+        """
+        return self._request_time
+
+    @request_time.setter
+    def request_time(self, request_time):
+        """Sets the request_time of this Commandresult.
+
+        The time that the command was sent.  # noqa: E501
+
+        :param request_time: The request_time of this Commandresult.  # noqa: E501
+        :type: str
+        """
+
+        self._request_time = request_time
+
+    @property
+    def response(self):
+        """Gets the response of this Commandresult.  # noqa: E501
+
+
+        :return: The response of this Commandresult.  # noqa: E501
+        :rtype: CommandresultResponse
+        """
+        return self._response
+
+    @response.setter
+    def response(self, response):
+        """Sets the response of this Commandresult.
+
+
+        :param response: The response of this Commandresult.  # noqa: E501
+        :type: CommandresultResponse
+        """
+
+        self._response = response
+
+    @property
+    def response_time(self):
+        """Gets the response_time of this Commandresult.  # noqa: E501
+
+        The time that the command was completed.  # noqa: E501
+
+        :return: The response_time of this Commandresult.  # noqa: E501
+        :rtype: str
+        """
+        return self._response_time
+
+    @response_time.setter
+    def response_time(self, response_time):
+        """Sets the response_time of this Commandresult.
+
+        The time that the command was completed.  # noqa: E501
+
+        :param response_time: The response_time of this Commandresult.  # noqa: E501
+        :type: str
+        """
+
+        self._response_time = response_time
+
+    @property
+    def sudo(self):
+        """Gets the sudo of this Commandresult.  # noqa: E501
+
+        If the user had sudo rights  # noqa: E501
+
+        :return: The sudo of this Commandresult.  # noqa: E501
+        :rtype: bool
+        """
+        return self._sudo
+
+    @sudo.setter
+    def sudo(self, sudo):
+        """Sets the sudo of this Commandresult.
+
+        If the user had sudo rights  # noqa: E501
+
+        :param sudo: The sudo of this Commandresult.  # noqa: E501
+        :type: bool
+        """
+
+        self._sudo = sudo
 
     @property
     def system(self):
@@ -207,27 +366,27 @@ class Commandresult(object):
         self._system_id = system_id
 
     @property
-    def organization(self):
-        """Gets the organization of this Commandresult.  # noqa: E501
+    def user(self):
+        """Gets the user of this Commandresult.  # noqa: E501
 
-        The ID of the organization.  # noqa: E501
+        The user the command ran as.  # noqa: E501
 
-        :return: The organization of this Commandresult.  # noqa: E501
+        :return: The user of this Commandresult.  # noqa: E501
         :rtype: str
         """
-        return self._organization
+        return self._user
 
-    @organization.setter
-    def organization(self, organization):
-        """Sets the organization of this Commandresult.
+    @user.setter
+    def user(self, user):
+        """Sets the user of this Commandresult.
 
-        The ID of the organization.  # noqa: E501
+        The user the command ran as.  # noqa: E501
 
-        :param organization: The organization of this Commandresult.  # noqa: E501
+        :param user: The user of this Commandresult.  # noqa: E501
         :type: str
         """
 
-        self._organization = organization
+        self._user = user
 
     @property
     def workflow_id(self):
@@ -270,165 +429,6 @@ class Commandresult(object):
         """
 
         self._workflow_instance_id = workflow_instance_id
-
-    @property
-    def user(self):
-        """Gets the user of this Commandresult.  # noqa: E501
-
-        The user the command ran as.  # noqa: E501
-
-        :return: The user of this Commandresult.  # noqa: E501
-        :rtype: str
-        """
-        return self._user
-
-    @user.setter
-    def user(self, user):
-        """Sets the user of this Commandresult.
-
-        The user the command ran as.  # noqa: E501
-
-        :param user: The user of this Commandresult.  # noqa: E501
-        :type: str
-        """
-
-        self._user = user
-
-    @property
-    def sudo(self):
-        """Gets the sudo of this Commandresult.  # noqa: E501
-
-        If the user had sudo rights  # noqa: E501
-
-        :return: The sudo of this Commandresult.  # noqa: E501
-        :rtype: bool
-        """
-        return self._sudo
-
-    @sudo.setter
-    def sudo(self, sudo):
-        """Sets the sudo of this Commandresult.
-
-        If the user had sudo rights  # noqa: E501
-
-        :param sudo: The sudo of this Commandresult.  # noqa: E501
-        :type: bool
-        """
-
-        self._sudo = sudo
-
-    @property
-    def files(self):
-        """Gets the files of this Commandresult.  # noqa: E501
-
-        An array of file ids that were included in the command  # noqa: E501
-
-        :return: The files of this Commandresult.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._files
-
-    @files.setter
-    def files(self, files):
-        """Sets the files of this Commandresult.
-
-        An array of file ids that were included in the command  # noqa: E501
-
-        :param files: The files of this Commandresult.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._files = files
-
-    @property
-    def request_time(self):
-        """Gets the request_time of this Commandresult.  # noqa: E501
-
-        The time that the command was sent.  # noqa: E501
-
-        :return: The request_time of this Commandresult.  # noqa: E501
-        :rtype: str
-        """
-        return self._request_time
-
-    @request_time.setter
-    def request_time(self, request_time):
-        """Sets the request_time of this Commandresult.
-
-        The time that the command was sent.  # noqa: E501
-
-        :param request_time: The request_time of this Commandresult.  # noqa: E501
-        :type: str
-        """
-
-        self._request_time = request_time
-
-    @property
-    def response_time(self):
-        """Gets the response_time of this Commandresult.  # noqa: E501
-
-        The time that the command was completed.  # noqa: E501
-
-        :return: The response_time of this Commandresult.  # noqa: E501
-        :rtype: str
-        """
-        return self._response_time
-
-    @response_time.setter
-    def response_time(self, response_time):
-        """Sets the response_time of this Commandresult.
-
-        The time that the command was completed.  # noqa: E501
-
-        :param response_time: The response_time of this Commandresult.  # noqa: E501
-        :type: str
-        """
-
-        self._response_time = response_time
-
-    @property
-    def response(self):
-        """Gets the response of this Commandresult.  # noqa: E501
-
-
-        :return: The response of this Commandresult.  # noqa: E501
-        :rtype: CommandresultResponse
-        """
-        return self._response
-
-    @response.setter
-    def response(self, response):
-        """Sets the response of this Commandresult.
-
-
-        :param response: The response of this Commandresult.  # noqa: E501
-        :type: CommandresultResponse
-        """
-
-        self._response = response
-
-    @property
-    def id(self):
-        """Gets the id of this Commandresult.  # noqa: E501
-
-        The ID of the command.  # noqa: E501
-
-        :return: The id of this Commandresult.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this Commandresult.
-
-        The ID of the command.  # noqa: E501
-
-        :param id: The id of this Commandresult.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

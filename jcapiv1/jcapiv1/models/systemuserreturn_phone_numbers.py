@@ -32,30 +32,30 @@ class SystemuserreturnPhoneNumbers(object):
     """
     swagger_types = {
         'id': 'str',
-        'type': 'str',
-        'number': 'str'
+        'number': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'type': 'type',
-        'number': 'number'
+        'number': 'number',
+        'type': 'type'
     }
 
-    def __init__(self, id=None, type=None, number=None):  # noqa: E501
+    def __init__(self, id=None, number=None, type=None):  # noqa: E501
         """SystemuserreturnPhoneNumbers - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._type = None
         self._number = None
+        self._type = None
         self.discriminator = None
 
         if id is not None:
             self.id = id
-        if type is not None:
-            self.type = type
         if number is not None:
             self.number = number
+        if type is not None:
+            self.type = type
 
     @property
     def id(self):
@@ -79,29 +79,6 @@ class SystemuserreturnPhoneNumbers(object):
         self._id = id
 
     @property
-    def type(self):
-        """Gets the type of this SystemuserreturnPhoneNumbers.  # noqa: E501
-
-
-        :return: The type of this SystemuserreturnPhoneNumbers.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SystemuserreturnPhoneNumbers.
-
-
-        :param type: The type of this SystemuserreturnPhoneNumbers.  # noqa: E501
-        :type: str
-        """
-        if type is not None and len(type) > 1024:
-            raise ValueError("Invalid value for `type`, length must be less than or equal to `1024`")  # noqa: E501
-
-        self._type = type
-
-    @property
     def number(self):
         """Gets the number of this SystemuserreturnPhoneNumbers.  # noqa: E501
 
@@ -123,6 +100,29 @@ class SystemuserreturnPhoneNumbers(object):
             raise ValueError("Invalid value for `number`, length must be less than or equal to `1024`")  # noqa: E501
 
         self._number = number
+
+    @property
+    def type(self):
+        """Gets the type of this SystemuserreturnPhoneNumbers.  # noqa: E501
+
+
+        :return: The type of this SystemuserreturnPhoneNumbers.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this SystemuserreturnPhoneNumbers.
+
+
+        :param type: The type of this SystemuserreturnPhoneNumbers.  # noqa: E501
+        :type: str
+        """
+        if type is not None and len(type) > 1024:
+            raise ValueError("Invalid value for `type`, length must be less than or equal to `1024`")  # noqa: E501
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""
