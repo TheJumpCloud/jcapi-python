@@ -31,163 +31,94 @@ class PolicyResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'policy_id': 'str',
-        'system_id': 'str',
-        'id': 'str',
-        'started_at': 'datetime',
+        'detail': 'str',
         'ended_at': 'datetime',
-        'success': 'bool',
         'exit_status': 'int',
+        'id': 'str',
+        'policy_id': 'str',
+        'started_at': 'datetime',
+        'state': 'str',
         'std_err': 'str',
         'std_out': 'str',
-        'state': 'str',
-        'detail': 'str'
+        'success': 'bool',
+        'system_id': 'str'
     }
 
     attribute_map = {
-        'policy_id': 'policyID',
-        'system_id': 'systemID',
-        'id': 'id',
-        'started_at': 'startedAt',
+        'detail': 'detail',
         'ended_at': 'endedAt',
-        'success': 'success',
         'exit_status': 'exitStatus',
+        'id': 'id',
+        'policy_id': 'policyID',
+        'started_at': 'startedAt',
+        'state': 'state',
         'std_err': 'stdErr',
         'std_out': 'stdOut',
-        'state': 'state',
-        'detail': 'detail'
+        'success': 'success',
+        'system_id': 'systemID'
     }
 
-    def __init__(self, policy_id=None, system_id=None, id=None, started_at=None, ended_at=None, success=None, exit_status=None, std_err=None, std_out=None, state=None, detail=None):  # noqa: E501
+    def __init__(self, detail=None, ended_at=None, exit_status=None, id=None, policy_id=None, started_at=None, state=None, std_err=None, std_out=None, success=None, system_id=None):  # noqa: E501
         """PolicyResult - a model defined in Swagger"""  # noqa: E501
 
-        self._policy_id = None
-        self._system_id = None
-        self._id = None
-        self._started_at = None
+        self._detail = None
         self._ended_at = None
-        self._success = None
         self._exit_status = None
+        self._id = None
+        self._policy_id = None
+        self._started_at = None
+        self._state = None
         self._std_err = None
         self._std_out = None
-        self._state = None
-        self._detail = None
+        self._success = None
+        self._system_id = None
         self.discriminator = None
 
-        if policy_id is not None:
-            self.policy_id = policy_id
-        if system_id is not None:
-            self.system_id = system_id
-        if id is not None:
-            self.id = id
-        if started_at is not None:
-            self.started_at = started_at
+        if detail is not None:
+            self.detail = detail
         if ended_at is not None:
             self.ended_at = ended_at
-        if success is not None:
-            self.success = success
         if exit_status is not None:
             self.exit_status = exit_status
+        if id is not None:
+            self.id = id
+        if policy_id is not None:
+            self.policy_id = policy_id
+        if started_at is not None:
+            self.started_at = started_at
+        if state is not None:
+            self.state = state
         if std_err is not None:
             self.std_err = std_err
         if std_out is not None:
             self.std_out = std_out
-        if state is not None:
-            self.state = state
-        if detail is not None:
-            self.detail = detail
+        if success is not None:
+            self.success = success
+        if system_id is not None:
+            self.system_id = system_id
 
     @property
-    def policy_id(self):
-        """Gets the policy_id of this PolicyResult.  # noqa: E501
+    def detail(self):
+        """Gets the detail of this PolicyResult.  # noqa: E501
 
-        ObjectId uniquely identifying the parent Policy.  # noqa: E501
+        Details pertaining to the policy result.  # noqa: E501
 
-        :return: The policy_id of this PolicyResult.  # noqa: E501
+        :return: The detail of this PolicyResult.  # noqa: E501
         :rtype: str
         """
-        return self._policy_id
+        return self._detail
 
-    @policy_id.setter
-    def policy_id(self, policy_id):
-        """Sets the policy_id of this PolicyResult.
+    @detail.setter
+    def detail(self, detail):
+        """Sets the detail of this PolicyResult.
 
-        ObjectId uniquely identifying the parent Policy.  # noqa: E501
+        Details pertaining to the policy result.  # noqa: E501
 
-        :param policy_id: The policy_id of this PolicyResult.  # noqa: E501
+        :param detail: The detail of this PolicyResult.  # noqa: E501
         :type: str
         """
 
-        self._policy_id = policy_id
-
-    @property
-    def system_id(self):
-        """Gets the system_id of this PolicyResult.  # noqa: E501
-
-        ObjectId uniquely identifying the parent System.  # noqa: E501
-
-        :return: The system_id of this PolicyResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._system_id
-
-    @system_id.setter
-    def system_id(self, system_id):
-        """Sets the system_id of this PolicyResult.
-
-        ObjectId uniquely identifying the parent System.  # noqa: E501
-
-        :param system_id: The system_id of this PolicyResult.  # noqa: E501
-        :type: str
-        """
-
-        self._system_id = system_id
-
-    @property
-    def id(self):
-        """Gets the id of this PolicyResult.  # noqa: E501
-
-        ObjectId uniquely identifying a Policy Result.  # noqa: E501
-
-        :return: The id of this PolicyResult.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PolicyResult.
-
-        ObjectId uniquely identifying a Policy Result.  # noqa: E501
-
-        :param id: The id of this PolicyResult.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
-
-    @property
-    def started_at(self):
-        """Gets the started_at of this PolicyResult.  # noqa: E501
-
-        The start of the policy application.  # noqa: E501
-
-        :return: The started_at of this PolicyResult.  # noqa: E501
-        :rtype: datetime
-        """
-        return self._started_at
-
-    @started_at.setter
-    def started_at(self, started_at):
-        """Sets the started_at of this PolicyResult.
-
-        The start of the policy application.  # noqa: E501
-
-        :param started_at: The started_at of this PolicyResult.  # noqa: E501
-        :type: datetime
-        """
-
-        self._started_at = started_at
+        self._detail = detail
 
     @property
     def ended_at(self):
@@ -213,29 +144,6 @@ class PolicyResult(object):
         self._ended_at = ended_at
 
     @property
-    def success(self):
-        """Gets the success of this PolicyResult.  # noqa: E501
-
-        True if the policy was successfully applied; false otherwise.  # noqa: E501
-
-        :return: The success of this PolicyResult.  # noqa: E501
-        :rtype: bool
-        """
-        return self._success
-
-    @success.setter
-    def success(self, success):
-        """Sets the success of this PolicyResult.
-
-        True if the policy was successfully applied; false otherwise.  # noqa: E501
-
-        :param success: The success of this PolicyResult.  # noqa: E501
-        :type: bool
-        """
-
-        self._success = success
-
-    @property
     def exit_status(self):
         """Gets the exit_status of this PolicyResult.  # noqa: E501
 
@@ -257,6 +165,98 @@ class PolicyResult(object):
         """
 
         self._exit_status = exit_status
+
+    @property
+    def id(self):
+        """Gets the id of this PolicyResult.  # noqa: E501
+
+        ObjectId uniquely identifying a Policy Result.  # noqa: E501
+
+        :return: The id of this PolicyResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this PolicyResult.
+
+        ObjectId uniquely identifying a Policy Result.  # noqa: E501
+
+        :param id: The id of this PolicyResult.  # noqa: E501
+        :type: str
+        """
+
+        self._id = id
+
+    @property
+    def policy_id(self):
+        """Gets the policy_id of this PolicyResult.  # noqa: E501
+
+        ObjectId uniquely identifying the parent Policy.  # noqa: E501
+
+        :return: The policy_id of this PolicyResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._policy_id
+
+    @policy_id.setter
+    def policy_id(self, policy_id):
+        """Sets the policy_id of this PolicyResult.
+
+        ObjectId uniquely identifying the parent Policy.  # noqa: E501
+
+        :param policy_id: The policy_id of this PolicyResult.  # noqa: E501
+        :type: str
+        """
+
+        self._policy_id = policy_id
+
+    @property
+    def started_at(self):
+        """Gets the started_at of this PolicyResult.  # noqa: E501
+
+        The start of the policy application.  # noqa: E501
+
+        :return: The started_at of this PolicyResult.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._started_at
+
+    @started_at.setter
+    def started_at(self, started_at):
+        """Sets the started_at of this PolicyResult.
+
+        The start of the policy application.  # noqa: E501
+
+        :param started_at: The started_at of this PolicyResult.  # noqa: E501
+        :type: datetime
+        """
+
+        self._started_at = started_at
+
+    @property
+    def state(self):
+        """Gets the state of this PolicyResult.  # noqa: E501
+
+        Enumeration describing the state of the policy. Success, failed, or pending.  # noqa: E501
+
+        :return: The state of this PolicyResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state):
+        """Sets the state of this PolicyResult.
+
+        Enumeration describing the state of the policy. Success, failed, or pending.  # noqa: E501
+
+        :param state: The state of this PolicyResult.  # noqa: E501
+        :type: str
+        """
+
+        self._state = state
 
     @property
     def std_err(self):
@@ -305,50 +305,50 @@ class PolicyResult(object):
         self._std_out = std_out
 
     @property
-    def state(self):
-        """Gets the state of this PolicyResult.  # noqa: E501
+    def success(self):
+        """Gets the success of this PolicyResult.  # noqa: E501
 
-        Enumeration describing the state of the policy. Success, failed, or pending.  # noqa: E501
+        True if the policy was successfully applied; false otherwise.  # noqa: E501
 
-        :return: The state of this PolicyResult.  # noqa: E501
-        :rtype: str
+        :return: The success of this PolicyResult.  # noqa: E501
+        :rtype: bool
         """
-        return self._state
+        return self._success
 
-    @state.setter
-    def state(self, state):
-        """Sets the state of this PolicyResult.
+    @success.setter
+    def success(self, success):
+        """Sets the success of this PolicyResult.
 
-        Enumeration describing the state of the policy. Success, failed, or pending.  # noqa: E501
+        True if the policy was successfully applied; false otherwise.  # noqa: E501
 
-        :param state: The state of this PolicyResult.  # noqa: E501
-        :type: str
+        :param success: The success of this PolicyResult.  # noqa: E501
+        :type: bool
         """
 
-        self._state = state
+        self._success = success
 
     @property
-    def detail(self):
-        """Gets the detail of this PolicyResult.  # noqa: E501
+    def system_id(self):
+        """Gets the system_id of this PolicyResult.  # noqa: E501
 
-        Details pertaining to the policy result.  # noqa: E501
+        ObjectId uniquely identifying the parent System.  # noqa: E501
 
-        :return: The detail of this PolicyResult.  # noqa: E501
+        :return: The system_id of this PolicyResult.  # noqa: E501
         :rtype: str
         """
-        return self._detail
+        return self._system_id
 
-    @detail.setter
-    def detail(self, detail):
-        """Sets the detail of this PolicyResult.
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this PolicyResult.
 
-        Details pertaining to the policy result.  # noqa: E501
+        ObjectId uniquely identifying the parent System.  # noqa: E501
 
-        :param detail: The detail of this PolicyResult.  # noqa: E501
+        :param system_id: The system_id of this PolicyResult.  # noqa: E501
         :type: str
         """
 
-        self._detail = detail
+        self._system_id = system_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

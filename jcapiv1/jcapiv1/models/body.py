@@ -31,34 +31,36 @@ class Body(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'mfa': 'str',
         'name': 'str',
         'network_source_ip': 'str',
         'tags': 'list[str]',
         'user_lockout_action': 'str',
-        'user_password_expiration_action': 'str',
-        'mfa': 'str'
+        'user_password_expiration_action': 'str'
     }
 
     attribute_map = {
+        'mfa': 'mfa',
         'name': 'name',
         'network_source_ip': 'networkSourceIp',
         'tags': 'tags',
         'user_lockout_action': 'userLockoutAction',
-        'user_password_expiration_action': 'userPasswordExpirationAction',
-        'mfa': 'mfa'
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, name=None, network_source_ip=None, tags=None, user_lockout_action=None, user_password_expiration_action=None, mfa=None):  # noqa: E501
+    def __init__(self, mfa=None, name=None, network_source_ip=None, tags=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """Body - a model defined in Swagger"""  # noqa: E501
 
+        self._mfa = None
         self._name = None
         self._network_source_ip = None
         self._tags = None
         self._user_lockout_action = None
         self._user_password_expiration_action = None
-        self._mfa = None
         self.discriminator = None
 
+        if mfa is not None:
+            self.mfa = mfa
         self.name = name
         self.network_source_ip = network_source_ip
         if tags is not None:
@@ -67,8 +69,33 @@ class Body(object):
             self.user_lockout_action = user_lockout_action
         if user_password_expiration_action is not None:
             self.user_password_expiration_action = user_password_expiration_action
-        if mfa is not None:
-            self.mfa = mfa
+
+    @property
+    def mfa(self):
+        """Gets the mfa of this Body.  # noqa: E501
+
+
+        :return: The mfa of this Body.  # noqa: E501
+        :rtype: str
+        """
+        return self._mfa
+
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Body.
+
+
+        :param mfa: The mfa of this Body.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
+        if mfa not in allowed_values:
+            raise ValueError(
+                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
+                .format(mfa, allowed_values)
+            )
+
+        self._mfa = mfa
 
     @property
     def name(self):
@@ -178,33 +205,6 @@ class Body(object):
         """
 
         self._user_password_expiration_action = user_password_expiration_action
-
-    @property
-    def mfa(self):
-        """Gets the mfa of this Body.  # noqa: E501
-
-
-        :return: The mfa of this Body.  # noqa: E501
-        :rtype: str
-        """
-        return self._mfa
-
-    @mfa.setter
-    def mfa(self, mfa):
-        """Sets the mfa of this Body.
-
-
-        :param mfa: The mfa of this Body.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
-        if mfa not in allowed_values:
-            raise ValueError(
-                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
-                .format(mfa, allowed_values)
-            )
-
-        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -43,31 +43,45 @@ class TestSystemInsightsApi(unittest.TestCase):
         """
         pass
 
+    def test_systeminsights_list_bitlocker_info(self):
+        """Test case for systeminsights_list_bitlocker_info
+
+        List System Insights Bitlocker Info  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_bitlocker_info_0(self):
+        """Test case for systeminsights_list_bitlocker_info_0
+
+        List System Insights System Bitlocker Info  # noqa: E501
+        """
+        pass
+
     def test_systeminsights_list_browser_plugins(self):
         """Test case for systeminsights_list_browser_plugins
 
-        List System Insights System Browser Plugins  # noqa: E501
+        List System Insights Browser Plugins  # noqa: E501
         """
         pass
 
     def test_systeminsights_list_browser_plugins_0(self):
         """Test case for systeminsights_list_browser_plugins_0
 
-        List System Insights Browser Plugins  # noqa: E501
+        List System Insights System Browser Plugins  # noqa: E501
         """
         pass
 
     def test_systeminsights_list_chrome_extensions(self):
         """Test case for systeminsights_list_chrome_extensions
 
-        List System Insights System Chrome Extensions  # noqa: E501
+        List System Insights Chrome Extensions  # noqa: E501
         """
         pass
 
     def test_systeminsights_list_chrome_extensions_0(self):
         """Test case for systeminsights_list_chrome_extensions_0
 
-        List System Insights Chrome Extensions  # noqa: E501
+        List System Insights System Chrome Extensions  # noqa: E501
         """
         pass
 
@@ -82,6 +96,34 @@ class TestSystemInsightsApi(unittest.TestCase):
         """Test case for systeminsights_list_disk_encryption_0
 
         List System Insights System Disk Encryption  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_disk_info(self):
+        """Test case for systeminsights_list_disk_info
+
+        List System Insights Disk Info  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_disk_info_0(self):
+        """Test case for systeminsights_list_disk_info_0
+
+        List System Insights System Disk Info  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_etc_hosts(self):
+        """Test case for systeminsights_list_etc_hosts
+
+        List System Insights Etc Hosts  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_etc_hosts_0(self):
+        """Test case for systeminsights_list_etc_hosts_0
+
+        List System Insights System Etc Hosts  # noqa: E501
         """
         pass
 
@@ -127,6 +169,34 @@ class TestSystemInsightsApi(unittest.TestCase):
         """
         pass
 
+    def test_systeminsights_list_kernel_info(self):
+        """Test case for systeminsights_list_kernel_info
+
+        List System Insights Kernel Info  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_kernel_info_0(self):
+        """Test case for systeminsights_list_kernel_info_0
+
+        List System Insights System Kernel Info  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_logical_drives(self):
+        """Test case for systeminsights_list_logical_drives
+
+        List System Insights Logical Drives  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_logical_drives_0(self):
+        """Test case for systeminsights_list_logical_drives_0
+
+        List System Insights System Logical Drives  # noqa: E501
+        """
+        pass
+
     def test_systeminsights_list_mounts(self):
         """Test case for systeminsights_list_mounts
 
@@ -144,28 +214,70 @@ class TestSystemInsightsApi(unittest.TestCase):
     def test_systeminsights_list_os_version(self):
         """Test case for systeminsights_list_os_version
 
-        List System Insights System OS Version  # noqa: E501
+        List System Insights OS Version  # noqa: E501
         """
         pass
 
     def test_systeminsights_list_os_version_0(self):
         """Test case for systeminsights_list_os_version_0
 
-        List System Insights OS Version  # noqa: E501
+        List System Insights System OS Version  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_patches(self):
+        """Test case for systeminsights_list_patches
+
+        List System Insights Patches  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_patches_0(self):
+        """Test case for systeminsights_list_patches_0
+
+        List System Insights System Patches  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_programs(self):
+        """Test case for systeminsights_list_programs
+
+        List System Insights Programs  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_programs_0(self):
+        """Test case for systeminsights_list_programs_0
+
+        List System Insights System Programs  # noqa: E501
         """
         pass
 
     def test_systeminsights_list_safari_extensions(self):
         """Test case for systeminsights_list_safari_extensions
 
-        List System Insights System Safari Extensions  # noqa: E501
+        List System Insights Safari Extensions  # noqa: E501
         """
         pass
 
     def test_systeminsights_list_safari_extensions_0(self):
         """Test case for systeminsights_list_safari_extensions_0
 
-        List System Insights Safari Extensions  # noqa: E501
+        List System Insights System Safari Extensions  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_system_controls(self):
+        """Test case for systeminsights_list_system_controls
+
+        List System Insights System Control  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_system_controls_0(self):
+        """Test case for systeminsights_list_system_controls_0
+
+        List System Insights System System Controls  # noqa: E501
         """
         pass
 
@@ -180,6 +292,20 @@ class TestSystemInsightsApi(unittest.TestCase):
         """Test case for systeminsights_list_system_info_0
 
         List System Insights System System Info  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_uptime(self):
+        """Test case for systeminsights_list_uptime
+
+        List System Insights Uptime  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_uptime_0(self):
+        """Test case for systeminsights_list_uptime_0
+
+        List System Insights System Uptime  # noqa: E501
         """
         pass
 

@@ -31,49 +31,24 @@ class GraphObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
-        'id': 'str'
+        'id': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'type': 'type',
-        'id': 'id'
+        'id': 'id',
+        'type': 'type'
     }
 
-    def __init__(self, type=None, id=None):  # noqa: E501
+    def __init__(self, id=None, type=None):  # noqa: E501
         """GraphObject - a model defined in Swagger"""  # noqa: E501
 
-        self._type = None
         self._id = None
+        self._type = None
         self.discriminator = None
 
-        self.type = type
         self.id = id
-
-    @property
-    def type(self):
-        """Gets the type of this GraphObject.  # noqa: E501
-
-        The type of graph object.  # noqa: E501
-
-        :return: The type of this GraphObject.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this GraphObject.
-
-        The type of graph object.  # noqa: E501
-
-        :param type: The type of this GraphObject.  # noqa: E501
-        :type: str
-        """
-        if type is None:
-            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
-
-        self._type = type
+        self.type = type
 
     @property
     def id(self):
@@ -99,6 +74,31 @@ class GraphObject(object):
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
 
         self._id = id
+
+    @property
+    def type(self):
+        """Gets the type of this GraphObject.  # noqa: E501
+
+        The type of graph object.  # noqa: E501
+
+        :return: The type of this GraphObject.  # noqa: E501
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this GraphObject.
+
+        The type of graph object.  # noqa: E501
+
+        :param type: The type of this GraphObject.  # noqa: E501
+        :type: str
+        """
+        if type is None:
+            raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
+
+        self._type = type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

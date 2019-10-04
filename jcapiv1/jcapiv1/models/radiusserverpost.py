@@ -31,71 +31,75 @@ class Radiusserverpost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'network_source_ip': 'str',
+        'mfa': 'str',
         'name': 'str',
-        'tag_names': 'list[str]',
+        'network_source_ip': 'str',
         'shared_secret': 'str',
+        'tag_names': 'list[str]',
         'user_lockout_action': 'str',
-        'user_password_expiration_action': 'str',
-        'mfa': 'str'
+        'user_password_expiration_action': 'str'
     }
 
     attribute_map = {
-        'network_source_ip': 'networkSourceIp',
+        'mfa': 'mfa',
         'name': 'name',
-        'tag_names': 'tagNames',
+        'network_source_ip': 'networkSourceIp',
         'shared_secret': 'sharedSecret',
+        'tag_names': 'tagNames',
         'user_lockout_action': 'userLockoutAction',
-        'user_password_expiration_action': 'userPasswordExpirationAction',
-        'mfa': 'mfa'
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, network_source_ip=None, name=None, tag_names=None, shared_secret=None, user_lockout_action=None, user_password_expiration_action=None, mfa=None):  # noqa: E501
+    def __init__(self, mfa=None, name=None, network_source_ip=None, shared_secret=None, tag_names=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """Radiusserverpost - a model defined in Swagger"""  # noqa: E501
 
-        self._network_source_ip = None
+        self._mfa = None
         self._name = None
-        self._tag_names = None
+        self._network_source_ip = None
         self._shared_secret = None
+        self._tag_names = None
         self._user_lockout_action = None
         self._user_password_expiration_action = None
-        self._mfa = None
         self.discriminator = None
 
-        self.network_source_ip = network_source_ip
+        if mfa is not None:
+            self.mfa = mfa
         self.name = name
+        self.network_source_ip = network_source_ip
+        self.shared_secret = shared_secret
         if tag_names is not None:
             self.tag_names = tag_names
-        self.shared_secret = shared_secret
         if user_lockout_action is not None:
             self.user_lockout_action = user_lockout_action
         if user_password_expiration_action is not None:
             self.user_password_expiration_action = user_password_expiration_action
-        if mfa is not None:
-            self.mfa = mfa
 
     @property
-    def network_source_ip(self):
-        """Gets the network_source_ip of this Radiusserverpost.  # noqa: E501
+    def mfa(self):
+        """Gets the mfa of this Radiusserverpost.  # noqa: E501
 
 
-        :return: The network_source_ip of this Radiusserverpost.  # noqa: E501
+        :return: The mfa of this Radiusserverpost.  # noqa: E501
         :rtype: str
         """
-        return self._network_source_ip
+        return self._mfa
 
-    @network_source_ip.setter
-    def network_source_ip(self, network_source_ip):
-        """Sets the network_source_ip of this Radiusserverpost.
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Radiusserverpost.
 
 
-        :param network_source_ip: The network_source_ip of this Radiusserverpost.  # noqa: E501
+        :param mfa: The mfa of this Radiusserverpost.  # noqa: E501
         :type: str
         """
-        if network_source_ip is None:
-            raise ValueError("Invalid value for `network_source_ip`, must not be `None`")  # noqa: E501
+        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
+        if mfa not in allowed_values:
+            raise ValueError(
+                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
+                .format(mfa, allowed_values)
+            )
 
-        self._network_source_ip = network_source_ip
+        self._mfa = mfa
 
     @property
     def name(self):
@@ -121,25 +125,27 @@ class Radiusserverpost(object):
         self._name = name
 
     @property
-    def tag_names(self):
-        """Gets the tag_names of this Radiusserverpost.  # noqa: E501
+    def network_source_ip(self):
+        """Gets the network_source_ip of this Radiusserverpost.  # noqa: E501
 
 
-        :return: The tag_names of this Radiusserverpost.  # noqa: E501
-        :rtype: list[str]
+        :return: The network_source_ip of this Radiusserverpost.  # noqa: E501
+        :rtype: str
         """
-        return self._tag_names
+        return self._network_source_ip
 
-    @tag_names.setter
-    def tag_names(self, tag_names):
-        """Sets the tag_names of this Radiusserverpost.
+    @network_source_ip.setter
+    def network_source_ip(self, network_source_ip):
+        """Sets the network_source_ip of this Radiusserverpost.
 
 
-        :param tag_names: The tag_names of this Radiusserverpost.  # noqa: E501
-        :type: list[str]
+        :param network_source_ip: The network_source_ip of this Radiusserverpost.  # noqa: E501
+        :type: str
         """
+        if network_source_ip is None:
+            raise ValueError("Invalid value for `network_source_ip`, must not be `None`")  # noqa: E501
 
-        self._tag_names = tag_names
+        self._network_source_ip = network_source_ip
 
     @property
     def shared_secret(self):
@@ -165,6 +171,27 @@ class Radiusserverpost(object):
             raise ValueError("Invalid value for `shared_secret`, must not be `None`")  # noqa: E501
 
         self._shared_secret = shared_secret
+
+    @property
+    def tag_names(self):
+        """Gets the tag_names of this Radiusserverpost.  # noqa: E501
+
+
+        :return: The tag_names of this Radiusserverpost.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tag_names
+
+    @tag_names.setter
+    def tag_names(self, tag_names):
+        """Sets the tag_names of this Radiusserverpost.
+
+
+        :param tag_names: The tag_names of this Radiusserverpost.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tag_names = tag_names
 
     @property
     def user_lockout_action(self):
@@ -207,33 +234,6 @@ class Radiusserverpost(object):
         """
 
         self._user_password_expiration_action = user_password_expiration_action
-
-    @property
-    def mfa(self):
-        """Gets the mfa of this Radiusserverpost.  # noqa: E501
-
-
-        :return: The mfa of this Radiusserverpost.  # noqa: E501
-        :rtype: str
-        """
-        return self._mfa
-
-    @mfa.setter
-    def mfa(self, mfa):
-        """Sets the mfa of this Radiusserverpost.
-
-
-        :param mfa: The mfa of this Radiusserverpost.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
-        if mfa not in allowed_values:
-            raise ValueError(
-                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
-                .format(mfa, allowed_values)
-            )
-
-        self._mfa = mfa
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -31,28 +31,53 @@ class UserGroupMembersReq(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'op': 'str',
-        'type': 'str',
-        'id': 'str'
+        'type': 'str'
     }
 
     attribute_map = {
+        'id': 'id',
         'op': 'op',
-        'type': 'type',
-        'id': 'id'
+        'type': 'type'
     }
 
-    def __init__(self, op=None, type=None, id=None):  # noqa: E501
+    def __init__(self, id=None, op=None, type=None):  # noqa: E501
         """UserGroupMembersReq - a model defined in Swagger"""  # noqa: E501
 
+        self._id = None
         self._op = None
         self._type = None
-        self._id = None
         self.discriminator = None
 
+        self.id = id
         self.op = op
         self.type = type
-        self.id = id
+
+    @property
+    def id(self):
+        """Gets the id of this UserGroupMembersReq.  # noqa: E501
+
+        The ObjectID of member being added or removed.  # noqa: E501
+
+        :return: The id of this UserGroupMembersReq.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this UserGroupMembersReq.
+
+        The ObjectID of member being added or removed.  # noqa: E501
+
+        :param id: The id of this UserGroupMembersReq.  # noqa: E501
+        :type: str
+        """
+        if id is None:
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
 
     @property
     def op(self):
@@ -115,31 +140,6 @@ class UserGroupMembersReq(object):
             )
 
         self._type = type
-
-    @property
-    def id(self):
-        """Gets the id of this UserGroupMembersReq.  # noqa: E501
-
-        The ObjectID of member being added or removed.  # noqa: E501
-
-        :return: The id of this UserGroupMembersReq.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this UserGroupMembersReq.
-
-        The ObjectID of member being added or removed.  # noqa: E501
-
-        :param id: The id of this UserGroupMembersReq.  # noqa: E501
-        :type: str
-        """
-        if id is None:
-            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
-
-        self._id = id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

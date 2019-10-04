@@ -33,12 +33,12 @@ from jcapiv1.configuration import Configuration
 # import models into sdk package
 from jcapiv1.models.application import Application
 from jcapiv1.models.application_config import ApplicationConfig
+from jcapiv1.models.application_config_acs_url import ApplicationConfigAcsUrl
+from jcapiv1.models.application_config_acs_url_tooltip import ApplicationConfigAcsUrlTooltip
+from jcapiv1.models.application_config_acs_url_tooltip_variables import ApplicationConfigAcsUrlTooltipVariables
 from jcapiv1.models.application_config_constant_attributes import ApplicationConfigConstantAttributes
 from jcapiv1.models.application_config_constant_attributes_value import ApplicationConfigConstantAttributesValue
 from jcapiv1.models.application_config_database_attributes import ApplicationConfigDatabaseAttributes
-from jcapiv1.models.application_config_idp_entity_id import ApplicationConfigIdpEntityId
-from jcapiv1.models.application_config_idp_entity_id_tooltip import ApplicationConfigIdpEntityIdTooltip
-from jcapiv1.models.application_config_idp_entity_id_tooltip_variables import ApplicationConfigIdpEntityIdTooltipVariables
 from jcapiv1.models.applicationslist import Applicationslist
 from jcapiv1.models.body import Body
 from jcapiv1.models.body1 import Body1
@@ -66,6 +66,7 @@ from jcapiv1.models.sshkeypost import Sshkeypost
 from jcapiv1.models.system import System
 from jcapiv1.models.system_network_interfaces import SystemNetworkInterfaces
 from jcapiv1.models.system_sshd_params import SystemSshdParams
+from jcapiv1.models.system_system_insights import SystemSystemInsights
 from jcapiv1.models.systemput import Systemput
 from jcapiv1.models.systemput_agent_bound_messages import SystemputAgentBoundMessages
 from jcapiv1.models.systemslist import Systemslist

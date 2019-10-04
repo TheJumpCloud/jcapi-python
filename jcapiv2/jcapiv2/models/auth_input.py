@@ -34,47 +34,26 @@ class AuthInput(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'oauth': 'AuthinputOauth',
-        'basic': 'AuthinputBasic'
+        'basic': 'AuthinputBasic',
+        'oauth': 'AuthinputOauth'
     }
 
     attribute_map = {
-        'oauth': 'oauth',
-        'basic': 'basic'
+        'basic': 'basic',
+        'oauth': 'oauth'
     }
 
-    def __init__(self, oauth=None, basic=None):  # noqa: E501
+    def __init__(self, basic=None, oauth=None):  # noqa: E501
         """AuthInput - a model defined in Swagger"""  # noqa: E501
 
-        self._oauth = None
         self._basic = None
+        self._oauth = None
         self.discriminator = None
 
-        if oauth is not None:
-            self.oauth = oauth
         if basic is not None:
             self.basic = basic
-
-    @property
-    def oauth(self):
-        """Gets the oauth of this AuthInput.  # noqa: E501
-
-
-        :return: The oauth of this AuthInput.  # noqa: E501
-        :rtype: AuthinputOauth
-        """
-        return self._oauth
-
-    @oauth.setter
-    def oauth(self, oauth):
-        """Sets the oauth of this AuthInput.
-
-
-        :param oauth: The oauth of this AuthInput.  # noqa: E501
-        :type: AuthinputOauth
-        """
-
-        self._oauth = oauth
+        if oauth is not None:
+            self.oauth = oauth
 
     @property
     def basic(self):
@@ -96,6 +75,27 @@ class AuthInput(object):
         """
 
         self._basic = basic
+
+    @property
+    def oauth(self):
+        """Gets the oauth of this AuthInput.  # noqa: E501
+
+
+        :return: The oauth of this AuthInput.  # noqa: E501
+        :rtype: AuthinputOauth
+        """
+        return self._oauth
+
+    @oauth.setter
+    def oauth(self, oauth):
+        """Sets the oauth of this AuthInput.
+
+
+        :param oauth: The oauth of this AuthInput.  # noqa: E501
+        :type: AuthinputOauth
+        """
+
+        self._oauth = oauth
 
     def to_dict(self):
         """Returns the model properties as a dict"""

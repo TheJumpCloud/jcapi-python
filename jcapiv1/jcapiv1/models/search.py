@@ -31,52 +31,31 @@ class Search(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'filter': 'object',
         'fields': 'str',
+        'filter': 'object',
         'search_filter': 'object'
     }
 
     attribute_map = {
-        'filter': 'filter',
         'fields': 'fields',
+        'filter': 'filter',
         'search_filter': 'searchFilter'
     }
 
-    def __init__(self, filter=None, fields=None, search_filter=None):  # noqa: E501
+    def __init__(self, fields=None, filter=None, search_filter=None):  # noqa: E501
         """Search - a model defined in Swagger"""  # noqa: E501
 
-        self._filter = None
         self._fields = None
+        self._filter = None
         self._search_filter = None
         self.discriminator = None
 
-        if filter is not None:
-            self.filter = filter
         if fields is not None:
             self.fields = fields
+        if filter is not None:
+            self.filter = filter
         if search_filter is not None:
             self.search_filter = search_filter
-
-    @property
-    def filter(self):
-        """Gets the filter of this Search.  # noqa: E501
-
-
-        :return: The filter of this Search.  # noqa: E501
-        :rtype: object
-        """
-        return self._filter
-
-    @filter.setter
-    def filter(self, filter):
-        """Sets the filter of this Search.
-
-
-        :param filter: The filter of this Search.  # noqa: E501
-        :type: object
-        """
-
-        self._filter = filter
 
     @property
     def fields(self):
@@ -98,6 +77,27 @@ class Search(object):
         """
 
         self._fields = fields
+
+    @property
+    def filter(self):
+        """Gets the filter of this Search.  # noqa: E501
+
+
+        :return: The filter of this Search.  # noqa: E501
+        :rtype: object
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter):
+        """Sets the filter of this Search.
+
+
+        :param filter: The filter of this Search.  # noqa: E501
+        :type: object
+        """
+
+        self._filter = filter
 
     @property
     def search_filter(self):

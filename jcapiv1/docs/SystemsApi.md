@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 List an individual system
 
-This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
+This endpoint returns an individual system.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/systems/{SystemID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```
 
 ### Example
 ```python
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 List All Systems
 
-This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint returns all Systems.  #### Sample Requests ``` curl -X GET https://console.jumpcloud.com/api/systems \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example
 ```python
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systems_put**
-> systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
+> System systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
 
 Update a system
 
@@ -247,7 +247,8 @@ x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Update a system
-    api_instance.systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
+    api_response = api_instance.systems_put(id, content_type, accept, body=body, _date=_date, authorization=authorization, x_org_id=x_org_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling SystemsApi->systems_put: %s\n" % e)
 ```
@@ -266,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**System**](System.md)
 
 ### Authorization
 

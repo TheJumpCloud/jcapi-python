@@ -31,59 +31,36 @@ class Sshkeylist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'create_date': 'str',
         'id': 'str',
-        'public_key': 'str',
-        'name': 'str'
+        'create_date': 'str',
+        'name': 'str',
+        'public_key': 'str'
     }
 
     attribute_map = {
-        'create_date': 'create_date',
         'id': '_id',
-        'public_key': 'public_key',
-        'name': 'name'
+        'create_date': 'create_date',
+        'name': 'name',
+        'public_key': 'public_key'
     }
 
-    def __init__(self, create_date=None, id=None, public_key=None, name=None):  # noqa: E501
+    def __init__(self, id=None, create_date=None, name=None, public_key=None):  # noqa: E501
         """Sshkeylist - a model defined in Swagger"""  # noqa: E501
 
-        self._create_date = None
         self._id = None
-        self._public_key = None
+        self._create_date = None
         self._name = None
+        self._public_key = None
         self.discriminator = None
 
-        if create_date is not None:
-            self.create_date = create_date
         if id is not None:
             self.id = id
-        if public_key is not None:
-            self.public_key = public_key
+        if create_date is not None:
+            self.create_date = create_date
         if name is not None:
             self.name = name
-
-    @property
-    def create_date(self):
-        """Gets the create_date of this Sshkeylist.  # noqa: E501
-
-        The date the SSH key was created.  # noqa: E501
-
-        :return: The create_date of this Sshkeylist.  # noqa: E501
-        :rtype: str
-        """
-        return self._create_date
-
-    @create_date.setter
-    def create_date(self, create_date):
-        """Sets the create_date of this Sshkeylist.
-
-        The date the SSH key was created.  # noqa: E501
-
-        :param create_date: The create_date of this Sshkeylist.  # noqa: E501
-        :type: str
-        """
-
-        self._create_date = create_date
+        if public_key is not None:
+            self.public_key = public_key
 
     @property
     def id(self):
@@ -109,27 +86,27 @@ class Sshkeylist(object):
         self._id = id
 
     @property
-    def public_key(self):
-        """Gets the public_key of this Sshkeylist.  # noqa: E501
+    def create_date(self):
+        """Gets the create_date of this Sshkeylist.  # noqa: E501
 
-        The Public SSH key.  # noqa: E501
+        The date the SSH key was created.  # noqa: E501
 
-        :return: The public_key of this Sshkeylist.  # noqa: E501
+        :return: The create_date of this Sshkeylist.  # noqa: E501
         :rtype: str
         """
-        return self._public_key
+        return self._create_date
 
-    @public_key.setter
-    def public_key(self, public_key):
-        """Sets the public_key of this Sshkeylist.
+    @create_date.setter
+    def create_date(self, create_date):
+        """Sets the create_date of this Sshkeylist.
 
-        The Public SSH key.  # noqa: E501
+        The date the SSH key was created.  # noqa: E501
 
-        :param public_key: The public_key of this Sshkeylist.  # noqa: E501
+        :param create_date: The create_date of this Sshkeylist.  # noqa: E501
         :type: str
         """
 
-        self._public_key = public_key
+        self._create_date = create_date
 
     @property
     def name(self):
@@ -153,6 +130,29 @@ class Sshkeylist(object):
         """
 
         self._name = name
+
+    @property
+    def public_key(self):
+        """Gets the public_key of this Sshkeylist.  # noqa: E501
+
+        The Public SSH key.  # noqa: E501
+
+        :return: The public_key of this Sshkeylist.  # noqa: E501
+        :rtype: str
+        """
+        return self._public_key
+
+    @public_key.setter
+    def public_key(self, public_key):
+        """Sets the public_key of this Sshkeylist.
+
+        The Public SSH key.  # noqa: E501
+
+        :param public_key: The public_key of this Sshkeylist.  # noqa: E501
+        :type: str
+        """
+
+        self._public_key = public_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

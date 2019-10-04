@@ -31,65 +31,170 @@ class Tagpost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'systems': 'list[str]',
-        'systemusers': 'list[str]',
-        'regular_expressions': 'list[str]',
-        'externally_managed': 'bool',
         'external_dn': 'str',
         'external_source_type': 'str',
-        'send_to_ldap': 'bool',
+        'externally_managed': 'bool',
         'group_gid': 'str',
-        'group_name': 'str'
+        'group_name': 'str',
+        'name': 'str',
+        'regular_expressions': 'list[str]',
+        'send_to_ldap': 'bool',
+        'systems': 'list[str]',
+        'systemusers': 'list[str]'
     }
 
     attribute_map = {
-        'name': 'name',
-        'systems': 'systems',
-        'systemusers': 'systemusers',
-        'regular_expressions': 'regularExpressions',
-        'externally_managed': 'externallyManaged',
         'external_dn': 'externalDN',
         'external_source_type': 'externalSourceType',
-        'send_to_ldap': 'sendToLDAP',
+        'externally_managed': 'externallyManaged',
         'group_gid': 'groupGid',
-        'group_name': 'groupName'
+        'group_name': 'groupName',
+        'name': 'name',
+        'regular_expressions': 'regularExpressions',
+        'send_to_ldap': 'sendToLDAP',
+        'systems': 'systems',
+        'systemusers': 'systemusers'
     }
 
-    def __init__(self, name=None, systems=None, systemusers=None, regular_expressions=None, externally_managed=None, external_dn=None, external_source_type=None, send_to_ldap=None, group_gid=None, group_name=None):  # noqa: E501
+    def __init__(self, external_dn=None, external_source_type=None, externally_managed=None, group_gid=None, group_name=None, name=None, regular_expressions=None, send_to_ldap=None, systems=None, systemusers=None):  # noqa: E501
         """Tagpost - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._systems = None
-        self._systemusers = None
-        self._regular_expressions = None
-        self._externally_managed = None
         self._external_dn = None
         self._external_source_type = None
-        self._send_to_ldap = None
+        self._externally_managed = None
         self._group_gid = None
         self._group_name = None
+        self._name = None
+        self._regular_expressions = None
+        self._send_to_ldap = None
+        self._systems = None
+        self._systemusers = None
         self.discriminator = None
 
-        self.name = name
-        if systems is not None:
-            self.systems = systems
-        if systemusers is not None:
-            self.systemusers = systemusers
-        if regular_expressions is not None:
-            self.regular_expressions = regular_expressions
-        if externally_managed is not None:
-            self.externally_managed = externally_managed
         if external_dn is not None:
             self.external_dn = external_dn
         if external_source_type is not None:
             self.external_source_type = external_source_type
-        if send_to_ldap is not None:
-            self.send_to_ldap = send_to_ldap
+        if externally_managed is not None:
+            self.externally_managed = externally_managed
         if group_gid is not None:
             self.group_gid = group_gid
         if group_name is not None:
             self.group_name = group_name
+        self.name = name
+        if regular_expressions is not None:
+            self.regular_expressions = regular_expressions
+        if send_to_ldap is not None:
+            self.send_to_ldap = send_to_ldap
+        if systems is not None:
+            self.systems = systems
+        if systemusers is not None:
+            self.systemusers = systemusers
+
+    @property
+    def external_dn(self):
+        """Gets the external_dn of this Tagpost.  # noqa: E501
+
+
+        :return: The external_dn of this Tagpost.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_dn
+
+    @external_dn.setter
+    def external_dn(self, external_dn):
+        """Sets the external_dn of this Tagpost.
+
+
+        :param external_dn: The external_dn of this Tagpost.  # noqa: E501
+        :type: str
+        """
+
+        self._external_dn = external_dn
+
+    @property
+    def external_source_type(self):
+        """Gets the external_source_type of this Tagpost.  # noqa: E501
+
+
+        :return: The external_source_type of this Tagpost.  # noqa: E501
+        :rtype: str
+        """
+        return self._external_source_type
+
+    @external_source_type.setter
+    def external_source_type(self, external_source_type):
+        """Sets the external_source_type of this Tagpost.
+
+
+        :param external_source_type: The external_source_type of this Tagpost.  # noqa: E501
+        :type: str
+        """
+
+        self._external_source_type = external_source_type
+
+    @property
+    def externally_managed(self):
+        """Gets the externally_managed of this Tagpost.  # noqa: E501
+
+
+        :return: The externally_managed of this Tagpost.  # noqa: E501
+        :rtype: bool
+        """
+        return self._externally_managed
+
+    @externally_managed.setter
+    def externally_managed(self, externally_managed):
+        """Sets the externally_managed of this Tagpost.
+
+
+        :param externally_managed: The externally_managed of this Tagpost.  # noqa: E501
+        :type: bool
+        """
+
+        self._externally_managed = externally_managed
+
+    @property
+    def group_gid(self):
+        """Gets the group_gid of this Tagpost.  # noqa: E501
+
+
+        :return: The group_gid of this Tagpost.  # noqa: E501
+        :rtype: str
+        """
+        return self._group_gid
+
+    @group_gid.setter
+    def group_gid(self, group_gid):
+        """Sets the group_gid of this Tagpost.
+
+
+        :param group_gid: The group_gid of this Tagpost.  # noqa: E501
+        :type: str
+        """
+
+        self._group_gid = group_gid
+
+    @property
+    def group_name(self):
+        """Gets the group_name of this Tagpost.  # noqa: E501
+
+
+        :return: The group_name of this Tagpost.  # noqa: E501
+        :rtype: str
+        """
+        return self._group_name
+
+    @group_name.setter
+    def group_name(self, group_name):
+        """Sets the group_name of this Tagpost.
+
+
+        :param group_name: The group_name of this Tagpost.  # noqa: E501
+        :type: str
+        """
+
+        self._group_name = group_name
 
     @property
     def name(self):
@@ -115,6 +220,48 @@ class Tagpost(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def regular_expressions(self):
+        """Gets the regular_expressions of this Tagpost.  # noqa: E501
+
+
+        :return: The regular_expressions of this Tagpost.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._regular_expressions
+
+    @regular_expressions.setter
+    def regular_expressions(self, regular_expressions):
+        """Sets the regular_expressions of this Tagpost.
+
+
+        :param regular_expressions: The regular_expressions of this Tagpost.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._regular_expressions = regular_expressions
+
+    @property
+    def send_to_ldap(self):
+        """Gets the send_to_ldap of this Tagpost.  # noqa: E501
+
+
+        :return: The send_to_ldap of this Tagpost.  # noqa: E501
+        :rtype: bool
+        """
+        return self._send_to_ldap
+
+    @send_to_ldap.setter
+    def send_to_ldap(self, send_to_ldap):
+        """Sets the send_to_ldap of this Tagpost.
+
+
+        :param send_to_ldap: The send_to_ldap of this Tagpost.  # noqa: E501
+        :type: bool
+        """
+
+        self._send_to_ldap = send_to_ldap
 
     @property
     def systems(self):
@@ -161,153 +308,6 @@ class Tagpost(object):
         """
 
         self._systemusers = systemusers
-
-    @property
-    def regular_expressions(self):
-        """Gets the regular_expressions of this Tagpost.  # noqa: E501
-
-
-        :return: The regular_expressions of this Tagpost.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._regular_expressions
-
-    @regular_expressions.setter
-    def regular_expressions(self, regular_expressions):
-        """Sets the regular_expressions of this Tagpost.
-
-
-        :param regular_expressions: The regular_expressions of this Tagpost.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._regular_expressions = regular_expressions
-
-    @property
-    def externally_managed(self):
-        """Gets the externally_managed of this Tagpost.  # noqa: E501
-
-
-        :return: The externally_managed of this Tagpost.  # noqa: E501
-        :rtype: bool
-        """
-        return self._externally_managed
-
-    @externally_managed.setter
-    def externally_managed(self, externally_managed):
-        """Sets the externally_managed of this Tagpost.
-
-
-        :param externally_managed: The externally_managed of this Tagpost.  # noqa: E501
-        :type: bool
-        """
-
-        self._externally_managed = externally_managed
-
-    @property
-    def external_dn(self):
-        """Gets the external_dn of this Tagpost.  # noqa: E501
-
-
-        :return: The external_dn of this Tagpost.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_dn
-
-    @external_dn.setter
-    def external_dn(self, external_dn):
-        """Sets the external_dn of this Tagpost.
-
-
-        :param external_dn: The external_dn of this Tagpost.  # noqa: E501
-        :type: str
-        """
-
-        self._external_dn = external_dn
-
-    @property
-    def external_source_type(self):
-        """Gets the external_source_type of this Tagpost.  # noqa: E501
-
-
-        :return: The external_source_type of this Tagpost.  # noqa: E501
-        :rtype: str
-        """
-        return self._external_source_type
-
-    @external_source_type.setter
-    def external_source_type(self, external_source_type):
-        """Sets the external_source_type of this Tagpost.
-
-
-        :param external_source_type: The external_source_type of this Tagpost.  # noqa: E501
-        :type: str
-        """
-
-        self._external_source_type = external_source_type
-
-    @property
-    def send_to_ldap(self):
-        """Gets the send_to_ldap of this Tagpost.  # noqa: E501
-
-
-        :return: The send_to_ldap of this Tagpost.  # noqa: E501
-        :rtype: bool
-        """
-        return self._send_to_ldap
-
-    @send_to_ldap.setter
-    def send_to_ldap(self, send_to_ldap):
-        """Sets the send_to_ldap of this Tagpost.
-
-
-        :param send_to_ldap: The send_to_ldap of this Tagpost.  # noqa: E501
-        :type: bool
-        """
-
-        self._send_to_ldap = send_to_ldap
-
-    @property
-    def group_gid(self):
-        """Gets the group_gid of this Tagpost.  # noqa: E501
-
-
-        :return: The group_gid of this Tagpost.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_gid
-
-    @group_gid.setter
-    def group_gid(self, group_gid):
-        """Sets the group_gid of this Tagpost.
-
-
-        :param group_gid: The group_gid of this Tagpost.  # noqa: E501
-        :type: str
-        """
-
-        self._group_gid = group_gid
-
-    @property
-    def group_name(self):
-        """Gets the group_name of this Tagpost.  # noqa: E501
-
-
-        :return: The group_name of this Tagpost.  # noqa: E501
-        :rtype: str
-        """
-        return self._group_name
-
-    @group_name.setter
-    def group_name(self, group_name):
-        """Sets the group_name of this Tagpost.
-
-
-        :param group_name: The group_name of this Tagpost.  # noqa: E501
-        :type: str
-        """
-
-        self._group_name = group_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""
