@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from jcapiv1.api.application_templates_api import ApplicationTemplatesApi
 from jcapiv1.api.applications_api import ApplicationsApi
 from jcapiv1.api.command_results_api import CommandResultsApi
 from jcapiv1.api.command_triggers_api import CommandTriggersApi

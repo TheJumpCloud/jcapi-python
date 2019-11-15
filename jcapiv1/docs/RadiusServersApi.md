@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**radius_servers_list**](RadiusServersApi.md#radius_servers_list) | **GET** /radiusservers | List Radius Servers
 [**radius_servers_post**](RadiusServersApi.md#radius_servers_post) | **POST** /radiusservers | Create a Radius Server
-[**radius_servers_put**](RadiusServersApi.md#radius_servers_put) | **PUT** /radiusservers:id | Update Radius Servers
+[**radius_servers_put**](RadiusServersApi.md#radius_servers_put) | **PUT** /radiusservers/{id} | Update Radius Servers
 
 
 # **radius_servers_list**
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **radius_servers_post**
-> Radiusserverslist radius_servers_post(content_type, accept, body=body, x_org_id=x_org_id)
+> Radiusserver radius_servers_post(content_type, accept, body=body, x_org_id=x_org_id)
 
 Create a Radius Server
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Radiusserverslist**](Radiusserverslist.md)
+[**Radiusserver**](Radiusserver.md)
 
 ### Authorization
 
@@ -138,11 +138,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **radius_servers_put**
-> Radiusserverput radius_servers_put(content_type, accept, body=body, x_org_id=x_org_id)
+> Radiusserverput radius_servers_put(id, content_type, accept, body=body, x_org_id=x_org_id)
 
 Update Radius Servers
 
-This endpoint allows you to update RADIUS servers in your organization.  ####  ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```
+This endpoint allows you to update RADIUS servers in your organization.  #### ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```
 
 ### Example
 ```python
@@ -160,6 +160,7 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv1.RadiusServersApi(jcapiv1.ApiClient(configuration))
+id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
 body = jcapiv1.Body() # Body |  (optional)
@@ -167,7 +168,7 @@ x_org_id = '' # str |  (optional) (default to )
 
 try:
     # Update Radius Servers
-    api_response = api_instance.radius_servers_put(content_type, accept, body=body, x_org_id=x_org_id)
+    api_response = api_instance.radius_servers_put(id, content_type, accept, body=body, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RadiusServersApi->radius_servers_put: %s\n" % e)
@@ -177,6 +178,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
  **body** | [**Body**](Body.md)|  | [optional] 

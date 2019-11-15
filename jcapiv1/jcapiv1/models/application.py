@@ -34,7 +34,7 @@ class Application(object):
     """
     swagger_types = {
         'id': 'str',
-        'active': 'bool',
+        'beta': 'bool',
         'config': 'ApplicationConfig',
         'display_label': 'str',
         'display_name': 'str',
@@ -46,7 +46,7 @@ class Application(object):
 
     attribute_map = {
         'id': '_id',
-        'active': 'active',
+        'beta': 'beta',
         'config': 'config',
         'display_label': 'displayLabel',
         'display_name': 'displayName',
@@ -56,11 +56,11 @@ class Application(object):
         'sso_url': 'ssoUrl'
     }
 
-    def __init__(self, id=None, active=None, config=None, display_label=None, display_name=None, learn_more=None, name=None, organization=None, sso_url=None):  # noqa: E501
+    def __init__(self, id=None, beta=None, config=None, display_label=None, display_name=None, learn_more=None, name=None, organization=None, sso_url=None):  # noqa: E501
         """Application - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
-        self._active = None
+        self._beta = None
         self._config = None
         self._display_label = None
         self._display_name = None
@@ -72,8 +72,8 @@ class Application(object):
 
         if id is not None:
             self.id = id
-        if active is not None:
-            self.active = active
+        if beta is not None:
+            self.beta = beta
         if config is not None:
             self.config = config
         if display_label is not None:
@@ -111,25 +111,25 @@ class Application(object):
         self._id = id
 
     @property
-    def active(self):
-        """Gets the active of this Application.  # noqa: E501
+    def beta(self):
+        """Gets the beta of this Application.  # noqa: E501
 
 
-        :return: The active of this Application.  # noqa: E501
+        :return: The beta of this Application.  # noqa: E501
         :rtype: bool
         """
-        return self._active
+        return self._beta
 
-    @active.setter
-    def active(self, active):
-        """Sets the active of this Application.
+    @beta.setter
+    def beta(self, beta):
+        """Sets the beta of this Application.
 
 
-        :param active: The active of this Application.  # noqa: E501
+        :param beta: The beta of this Application.  # noqa: E501
         :type: bool
         """
 
-        self._active = active
+        self._beta = beta
 
     @property
     def config(self):

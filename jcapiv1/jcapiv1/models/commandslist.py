@@ -33,7 +33,7 @@ class Commandslist(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'results': 'CommandslistResults',
+        'results': 'list[CommandslistResults]',
         'total_count': 'int'
     }
 
@@ -60,7 +60,7 @@ class Commandslist(object):
 
 
         :return: The results of this Commandslist.  # noqa: E501
-        :rtype: CommandslistResults
+        :rtype: list[CommandslistResults]
         """
         return self._results
 
@@ -70,7 +70,7 @@ class Commandslist(object):
 
 
         :param results: The results of this Commandslist.  # noqa: E501
-        :type: CommandslistResults
+        :type: list[CommandslistResults]
         """
 
         self._results = results

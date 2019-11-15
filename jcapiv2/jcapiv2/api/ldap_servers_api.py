@@ -830,7 +830,7 @@ class LDAPServersApi(object):
         :param str id: Unique identifier of the LDAP server. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Body body:
+        :param Body3 body:
         :param str x_api_key:
         :param str x_org_id:
         :return: InlineResponse200
@@ -857,7 +857,7 @@ class LDAPServersApi(object):
         :param str id: Unique identifier of the LDAP server. (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Body body:
+        :param Body3 body:
         :param str x_api_key:
         :param str x_org_id:
         :return: InlineResponse200

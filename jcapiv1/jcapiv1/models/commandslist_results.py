@@ -188,7 +188,6 @@ class CommandslistResults(object):
     def listens_to(self):
         """Gets the listens_to of this CommandslistResults.  # noqa: E501
 
-          # noqa: E501
 
         :return: The listens_to of this CommandslistResults.  # noqa: E501
         :rtype: str
@@ -199,7 +198,6 @@ class CommandslistResults(object):
     def listens_to(self, listens_to):
         """Sets the listens_to of this CommandslistResults.
 
-          # noqa: E501
 
         :param listens_to: The listens_to of this CommandslistResults.  # noqa: E501
         :type: str
@@ -257,7 +255,7 @@ class CommandslistResults(object):
     def schedule(self):
         """Gets the schedule of this CommandslistResults.  # noqa: E501
 
-        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.   # noqa: E501
+        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.  # noqa: E501
 
         :return: The schedule of this CommandslistResults.  # noqa: E501
         :rtype: str
@@ -268,7 +266,7 @@ class CommandslistResults(object):
     def schedule(self, schedule):
         """Sets the schedule of this CommandslistResults.
 
-        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.   # noqa: E501
+        A crontab that consists of: [ (seconds) (minutes) (hours) (days of month) (months) (weekdays) ] or [ immediate ]. If you send this as an empty string, it will run immediately.  # noqa: E501
 
         :param schedule: The schedule of this CommandslistResults.  # noqa: E501
         :type: str

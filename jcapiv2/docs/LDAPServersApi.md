@@ -426,7 +426,7 @@ api_instance = jcapiv2.LDAPServersApi(jcapiv2.ApiClient(configuration))
 id = 'id_example' # str | Unique identifier of the LDAP server.
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.Body() # Body |  (optional)
+body = jcapiv2.Body3() # Body3 |  (optional)
 x_api_key = 'x_api_key_example' # str |  (optional)
 x_org_id = 'x_org_id_example' # str |  (optional)
 
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Unique identifier of the LDAP server. | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**Body**](Body.md)|  | [optional] 
+ **body** | [**Body3**](Body3.md)|  | [optional] 
  **x_api_key** | **str**|  | [optional] 
  **x_org_id** | **str**|  | [optional] 
 

@@ -29,6 +29,13 @@ class TestDuoApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_duo_account_delete(self):
+        """Test case for duo_account_delete
+
+        Delete a Duo Account  # noqa: E501
+        """
+        pass
+
     def test_duo_account_get(self):
         """Test case for duo_account_get
 
@@ -75,6 +82,13 @@ class TestDuoApi(unittest.TestCase):
         """Test case for duo_application_post
 
         Create Duo Application  # noqa: E501
+        """
+        pass
+
+    def test_duo_application_update(self):
+        """Test case for duo_application_update
+
+        Update Duo Application  # noqa: E501
         """
         pass
 

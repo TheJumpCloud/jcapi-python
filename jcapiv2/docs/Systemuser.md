@@ -38,6 +38,7 @@ Name | Type | Description | Notes
 **samba_service_user** | **bool** |  | [optional] 
 **ssh_keys** | [**list[Sshkeylist]**](Sshkeylist.md) |  | [optional] 
 **sudo** | **bool** |  | [optional] 
+**suspended** | **bool** |  | [optional] 
 **tags** | **list[str]** |  | [optional] 
 **totp_enabled** | **bool** |  | [optional] 
 **unix_guid** | **int** |  | [optional] 

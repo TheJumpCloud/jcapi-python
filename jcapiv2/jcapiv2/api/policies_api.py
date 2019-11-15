@@ -1421,13 +1421,13 @@ class PoliciesApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def policyresults_list_0(self, content_type, accept, **kwargs):  # noqa: E501
+    def policyresults_org_list(self, content_type, accept, **kwargs):  # noqa: E501
         """Lists all the policy results for an organization.  # noqa: E501
 
         This endpoint returns all policies results for an organization.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.policyresults_list_0(content_type, accept, async_req=True)
+        >>> thread = api.policyresults_org_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1445,18 +1445,18 @@ class PoliciesApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return self.policyresults_org_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.policyresults_list_0_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            (data) = self.policyresults_org_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def policyresults_list_0_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+    def policyresults_org_list_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Lists all the policy results for an organization.  # noqa: E501
 
         This endpoint returns all policies results for an organization.  ##### Sample Request  ```  curl -X GET https://console.jumpcloud.com/api/v2/policyresults \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.policyresults_list_0_with_http_info(content_type, accept, async_req=True)
+        >>> thread = api.policyresults_org_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1484,21 +1484,21 @@ class PoliciesApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method policyresults_list_0" % key
+                    " to method policyresults_org_list" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params or
                 params['content_type'] is None):
-            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_list_0`")  # noqa: E501
+            raise ValueError("Missing the required parameter `content_type` when calling `policyresults_org_list`")  # noqa: E501
         # verify the required parameter 'accept' is set
         if ('accept' not in params or
                 params['accept'] is None):
-            raise ValueError("Missing the required parameter `accept` when calling `policyresults_list_0`")  # noqa: E501
+            raise ValueError("Missing the required parameter `accept` when calling `policyresults_org_list`")  # noqa: E501
 
         if 'skip' in params and params['skip'] < 0:  # noqa: E501
-            raise ValueError("Invalid value for parameter `skip` when calling `policyresults_list_0`, must be a value greater than or equal to `0`")  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `policyresults_org_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

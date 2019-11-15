@@ -106,8 +106,8 @@ class TestPoliciesApi(unittest.TestCase):
         """
         pass
 
-    def test_policyresults_list_0(self):
-        """Test case for policyresults_list_0
+    def test_policyresults_org_list(self):
+        """Test case for policyresults_org_list
 
         Lists all the policy results for an organization.  # noqa: E501
         """

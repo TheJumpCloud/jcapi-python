@@ -34,33 +34,29 @@ class DuoApplication(object):
         'api_host': 'str',
         'id': 'str',
         'integration_key': 'str',
-        'name': 'str',
-        'secret_key': 'str'
+        'name': 'str'
     }
 
     attribute_map = {
         'api_host': 'apiHost',
         'id': 'id',
         'integration_key': 'integrationKey',
-        'name': 'name',
-        'secret_key': 'secretKey'
+        'name': 'name'
     }
 
-    def __init__(self, api_host=None, id=None, integration_key=None, name=None, secret_key=None):  # noqa: E501
+    def __init__(self, api_host=None, id=None, integration_key=None, name=None):  # noqa: E501
         """DuoApplication - a model defined in Swagger"""  # noqa: E501
 
         self._api_host = None
         self._id = None
         self._integration_key = None
         self._name = None
-        self._secret_key = None
         self.discriminator = None
 
         self.api_host = api_host
         self.id = id
         self.integration_key = integration_key
         self.name = name
-        self.secret_key = secret_key
 
     @property
     def api_host(self):
@@ -153,29 +149,6 @@ class DuoApplication(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
-
-    @property
-    def secret_key(self):
-        """Gets the secret_key of this DuoApplication.  # noqa: E501
-
-
-        :return: The secret_key of this DuoApplication.  # noqa: E501
-        :rtype: str
-        """
-        return self._secret_key
-
-    @secret_key.setter
-    def secret_key(self, secret_key):
-        """Sets the secret_key of this DuoApplication.
-
-
-        :param secret_key: The secret_key of this DuoApplication.  # noqa: E501
-        :type: str
-        """
-        if secret_key is None:
-            raise ValueError("Invalid value for `secret_key`, must not be `None`")  # noqa: E501
-
-        self._secret_key = secret_key
 
     def to_dict(self):
         """Returns the model properties as a dict"""

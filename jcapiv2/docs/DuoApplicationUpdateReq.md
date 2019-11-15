@@ -1,10 +1,12 @@
-# UserGroupPostAttributes
+# DuoApplicationUpdateReq
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**posix_groups** | [**list[UserGroupPostAttributesPosixGroups]**](UserGroupPostAttributesPosixGroups.md) |  | [optional] 
-**samba_enabled** | **bool** |  | [optional] 
+**api_host** | **str** |  | [optional] 
+**integration_key** | **str** |  | [optional] 
+**name** | **str** |  | [optional] 
+**secret_key** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

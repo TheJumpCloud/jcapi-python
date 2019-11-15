@@ -17,6 +17,7 @@ from __future__ import absolute_import
 
 # import apis into sdk package
 from jcapiv2.api.active_directory_api import ActiveDirectoryApi
+from jcapiv2.api.apple_mdm_api import AppleMDMApi
 from jcapiv2.api.applications_api import ApplicationsApi
 from jcapiv2.api.bulk_job_requests_api import BulkJobRequestsApi
 from jcapiv2.api.commands_api import CommandsApi
@@ -25,6 +26,7 @@ from jcapiv2.api.duo_api import DuoApi
 from jcapiv2.api.g_suite_api import GSuiteApi
 from jcapiv2.api.graph_api import GraphApi
 from jcapiv2.api.groups_api import GroupsApi
+from jcapiv2.api.knowledge_api import KnowledgeApi
 from jcapiv2.api.ldap_servers_api import LDAPServersApi
 from jcapiv2.api.office_365_api import Office365Api
 from jcapiv2.api.organizations_api import OrganizationsApi
@@ -43,6 +45,7 @@ from jcapiv2.api.user_group_members__membership_api import UserGroupMembersMembe
 from jcapiv2.api.user_groups_api import UserGroupsApi
 from jcapiv2.api.users_api import UsersApi
 from jcapiv2.api.workday_import_api import WorkdayImportApi
+from jcapiv2.api.default_api import DefaultApi
 from jcapiv2.api.fde_api import FdeApi
 
 # import ApiClient
@@ -54,21 +57,28 @@ from jcapiv2.models.active_directory_agent_input import ActiveDirectoryAgentInpu
 from jcapiv2.models.active_directory_agent_list_output import ActiveDirectoryAgentListOutput
 from jcapiv2.models.active_directory_input import ActiveDirectoryInput
 from jcapiv2.models.administrator import Administrator
+from jcapiv2.models.apple_mdm import AppleMDM
+from jcapiv2.models.apple_mdm_patch_input import AppleMdmPatchInput
 from jcapiv2.models.auth_info import AuthInfo
 from jcapiv2.models.auth_input import AuthInput
 from jcapiv2.models.auth_input_object import AuthInputObject
 from jcapiv2.models.authinput_basic import AuthinputBasic
 from jcapiv2.models.authinput_oauth import AuthinputOauth
 from jcapiv2.models.body import Body
+from jcapiv2.models.body1 import Body1
+from jcapiv2.models.body2 import Body2
+from jcapiv2.models.body3 import Body3
 from jcapiv2.models.bulk_user_create import BulkUserCreate
 from jcapiv2.models.bulk_user_update import BulkUserUpdate
 from jcapiv2.models.directory import Directory
 from jcapiv2.models.duo_account import DuoAccount
 from jcapiv2.models.duo_application import DuoApplication
 from jcapiv2.models.duo_application_req import DuoApplicationReq
+from jcapiv2.models.duo_application_update_req import DuoApplicationUpdateReq
 from jcapiv2.models.duo_registration_application import DuoRegistrationApplication
 from jcapiv2.models.duo_registration_application_req import DuoRegistrationApplicationReq
 from jcapiv2.models.emailrequest import Emailrequest
+from jcapiv2.models.enrollment_profile import EnrollmentProfile
 from jcapiv2.models.error import Error
 from jcapiv2.models.errorresponse import Errorresponse
 from jcapiv2.models.g_suite_builtin_translation import GSuiteBuiltinTranslation
@@ -85,13 +95,16 @@ from jcapiv2.models.gsuite_output import GsuiteOutput
 from jcapiv2.models.gsuite_patch_input import GsuitePatchInput
 from jcapiv2.models.inline_response200 import InlineResponse200
 from jcapiv2.models.inline_response2001 import InlineResponse2001
+from jcapiv2.models.inline_response201 import InlineResponse201
 from jcapiv2.models.inline_response400 import InlineResponse400
+from jcapiv2.models.jc_enrollment_profile import JcEnrollmentProfile
 from jcapiv2.models.job_details import JobDetails
 from jcapiv2.models.job_id import JobId
 from jcapiv2.models.job_workresult import JobWorkresult
 from jcapiv2.models.ldap_server_action import LdapServerAction
 from jcapiv2.models.ldap_server_input import LdapServerInput
 from jcapiv2.models.mfa import Mfa
+from jcapiv2.models.mobileconfig import Mobileconfig
 from jcapiv2.models.oauth_code_input import OauthCodeInput
 from jcapiv2.models.office365_builtin_translation import Office365BuiltinTranslation
 from jcapiv2.models.office365_translation_rule import Office365TranslationRule
@@ -112,6 +125,8 @@ from jcapiv2.models.policy_with_details import PolicyWithDetails
 from jcapiv2.models.provider import Provider
 from jcapiv2.models.provider_admin_req import ProviderAdminReq
 from jcapiv2.models.provider_contact import ProviderContact
+from jcapiv2.models.salesforce_knowledge_list_output import SalesforceKnowledgeListOutput
+from jcapiv2.models.salesforceknowledgelistoutput_inner import SalesforceknowledgelistoutputInner
 from jcapiv2.models.samba_domain_input import SambaDomainInput
 from jcapiv2.models.sshkeylist import Sshkeylist
 from jcapiv2.models.system_graph_management_req import SystemGraphManagementReq
@@ -122,16 +137,21 @@ from jcapiv2.models.system_group_data import SystemGroupData
 from jcapiv2.models.system_group_graph_management_req import SystemGroupGraphManagementReq
 from jcapiv2.models.system_group_members_req import SystemGroupMembersReq
 from jcapiv2.models.system_insights_apps import SystemInsightsApps
+from jcapiv2.models.system_insights_battery import SystemInsightsBattery
 from jcapiv2.models.system_insights_bitlocker_info import SystemInsightsBitlockerInfo
 from jcapiv2.models.system_insights_browser_plugins import SystemInsightsBrowserPlugins
 from jcapiv2.models.system_insights_chrome_extensions import SystemInsightsChromeExtensions
+from jcapiv2.models.system_insights_crashes import SystemInsightsCrashes
 from jcapiv2.models.system_insights_disk_encryption import SystemInsightsDiskEncryption
 from jcapiv2.models.system_insights_disk_info import SystemInsightsDiskInfo
 from jcapiv2.models.system_insights_etc_hosts import SystemInsightsEtcHosts
 from jcapiv2.models.system_insights_firefox_addons import SystemInsightsFirefoxAddons
 from jcapiv2.models.system_insights_groups import SystemInsightsGroups
+from jcapiv2.models.system_insights_ie_extensions import SystemInsightsIeExtensions
 from jcapiv2.models.system_insights_interface_addresses import SystemInsightsInterfaceAddresses
 from jcapiv2.models.system_insights_kernel_info import SystemInsightsKernelInfo
+from jcapiv2.models.system_insights_launchd import SystemInsightsLaunchd
+from jcapiv2.models.system_insights_logged_in_users import SystemInsightsLoggedInUsers
 from jcapiv2.models.system_insights_logical_drvies import SystemInsightsLogicalDrvies
 from jcapiv2.models.system_insights_mounts import SystemInsightsMounts
 from jcapiv2.models.system_insights_os_version import SystemInsightsOsVersion
@@ -141,7 +161,10 @@ from jcapiv2.models.system_insights_safari_extensions import SystemInsightsSafar
 from jcapiv2.models.system_insights_system_controls import SystemInsightsSystemControls
 from jcapiv2.models.system_insights_system_info import SystemInsightsSystemInfo
 from jcapiv2.models.system_insights_uptime import SystemInsightsUptime
+from jcapiv2.models.system_insights_usb_devices import SystemInsightsUsbDevices
+from jcapiv2.models.system_insights_user_groups import SystemInsightsUserGroups
 from jcapiv2.models.system_insights_users import SystemInsightsUsers
+from jcapiv2.models.system_insights_windows_crashes import SystemInsightsWindowsCrashes
 from jcapiv2.models.systemfdekey import Systemfdekey
 from jcapiv2.models.systemuser import Systemuser
 from jcapiv2.models.systemuserputpost import Systemuserputpost
@@ -149,13 +172,12 @@ from jcapiv2.models.systemuserputpost_addresses import SystemuserputpostAddresse
 from jcapiv2.models.systemuserputpost_phone_numbers import SystemuserputpostPhoneNumbers
 from jcapiv2.models.user_graph_management_req import UserGraphManagementReq
 from jcapiv2.models.user_group import UserGroup
+from jcapiv2.models.user_group_attributes import UserGroupAttributes
+from jcapiv2.models.user_group_attributes_posix_groups import UserGroupAttributesPosixGroups
 from jcapiv2.models.user_group_graph_management_req import UserGroupGraphManagementReq
 from jcapiv2.models.user_group_members_req import UserGroupMembersReq
 from jcapiv2.models.user_group_post import UserGroupPost
-from jcapiv2.models.user_group_post_attributes import UserGroupPostAttributes
-from jcapiv2.models.user_group_post_attributes_posix_groups import UserGroupPostAttributesPosixGroups
 from jcapiv2.models.user_group_put import UserGroupPut
-from jcapiv2.models.user_group_put_attributes import UserGroupPutAttributes
 from jcapiv2.models.workday_fields import WorkdayFields
 from jcapiv2.models.workday_input import WorkdayInput
 from jcapiv2.models.workday_output import WorkdayOutput

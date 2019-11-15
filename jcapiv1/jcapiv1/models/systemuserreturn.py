@@ -75,6 +75,7 @@ class Systemuserreturn(object):
         'samba_service_user': 'bool',
         'ssh_keys': 'list[Sshkeylist]',
         'sudo': 'bool',
+        'suspended': 'bool',
         'tags': 'list[str]',
         'totp_enabled': 'bool',
         'unix_guid': 'int',
@@ -122,6 +123,7 @@ class Systemuserreturn(object):
         'samba_service_user': 'samba_service_user',
         'ssh_keys': 'ssh_keys',
         'sudo': 'sudo',
+        'suspended': 'suspended',
         'tags': 'tags',
         'totp_enabled': 'totp_enabled',
         'unix_guid': 'unix_guid',
@@ -129,7 +131,7 @@ class Systemuserreturn(object):
         'username': 'username'
     }
 
-    def __init__(self, id=None, account_locked=None, activated=None, addresses=None, allow_public_key=None, attributes=None, bad_login_attempts=None, company=None, cost_center=None, created=None, department=None, description=None, displayname=None, email=None, employee_identifier=None, employee_type=None, enable_managed_uid=None, enable_user_portal_multifactor=None, external_dn=None, external_source_type=None, externally_managed=None, firstname=None, job_title=None, lastname=None, ldap_binding_user=None, location=None, mfa=None, middlename=None, organization=None, password_expiration_date=None, password_expired=None, password_never_expires=None, passwordless_sudo=None, phone_numbers=None, public_key=None, relationships=None, samba_service_user=None, ssh_keys=None, sudo=None, tags=None, totp_enabled=None, unix_guid=None, unix_uid=None, username=None):  # noqa: E501
+    def __init__(self, id=None, account_locked=None, activated=None, addresses=None, allow_public_key=None, attributes=None, bad_login_attempts=None, company=None, cost_center=None, created=None, department=None, description=None, displayname=None, email=None, employee_identifier=None, employee_type=None, enable_managed_uid=None, enable_user_portal_multifactor=None, external_dn=None, external_source_type=None, externally_managed=None, firstname=None, job_title=None, lastname=None, ldap_binding_user=None, location=None, mfa=None, middlename=None, organization=None, password_expiration_date=None, password_expired=None, password_never_expires=None, passwordless_sudo=None, phone_numbers=None, public_key=None, relationships=None, samba_service_user=None, ssh_keys=None, sudo=None, suspended=None, tags=None, totp_enabled=None, unix_guid=None, unix_uid=None, username=None):  # noqa: E501
         """Systemuserreturn - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -171,6 +173,7 @@ class Systemuserreturn(object):
         self._samba_service_user = None
         self._ssh_keys = None
         self._sudo = None
+        self._suspended = None
         self._tags = None
         self._totp_enabled = None
         self._unix_guid = None
@@ -256,6 +259,8 @@ class Systemuserreturn(object):
             self.ssh_keys = ssh_keys
         if sudo is not None:
             self.sudo = sudo
+        if suspended is not None:
+            self.suspended = suspended
         if tags is not None:
             self.tags = tags
         if totp_enabled is not None:
@@ -1115,6 +1120,27 @@ class Systemuserreturn(object):
         """
 
         self._sudo = sudo
+
+    @property
+    def suspended(self):
+        """Gets the suspended of this Systemuserreturn.  # noqa: E501
+
+
+        :return: The suspended of this Systemuserreturn.  # noqa: E501
+        :rtype: bool
+        """
+        return self._suspended
+
+    @suspended.setter
+    def suspended(self, suspended):
+        """Sets the suspended of this Systemuserreturn.
+
+
+        :param suspended: The suspended of this Systemuserreturn.  # noqa: E501
+        :type: bool
+        """
+
+        self._suspended = suspended
 
     @property
     def tags(self):

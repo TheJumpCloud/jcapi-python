@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from jcapiv2.models.user_group_post_attributes import UserGroupPostAttributes  # noqa: F401,E501
+from jcapiv2.models.user_group_attributes import UserGroupAttributes  # noqa: F401,E501
 
 
 class UserGroupPost(object):
@@ -33,7 +33,7 @@ class UserGroupPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'attributes': 'UserGroupPostAttributes',
+        'attributes': 'UserGroupAttributes',
         'name': 'str'
     }
 
@@ -59,7 +59,7 @@ class UserGroupPost(object):
 
 
         :return: The attributes of this UserGroupPost.  # noqa: E501
-        :rtype: UserGroupPostAttributes
+        :rtype: UserGroupAttributes
         """
         return self._attributes
 
@@ -69,7 +69,7 @@ class UserGroupPost(object):
 
 
         :param attributes: The attributes of this UserGroupPost.  # noqa: E501
-        :type: UserGroupPostAttributes
+        :type: UserGroupAttributes
         """
 
         self._attributes = attributes

@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv2
-from jcapiv2.models.user_group_post_attributes_posix_groups import UserGroupPostAttributesPosixGroups  # noqa: E501
+from jcapiv2.models.system_insights_battery import SystemInsightsBattery  # noqa: E501
 from jcapiv2.rest import ApiException
 
 
-class TestUserGroupPostAttributesPosixGroups(unittest.TestCase):
-    """UserGroupPostAttributesPosixGroups unit test stubs"""
+class TestSystemInsightsBattery(unittest.TestCase):
+    """SystemInsightsBattery unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestUserGroupPostAttributesPosixGroups(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testUserGroupPostAttributesPosixGroups(self):
-        """Test UserGroupPostAttributesPosixGroups"""
+    def testSystemInsightsBattery(self):
+        """Test SystemInsightsBattery"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv2.models.user_group_post_attributes_posix_groups.UserGroupPostAttributesPosixGroups()  # noqa: E501
+        # model = jcapiv2.models.system_insights_battery.SystemInsightsBattery()  # noqa: E501
         pass
 
 
