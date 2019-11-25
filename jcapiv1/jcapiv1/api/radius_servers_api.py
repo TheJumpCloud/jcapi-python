@@ -109,6 +109,8 @@ class RadiusServersApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `radius_servers_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `radius_servers_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -178,7 +180,7 @@ class RadiusServersApi(object):
         :param str accept: (required)
         :param Radiusserverpost body:
         :param str x_org_id: 
-        :return: Radiusserverslist
+        :return: Radiusserver
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -203,7 +205,7 @@ class RadiusServersApi(object):
         :param str accept: (required)
         :param Radiusserverpost body:
         :param str x_org_id: 
-        :return: Radiusserverslist
+        :return: Radiusserver
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -271,7 +273,7 @@ class RadiusServersApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='Radiusserverslist',  # noqa: E501
+            response_type='Radiusserver',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -279,16 +281,17 @@ class RadiusServersApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def radius_servers_put(self, content_type, accept, **kwargs):  # noqa: E501
+    def radius_servers_put(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Update Radius Servers  # noqa: E501
 
-        This endpoint allows you to update RADIUS servers in your organization.  ####  ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
+        This endpoint allows you to update RADIUS servers in your organization.  #### ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.radius_servers_put(content_type, accept, async_req=True)
+        >>> thread = api.radius_servers_put(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param Body body:
@@ -299,21 +302,22 @@ class RadiusServersApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.radius_servers_put_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return self.radius_servers_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.radius_servers_put_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            (data) = self.radius_servers_put_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def radius_servers_put_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+    def radius_servers_put_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Update Radius Servers  # noqa: E501
 
-        This endpoint allows you to update RADIUS servers in your organization.  ####  ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
+        This endpoint allows you to update RADIUS servers in your organization.  #### ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.radius_servers_put_with_http_info(content_type, accept, async_req=True)
+        >>> thread = api.radius_servers_put_with_http_info(id, content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
         :param Body body:
@@ -323,7 +327,7 @@ class RadiusServersApi(object):
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
+        all_params = ['id', 'content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -338,6 +342,10 @@ class RadiusServersApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `radius_servers_put`")  # noqa: E501
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params or
                 params['content_type'] is None):
@@ -350,6 +358,8 @@ class RadiusServersApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
 
@@ -379,7 +389,7 @@ class RadiusServersApi(object):
         auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/radiusservers:id', 'PUT',
+            '/radiusservers/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

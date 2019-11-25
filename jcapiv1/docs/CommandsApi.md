@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**command_file_get**](CommandsApi.md#command_file_get) | **GET** /files/command/{id} | Get a Command File
 [**commands_delete**](CommandsApi.md#commands_delete) | **DELETE** /commands/{id} | Delete a Command
 [**commands_get**](CommandsApi.md#commands_get) | **GET** /commands/{id} | List an individual Command
-[**commands_list**](CommandsApi.md#commands_list) | **GET** /commands/ | List All Commands
-[**commands_post**](CommandsApi.md#commands_post) | **POST** /commands/ | Create A Command
+[**commands_list**](CommandsApi.md#commands_list) | **GET** /commands | List All Commands
+[**commands_post**](CommandsApi.md#commands_post) | **POST** /commands | Create A Command
 [**commands_put**](CommandsApi.md#commands_put) | **PUT** /commands/{id} | Update a Command
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Get a Command File
 
-This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```
+This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```
 
 ### Example
 ```python
@@ -142,7 +142,7 @@ void (empty response body)
 
 List an individual Command
 
-This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```
+This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
 
 ### Example
 ```python

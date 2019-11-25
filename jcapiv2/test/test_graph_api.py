@@ -43,6 +43,13 @@ class TestGraphApi(unittest.TestCase):
         """
         pass
 
+    def test_graph_active_directory_traverse_user(self):
+        """Test case for graph_active_directory_traverse_user
+
+        List the Users bound to an Active Directory instance  # noqa: E501
+        """
+        pass
+
     def test_graph_active_directory_traverse_user_group(self):
         """Test case for graph_active_directory_traverse_user_group
 
@@ -488,6 +495,13 @@ class TestGraphApi(unittest.TestCase):
         """Test case for graph_user_member_of
 
         List the parent Groups of a User  # noqa: E501
+        """
+        pass
+
+    def test_graph_user_traverse_active_directory(self):
+        """Test case for graph_user_traverse_active_directory
+
+        List the Active Directory instances bound to a User  # noqa: E501
         """
         pass
 

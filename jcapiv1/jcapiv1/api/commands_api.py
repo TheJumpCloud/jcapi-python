@@ -36,7 +36,7 @@ class CommandsApi(object):
     def command_file_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Command File  # noqa: E501
 
-        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
+        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.command_file_get(id, content_type, accept, async_req=True)
@@ -64,7 +64,7 @@ class CommandsApi(object):
     def command_file_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Command File  # noqa: E501
 
-        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'    ```  # noqa: E501
+        This endpoint returns the uploaded file(s) associated with a specific command.  #### Sample Request  ``` curl -X GET https://console.jumpcloud.com/api/files/command/{commandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'   ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.command_file_get_with_http_info(id, content_type, accept, async_req=True)
@@ -111,6 +111,8 @@ class CommandsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `command_file_get`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `command_file_get`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -286,7 +288,7 @@ class CommandsApi(object):
     def commands_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command  # noqa: E501
 
-        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.commands_get(id, content_type, accept, async_req=True)
@@ -313,7 +315,7 @@ class CommandsApi(object):
     def commands_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """List an individual Command  # noqa: E501
 
-        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}'  ```  # noqa: E501
+        This endpoint returns a specific command based on the command ID.  #### Sample Request ``` curl -X GET https://console.jumpcloud.com/api/commands/{CommandID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.commands_get_with_http_info(id, content_type, accept, async_req=True)
@@ -486,6 +488,8 @@ class CommandsApi(object):
                 params['accept'] is None):
             raise ValueError("Missing the required parameter `accept` when calling `commands_list`")  # noqa: E501
 
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `commands_list`, must be a value greater than or equal to `0`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -526,7 +530,7 @@ class CommandsApi(object):
         auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/commands/', 'GET',
+            '/commands', 'GET',
             path_params,
             query_params,
             header_params,
@@ -641,7 +645,7 @@ class CommandsApi(object):
         auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
-            '/commands/', 'POST',
+            '/commands', 'POST',
             path_params,
             query_params,
             header_params,

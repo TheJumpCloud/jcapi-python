@@ -16,23 +16,24 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv2
-from jcapiv2.models.user_group_post_attributes import UserGroupPostAttributes  # noqa: E501
+from jcapiv2.api.knowledge_api import KnowledgeApi  # noqa: E501
 from jcapiv2.rest import ApiException
 
 
-class TestUserGroupPostAttributes(unittest.TestCase):
-    """UserGroupPostAttributes unit test stubs"""
+class TestKnowledgeApi(unittest.TestCase):
+    """KnowledgeApi unit test stubs"""
 
     def setUp(self):
-        pass
+        self.api = jcapiv2.api.knowledge_api.KnowledgeApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
-    def testUserGroupPostAttributes(self):
-        """Test UserGroupPostAttributes"""
-        # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv2.models.user_group_post_attributes.UserGroupPostAttributes()  # noqa: E501
+    def test_knowledge_salesforce_list(self):
+        """Test case for knowledge_salesforce_list
+
+        List Knowledge Articles  # noqa: E501
+        """
         pass
 
 

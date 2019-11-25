@@ -44,6 +44,7 @@ class Command(object):
         'sudo': 'bool',
         'systems': 'list[str]',
         'timeout': 'str',
+        'trigger': 'str',
         'user': 'str'
     }
 
@@ -61,10 +62,11 @@ class Command(object):
         'sudo': 'sudo',
         'systems': 'systems',
         'timeout': 'timeout',
+        'trigger': 'trigger',
         'user': 'user'
     }
 
-    def __init__(self, command=None, command_runners=None, command_type=None, files=None, launch_type=None, listens_to=None, name=None, organization=None, schedule=None, schedule_repeat_type=None, sudo=None, systems=None, timeout=None, user=None):  # noqa: E501
+    def __init__(self, command=None, command_runners=None, command_type=None, files=None, launch_type=None, listens_to=None, name=None, organization=None, schedule=None, schedule_repeat_type=None, sudo=None, systems=None, timeout=None, trigger=None, user=None):  # noqa: E501
         """Command - a model defined in Swagger"""  # noqa: E501
 
         self._command = None
@@ -80,6 +82,7 @@ class Command(object):
         self._sudo = None
         self._systems = None
         self._timeout = None
+        self._trigger = None
         self._user = None
         self.discriminator = None
 
@@ -108,7 +111,10 @@ class Command(object):
             self.systems = systems
         if timeout is not None:
             self.timeout = timeout
-        self.user = user
+        if trigger is not None:
+            self.trigger = trigger
+        if user is not None:
+            self.user = user
 
     @property
     def command(self):
@@ -410,10 +416,33 @@ class Command(object):
         self._timeout = timeout
 
     @property
+    def trigger(self):
+        """Gets the trigger of this Command.  # noqa: E501
+
+        The name of the command trigger.  # noqa: E501
+
+        :return: The trigger of this Command.  # noqa: E501
+        :rtype: str
+        """
+        return self._trigger
+
+    @trigger.setter
+    def trigger(self, trigger):
+        """Sets the trigger of this Command.
+
+        The name of the command trigger.  # noqa: E501
+
+        :param trigger: The trigger of this Command.  # noqa: E501
+        :type: str
+        """
+
+        self._trigger = trigger
+
+    @property
     def user(self):
         """Gets the user of this Command.  # noqa: E501
 
-        The ID of the system user to run the command as.  # noqa: E501
+        The ID of the system user to run the command as. This field is required when creating a command with a commandType of \"mac\" or \"linux\".  # noqa: E501
 
         :return: The user of this Command.  # noqa: E501
         :rtype: str
@@ -424,13 +453,11 @@ class Command(object):
     def user(self, user):
         """Sets the user of this Command.
 
-        The ID of the system user to run the command as.  # noqa: E501
+        The ID of the system user to run the command as. This field is required when creating a command with a commandType of \"mac\" or \"linux\".  # noqa: E501
 
         :param user: The user of this Command.  # noqa: E501
         :type: str
         """
-        if user is None:
-            raise ValueError("Invalid value for `user`, must not be `None`")  # noqa: E501
 
         self._user = user
 

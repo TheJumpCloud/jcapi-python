@@ -16,12 +16,12 @@ from __future__ import absolute_import
 import unittest
 
 import jcapiv2
-from jcapiv2.models.user_group_put_attributes import UserGroupPutAttributes  # noqa: E501
+from jcapiv2.models.system_insights_usb_devices import SystemInsightsUsbDevices  # noqa: E501
 from jcapiv2.rest import ApiException
 
 
-class TestUserGroupPutAttributes(unittest.TestCase):
-    """UserGroupPutAttributes unit test stubs"""
+class TestSystemInsightsUsbDevices(unittest.TestCase):
+    """SystemInsightsUsbDevices unit test stubs"""
 
     def setUp(self):
         pass
@@ -29,10 +29,10 @@ class TestUserGroupPutAttributes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testUserGroupPutAttributes(self):
-        """Test UserGroupPutAttributes"""
+    def testSystemInsightsUsbDevices(self):
+        """Test SystemInsightsUsbDevices"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = jcapiv2.models.user_group_put_attributes.UserGroupPutAttributes()  # noqa: E501
+        # model = jcapiv2.models.system_insights_usb_devices.SystemInsightsUsbDevices()  # noqa: E501
         pass
 
 

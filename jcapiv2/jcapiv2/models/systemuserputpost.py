@@ -68,6 +68,7 @@ class Systemuserputpost(object):
         'relationships': 'list[object]',
         'samba_service_user': 'bool',
         'sudo': 'bool',
+        'suspended': 'bool',
         'tags': 'list[str]',
         'unix_guid': 'int',
         'unix_uid': 'int',
@@ -108,13 +109,14 @@ class Systemuserputpost(object):
         'relationships': 'relationships',
         'samba_service_user': 'samba_service_user',
         'sudo': 'sudo',
+        'suspended': 'suspended',
         'tags': 'tags',
         'unix_guid': 'unix_guid',
         'unix_uid': 'unix_uid',
         'username': 'username'
     }
 
-    def __init__(self, account_locked=None, activated=None, addresses=None, allow_public_key=None, attributes=None, company=None, cost_center=None, department=None, description=None, displayname=None, email=None, employee_identifier=None, employee_type=None, enable_managed_uid=None, enable_user_portal_multifactor=None, external_dn=None, external_source_type=None, externally_managed=None, firstname=None, job_title=None, lastname=None, ldap_binding_user=None, location=None, mfa=None, middlename=None, password=None, password_never_expires=None, passwordless_sudo=None, phone_numbers=None, public_key=None, relationships=None, samba_service_user=None, sudo=None, tags=None, unix_guid=None, unix_uid=None, username=None):  # noqa: E501
+    def __init__(self, account_locked=None, activated=None, addresses=None, allow_public_key=None, attributes=None, company=None, cost_center=None, department=None, description=None, displayname=None, email=None, employee_identifier=None, employee_type=None, enable_managed_uid=None, enable_user_portal_multifactor=None, external_dn=None, external_source_type=None, externally_managed=None, firstname=None, job_title=None, lastname=None, ldap_binding_user=None, location=None, mfa=None, middlename=None, password=None, password_never_expires=None, passwordless_sudo=None, phone_numbers=None, public_key=None, relationships=None, samba_service_user=None, sudo=None, suspended=None, tags=None, unix_guid=None, unix_uid=None, username=None):  # noqa: E501
         """Systemuserputpost - a model defined in Swagger"""  # noqa: E501
 
         self._account_locked = None
@@ -150,6 +152,7 @@ class Systemuserputpost(object):
         self._relationships = None
         self._samba_service_user = None
         self._sudo = None
+        self._suspended = None
         self._tags = None
         self._unix_guid = None
         self._unix_uid = None
@@ -221,6 +224,8 @@ class Systemuserputpost(object):
             self.samba_service_user = samba_service_user
         if sudo is not None:
             self.sudo = sudo
+        if suspended is not None:
+            self.suspended = suspended
         if tags is not None:
             self.tags = tags
         if unix_guid is not None:
@@ -931,6 +936,27 @@ class Systemuserputpost(object):
         """
 
         self._sudo = sudo
+
+    @property
+    def suspended(self):
+        """Gets the suspended of this Systemuserputpost.  # noqa: E501
+
+
+        :return: The suspended of this Systemuserputpost.  # noqa: E501
+        :rtype: bool
+        """
+        return self._suspended
+
+    @suspended.setter
+    def suspended(self, suspended):
+        """Sets the suspended of this Systemuserputpost.
+
+
+        :param suspended: The suspended of this Systemuserputpost.  # noqa: E501
+        :type: bool
+        """
+
+        self._suspended = suspended
 
     @property
     def tags(self):

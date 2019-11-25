@@ -16,6 +16,7 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
+from jcapiv1.api.application_templates_api import ApplicationTemplatesApi
 from jcapiv1.api.applications_api import ApplicationsApi
 from jcapiv1.api.command_results_api import CommandResultsApi
 from jcapiv1.api.command_triggers_api import CommandTriggersApi
@@ -40,6 +41,9 @@ from jcapiv1.models.application_config_constant_attributes import ApplicationCon
 from jcapiv1.models.application_config_constant_attributes_value import ApplicationConfigConstantAttributesValue
 from jcapiv1.models.application_config_database_attributes import ApplicationConfigDatabaseAttributes
 from jcapiv1.models.applicationslist import Applicationslist
+from jcapiv1.models.applicationtemplate import Applicationtemplate
+from jcapiv1.models.applicationtemplate_jit import ApplicationtemplateJit
+from jcapiv1.models.applicationtemplateslist import Applicationtemplateslist
 from jcapiv1.models.body import Body
 from jcapiv1.models.body1 import Body1
 from jcapiv1.models.command import Command

@@ -40,6 +40,7 @@ class ApplicationConfig(object):
         'database_attributes': 'ApplicationConfigDatabaseAttributes',
         'idp_certificate': 'ApplicationConfigAcsUrl',
         'idp_entity_id': 'ApplicationConfigAcsUrl',
+        'idp_private_key': 'ApplicationConfigAcsUrl',
         'sp_entity_id': 'ApplicationConfigAcsUrl'
     }
 
@@ -49,10 +50,11 @@ class ApplicationConfig(object):
         'database_attributes': 'databaseAttributes',
         'idp_certificate': 'idpCertificate',
         'idp_entity_id': 'idpEntityId',
+        'idp_private_key': 'idpPrivateKey',
         'sp_entity_id': 'spEntityId'
     }
 
-    def __init__(self, acs_url=None, constant_attributes=None, database_attributes=None, idp_certificate=None, idp_entity_id=None, sp_entity_id=None):  # noqa: E501
+    def __init__(self, acs_url=None, constant_attributes=None, database_attributes=None, idp_certificate=None, idp_entity_id=None, idp_private_key=None, sp_entity_id=None):  # noqa: E501
         """ApplicationConfig - a model defined in Swagger"""  # noqa: E501
 
         self._acs_url = None
@@ -60,6 +62,7 @@ class ApplicationConfig(object):
         self._database_attributes = None
         self._idp_certificate = None
         self._idp_entity_id = None
+        self._idp_private_key = None
         self._sp_entity_id = None
         self.discriminator = None
 
@@ -73,6 +76,8 @@ class ApplicationConfig(object):
             self.idp_certificate = idp_certificate
         if idp_entity_id is not None:
             self.idp_entity_id = idp_entity_id
+        if idp_private_key is not None:
+            self.idp_private_key = idp_private_key
         if sp_entity_id is not None:
             self.sp_entity_id = sp_entity_id
 
@@ -180,6 +185,27 @@ class ApplicationConfig(object):
         """
 
         self._idp_entity_id = idp_entity_id
+
+    @property
+    def idp_private_key(self):
+        """Gets the idp_private_key of this ApplicationConfig.  # noqa: E501
+
+
+        :return: The idp_private_key of this ApplicationConfig.  # noqa: E501
+        :rtype: ApplicationConfigAcsUrl
+        """
+        return self._idp_private_key
+
+    @idp_private_key.setter
+    def idp_private_key(self, idp_private_key):
+        """Sets the idp_private_key of this ApplicationConfig.
+
+
+        :param idp_private_key: The idp_private_key of this ApplicationConfig.  # noqa: E501
+        :type: ApplicationConfigAcsUrl
+        """
+
+        self._idp_private_key = idp_private_key
 
     @property
     def sp_entity_id(self):

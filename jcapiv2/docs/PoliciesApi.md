@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**policies_put**](PoliciesApi.md#policies_put) | **PUT** /policies/{id} | Update an existing Policy
 [**policyresults_get**](PoliciesApi.md#policyresults_get) | **GET** /policyresults/{id} | Get a specific Policy Result.
 [**policyresults_list**](PoliciesApi.md#policyresults_list) | **GET** /policies/{policy_id}/policyresults | Lists all the policy results of a policy.
-[**policyresults_list_0**](PoliciesApi.md#policyresults_list_0) | **GET** /policyresults | Lists all the policy results for an organization.
+[**policyresults_org_list**](PoliciesApi.md#policyresults_org_list) | **GET** /policyresults | Lists all the policy results for an organization.
 [**policystatuses_list**](PoliciesApi.md#policystatuses_list) | **GET** /policies/{policy_id}/policystatuses | Lists the latest policy results of a policy.
 [**policystatuses_list_0**](PoliciesApi.md#policystatuses_list_0) | **GET** /systems/{system_id}/policystatuses | List the policy statuses for a system
 [**policytemplates_get**](PoliciesApi.md#policytemplates_get) | **GET** /policytemplates/{id} | Get a specific Policy Template
@@ -716,8 +716,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **policyresults_list_0**
-> list[PolicyResult] policyresults_list_0(content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
+# **policyresults_org_list**
+> list[PolicyResult] policyresults_org_list(content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
 
 Lists all the policy results for an organization.
 
@@ -750,10 +750,10 @@ sort = ['[]'] # list[str] | The comma separated fields used to sort the collecti
 
 try:
     # Lists all the policy results for an organization.
-    api_response = api_instance.policyresults_list_0(content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
+    api_response = api_instance.policyresults_org_list(content_type, accept, fields=fields, filter=filter, limit=limit, x_org_id=x_org_id, skip=skip, sort=sort)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling PoliciesApi->policyresults_list_0: %s\n" % e)
+    print("Exception when calling PoliciesApi->policyresults_org_list: %s\n" % e)
 ```
 
 ### Parameters

@@ -33,10 +33,129 @@ class DuoApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def duo_account_delete(self, id, content_type, accept, **kwargs):  # noqa: E501
+        """Delete a Duo Account  # noqa: E501
+
+        Removes the specified Duo account, an error will be returned if the account has some Duo application used in a protected resource.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/duo/accounts/{id} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.duo_account_delete(id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: ObjectID of the Duo Account (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param str x_org_id: 
+        :return: DuoAccount
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.duo_account_delete_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.duo_account_delete_with_http_info(id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def duo_account_delete_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
+        """Delete a Duo Account  # noqa: E501
+
+        Removes the specified Duo account, an error will be returned if the account has some Duo application used in a protected resource.  #### Sample Request ``` curl -X DELETE https://console.jumpcloud.com/api/v2/duo/accounts/{id} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.duo_account_delete_with_http_info(id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: ObjectID of the Duo Account (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param str x_org_id: 
+        :return: DuoAccount
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'content_type', 'accept', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method duo_account_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `duo_account_delete`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `duo_account_delete`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `duo_account_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/duo/accounts/{id}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DuoAccount',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def duo_account_get(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Duo Acount  # noqa: E501
 
-        #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts/{id} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\ ```  # noqa: E501
+        This endpoint returns a specific Duo account.  #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts/{id} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_account_get(id, content_type, accept, async_req=True)
@@ -61,7 +180,7 @@ class DuoApi(object):
     def duo_account_get_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Duo Acount  # noqa: E501
 
-        #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts/{id} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\ ```  # noqa: E501
+        This endpoint returns a specific Duo account.  #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts/{id} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_account_get_with_http_info(id, content_type, accept, async_req=True)
@@ -152,51 +271,49 @@ class DuoApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def duo_account_list(self, x_api_key, content_type, **kwargs):  # noqa: E501
+    def duo_account_list(self, content_type, accept, **kwargs):  # noqa: E501
         """List Duo Acounts  # noqa: E501
 
-        #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\ ```  # noqa: E501
+        This endpoint returns all the Duo accounts for your organization. Note: There can currently only be one Duo account for your organization.  #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.duo_account_list(x_api_key, content_type, async_req=True)
+        >>> thread = api.duo_account_list(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str x_api_key: (required)
         :param str content_type: (required)
-        :param str accept:
-        :param str x_org_id:
+        :param str accept: (required)
+        :param str x_org_id: 
         :return: list[DuoAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.duo_account_list_with_http_info(x_api_key, content_type, **kwargs)  # noqa: E501
+            return self.duo_account_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
         else:
-            (data) = self.duo_account_list_with_http_info(x_api_key, content_type, **kwargs)  # noqa: E501
+            (data) = self.duo_account_list_with_http_info(content_type, accept, **kwargs)  # noqa: E501
             return data
 
-    def duo_account_list_with_http_info(self, x_api_key, content_type, **kwargs):  # noqa: E501
+    def duo_account_list_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """List Duo Acounts  # noqa: E501
 
-        #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\ ```  # noqa: E501
+        This endpoint returns all the Duo accounts for your organization. Note: There can currently only be one Duo account for your organization.  #### Sample Request ``` curl https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.duo_account_list_with_http_info(x_api_key, content_type, async_req=True)
+        >>> thread = api.duo_account_list_with_http_info(content_type, accept, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str x_api_key: (required)
         :param str content_type: (required)
-        :param str accept:
-        :param str x_org_id:
+        :param str accept: (required)
+        :param str x_org_id: 
         :return: list[DuoAccount]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_api_key', 'content_type', 'accept', 'x_org_id']  # noqa: E501
+        all_params = ['content_type', 'accept', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -211,14 +328,14 @@ class DuoApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_api_key' is set
-        if ('x_api_key' not in params or
-                params['x_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_api_key` when calling `duo_account_list`")  # noqa: E501
         # verify the required parameter 'content_type' is set
         if ('content_type' not in params or
                 params['content_type'] is None):
             raise ValueError("Missing the required parameter `content_type` when calling `duo_account_list`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `duo_account_list`")  # noqa: E501
 
         collection_formats = {}
 
@@ -227,14 +344,12 @@ class DuoApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_api_key' in params:
-            header_params['x-api-key'] = params['x_api_key']  # noqa: E501
-        if 'accept' in params:
-            header_params['Accept'] = params['accept']  # noqa: E501
         if 'x_org_id' in params:
             header_params['x-org-id'] = params['x_org_id']  # noqa: E501
         if 'content_type' in params:
             header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -270,7 +385,7 @@ class DuoApi(object):
     def duo_account_post(self, content_type, accept, **kwargs):  # noqa: E501
         """Create Duo Account  # noqa: E501
 
-        Registers a Duo account for an organization. Only one Duo account will be allowed, in case an organization has a Duo account already a 409 (Conflict) code will be returned.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"registrationApplication\": {       \"apiHost\": \"api-1234.duosecurity.com\",       \"integrationKey\": \"1234\",       \"secretKey\": \"5678\"     }   }' ```  # noqa: E501
+        Registers a Duo account for an organization. Only one Duo account will be allowed, in case an organization has a Duo account already a 409 (Conflict) code will be returned.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_account_post(content_type, accept, async_req=True)
@@ -279,7 +394,6 @@ class DuoApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param DuoRegistrationApplicationReq body:
         :param str x_org_id: 
         :return: DuoAccount
                  If the method is called asynchronously,
@@ -295,7 +409,7 @@ class DuoApi(object):
     def duo_account_post_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
         """Create Duo Account  # noqa: E501
 
-        Registers a Duo account for an organization. Only one Duo account will be allowed, in case an organization has a Duo account already a 409 (Conflict) code will be returned.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"registrationApplication\": {       \"apiHost\": \"api-1234.duosecurity.com\",       \"integrationKey\": \"1234\",       \"secretKey\": \"5678\"     }   }' ```  # noqa: E501
+        Registers a Duo account for an organization. Only one Duo account will be allowed, in case an organization has a Duo account already a 409 (Conflict) code will be returned.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_account_post_with_http_info(content_type, accept, async_req=True)
@@ -304,14 +418,13 @@ class DuoApi(object):
         :param async_req bool
         :param str content_type: (required)
         :param str accept: (required)
-        :param DuoRegistrationApplicationReq body:
         :param str x_org_id: 
         :return: DuoAccount
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
+        all_params = ['content_type', 'accept', 'x_org_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -353,8 +466,6 @@ class DuoApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -385,6 +496,7 @@ class DuoApi(object):
     def duo_application_delete(self, account_id, application_id, content_type, accept, **kwargs):  # noqa: E501
         """Delete a Duo Application  # noqa: E501
 
+        Deletes the specified Duo application, an error will be returned if the application is used in a protected resource.  #### Sample Request ```   curl -X DELETE https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications/{APPLICATION_ID} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}'' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_delete(account_id, application_id, content_type, accept, async_req=True)
@@ -410,6 +522,7 @@ class DuoApi(object):
     def duo_application_delete_with_http_info(self, account_id, application_id, content_type, accept, **kwargs):  # noqa: E501
         """Delete a Duo Application  # noqa: E501
 
+        Deletes the specified Duo application, an error will be returned if the application is used in a protected resource.  #### Sample Request ```   curl -X DELETE https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications/{APPLICATION_ID} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}'' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_delete_with_http_info(account_id, application_id, content_type, accept, async_req=True)
@@ -489,7 +602,7 @@ class DuoApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/duo/accounts/{account_id}/applications/{application_id}', 'DELETE',
@@ -510,6 +623,7 @@ class DuoApi(object):
     def duo_application_get(self, account_id, application_id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Duo application  # noqa: E501
 
+        This endpoint returns a specific Duo application that is associated with the specified Duo account.  #### Sample Request ```   curl https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications/{APPLICATION_ID} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_get(account_id, application_id, content_type, accept, async_req=True)
@@ -535,6 +649,7 @@ class DuoApi(object):
     def duo_application_get_with_http_info(self, account_id, application_id, content_type, accept, **kwargs):  # noqa: E501
         """Get a Duo application  # noqa: E501
 
+        This endpoint returns a specific Duo application that is associated with the specified Duo account.  #### Sample Request ```   curl https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications/{APPLICATION_ID} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_get_with_http_info(account_id, application_id, content_type, accept, async_req=True)
@@ -614,7 +729,7 @@ class DuoApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/duo/accounts/{account_id}/applications/{application_id}', 'GET',
@@ -635,6 +750,7 @@ class DuoApi(object):
     def duo_application_list(self, account_id, content_type, accept, **kwargs):  # noqa: E501
         """List Duo Applications  # noqa: E501
 
+        This endpoint returns all the Duo applications for the specified Duo account. Note: There can currently only be one Duo application for your organization.  #### Sample Request ```   curl https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_list(account_id, content_type, accept, async_req=True)
@@ -659,6 +775,7 @@ class DuoApi(object):
     def duo_application_list_with_http_info(self, account_id, content_type, accept, **kwargs):  # noqa: E501
         """List Duo Applications  # noqa: E501
 
+        This endpoint returns all the Duo applications for the specified Duo account. Note: There can currently only be one Duo application for your organization.  #### Sample Request ```   curl https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_list_with_http_info(account_id, content_type, accept, async_req=True)
@@ -731,7 +848,7 @@ class DuoApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/duo/accounts/{account_id}/applications', 'GET',
@@ -752,7 +869,7 @@ class DuoApi(object):
     def duo_application_post(self, account_id, content_type, accept, **kwargs):  # noqa: E501
         """Create Duo Application  # noqa: E501
 
-        Creates a Duo application for an organization and its account.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts/obj-id-123/applications \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"Application Name\",     \"apiHost\": \"api-1234.duosecurity.com\",     \"integrationKey\": \"1234\",     \"secretKey\": \"5678\"   }' ```  # noqa: E501
+        Creates a Duo application for your organization and the specified account.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"Application Name\",     \"apiHost\": \"api-1234.duosecurity.com\",     \"integrationKey\": \"1234\",     \"secretKey\": \"5678\"   }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_post(account_id, content_type, accept, async_req=True)
@@ -778,7 +895,7 @@ class DuoApi(object):
     def duo_application_post_with_http_info(self, account_id, content_type, accept, **kwargs):  # noqa: E501
         """Create Duo Application  # noqa: E501
 
-        Creates a Duo application for an organization and its account.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts/obj-id-123/applications \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"Application Name\",     \"apiHost\": \"api-1234.duosecurity.com\",     \"integrationKey\": \"1234\",     \"secretKey\": \"5678\"   }' ```  # noqa: E501
+        Creates a Duo application for your organization and the specified account.  #### Sample Request ```   curl -X POST https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"Application Name\",     \"apiHost\": \"api-1234.duosecurity.com\",     \"integrationKey\": \"1234\",     \"secretKey\": \"5678\"   }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.duo_application_post_with_http_info(account_id, content_type, accept, async_req=True)
@@ -854,10 +971,141 @@ class DuoApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/duo/accounts/{account_id}/applications', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DuoApplication',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def duo_application_update(self, account_id, application_id, content_type, accept, **kwargs):  # noqa: E501
+        """Update Duo Application  # noqa: E501
+
+        Updates the specified Duo application.  #### Sample Request ```   curl -X PUT https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications/{APPLICATION_ID} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"Application Name\",     \"apiHost\": \"api-1234.duosecurity.com\",     \"integrationKey\": \"1234\",     \"secretKey\": \"5678\"   }' ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.duo_application_update(account_id, application_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str account_id: (required)
+        :param str application_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param DuoApplicationUpdateReq body:
+        :param str x_org_id: 
+        :return: DuoApplication
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.duo_application_update_with_http_info(account_id, application_id, content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.duo_application_update_with_http_info(account_id, application_id, content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def duo_application_update_with_http_info(self, account_id, application_id, content_type, accept, **kwargs):  # noqa: E501
+        """Update Duo Application  # noqa: E501
+
+        Updates the specified Duo application.  #### Sample Request ```   curl -X PUT https://console.jumpcloud.com/api/v2/duo/accounts/{ACCOUNT_ID}/applications/{APPLICATION_ID} \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"Application Name\",     \"apiHost\": \"api-1234.duosecurity.com\",     \"integrationKey\": \"1234\",     \"secretKey\": \"5678\"   }' ```  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.duo_application_update_with_http_info(account_id, application_id, content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str account_id: (required)
+        :param str application_id: (required)
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param DuoApplicationUpdateReq body:
+        :param str x_org_id: 
+        :return: DuoApplication
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['account_id', 'application_id', 'content_type', 'accept', 'body', 'x_org_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method duo_application_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'account_id' is set
+        if ('account_id' not in params or
+                params['account_id'] is None):
+            raise ValueError("Missing the required parameter `account_id` when calling `duo_application_update`")  # noqa: E501
+        # verify the required parameter 'application_id' is set
+        if ('application_id' not in params or
+                params['application_id'] is None):
+            raise ValueError("Missing the required parameter `application_id` when calling `duo_application_update`")  # noqa: E501
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `duo_application_update`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `duo_application_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'account_id' in params:
+            path_params['account_id'] = params['account_id']  # noqa: E501
+        if 'application_id' in params:
+            path_params['application_id'] = params['application_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/duo/accounts/{account_id}/applications/{application_id}', 'PUT',
             path_params,
             query_params,
             header_params,

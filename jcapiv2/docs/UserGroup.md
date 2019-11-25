@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**attributes** | [**UserGroupAttributes**](UserGroupAttributes.md) |  | [optional] 
 **id** | **str** | ObjectId uniquely identifying a User Group. | [optional] 
 **name** | **str** | Display name of a User Group. | [optional] 
 **type** | **str** | The type of the group. | [optional] 
