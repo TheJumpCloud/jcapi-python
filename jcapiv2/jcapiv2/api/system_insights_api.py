@@ -33,6 +33,136 @@ class SystemInsightsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def systeminsights_list_alf(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights ALF  # noqa: E501
+
+        Valid filter fields are `system_id` and `global_state`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_alf(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param list[str] filter: Supported operators are: eq
+        :param int skip: The offset into the records to return.
+        :return: list[SystemInsightsAlf]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_alf_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_alf_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_alf_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights ALF  # noqa: E501
+
+        Valid filter fields are `system_id` and `global_state`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_alf_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param list[str] filter: Supported operators are: eq
+        :param int skip: The offset into the records to return.
+        :return: list[SystemInsightsAlf]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'filter', 'skip']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_alf" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_alf`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_alf`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_alf`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_alf`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_alf`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/alf', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsAlf]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def systeminsights_list_apps(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Apps  # noqa: E501
 
@@ -2243,6 +2373,136 @@ class SystemInsightsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def systeminsights_list_managed_policies(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Managed Policies  # noqa: E501
+
+        Valid filter fields are `system_id` and `domain`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_managed_policies(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsManagedPolicies]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_managed_policies_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_managed_policies_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_managed_policies_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Managed Policies  # noqa: E501
+
+        Valid filter fields are `system_id` and `domain`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_managed_policies_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsManagedPolicies]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_managed_policies" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_managed_policies`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_managed_policies`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_managed_policies`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_managed_policies`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_managed_policies`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/managed_policies', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsManagedPolicies]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def systeminsights_list_mounts(self, content_type, accept, **kwargs):  # noqa: E501
         """List System Insights Mounts  # noqa: E501
 
@@ -2886,6 +3146,656 @@ class SystemInsightsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[SystemInsightsSafariExtensions]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_shadow(self, content_type, accept, **kwargs):  # noqa: E501
+        """LIst System Insights Shadow  # noqa: E501
+
+        Valid filter fields are `system_id` and `username`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_shadow(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsShadow]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_shadow_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_shadow_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_shadow_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """LIst System Insights Shadow  # noqa: E501
+
+        Valid filter fields are `system_id` and `username`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_shadow_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsShadow]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_shadow" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_shadow`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_shadow`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_shadow`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_shadow`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_shadow`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/shadow', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsShadow]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_shared_folders(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Shared Folders  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_shared_folders(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSharedFolders]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_shared_folders_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_shared_folders_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_shared_folders_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Shared Folders  # noqa: E501
+
+        Valid filter fields are `system_id` and `name`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_shared_folders_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSharedFolders]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_shared_folders" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_shared_folders`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_shared_folders`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_shared_folders`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_shared_folders`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_shared_folders`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/shared_folders', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSharedFolders]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_shared_resources(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Shared Resources  # noqa: E501
+
+        Valid filter fields are `system_id` and `type`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_shared_resources(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSharedResources]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_shared_resources_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_shared_resources_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_shared_resources_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Shared Resources  # noqa: E501
+
+        Valid filter fields are `system_id` and `type`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_shared_resources_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSharedResources]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_shared_resources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_shared_resources`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_shared_resources`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_shared_resources`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_shared_resources`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_shared_resources`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/shared_resources', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSharedResources]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_sharing_preferences(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Sharing Preferences  # noqa: E501
+
+        Only valid filed field is `system_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_sharing_preferences(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSharingPreferences]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_sharing_preferences_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_sharing_preferences_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_sharing_preferences_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights Sharing Preferences  # noqa: E501
+
+        Only valid filed field is `system_id`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_sharing_preferences_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSharingPreferences]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_sharing_preferences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_sharing_preferences`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_sharing_preferences`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_sharing_preferences`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_sharing_preferences`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_sharing_preferences`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/sharing_preferences', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSharingPreferences]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_sip_config(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights SIP Config  # noqa: E501
+
+        Valid filter fields are `system_id` and `enabled`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_sip_config(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSipConfig]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_sip_config_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_sip_config_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_sip_config_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights SIP Config  # noqa: E501
+
+        Valid filter fields are `system_id` and `enabled`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_sip_config_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsSipConfig]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_sip_config" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_sip_config`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_sip_config`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_sip_config`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_sip_config`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_sip_config`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/sip_config', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsSipConfig]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -6434,6 +7344,136 @@ class SystemInsightsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='list[SystemInsightsUserGroups]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def systeminsights_list_user_ssh_keys(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights User SSH Keys  # noqa: E501
+
+        Valid filter fields are `system_id` and `uid`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_user_ssh_keys(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsUserSshKeys]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.systeminsights_list_user_ssh_keys_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+        else:
+            (data) = self.systeminsights_list_user_ssh_keys_with_http_info(content_type, accept, **kwargs)  # noqa: E501
+            return data
+
+    def systeminsights_list_user_ssh_keys_with_http_info(self, content_type, accept, **kwargs):  # noqa: E501
+        """List System Insights User SSH Keys  # noqa: E501
+
+        Valid filter fields are `system_id` and `uid`.  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.systeminsights_list_user_ssh_keys_with_http_info(content_type, accept, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str content_type: (required)
+        :param str accept: (required)
+        :param int limit:
+        :param str x_org_id: 
+        :param int skip: The offset into the records to return.
+        :param list[str] filter: Supported operators are: eq
+        :return: list[SystemInsightsUserSshKeys]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['content_type', 'accept', 'limit', 'x_org_id', 'skip', 'filter']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method systeminsights_list_user_ssh_keys" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'content_type' is set
+        if ('content_type' not in params or
+                params['content_type'] is None):
+            raise ValueError("Missing the required parameter `content_type` when calling `systeminsights_list_user_ssh_keys`")  # noqa: E501
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params or
+                params['accept'] is None):
+            raise ValueError("Missing the required parameter `accept` when calling `systeminsights_list_user_ssh_keys`")  # noqa: E501
+
+        if 'limit' in params and params['limit'] > 100:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_user_ssh_keys`, must be a value less than or equal to `100`")  # noqa: E501
+        if 'limit' in params and params['limit'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `limit` when calling `systeminsights_list_user_ssh_keys`, must be a value greater than or equal to `0`")  # noqa: E501
+        if 'skip' in params and params['skip'] < 0:  # noqa: E501
+            raise ValueError("Invalid value for parameter `skip` when calling `systeminsights_list_user_ssh_keys`, must be a value greater than or equal to `0`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))  # noqa: E501
+        if 'skip' in params:
+            query_params.append(('skip', params['skip']))  # noqa: E501
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))  # noqa: E501
+            collection_formats['filter'] = 'csv'  # noqa: E501
+
+        header_params = {}
+        if 'x_org_id' in params:
+            header_params['x-org-id'] = params['x_org_id']  # noqa: E501
+        if 'content_type' in params:
+            header_params['Content-Type'] = params['content_type']  # noqa: E501
+        if 'accept' in params:
+            header_params['Accept'] = params['accept']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['x-api-key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/systeminsights/user_ssh_keys', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[SystemInsightsUserSshKeys]',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

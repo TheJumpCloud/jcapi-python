@@ -49,6 +49,8 @@ class System(object):
         'created': 'str',
         'display_name': 'str',
         'fde': 'Fde',
+        'file_system': 'str',
+        'has_service_account': 'bool',
         'hostname': 'str',
         'last_contact': 'str',
         'modify_sshd_config': 'bool',
@@ -79,6 +81,8 @@ class System(object):
         'created': 'created',
         'display_name': 'displayName',
         'fde': 'fde',
+        'file_system': 'fileSystem',
+        'has_service_account': 'hasServiceAccount',
         'hostname': 'hostname',
         'last_contact': 'lastContact',
         'modify_sshd_config': 'modifySSHDConfig',
@@ -95,7 +99,7 @@ class System(object):
         'version': 'version'
     }
 
-    def __init__(self, id=None, active=None, agent_version=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, amazon_instance_id=None, arch=None, connection_history=None, created=None, display_name=None, fde=None, hostname=None, last_contact=None, modify_sshd_config=None, network_interfaces=None, organization=None, os=None, remote_ip=None, ssh_root_enabled=None, sshd_params=None, system_insights=None, system_timezone=None, tags=None, template_name=None, version=None):  # noqa: E501
+    def __init__(self, id=None, active=None, agent_version=None, allow_multi_factor_authentication=None, allow_public_key_authentication=None, allow_ssh_password_authentication=None, allow_ssh_root_login=None, amazon_instance_id=None, arch=None, connection_history=None, created=None, display_name=None, fde=None, file_system=None, has_service_account=None, hostname=None, last_contact=None, modify_sshd_config=None, network_interfaces=None, organization=None, os=None, remote_ip=None, ssh_root_enabled=None, sshd_params=None, system_insights=None, system_timezone=None, tags=None, template_name=None, version=None):  # noqa: E501
         """System - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
@@ -111,6 +115,8 @@ class System(object):
         self._created = None
         self._display_name = None
         self._fde = None
+        self._file_system = None
+        self._has_service_account = None
         self._hostname = None
         self._last_contact = None
         self._modify_sshd_config = None
@@ -153,6 +159,10 @@ class System(object):
             self.display_name = display_name
         if fde is not None:
             self.fde = fde
+        if file_system is not None:
+            self.file_system = file_system
+        if has_service_account is not None:
+            self.has_service_account = has_service_account
         if hostname is not None:
             self.hostname = hostname
         if last_contact is not None:
@@ -454,6 +464,48 @@ class System(object):
         """
 
         self._fde = fde
+
+    @property
+    def file_system(self):
+        """Gets the file_system of this System.  # noqa: E501
+
+
+        :return: The file_system of this System.  # noqa: E501
+        :rtype: str
+        """
+        return self._file_system
+
+    @file_system.setter
+    def file_system(self, file_system):
+        """Sets the file_system of this System.
+
+
+        :param file_system: The file_system of this System.  # noqa: E501
+        :type: str
+        """
+
+        self._file_system = file_system
+
+    @property
+    def has_service_account(self):
+        """Gets the has_service_account of this System.  # noqa: E501
+
+
+        :return: The has_service_account of this System.  # noqa: E501
+        :rtype: bool
+        """
+        return self._has_service_account
+
+    @has_service_account.setter
+    def has_service_account(self, has_service_account):
+        """Sets the has_service_account of this System.
+
+
+        :param has_service_account: The has_service_account of this System.  # noqa: E501
+        :type: bool
+        """
+
+        self._has_service_account = has_service_account
 
     @property
     def hostname(self):

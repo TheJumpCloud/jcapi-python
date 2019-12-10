@@ -32,6 +32,7 @@ class SystemInsightsWindowsCrashes(object):
     """
     swagger_types = {
         'build_number': 'int',
+        'collection_time': 'str',
         'command_line': 'str',
         'crash_path': 'str',
         'current_directory': 'str',
@@ -48,6 +49,7 @@ class SystemInsightsWindowsCrashes(object):
         'process_uptime': 'str',
         'registers': 'str',
         'stack_trace': 'str',
+        'system_id': 'str',
         'tid': 'str',
         'type': 'str',
         'username': 'str',
@@ -56,6 +58,7 @@ class SystemInsightsWindowsCrashes(object):
 
     attribute_map = {
         'build_number': 'build_number',
+        'collection_time': 'collection_time',
         'command_line': 'command_line',
         'crash_path': 'crash_path',
         'current_directory': 'current_directory',
@@ -72,16 +75,18 @@ class SystemInsightsWindowsCrashes(object):
         'process_uptime': 'process_uptime',
         'registers': 'registers',
         'stack_trace': 'stack_trace',
+        'system_id': 'system_id',
         'tid': 'tid',
         'type': 'type',
         'username': 'username',
         'version': 'version'
     }
 
-    def __init__(self, build_number=None, command_line=None, crash_path=None, current_directory=None, _datetime=None, exception_address=None, exception_code=None, exception_message=None, machine_name=None, major_version=None, minor_version=None, module=None, path=None, pid=None, process_uptime=None, registers=None, stack_trace=None, tid=None, type=None, username=None, version=None):  # noqa: E501
+    def __init__(self, build_number=None, collection_time=None, command_line=None, crash_path=None, current_directory=None, _datetime=None, exception_address=None, exception_code=None, exception_message=None, machine_name=None, major_version=None, minor_version=None, module=None, path=None, pid=None, process_uptime=None, registers=None, stack_trace=None, system_id=None, tid=None, type=None, username=None, version=None):  # noqa: E501
         """SystemInsightsWindowsCrashes - a model defined in Swagger"""  # noqa: E501
 
         self._build_number = None
+        self._collection_time = None
         self._command_line = None
         self._crash_path = None
         self._current_directory = None
@@ -98,6 +103,7 @@ class SystemInsightsWindowsCrashes(object):
         self._process_uptime = None
         self._registers = None
         self._stack_trace = None
+        self._system_id = None
         self._tid = None
         self._type = None
         self._username = None
@@ -106,6 +112,8 @@ class SystemInsightsWindowsCrashes(object):
 
         if build_number is not None:
             self.build_number = build_number
+        if collection_time is not None:
+            self.collection_time = collection_time
         if command_line is not None:
             self.command_line = command_line
         if crash_path is not None:
@@ -138,6 +146,8 @@ class SystemInsightsWindowsCrashes(object):
             self.registers = registers
         if stack_trace is not None:
             self.stack_trace = stack_trace
+        if system_id is not None:
+            self.system_id = system_id
         if tid is not None:
             self.tid = tid
         if type is not None:
@@ -167,6 +177,27 @@ class SystemInsightsWindowsCrashes(object):
         """
 
         self._build_number = build_number
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsWindowsCrashes.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsWindowsCrashes.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsWindowsCrashes.
+
+
+        :param collection_time: The collection_time of this SystemInsightsWindowsCrashes.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
 
     @property
     def command_line(self):
@@ -503,6 +534,27 @@ class SystemInsightsWindowsCrashes(object):
         """
 
         self._stack_trace = stack_trace
+
+    @property
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsWindowsCrashes.  # noqa: E501
+
+
+        :return: The system_id of this SystemInsightsWindowsCrashes.  # noqa: E501
+        :rtype: str
+        """
+        return self._system_id
+
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsWindowsCrashes.
+
+
+        :param system_id: The system_id of this SystemInsightsWindowsCrashes.  # noqa: E501
+        :type: str
+        """
+
+        self._system_id = system_id
 
     @property
     def tid(self):

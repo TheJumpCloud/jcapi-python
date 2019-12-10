@@ -31,68 +31,180 @@ class Body1(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'exclusion': 'bool',
-        'exclusion_until': 'datetime'
+        'mfa': 'str',
+        'name': 'str',
+        'network_source_ip': 'str',
+        'tags': 'list[str]',
+        'user_lockout_action': 'str',
+        'user_password_expiration_action': 'str'
     }
 
     attribute_map = {
-        'exclusion': 'exclusion',
-        'exclusion_until': 'exclusionUntil'
+        'mfa': 'mfa',
+        'name': 'name',
+        'network_source_ip': 'networkSourceIp',
+        'tags': 'tags',
+        'user_lockout_action': 'userLockoutAction',
+        'user_password_expiration_action': 'userPasswordExpirationAction'
     }
 
-    def __init__(self, exclusion=None, exclusion_until=None):  # noqa: E501
+    def __init__(self, mfa=None, name=None, network_source_ip=None, tags=None, user_lockout_action=None, user_password_expiration_action=None):  # noqa: E501
         """Body1 - a model defined in Swagger"""  # noqa: E501
 
-        self._exclusion = None
-        self._exclusion_until = None
+        self._mfa = None
+        self._name = None
+        self._network_source_ip = None
+        self._tags = None
+        self._user_lockout_action = None
+        self._user_password_expiration_action = None
         self.discriminator = None
 
-        if exclusion is not None:
-            self.exclusion = exclusion
-        if exclusion_until is not None:
-            self.exclusion_until = exclusion_until
+        if mfa is not None:
+            self.mfa = mfa
+        self.name = name
+        self.network_source_ip = network_source_ip
+        if tags is not None:
+            self.tags = tags
+        if user_lockout_action is not None:
+            self.user_lockout_action = user_lockout_action
+        if user_password_expiration_action is not None:
+            self.user_password_expiration_action = user_password_expiration_action
 
     @property
-    def exclusion(self):
-        """Gets the exclusion of this Body1.  # noqa: E501
+    def mfa(self):
+        """Gets the mfa of this Body1.  # noqa: E501
 
 
-        :return: The exclusion of this Body1.  # noqa: E501
-        :rtype: bool
+        :return: The mfa of this Body1.  # noqa: E501
+        :rtype: str
         """
-        return self._exclusion
+        return self._mfa
 
-    @exclusion.setter
-    def exclusion(self, exclusion):
-        """Sets the exclusion of this Body1.
+    @mfa.setter
+    def mfa(self, mfa):
+        """Sets the mfa of this Body1.
 
 
-        :param exclusion: The exclusion of this Body1.  # noqa: E501
-        :type: bool
+        :param mfa: The mfa of this Body1.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["DISABLED", "ENABLED", "REQUIRED", "ALWAYS"]  # noqa: E501
+        if mfa not in allowed_values:
+            raise ValueError(
+                "Invalid value for `mfa` ({0}), must be one of {1}"  # noqa: E501
+                .format(mfa, allowed_values)
+            )
 
-        self._exclusion = exclusion
+        self._mfa = mfa
 
     @property
-    def exclusion_until(self):
-        """Gets the exclusion_until of this Body1.  # noqa: E501
+    def name(self):
+        """Gets the name of this Body1.  # noqa: E501
 
 
-        :return: The exclusion_until of this Body1.  # noqa: E501
-        :rtype: datetime
+        :return: The name of this Body1.  # noqa: E501
+        :rtype: str
         """
-        return self._exclusion_until
+        return self._name
 
-    @exclusion_until.setter
-    def exclusion_until(self, exclusion_until):
-        """Sets the exclusion_until of this Body1.
+    @name.setter
+    def name(self, name):
+        """Sets the name of this Body1.
 
 
-        :param exclusion_until: The exclusion_until of this Body1.  # noqa: E501
-        :type: datetime
+        :param name: The name of this Body1.  # noqa: E501
+        :type: str
+        """
+        if name is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+
+        self._name = name
+
+    @property
+    def network_source_ip(self):
+        """Gets the network_source_ip of this Body1.  # noqa: E501
+
+
+        :return: The network_source_ip of this Body1.  # noqa: E501
+        :rtype: str
+        """
+        return self._network_source_ip
+
+    @network_source_ip.setter
+    def network_source_ip(self, network_source_ip):
+        """Sets the network_source_ip of this Body1.
+
+
+        :param network_source_ip: The network_source_ip of this Body1.  # noqa: E501
+        :type: str
+        """
+        if network_source_ip is None:
+            raise ValueError("Invalid value for `network_source_ip`, must not be `None`")  # noqa: E501
+
+        self._network_source_ip = network_source_ip
+
+    @property
+    def tags(self):
+        """Gets the tags of this Body1.  # noqa: E501
+
+
+        :return: The tags of this Body1.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """Sets the tags of this Body1.
+
+
+        :param tags: The tags of this Body1.  # noqa: E501
+        :type: list[str]
         """
 
-        self._exclusion_until = exclusion_until
+        self._tags = tags
+
+    @property
+    def user_lockout_action(self):
+        """Gets the user_lockout_action of this Body1.  # noqa: E501
+
+
+        :return: The user_lockout_action of this Body1.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_lockout_action
+
+    @user_lockout_action.setter
+    def user_lockout_action(self, user_lockout_action):
+        """Sets the user_lockout_action of this Body1.
+
+
+        :param user_lockout_action: The user_lockout_action of this Body1.  # noqa: E501
+        :type: str
+        """
+
+        self._user_lockout_action = user_lockout_action
+
+    @property
+    def user_password_expiration_action(self):
+        """Gets the user_password_expiration_action of this Body1.  # noqa: E501
+
+
+        :return: The user_password_expiration_action of this Body1.  # noqa: E501
+        :rtype: str
+        """
+        return self._user_password_expiration_action
+
+    @user_password_expiration_action.setter
+    def user_password_expiration_action(self, user_password_expiration_action):
+        """Sets the user_password_expiration_action of this Body1.
+
+
+        :param user_password_expiration_action: The user_password_expiration_action of this Body1.  # noqa: E501
+        :type: str
+        """
+
+        self._user_password_expiration_action = user_password_expiration_action
 
     def to_dict(self):
         """Returns the model properties as a dict"""

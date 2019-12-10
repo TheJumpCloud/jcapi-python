@@ -31,6 +31,7 @@ class SystemInsightsCrashes(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'collection_time': 'str',
         'crash_path': 'str',
         'crashed_thread': 'str',
         '_datetime': 'str',
@@ -44,12 +45,14 @@ class SystemInsightsCrashes(object):
         'registers': 'str',
         'responsible': 'str',
         'stack_trace': 'str',
+        'system_id': 'str',
         'type': 'str',
         'uid': 'int',
         'version': 'str'
     }
 
     attribute_map = {
+        'collection_time': 'collection_time',
         'crash_path': 'crash_path',
         'crashed_thread': 'crashed_thread',
         '_datetime': 'datetime',
@@ -63,14 +66,16 @@ class SystemInsightsCrashes(object):
         'registers': 'registers',
         'responsible': 'responsible',
         'stack_trace': 'stack_trace',
+        'system_id': 'system_id',
         'type': 'type',
         'uid': 'uid',
         'version': 'version'
     }
 
-    def __init__(self, crash_path=None, crashed_thread=None, _datetime=None, exception_codes=None, exception_notes=None, exception_type=None, identifier=None, parent=None, path=None, pid=None, registers=None, responsible=None, stack_trace=None, type=None, uid=None, version=None):  # noqa: E501
+    def __init__(self, collection_time=None, crash_path=None, crashed_thread=None, _datetime=None, exception_codes=None, exception_notes=None, exception_type=None, identifier=None, parent=None, path=None, pid=None, registers=None, responsible=None, stack_trace=None, system_id=None, type=None, uid=None, version=None):  # noqa: E501
         """SystemInsightsCrashes - a model defined in Swagger"""  # noqa: E501
 
+        self._collection_time = None
         self._crash_path = None
         self._crashed_thread = None
         self.__datetime = None
@@ -84,11 +89,14 @@ class SystemInsightsCrashes(object):
         self._registers = None
         self._responsible = None
         self._stack_trace = None
+        self._system_id = None
         self._type = None
         self._uid = None
         self._version = None
         self.discriminator = None
 
+        if collection_time is not None:
+            self.collection_time = collection_time
         if crash_path is not None:
             self.crash_path = crash_path
         if crashed_thread is not None:
@@ -115,12 +123,35 @@ class SystemInsightsCrashes(object):
             self.responsible = responsible
         if stack_trace is not None:
             self.stack_trace = stack_trace
+        if system_id is not None:
+            self.system_id = system_id
         if type is not None:
             self.type = type
         if uid is not None:
             self.uid = uid
         if version is not None:
             self.version = version
+
+    @property
+    def collection_time(self):
+        """Gets the collection_time of this SystemInsightsCrashes.  # noqa: E501
+
+
+        :return: The collection_time of this SystemInsightsCrashes.  # noqa: E501
+        :rtype: str
+        """
+        return self._collection_time
+
+    @collection_time.setter
+    def collection_time(self, collection_time):
+        """Sets the collection_time of this SystemInsightsCrashes.
+
+
+        :param collection_time: The collection_time of this SystemInsightsCrashes.  # noqa: E501
+        :type: str
+        """
+
+        self._collection_time = collection_time
 
     @property
     def crash_path(self):
@@ -394,6 +425,27 @@ class SystemInsightsCrashes(object):
         """
 
         self._stack_trace = stack_trace
+
+    @property
+    def system_id(self):
+        """Gets the system_id of this SystemInsightsCrashes.  # noqa: E501
+
+
+        :return: The system_id of this SystemInsightsCrashes.  # noqa: E501
+        :rtype: str
+        """
+        return self._system_id
+
+    @system_id.setter
+    def system_id(self, system_id):
+        """Sets the system_id of this SystemInsightsCrashes.
+
+
+        :param system_id: The system_id of this SystemInsightsCrashes.  # noqa: E501
+        :type: str
+        """
+
+        self._system_id = system_id
 
     @property
     def type(self):

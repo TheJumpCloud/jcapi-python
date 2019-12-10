@@ -36,6 +36,20 @@ class TestOrganizationsApi(unittest.TestCase):
         """
         pass
 
+    def test_organization_put(self):
+        """Test case for organization_put
+
+        Update an Organization  # noqa: E501
+        """
+        pass
+
+    def test_organizations_get(self):
+        """Test case for organizations_get
+
+        Get an Organization  # noqa: E501
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

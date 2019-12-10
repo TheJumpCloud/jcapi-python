@@ -11,6 +11,7 @@ from jcapiv1.api.commands_api import CommandsApi
 from jcapiv1.api.organizations_api import OrganizationsApi
 from jcapiv1.api.radius_servers_api import RadiusServersApi
 from jcapiv1.api.search_api import SearchApi
+from jcapiv1.api.support_api import SupportApi
 from jcapiv1.api.systems_api import SystemsApi
 from jcapiv1.api.systemusers_api import SystemusersApi
 from jcapiv1.api.tags_api import TagsApi

@@ -29,6 +29,13 @@ class TestKnowledgeApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_knowledge_articles_list(self):
+        """Test case for knowledge_articles_list
+
+        List Knowledge Articles  # noqa: E501
+        """
+        pass
+
     def test_knowledge_salesforce_list(self):
         """Test case for knowledge_salesforce_list
 

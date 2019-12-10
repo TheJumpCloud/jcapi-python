@@ -29,6 +29,13 @@ class TestSystemInsightsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_systeminsights_list_alf(self):
+        """Test case for systeminsights_list_alf
+
+        List System Insights ALF  # noqa: E501
+        """
+        pass
+
     def test_systeminsights_list_apps(self):
         """Test case for systeminsights_list_apps
 
@@ -148,6 +155,13 @@ class TestSystemInsightsApi(unittest.TestCase):
         """
         pass
 
+    def test_systeminsights_list_managed_policies(self):
+        """Test case for systeminsights_list_managed_policies
+
+        List System Insights Managed Policies  # noqa: E501
+        """
+        pass
+
     def test_systeminsights_list_mounts(self):
         """Test case for systeminsights_list_mounts
 
@@ -180,6 +194,41 @@ class TestSystemInsightsApi(unittest.TestCase):
         """Test case for systeminsights_list_safari_extensions
 
         List System Insights Safari Extensions  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_shadow(self):
+        """Test case for systeminsights_list_shadow
+
+        LIst System Insights Shadow  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_shared_folders(self):
+        """Test case for systeminsights_list_shared_folders
+
+        List System Insights Shared Folders  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_shared_resources(self):
+        """Test case for systeminsights_list_shared_resources
+
+        List System Insights Shared Resources  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_sharing_preferences(self):
+        """Test case for systeminsights_list_sharing_preferences
+
+        List System Insights Sharing Preferences  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_sip_config(self):
+        """Test case for systeminsights_list_sip_config
+
+        List System Insights SIP Config  # noqa: E501
         """
         pass
 
@@ -362,6 +411,13 @@ class TestSystemInsightsApi(unittest.TestCase):
         """Test case for systeminsights_list_user_groups
 
         List System Insights User Groups  # noqa: E501
+        """
+        pass
+
+    def test_systeminsights_list_user_ssh_keys(self):
+        """Test case for systeminsights_list_user_ssh_keys
+
+        List System Insights User SSH Keys  # noqa: E501
         """
         pass
 

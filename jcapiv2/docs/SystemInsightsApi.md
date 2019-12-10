@@ -4,6 +4,7 @@ All URIs are relative to *https://console.jumpcloud.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**systeminsights_list_alf**](SystemInsightsApi.md#systeminsights_list_alf) | **GET** /systeminsights/alf | List System Insights ALF
 [**systeminsights_list_apps**](SystemInsightsApi.md#systeminsights_list_apps) | **GET** /systeminsights/apps | List System Insights Apps
 [**systeminsights_list_battery**](SystemInsightsApi.md#systeminsights_list_battery) | **GET** /systeminsights/battery | List System Insights Battery
 [**systeminsights_list_bitlocker_info**](SystemInsightsApi.md#systeminsights_list_bitlocker_info) | **GET** /systeminsights/bitlocker_info | List System Insights Bitlocker Info
@@ -21,11 +22,17 @@ Method | HTTP request | Description
 [**systeminsights_list_launchd**](SystemInsightsApi.md#systeminsights_list_launchd) | **GET** /systeminsights/launchd | List System Insights Launchd
 [**systeminsights_list_logged_in_users**](SystemInsightsApi.md#systeminsights_list_logged_in_users) | **GET** /systeminsights/logged_in_users | List System Insights Logged-In Users
 [**systeminsights_list_logical_drives**](SystemInsightsApi.md#systeminsights_list_logical_drives) | **GET** /systeminsights/logical_drives | List System Insights Logical Drives
+[**systeminsights_list_managed_policies**](SystemInsightsApi.md#systeminsights_list_managed_policies) | **GET** /systeminsights/managed_policies | List System Insights Managed Policies
 [**systeminsights_list_mounts**](SystemInsightsApi.md#systeminsights_list_mounts) | **GET** /systeminsights/mounts | List System Insights Mounts
 [**systeminsights_list_os_version**](SystemInsightsApi.md#systeminsights_list_os_version) | **GET** /systeminsights/os_version | List System Insights OS Version
 [**systeminsights_list_patches**](SystemInsightsApi.md#systeminsights_list_patches) | **GET** /systeminsights/patches | List System Insights Patches
 [**systeminsights_list_programs**](SystemInsightsApi.md#systeminsights_list_programs) | **GET** /systeminsights/programs | List System Insights Programs
 [**systeminsights_list_safari_extensions**](SystemInsightsApi.md#systeminsights_list_safari_extensions) | **GET** /systeminsights/safari_extensions | List System Insights Safari Extensions
+[**systeminsights_list_shadow**](SystemInsightsApi.md#systeminsights_list_shadow) | **GET** /systeminsights/shadow | LIst System Insights Shadow
+[**systeminsights_list_shared_folders**](SystemInsightsApi.md#systeminsights_list_shared_folders) | **GET** /systeminsights/shared_folders | List System Insights Shared Folders
+[**systeminsights_list_shared_resources**](SystemInsightsApi.md#systeminsights_list_shared_resources) | **GET** /systeminsights/shared_resources | List System Insights Shared Resources
+[**systeminsights_list_sharing_preferences**](SystemInsightsApi.md#systeminsights_list_sharing_preferences) | **GET** /systeminsights/sharing_preferences | List System Insights Sharing Preferences
+[**systeminsights_list_sip_config**](SystemInsightsApi.md#systeminsights_list_sip_config) | **GET** /systeminsights/sip_config | List System Insights SIP Config
 [**systeminsights_list_system_apps**](SystemInsightsApi.md#systeminsights_list_system_apps) | **GET** /systeminsights/{system_id}/apps | List System Insights System Apps
 [**systeminsights_list_system_bitlocker_info**](SystemInsightsApi.md#systeminsights_list_system_bitlocker_info) | **GET** /systeminsights/{system_id}/bitlocker_info | List System Insights System Bitlocker Info
 [**systeminsights_list_system_browser_plugins**](SystemInsightsApi.md#systeminsights_list_system_browser_plugins) | **GET** /systeminsights/{system_id}/browser_plugins | List System Insights System Browser Plugins
@@ -52,9 +59,74 @@ Method | HTTP request | Description
 [**systeminsights_list_uptime**](SystemInsightsApi.md#systeminsights_list_uptime) | **GET** /systeminsights/uptime | List System Insights Uptime
 [**systeminsights_list_usb_devices**](SystemInsightsApi.md#systeminsights_list_usb_devices) | **GET** /systeminsights/usb_devices | List System Insights USB Devices
 [**systeminsights_list_user_groups**](SystemInsightsApi.md#systeminsights_list_user_groups) | **GET** /systeminsights/user_groups | List System Insights User Groups
+[**systeminsights_list_user_ssh_keys**](SystemInsightsApi.md#systeminsights_list_user_ssh_keys) | **GET** /systeminsights/user_ssh_keys | List System Insights User SSH Keys
 [**systeminsights_list_users**](SystemInsightsApi.md#systeminsights_list_users) | **GET** /systeminsights/users | List System Insights Users
 [**systeminsights_list_windows_crashes**](SystemInsightsApi.md#systeminsights_list_windows_crashes) | **GET** /systeminsights/windows_crashes | List System Insights Windows Crashes
 
+
+# **systeminsights_list_alf**
+> list[SystemInsightsAlf] systeminsights_list_alf(content_type, accept, limit=limit, x_org_id=x_org_id, filter=filter, skip=skip)
+
+List System Insights ALF
+
+Valid filter fields are `system_id` and `global_state`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+
+try:
+    # List System Insights ALF
+    api_response = api_instance.systeminsights_list_alf(content_type, accept, limit=limit, x_org_id=x_org_id, filter=filter, skip=skip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_alf: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+
+### Return type
+
+[**list[SystemInsightsAlf]**](SystemInsightsAlf.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **systeminsights_list_apps**
 > list[SystemInsightsApps] systeminsights_list_apps(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
@@ -1144,6 +1216,70 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **systeminsights_list_managed_policies**
+> list[SystemInsightsManagedPolicies] systeminsights_list_managed_policies(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+List System Insights Managed Policies
+
+Valid filter fields are `system_id` and `domain`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # List System Insights Managed Policies
+    api_response = api_instance.systeminsights_list_managed_policies(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_managed_policies: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsManagedPolicies]**](SystemInsightsManagedPolicies.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **systeminsights_list_mounts**
 > list[SystemInsightsMounts] systeminsights_list_mounts(content_type, accept, limit=limit, skip=skip, filter=filter, x_org_id=x_org_id)
 
@@ -1452,6 +1588,320 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[SystemInsightsSafariExtensions]**](SystemInsightsSafariExtensions.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systeminsights_list_shadow**
+> list[SystemInsightsShadow] systeminsights_list_shadow(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+LIst System Insights Shadow
+
+Valid filter fields are `system_id` and `username`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # LIst System Insights Shadow
+    api_response = api_instance.systeminsights_list_shadow(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_shadow: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsShadow]**](SystemInsightsShadow.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systeminsights_list_shared_folders**
+> list[SystemInsightsSharedFolders] systeminsights_list_shared_folders(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+List System Insights Shared Folders
+
+Valid filter fields are `system_id` and `name`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # List System Insights Shared Folders
+    api_response = api_instance.systeminsights_list_shared_folders(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_shared_folders: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsSharedFolders]**](SystemInsightsSharedFolders.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systeminsights_list_shared_resources**
+> list[SystemInsightsSharedResources] systeminsights_list_shared_resources(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+List System Insights Shared Resources
+
+Valid filter fields are `system_id` and `type`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi()
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # List System Insights Shared Resources
+    api_response = api_instance.systeminsights_list_shared_resources(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_shared_resources: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsSharedResources]**](SystemInsightsSharedResources.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systeminsights_list_sharing_preferences**
+> list[SystemInsightsSharingPreferences] systeminsights_list_sharing_preferences(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+List System Insights Sharing Preferences
+
+Only valid filed field is `system_id`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # List System Insights Sharing Preferences
+    api_response = api_instance.systeminsights_list_sharing_preferences(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_sharing_preferences: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsSharingPreferences]**](SystemInsightsSharingPreferences.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systeminsights_list_sip_config**
+> list[SystemInsightsSipConfig] systeminsights_list_sip_config(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+List System Insights SIP Config
+
+Valid filter fields are `system_id` and `enabled`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # List System Insights SIP Config
+    api_response = api_instance.systeminsights_list_sip_config(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_sip_config: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsSipConfig]**](SystemInsightsSipConfig.md)
 
 ### Authorization
 
@@ -3158,6 +3608,70 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**list[SystemInsightsUserGroups]**](SystemInsightsUserGroups.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **systeminsights_list_user_ssh_keys**
+> list[SystemInsightsUserSshKeys] systeminsights_list_user_ssh_keys(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+
+List System Insights User SSH Keys
+
+Valid filter fields are `system_id` and `uid`.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.SystemInsightsApi(jcapiv2.ApiClient(configuration))
+content_type = 'application/json' # str |  (default to application/json)
+accept = 'application/json' # str |  (default to application/json)
+limit = 10 # int |  (optional) (default to 10)
+x_org_id = '' # str |  (optional) (default to )
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+filter = ['[]'] # list[str] | Supported operators are: eq (optional) (default to [])
+
+try:
+    # List System Insights User SSH Keys
+    api_response = api_instance.systeminsights_list_user_ssh_keys(content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SystemInsightsApi->systeminsights_list_user_ssh_keys: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **content_type** | **str**|  | [default to application/json]
+ **accept** | **str**|  | [default to application/json]
+ **limit** | **int**|  | [optional] [default to 10]
+ **x_org_id** | **str**|  | [optional] [default to ]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+ **filter** | [**list[str]**](str.md)| Supported operators are: eq | [optional] [default to []]
+
+### Return type
+
+[**list[SystemInsightsUserSshKeys]**](SystemInsightsUserSshKeys.md)
 
 ### Authorization
 

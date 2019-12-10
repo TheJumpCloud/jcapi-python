@@ -284,7 +284,7 @@ class RadiusServersApi(object):
     def radius_servers_put(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Update Radius Servers  # noqa: E501
 
-        This endpoint allows you to update RADIUS servers in your organization.  #### ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
+        This endpoint allows you to update RADIUS servers in your organization.  ####  ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.radius_servers_put(id, content_type, accept, async_req=True)
@@ -294,7 +294,7 @@ class RadiusServersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Body body:
+        :param Body1 body:
         :param str x_org_id: 
         :return: Radiusserverput
                  If the method is called asynchronously,
@@ -310,7 +310,7 @@ class RadiusServersApi(object):
     def radius_servers_put_with_http_info(self, id, content_type, accept, **kwargs):  # noqa: E501
         """Update Radius Servers  # noqa: E501
 
-        This endpoint allows you to update RADIUS servers in your organization.  #### ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
+        This endpoint allows you to update RADIUS servers in your organization.  ####  ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.radius_servers_put_with_http_info(id, content_type, accept, async_req=True)
@@ -320,7 +320,7 @@ class RadiusServersApi(object):
         :param str id: (required)
         :param str content_type: (required)
         :param str accept: (required)
-        :param Body body:
+        :param Body1 body:
         :param str x_org_id: 
         :return: Radiusserverput
                  If the method is called asynchronously,

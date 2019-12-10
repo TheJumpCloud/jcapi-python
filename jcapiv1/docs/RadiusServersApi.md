@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 Update Radius Servers
 
-This endpoint allows you to update RADIUS servers in your organization.  #### ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```
+This endpoint allows you to update RADIUS servers in your organization.  ####  ``` curl -X PUT https://console.jumpcloud.com/api/radiusservers/{ServerID} \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"name\": \"{name_update}\",     \"networkSourceIp\": \"{0.0.0.0}\",     \"userLockoutAction\": \"REMOVE\",     \"userPasswordExpirationAction\": \"MAINTAIN\" }' ```
 
 ### Example
 ```python
@@ -163,7 +163,7 @@ api_instance = jcapiv1.RadiusServersApi(jcapiv1.ApiClient(configuration))
 id = 'id_example' # str | 
 content_type = 'application/json' # str |  (default to application/json)
 accept = 'application/json' # str |  (default to application/json)
-body = jcapiv1.Body() # Body |  (optional)
+body = jcapiv1.Body1() # Body1 |  (optional)
 x_org_id = '' # str |  (optional) (default to )
 
 try:
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
  **id** | **str**|  | 
  **content_type** | **str**|  | [default to application/json]
  **accept** | **str**|  | [default to application/json]
- **body** | [**Body**](Body.md)|  | [optional] 
+ **body** | [**Body1**](Body1.md)|  | [optional] 
  **x_org_id** | **str**|  | [optional] [default to ]
 
 ### Return type
