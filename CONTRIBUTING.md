@@ -23,13 +23,15 @@ Update API v1 and v2 specification files in `./input/index1.yaml` and
 `./input/index2.yaml`):
 
 ```bash
+mkdir input
 curl https://docs.jumpcloud.com/api/1.0/index.yaml --output input/index1.yaml
 curl https://docs.jumpcloud.com/api/2.0/index.yaml --output input/index2.yaml
 ```
 
 Generate SDKs:
 
-```
+```bash
+mkdir output
 docker-compose run --rm swagger-codegen generate -i /swagger-api/yaml/index1.yaml -l python -c /config/config_v1.json -o /swagger-api/out/jcapiv1
 docker-compose run --rm swagger-codegen generate -i /swagger-api/yaml/index2.yaml -l python -c /config/config_v2.json -o /swagger-api/out/jcapiv2
 ```
@@ -41,7 +43,7 @@ Once you are satisfied with the generated API client, you can replace the
 existing files under the `jcapiv1` or `jcapiv2` directory with your generated
 files:
 
-```
+```bash
 rm -rf jcapiv1
 mv output/jcapiv1 .
 
