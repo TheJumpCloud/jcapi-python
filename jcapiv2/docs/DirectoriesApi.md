@@ -6,9 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**directories_list**](DirectoriesApi.md#directories_list) | **GET** /directories | List All Directories
 
-
 # **directories_list**
-> list[Directory] directories_list(content_type, accept, fields=fields, limit=limit, sort=sort, skip=skip, x_org_id=x_org_id)
+> list[Directory] directories_list(fields=fields, limit=limit, sort=sort, skip=skip, x_org_id=x_org_id)
 
 List All Directories
 
@@ -30,17 +29,15 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = jcapiv2.DirectoriesApi(jcapiv2.ApiClient(configuration))
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
-fields = ['[]'] # list[str] | The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  (optional) (default to [])
+fields = ['fields_example'] # list[str] | The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  (optional)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-sort = ['[]'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional) (default to [])
+sort = ['sort_example'] # list[str] | The comma separated fields used to sort the collection. Default sort is ascending, prefix with `-` to sort descending.  (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 
 try:
     # List All Directories
-    api_response = api_instance.directories_list(content_type, accept, fields=fields, limit=limit, sort=sort, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.directories_list(fields=fields, limit=limit, sort=sort, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling DirectoriesApi->directories_list: %s\n" % e)
@@ -50,13 +47,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
- **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  | [optional] [default to []]
+ **fields** | [**list[str]**](str.md)| The comma separated fields included in the returned records. If omitted, the default list of fields will be returned.  | [optional] 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] [default to []]
+ **sort** | [**list[str]**](str.md)| The comma separated fields used to sort the collection. Default sort is ascending, prefix with &#x60;-&#x60; to sort descending.  | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
 
 ### Return type
 
@@ -68,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
