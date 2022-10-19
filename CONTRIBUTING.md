@@ -17,9 +17,17 @@ https://docs.jumpcloud.com/2.0.
 Update the version number for each package in `config_v1.json` or
 `config_v2.json`.
 
-To generate the API v1 or v2 client, run the commands below (assuming your
-API v1 and v2 specification files are `./input/index1.yaml` and
+To generate the API v1 or v2 client, run the commands below:
+
+Update API v1 and v2 specification files in `./input/index1.yaml` and
 `./input/index2.yaml`):
+
+```bash
+curl https://docs.jumpcloud.com/api/1.0/index.yaml --output input/index1.yaml
+curl https://docs.jumpcloud.com/api/2.0/index.yaml --output input/index2.yaml
+```
+
+Generate SDKs:
 
 ```
 docker-compose run --rm swagger-codegen generate -i /swagger-api/yaml/index1.yaml -l python -c /config/config_v1.json -o /swagger-api/out/jcapiv1
