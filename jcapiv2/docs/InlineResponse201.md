@@ -3,9 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**apple_mdm** | [**AppleMDM**](AppleMDM.md) |  | [optional] 
-**signed_csr_plist** | **str** |  | [optional] 
+**integration_id** | **str** | The identifier of the created integration | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

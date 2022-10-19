@@ -4,24 +4,39 @@ from __future__ import absolute_import
 
 # import apis into api package
 from jcapiv2.api.active_directory_api import ActiveDirectoryApi
+from jcapiv2.api.administrators_api import AdministratorsApi
 from jcapiv2.api.apple_mdm_api import AppleMDMApi
 from jcapiv2.api.applications_api import ApplicationsApi
+from jcapiv2.api.authentication_policies_api import AuthenticationPoliciesApi
 from jcapiv2.api.bulk_job_requests_api import BulkJobRequestsApi
+from jcapiv2.api.command_results_api import CommandResultsApi
 from jcapiv2.api.commands_api import CommandsApi
+from jcapiv2.api.custom_emails_api import CustomEmailsApi
 from jcapiv2.api.directories_api import DirectoriesApi
 from jcapiv2.api.duo_api import DuoApi
 from jcapiv2.api.g_suite_api import GSuiteApi
+from jcapiv2.api.g_suite_import_api import GSuiteImportApi
 from jcapiv2.api.graph_api import GraphApi
 from jcapiv2.api.groups_api import GroupsApi
-from jcapiv2.api.knowledge_api import KnowledgeApi
+from jcapiv2.api.ip_lists_api import IPListsApi
+from jcapiv2.api.image_api import ImageApi
 from jcapiv2.api.ldap_servers_api import LDAPServersApi
+from jcapiv2.api.logos_api import LogosApi
+from jcapiv2.api.managed_service_provider_api import ManagedServiceProviderApi
 from jcapiv2.api.office_365_api import Office365Api
+from jcapiv2.api.office_365_import_api import Office365ImportApi
 from jcapiv2.api.organizations_api import OrganizationsApi
 from jcapiv2.api.policies_api import PoliciesApi
+from jcapiv2.api.policy_group_associations_api import PolicyGroupAssociationsApi
+from jcapiv2.api.policy_group_members__membership_api import PolicyGroupMembersMembershipApi
+from jcapiv2.api.policy_groups_api import PolicyGroupsApi
 from jcapiv2.api.policytemplates_api import PolicytemplatesApi
 from jcapiv2.api.providers_api import ProvidersApi
 from jcapiv2.api.radius_servers_api import RADIUSServersApi
+from jcapiv2.api.scim_import_api import SCIMImportApi
 from jcapiv2.api.samba_domains_api import SambaDomainsApi
+from jcapiv2.api.software_apps_api import SoftwareAppsApi
+from jcapiv2.api.subscriptions_api import SubscriptionsApi
 from jcapiv2.api.system_group_associations_api import SystemGroupAssociationsApi
 from jcapiv2.api.system_group_members__membership_api import SystemGroupMembersMembershipApi
 from jcapiv2.api.system_groups_api import SystemGroupsApi
@@ -32,5 +47,4 @@ from jcapiv2.api.user_group_members__membership_api import UserGroupMembersMembe
 from jcapiv2.api.user_groups_api import UserGroupsApi
 from jcapiv2.api.users_api import UsersApi
 from jcapiv2.api.workday_import_api import WorkdayImportApi
-from jcapiv2.api.default_api import DefaultApi
 from jcapiv2.api.fde_api import FdeApi

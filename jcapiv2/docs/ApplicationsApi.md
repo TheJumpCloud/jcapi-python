@@ -4,14 +4,184 @@ All URIs are relative to *https://console.jumpcloud.com/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**applications_delete_logo**](ApplicationsApi.md#applications_delete_logo) | **DELETE** /applications/{application_id}/logo | Delete application image
+[**applications_get**](ApplicationsApi.md#applications_get) | **GET** /applications/{application_id} | Get an Application
+[**applications_post_logo**](ApplicationsApi.md#applications_post_logo) | **POST** /applications/{application_id}/logo | 
 [**graph_application_associations_list**](ApplicationsApi.md#graph_application_associations_list) | **GET** /applications/{application_id}/associations | List the associations of an Application
 [**graph_application_associations_post**](ApplicationsApi.md#graph_application_associations_post) | **POST** /applications/{application_id}/associations | Manage the associations of an Application
 [**graph_application_traverse_user**](ApplicationsApi.md#graph_application_traverse_user) | **GET** /applications/{application_id}/users | List the Users bound to an Application
 [**graph_application_traverse_user_group**](ApplicationsApi.md#graph_application_traverse_user_group) | **GET** /applications/{application_id}/usergroups | List the User Groups bound to an Application
+[**import_users**](ApplicationsApi.md#import_users) | **GET** /applications/{application_id}/import/users | Get a list of users to import from an Application IdM service provider
 
+# **applications_delete_logo**
+> applications_delete_logo(application_id, x_org_id=x_org_id)
+
+Delete application image
+
+Deletes the specified image from an application
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
+application_id = 'application_id_example' # str | 
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
+
+try:
+    # Delete application image
+    api_instance.applications_delete_logo(application_id, x_org_id=x_org_id)
+except ApiException as e:
+    print("Exception when calling ApplicationsApi->applications_delete_logo: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_id** | **str**|  | 
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **applications_get**
+> object applications_get(application_id, x_org_id=x_org_id)
+
+Get an Application
+
+The endpoint retrieves an Application.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
+application_id = 'application_id_example' # str | ObjectID of the Application.
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
+
+try:
+    # Get an Application
+    api_response = api_instance.applications_get(application_id, x_org_id=x_org_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationsApi->applications_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_id** | **str**| ObjectID of the Application. | 
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
+
+### Return type
+
+**object**
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **applications_post_logo**
+> applications_post_logo(application_id, image=image, x_org_id=x_org_id)
+
+
+
+This endpoint sets the logo for an application.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/logo \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' ```
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
+application_id = 'application_id_example' # str | 
+image = 'image_example' # str |  (optional)
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
+
+try:
+    api_instance.applications_post_logo(application_id, image=image, x_org_id=x_org_id)
+except ApiException as e:
+    print("Exception when calling ApplicationsApi->applications_post_logo: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_id** | **str**|  | 
+ **image** | **str**|  | [optional] 
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_associations_list**
-> list[GraphConnection] graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphConnection] graph_application_associations_list(application_id, targets, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of an Application
 
@@ -34,16 +204,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
-targets = ['targets_example'] # list[str] | 
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
+targets = ['targets_example'] # list[str] | Targets which a \"application\" can be associated to.
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 
 try:
     # List the associations of an Application
-    api_response = api_instance.graph_application_associations_list(application_id, targets, content_type, accept, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_application_associations_list(application_id, targets, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->graph_application_associations_list: %s\n" % e)
@@ -54,12 +222,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **application_id** | **str**| ObjectID of the Application. | 
- **targets** | [**list[str]**](str.md)|  | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
+ **targets** | [**list[str]**](str.md)| Targets which a \&quot;application\&quot; can be associated to. | 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
 
 ### Return type
 
@@ -71,17 +237,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_associations_post**
-> graph_application_associations_post(application_id, content_type, accept, body=body, x_org_id=x_org_id)
+> graph_application_associations_post(application_id, body=body, x_org_id=x_org_id)
 
 Manage the associations of an Application
 
-This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\" }' ```
+This endpoint allows you to manage the _direct_ associations of an Application. A direct association can be a non-homogeneous relationship between 2 different objects, for example Application and User Groups.  #### Sample Request ``` curl -X POST 'https://console.jumpcloud.com/api/v2/applications/{Application_ID}/associations' \\   -H 'accept: application/json' \\   -H 'content-type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"user_group\",     \"id\": \"{Group_ID}\"   }' ```
 
 ### Example
 ```python
@@ -100,14 +266,12 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.GraphManagementReq() # GraphManagementReq |  (optional)
-x_org_id = '' # str |  (optional) (default to )
+body = jcapiv2.GraphOperationApplication() # GraphOperationApplication |  (optional)
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 
 try:
     # Manage the associations of an Application
-    api_instance.graph_application_associations_post(application_id, content_type, accept, body=body, x_org_id=x_org_id)
+    api_instance.graph_application_associations_post(application_id, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->graph_application_associations_post: %s\n" % e)
 ```
@@ -117,10 +281,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **application_id** | **str**| ObjectID of the Application. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
- **body** | [**GraphManagementReq**](GraphManagementReq.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to ]
+ **body** | [**GraphOperationApplication**](GraphOperationApplication.md)|  | [optional] 
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
 
 ### Return type
 
@@ -133,12 +295,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_traverse_user**
-> list[GraphObjectWithPaths] graph_application_traverse_user(application_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_application_traverse_user(application_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Users bound to an Application
 
@@ -161,16 +323,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the Users bound to an Application
-    api_response = api_instance.graph_application_traverse_user(application_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_application_traverse_user(application_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->graph_application_traverse_user: %s\n" % e)
@@ -181,12 +341,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **application_id** | **str**| ObjectID of the Application. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -198,13 +356,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_application_traverse_user_group**
-> list[GraphObjectWithPaths] graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_application_traverse_user_group(application_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the User Groups bound to an Application
 
@@ -227,16 +385,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
 application_id = 'application_id_example' # str | ObjectID of the Application.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the User Groups bound to an Application
-    api_response = api_instance.graph_application_traverse_user_group(application_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_application_traverse_user_group(application_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApplicationsApi->graph_application_traverse_user_group: %s\n" % e)
@@ -247,12 +403,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **application_id** | **str**| ObjectID of the Application. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -264,7 +418,75 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **import_users**
+> ImportUsersResponse import_users(application_id, filter=filter, query=query, sort=sort, sort_order=sort_order, x_org_id=x_org_id, limit=limit, skip=skip)
+
+Get a list of users to import from an Application IdM service provider
+
+Get a list of users to import from an Application IdM service provider.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import jcapiv2
+from jcapiv2.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = jcapiv2.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = jcapiv2.ApplicationsApi(jcapiv2.ApiClient(configuration))
+application_id = 'application_id_example' # str | ObjectID of the Application.
+filter = 'filter_example' # str | Filter users by a search term (optional)
+query = 'query_example' # str | URL query to merge with the service provider request (optional)
+sort = 'sort_example' # str | Sort users by supported fields (optional)
+sort_order = 'asc' # str |  (optional) (default to asc)
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
+limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
+skip = 0 # int | The offset into the records to return. (optional) (default to 0)
+
+try:
+    # Get a list of users to import from an Application IdM service provider
+    api_response = api_instance.import_users(application_id, filter=filter, query=query, sort=sort, sort_order=sort_order, x_org_id=x_org_id, limit=limit, skip=skip)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ApplicationsApi->import_users: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **application_id** | **str**| ObjectID of the Application. | 
+ **filter** | **str**| Filter users by a search term | [optional] 
+ **query** | **str**| URL query to merge with the service provider request | [optional] 
+ **sort** | **str**| Sort users by supported fields | [optional] 
+ **sort_order** | **str**|  | [optional] [default to asc]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
+ **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
+ **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
+
+### Return type
+
+[**ImportUsersResponse**](ImportUsersResponse.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

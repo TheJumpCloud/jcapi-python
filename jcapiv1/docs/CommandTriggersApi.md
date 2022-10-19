@@ -6,9 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**command_trigger_webhook_post**](CommandTriggersApi.md#command_trigger_webhook_post) | **POST** /command/trigger/{triggername} | Launch a command via a Trigger
 
-
 # **command_trigger_webhook_post**
-> command_trigger_webhook_post(triggername, content_type, accept, x_org_id=x_org_id)
+> Triggerreturn command_trigger_webhook_post(triggername, body=body, x_org_id=x_org_id)
 
 Launch a command via a Trigger
 
@@ -31,13 +30,13 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv1.CommandTriggersApi(jcapiv1.ApiClient(configuration))
 triggername = 'triggername_example' # str | 
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
-x_org_id = '' # str |  (optional) (default to )
+body = NULL # object |  (optional)
+x_org_id = 'x_org_id_example' # str |  (optional)
 
 try:
     # Launch a command via a Trigger
-    api_instance.command_trigger_webhook_post(triggername, content_type, accept, x_org_id=x_org_id)
+    api_response = api_instance.command_trigger_webhook_post(triggername, body=body, x_org_id=x_org_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling CommandTriggersApi->command_trigger_webhook_post: %s\n" % e)
 ```
@@ -47,13 +46,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **triggername** | **str**|  | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **body** | [**object**](object.md)|  | [optional] 
+ **x_org_id** | **str**|  | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**Triggerreturn**](Triggerreturn.md)
 
 ### Authorization
 

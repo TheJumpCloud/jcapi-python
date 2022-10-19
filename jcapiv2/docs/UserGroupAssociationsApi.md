@@ -16,9 +16,8 @@ Method | HTTP request | Description
 [**graph_user_group_traverse_system**](UserGroupAssociationsApi.md#graph_user_group_traverse_system) | **GET** /usergroups/{group_id}/systems | List the Systems bound to a User Group
 [**graph_user_group_traverse_system_group**](UserGroupAssociationsApi.md#graph_user_group_traverse_system_group) | **GET** /usergroups/{group_id}/systemgroups | List the System Groups bound to User Groups
 
-
 # **graph_user_group_associations_list**
-> list[GraphConnection] graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
+> list[GraphConnection] graph_user_group_associations_list(group_id, targets, limit=limit, skip=skip, x_org_id=x_org_id)
 
 List the associations of a User Group.
 
@@ -41,16 +40,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
-targets = ['targets_example'] # list[str] | 
+targets = ['targets_example'] # list[str] | Targets which a \"user_group\" can be associated to.
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 
 try:
     # List the associations of a User Group.
-    api_response = api_instance.graph_user_group_associations_list(group_id, content_type, accept, targets, limit=limit, skip=skip, x_org_id=x_org_id)
+    api_response = api_instance.graph_user_group_associations_list(group_id, targets, limit=limit, skip=skip, x_org_id=x_org_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_associations_list: %s\n" % e)
@@ -61,12 +58,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
- **targets** | [**list[str]**](str.md)|  | 
+ **targets** | [**list[str]**](str.md)| Targets which a \&quot;user_group\&quot; can be associated to. | 
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
 
 ### Return type
 
@@ -78,17 +73,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_associations_post**
-> graph_user_group_associations_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
+> graph_user_group_associations_post(group_id, body=body, x_org_id=x_org_id)
 
 Manage the associations of a User Group
 
-This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\" }'  ```
+This endpoint manages the _direct_ associations of this User Group.  A direct association can be a non-homogeneous relationship between 2 different objects, for example User Groups and Users.   #### Sample Request ``` curl -X POST https://console.jumpcloud.com/api/v2/usergroups/{GroupID}/associations \\   -H 'Accept: application/json' \\   -H 'Content-Type: application/json' \\   -H 'x-api-key: {API_KEY}' \\   -d '{     \"op\": \"add\",     \"type\": \"system\",     \"id\": \"{SystemID}\"   }' ```
 
 ### Example
 ```python
@@ -107,14 +102,12 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
-body = jcapiv2.UserGroupGraphManagementReq() # UserGroupGraphManagementReq |  (optional)
-x_org_id = '' # str |  (optional) (default to )
+body = jcapiv2.GraphOperationUserGroup() # GraphOperationUserGroup |  (optional)
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 
 try:
     # Manage the associations of a User Group
-    api_instance.graph_user_group_associations_post(group_id, content_type, accept, body=body, x_org_id=x_org_id)
+    api_instance.graph_user_group_associations_post(group_id, body=body, x_org_id=x_org_id)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_associations_post: %s\n" % e)
 ```
@@ -124,10 +117,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
- **body** | [**UserGroupGraphManagementReq**](UserGroupGraphManagementReq.md)|  | [optional] 
- **x_org_id** | **str**|  | [optional] [default to ]
+ **body** | [**GraphOperationUserGroup**](GraphOperationUserGroup.md)|  | [optional] 
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
 
 ### Return type
 
@@ -140,12 +131,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_active_directory**
-> list[GraphObjectWithPaths] graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_active_directory(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Active Directories bound to a User Group
 
@@ -168,16 +159,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the Active Directories bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_active_directory(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_active_directory(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_active_directory: %s\n" % e)
@@ -188,12 +177,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -205,13 +192,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_application**
-> list[GraphObjectWithPaths] graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_application(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Applications bound to a User Group
 
@@ -234,16 +221,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the Applications bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_application(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_application(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_application: %s\n" % e)
@@ -254,12 +239,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -271,13 +254,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_directory**
-> list[GraphObjectWithPaths] graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_directory(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Directories bound to a User Group
 
@@ -300,16 +283,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the Directories bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_directory(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_directory(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_directory: %s\n" % e)
@@ -320,12 +301,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -337,13 +316,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_g_suite**
-> list[GraphObjectWithPaths] graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_g_suite(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the G Suite instances bound to a User Group
 
@@ -366,16 +345,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the G Suite instances bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_g_suite(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_g_suite(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_g_suite: %s\n" % e)
@@ -386,12 +363,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -403,13 +378,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_ldap_server**
-> list[GraphObjectWithPaths] graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_ldap_server(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the LDAP Servers bound to a User Group
 
@@ -432,16 +407,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the LDAP Servers bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_ldap_server(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_ldap_server(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_ldap_server: %s\n" % e)
@@ -452,12 +425,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -469,13 +440,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_office365**
-> list[GraphObjectWithPaths] graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_office365(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Office 365 instances bound to a User Group
 
@@ -498,16 +469,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the Office 365 instances bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_office365(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_office365(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_office365: %s\n" % e)
@@ -518,12 +487,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -535,13 +502,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_radius_server**
-> list[GraphObjectWithPaths] graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_radius_server(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the RADIUS Servers bound to a User Group
 
@@ -564,16 +531,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the RADIUS Servers bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_radius_server(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_radius_server(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_radius_server: %s\n" % e)
@@ -584,12 +549,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -601,13 +564,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_system**
-> list[GraphObjectWithPaths] graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_system(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the Systems bound to a User Group
 
@@ -630,16 +593,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the Systems bound to a User Group
-    api_response = api_instance.graph_user_group_traverse_system(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_system(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_system: %s\n" % e)
@@ -650,12 +611,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -667,13 +626,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **graph_user_group_traverse_system_group**
-> list[GraphObjectWithPaths] graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+> list[GraphObjectWithPaths] graph_user_group_traverse_system_group(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
 
 List the System Groups bound to User Groups
 
@@ -696,16 +655,14 @@ configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = jcapiv2.UserGroupAssociationsApi(jcapiv2.ApiClient(configuration))
 group_id = 'group_id_example' # str | ObjectID of the User Group.
-content_type = 'application/json' # str |  (default to application/json)
-accept = 'application/json' # str |  (default to application/json)
 limit = 10 # int | The number of records to return at once. Limited to 100. (optional) (default to 10)
-x_org_id = '' # str |  (optional) (default to )
+x_org_id = 'x_org_id_example' # str | Organization identifier that can be obtained from console settings. (optional)
 skip = 0 # int | The offset into the records to return. (optional) (default to 0)
-filter = ['[]'] # list[str] | Supported operators are: eq, ne, gt, ge, lt, le, between, search, in (optional) (default to [])
+filter = ['filter_example'] # list[str] | A filter to apply to the query.  **Filter structure**: `<field>:<operator>:<value>`.  **field** = Populate with a valid field from an endpoint response.  **operator** =  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** = Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** `GET /api/v2/groups?filter=name:eq:Test+Group` (optional)
 
 try:
     # List the System Groups bound to User Groups
-    api_response = api_instance.graph_user_group_traverse_system_group(group_id, content_type, accept, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
+    api_response = api_instance.graph_user_group_traverse_system_group(group_id, limit=limit, x_org_id=x_org_id, skip=skip, filter=filter)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UserGroupAssociationsApi->graph_user_group_traverse_system_group: %s\n" % e)
@@ -716,12 +673,10 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **group_id** | **str**| ObjectID of the User Group. | 
- **content_type** | **str**|  | [default to application/json]
- **accept** | **str**|  | [default to application/json]
  **limit** | **int**| The number of records to return at once. Limited to 100. | [optional] [default to 10]
- **x_org_id** | **str**|  | [optional] [default to ]
+ **x_org_id** | **str**| Organization identifier that can be obtained from console settings. | [optional] 
  **skip** | **int**| The offset into the records to return. | [optional] [default to 0]
- **filter** | [**list[str]**](str.md)| Supported operators are: eq, ne, gt, ge, lt, le, between, search, in | [optional] [default to []]
+ **filter** | [**list[str]**](str.md)| A filter to apply to the query.  **Filter structure**: &#x60;&lt;field&gt;:&lt;operator&gt;:&lt;value&gt;&#x60;.  **field** &#x3D; Populate with a valid field from an endpoint response.  **operator** &#x3D;  Supported operators are: eq, ne, gt, ge, lt, le, between, search, in. _Note: v1 operators differ from v2 operators._  **value** &#x3D; Populate with the value you want to search for. Is case sensitive. Supports wild cards.  **EX:** &#x60;GET /api/v2/groups?filter&#x3D;name:eq:Test+Group&#x60; | [optional] 
 
 ### Return type
 
@@ -733,7 +688,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

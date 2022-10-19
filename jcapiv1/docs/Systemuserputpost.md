@@ -7,11 +7,13 @@ Name | Type | Description | Notes
 **activated** | **bool** |  | [optional] 
 **addresses** | [**list[SystemuserputpostAddresses]**](SystemuserputpostAddresses.md) |  | [optional] 
 **allow_public_key** | **bool** |  | [optional] 
-**attributes** | **list[object]** |  | [optional] 
+**alternate_email** | **str** |  | [optional] 
+**attributes** | [**list[SystemuserputAttributes]**](SystemuserputAttributes.md) |  | [optional] 
 **company** | **str** |  | [optional] 
 **cost_center** | **str** |  | [optional] 
 **department** | **str** |  | [optional] 
 **description** | **str** |  | [optional] 
+**disable_device_max_login_attempts** | **bool** |  | [optional] 
 **displayname** | **str** |  | [optional] 
 **email** | **str** |  | 
 **employee_identifier** | **str** | Must be unique per user.  | [optional] 
@@ -19,6 +21,7 @@ Name | Type | Description | Notes
 **enable_managed_uid** | **bool** |  | [optional] 
 **enable_user_portal_multifactor** | **bool** |  | [optional] 
 **external_dn** | **str** |  | [optional] 
+**external_password_expiration_date** | **datetime** |  | [optional] 
 **external_source_type** | **str** |  | [optional] 
 **externally_managed** | **bool** |  | [optional] 
 **firstname** | **str** |  | [optional] 
@@ -26,6 +29,8 @@ Name | Type | Description | Notes
 **lastname** | **str** |  | [optional] 
 **ldap_binding_user** | **bool** |  | [optional] 
 **location** | **str** |  | [optional] 
+**managed_apple_id** | **str** |  | [optional] 
+**manager** | **str** | Relation with another systemuser to identify the last as a manager. | [optional] 
 **mfa** | [**Mfa**](Mfa.md) |  | [optional] 
 **middlename** | **str** |  | [optional] 
 **password** | **str** |  | [optional] 
@@ -33,8 +38,10 @@ Name | Type | Description | Notes
 **passwordless_sudo** | **bool** |  | [optional] 
 **phone_numbers** | [**list[SystemuserputpostPhoneNumbers]**](SystemuserputpostPhoneNumbers.md) |  | [optional] 
 **public_key** | **str** |  | [optional] 
-**relationships** | **list[object]** |  | [optional] 
+**recovery_email** | [**SystemuserputpostRecoveryEmail**](SystemuserputpostRecoveryEmail.md) |  | [optional] 
+**relationships** | [**list[SystemuserputRelationships]**](SystemuserputRelationships.md) |  | [optional] 
 **samba_service_user** | **bool** |  | [optional] 
+**state** | **str** |  | [optional] 
 **sudo** | **bool** |  | [optional] 
 **suspended** | **bool** |  | [optional] 
 **tags** | **list[str]** |  | [optional] 
@@ -43,5 +50,4 @@ Name | Type | Description | Notes
 **username** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 
